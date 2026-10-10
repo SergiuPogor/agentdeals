@@ -1133,7 +1133,7 @@
       "changed": "2026-10-10"
     },
     "/category/cloud-iaas": {
-      "hash": "5737a0bc79335de4",
+      "hash": "cfe3a96f96dff94a",
       "changed": "2026-10-10"
     },
     "/category/cloud-storage": {
@@ -3235,7 +3235,7 @@
       "changed": "2026-10-09"
     },
     "/google-developer-program-2026": {
-      "hash": "8bfbd956f4e7b1a6",
+      "hash": "196c94769dfffb61",
       "changed": "2026-10-10"
     },
     "/groq-vs-hugging-face": {
@@ -3271,15 +3271,15 @@
       "changed": "2026-10-09"
     },
     "/hetzner-alternatives": {
-      "hash": "48bc68c2846d9547",
-      "changed": "2026-10-09"
+      "hash": "f4f7e7b0833da0fd",
+      "changed": "2026-10-10"
     },
     "/hetzner-pricing-2026": {
-      "hash": "00957f84b6c78437",
+      "hash": "f734148e850478e0",
       "changed": "2026-10-10"
     },
     "/hosting-alternatives": {
-      "hash": "0d151c4338bf4f54",
+      "hash": "b9882b36310386fb",
       "changed": "2026-10-10"
     },
     "/hosting-free-tier-comparison-2026": {
@@ -7442,7 +7442,7 @@
       "changed": "2026-10-10"
     },
     "/vendor/oracle-cloud": {
-      "hash": "4f66c387b915a879",
+      "hash": "1eea03762073ea50",
       "changed": "2026-10-10"
     },
     "/vendor/orama": {

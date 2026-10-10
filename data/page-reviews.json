@@ -1980,8 +1980,8 @@
       "review_note": "Two readers checked the page's 44 claims against Google's, Microsoft's, AWS's, Appwrite's and Mistral's own pages on 2026-09-28. The nine that failed were corrected in https://github.com/robhunter/agentdeals/issues/2144 and read on production on 2026-09-28.",
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 48,
-      "table_figures_from_records": 8,
+      "table_figures": 50,
+      "table_figures_from_records": 10,
       "tables": [
         {
           "label": "2. Price Comparison Table",
@@ -1990,8 +1990,8 @@
         },
         {
           "label": "5. Free Cloud Credit Alternatives",
-          "figures": 22,
-          "from_records": 4
+          "figures": 24,
+          "from_records": 6
         },
         {
           "label": "6. Free AI/LLM API Alternatives",
@@ -2036,8 +2036,8 @@
       "review_note": "Re-checked on 2026-10-02: section 1's prices against Hetzner's price API, sections 2 and 4 against Hetzner's April and June tables and its price API's AX42 and AX102 prices, section 8's Server Auction figure against Hetzner's April table, section 3 against The Register's article of 2026-02-24, and section 6's DigitalOcean, Vultr, Linode, AWS Lightsail, Oracle Cloud, OVHcloud and Fly.io trial rows against those vendors' own pages, plan APIs or notices. The corrections in https://github.com/robhunter/agentdeals/issues/2238, https://github.com/robhunter/agentdeals/issues/2243, https://github.com/robhunter/agentdeals/issues/2247 and https://github.com/robhunter/agentdeals/issues/2258 were read on production that day.",
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 128,
-      "table_figures_from_records": 9,
+      "table_figures": 130,
+      "table_figures_from_records": 11,
       "tables": [
         {
           "label": "1. Every Cloud Plan, Priced Today",
@@ -2051,8 +2051,8 @@
         },
         {
           "label": "6. Alternatives Comparison",
-          "figures": 40,
-          "from_records": 9
+          "figures": 42,
+          "from_records": 11
         }
       ],
       "reads_changes": true,
