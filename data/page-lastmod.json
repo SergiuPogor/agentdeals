@@ -1204,7 +1204,7 @@
       "changed": "2026-10-09"
     },
     "/category/forms": {
-      "hash": "27373ddd41ca3107",
+      "hash": "f5b365dddc40dc91",
       "changed": "2026-10-10"
     },
     "/category/headless-cms": {
@@ -3235,7 +3235,7 @@
       "changed": "2026-10-09"
     },
     "/google-developer-program-2026": {
-      "hash": "196c94769dfffb61",
+      "hash": "ceb08f17e61ab213",
       "changed": "2026-10-10"
     },
     "/groq-vs-hugging-face": {
@@ -3275,7 +3275,7 @@
       "changed": "2026-10-10"
     },
     "/hetzner-pricing-2026": {
-      "hash": "f734148e850478e0",
+      "hash": "ee2cdcafcdf953be",
       "changed": "2026-10-10"
     },
     "/hosting-alternatives": {
@@ -9247,7 +9247,7 @@
       "daily": true
     },
     "/vendor/web3forms": {
-      "hash": "a23ec34faeda93f2",
+      "hash": "5990b104f59e1b32",
       "changed": "2026-10-10"
     },
     "/vendor/webacus": {

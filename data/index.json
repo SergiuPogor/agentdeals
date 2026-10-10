@@ -20813,6 +20813,18 @@
           "quote": "If you exceed the limit, we will stop accepting new submissions until the next month. You can upgrade to continue receiving submissions.",
           "url": "https://web3forms.com/pricing",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "File uploads, autoresponders, reCAPTCHA and Turnstile, webhooks, Google Sheets, and team collaboration need a paid plan.",
+          "quote": "Need more than 250 submissions a month? Paid plans add file uploads, autoresponders, reCaptcha & Turnstile, webhooks, Google Sheets and team collaboration.",
+          "url": "https://web3forms.com/",
+          "read_on": "2026-10-10"
+        },
+        {
+          "text": "The Free plan includes hCaptcha spam protection.",
+          "quote": "hCaptcha Integration",
+          "url": "https://web3forms.com/pricing",
+          "read_on": "2026-10-10"
         }
       ]
     },
