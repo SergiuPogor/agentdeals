@@ -3536,6 +3536,12 @@
           "quote": "When you disable billing for a project, all of your Google Cloud and Google Maps Platform services are stopped and billing on that project stops. When billing is disabled for a project, some of your Google Cloud resources might be removed and become non-recoverable.",
           "url": "https://cloud.google.com/billing/docs/how-to/modify-project",
           "read_on": "2026-10-10"
+        },
+        {
+          "text": "Developers on Google's AI developer forum report projects dropping to Tier 1 after switching to Prepay or after a Prepay payment. Tier 1's $250 monthly cap includes prior spend, so projects can pause with a 429 error despite available credits. Google staff ask users to report this with the Gemini API Tier Downgrade Report Form.",
+          "quote": "Sincere apologies for this issue. Please use this form to report sudden tier downgrades, our team will look into it",
+          "url": "https://discuss.ai.google.dev/t/prepay-migration-demoted-tier-3-tier-1-and-the-tier-1-cap-was-applied-retroactively-to-pre-migration-spend/179550",
+          "read_on": "2026-10-10"
         }
       ]
     },
