@@ -6708,6 +6708,7 @@ interface AlternativesPageConfig {
   contextHtml: string;
   tag: string;
   primaryVendor: string;
+  notAMigrationGuide?: true;
   serviceMatrixHtml?: string;
   hubDesc: string;
 }
@@ -8589,6 +8590,7 @@ const ALTERNATIVES_PAGE_CONTENT: Omit<AlternativesPageConfig, "hubDesc">[] = [
     contextHtml: "",
     tag: MISTRAL_PRICES_SLUG,
     primaryVendor: "Mistral AI",
+    notAMigrationGuide: true,
   },
 ];
 
@@ -8599,7 +8601,7 @@ const editorialByVendor = new Map<string, AlternativesPageConfig>();
 const altPagesByVendor = new Map<string, AlternativesPageConfig[]>();
 for (const page of ALTERNATIVES_PAGES) {
   alternativesPageMap.set(page.slug, page);
-  editorialByVendor.set(page.primaryVendor.toLowerCase(), page);
+  if (!page.notAMigrationGuide) editorialByVendor.set(page.primaryVendor.toLowerCase(), page);
   const key = page.primaryVendor.toLowerCase();
   if (!altPagesByVendor.has(key)) altPagesByVendor.set(key, []);
   altPagesByVendor.get(key)!.push(page);

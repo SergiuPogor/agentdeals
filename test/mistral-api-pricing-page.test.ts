@@ -89,7 +89,7 @@ function figuresHeld(prices: MistralPrices): Set<string> {
 }
 
 function servedFrom(dataFile: string | null) {
-  const state = { page: "", status: 0, sitemap: "", guides: "", hub: "", llms: "", vendor: "" };
+  const state = { page: "", status: 0, sitemap: "", guides: "", hub: "", llms: "", vendor: "", alternativeTo: "" };
   let server: ChildProcess | null = null;
   before(async () => {
     const { child, base } = await startServer(dataFile ? { AGENTDEALS_MISTRAL_PRICES_PATH: dataFile } : {});
@@ -102,6 +102,7 @@ function servedFrom(dataFile: string | null) {
     state.hub = await (await fetch(`${base}/alternatives`)).text();
     state.llms = await (await fetch(`${base}/llms.txt`)).text();
     state.vendor = await (await fetch(`${base}/vendor/mistral-ai`)).text();
+    state.alternativeTo = await (await fetch(`${base}/alternative-to/mistral-ai`)).text();
   });
   after(() => { if (server) server.kill(); });
   return state;
@@ -161,6 +162,11 @@ describe("the Mistral API pricing guide, built from data/mistral_api_prices.json
     assert.ok(served.hub.includes(`href="${ROUTE}"`), "not on /alternatives");
     assert.ok(served.llms.includes(`- [${committed.title}](http://localhost${ROUTE})`), "not in /llms.txt");
     assert.ok(served.vendor.includes(`href="${ROUTE}"`), "/vendor/mistral-ai does not link the guide");
+  });
+
+  it("is not offered on /alternative-to/mistral-ai as a migration guide, since it recommends no alternative", () => {
+    assert.ok(served.alternativeTo.includes("<h1>"), "/alternative-to/mistral-ai did not render");
+    assert.doesNotMatch(served.alternativeTo, /class="editorial-cta"/);
   });
 
   it("is dated by the page-dates ledger like every other page", () => {
