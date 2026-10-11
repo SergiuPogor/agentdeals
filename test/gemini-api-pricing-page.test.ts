@@ -147,7 +147,7 @@ describe(`${PAGE} on paying after use once Prepay starts`, () => {
   it("says what cannot be undone, then the route that bills after use, at the Gemini API's paid-tier prices", () => {
     const text = withoutTags(prepayParagraph(page));
     assert.ok(text.includes(
-      "Google's billing FAQ states that accounts cannot switch from Prepay to Postpay, and Prepay is not available for invoiced accounts. " +
+      "Google's billing FAQ states that accounts cannot switch from Prepay to Postpay. " +
       "To pay after use instead of prepaying, use Gemini Enterprise Agent Platform (formerly Vertex AI). " +
       "Google bills it on the standard Cloud charging cycle, not Prepay. " +
       "Agent Platform charges $0.75 input and $3.75 output per million tokens for Gemini 3.8 Flash and 3.6 Flash on the global endpoint through 2026-12-31, then $1.50 input and $7.50 output. " +
@@ -173,11 +173,32 @@ describe(`${PAGE} on paying after use once Prepay starts`, () => {
   });
 });
 
-describe(`${PAGE} on a missed payment for another Google Cloud service`, () => {
-  it("follows the split between Prepay and Postpay with the suspension a declined payment can cause whatever the Prepay balance, before what cannot be undone", () => {
+describe(`${PAGE} on accounts billed by invoice`, () => {
+  it("follows the split between Prepay and Postpay with Google's statement that invoiced accounts cannot use Prepay, and who to ask about a cutover notice", () => {
     const text = withoutTags(prepayParagraph(page));
     assert.ok(text.includes(
       "Only Gemini API usage moves to Prepay; other Google Cloud services on the same billing account stay on Postpay. " +
+      "If your company pays Google Cloud by monthly invoice, Google's billing doc says Prepay is not available for invoiced (offline) billing accounts. " +
+      "If you received a cutover notice, ask Cloud Billing Support what it requires before the date in it. " +
+      "If your Cloud Billing account has a Gemini API Prepay credit balance",
+    ), text);
+  });
+
+  it("links the statement to Google's billing doc", () => {
+    const paragraph = prepayParagraph(page);
+    assert.ok(paragraph.includes('Google\'s billing doc says <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">Prepay is not available for invoiced (offline) billing accounts</a>.'), paragraph);
+  });
+
+  it("states it once on the page", () => {
+    assert.strictEqual(readable(page).match(/not available for invoiced/gi)?.length ?? 0, 1);
+  });
+});
+
+describe(`${PAGE} on a missed payment for another Google Cloud service`, () => {
+  it("follows what an invoiced account should do with the suspension a declined payment can cause whatever the Prepay balance, before what cannot be undone", () => {
+    const text = withoutTags(prepayParagraph(page));
+    assert.ok(text.includes(
+      "If you received a cutover notice, ask Cloud Billing Support what it requires before the date in it. " +
       "If your Cloud Billing account has a Gemini API Prepay credit balance but your card expired or a payment for another Google Cloud service was declined, the Gemini API can still be suspended. " +
       "This happens with an overdue balance, a declined payment, or an invalid payment method. " +
       "Resolve the issue in the Google Cloud Billing console to restore service. " +
