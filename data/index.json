@@ -1292,10 +1292,10 @@
       },
       "conditions": [
         {
-          "text": "Free projects pause after 1 week of inactivity.",
-          "quote": "Free projects are paused after 1 week of inactivity.",
-          "url": "https://appwrite.io/pricing",
-          "read_on": "2026-10-05"
+          "text": "A Free project with no development activity in the Console for 7 days is paused. Traffic from users does not keep it active. A paused project is not accessible to its users and runs no backups, cron jobs or scheduled functions until it is reactivated in the Console.",
+          "quote": "projects on the Free plan with no development activity for 7 consecutive days will be automatically paused.",
+          "url": "https://appwrite.io/changelog/entry/2026-02-20-1",
+          "read_on": "2026-10-11"
         },
         {
           "text": "Free projects are deleted after 90 days paused.",
