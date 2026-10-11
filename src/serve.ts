@@ -54998,9 +54998,9 @@ ${catList}
     logRequest({ ts: new Date().toISOString(), type: "api", endpoint: "/company-formation-pricing-2026", params: {}, user_agent: req.headers["user-agent"] ?? "unknown", result_count: 1 });
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=3600" });
     res.end(buildCompanyFormationPricingPage());
-  } else if (url.pathname === MISTRAL_PRICES_PATH && isGetOrHead) {
-    recordApiHit(MISTRAL_PRICES_PATH);
-    logRequest({ ts: new Date().toISOString(), type: "api", endpoint: MISTRAL_PRICES_PATH, params: {}, user_agent: req.headers["user-agent"] ?? "unknown", result_count: 1 });
+  } else if (url.pathname === "/mistral-api-pricing-2026" && isGetOrHead) {
+    recordApiHit("/mistral-api-pricing-2026");
+    logRequest({ ts: new Date().toISOString(), type: "api", endpoint: "/mistral-api-pricing-2026", params: {}, user_agent: req.headers["user-agent"] ?? "unknown", result_count: 1 });
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=3600" });
     res.end(buildMistralApiPricingPage());
   } else if (url.pathname === "/whatsapp-business-api-pricing-2026" && isGetOrHead) {
