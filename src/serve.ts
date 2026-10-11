@@ -4747,10 +4747,14 @@ function weekHasNotStarted(year: number, week: number, servedOn: string): boolea
   return getWeekStart(year, week).toISOString().slice(0, 10) > servedOn;
 }
 
-function weekNotStartedLine(year: number, week: number, count: number): string {
+function periodNotStartedLine(period: string, count: number): string {
   return count === 1
-    ? `Week ${week}, ${year} has not started. 1 change is scheduled; the service below still works until its date.`
-    : `Week ${week}, ${year} has not started. ${count} changes are scheduled; each service below still works until its date.`;
+    ? `${period} has not started. 1 change is scheduled; the service below still works until its date.`
+    : `${period} has not started. ${count} changes are scheduled; each service below still works until its date.`;
+}
+
+function weekNotStartedLine(year: number, week: number, count: number): string {
+  return periodNotStartedLine(`Week ${week}, ${year}`, count);
 }
 
 function buildDigestPage(weekKey: string): string | null {
@@ -9964,6 +9968,36 @@ function changesEffectiveIn(changes: DealChange[], yearMonthPrefix: string): Dea
   return changes.filter((c) => isEventDated(c) && c.date.startsWith(yearMonthPrefix));
 }
 
+function monthHasNotStarted(yearMonth: string, servedOn: string): boolean {
+  return `${yearMonth}-01` > servedOn;
+}
+
+function monthIsUnderway(yearMonth: string, servedOn: string): boolean {
+  return servedOn.slice(0, 7) === yearMonth;
+}
+
+function monthSoFarLine(monthName: string, yearStr: string, inEffect: number, servedOn: string, scheduled: number): string {
+  const through = getMonthName(parseInt(servedOn.slice(5, 7), 10)) + " " + parseInt(servedOn.slice(8, 10), 10);
+  const happened = monthName + " " + yearStr + " so far: " + inEffect + (inEffect === 1 ? " change" : " changes") + " through " + through + ".";
+  if (scheduled === 0) return happened;
+  return happened + " " + scheduled + (scheduled === 1 ? " more is" : " more are") + " scheduled before the month ends.";
+}
+
+function vendorsThroughTheCutWithTheirTies(counts: Map<string, number>, room: number): Array<[string, number]> {
+  const sorted = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+  if (sorted.length <= room) return sorted;
+  const countAtTheCut = sorted[room - 1]![1];
+  return sorted.filter(([, count]) => count >= countAtTheCut);
+}
+
+function scheduledChangesHtml(scheduled: DealChange[]): string {
+  if (scheduled.length === 0) return "";
+  return '<h2>Scheduled</h2><ul class="vendor-list">'
+    + [...scheduled].sort((a, b) => a.date.localeCompare(b.date)).map((c) =>
+      '<li><strong>' + escHtmlServer(c.vendor) + '</strong> (' + changeEntryDateLabelHtml(c, escHtmlServer) + ')<ul><li>' + changeSummaryHtml(c, escHtmlServer) + '</li></ul></li>'
+    ).join("") + '</ul>';
+}
+
 function buildReportsIndexPage(): string {
   const months = getAvailableReportMonths();
   const allChanges = loadDealChanges();
@@ -9990,9 +10024,22 @@ function buildReportsIndexPage(): string {
     },
   };
 
+  const servedOn = new Date().toISOString().slice(0, 10);
   const monthCards = months.map(m => {
     const [y, mo] = m.split("-");
-    const monthChanges = changesTheVendorMade(trackedChanges(changesEffectiveIn(allChanges, m)));
+    const recordedChanges = changesTheVendorMade(trackedChanges(changesEffectiveIn(allChanges, m)));
+    if (monthHasNotStarted(m, servedOn)) {
+      return '<a href="/reports/' + m + '" class="report-card">'
+        + '<div class="report-card-header">'
+        + '<h2>' + getMonthName(parseInt(mo)) + ' ' + y + '</h2>'
+        + '<span class="report-badge report-scheduled">Scheduled</span>'
+        + '</div>'
+        + '<div class="report-stats">'
+        + '<span class="stat-item">' + recordedChanges.length + ' scheduled</span>'
+        + '</div>'
+        + '</a>';
+    }
+    const monthChanges = recordedChanges.filter(c => !hasNotTakenEffect(c, servedOn));
     const negative = monthChanges.filter(countsAsANegativeChange).length;
     const positive = monthChanges.filter(c => POSITIVE_CHANGE_TYPES.has(c.change_type)).length;
     const neutral = monthChanges.length - negative - positive;
@@ -10046,6 +10093,7 @@ function buildReportsIndexPage(): string {
     + '.report-bearish{background:#f8514920;color:var(--red);border:1px solid #f8514940}\n'
     + '.report-bullish{background:#3fb95020;color:var(--green);border:1px solid #3fb95040}\n'
     + '.report-mixed{background:#d2992220;color:var(--yellow);border:1px solid #d2992240}\n'
+    + '.report-scheduled{background:#8b949e20;color:var(--text-muted);border:1px solid #8b949e40}\n'
     + '.report-stats{display:flex;gap:1rem;font-size:.8rem;color:var(--text-muted)}\n'
     + '.stat-neg{color:var(--red)}.stat-pos{color:var(--green)}.stat-neutral{color:var(--yellow)}\n'
     + 'footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}\n'
@@ -10064,13 +10112,20 @@ function buildMonthlyReportPage(yearMonth: string): string | null {
   const allChanges = loadDealChanges();
   const recordedInMonth = changesEffectiveIn(allChanges, yearMonth);
   if (recordedInMonth.length === 0) return null;
-  const monthChanges = changesTheVendorMade(trackedChanges(recordedInMonth));
+  const servedOn = new Date().toISOString().slice(0, 10);
+  const notStarted = monthHasNotStarted(yearMonth, servedOn);
+  const underway = !notStarted && monthIsUnderway(yearMonth, servedOn);
+  const recordedChanges = changesTheVendorMade(trackedChanges(recordedInMonth));
+  const monthChanges = recordedChanges.filter(c => !hasNotTakenEffect(c, servedOn));
+  const scheduledChanges = recordedChanges.filter(c => hasNotTakenEffect(c, servedOn));
 
   const [yearStr, moStr] = yearMonth.split("-");
   const monthNum = parseInt(moStr);
   const monthName = getMonthName(monthNum);
   const title = "Developer Tool Pricing Report — " + monthName + " " + yearStr + " | AgentDeals";
-  const metaDesc = monthChanges.length + " pricing changes tracked in " + monthName + " " + yearStr + " — free tier removals, new additions, and trend analysis for developer tools.";
+  const metaDesc = notStarted
+    ? scheduledChanges.length + " pricing changes scheduled for " + monthName + " " + yearStr + " — free tier removals, new additions, and trend analysis for developer tools."
+    : monthChanges.length + " pricing changes tracked in " + monthName + " " + yearStr + " — free tier removals, new additions, and trend analysis for developer tools.";
 
   const negativeTypes = NEGATIVE_CHANGE_TYPES;
   const positiveTypes = POSITIVE_CHANGE_TYPES;
@@ -10107,7 +10162,11 @@ function buildMonthlyReportPage(yearMonth: string): string | null {
   }
 
   let editorialSummary: string;
-  if (negative.length > positive.length * 2) {
+  if (notStarted) {
+    editorialSummary = periodNotStartedLine(monthName + " " + yearStr, scheduledChanges.length);
+  } else if (underway) {
+    editorialSummary = monthSoFarLine(monthName, yearStr, monthChanges.length, servedOn, scheduledChanges.length);
+  } else if (negative.length > positive.length * 2) {
     editorialSummary = monthName + " " + yearStr + " was a tough month for developer free tiers. With " + negative.length + " negative changes versus " + positive.length + " positive, the trend continues toward tighter limits and eliminated offerings. Developers relying on free tiers should review their dependencies.";
   } else if (negative.length > positive.length) {
     editorialSummary = monthName + " " + yearStr + " saw more contractions than expansions, with " + negative.length + " negative changes versus " + positive.length + " positive. The overall trend leans bearish, though some vendors did expand their offerings.";
@@ -10122,11 +10181,11 @@ function buildMonthlyReportPage(yearMonth: string): string | null {
   const losses = negative.filter(countsAsALoss);
   const vendorNegCounts = new Map<string, number>();
   for (const c of losses) vendorNegCounts.set(c.vendor, (vendorNegCounts.get(c.vendor) || 0) + 1);
-  const biggestLosers = [...vendorNegCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+  const biggestLosers = vendorsThroughTheCutWithTheirTies(vendorNegCounts, 10);
 
   const vendorPosCounts = new Map<string, number>();
   for (const c of positive) vendorPosCounts.set(c.vendor, (vendorPosCounts.get(c.vendor) || 0) + 1);
-  const biggestWinners = [...vendorPosCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+  const biggestWinners = vendorsThroughTheCutWithTheirTies(vendorPosCounts, 10);
 
   function changeTypeLabel(ct: string): string {
     return ct.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
@@ -10231,19 +10290,26 @@ function buildMonthlyReportPage(yearMonth: string): string | null {
     + '<h1>Developer Tool Pricing Report</h1>\n'
     + '<h2 style="margin-top:.25rem;color:var(--text-muted);font-size:1.1rem">' + monthName + ' ' + yearStr + '</h2>\n'
     + '<div class="editorial">' + escHtmlServer(editorialSummary) + '</div>\n'
-    + '<div class="stats-grid">'
-    + '<div class="stat-card"><div class="stat-value">' + monthChanges.length + '</div><div class="stat-label">Total Changes' + momIndicator(monthChanges.length, prevChanges.length) + '</div></div>'
-    + '<div class="stat-card"><div class="stat-value stat-neg">' + negative.length + '</div><div class="stat-label">Negative' + momIndicator(negative.length, prevNeg) + '</div></div>'
-    + '<div class="stat-card"><div class="stat-value stat-pos">' + positive.length + '</div><div class="stat-label">Positive' + momIndicator(positive.length, prevPos) + '</div></div>'
-    + '<div class="stat-card"><div class="stat-value stat-neutral">' + neutral.length + '</div><div class="stat-label">Neutral</div></div>'
-    + '</div>\n'
-    + '<h2>Changes by Type</h2>\n'
-    + '<table><thead><tr><th>Change Type</th><th>Count</th></tr></thead><tbody>' + typeBreakdownRows + '</tbody></table>\n'
-    + losersHtml
-    + winnersHtml
-    + '<h2>Category Breakdown</h2>\n'
-    + '<p class="section-desc">Which categories saw the most pricing changes</p>\n'
-    + '<table><thead><tr><th>Category</th><th>Total</th><th>Negative</th><th>Positive</th></tr></thead><tbody>' + catBreakdownRows + '</tbody></table>\n'
+    + (notStarted
+      ? '<div class="stats-grid">'
+        + '<div class="stat-card"><div class="stat-value">' + scheduledChanges.length + '</div><div class="stat-label">Scheduled</div></div>'
+        + '</div>\n'
+      : '<div class="stats-grid">'
+        + '<div class="stat-card"><div class="stat-value">' + monthChanges.length + '</div><div class="stat-label">Total Changes' + momIndicator(monthChanges.length, prevChanges.length) + '</div></div>'
+        + '<div class="stat-card"><div class="stat-value stat-neg">' + negative.length + '</div><div class="stat-label">Negative' + momIndicator(negative.length, prevNeg) + '</div></div>'
+        + '<div class="stat-card"><div class="stat-value stat-pos">' + positive.length + '</div><div class="stat-label">Positive' + momIndicator(positive.length, prevPos) + '</div></div>'
+        + '<div class="stat-card"><div class="stat-value stat-neutral">' + neutral.length + '</div><div class="stat-label">Neutral</div></div>'
+        + '</div>\n')
+    + (monthChanges.length === 0 && (notStarted || underway)
+      ? ''
+      : '<h2>Changes by Type</h2>\n'
+        + '<table><thead><tr><th>Change Type</th><th>Count</th></tr></thead><tbody>' + typeBreakdownRows + '</tbody></table>\n'
+        + losersHtml
+        + winnersHtml
+        + '<h2>Category Breakdown</h2>\n'
+        + '<p class="section-desc">Which categories saw the most pricing changes</p>\n'
+        + '<table><thead><tr><th>Category</th><th>Total</th><th>Negative</th><th>Positive</th></tr></thead><tbody>' + catBreakdownRows + '</tbody></table>\n')
+    + scheduledChangesHtml(scheduledChanges)
     + reportNav
     + '\n<footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>\n'
     + '</div>\n</body>\n</html>';

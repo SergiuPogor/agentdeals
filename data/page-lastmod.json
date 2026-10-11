@@ -3366,7 +3366,7 @@
       "changed": "2026-10-11"
     },
     "/reports": {
-      "hash": "d15abd72afa04570",
+      "hash": "000682a037d6aaab",
       "changed": "2026-10-11"
     },
     "/reports/2022-11": {
@@ -3454,16 +3454,16 @@
       "changed": "2026-10-10"
     },
     "/reports/2026-02": {
-      "hash": "76d06dfa7c3ab98d",
-      "changed": "2026-10-10"
+      "hash": "3d6155f3ac95188d",
+      "changed": "2026-10-11"
     },
     "/reports/2026-03": {
-      "hash": "d1aa906b2312cdf3",
-      "changed": "2026-10-10"
+      "hash": "70cf4f4ca2d2b5dc",
+      "changed": "2026-10-11"
     },
     "/reports/2026-04": {
-      "hash": "b9324da2c183df17",
-      "changed": "2026-10-10"
+      "hash": "f4186cb193a4b0e7",
+      "changed": "2026-10-11"
     },
     "/reports/2026-05": {
       "hash": "193a101f224e7c79",
@@ -3486,40 +3486,39 @@
       "changed": "2026-10-11"
     },
     "/reports/2026-10": {
-      "hash": "62155c7009be7d4f",
-      "changed": "2026-10-11"
+      "daily": true
     },
     "/reports/2026-11": {
-      "hash": "8cd04ab2c650c240",
+      "hash": "d5a05c601c351a5e",
       "changed": "2026-10-11"
     },
     "/reports/2026-12": {
-      "hash": "232323e3ee7fa4ca",
-      "changed": "2026-10-10"
+      "hash": "1251676a74febc40",
+      "changed": "2026-10-11"
     },
     "/reports/2027-01": {
-      "hash": "4c4f95e9a47ff699",
-      "changed": "2026-10-10"
+      "hash": "3c96dcf069c98e73",
+      "changed": "2026-10-11"
     },
     "/reports/2027-02": {
-      "hash": "65a0535a21a6c4ca",
-      "changed": "2026-10-10"
+      "hash": "3aca3e8160295468",
+      "changed": "2026-10-11"
     },
     "/reports/2027-03": {
-      "hash": "d1ee80915ebc6790",
-      "changed": "2026-10-10"
+      "hash": "8bd43ad478523aa1",
+      "changed": "2026-10-11"
     },
     "/reports/2027-04": {
-      "hash": "8695c78f1d5de0ae",
-      "changed": "2026-10-10"
+      "hash": "7e2ecdce207c433d",
+      "changed": "2026-10-11"
     },
     "/reports/2027-05": {
-      "hash": "46b298c9a42cd2aa",
-      "changed": "2026-10-10"
+      "hash": "a186f64f6d37ea99",
+      "changed": "2026-10-11"
     },
     "/reports/2028-05": {
-      "hash": "5b7d1b7a0ca1e085",
-      "changed": "2026-10-10"
+      "hash": "b8436b8eb8db403c",
+      "changed": "2026-10-11"
     },
     "/security-alternatives": {
       "daily": true
