@@ -54,7 +54,10 @@ const PROGRAM_SITE = "https://developers.google.com/program";
 const CODE_ASSIST_DEPRECATION = "https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals";
 
 const RENEWALS_ENDED =
-  "annual plans stopped renewing after March 30, 2026 and monthly plans after June 30, 2026. Google's FAQ (updated 2026-10-07) says no existing subscription can be renewed since September 18, 2026. Monthly subscribers keep benefits until October 18, 2026 and annual subscribers until September 18, 2027. The FAQ does not exempt Workspace accounts, though Google's older benefits page says Workspace subscriptions are not changing. Its Google Cloud credits";
+  "annual plans stopped renewing after March 30, 2026 and monthly plans after June 30, 2026. Google's FAQ (updated 2026-10-07) says no existing subscription can be renewed since September 18, 2026. Monthly subscribers keep benefits until October 18, 2026 and annual subscribers until September 18, 2027. The FAQ does not exempt Workspace accounts, though Google's older benefits page says Workspace subscriptions are not changing.";
+
+const PLAN_FOR_THE_END_DATES =
+  "Plan for your Workspace Premium benefits to end on October 18, 2026 if monthly, or September 18, 2027 if annual, while the two Google pages disagree.";
 
 const DEVELOPER_PROGRAM_FAQ = "https://developers.google.com/profile/help/faq";
 const OLDER_BENEFITS_PAGE = "https://developers.google.com/profile/help/benefits";
@@ -241,6 +244,11 @@ describe("the Google Developer Program guide states Google's, Microsoft's, Appwr
       `Google's FAQ -> ${DEVELOPER_PROGRAM_FAQ}`,
       `older benefits page -> ${OLDER_BENEFITS_PAGE}`,
     ]);
+  });
+
+  it("tells Workspace subscribers to plan for the FAQ's end dates right after saying the two Google pages disagree, before turning to what replaced Premium", () => {
+    const text = readable(served.get(PAGE)!);
+    assert.ok(text.includes(`${RENEWALS_ENDED} ${PLAN_FOR_THE_END_DATES} Its Google Cloud credits`), text);
   });
 
   it("dates the end of Workspace renewals in the June 30 timeline entry", () => {

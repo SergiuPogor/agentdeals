@@ -22,6 +22,7 @@ import {
   cheapestOrderableEuPlanForEachMemorySize,
   cheapestOrderableEuPlanForEachMemorySizeSentence,
   cheapestOrderableHetznerPlan,
+  costOptimizedLineNobodyCanOrder,
   hetznerEntryPriceClause,
   unorderableHetznerPlans,
   unpayableLowestPricesSentence,
@@ -182,6 +183,25 @@ const PAGES_NAMING_HETZNER_PRICES = [
   "/digitalocean-free-tier-2026",
 ];
 
+const PAGES_PRINTING_THE_ENTRY_PRICE_CLAUSE = PAGES_NAMING_HETZNER_PRICES.filter(page => page !== "/hetzner-pricing-2026");
+
+const WITHDRAWN_AVAILABILITY_SENTENCES = ["a reader can actually order", "A price for a plan nobody can buy"];
+
+let everyRouteServed: Promise<Map<string, string>> | undefined;
+
+const bodyOfEveryRoute = () =>
+  (everyRouteServed ??= (async () => {
+    const routes = await everyRouteTheSitemapPublishes(`http://localhost:${serverPort}`);
+    const bodies = new Map<string, string>();
+    for (let at = 0; at < routes.length; at += 16) {
+      await Promise.all(routes.slice(at, at + 16).map(async route => {
+        const { status, body } = await get(route);
+        if (status === 200) bodies.set(route, body);
+      }));
+    }
+    return bodies;
+  })());
+
 before(async () => { proc = await startServer(); });
 after(() => { if (proc) proc.kill(); });
 
@@ -319,6 +339,71 @@ describe("the cheapest orderable EU plan for each memory size", () => {
   });
 });
 
+function inLine(sku: string, line: string, eur: number, available: boolean, region = "EU"): HetznerPlan {
+  return { sku, line, cpu: "AMD", vcpu: 2, ram: 4, region, eur, usd: eur, available };
+}
+
+const COST_OPTIMIZED_LINE = HETZNER_CLOUD_PLANS.filter(p => p.line === "Cost-Optimized");
+const NO_COST_OPTIMIZED_PLAN_IS_ORDERABLE = COST_OPTIMIZED_LINE.every(p => !p.available);
+const cheapestOf = (plans: readonly HetznerPlan[]) => plans.reduce((a, b) => (a.eur <= b.eur ? a : b));
+const withoutIpv4 = (eur: number) => fromCents(cents(eur) - cents(ipv4PerMonth));
+
+describe("what /hetzner-pricing-2026 needs before it says every Cost-Optimized plan is unavailable", () => {
+  it("names the line's plans in the table's order, the cheapest of them at its price less IPv4, and the cheapest plan orderable in the EU", () => {
+    const found = costOptimizedLineNobodyCanOrder([
+      inLine("CX2", "Cost-Optimized", 5.99, false),
+      inLine("CPX1", "Regular Performance", 7.49, true),
+      inLine("CX1", "Cost-Optimized", 4.99, false),
+      inLine("CPX0", "Regular Performance", 3.49, true, "US"),
+      inLine("CPX3", "Regular Performance", 2.99, false),
+      inLine("CPX2", "Regular Performance", 6.99, true),
+    ]);
+    assert.deepEqual(found?.plans.map(p => p.sku), ["CX2", "CX1"]);
+    assert.equal(found?.cheapestInTheLine.sku, "CX1");
+    assert.equal(`€${found?.cheapestInTheLineEurWithoutIpv4.toFixed(2)}`, withoutIpv4(4.99));
+    assert.equal(found?.cheapestOrderableEu.sku, "CPX2");
+  });
+
+  it("says nothing once any Cost-Optimized plan can be ordered again", () => {
+    for (const restocked of COST_OPTIMIZED_LINE) {
+      assert.equal(costOptimizedLineNobodyCanOrder(withAvailability(restocked.sku, true)), null, restocked.sku);
+    }
+  });
+
+  it("says nothing when the table has no Cost-Optimized line, or no plan orderable in the EU", () => {
+    assert.equal(costOptimizedLineNobodyCanOrder([inLine("CPX1", "Regular Performance", 6.49, true)]), null);
+    assert.equal(costOptimizedLineNobodyCanOrder([inLine("CX1", "Cost-Optimized", 4.99, false), inLine("CPX1", "Regular Performance", 6.49, true, "US")]), null);
+  });
+});
+
+describe("the paragraph on /hetzner-pricing-2026 that says every Cost-Optimized plan is unavailable", () => {
+  const OPENING = "<strong>Every Cost-Optimized plan is currently unavailable.</strong>";
+
+  it("is in the executive summary, once, while no Cost-Optimized plan can be ordered, and nowhere otherwise", async () => {
+    const { body } = await get("/hetzner-pricing-2026");
+    const summary = body.split('<div class="executive-summary">')[1]?.split("</div>")[0] ?? "";
+    assert.equal(summary.includes(OPENING), NO_COST_OPTIMIZED_PLAN_IS_ORDERABLE);
+    assert.equal(body.split(OPENING).length - 1, NO_COST_OPTIMIZED_PLAN_IS_ORDERABLE ? 1 : 0);
+  });
+
+  it("names the plans and the day of the page's availability read, Hetzner's price-adjustment figure for the cheapest of them and the cheapest plan orderable in the EU, linking both Hetzner pages", async (t) => {
+    if (!NO_COST_OPTIMIZED_PLAN_IS_ORDERABLE) return t.skip("a Cost-Optimized plan can be ordered, so the paragraph is not printed");
+    const { body } = await get("/hetzner-pricing-2026");
+    const paragraph = body.split(OPENING)[1]?.split("</p>")[0] ?? "";
+    const names = COST_OPTIMIZED_LINE.map(p => p.sku);
+    const cheapest = cheapestOf(COST_OPTIMIZED_LINE);
+    const entry = cheapestOf(HETZNER_CLOUD_PLANS.filter(isOrderableInTheEu));
+    assert.equal(
+      visible(paragraph).trim(),
+      `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]} are marked "currently unavailable" on hetzner.com (read ${HETZNER_AVAILABILITY_READ}). Hetzner's price-adjustment page lists ${cheapest.sku} at ${withoutIpv4(cheapest.eur)} a month without IPv4, but this plan cannot be ordered. ${entry.sku} is the cheapest orderable plan in the EU at €${entry.eur.toFixed(2)} a month, IPv4 included.`,
+    );
+    assert.deepEqual([...paragraph.matchAll(/<a href="([^"]+)"[^>]*>([^<]+)<\/a>/g)].map(([, href, text]) => `${text} -> ${href}`), [
+      "hetzner.com -> https://www.hetzner.com/cloud/cost-optimized/",
+      "price-adjustment page -> https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/",
+    ]);
+  });
+});
+
 describe("the pricing page prices what Hetzner sells today", () => {
   it("renders, so the assertions below are about a real page", async () => {
     const res = await get("/hetzner-pricing-2026");
@@ -378,10 +463,11 @@ describe("the pricing page prices what Hetzner sells today", () => {
       ...VOLUME_EUROS_AS_WRITTEN,
       ...volumeExamples(),
       ...STORAGE_BOX_EUROS_AS_WRITTEN,
+      withoutIpv4(cheapestOf(COST_OPTIMIZED_LINE).eur),
     ]);
     const quoted = new Set(eurosIn(visible(withoutItemsOrRowsHeadedByAnotherVendor(body))));
     const strays = [...quoted].filter(price => !allowed.has(price));
-    assert.deepEqual(strays, [], `prices with no plan, April row, dedicated-server figure, add-on, Object Storage, Volume or Storage Box price behind them: ${strays.join(", ")}`);
+    assert.deepEqual(strays, [], `prices with no plan, April row, dedicated-server figure, add-on, Object Storage, Volume or Storage Box price, or the cheapest Cost-Optimized plan's price less IPv4, behind them: ${strays.join(", ")}`);
   });
 
   it("quotes no dollar price that is not in the plan table, the April example, the Object Storage prices or the Volume price", async () => {
@@ -433,15 +519,17 @@ describe("every page that states a Hetzner entry price states the same one", () 
 
   it("names every route that prints the plan table's entry price", async () => {
     const clause = hetznerEntryPriceClause();
-    const routes = await everyRouteTheSitemapPublishes(`http://localhost:${serverPort}`);
-    const printing: string[] = [];
-    for (let at = 0; at < routes.length; at += 16) {
-      await Promise.all(routes.slice(at, at + 16).map(async route => {
-        const { status, body } = await get(route);
-        if (status === 200 && visible(body).includes(clause)) printing.push(route);
-      }));
-    }
-    assert.deepEqual(printing.sort(), [...PAGES_NAMING_HETZNER_PRICES].sort());
+    const printing = [...(await bodyOfEveryRoute())].filter(([, body]) => visible(body).includes(clause)).map(([route]) => route);
+    assert.deepEqual(printing.sort(), [...PAGES_PRINTING_THE_ENTRY_PRICE_CLAUSE].sort());
+  });
+
+  it("states neither withdrawn sentence of the old availability paragraph on any route, in body, meta or structured data", async () => {
+    const bodies = await bodyOfEveryRoute();
+    assert.deepEqual(PAGES_NAMING_HETZNER_PRICES.filter(page => !bodies.has(page)), [], `read ${bodies.size} routes`);
+    const stating = [...bodies].flatMap(([route, body]) =>
+      WITHDRAWN_AVAILABILITY_SENTENCES.filter(words => `${body} ${visible(body)}`.includes(words)).map(words => `${route}: "${words}"`),
+    );
+    assert.deepEqual(stating, []);
   });
 
   it("composes that price from the plan table rather than from a literal", () => {
