@@ -925,6 +925,24 @@
           "quote": "Platforms building multi-tenant SaaS or agentic applications choose this plan for sponsored free-tier infrastructure and up to $25,000 in paid-tier credits. Compute is billed at $0.106 per compute unit hour. Enrollment requires an active Neon Scale plan and team approval.",
           "url": "https://neon.com/docs/introduction/agent-plan.md",
           "read_on": "2026-10-11"
+        },
+        {
+          "text": "Neon gives $20 in free credits to try paid features, claimed through a promo link in the Neon Console.",
+          "quote": "Claim $20 in free credits to try paid features",
+          "url": "https://neon.com/pricing.md",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Neon's pricing page offers startups up to $100k in credits. The startup page describes the Databricks Startup Program, up to $200K in credits for Neon and Databricks for qualifying startups.",
+          "quote": "Qualifying startups can receive up to $200K in credits for Neon and Databricks.",
+          "url": "https://neon.com/startups",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "The Neon Open Source Program gives eligible open-source projects up to $5,000 a year in credits. The project must use a recognized open-source license and be self-hostable.",
+          "quote": "Eligible projects receive up to $5,000 yearly in credits and promotional support.",
+          "url": "https://neon.com/programs/open-source.md",
+          "read_on": "2026-10-11"
         }
       ]
     },
@@ -1274,10 +1292,10 @@
       },
       "conditions": [
         {
-          "text": "Free projects pause after 1 week of inactivity.",
-          "quote": "Free projects are paused after 1 week of inactivity.",
-          "url": "https://appwrite.io/pricing",
-          "read_on": "2026-10-05"
+          "text": "A Free project with no development activity in the Console for 7 days is paused. Traffic from users does not keep it active. A paused project is not accessible to its users and runs no backups, cron jobs or scheduled functions until it is reactivated in the Console.",
+          "quote": "projects on the Free plan with no development activity for 7 consecutive days will be automatically paused.",
+          "url": "https://appwrite.io/changelog/entry/2026-02-20-1",
+          "read_on": "2026-10-11"
         },
         {
           "text": "Free projects are deleted after 90 days paused.",
@@ -3404,7 +3422,7 @@
     {
       "vendor": "Groq",
       "category": "AI / ML",
-      "description": "Fast LLM inference on Groq's LPU hardware. Free plan: gpt-oss-120b, gpt-oss-20b and Qwen3.8 27B, each at 30 requests a minute, 1,000 requests and 200,000 tokens a day, plus Whisper speech-to-text at 2,000 requests a day. Each of the three free models is also limited to 8,000 tokens a minute, and Groq applies whichever limit is reached first. On the free plan, gpt-oss-safeguard-20b is limited to 3 requests a minute, 1,000 requests a day, 2,000 tokens a minute and 200,000 tokens a day. Qwen3.8 27B and gpt-oss-safeguard-20b are Preview models. Groq says Preview models \"are intended for evaluation purposes only and should not be used in production environments as they may be discontinued at short notice\". Llama 3.3 70B and Llama 3.1 8B left the free and developer plans on 2026-08-16 and are Enterprise-only. Orpheus text-to-speech (English and Saudi Arabic) is also on the free plan, at 10 requests a minute, 100 requests and 3,600 tokens a day. Developer plan prices per 1M tokens: gpt-oss-120b $0.15/$0.60; gpt-oss-20b $0.075/$0.30. Qwen3.8 27B costs $0.80 input and $4.00 output per 1M tokens on the Developer plan. Orpheus text-to-speech costs $22 per 1M characters in English and $40 in Saudi Arabic.",
+      "description": "Fast LLM inference on Groq's LPU hardware. Free plan: gpt-oss-120b, gpt-oss-20b and Qwen3.8 27B, each at 30 requests a minute, 1,000 requests and 200,000 tokens a day, plus Whisper speech-to-text at 2,000 requests a day. Each of the three free models is also limited to 8,000 tokens a minute, and Groq applies whichever limit is reached first. Whisper is also limited to 20 requests a minute, 7,200 audio seconds an hour and 28,800 audio seconds (8 hours of audio) a day. On the free plan, gpt-oss-safeguard-20b is limited to 3 requests a minute, 1,000 requests a day, 2,000 tokens a minute and 200,000 tokens a day. Qwen3.8 27B, gpt-oss-safeguard-20b, Orpheus Arabic Saudi and Orpheus V1 English are Preview models. Groq says Preview models \"are intended for evaluation purposes only and should not be used in production environments as they may be discontinued at short notice\". Llama 3.3 70B and Llama 3.1 8B left the free and developer plans on 2026-08-16 and are Enterprise-only. Orpheus text-to-speech (English and Saudi Arabic) is also on the free plan, at 10 requests a minute, 100 requests and 3,600 tokens a day. Developer plan prices per 1M tokens: gpt-oss-120b $0.15/$0.60; gpt-oss-20b $0.075/$0.30. Qwen3.8 27B costs $0.80 input and $4.00 output per 1M tokens on the Developer plan. Orpheus text-to-speech costs $22 per 1M characters in English and $40 in Saudi Arabic.",
       "tier": "Free",
       "url": "https://console.groq.com/docs/rate-limits",
       "tags": [
@@ -8106,6 +8124,18 @@
           "quote": "Purchases of Prepaid Service Credits are non-refundable.",
           "url": "https://api-dashboard.search.brave.com/terms-of-service/credit-terms",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "Brave's February launch post says the $5 monthly credit requires attributing the Brave Search API on the project's website, while Brave's Terms of Use (updated September 1, 2026) make attribution optional. Brave's help page describes getting the credit with a card at signup and does not mention attribution.",
+          "quote": "Customer may provide attribution to Provider in the Customer Applications.",
+          "url": "https://api-dashboard.search.brave.com/terms-of-service",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Brave keeps a record of search queries sent through an API account for up to 90 days for billing and troubleshooting. Zero data retention is available only for Enterprise customers.",
+          "quote": "A record of search queries submitted to the Brave Search API via a customer's Search API account is retained for a maximum of 90 days for the purpose of billing Search API account holders and for troubleshooting subject to Brave's legal obligations.",
+          "url": "https://api-dashboard.search.brave.com/documentation/resources/privacy-notice",
+          "read_on": "2026-10-11"
         }
       ],
       "payment_protocols": [
@@ -21309,7 +21339,7 @@
     {
       "vendor": "Pollinations.AI",
       "category": "AI / ML",
-      "description": "Pollen credits earned by completing quests. No credit card is required. On 2026-10-08, the nine setup quests paid 4 Pollen in total, worth about $4 because 1 Pollen is worth about $1. The documented API for text, image, audio and video requires a GitHub sign-in and an API key. Free use draws from Quest Pollen, with no promise of future grants. Paid-only models, such as Claude models, DeepSeek V4 Pro and GLM 5.2, need purchased Pollen. To run Claude Code on free Quest Pollen, use models that are not paid-only. Quest Pollen can pay for GPT-6 Sol, GPT-6 Luna, Kimi K3 and DeepSeek V4 Flash. The command \"polli harness claude-code on\" connects Claude Code to Pollinations and uses openai/gpt-6-sol unless you specify another model. GPT-6 Sol costs 2 Pollen per million input tokens and 10 Pollen per million output tokens. Older keyless endpoints for image and text still answered on 2026-10-05, but the current docs do not cover them and state no terms for them.",
+      "description": "Pollen credits earned by completing quests. No credit card is required. On 2026-10-11, the nine setup quests paid 3 Pollen in total, worth about $3 because 1 Pollen is worth about $1. The documented API for text, image, audio and video requires a GitHub sign-in and an API key. Free use draws from Quest Pollen, with no promise of future grants. Paid-only models, such as Claude models, DeepSeek V4 Pro and GLM 5.2, need purchased Pollen. To run Claude Code on free Quest Pollen, use models that are not paid-only. Quest Pollen can pay for GPT-6 Sol, GPT-6 Luna, Kimi K3 and DeepSeek V4 Flash. The command \"polli harness claude-code on\" connects Claude Code to Pollinations and uses openai/gpt-6-sol unless you specify another model. To use Pollinations, start Claude Code with \"claude --settings ~/.pollinations/claude-code.json\". Plain \"claude\" keeps your own Claude login and does not use Pollinations. GPT-6 Sol costs 2 Pollen per million input tokens and 10 Pollen per million output tokens. Older keyless endpoints for image and text still answered on 2026-10-05, but the current docs do not cover them and state no terms for them.",
       "tier": "Free Credits",
       "url": "https://github.com/pollinations/pollinations/blob/main/enter.pollinations.ai/POLLEN_FAQ.md",
       "tags": [
@@ -31543,7 +31573,7 @@
     {
       "vendor": "xAI",
       "category": "AI / ML",
-      "description": "Grok API, pay as you go: sign up at console.x.ai, then load it with credits. grok-4.7 $2.00/$6.00 (per 1M tokens, under 200k prompt tokens). grok-4.3 $1.25/$2.50 (under 200k prompt tokens). grok-build-0.1 $1.00/$2.00 (under 200k prompt tokens). grok-4.6 and grok-4.5 cost the same as grok-4.7, and grok-4.20 (0309 reasoning, non-reasoning and multi-agent) the same as grok-4.3. Grok 4.1 Fast was retired on 2026-05-15; its model names now route to grok-4.3 at grok-4.3 rates. Image generation: grok-imagine-image $0.02 per image; grok-imagine-image-2.0 from $0.04 per 1K image at low quality. grok-imagine-image-quality ($0.05 per 1K image) is retired on 2026-11-02, when its requests are served by grok-imagine-image-2.0 at low quality. Voice API: speech-to-text costs $0.10 per hour of audio (REST) or $0.20 per hour (streaming), text-to-speech $15.00 per 1M characters, and speech-to-speech with grok-voice-think-fast-2.0 $0.08 a minute ($4.80 an hour).",
+      "description": "Grok API, pay as you go: sign up at console.x.ai, then load it with credits. grok-4.7 $2.00/$6.00 (per 1M tokens, under 200k prompt tokens). grok-4.3 $1.25/$2.50 (under 200k prompt tokens). grok-build-0.1 $1.00/$2.00 (under 200k prompt tokens). grok-4.6 and grok-4.5 cost the same as grok-4.7, and grok-4.20 (0309 reasoning, non-reasoning and multi-agent) the same as grok-4.3. Grok 4.1 Fast was retired on 2026-05-15; its model names now route to grok-4.3 at grok-4.3 rates. Image generation: grok-imagine-image $0.02 per image; grok-imagine-image-2.0 from $0.04 per 1K image at low quality. grok-imagine-image-quality ($0.05 per 1K image) is retired on 2026-11-02, when its requests are served by grok-imagine-image-2.0 at low quality. Voice API: speech-to-text costs $0.10 per hour of audio (REST) or $0.20 per hour (streaming), text-to-speech $15.00 per 1M characters, and speech-to-speech with grok-voice-think-fast-2.0 $0.08 a minute ($4.80 an hour). Video generation: grok-imagine-video-1.5 $0.08 per second at 480p, $0.14 at 720p, $0.25 at 1080p. grok-imagine-video-1.5-lite $0.02 per second at 480p, $0.03 at 720p, $0.14 at 1080p. grok-imagine-video $0.05 per second at 480p, $0.07 at 720p. Batch discounts: grok-4.3, grok-4.20-0309-reasoning, grok-4.20-0309-non-reasoning, and grok-4.20-multi-agent-0309 get 20% off. Other models have no batch discount.",
       "tier": "Pay-as-you-go",
       "url": "https://docs.x.ai/developers/pricing",
       "tags": [
@@ -32605,10 +32635,16 @@
           "read_on": "2026-10-05"
         },
         {
-          "text": "Models run mainly in the United States. Requests may be routed to Europe or Singapore for capacity.",
-          "quote": "Ollama hosts models and compute resources primarily in the United States. To serve global demand, we may route to Europe and Singapore for additional capacity.",
+          "text": "Models run mainly in the United States. Requests may be routed to Europe for capacity.",
+          "quote": "Ollama hosts models and compute resources primarily in the United States. To serve global demand, we may route to Europe for additional capacity.",
           "url": "https://ollama.com/pricing",
-          "read_on": "2026-10-05"
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Purchased usage credits expire one year after they are added to the account.",
+          "quote": "Purchased usage credits expire one year after they are added to your account",
+          "url": "https://ollama.com/terms",
+          "read_on": "2026-10-11"
         },
         {
           "text": "Requests beyond the 1 concurrent request wait in a queue. When the queue is full, new requests are rejected until a slot frees up.",
@@ -35823,6 +35859,45 @@
         "outcome": "states_no_terms",
         "detail": "the page names Hetzner Inference API but states no amount, tier or rate we can read, and its markup carries no structured data"
       }
+    },
+    {
+      "vendor": "WhatsApp Business Platform",
+      "category": "Messaging",
+      "description": "1,000 free service messages (non-template replies inside the 24-hour customer service window) a month per business phone number, since 2026-10-01. Service messages after 1,000 and template messages are charged. Rates depend on message category and recipient country code.",
+      "tier": "Free",
+      "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "tags": [
+        "messaging",
+        "whatsapp",
+        "api"
+      ],
+      "verifiedDate": "2026-10-11",
+      "conditions": [
+        {
+          "text": "If a Messaging account has no payment method, Meta delivers service messages within the free tier but does not deliver them after the free tier is used.",
+          "quote": "If businesses do not have a payment method for their Messaging account(s), Meta will deliver service messages within the free tier but not deliver them after the free tier has been used.",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Utility templates sent inside an open customer service window were free before 2026-10-01. Since 2026-10-01, they are charged.",
+          "quote": "Utility messages sent in response to users (thus in an open customer service window), which became free as of July 1, 2025.",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Click to WhatsApp ads: When a user messages from such an ad on Android or iOS and the business replies within the customer service window, Meta does not charge for that reply or for the business's marketing, utility, authentication and service messages to that user for up to 7 days. Meta Business Agent messages are still charged.",
+          "quote": "If you respond within the customer service window with a marketing, utility, authentication or service message: That message is not charged and opens a Free Entry Point (“FEP”) window, starting from the time when you responded. The FEP window may remain open for up to 7 days.",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Meta may update pricing only on January 1, April 1, July 1 or October 1. The next possible change is 2027-01-01.",
+          "quote": "Meta may update pricing only on the 1st day of each quarter, thus up to 4 times per year: January 1, April 1, July 1, and/or October 1.",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+          "read_on": "2026-10-11"
+        }
+      ]
     }
   ],
   "changes": []

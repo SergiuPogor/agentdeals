@@ -16413,6 +16413,20 @@
       "category": "AI / ML",
       "alternatives": [],
       "recorded_date": "2026-10-10"
+    },
+    {
+      "vendor": "WhatsApp Business Platform",
+      "change_type": "limits_reduced",
+      "date": "2026-10-01",
+      "date_source": "hand_written",
+      "summary": "Meta resumed charging for WhatsApp service messages on 2026-10-01. Each business phone number gets 1,000 free service messages a month, and Meta charges from the 1,001st at the recipient market's service rate. Service messages had been free without a monthly limit since 2024-11-01. The same day, Meta began charging for utility templates sent inside an open customer service window, at the recipient market's utility rate; they had been free since 2025-07-01.",
+      "previous_state": "\"Service messages, which became free as of Nov. 1, 2024.\" \"Utility messages sent in response to users (thus in an open customer service window), which became free as of July 1, 2025.\" (Meta's pricing page, Prior updates, under \"Charging for messages that were previously free\", effective October 1, 2026)",
+      "current_state": "\"Meta provides every business phone number with a free tier of 1,000 service messages per month.\" \"Meta charges as of the 1,001st service message per month, after the free tier has been used.\" (Meta's pricing page, updated 2026-09-30) Utility templates sent in an open window are charged at the recipient market's utility rate from Meta's rate card effective October 1, 2026, for example $0.0034 a message to North America.",
+      "impact": "medium",
+      "source_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "category": "Messaging",
+      "alternatives": [],
+      "recorded_date": "2026-10-11"
     }
   ]
 }
