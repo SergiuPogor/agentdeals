@@ -107,7 +107,8 @@ describe(`${PAGE} on long prompts and prepaid credits`, () => {
 
   it("says prepaid credits expire after 12 months and that a $0 balance stops every API key on the billing account", () => {
     const text = readable(page);
-    assert.ok(text.includes("and stop being used when the Prepay balance reaches $0. Prepaid credits expire 12 months after purchase and are non-refundable. When the balance reaches $0, every API key on the billing account stops working until you add credits."));
+    assert.ok(text.includes("and stop being used when the Prepay balance reaches $0. Prepaid credits expire 12 months after purchase and are non-refundable. "));
+    assert.ok(text.includes(" When the balance reaches $0, every API key on the billing account stops working until you add credits."));
   });
 
   it("links the move to Prepay to Google's billing page and the reported cutover date to the article that reports it", () => {
@@ -195,13 +196,13 @@ describe(`${PAGE} on accounts billed by invoice`, () => {
 });
 
 describe(`${PAGE} on credits that still read as depleted after buying them`, () => {
-  it("ends the paragraph with the depleted-credits error, that no manual billing sync exists, the checks to make, and where to report it", () => {
-    assert.ok(withoutTags(prepayParagraph(page)).endsWith(
+  it("follows the negative balance with the depleted-credits error, that no manual billing sync exists, the checks to make, and where to report it", () => {
+    assert.ok(withoutTags(prepayParagraph(page)).includes(
       "A negative balance is deducted from the next credit purchase. " +
       'After buying credits, calls may still fail with "Your prepayment credits are depleted". ' +
       "Google staff say there is no manual billing sync to request. " +
       "Check that the credits are a Prepay balance on the AI Studio Billing page, not a spend cap or funds in the Google Cloud billing account, and that the API key belongs to a project on that billing account. " +
-      "Retry the calls; if the error continues, post the exact error message and request time on Google's AI developer forum.",
+      "Retry the calls; if the error continues, post the exact error message and request time on Google's AI developer forum. ",
     ));
   });
 
@@ -209,6 +210,44 @@ describe(`${PAGE} on credits that still read as depleted after buying them`, () 
     const paragraph = prepayParagraph(page);
     assert.ok(paragraph.includes('<a href="https://discuss.ai.google.dev/t/manual-sync-request-prepayment-credits-depleted-429-despite-funded-account/172183" target="_blank" rel="noopener">Google staff say</a> there is no manual billing sync'), paragraph);
     assert.ok(paragraph.includes('request time on <a href="https://discuss.ai.google.dev/" target="_blank" rel="noopener">Google\'s AI developer forum</a>.'), paragraph);
+  });
+});
+
+describe(`${PAGE} on a billing account AI Studio calls inactive or unsupported`, () => {
+  it("ends the paragraph with the message, what Google's billing FAQ says it means, where to check, what to do for a Free Trial or a Closed account, and that there is no sync to request", () => {
+    assert.ok(withoutTags(prepayParagraph(page)).endsWith(
+      "request time on Google's AI developer forum. " +
+      'The AI Studio Billing page may show "The billing account type is inactive or unsupported". ' +
+      "Google's billing FAQ says this means the billing account's type or status is not eligible for the Paid Tier. " +
+      "Check the Cloud Console for the account's status. " +
+      "For a Free Trial account, activate billing in AI Studio. " +
+      "For a Closed account, reopen it. " +
+      "There is no manual billing sync to request.",
+    ));
+  });
+
+  it("links Google's billing FAQ to its answer on eligible accounts", () => {
+    const paragraph = prepayParagraph(page);
+    assert.ok(paragraph.includes('<a href="https://ai.google.dev/gemini-api/docs/billing#eligible-accounts" target="_blank" rel="noopener">Google\'s billing FAQ</a> says this means the billing account\'s type or status is not eligible for the Paid Tier.'), paragraph);
+  });
+});
+
+const PREPAY_BALANCE_THREAD = "https://discuss.ai.google.dev/t/trapped-prepay-balance-14-73-api-blocked-and-gcp-billing-account-split-disconnect/182319";
+
+describe(`${PAGE} on Prepay credits when a project moves or the billing account closes`, () => {
+  it("follows the 12-month expiry with the credits staying on the account they were bought on, no transfer between accounts and the forfeit on closing, before the $0 stop", () => {
+    const text = withoutTags(prepayParagraph(page));
+    assert.ok(text.includes(
+      "Prepaid credits expire 12 months after purchase and are non-refundable. " +
+      "Prepay credits remain with the Cloud Billing account they were purchased on, so a project moving to another account will not use them. " +
+      "Google staff state funds cannot be transferred between billing accounts, and closing the account forfeits any remaining credits. " +
+      "When the balance reaches $0, every API key on the billing account stops working until you add credits.",
+    ), text);
+  });
+
+  it("links what Google staff state to their reply", () => {
+    const paragraph = prepayParagraph(page);
+    assert.ok(paragraph.includes(`<a href="${PREPAY_BALANCE_THREAD}" target="_blank" rel="noopener">Google staff state</a> funds cannot be transferred between billing accounts`), paragraph);
   });
 });
 
