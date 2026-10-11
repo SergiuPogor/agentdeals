@@ -5,6 +5,8 @@ import { fileURLToPath } from "node:url";
 import { hardcodedRowsCarryingASlug } from "./hardcoded-vendor-rows.ts";
 import { searchRecordingCalls } from "./search-recording-paths.ts";
 import { recordRestoringTheFreeTier } from "../dist/data.js";
+import { offerRetired } from "../dist/retirement.js";
+import { supersedingChange } from "../dist/superseded-description.js";
 
 export const HEADROOM = 0.25;
 
@@ -162,6 +164,20 @@ export function vendorsTheChangeLogEnds(): Population {
     ended++;
   }
   return { size: ended, read: "vendors whose free tier the change log ends" };
+}
+
+export function listingsWhoseStoredTermsStand(): Population {
+  const REPO = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
+  const at = process.env.AGENTDEALS_CHANGES_PATH || path.join(REPO, "data", "deal_changes.json");
+  const changesByVendor = new Map<string, Parameters<typeof supersedingChange>[1][number][]>();
+  for (const change of JSON.parse(readFileSync(at, "utf-8")).changes) {
+    const key = change.vendor.toLowerCase();
+    changesByVendor.set(key, [...(changesByVendor.get(key) ?? []), change]);
+  }
+  const standing = (catalogueOffers() as Array<Parameters<typeof supersedingChange>[0] & { vendor: string; tier: string }>).filter(
+    (offer) => !offerRetired(offer) && !supersedingChange(offer, changesByVendor.get(offer.vendor.toLowerCase()) ?? []),
+  );
+  return { size: standing.length, read: "listings neither retired nor superseded by a later change" };
 }
 
 export function rowsCarryingAVendorSlug(): Population {
