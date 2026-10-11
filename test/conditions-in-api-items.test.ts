@@ -5,7 +5,7 @@ import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { assertPopulationFloor } from "./population-floor.ts";
+import { assertCoversPopulation, assertPopulationFloor, listingsWhoseStoredTermsStand } from "./population-floor.ts";
 
 type Offer = import("../src/types.ts").Offer;
 type DealChange = import("../src/types.ts").DealChange;
@@ -239,8 +239,8 @@ describe("every API item and MCP result that prints a listing's description in f
 
   after(() => server?.proc.kill());
 
-  it("reads enough full descriptions for the check to be able to fail", () => {
-    assertPopulationFloor(printed.length, 1900, "full descriptions printed in API items and MCP results");
+  it("prints in full the description of every listing whose stored terms stand, so the check reads the whole catalogue", () => {
+    assertCoversPopulation(new Set(printed.map(one => one.code)).size, listingsWhoseStoredTermsStand(), "listings whose description an API item or MCP result printed in full");
     assertPopulationFloor(new Set(printed.map(one => one.surface)).size, 20, "API routes and MCP calls printing a full description");
   });
 
