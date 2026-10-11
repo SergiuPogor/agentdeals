@@ -6708,7 +6708,7 @@ interface AlternativesPageConfig {
   contextHtml: string;
   tag: string;
   primaryVendor: string;
-  notAMigrationGuide?: true;
+  notAnAlternativesGuide?: true;
   serviceMatrixHtml?: string;
   hubDesc: string;
 }
@@ -8590,18 +8590,19 @@ const ALTERNATIVES_PAGE_CONTENT: Omit<AlternativesPageConfig, "hubDesc">[] = [
     contextHtml: "",
     tag: MISTRAL_PRICES_SLUG,
     primaryVendor: "Mistral AI",
-    notAMigrationGuide: true,
+    notAnAlternativesGuide: true,
   },
 ];
 
 const ALTERNATIVES_PAGES: AlternativesPageConfig[] = ALTERNATIVES_PAGE_CONTENT.map(page => ({ ...page, hubDesc: guideBlurb(page.slug) }));
+const ALTERNATIVES_GUIDES = ALTERNATIVES_PAGES.filter(page => !page.notAnAlternativesGuide);
 
 const alternativesPageMap = new Map<string, AlternativesPageConfig>();
 const editorialByVendor = new Map<string, AlternativesPageConfig>();
 const altPagesByVendor = new Map<string, AlternativesPageConfig[]>();
 for (const page of ALTERNATIVES_PAGES) {
   alternativesPageMap.set(page.slug, page);
-  if (!page.notAMigrationGuide) editorialByVendor.set(page.primaryVendor.toLowerCase(), page);
+  if (!page.notAnAlternativesGuide) editorialByVendor.set(page.primaryVendor.toLowerCase(), page);
   const key = page.primaryVendor.toLowerCase();
   if (!altPagesByVendor.has(key)) altPagesByVendor.set(key, []);
   altPagesByVendor.get(key)!.push(page);
@@ -23993,7 +23994,7 @@ function buildStabilityDashboardPage(): string {
     const latestChange = entry.changes.reduce((latest, c) => c.date > (latest?.date ?? "") ? c : latest, entry.changes[0]);
     const changeTypeLabel = latestChange?.change_type.replace(/_/g, " ") ?? "";
 
-    const editorialLink = ALTERNATIVES_PAGES.find(p =>
+    const editorialLink = ALTERNATIVES_GUIDES.find(p =>
       p.primaryVendor.toLowerCase() === entry.vendor.toLowerCase() ||
       p.slug.includes(toVendorSlug(entry.vendor))
     );
@@ -26964,7 +26965,7 @@ function buildShutdownTrackerPage(): string {
     const stabColor = stability === "volatile" ? "#f85149" : stability === "watch" ? "#d29922" : stability === "improving" ? "#3fb950" : "var(--text-dim)";
     const color = urgencyColor(s.deadline);
     const vendorOffer = offers.find(o => toSlug(o.vendor) === s.vendorSlug);
-    const editorialLink = ALTERNATIVES_PAGES.find(p =>
+    const editorialLink = ALTERNATIVES_GUIDES.find(p =>
       p.primaryVendor.toLowerCase() === (vendorOffer?.vendor ?? "").toLowerCase() ||
       p.slug.includes(s.vendorSlug)
     );

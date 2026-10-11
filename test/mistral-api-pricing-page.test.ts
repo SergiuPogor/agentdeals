@@ -15,11 +15,13 @@ const ROUTE = "/mistral-api-pricing-2026";
 const DATA_FILE = path.join(REPO, "data", "mistral_api_prices.json");
 const committed: MistralPrices = JSON.parse(readFileSync(DATA_FILE, "utf8"));
 
-function startServer(env: Record<string, string> = {}): Promise<{ child: ChildProcess; base: string }> {
+function startServer(env: Record<string, string> = {}, clockAt?: string): Promise<{ child: ChildProcess; base: string }> {
+  const clockPreload = clockAt === undefined ? [] : ["--import", path.join(REPO, "scripts", "shifted-clock.mjs")];
+  const clockShift: Record<string, string> = clockAt === undefined ? {} : { AGENTDEALS_CLOCK_SHIFT_MS: String(Date.parse(clockAt) - Date.now()) };
   return new Promise((resolve, reject) => {
-    const child = spawn("node", [path.join(REPO, "dist", "serve.js")], {
+    const child = spawn("node", [...clockPreload, path.join(REPO, "dist", "serve.js")], {
       stdio: ["pipe", "pipe", "pipe"],
-      env: { ...process.env, PORT: "0", BASE_URL: "http://localhost", TZ: "UTC", ...env },
+      env: { ...process.env, PORT: "0", BASE_URL: "http://localhost", TZ: "UTC", ...env, ...clockShift },
     });
     const timeout = setTimeout(() => { child.kill(); reject(new Error("Server startup timeout")); }, 30000);
     child.stderr!.on("data", (data: Buffer) => {
@@ -89,7 +91,7 @@ function figuresHeld(prices: MistralPrices): Set<string> {
 }
 
 function servedFrom(dataFile: string | null) {
-  const state = { page: "", status: 0, sitemap: "", guides: "", hub: "", llms: "", vendor: "", alternativeTo: "" };
+  const state = { page: "", status: 0, sitemap: "", guides: "", hub: "", llms: "", vendor: "" };
   let server: ChildProcess | null = null;
   before(async () => {
     const { child, base } = await startServer(dataFile ? { AGENTDEALS_MISTRAL_PRICES_PATH: dataFile } : {});
@@ -102,7 +104,6 @@ function servedFrom(dataFile: string | null) {
     state.hub = await (await fetch(`${base}/alternatives`)).text();
     state.llms = await (await fetch(`${base}/llms.txt`)).text();
     state.vendor = await (await fetch(`${base}/vendor/mistral-ai`)).text();
-    state.alternativeTo = await (await fetch(`${base}/alternative-to/mistral-ai`)).text();
   });
   after(() => { if (server) server.kill(); });
   return state;
@@ -164,11 +165,6 @@ describe("the Mistral API pricing guide, built from data/mistral_api_prices.json
     assert.ok(served.vendor.includes(`href="${ROUTE}"`), "/vendor/mistral-ai does not link the guide");
   });
 
-  it("is not offered on /alternative-to/mistral-ai as a migration guide, since it recommends no alternative", () => {
-    assert.ok(served.alternativeTo.includes("<h1>"), "/alternative-to/mistral-ai did not render");
-    assert.doesNotMatch(served.alternativeTo, /class="editorial-cta"/);
-  });
-
   it("is dated by the page-dates ledger like every other page", () => {
     const ledger = JSON.parse(readFileSync(path.join(REPO, "data", "page-lastmod.json"), "utf8"));
     const entry = ledger.pages[ROUTE];
@@ -182,6 +178,57 @@ describe("the Mistral API pricing guide, built from data/mistral_api_prices.json
     assert.strictEqual(jsonLd.headline, committed.title);
     assert.strictEqual(jsonLd.description, committed.meta_description);
     assert.strictEqual(jsonLd.datePublished, committed.published);
+  });
+});
+
+describe("the pages that link a vendor's alternatives guide", () => {
+  const SERVED_ON = "2026-10-11T12:00:00Z";
+  const MISTRAL_SHUTDOWN = {
+    vendor: "Mistral AI",
+    change_type: "product_deprecated",
+    date: "2026-12-15",
+    date_source: "vendor_page",
+    summary: "A Mistral AI model leaves the API on 2026-12-15.",
+    previous_state: "The model could be called through the API.",
+    current_state: "The model cannot be called through the API.",
+    impact: "medium",
+    source_url: "https://docs.mistral.ai/getting-started/models/",
+    category: "AI / ML",
+    alternatives: [],
+    recorded_date: "2026-10-01",
+    listing_effect: "none",
+  };
+  const scratch = mkdtempSync(path.join(tmpdir(), "mistral-guide-links-"));
+  const changesPath = path.join(scratch, "deal_changes.json");
+  const pages = { "/stability": "", "/shutdowns": "", "/alternative-to/mistral-ai": "" };
+  let server: ChildProcess | null = null;
+
+  before(async () => {
+    const committedChanges = JSON.parse(readFileSync(path.join(REPO, "data", "deal_changes.json"), "utf8"));
+    writeFileSync(changesPath, JSON.stringify({ ...committedChanges, changes: [...committedChanges.changes, MISTRAL_SHUTDOWN] }));
+    const { child, base } = await startServer({ AGENTDEALS_CHANGES_PATH: changesPath }, SERVED_ON);
+    server = child;
+    for (const route of Object.keys(pages) as (keyof typeof pages)[]) pages[route] = await (await fetch(`${base}${route}`)).text();
+  });
+  after(() => {
+    if (server) server.kill();
+    rmSync(scratch, { recursive: true, force: true });
+  });
+
+  const anchorTextsLinking = (page: string, href: string) =>
+    [...page.matchAll(/<a ([^>]*)>([\s\S]*?)<\/a>/g)].filter(([, attributes]) => attributes.includes(`href="${href}"`)).map(([, , inner]) => cellText(inner));
+
+  it("print Mistral AI's stability row and a card for its scheduled shutdown", () => {
+    assert.ok(pages["/stability"].includes('href="/vendor/mistral-ai"'), "/stability prints no Mistral AI row");
+    assert.ok(pages["/shutdowns"].includes(MISTRAL_SHUTDOWN.summary), "/shutdowns prints no card for the Mistral AI shutdown");
+    assert.ok(pages["/alternative-to/mistral-ai"].includes("<h1>"), "/alternative-to/mistral-ai did not render");
+  });
+
+  it("never offer the Mistral API pricing guide as alternatives or as a migration guide, since it recommends no alternative", () => {
+    for (const [route, page] of Object.entries(pages)) {
+      assert.deepStrictEqual(anchorTextsLinking(page, ROUTE).filter((text) => /alternatives|migration/i.test(text)), [], route);
+    }
+    assert.doesNotMatch(pages["/alternative-to/mistral-ai"], /class="editorial-cta"/);
   });
 });
 
