@@ -41,6 +41,8 @@ const WITHDRAWN_FROM_THE_PAGE = [
   "Cloud Functions to load data",
   "Cloud Functions + Cloud Storage",
   "12-month: VMs, SQL",
+  "All stacks below can run at zero cost",
+  "Add Cloud Shell for web-based SSH access",
 ];
 
 const STATED_ON_THE_PAGE = [
@@ -102,6 +104,38 @@ const GUIDE_BLURBS: Record<string, string> = {
 
 const FREE_TRIAL_LIMITS = "During the trial you cannot add GPUs to VM instances, use Google Cloud Marketplace, request a quota increase or create Windows Server VMs, and the credit does not pay for partner generative AI models offered as a managed API (model as a service).";
 const GOOGLE_FREE_FEATURES = "https://docs.cloud.google.com/free/docs/free-cloud-features";
+
+const STACKS_INTRO =
+  "Common developer use cases and which GCP free services to combine. The stacks below can run within free tier limits, but the always-on server also pays for its external IPv4 address.";
+
+const ALWAYS_ON_SERVER =
+  "e2-micro VM (us-central1) + 30 GB persistent disk (choose Standard, the console defaults to balanced, which is billed) + Cloud Monitoring. Great for bots, cron jobs, small web servers. Add Cloud Shell for web-based SSH. An external IPv4 address costs about $3.65 a month, while external IPv6 is free.";
+
+const CHARGES_ON_THE_FREE_VM: [string, string, string, string][] = [
+  [
+    "External IPv4 address",
+    "~$3.65/mo always on",
+    "An external IPv4 address in use on a VM, including the free e2-micro, costs $0.005 an hour. The free tier covers one hour a month. A VM running all month pays about $3.65 for it. External IPv6 addresses are free. An ephemeral address is charged only while the VM runs.",
+    "costs $0.005 an hour -> https://cloud.google.com/vpc/network-pricing",
+  ],
+  [
+    "Console disk default",
+    "~$3/mo for 30 GB",
+    "The free tier covers 30 GB-months of standard persistent disk. A disk created in the Google Cloud console defaults to balanced persistent disk, which the free tier does not cover (about $0.10 per GiB a month in us-central1, about $3 for 30 GiB). Choose Standard persistent disk, or create the VM with the gcloud CLI, which defaults to standard.",
+    "defaults to balanced persistent disk -> https://docs.cloud.google.com/compute/docs/disks/persistent-disks",
+  ],
+];
+
+function hiddenCostCards(html: string): { title: string; cost: string; text: string; links: string[] }[] {
+  const section = html.slice(html.indexOf('<h2 id="gotchas">'));
+  const cards = section.slice(0, section.indexOf('<div class="context-box">'));
+  return [...cards.matchAll(/<div class="diff-card"[^>]*>\s*<h3>([\s\S]*?) <span[^>]*>([\s\S]*?)<\/span><\/h3>\s*<p class="diff-desc">([\s\S]*?)<\/p>/g)].map(([, title, cost, desc]) => ({
+    title: textOf(title),
+    cost: textOf(cost),
+    text: textOf(desc),
+    links: [...desc.matchAll(/<a href="([^"]*)" target="_blank" rel="nofollow noopener">([\s\S]*?)<\/a>/g)].map(([, href, words]) => `${textOf(words)} -> ${href}`),
+  }));
+}
 
 const CONTROLS = [
   "Always Free includes one e2-micro VM a month in us-west1, us-central1 or us-east1, with 30 GB of standard persistent disk.",
@@ -263,6 +297,30 @@ describe("the GCP free tier guide states Google's terms as Google's own pages st
       ].filter((line): line is string => line !== null);
     });
     assert.deepStrictEqual(wrong, []);
+  });
+
+  it("says the stacks run within free tier limits except for the always-on server's external IPv4 address", () => {
+    assert.ok(textOf(served.get(PAGE)!).includes(STACKS_INTRO));
+  });
+
+  it("tells the always-on server to choose standard disk over the console's balanced default and gives its external IPv4 cost", () => {
+    assert.ok(textOf(served.get(PAGE)!).includes(ALWAYS_ON_SERVER));
+  });
+
+  it("follows the e2-micro region card with the external IPv4 and console disk cards, each linking the Google page it states", () => {
+    const cards = hiddenCostCards(served.get(PAGE)!);
+    const titles = cards.map((card) => card.title);
+    const region = titles.indexOf("e2-micro region restriction");
+    assert.ok(region >= 0, titles.join(" | "));
+    assert.deepStrictEqual(titles.slice(region + 1, region + 3), CHARGES_ON_THE_FREE_VM.map(([title]) => title));
+    for (const [title, cost, text, link] of CHARGES_ON_THE_FREE_VM) {
+      assert.deepStrictEqual(cards.find((card) => card.title === title), { title, cost, text, links: [link] });
+    }
+  });
+
+  it("keeps the other hidden cost cards free of links", () => {
+    const linked = hiddenCostCards(served.get(PAGE)!).filter((card) => card.links.length > 0).map((card) => card.title);
+    assert.deepStrictEqual(linked, CHARGES_ON_THE_FREE_VM.map(([title]) => title));
   });
 
   it("keeps the free VM sentence, Cloud Build's quota, the load balancer cost and the Gemini API row", () => {

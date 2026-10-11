@@ -34017,11 +34017,14 @@ function buildGcpFreeTier2026Page(): string {
     title: string;
     desc: string;
     cost: string;
+    links?: { text: string; url: string }[];
   }
 
   const gotchas: GotchaItem[] = [
     { title: "Egress charges", desc: "Premium Tier is the default. From us-central1 it costs $0.12 per GiB (up to 1,024 GiB) to North America, Europe and Asia (excluding Korea and Indonesia), and up to $0.23 elsewhere. The Free Tier covers 1 GB a month from North America to every destination except China and Australia, on Premium Tier only; Cloud Storage's Free Tier adds 100 GB. Standard Tier's first 200 GiB a month are free, per account. Cross-region transfer is also billed.", cost: "$0.12–0.23/GiB" },
     { title: "e2-micro region restriction", desc: "The free e2-micro VM is only free in us-west1, us-central1, and us-east1. Launching in any other region (including Europe, Asia) will incur standard Compute Engine charges.", cost: "~$7/mo wrong region" },
+    { title: "External IPv4 address", desc: "An external IPv4 address in use on a VM, including the free e2-micro, costs $0.005 an hour. The free tier covers one hour a month. A VM running all month pays about $3.65 for it. External IPv6 addresses are free. An ephemeral address is charged only while the VM runs.", cost: "~$3.65/mo always on", links: [{ text: "costs $0.005 an hour", url: "https://cloud.google.com/vpc/network-pricing" }] },
+    { title: "Console disk default", desc: "The free tier covers 30 GB-months of standard persistent disk. A disk created in the Google Cloud console defaults to balanced persistent disk, which the free tier does not cover (about $0.10 per GiB a month in us-central1, about $3 for 30 GiB). Choose Standard persistent disk, or create the VM with the gcloud CLI, which defaults to standard.", cost: "~$3/mo for 30 GB", links: [{ text: "defaults to balanced persistent disk", url: "https://docs.cloud.google.com/compute/docs/disks/persistent-disks" }] },
     { title: "Cloud Storage class operations", desc: "Class A operations (writes, lists) cost more than Class B (reads). The free tier covers 5K Class A and 50K Class B/month. Heavy write workloads (logging, backups) can exceed this quickly.", cost: "$0.05/10K Class A" },
     { title: "Firestore daily limits", desc: "The free quota covers the default database only; named databases get none. Free: 1 GiB of storage, plus 50,000 reads, 20,000 writes and 20,000 deletes a day. Past the quota, reads cost $0.03 per 100,000 in us-central1 and $0.06 in the nam5, nam7 and eur3 multi-regions.", cost: "$0.03–0.06/100K reads" },
     { title: "Free trial credit expiration", desc: "The $300 credit lasts 90 days. When it is spent or 90 days pass, the Free Trial billing account closes unless you upgrade to a Paid billing account: resources stop, and data in services such as Compute Engine is marked for deletion. After a 30-day grace period without an upgrade, the resources are permanently deleted. The trial account is not billed, but a billing account set up through AI Studio is billed automatically once its credits are used up or expire.", cost: "Not billed" },
@@ -34069,7 +34072,7 @@ function buildGcpFreeTier2026Page(): string {
 
   const gotchaCards = gotchas.map(g => `<div class="diff-card" style="border-left-color:#f85149">
       <h3>${escHtmlServer(g.title)} <span style="font-size:.75rem;color:#f85149;font-weight:400">${escHtmlServer(g.cost)}</span></h3>
-      <p class="diff-desc">${escHtmlServer(g.desc)}</p>
+      <p class="diff-desc">${guideLinkedWordsHtml(g.desc, g.links ?? [])}</p>
     </div>`).join("\n    ");
 
   const altRows = cloudAlts.map(a => `<tr${a.noFetchablePageStatesIt ? ` ${NO_FETCHABLE_PAGE_STATES_THE_ROW}` : ""}>
@@ -34250,7 +34253,7 @@ ${mcpCtaCss()}
   </div>
 
   <h2 id="stacks">Best Picks by Use Case</h2>
-  <p class="section-intro">Common developer use cases and which GCP free services to combine. All stacks below can run at zero cost within free tier limits.</p>
+  <p class="section-intro">Common developer use cases and which GCP free services to combine. The stacks below can run within free tier limits, but the always-on server also pays for its external IPv4 address.</p>
 
   <div class="verdict-box">
     <h3>Recommended Free Stacks</h3>
@@ -34262,7 +34265,7 @@ ${mcpCtaCss()}
 
     <div class="verdict-item">
       <strong>Always-on server</strong>
-      <p>e2-micro VM (us-central1) + 30 GB persistent disk + Cloud Monitoring. Great for bots, cron jobs, small web servers. Add Cloud Shell for web-based SSH access.</p>
+      <p>e2-micro VM (us-central1) + 30 GB persistent disk (choose Standard, the console defaults to balanced, which is billed) + Cloud Monitoring. Great for bots, cron jobs, small web servers. Add Cloud Shell for web-based SSH. An external IPv4 address costs about $3.65 a month, while external IPv6 is free.</p>
     </div>
 
     <div class="verdict-item">

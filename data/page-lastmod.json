@@ -1129,7 +1129,7 @@
       "changed": "2026-10-11"
     },
     "/category/cloud-iaas": {
-      "hash": "3a1301da2f73f56b",
+      "hash": "452d71400d61e40a",
       "changed": "2026-10-11"
     },
     "/category/cloud-storage": {
@@ -1342,7 +1342,7 @@
       "changed": "2026-10-09"
     },
     "/cloud-free-tier-comparison-2026": {
-      "hash": "7d00474b03eb8fcd",
+      "hash": "04c978aa3964a2f0",
       "changed": "2026-10-11"
     },
     "/cloudflare-pages-vs-vercel": {
@@ -3206,7 +3206,7 @@
       "changed": "2026-10-11"
     },
     "/gcp-free-tier-2026": {
-      "hash": "49d55e1fc8c6aceb",
+      "hash": "fd5bbbe5c4ab9a7f",
       "changed": "2026-10-11"
     },
     "/gemini-api-pricing-2026": {
@@ -3258,7 +3258,7 @@
       "changed": "2026-10-11"
     },
     "/hetzner-alternatives": {
-      "hash": "6dc32f9bf3d1d39a",
+      "hash": "8f6a084ce2be4c01",
       "changed": "2026-10-11"
     },
     "/hetzner-pricing-2026": {
@@ -5959,7 +5959,7 @@
       "daily": true
     },
     "/vendor/google-compute-engine": {
-      "hash": "8559f8676dcb7545",
+      "hash": "d8bab40b45d5d506",
       "changed": "2026-10-11"
     },
     "/vendor/google-content-api-for-shopping": {
