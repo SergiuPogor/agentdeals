@@ -925,6 +925,24 @@
           "quote": "Platforms building multi-tenant SaaS or agentic applications choose this plan for sponsored free-tier infrastructure and up to $25,000 in paid-tier credits. Compute is billed at $0.106 per compute unit hour. Enrollment requires an active Neon Scale plan and team approval.",
           "url": "https://neon.com/docs/introduction/agent-plan.md",
           "read_on": "2026-10-11"
+        },
+        {
+          "text": "Neon gives $20 in free credits to try paid features, claimed through a promo link in the Neon Console.",
+          "quote": "Claim $20 in free credits to try paid features",
+          "url": "https://neon.com/pricing.md",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Neon's pricing page offers startups up to $100k in credits. The startup page describes the Databricks Startup Program, up to $200K in credits for Neon and Databricks for qualifying startups.",
+          "quote": "Qualifying startups can receive up to $200K in credits for Neon and Databricks.",
+          "url": "https://neon.com/startups",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "The Neon Open Source Program gives eligible open-source projects up to $5,000 a year in credits. The project must use a recognized open-source license and be self-hostable.",
+          "quote": "Eligible projects receive up to $5,000 yearly in credits and promotional support.",
+          "url": "https://neon.com/programs/open-source.md",
+          "read_on": "2026-10-11"
         }
       ]
     },
