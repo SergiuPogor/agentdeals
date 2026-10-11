@@ -9313,9 +9313,9 @@
       ],
       "verifiedDate": "2026-09-26",
       "source_check": {
-        "checked": "2026-10-03",
-        "outcome": "states_no_terms",
-        "detail": "the page names Kaggle but states no amount, tier or rate we can read, and its markup carries no structured data",
+        "checked": "2026-10-11",
+        "outcome": "ok",
+        "detail": "the page names Kaggle as \"kaggle\" and states amounts, none of which we matched to the terms we publish",
         "rendered": true
       },
       "product_subtypes": {
@@ -10829,9 +10829,9 @@
       ],
       "verifiedDate": "2026-08-13",
       "source_check": {
-        "checked": "2026-10-01",
-        "outcome": "states_no_terms",
-        "detail": "the page names Google Colab but states no amount, tier or rate we can read, and its markup carries no structured data"
+        "checked": "2026-10-11",
+        "outcome": "states_a_free_price",
+        "detail": "the page names Google Colab and states its price in words as \"free of charge\", and its markup carries no structured data"
       },
       "product_subtypes": {
         "taxonomy": "AI / ML",
@@ -11482,9 +11482,9 @@
       ],
       "verifiedDate": "2026-08-01",
       "source_check": {
-        "checked": "2026-10-10",
-        "outcome": "states_no_terms",
-        "detail": "the page names RocketGit but states no amount, tier or rate we can read, and its markup carries no structured data"
+        "checked": "2026-10-11",
+        "outcome": "states_a_free_price",
+        "detail": "the page names RocketGit and states its price in words as \"free of charge\", and its markup carries no structured data"
       }
     },
     {
@@ -32436,9 +32436,9 @@
       ],
       "verifiedDate": "2026-08-19",
       "source_check": {
-        "checked": "2026-09-16",
-        "outcome": "states_no_terms",
-        "detail": "the page names Google Cloud Shell but states no amount, tier or rate we can read, and the 2 structured-data blocks in its markup state no price"
+        "checked": "2026-10-11",
+        "outcome": "ok",
+        "detail": "the page names Google Cloud Shell as \"shell\" and states amounts, none of which we matched to the terms we publish"
       }
     },
     {
@@ -35879,9 +35879,9 @@
         }
       ],
       "source_check": {
-        "checked": "2026-10-09",
-        "outcome": "states_no_terms",
-        "detail": "the page names Hetzner Inference API but states no amount, tier or rate we can read, and its markup carries no structured data"
+        "checked": "2026-10-11",
+        "outcome": "states_a_free_price",
+        "detail": "the page names Hetzner Inference API and states its price in words as \"free of charge\", and its markup carries no structured data"
       }
     },
     {

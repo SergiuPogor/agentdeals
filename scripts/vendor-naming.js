@@ -50,7 +50,7 @@ export function statesAnAmount(signal) {
   return typeof signal === "string" && A_FIGURE.test(signal);
 }
 
-const A_TIER_NAMED_FREE = /^free\s+(?:plans?|tiers?|package|api|forever|version)\b/i;
+const A_TIER_NAMED_FREE = /^free\s+(?:plans?|tiers?|package|api|forever|version|of\s+charge)\b/i;
 
 export function statesAPriceOfZero(signal) {
   return typeof signal === "string" && !statesAnAmount(signal) && A_TIER_NAMED_FREE.test(signal.trim());

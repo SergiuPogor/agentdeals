@@ -50,6 +50,7 @@ const PAGES_STATING_A_FREE_PRICE = [
   "Use the free API.",
   "Download the free version.",
   "Free plans for everyone.",
+  "Colab is free of charge to use.",
 ];
 
 const PAGES_WITHHOLDING_A_PLAN_PRICE = [
@@ -106,6 +107,31 @@ describe("a price stated in words", () => {
   });
 });
 
+describe("a quota stated as a number of hours", () => {
+  const QUOTA = "The quota resets weekly and is 30 hours or sometimes higher depending on demand and resources.";
+
+  it("reads the hours a quota is as an amount the page states", () => {
+    assert.ok(priceSignals(QUOTA).includes("30 hours"), JSON.stringify(priceSignals(QUOTA)));
+    assert.strictEqual(gradeOf(pageSaying(QUOTA)).outcome, "ok");
+  });
+
+  it("reads a quota of minutes, and one stated as up to a number of hours, the same way", () => {
+    assert.ok(priceSignals("Each account gets a monthly quota of 300 minutes.").includes("300 minutes"));
+    assert.ok(priceSignals("Your weekly quota is up to 20 hours.").includes("up to 20 hours"));
+  });
+
+  it("does not read how often a quota resets as an amount", () => {
+    for (const claim of ["The quota resets every 24 hours.", "Quota usage is refreshed after 12 hours."]) {
+      assert.deepStrictEqual(priceSignals(claim), [], claim);
+      assert.strictEqual(gradeOf(pageSaying(claim)).outcome, SOURCE_CHECK_NO_TERMS, claim);
+    }
+  });
+
+  it("does not read hours that no quota states", () => {
+    assert.deepStrictEqual(priceSignals("Sessions run for 12 hours."), []);
+  });
+});
+
 describe("a free plan the page names only to take it away", () => {
   const BANNER = "Why We&rsquo;re Removing Widgetson&rsquo;s Free Plan Read more &rarr; Take control of your inbox";
 
@@ -121,6 +147,7 @@ describe("a free plan the page names only to take it away", () => {
       "Our free tier has been discontinued.",
       "We are retiring the free plan.",
       "This vendor does not offer a free plan.",
+      "The service is no longer free of charge.",
     ]) {
       assert.strictEqual(gradeOf(pageSaying(claim)).outcome, SOURCE_CHECK_NO_TERMS, claim);
     }
