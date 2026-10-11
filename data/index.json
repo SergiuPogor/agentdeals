@@ -738,7 +738,33 @@
         "checked": "2026-10-01",
         "outcome": "ok",
         "detail": "the page names Oracle Cloud as \"oracle cloud\" and states amounts, none of which we matched to the terms we publish"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Oracle may reclaim Always Free compute instances if CPU utilization is less than 20% for 95% of the time, network utilization is less than 20%, and memory utilization is less than 20% (A1 shapes only) during a 7-day period.",
+          "quote": "Idle Always Free compute instances may be reclaimed by Oracle. Oracle will deem virtual machine and bare metal compute instances as idle if, during a 7-day period, the following are true: CPU utilization for the 95th percentile is less than 20% Network utilization is less than 20% Memory utilization is less than 20% (applies to A1 shapes only)",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+          "read_on": "2026-10-10"
+        },
+        {
+          "text": "An account left idle for 30 days or more may be deemed abandoned and become eligible for suspension or termination.",
+          "quote": "Accounts left idle for 30 days or more may be deemed abandoned and become eligible for suspension or termination.",
+          "url": "https://www.oracle.com/cloud/free/",
+          "read_on": "2026-10-10"
+        },
+        {
+          "text": "Oracle accepts credit cards and debit cards that function like credit cards, but not debit cards with a PIN, virtual, single-use, or prepaid cards. The card check places a temporary authorization hold that is not a charge.",
+          "quote": "We accept credit cards and debit cards that function like credit cards. We do not accept debit cards with a PIN or virtual, single-use, or prepaid cards.",
+          "url": "https://www.oracle.com/cloud/free/",
+          "read_on": "2026-10-10"
+        },
+        {
+          "text": "The $300 trial ends after 30 days or when the credit is used up. An account that does nothing keeps its Always Free services.",
+          "quote": "If you do nothing after 30 days, you’ll continue to get Always Free Services in your Free Tier account.",
+          "url": "https://www.oracle.com/cloud/free/",
+          "read_on": "2026-10-10"
+        }
+      ]
     },
     {
       "vendor": "Supabase",
@@ -20787,6 +20813,18 @@
           "quote": "If you exceed the limit, we will stop accepting new submissions until the next month. You can upgrade to continue receiving submissions.",
           "url": "https://web3forms.com/pricing",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "File uploads, autoresponders, reCAPTCHA and Turnstile, webhooks, Google Sheets, and team collaboration need a paid plan.",
+          "quote": "Need more than 250 submissions a month? Paid plans add file uploads, autoresponders, reCaptcha & Turnstile, webhooks, Google Sheets and team collaboration.",
+          "url": "https://web3forms.com/",
+          "read_on": "2026-10-10"
+        },
+        {
+          "text": "The Free plan includes hCaptcha spam protection.",
+          "quote": "hCaptcha Integration",
+          "url": "https://web3forms.com/pricing",
+          "read_on": "2026-10-10"
         }
       ]
     },
