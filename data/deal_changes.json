@@ -16427,6 +16427,22 @@
       "category": "Messaging",
       "alternatives": [],
       "recorded_date": "2026-10-11"
+    },
+    {
+      "vendor": "Google",
+      "change_type": "pricing_restructured",
+      "date": "2026-09-18",
+      "date_source": "hand_written",
+      "summary": "On 2026-09-18 Google stopped renewing every remaining standalone Google Developer Program Premium subscription, Workspace accounts included. Monthly subscribers keep Premium benefits until 2026-10-18 and annual subscribers until 2027-09-18; their membership then returns to the standard tier. Google recommends AI Pro or AI Ultra for consumers, and Gemini Enterprise for enterprises.",
+      "previous_state": "Before 2026-09-18, Premium on personal accounts had stopped renewing, but Premium on Workspace accounts was still renewing.",
+      "current_state": "\"Since September 18, 2026, existing subscriptions can no longer be renewed.\" \"Existing monthly plan subscribers: Can continue to enjoy benefits until October 18, 2026. Existing annual plan subscribers: Can continue to enjoy benefits until September 18, 2027.\" (Google Developer Program FAQ, updated 2026-10-07)",
+      "impact": "medium",
+      "source_url": "https://developers.google.com/profile/help/faq",
+      "category": "Cloud IaaS",
+      "alternatives": [
+        "Google AI Pro/Ultra"
+      ],
+      "recorded_date": "2026-10-11"
     }
   ]
 }
