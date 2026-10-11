@@ -21276,7 +21276,7 @@ ${gdpChanges.map(c => `      <li><strong>${escHtmlServer(changeEntryLongDateLabe
       </tbody>
     </table>
   </div>
-  ${geminiChange ? `<div class="context-box"><strong>Context — Gemini API free tier reduction:</strong> ${changeSummaryHtml(geminiChange, escHtmlServer)} See our <a href="/free-llm-apis">Free LLM APIs</a> comparison for full details.</div>` : ""}
+  ${geminiChange ? `<div class="context-box"><strong>Context — Gemini API free tier reduction:</strong> ${changeSummaryHtml(geminiChange, escHtmlServer)} <a href="https://ai.google.dev/gemini-api/docs/changelog" target="_blank" rel="noopener">Since September 18, 2026</a>, Google limits the Gemini 2.5 models to users who have used them before. New projects should use Gemini 3.5 Flash-Lite or 3.8 Flash. See our <a href="/free-llm-apis">Free LLM APIs</a> comparison for full details.</div>` : ""}
 
   <h2 id="firebase-alts">7. Firebase Alternatives</h2>
   <p class="section-intro">Firebase's Spark (free) plan was not part of GDP Premium, but it lost Cloud Storage on February 3, 2026. If you're re-evaluating your stack, these BaaS alternatives offer competitive free tiers.</p>
