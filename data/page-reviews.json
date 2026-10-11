@@ -326,13 +326,13 @@
       "review_note": "The corrections from https://github.com/robhunter/agentdeals/issues/2187 are live. Checked on production on 2026-10-01: 221 replacement strings, 141 of them cell by cell, and a census of 2,595 routes for the withdrawn claims.",
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 104,
-      "table_figures_from_records": 3,
+      "table_figures": 105,
+      "table_figures_from_records": 4,
       "tables": [
         {
           "label": "Main Comparison Table",
-          "figures": 40,
-          "from_records": 3
+          "figures": 41,
+          "from_records": 4
         },
         {
           "label": "Managed Auth Platforms",
@@ -468,8 +468,8 @@
       "review_note": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 45,
-      "table_figures_from_records": 17,
+      "table_figures": 49,
+      "table_figures_from_records": 21,
       "tables": [
         {
           "label": "Always Free Services",
@@ -483,8 +483,8 @@
         },
         {
           "label": "AWS vs Alternatives",
-          "figures": 25,
-          "from_records": 8
+          "figures": 29,
+          "from_records": 12
         },
         {
           "label": "Recent AWS Changes",
@@ -522,8 +522,8 @@
       "review_note": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 49,
-      "table_figures_from_records": 9,
+      "table_figures": 53,
+      "table_figures_from_records": 13,
       "tables": [
         {
           "label": "Always Free Services",
@@ -542,8 +542,8 @@
         },
         {
           "label": "Azure vs Alternatives",
-          "figures": 19,
-          "from_records": 8
+          "figures": 23,
+          "from_records": 12
         },
         {
           "label": "Recent Azure Changes",
@@ -865,13 +865,13 @@
       "review_note": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 66,
-      "table_figures_from_records": 34,
+      "table_figures": 71,
+      "table_figures_from_records": 39,
       "tables": [
         {
           "label": "Main Comparison Table",
-          "figures": 21,
-          "from_records": 7
+          "figures": 25,
+          "from_records": 10
         },
         {
           "label": "Postgres-Compatible Databases",
@@ -880,8 +880,8 @@
         },
         {
           "label": "Firebase / BaaS Databases",
-          "figures": 6,
-          "from_records": 1
+          "figures": 7,
+          "from_records": 2
         },
         {
           "label": "Edge / Embedded Databases",
@@ -896,7 +896,7 @@
         {
           "label": "Vector Databases",
           "figures": 7,
-          "from_records": 2
+          "from_records": 3
         },
         {
           "label": "Pricing Change Timeline",
@@ -1860,8 +1860,8 @@
       "review_note": "The corrections from https://github.com/robhunter/agentdeals/issues/2168 are live. Checked on production on 2026-09-30 against all six acceptance criteria, including a census of 2,593 routes for the withdrawn claims.",
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 65,
-      "table_figures_from_records": 14,
+      "table_figures": 69,
+      "table_figures_from_records": 18,
       "tables": [
         {
           "label": "Always Free Products",
@@ -1875,8 +1875,8 @@
         },
         {
           "label": "GCP vs AWS vs Others",
-          "figures": 25,
-          "from_records": 8
+          "figures": 29,
+          "from_records": 12
         },
         {
           "label": "Recent GCP & Google Changes",
@@ -1979,8 +1979,8 @@
       "review_note": "Two readers checked the page's 44 claims against Google's, Microsoft's, AWS's, Appwrite's and Mistral's own pages on 2026-09-28. The nine that failed were corrected in https://github.com/robhunter/agentdeals/issues/2144 and read on production on 2026-09-28.",
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 50,
-      "table_figures_from_records": 10,
+      "table_figures": 51,
+      "table_figures_from_records": 11,
       "tables": [
         {
           "label": "2. Price Comparison Table",
@@ -1999,8 +1999,8 @@
         },
         {
           "label": "7. Firebase Alternatives",
-          "figures": 8,
-          "from_records": 3
+          "figures": 9,
+          "from_records": 4
         }
       ],
       "reads_changes": true,
@@ -3204,8 +3204,8 @@
       "review_note": "Re-read 2026-10-05 against supabase.com/pricing, firebase.google.com/pricing and Firebase's FAQ. The Auth row from https://github.com/robhunter/agentdeals/issues/2168 is live. Still wrong: Firebase is said to allow unlimited free projects in four places (Firebase's FAQ: usually around 5-10 on Spark), Supabase is called 30-50% cheaper at scale in two places against the page's own cost table, and three cost cells (Supabase at 10 GB and 50 GB, Firebase at 50 GB). Copy is on https://github.com/robhunter/agentdeals/issues/2376. Firebase's $1.56 for 10 GB of Firestore was not re-checked; its rate loads by script.",
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 37,
-      "table_figures_from_records": 14,
+      "table_figures": 38,
+      "table_figures_from_records": 15,
       "tables": [
         {
           "label": "1. Free Tier Comparison Table",
@@ -3219,8 +3219,8 @@
         },
         {
           "label": "5. Other BaaS Alternatives",
-          "figures": 14,
-          "from_records": 14
+          "figures": 15,
+          "from_records": 15
         }
       ],
       "reads_changes": true,
