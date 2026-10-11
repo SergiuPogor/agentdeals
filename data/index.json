@@ -31702,12 +31702,20 @@
         "checked": "2026-10-05",
         "outcome": "ok",
         "detail": "the page names Amazon Q Developer as \"amazon q developer\" and states \"$19\" and \"50 agentic requests per month\" and \"1,000 lines of code per month\""
-      }
+      },
+      "conditions": [
+        {
+          "text": "New sign-ups and subscriptions were blocked from 2026-05-15. Existing subscriptions can add users.",
+          "quote": "New signups will no longer available starting May 15, 2026. New Q Developer Free Tier account creation (via Builder ID in IDE plugins) and new Q Developer subscription creation (via the AWS Console) will be blocked. Existing subscriptions can add new users.",
+          "url": "https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/",
+          "read_on": "2026-10-11"
+        }
+      ]
     },
     {
       "vendor": "Cline",
       "category": "AI Coding",
-      "description": "Open-source autonomous AI coding agent for VS Code. Fully free — users provide their own API keys (OpenRouter, Anthropic, OpenAI, etc.). Supports file editing, terminal commands, browser interaction. No usage limits beyond API provider costs. MIT licensed.",
+      "description": "Open-source autonomous AI coding agent for VS Code. Fully free. Users can bring their own API keys (OpenRouter, Anthropic, OpenAI, etc.) or use the Cline provider. Supports file editing, terminal commands, browser interaction. No usage limits beyond API provider costs. Cline is Apache 2.0 licensed.",
       "tier": "Open Source",
       "url": "https://github.com/cline/cline",
       "tags": [
@@ -32563,7 +32571,7 @@
     {
       "vendor": "Google Gemini Code Assist",
       "category": "IDE & Code Editors",
-      "description": "Gemini Code Assist for individuals, Google's free tier of its IDE coding assistant, stopped serving requests on 2026-06-18, according to Google's deprecation notice. Login with Google no longer works in the IDE extensions or in Gemini CLI for the individuals, Google AI Pro and Google AI Ultra tiers. Google's product page, codeassist.google, still advertises the tier at no cost with 6,000 code-related requests and 240 chat requests a day. Gemini Code Assist Standard and Enterprise subscriptions are unchanged.",
+      "description": "Gemini Code Assist for individuals, Google's free tier of its IDE coding assistant, stopped serving requests on 2026-06-18, according to Google's deprecation notice. Login with Google no longer works in the IDE extensions or in Gemini CLI for the individuals, Google AI Pro and Google AI Ultra tiers. Google's product page, codeassist.google, still advertises the tier at no cost with 6,000 code-related requests and 240 chat requests a day. Google stopped selling new Standard and Enterprise subscriptions on 2026-10-09. Existing subscribers can add licenses until 2027-01-31. Annual subscriptions can auto-renew until 2027-01-31; monthly subscriptions can auto-renew until 2027-12-31. Agentic coding assistance is now available through Antigravity, included in Gemini Enterprise editions.",
       "tier": "Retired",
       "url": "https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals",
       "tags": [

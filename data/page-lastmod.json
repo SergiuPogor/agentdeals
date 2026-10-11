@@ -18,8 +18,8 @@
       "changed": "2026-10-10"
     },
     "/ai-coding-tools-pricing": {
-      "hash": "cc8f15dc6dc56f6b",
-      "changed": "2026-10-10"
+      "hash": "8a35f4fe5196c99c",
+      "changed": "2026-10-11"
     },
     "/ai-free-tiers": {
       "daily": true
@@ -1085,8 +1085,8 @@
       "changed": "2026-10-09"
     },
     "/category/ai-coding": {
-      "hash": "4ef30b69ab06300e",
-      "changed": "2026-10-09"
+      "hash": "b98bf8aeb32caec4",
+      "changed": "2026-10-11"
     },
     "/category/ai-ml": {
       "hash": "2a9b7d72219aa77f",
@@ -1207,7 +1207,7 @@
       "changed": "2026-10-10"
     },
     "/category/ide-code-editors": {
-      "hash": "c96160d200187611",
+      "hash": "1d900d893febce89",
       "changed": "2026-10-11"
     },
     "/category/infrastructure": {
@@ -1434,8 +1434,8 @@
       "changed": "2026-10-09"
     },
     "/compare/amazon-q-developer-vs-github-copilot": {
-      "hash": "23783c9e17a46f00",
-      "changed": "2026-10-09"
+      "hash": "2b304a8baaac023d",
+      "changed": "2026-10-11"
     },
     "/compare/amplitude-vs-heap-io": {
       "hash": "3dca239d150dde01",
@@ -1626,8 +1626,8 @@
       "changed": "2026-10-09"
     },
     "/compare/cline-vs-aider": {
-      "hash": "96389c99636264d2",
-      "changed": "2026-10-09"
+      "hash": "f3b40890250941bc",
+      "changed": "2026-10-11"
     },
     "/compare/clouddev-vs-vultr": {
       "hash": "64eb6d3d139c9223",
@@ -2681,7 +2681,7 @@
       "daily": true
     },
     "/cursor-alternatives": {
-      "hash": "e32ac4dcf3114deb",
+      "hash": "246ae59da71ab5f8",
       "changed": "2026-10-11"
     },
     "/database-alternatives": {
@@ -3278,7 +3278,7 @@
       "changed": "2026-10-10"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "8d907795c8409650",
+      "hash": "eff95e3a50ec5de6",
       "changed": "2026-10-11"
     },
     "/llm-api-pricing": {
@@ -3993,8 +3993,8 @@
       "changed": "2026-10-10"
     },
     "/vendor/amazon-q-developer": {
-      "hash": "f55ecbde4d330b17",
-      "changed": "2026-10-10"
+      "hash": "87464b940b78b3be",
+      "changed": "2026-10-11"
     },
     "/vendor/amazon-ses": {
       "daily": true
@@ -4681,8 +4681,8 @@
       "changed": "2026-10-10"
     },
     "/vendor/cline": {
-      "hash": "0b5f8241ba74c8fe",
-      "changed": "2026-10-10"
+      "hash": "b1b20f590907ae39",
+      "changed": "2026-10-11"
     },
     "/vendor/clockify": {
       "hash": "acfb0649f618b3a7",
