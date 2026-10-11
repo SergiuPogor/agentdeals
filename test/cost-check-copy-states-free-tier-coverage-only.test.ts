@@ -9,7 +9,7 @@ import { startLocalApi, startStdioServerAgainst, type LocalApi } from "./local-a
 const REPO = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const INTEGRATION_GUIDES = ["/guides/langchain", "/guides/crewai", "/guides/n8n", "/guides/vercel-ai-sdk"];
 const PAGES_READ_WHOLE = ["/developers", "/setup", ...INTEGRATION_GUIDES];
-const PAGES_READ_WHERE_THEY_NAME_THE_TOOL = ["/", "/estimate", "/llms.txt", "/llms-full.txt"];
+const PAGES_READ_WHERE_THEY_NAME_THE_TOOL = ["/", "/llms.txt", "/llms-full.txt"];
 const NAMES_THE_TOOL = /plan_stack|\/api\/costs/;
 const PLAN_STACK_CARD = "Get stack recommendations, free-tier checks, or a full infrastructure audit for your project.";
 
@@ -31,7 +31,6 @@ const STATED: Record<string, string[]> = {
     "\"query\": \"Check which of these services are free-tier: Vercel, Neon, Clerk, Resend, Sentry.\"",
   ],
   "/guides/vercel-ai-sdk": [PLAN_STACK_CARD, "show the free tier limits, risk level, and free tier coverage."],
-  "/estimate": ["Use plan_stack to get AI-powered stack recommendations with free tier coverage directly in your editor."],
 };
 
 const WITHDRAWN: Record<string, RegExp> = {
