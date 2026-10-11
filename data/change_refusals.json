@@ -781,6 +781,18 @@
       "refused_date": "2026-09-21"
     },
     {
+      "vendor": "bonsai.io",
+      "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-21 (no_baseline) stated the same 4 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier is no longer available. The lowest tier is now the 'Staging' plan at $15/month with 1 GB storage and 256 MB memory.",
+      "previous_state": "Free Sandbox plan: 125 MB memory, 125 MB storage, 35K documents. Free forever. Managed Elasticsearch.",
+      "current_state": "The Staging plan costs $15/month and includes 1 GB storage, 256 MB memory, and supports 100k documents.",
+      "source_url": "https://bonsai.io/pricing",
+      "category": "Search",
+      "refused_date": "2026-10-11"
+    },
+    {
       "vendor": "Brackets",
       "change_type": "rebranded",
       "reason": "no_price_signal",
@@ -2021,6 +2033,18 @@
       "collided_with": "DeepSeek API|pricing_restructured|2026-09-03|https://api-docs.deepseek.com/quick_start/pricing"
     },
     {
+      "vendor": "DeepSource",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 8128 characters, so it states no terms to have changed",
+      "summary": "DeepSource is now part of Harness and offers a 14-day free trial, but no longer has a permanently free tier.",
+      "previous_state": "DeepSource continuously analyzes source code changes, finding and fixing issues categorized under security, performance, anti-patterns, bug-risks, documentation, and style. Native integration with GitHub, GitLab, and Bitbucket.",
+      "current_state": "Offers a 14-day free trial, no credit card needed. Contact Sales for growing teams and enterprises.",
+      "source_url": "https://deepsource.io/",
+      "category": "Code Quality",
+      "refused_date": "2026-10-11"
+    },
+    {
       "vendor": "deployhq.com",
       "change_type": "limits_reduced",
       "reason": "measures_no_change",
@@ -2251,6 +2275,18 @@
       "category": "Secrets Management",
       "refused_date": "2026-10-02",
       "collided_with": "Doppler|limits_reduced|2026-09-02|https://www.doppler.com/pricing"
+    },
+    {
+      "vendor": "Dotenv",
+      "change_type": "pricing_restructured",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 844 characters, so it states no terms to have changed",
+      "summary": "The free tier is no longer explicitly mentioned. The page focuses on 'dotenvx' which adds encryption and is recommended, implying a move towards a paid model for enhanced security. The original 'dotenv Classic' is still mentioned as 'solid' but the focus is on the paid 'dotenvx'.",
+      "previous_state": "Sync your .env files, quickly & securely. Stop sharing your .env files over insecure channels like Slack and email, and never lose an important .env file again. Free for up to 3 teammates.",
+      "current_state": "dotenv Classic – still solid. dotenvx Recommended – adds encryption.",
+      "source_url": "https://dotenv.org/",
+      "category": "Security",
+      "refused_date": "2026-10-11"
     },
     {
       "vendor": "drawDB",
@@ -2696,13 +2732,13 @@
       "vendor": "Fizzy",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-08 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "detail": "the reading of this page refused on 2026-10-09 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
       "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page does not mention any item limits. It does state a 1 GB file storage limit.",
       "previous_state": "Kanban-based platform for project management and issue tracking. Create public boards, set up webhooks, use card stamping, and track unlimited users — free for up to 1000 items.",
       "current_state": "Fizzy is entirely free and subsidized by Basecamp and HEY. File space usage is limited to 1 GB.",
       "source_url": "https://www.fizzy.do/",
       "category": "Project Management",
-      "refused_date": "2026-10-09"
+      "refused_date": "2026-10-11"
     },
     {
       "vendor": "Flagsmith",
@@ -3311,6 +3347,18 @@
       "refused_date": "2026-09-02"
     },
     {
+      "vendor": "goreportcard.com",
+      "change_type": "product_deprecated",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 1022 characters, so it states no terms to have changed",
+      "summary": "Go Report Card has been sunset. While the code remains open source and can be self-hosted, the hosted service is no longer available.",
+      "previous_state": "Code Quality for Go projects, free for Open Source",
+      "current_state": "Go Report Card has been sunset. The code lives on at github.com/gojp/goreportcard, so you can run your own instance or fork it.",
+      "source_url": "https://goreportcard.com/",
+      "category": "Code Quality",
+      "refused_date": "2026-10-11"
+    },
+    {
       "vendor": "Grafana Cloud",
       "change_type": "pricing_restructured",
       "reason": "same_transition_graded_differently",
@@ -3557,6 +3605,18 @@
       "source_url": "https://github.com/highlight/highlight",
       "category": "Logging",
       "refused_date": "2026-09-13"
+    },
+    {
+      "vendor": "holistic.dev",
+      "change_type": "restriction",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 5114 characters, so it states no terms to have changed",
+      "summary": "The page indicates a free offering for Retail customers who connect their database directly, but does not explicitly state a generally available free tier as described in the stored information. The description focuses on a DB optimization service with features for Cloud Providers and DB Consulting, and mentions Snowflake and MySQL coming soon.",
+      "previous_state": "The #1 static code analyzer for Postgresql optimization. Performance, security, and architect database issues automatic detection service",
+      "current_state": "Retail customers can connect their database and get recommendations for improvement absolutely free.",
+      "source_url": "https://holistic.dev/",
+      "category": "Code Quality",
+      "refused_date": "2026-10-11"
     },
     {
       "vendor": "Hotjar",
@@ -3851,6 +3911,18 @@
       "refused_date": "2026-09-09"
     },
     {
+      "vendor": "inspector.dev",
+      "change_type": "limits_reduced",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 5626 characters, so it states no terms to have changed",
+      "summary": "The free tier now has a transaction limit of 30K, whereas the stored information states it's a free forever tier with no stated limits.",
+      "previous_state": "A complete Real-Time monitoring dashboard in less than one minute with a free forever tier.",
+      "current_state": "30K transactions, Unlimited Events, Unlimited Hosts & Apps, Up to 3 team members, Live chat support, AI Bug Fixer",
+      "source_url": "https://www.inspector.dev",
+      "category": "Monitoring",
+      "refused_date": "2026-10-11"
+    },
+    {
       "vendor": "Instabug for Startups",
       "change_type": "rebranded",
       "reason": "page_does_not_name_vendor",
@@ -3987,6 +4059,18 @@
       "collided_with": "IPTrace|free_tier_removed|2026-08-28|https://iptrace.io"
     },
     {
+      "vendor": "jamf.com",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 7519 characters, so it states no terms to have changed",
+      "summary": "The page no longer mentions a free tier for three devices. It offers a 14-day free trial of Jamf Pro, and lists several paid products like Jamf Pro, Jamf Now, and Jamf School.",
+      "previous_state": "Device management for iPads, iPhones, and Macs, three devices free",
+      "current_state": "Offers a 14-day free trial. Jamf Pro is a device management solution for business & higher education.",
+      "source_url": "https://www.jamf.com/",
+      "category": "Mobile Development",
+      "refused_date": "2026-10-11"
+    },
+    {
       "vendor": "JetBrains",
       "change_type": "restriction",
       "reason": "no_price_signal",
@@ -4021,6 +4105,30 @@
       "source_url": "https://www.jotform.com/pricing/",
       "category": "Forms",
       "refused_date": "2026-09-25"
+    },
+    {
+      "vendor": "katalon.com",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 12783 characters, so it states no terms to have changed",
+      "summary": "While a free trial is offered, the page does not explicitly mention a perpetually free tier as described in the stored information. It focuses on a 'True Platform' with various tools (Studio, TestOps, TestCloud, TrueTest, Katalon AI) and emphasizes a free *trial* but then directs users to pricing and add-ons for TestCloud sessions. The page highlights AI-powered features and integrations, but doesn't confirm the continued existence of a completely free, ongoing tier with all listed components.",
+      "previous_state": "Provides a testing platform that can help teams of all sizes at different levels of testing maturity, including Katalon Studio, TestOps (+ Visual Testing free), TestCloud, and Katalon Recorder.",
+      "current_state": "The page promotes a free trial of the 'True Platform' which includes Katalon Studio, TestOps, TestCloud, and TrueTest. It then directs users to pricing information for TestCloud sessions and other features.",
+      "source_url": "https://katalon.com",
+      "category": "Testing",
+      "refused_date": "2026-10-11"
+    },
+    {
+      "vendor": "Keploy",
+      "change_type": "pricing_model_change",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 4150 characters, so it states no terms to have changed",
+      "summary": "While Keploy's core local record-and-replay platform remains open source under the Apache 2.0 license, the pricing page highlights enterprise capabilities (recording from Kubernetes, staging, and production environments, governance, security controls, dashboards, and support) that are not free. The page promotes a 'Try for Free' option but leads to booking a call, suggesting a potential sales process even for initial use.",
+      "previous_state": "Keploy is a functional testing toolkit for developers. Recording API calls generates E2E tests for APIs (KTests) and mocks or stubs(KMocks). It is free for Open Source projects.",
+      "current_state": "Keploy's core local record-and-replay platform is open source under the Apache 2.0 license. Enterprise capabilities require additional features and are not detailed in terms of pricing on the page.",
+      "source_url": "https://keploy.io/",
+      "category": "Testing",
+      "refused_date": "2026-10-11"
     },
     {
       "vendor": "Ketch",
@@ -4206,6 +4314,18 @@
       "refused_date": "2026-09-09"
     },
     {
+      "vendor": "libraries.io",
+      "change_type": "pricing_model_change",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 4310 characters, so it states no terms to have changed",
+      "summary": "Libraries.io is still available as a free service, but the page heavily promotes a paid offering, 'The Tidelift Subscription', which provides more accurate and validated data. The free tier provides data scraped from the internet without validation, while the paid tier offers curated data and additional features like vulnerability insights and maintenance status.",
+      "previous_state": "Search and dependency update notifications for 32 different package managers, free for open source",
+      "current_state": "Libraries.io is a free service that collects publicly available open source package information scraped from the internet. The Tidelift Subscription provides a curated source of open source package data backed by Tidelift and our maintainer partners.",
+      "source_url": "https://libraries.io/",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-11"
+    },
+    {
       "vendor": "lil'bots",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
@@ -4228,6 +4348,18 @@
       "source_url": "https://www.lilbots.io/",
       "category": "Low-Code Platforms",
       "refused_date": "2026-09-13"
+    },
+    {
+      "vendor": "lingohub.com",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 7072 characters, so it states no terms to have changed",
+      "summary": "The free tier is now a 14-day free trial.",
+      "previous_state": "Free up to 3 users, always free for Open Source",
+      "current_state": "Free 14-day trial. No credit card required. Glossary, translation memory, and QA on every string.",
+      "source_url": "https://lingohub.com/",
+      "category": "Localization",
+      "refused_date": "2026-10-11"
     },
     {
       "vendor": "linkok.com",
@@ -4816,6 +4948,30 @@
       "refused_date": "2026-09-30"
     },
     {
+      "vendor": "Metalama",
+      "change_type": "pricing_model_change",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 14211 characters, so it states no terms to have changed",
+      "summary": "The page indicates Metalama is an open-source patterns & architecture toolkit for C# and mentions purchasing options for Metalama and PostSharp, suggesting a commercial aspect beyond the previously stated free tier for open-source projects and a limited free tier. The page does not explicitly detail the limits of the free tier, but implies a paid option exists.",
+      "previous_state": "A C#-specific tool that generates boilerplate code on the fly during compilation to keep source code clean. It is free for open-source projects; its commercial-friendly free tier includes up to three aspects.",
+      "current_state": "The page details purchasing options for Metalama licenses.",
+      "source_url": "https://www.postsharp.net/metalama",
+      "category": "IDE & Code Editors",
+      "refused_date": "2026-10-11"
+    },
+    {
+      "vendor": "meterian.io",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 9349 characters, so it states no terms to have changed",
+      "summary": "The free tier for one private project is no longer explicitly mentioned. The page focuses on a paid platform called Meterian-X and offers demos and pricing plans. While open source scanning is still highlighted, the specific free tier described in the stored information is absent.",
+      "previous_state": "Monitor Java, Javascript, .NET, Scala, Ruby, and NodeJS projects for security vulnerabilities in dependencies. Free for one private project, unlimited projects for open source.",
+      "current_state": "The page promotes Meterian-X for continuous management of open source governance, risk, and compliance, and offers various scanning solutions (codebase, container, infrastructure-as-code) with a focus on paid plans and demos.",
+      "source_url": "https://www.meterian.io/",
+      "category": "Security",
+      "refused_date": "2026-10-11"
+    },
+    {
       "vendor": "microlink.io",
       "change_type": "limits_reduced",
       "reason": "same_transition_graded_differently",
@@ -4876,6 +5032,18 @@
       "source_url": "https://min.io/pricing",
       "category": "Storage",
       "refused_date": "2026-09-09"
+    },
+    {
+      "vendor": "Miradore",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 4913 characters, so it states no terms to have changed",
+      "summary": "The free tier is no longer prominently advertised. The page now focuses on a 14-day free trial and then directs users to 'See plans & pricing'. While it mentions 'Free Mobile Device Management' as a solution, it doesn't detail the features or limits of a perpetually free plan as the stored information suggests.",
+      "previous_state": "Device Management service. Stay up-to-date with your device fleet and secure unlimited devices for free. The free plan offers basic features.",
+      "current_state": "The page offers a 14-day free trial and then directs users to view plans and pricing. It does not detail a perpetually free plan with unlimited devices and basic features.",
+      "source_url": "https://miradore.com",
+      "category": "Mobile Development",
+      "refused_date": "2026-10-11"
     },
     {
       "vendor": "Mistral AI",
@@ -6694,6 +6862,18 @@
       "collided_with": "serveravatar.com|limits_increased|2026-08-28|https://serveravatar.com"
     },
     {
+      "vendor": "Servervana",
+      "change_type": "limits_reduced",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 3260 characters, so it states no terms to have changed",
+      "summary": "The page mentions 'Free Uptime Monitoring' under the 'Resources' section, but does not detail specific limits for a free tier. It broadly describes features like uptime monitoring, performance monitoring, and alerting, but doesn't confirm the 10 HTTP monitors, 1 DNS monitor, and 1 status page mentioned in the stored deal info.",
+      "previous_state": "Uptime monitoring with support for large projects and teams. Free tier: 10 HTTP monitors, 1 DNS monitor and 1 status page.",
+      "current_state": "The page states 'Free Uptime Monitoring' is available, but does not specify any limits or features included in the free tier.",
+      "source_url": "https://servervana.com",
+      "category": "Monitoring",
+      "refused_date": "2026-10-11"
+    },
+    {
       "vendor": "Shadcn Studio",
       "change_type": "pricing_model_change",
       "reason": "no_terms_to_narrow",
@@ -6964,6 +7144,18 @@
       "collided_with": "Squash Labs|pricing_model_change|2026-08-28|https://www.squash.io/"
     },
     {
+      "vendor": "SSR (Server-side Rendering) Checker",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 4212 characters, so it states no terms to have changed",
+      "summary": "The tool now requires a paid subscription to unlock unlimited checks. While free checks are still available, they are limited by a queue and require account creation (via Google, Microsoft, GitHub, or email verification).",
+      "previous_state": "Check SSR (server-side rendering) for any URL by visually comparing the server rendered version of the page with the regular version.",
+      "current_state": "The tool offers free checks with limitations (queue, account creation) and an option to 'Unlock unlimited free checks' with a paid subscription.",
+      "source_url": "https://www.crawlably.com/ssr-checker/",
+      "category": "Testing",
+      "refused_date": "2026-10-11"
+    },
+    {
       "vendor": "StackBy",
       "change_type": "free_tier_removed",
       "reason": "removal_read_from_root",
@@ -7059,6 +7251,18 @@
       "category": "Monitoring",
       "refused_date": "2026-09-18",
       "collided_with": "StatusCake|limits_increased|2026-09-02|https://www.statuscake.com/pricing/"
+    },
+    {
+      "vendor": "statusgator.com",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 11071 characters, so it states no terms to have changed",
+      "summary": "The page does not explicitly mention a free tier with 3 monitors. It prominently features a 'Start free trial' button and discusses features like cloud monitoring and outage notifications, but doesn't detail a permanently free option.",
+      "previous_state": "Status page monitoring, 3 monitors free",
+      "current_state": "The page promotes a free trial, but does not mention a permanently free tier with 3 monitors. It focuses on features available through a trial or paid plans.",
+      "source_url": "https://statusgator.com/",
+      "category": "Monitoring",
+      "refused_date": "2026-10-11"
     },
     {
       "vendor": "Stoplight",
@@ -7613,6 +7817,18 @@
       "collided_with": "TraceLog|pricing_restructured|2026-08-28|https://tracelog.io/"
     },
     {
+      "vendor": "transifex.com",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 12353 characters, so it states no terms to have changed",
+      "summary": "The page does not explicitly mention a free tier for open-source projects. It focuses on paid plans and features like Transifex AI and TMS.",
+      "previous_state": "Free for open-source projects with OSI-approved license and no commercialization",
+      "current_state": "The page highlights features like AI-powered translation, TMS, and integrations, and encourages users to 'Book a demo' or 'Get a demo', implying a paid service.",
+      "source_url": "https://www.transifex.com/",
+      "category": "Localization",
+      "refused_date": "2026-10-11"
+    },
+    {
       "vendor": "Turbopuffer",
       "change_type": "limits_reduced",
       "reason": "states_no_terms",
@@ -7785,6 +8001,18 @@
       "refused_date": "2026-09-05"
     },
     {
+      "vendor": "UptimeObserver.com",
+      "change_type": "limits_reduced",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 4925 characters, so it states no terms to have changed",
+      "summary": "The free tier now has a 5-minute monitoring interval instead of the previously stated 5-minute interval. The free tier also includes HTTPS, SSL, Domain Name, DNS, and Port Monitoring, Email Alerts, 1 Email Alert Recipient, Telegram Alerts, Pushover Alerts, Slack Alerts, Discord Alerts, 2 Webhook Alerts, and Status Pages with Custom Domains.",
+      "previous_state": "Get 20 uptime monitors with 5-minute intervals and a customizable status page—even for commercial use. Enjoy unlimited, real-time notifications via email and Telegram. No credit card needed to get started.",
+      "current_state": "Free: 20 Monitors, 5 min. monitoring interval, 1 Status Page, HTTPS Monitoring, SSL Monitoring, Domain Name Monitoring, DNS Monitoring, Port Monitoring, Email Alerts, 1 Email Alert Recipients, Telegram Alerts, Pushover Alerts, Slack Alerts, Discord Alerts, 2 Webhook Alerts, Status Pages with Custom Domains, Email and Chat Support",
+      "source_url": "https://uptimeobserver.com",
+      "category": "Monitoring",
+      "refused_date": "2026-10-11"
+    },
+    {
       "vendor": "UptimeRobot",
       "change_type": "limits_increased",
       "reason": "measures_no_change",
@@ -7880,6 +8108,18 @@
       "source_url": "https://www.uxtweak.com/",
       "category": "Analytics",
       "refused_date": "2026-10-08"
+    },
+    {
+      "vendor": "v0.dev",
+      "change_type": "pricing_model_change",
+      "reason": "page_does_not_name_vendor",
+      "detail": "the page read never names v0.dev and is not served from its domain, so any terms on it belong to somebody else",
+      "summary": "The free tier with $5 credits and 7 messages/day is no longer mentioned. The page now focuses on using your existing ChatGPT plan with v0 and offers various templates and features. It appears the service is now heavily integrated with OpenAI and may require a paid OpenAI subscription to function.",
+      "previous_state": "Created by Vercel, v0 generates copy-and-paste friendly React code using shadcn/ui and Tailwind CSS. Free plan: $5 of included monthly credits, 7 messages/day limit. Visual editing with Design Mode, GitHub sync, and deploy to Vercel included. (v0.dev now redirects to v0.app.)",
+      "current_state": "v0 requires integration with an OpenAI plan to function. It offers various templates and features for building web applications.",
+      "source_url": "https://v0.app/",
+      "category": "IDE & Code Editors",
+      "refused_date": "2026-10-11"
     },
     {
       "vendor": "Vaadin",
