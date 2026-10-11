@@ -109,6 +109,7 @@ const GUIDE_ENTRIES: Array<{ slug: string; title: string }> = [
   { slug: "business-bank-account-fees-2026", title: "Business Bank Accounts 2026: Free Plans, Fees and Changes" },
   { slug: "company-formation-pricing-2026", title: "Forming a US Company in 2026: Costs and Changes" },
   { slug: "whatsapp-business-api-pricing-2026", title: "WhatsApp Business API Pricing 2026: Service Messages No Longer Free" },
+  { slug: "mistral-api-pricing-2026", title: "Mistral API Pricing 2026: Free Tier, Costs and Limits" },
 ];
 
 export function getGuideList(): GuideMetadata[] {

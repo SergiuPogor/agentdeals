@@ -8,6 +8,10 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.join(__dirname, "..");
 
+const { readMistralPrices, retiredTermsSentences } = await import("../dist/mistral-prices.js");
+const MARKED_RETIRED_TERMS: string[] = retiredTermsSentences(readMistralPrices());
+const MISTRAL_GUIDE = "/mistral-api-pricing-2026";
+
 const GROQ_RETIRED = /Llama 3\.3|Llama 3\.1|Llama 4|Llama, Mixtral|Mixtral|Gemma|Qwen3(?![.\d])|100K-500K|14\.4K RPD|3-15M/;
 const MISTRAL_RETIRED = /1B tokens|1B tok|1 billion tokens|2 RPM|2\.8K RPD|Experiment tier/;
 
@@ -69,6 +73,10 @@ const STATED: Record<string, string[]> = {
     "Groq wins on speed; Mistral wins on model variety.",
     "(especially Codestral for code), or prefer European-based AI providers.",
   ],
+  [MISTRAL_GUIDE]: [
+    "New accounts start in Mistral's Free mode, and every plan includes monthly usage shared across Studio, the API and Vibe Code.",
+    "Mistral publishes no rate-limit numbers.",
+  ],
   "/ai-free-tiers": [
     "Groq serves fast inference on a free plan, and Google Antigravity has a free individual plan with weekly limits.",
     "Mistral's Free plan includes monthly API usage; its pricing page listed $10 a month until 2026-10-07, then stopped stating the amount.",
@@ -101,6 +109,7 @@ const WITHDRAWN: Record<string, string[]> = {
   "/ai-ml-alternatives": MISTRAL_CREDIT_AS_CURRENT,
   "/free-llm-apis": MISTRAL_CREDIT_AS_CURRENT,
   "/ai-free-tiers": MISTRAL_CREDIT_AS_CURRENT,
+  [MISTRAL_GUIDE]: MISTRAL_CREDIT_AS_CURRENT,
 };
 
 const PAGES = Object.keys(STATED);
@@ -206,7 +215,7 @@ function claimsStillSold(vendorWord: RegExp, vendor: string, retired: RegExp): s
   const quotesARecord = (unit: string) => recorded.some((sentence) => unit.includes(sentence));
   return PAGES.flatMap((page) =>
     unitsOf(served.get(page)!)
-      .filter((unit) => vendorWord.test(unit) && retired.test(unit) && !quotesARecord(unit))
+      .filter((unit) => vendorWord.test(unit) && retired.test(unit) && !quotesARecord(unit) && !MARKED_RETIRED_TERMS.includes(unit))
       .map((unit) => `${page}: ${unit}`),
   );
 }
@@ -218,6 +227,16 @@ describe("the AI guides state Groq's and Mistral's free plans as the vendors lis
 
   it("sells none of Mistral's old Experiment tier allowance, outside Mistral's own change records", () => {
     assert.deepStrictEqual(claimsStillSold(/Mistral/, "Mistral AI", MISTRAL_RETIRED), []);
+  });
+
+  it("lets Mistral's old free-tier figures through only in the sentences the Mistral guide's data file marks as retired terms, each with a dated archive capture", () => {
+    assert.ok(MARKED_RETIRED_TERMS.length > 0, "the Mistral guide's data file marks no retired terms");
+    const letThrough = PAGES.flatMap((page) =>
+      unitsOf(served.get(page)!)
+        .filter((unit) => /Mistral/.test(unit) && MISTRAL_RETIRED.test(unit) && MARKED_RETIRED_TERMS.includes(unit))
+        .map((unit) => `${page}: ${unit}`),
+    );
+    assert.deepStrictEqual(letThrough, MARKED_RETIRED_TERMS.map((sentence) => `${MISTRAL_GUIDE}: ${sentence}`));
   });
 
   it("renders every replacement where it belongs", () => {
