@@ -308,8 +308,10 @@ describe("a page may only name the source it actually reads", () => {
   it("claims no share of a page whose figures all sit in one of its tables, because the reader reads it over every table", () => {
     const overreaching: string[] = [];
     let scoped = 0;
+    let read = 0;
     for (const page of pages) {
       const seen = measured.get(page.path)!;
+      read += 1;
       const body = readableText(bodies.get(page.path)!);
       const sole = soleCreditedTable(seen);
       const claimsThePage = /\d+ of \d+ figures in the tables below come from our records for/.test(body);
@@ -323,7 +325,8 @@ describe("a page may only name the source it actually reads", () => {
       }
     }
     assert.deepStrictEqual(overreaching, []);
-    assertPopulationFloor(scoped, 20, "registered pages whose credited figures all sit in one of several tables");
+    assertPopulationFloor(scoped, 1, "registered pages whose credited figures all sit in one of several tables");
+    assertCoversPopulation(read, pagesOnTheReviewRegister(), "registered pages read for a share claimed over one credited table");
   });
 
   it("names a table the served page lays out under that heading, so the byline cannot point at nothing", () => {

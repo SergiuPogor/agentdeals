@@ -31,16 +31,19 @@ const RETIRED = [
   "Premium Ends",
   "API access included",
   "may not be significantly better than what's available for free",
+  "Premium on Workspace accounts did not change",
+  "Workspace accounts keep existing Premium subscriptions",
+  "U.S. college students",
 ];
 
 const STATED = [
-  "Google no longer sells standalone Google Developer Program Premium ($299/year or $24.99/month). On personal (@gmail.com) accounts, annual plans stopped renewing after March 30, 2026 and monthly plans after June 30, 2026; Premium on Workspace accounts did not change. Its Google Cloud credits and Firebase Studio workspaces now come with Google AI Pro ($19.99/mo) and Google AI Ultra (from $99.99/mo) on personal Google Accounts. Premium's 1:1 consultations, certification voucher and unlimited Google Skills access did not carry over.",
+  "Google no longer sells standalone Google Developer Program Premium ($299/year or $24.99/month). On personal (@gmail.com) accounts, annual plans stopped renewing after March 30, 2026 and monthly plans after June 30, 2026. Google's FAQ (updated 2026-10-07) says no existing subscription can be renewed since September 18, 2026. Monthly subscribers keep benefits until October 18, 2026 and annual subscribers until September 18, 2027. The FAQ does not exempt Workspace accounts, though Google's older benefits page says Workspace subscriptions are not changing. Its Google Cloud credits and Firebase Studio workspaces now come with Google AI Pro ($19.99/mo) and Google AI Ultra (from $99.99/mo) on personal Google Accounts. Premium's 1:1 consultations, certification voucher and unlimited Google Skills access did not carry over.",
   "The closest match to the old credit is Ultra 5x at $99.99/mo with $40/mo ($480/yr), about 4x Premium's $299/year.",
   "Cloud Storage for Firebase is the exception: since February 3, 2026 it needs the Blaze plan.",
-  "Monthly standalone Premium ($24.99) on @gmail.com accounts stopped auto-renewing. Workspace accounts keep existing Premium subscriptions. No new standalone sign-ups are accepted.",
+  "Monthly standalone Premium ($24.99) on @gmail.com accounts stopped auto-renewing. Workspace subscriptions kept renewing until Google stopped all renewals on September 18, 2026. No new standalone sign-ups are accepted.",
   "Cloud Run, BigQuery and Cloud Build keep their free tiers. Firebase's Spark plan lost Cloud Storage on February 3, 2026. The free Google Developer Program (non-Premium) continues.",
   "$120/year in credits for $199.99/year",
-  "Eligible U.S. college students aged 18+ get Google AI Pro free for a year (redeem by December 31, 2026; a payment method is required, and it then renews at $19.99/month). Otherwise, Oracle's Always Free tier and AWS's free plan cost nothing.",
+  "Eligible college students aged 18+ in countries where the plan is offered, except Bolivia, Albania, Canada, Hong Kong, Macau, and Tunisia, get Google AI Pro free for a year (redeem by December 31, 2026; a payment method is required, and it then renews at $19.99/month). Otherwise, Oracle's Always Free tier and AWS's free plan cost nothing.",
   "4. If You Held Premium",
   "(Cloud Run free tier, BigQuery 1 TiB of queries a month, Cloud Build 2,500 build-minutes a month)",
   "If staying with Google: subscribe to AI Pro or AI Ultra; standalone Premium no longer takes sign-ups.",

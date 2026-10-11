@@ -32189,6 +32189,18 @@
           "quote": "Your Free Tier e2-micro instance limit is by time, not by instance.",
           "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
           "read_on": "2026-10-04"
+        },
+        {
+          "text": "An external IPv4 address in use on a VM, including the free e2-micro, costs $0.005 an hour. The free tier covers one hour a month. A VM running all month pays about $3.65 for it. External IPv6 addresses are free.",
+          "quote": "Both static and ephemeral IP addresses assigned to standard VM instances are offered with a free tier. This free usage is limited to one hour per month per account.",
+          "url": "https://cloud.google.com/vpc/network-pricing",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "The free tier covers 30 GB-months of standard persistent disk. A disk created in the Google Cloud console defaults to balanced persistent disk, which the free tier does not cover. Choose Standard persistent disk, or create the VM with the gcloud CLI, which defaults to standard.",
+          "quote": "If you create a disk in the Google Cloud console, the default disk type is pd-balanced. If you create a disk using the gcloud CLI or the Compute Engine API, the default disk type is pd-standard.",
+          "url": "https://docs.cloud.google.com/compute/docs/disks/persistent-disks",
+          "read_on": "2026-10-11"
         }
       ]
     },
