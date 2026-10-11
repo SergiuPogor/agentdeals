@@ -35774,6 +35774,45 @@
         "outcome": "states_no_terms",
         "detail": "the page names Hetzner Inference API but states no amount, tier or rate we can read, and its markup carries no structured data"
       }
+    },
+    {
+      "vendor": "WhatsApp Business Platform",
+      "category": "Messaging",
+      "description": "1,000 free service messages (non-template replies inside the 24-hour customer service window) a month per business phone number, since 2026-10-01. Service messages after 1,000 and template messages are charged. Rates depend on message category and recipient country code.",
+      "tier": "Free",
+      "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+      "tags": [
+        "messaging",
+        "whatsapp",
+        "api"
+      ],
+      "verifiedDate": "2026-10-11",
+      "conditions": [
+        {
+          "text": "If a Messaging account has no payment method, Meta delivers service messages within the free tier but does not deliver them after the free tier is used.",
+          "quote": "If businesses do not have a payment method for their Messaging account(s), Meta will deliver service messages within the free tier but not deliver them after the free tier has been used.",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Utility templates sent inside an open customer service window were free before 2026-10-01. Since 2026-10-01, they are charged.",
+          "quote": "Utility messages sent in response to users (thus in an open customer service window), which became free as of July 1, 2025.",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Click to WhatsApp ads: When a user messages from such an ad on Android or iOS and the business replies within the customer service window, Meta does not charge for that reply or for the business's marketing, utility, authentication and service messages to that user for up to 7 days. Meta Business Agent messages are still charged.",
+          "quote": "If you respond within the customer service window with a marketing, utility, authentication or service message: That message is not charged and opens a Free Entry Point (“FEP”) window, starting from the time when you responded. The FEP window may remain open for up to 7 days.",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Meta may update pricing only on January 1, April 1, July 1 or October 1. The next possible change is 2027-01-01.",
+          "quote": "Meta may update pricing only on the 1st day of each quarter, thus up to 4 times per year: January 1, April 1, July 1, and/or October 1.",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
+          "read_on": "2026-10-11"
+        }
+      ]
     }
   ],
   "changes": []
