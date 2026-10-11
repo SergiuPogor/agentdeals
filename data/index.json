@@ -3640,7 +3640,7 @@
           "read_on": "2026-10-11"
         },
         {
-          "text": "To use Mistral's API in a commercial product, you must be a business customer. Mistral's Commercial Terms of Service apply to all plans, including the Free plan, and do not restrict the Free plan to non-commercial use.",
+          "text": "A business can use Mistral's API in a commercial product on any plan, including the Free plan; individuals cannot use the API for personal projects.",
           "quote": "govern the use of Mistral AI Studio, Vibe, and the other websites, products, software, services, and technologies we offer",
           "url": "https://legal.mistral.ai/terms/commercial-terms-of-service",
           "read_on": "2026-10-11"
