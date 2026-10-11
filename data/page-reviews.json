@@ -438,7 +438,6 @@
       "published": "2026-03-27",
       "tier": "A",
       "vendors_asserted": [
-        "amazon-q-developer",
         "aws",
         "azure",
         "cloudflare-pages",
