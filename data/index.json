@@ -3634,6 +3634,12 @@
       },
       "conditions": [
         {
+          "text": "Since August 2026, Mistral offers Mistral AI Studio and its API only to business customers. Its consumer terms for personal use exclude both, and API use falls under the Commercial Terms for an organization, company or other entity.",
+          "quote": "excluding Mistral AI Studio and access to any of our APIs, which are limited to business customers",
+          "url": "https://legal.mistral.ai/terms/row-consumer-terms",
+          "read_on": "2026-10-11"
+        },
+        {
           "text": "On the Free plan, Mistral may use your Studio and API inputs and outputs to train its models, and you can opt out at any time.",
           "quote": "As stated during subscription, we may use your data (input and output) to train our artificial intelligence models.",
           "url": "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models",
