@@ -191,13 +191,16 @@ const NUMBER = /\d+(?:,\d{3})*(?:\.\d+)?/g;
 
 const CURRENCY_AMOUNT = /(?:[$€£¥₹]\s?\d[\d,]*(?:\.\d+)?)|(?:\d[\d,]*(?:\.\d+)?\s?(?:USD|EUR|GBP)\b)/gi;
 const NAMED_TIER =
-  /\b(?:(?:free|hobby|starter|basic|pro|team|business|enterprise|premium|growth|standard|community|developer)\s+(?:plans?|tiers?|package)|free\s+(?:api|forever|version)|starts?\s+at)\b/gi;
+  /\b(?:(?:free|hobby|starter|basic|pro|team|business|enterprise|premium|growth|standard|community|developer)\s+(?:plans?|tiers?|package)|free\s+(?:api|forever|version|of\s+charge)|starts?\s+at)\b/gi;
 const METERED_RATE =
   /\b\d[\d,]*(?:\.\d+)?\s?[A-Za-z][\w-]*(?:\s+[\w-]+){0,3}\s*(?:\/\s*|\bper\s+|\ba\s+)(?:mo|month|monthly|yr|year|day|hour|hr|min|minute|sec|second|user|seat|request|call|query)\b/gi;
 const PERIODIC_ALLOWANCE =
   /\b\d[\d,]*(?:\.\d+)?\s+(?:daily|monthly|weekly|hourly|yearly|annual)\s+[a-z]/gi;
 
-const PRICE_SIGNAL_PATTERNS = [CURRENCY_AMOUNT, NAMED_TIER, METERED_RATE, PERIODIC_ALLOWANCE];
+const QUOTA_OF_TIME =
+  /(?<=\bquota\b[^.;:]{0,40}\b(?:is|of)\s+)(?:up\s+to\s+)?\d[\d,]*(?:\.\d+)?\s+(?:hours?|hrs?|minutes?|mins?)\b/gi;
+
+const PRICE_SIGNAL_PATTERNS = [CURRENCY_AMOUNT, NAMED_TIER, METERED_RATE, PERIODIC_ALLOWANCE, QUOTA_OF_TIME];
 
 const ATTRIBUTE_WINDOW = 60;
 const ATTRIBUTE_WORDS = 6;
