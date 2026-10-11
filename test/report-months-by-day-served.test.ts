@@ -229,9 +229,16 @@ describe("the monthly report for the month under way", () => {
     );
   });
 
-  it("names the days the month covers in its meta description, so the description dates its own change when the month begins and ends", () => {
-    assert.ok(report(MID_OCTOBER, OCTOBER).metaDescription.startsWith("2 pricing changes tracked during October 1\u201331, 2026 "), report(MID_OCTOBER, OCTOBER).metaDescription);
-    assert.ok(report(FIRST_DAY_OF_NOVEMBER, NOVEMBER).metaDescription.startsWith("0 pricing changes tracked during November 1\u201330, 2026 "), report(FIRST_DAY_OF_NOVEMBER, NOVEMBER).metaDescription);
+  it("says in its meta description that its count is so far, through the day served, and how many more are scheduled for later in the month", () => {
+    assert.strictEqual(
+      report(MID_OCTOBER, OCTOBER).metaDescription,
+      "2 pricing changes so far in October 2026 (through 2026-10-11), and 2 scheduled for later in the month \u2014 free tier removals, new additions, and trend analysis for developer tools.",
+    );
+    assert.ok(report(FIRST_DAY_OF_NOVEMBER, NOVEMBER).metaDescription.startsWith("0 pricing changes so far in November 2026 (through 2026-11-01), and 2 scheduled for later in the month \u2014 "), report(FIRST_DAY_OF_NOVEMBER, NOVEMBER).metaDescription);
+  });
+
+  it("drops the scheduled clause from its meta description once none is left, and says tracked in the month once it has ended", () => {
+    assert.ok(report(LAST_DAY_OF_OCTOBER, OCTOBER).metaDescription.startsWith("4 pricing changes so far in October 2026 (through 2026-10-31) \u2014 "), report(LAST_DAY_OF_OCTOBER, OCTOBER).metaDescription);
     assert.ok(report(FIRST_DAY_OF_NOVEMBER, OCTOBER).metaDescription.startsWith("4 pricing changes tracked in October 2026 "), report(FIRST_DAY_OF_NOVEMBER, OCTOBER).metaDescription);
   });
 

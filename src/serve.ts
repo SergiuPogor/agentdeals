@@ -9982,6 +9982,11 @@ function daysOfTheMonth(yearMonth: string): string {
   return getMonthName(month) + " 1\u2013" + lastDay + ", " + year;
 }
 
+function monthSoFarMetaDescription(monthName: string, yearStr: string, inEffect: number, servedOn: string, scheduled: number): string {
+  const scheduledClause = scheduled === 0 ? "" : ", and " + scheduled + " scheduled for later in the month";
+  return inEffect + " pricing changes so far in " + monthName + " " + yearStr + " (through " + servedOn + ")" + scheduledClause + " — free tier removals, new additions, and trend analysis for developer tools.";
+}
+
 function monthSoFarLine(monthName: string, yearStr: string, inEffect: number, servedOn: string, scheduled: number): string {
   const through = getMonthName(parseInt(servedOn.slice(5, 7), 10)) + " " + parseInt(servedOn.slice(8, 10), 10);
   const happened = monthName + " " + yearStr + " so far: " + inEffect + (inEffect === 1 ? " change" : " changes") + " through " + through + ".";
@@ -10132,7 +10137,7 @@ function buildMonthlyReportPage(yearMonth: string): string | null {
   const metaDesc = notStarted
     ? scheduledChanges.length + " pricing changes scheduled for " + daysOfTheMonth(yearMonth) + " — free tier removals, new additions, and trend analysis for developer tools."
     : underway
-      ? monthChanges.length + " pricing changes tracked during " + daysOfTheMonth(yearMonth) + " — free tier removals, new additions, and trend analysis for developer tools."
+      ? monthSoFarMetaDescription(monthName, yearStr, monthChanges.length, servedOn, scheduledChanges.length)
       : monthChanges.length + " pricing changes tracked in " + monthName + " " + yearStr + " — free tier removals, new additions, and trend analysis for developer tools.";
 
   const negativeTypes = NEGATIVE_CHANGE_TYPES;
