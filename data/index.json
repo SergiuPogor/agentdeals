@@ -7316,6 +7316,12 @@
           "quote": "we do not retain inputs and outputs associated with our training, inference, and chatbot Services",
           "url": "https://www.cerebras.ai/privacy-policy",
           "read_on": "2026-10-04"
+        },
+        {
+          "text": "Free Trial context windows are 65K tokens for gpt-oss-120b and 64K for qwen-3.8-27b. Paid accounts get 131K and 128K.",
+          "quote": "Context (free / paid): 65k / 131k (gpt-oss-120b); 64k / 128k (qwen-3.8-27b)",
+          "url": "https://inference-docs.cerebras.ai/models/overview",
+          "read_on": "2026-10-11"
         }
       ]
     },
