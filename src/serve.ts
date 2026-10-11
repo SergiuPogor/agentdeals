@@ -137,7 +137,7 @@ import { buildProductFunctions, functionMembers, functionDefinitions, functionMe
 import { curatedAlternativesFor } from "./curated-alternatives.js";
 import { vendorSubstitutes, substitutesListedFor } from "./vendor-substitutes.js";
 import type { Agent, ChangeDateSource, DealChange, FreePlanExcerpt, RiskCause, RatingWithheld, LinkUnreachable, ListingCondition, Offer, StabilityClass, SubtypeLabel } from "./types.js";
-import { A_DATED_HEADING_MARKER, A_DATED_SECTION_MARKER, archiveBracketOf, datedHeadingNoticeHtml, datedSectionNoticeHtml, namedFromItsDate, namedOnceItsDateArrived, namedWhileAheadOf, namedWhileNotBefore, ANNOUNCED_BADGE, ANNOUNCED_HEADING, announcedIntro, changeDateLabel, changeEntryDateLabel, changeEntryLongDateLabel, changeDateClause, changeDatePublished, changeEventStartDate, capListSections, latestEventDate, offerExpiryAfter, feedEntryUpdated, UNDATED_TILE_LABEL, firstReadHeading, discoveryBatchNote, coveringBracketedChanges, changeEntryDateLabelHtml, isoWeekOf, monthlyChangeSeries, changesInWindow, discoveryMonthSeriesHeading, periodComparisonSentence, DISCOVERED_DATE_PREFIX, EFFECTIVE_DATE_PREFIX, UNKNOWN_EFFECTIVE_DATE_MARKER, EFFECTIVE_BY_DATE_MEANING, BRACKETED_DATE_PREFIX, RECORDED_DATE_PREFIX, CORRECTED_DATE_PREFIX, EFFECTIVE_MONTH_SERIES_NOTE, DISCOVERY_MONTH_SERIES_NOTE, weekRangeLabel, newestChangeInEffect, vendorPageLastUpdated } from "./change-dates.js";
+import { A_DATED_HEADING_MARKER, A_DATED_SECTION_MARKER, archiveBracketOf, datedHeadingNoticeHtml, datedSectionNoticeHtml, namedFromItsDate, namedOnceItsDateArrived, namedWhileAheadOf, namedWhileNotBefore, ANNOUNCED_BADGE, ANNOUNCED_HEADING, announcedIntro, changeDateLabel, changeEntryDateLabel, changeEntryLongDateLabel, changeDateClause, changeDatePublished, changeEventStartDate, capListSections, latestEventDate, offerExpiryAfter, feedEntryUpdated, UNDATED_TILE_LABEL, firstReadHeading, discoveryBatchNote, coveringBracketedChanges, changeEntryDateLabelHtml, isoWeekOf, monthlyChangeSeries, changesInWindow, discoveryMonthSeriesHeading, periodComparisonSentence, DISCOVERED_DATE_PREFIX, EFFECTIVE_DATE_PREFIX, UNKNOWN_EFFECTIVE_DATE_MARKER, EFFECTIVE_BY_DATE_MEANING, BRACKETED_DATE_PREFIX, RECORDED_DATE_PREFIX, CORRECTED_DATE_PREFIX, EFFECTIVE_MONTH_SERIES_NOTE, DISCOVERY_MONTH_SERIES_NOTE, weekRangeLabel, newestChangeInEffect, hasNotTakenEffect, vendorPageLastUpdated } from "./change-dates.js";
 import { changeFeedEntries, feedEntryFields, feedUpdatedTimestamp, changeFeedProvenanceNote, CHANGE_FEED_ENTRY_LIMIT, CHANGE_FEED_DESCRIPTION, CHANGE_FEED_NAMESPACE, CHANGE_FEED_NAMESPACE_PREFIX, channelUpdatedTimestamp, WEEKLY_FEED_POPULATION_NOTE, feedLinkTag, feedEntrySourceXml, digestSourceXml, PER_CHANGE_FEED, WEEKLY_DIGEST_FEED } from "./change-feed.js";
 import { changeLogInPageOrder, changeLogSections, changeLogSectionsHtml, monthHeadingLabel } from "./change-log-sections.js";
 import { FEED_CORRECTIONS, correctionEntriesXml } from "./feed-corrections.js";
@@ -4769,10 +4769,34 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 @media(max-width:768px){h1{font-size:1.5rem}.stats-bar{flex-direction:column}}
 ${globalNavCss()}`;
 
+const SCHEDULED_SHUTDOWN_BADGE_LABEL = "scheduled shutdown";
+
+const SCHEDULED_COUNT_LABEL = "scheduled";
+
+function isScheduledShutdown(c: Pick<DealChange, "change_type" | "date">, servedOn: string): boolean {
+  return c.change_type === "product_deprecated" && hasNotTakenEffect(c, servedOn);
+}
+
+function digestEntryBadge(c: DealChange, servedOn: string): { label: string; color: string } {
+  const badge = changeTypeBadge[c.change_type] ?? { label: c.change_type, color: "#8b949e" };
+  return isScheduledShutdown(c, servedOn) ? { ...badge, label: SCHEDULED_SHUTDOWN_BADGE_LABEL } : badge;
+}
+
+function weekHasNotStarted(year: number, week: number, servedOn: string): boolean {
+  return getWeekStart(year, week).toISOString().slice(0, 10) > servedOn;
+}
+
+function weekNotStartedLine(year: number, week: number, count: number): string {
+  return count === 1
+    ? `Week ${week}, ${year} has not started. 1 change is scheduled; the service below still works until its date.`
+    : `Week ${week}, ${year} has not started. ${count} changes are scheduled; each service below still works until its date.`;
+}
+
 function buildDigestPage(weekKey: string): string | null {
   const parsed = parseWeekKey(weekKey);
   if (!parsed) return null;
   const { year, week } = parsed;
+  const servedOn = new Date().toISOString().slice(0, 10);
 
   const byWeek = getChangesByWeek();
   const weekRecords = vendorChangesAmong(byWeek.get(weekKey) ?? []);
@@ -4783,13 +4807,16 @@ function buildDigestPage(weekKey: string): string | null {
     ? ` ${discovered.length} more recorded with no known effective date.`
     : "";
   const title = `Developer Tool Pricing Changes: ${dateRange} — AgentDeals`;
+  const notStarted = changes.length > 0 && weekHasNotStarted(year, week, servedOn);
   const metaDesc = changes.length > 0
-    ? `${changes.length} pricing changes tracked for developer tools during ${dateRange}. ${changes.filter(c => c.impact === "high").length} high-impact changes.${discoveryClause}`
+    ? `${changes.length} pricing changes ${notStarted ? "scheduled" : "tracked"} for developer tools during ${dateRange}. ${changes.filter(c => c.impact === "high").length} high-impact changes.${discoveryClause}`
     : `No pricing changes tracked for developer tools during ${dateRange}.${discoveryClause}`;
 
-  const byType = new Map<string, number>();
+  const byCountLabel = new Map<string, { count: number; color: string }>();
   for (const c of changes) {
-    byType.set(c.change_type, (byType.get(c.change_type) ?? 0) + 1);
+    const badge = changeBadge(c.change_type);
+    const label = isScheduledShutdown(c, servedOn) ? SCHEDULED_COUNT_LABEL : badge.label;
+    byCountLabel.set(label, { count: (byCountLabel.get(label)?.count ?? 0) + 1, color: badge.color });
   }
 
   const discoveryPill = discovered.length > 0
@@ -4798,10 +4825,9 @@ function buildDigestPage(weekKey: string): string | null {
   const statsHtml = changes.length > 0 ? `
   <div class="stats-bar">
     <div class="stat-pill"><strong>${changes.length}</strong> change${changes.length !== 1 ? "s" : ""}</div>
-    ${Array.from(byType.entries()).map(([type, count]) => {
-      const badge = changeBadge(type);
-      return `<div class="stat-pill"><span style="width:8px;height:8px;border-radius:50%;background:${badge.color};display:inline-block"></span> <strong>${count}</strong> ${badge.label}</div>`;
-    }).join("\n    ")}${discoveryPill}
+    ${Array.from(byCountLabel.entries()).map(([label, { count, color }]) =>
+      `<div class="stat-pill"><span style="width:8px;height:8px;border-radius:50%;background:${color};display:inline-block"></span> <strong>${count}</strong> ${label}</div>`
+    ).join("\n    ")}${discoveryPill}
   </div>` : (discovered.length > 0 ? `
   <div class="stats-bar">
     <div class="stat-pill"><strong>0</strong> changes</div>${discoveryPill}
@@ -4816,7 +4842,7 @@ function buildDigestPage(weekKey: string): string | null {
   const impactLabels = { high: "High Impact", medium: "Medium Impact", low: "Low Impact", ungraded: "Impact Not Graded" };
 
   function digestEntry(c: typeof weekRecords[0], borderColor: string): string {
-    const badge = changeTypeBadge[c.change_type] ?? { label: c.change_type, color: "#8b949e" };
+    const badge = digestEntryBadge(c, servedOn);
     return `<div class="change-entry" style="border-left-color:${borderColor}">
       <div class="change-header">
         <span class="change-badge" style="background:${badge.color}">${badge.label}</span>
@@ -4902,7 +4928,7 @@ ${OG_IMAGE_META}${GOOGLE_VERIFICATION_META}<link rel="icon" type="image/png" hre
   ${buildGlobalNav("digest")}
   <div class="breadcrumb"><a href="/">AgentDeals</a> &rsaquo; <a href="/digest/archive">Digest</a> &rsaquo; ${weekKey}</div>
   <h1>Pricing Changes: ${dateRange}</h1>
-  <p class="page-meta">${changes.length} change${changes.length !== 1 ? "s" : ""} tracked in week ${week}, ${year}.${discoveryClause}</p>
+  <p class="page-meta">${notStarted ? weekNotStartedLine(year, week, changes.length) : `${changes.length} change${changes.length !== 1 ? "s" : ""} tracked in week ${week}, ${year}.`}${discoveryClause}</p>
 ${statsHtml}
 ${bodyHtml}
 ${trendingHtml}
@@ -23218,7 +23244,7 @@ ${mcpCtaCss()}
 
   <div class="impact-card" style="border-left-color:#d29922">
     <h3 style="color:#d29922">Prepaid billing for all paid accounts</h3>
-    <p class="impact-desc">New users default to Prepay and buy at least $5 of credits to set up billing. To keep a high-spend account running, you can <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">prepay up to $5,000 in credits</a>. For amounts larger than $5,000 a month, use auto-reload to automatically add credits. If you set a monthly auto-reload limit, auto-reload stops when reached. Manual purchases still work. Auto-reload resumes at the next billing cycle start. If you start the switch to Prepay and stop before paying, other projects may lose service. To restore service, complete the setup, or contact Cloud Billing Support to set the account back to Postpay. <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">Google is moving existing paid accounts from Postpay to Prepay for Gemini API usage</a>: switch on the AI Studio Billing page and buy credits before the cutover date in your account notice, <a href="https://www.watch.impress.co.jp/docs/news/2132505.html" target="_blank" rel="noopener">reported as October 12, 2026</a>, or the account's paid Gemini API service is interrupted. Only Gemini API usage moves to Prepay; other Google Cloud services on the same billing account stay on Postpay. If your Cloud Billing account has a Gemini API Prepay credit balance but your card expired or a payment for another Google Cloud service was declined, the Gemini API <a href="https://ai.google.dev/gemini-api/docs/billing#missed-payment" target="_blank" rel="noopener">can still be suspended</a>. This happens with an overdue balance, a declined payment, or an invalid payment method. Resolve the issue in the Google Cloud Billing console to restore service. Google's billing FAQ states that accounts cannot switch from Prepay to Postpay, and Prepay is not available for invoiced accounts. To pay after use instead of prepaying, use Gemini Enterprise Agent Platform (formerly Vertex AI). Google <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">bills it on the standard Cloud charging cycle</a>, not Prepay. Agent Platform charges <a href="https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing" target="_blank" rel="noopener">$0.75 input and $3.75 output per million tokens for Gemini 3.8 Flash and 3.6 Flash on the global endpoint through 2026-12-31, then $1.50 input and $7.50 output</a>. Non-global endpoints cost 10% more. These match Gemini API paid-tier prices. If moving from gemini-3.5-flash, change the model to gemini-3.6-flash or gemini-3.8-flash, as Agent Platform still lists Gemini 3.5 Flash at $1.50 input and $9.00 output. Accounts that use only the free tier need take no action. Eligible Google Cloud credits are used only after you have bought Prepay credits, and stop being used when the Prepay balance reaches $0. Prepaid credits expire 12 months after purchase and are non-refundable. When the balance reaches $0, every API key on the billing account stops working until you add credits. If you pay by bank transfer, some payments take <a href="https://ai.google.dev/gemini-api/docs/billing#processing-times" target="_blank" rel="noopener">several days to clear</a>. Most card payments are instant. Gemini API service resumes only after the purchase is confirmed. Usage can continue for approximately 10 minutes past a $0 balance due to billing latency. Batch jobs and agents may consume credits beyond the balance. A negative balance is deducted from the next credit purchase.</p>
+    <p class="impact-desc">New users default to Prepay and buy at least $5 of credits to set up billing. To keep a high-spend account running, you can <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">prepay up to $5,000 in credits</a>. For amounts larger than $5,000 a month, use auto-reload to automatically add credits. If you set a monthly auto-reload limit, auto-reload stops when reached. Manual purchases still work. Auto-reload resumes at the next billing cycle start. If you start the switch to Prepay and stop before paying, other projects may lose service. To restore service, complete the setup, or contact Cloud Billing Support to set the account back to Postpay. <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">Google is moving existing paid accounts from Postpay to Prepay for Gemini API usage</a>: switch on the AI Studio Billing page and buy credits before the cutover date in your account notice, <a href="https://www.watch.impress.co.jp/docs/news/2132505.html" target="_blank" rel="noopener">reported as October 12, 2026</a>, or the account's paid Gemini API service is interrupted. An account that missed its cutover date can still switch. <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">Google's billing FAQ says an existing Postpay account can transition to Prepay</a> on the AI Studio Billing page. The doc gives no deadline for the switch. Paid Gemini API service resumes only after the credit purchase is confirmed. Only Gemini API usage moves to Prepay; other Google Cloud services on the same billing account stay on Postpay. If your company pays Google Cloud by monthly invoice, Google's billing doc says <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">Prepay is not available for invoiced (offline) billing accounts</a>. If you received a cutover notice, ask Cloud Billing Support what it requires before the date in it. If your Cloud Billing account has a Gemini API Prepay credit balance but your card expired or a payment for another Google Cloud service was declined, the Gemini API <a href="https://ai.google.dev/gemini-api/docs/billing#missed-payment" target="_blank" rel="noopener">can still be suspended</a>. This happens with an overdue balance, a declined payment, or an invalid payment method. Resolve the issue in the Google Cloud Billing console to restore service. Google's billing FAQ states that accounts cannot switch from Prepay to Postpay. To pay after use instead of prepaying, use Gemini Enterprise Agent Platform (formerly Vertex AI). Google <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">bills it on the standard Cloud charging cycle</a>, not Prepay. Agent Platform charges <a href="https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing" target="_blank" rel="noopener">$0.75 input and $3.75 output per million tokens for Gemini 3.8 Flash and 3.6 Flash on the global endpoint through 2026-12-31, then $1.50 input and $7.50 output</a>. Non-global endpoints cost 10% more. These match Gemini API paid-tier prices. If moving from gemini-3.5-flash, change the model to gemini-3.6-flash or gemini-3.8-flash, as Agent Platform still lists Gemini 3.5 Flash at $1.50 input and $9.00 output. Accounts that use only the free tier need take no action. Eligible Google Cloud credits are used only after you have bought Prepay credits, and stop being used when the Prepay balance reaches $0. Prepaid credits expire 12 months after purchase and are non-refundable. When the balance reaches $0, every API key on the billing account stops working until you add credits. Calls failing with HTTP 403 "Your project has been denied access" are not from a $0 Prepay balance, which returns 402. <a href="https://discuss.ai.google.dev/t/get-v1beta-models-returns-200-ok-but-generatecontent-returns-http-403-your-project-has-been-denied-access/187288" target="_blank" rel="noopener">Google staff say</a> 403 or "Unavailable" in AI Studio means a flag is on the account. For free-tier projects, complete age verification in your Google Account, then retry or create a new API key. If access is still denied, staff suggest adding Prepay credits, which ends your free tier quota. If you pay by bank transfer, some payments take <a href="https://ai.google.dev/gemini-api/docs/billing#processing-times" target="_blank" rel="noopener">several days to clear</a>. Most card payments are instant. Gemini API service resumes only after the purchase is confirmed. Usage can continue for approximately 10 minutes past a $0 balance due to billing latency. Batch jobs and agents may consume credits beyond the balance. A negative balance is deducted from the next credit purchase. After buying credits, calls may still fail with "Your prepayment credits are depleted". <a href="https://discuss.ai.google.dev/t/manual-sync-request-prepayment-credits-depleted-429-despite-funded-account/172183" target="_blank" rel="noopener">Google staff say</a> there is no manual billing sync to request. Check that the credits are a Prepay balance on the AI Studio Billing page, not a spend cap or funds in the Google Cloud billing account, and that the API key belongs to a project on that billing account. Retry the calls; if the error continues, post the exact error message and request time on <a href="https://discuss.ai.google.dev/" target="_blank" rel="noopener">Google's AI developer forum</a>.</p>
   </div>
   <div class="impact-card" style="border-left-color:#f85149">
     <h3 style="color:#f85149">Gemini 3.1 Pro is paid-only</h3>
@@ -28053,7 +28079,7 @@ function buildAiCodingToolsPricingPage(): string {
       freeType: "limited",
       monthlyCostSolo: "$20",
       monthlyCostTeam5: "$200",
-      hiddenCosts: "Credit consumption varies by model — Opus burns 10x faster than Sonnet.",
+      hiddenCosts: "Usage cost varies by model. Claude Opus 5.5 costs $4/$20 per million tokens, twice the $2/$10 cost of Claude Sonnet 5.5.",
     },
     {
       name: "Windsurf",

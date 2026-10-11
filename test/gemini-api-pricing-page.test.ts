@@ -147,7 +147,7 @@ describe(`${PAGE} on paying after use once Prepay starts`, () => {
   it("says what cannot be undone, then the route that bills after use, at the Gemini API's paid-tier prices", () => {
     const text = withoutTags(prepayParagraph(page));
     assert.ok(text.includes(
-      "Google's billing FAQ states that accounts cannot switch from Prepay to Postpay, and Prepay is not available for invoiced accounts. " +
+      "Google's billing FAQ states that accounts cannot switch from Prepay to Postpay. " +
       "To pay after use instead of prepaying, use Gemini Enterprise Agent Platform (formerly Vertex AI). " +
       "Google bills it on the standard Cloud charging cycle, not Prepay. " +
       "Agent Platform charges $0.75 input and $3.75 output per million tokens for Gemini 3.8 Flash and 3.6 Flash on the global endpoint through 2026-12-31, then $1.50 input and $7.50 output. " +
@@ -164,20 +164,59 @@ describe(`${PAGE} on paying after use once Prepay starts`, () => {
     assert.ok(paragraph.includes('Agent Platform charges <a href="https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing" target="_blank" rel="noopener">$0.75 input and $3.75 output per million tokens for Gemini 3.8 Flash and 3.6 Flash on the global endpoint through 2026-12-31, then $1.50 input and $7.50 output</a>. Non-global endpoints cost 10% more.'), paragraph);
   });
 
-  it("ends by saying usage can run past a $0 balance and that a negative balance comes off the next purchase", () => {
-    assert.ok(withoutTags(prepayParagraph(page)).endsWith(
+  it("says usage can run past a $0 balance and that a negative balance comes off the next purchase", () => {
+    assert.ok(withoutTags(prepayParagraph(page)).includes(
       "Usage can continue for approximately 10 minutes past a $0 balance due to billing latency. " +
       "Batch jobs and agents may consume credits beyond the balance. " +
-      "A negative balance is deducted from the next credit purchase.",
+      "A negative balance is deducted from the next credit purchase. ",
     ));
   });
 });
 
-describe(`${PAGE} on a missed payment for another Google Cloud service`, () => {
-  it("follows the split between Prepay and Postpay with the suspension a declined payment can cause whatever the Prepay balance, before what cannot be undone", () => {
+describe(`${PAGE} on accounts billed by invoice`, () => {
+  it("follows the split between Prepay and Postpay with Google's statement that invoiced accounts cannot use Prepay, and who to ask about a cutover notice", () => {
     const text = withoutTags(prepayParagraph(page));
     assert.ok(text.includes(
       "Only Gemini API usage moves to Prepay; other Google Cloud services on the same billing account stay on Postpay. " +
+      "If your company pays Google Cloud by monthly invoice, Google's billing doc says Prepay is not available for invoiced (offline) billing accounts. " +
+      "If you received a cutover notice, ask Cloud Billing Support what it requires before the date in it. " +
+      "If your Cloud Billing account has a Gemini API Prepay credit balance",
+    ), text);
+  });
+
+  it("links the statement to Google's billing doc", () => {
+    const paragraph = prepayParagraph(page);
+    assert.ok(paragraph.includes('Google\'s billing doc says <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">Prepay is not available for invoiced (offline) billing accounts</a>.'), paragraph);
+  });
+
+  it("states it once on the page", () => {
+    assert.strictEqual(readable(page).match(/not available for invoiced/gi)?.length ?? 0, 1);
+  });
+});
+
+describe(`${PAGE} on credits that still read as depleted after buying them`, () => {
+  it("ends the paragraph with the depleted-credits error, that no manual billing sync exists, the checks to make, and where to report it", () => {
+    assert.ok(withoutTags(prepayParagraph(page)).endsWith(
+      "A negative balance is deducted from the next credit purchase. " +
+      'After buying credits, calls may still fail with "Your prepayment credits are depleted". ' +
+      "Google staff say there is no manual billing sync to request. " +
+      "Check that the credits are a Prepay balance on the AI Studio Billing page, not a spend cap or funds in the Google Cloud billing account, and that the API key belongs to a project on that billing account. " +
+      "Retry the calls; if the error continues, post the exact error message and request time on Google's AI developer forum.",
+    ));
+  });
+
+  it("links what Google staff say to their reply and the forum to Google's AI developer forum", () => {
+    const paragraph = prepayParagraph(page);
+    assert.ok(paragraph.includes('<a href="https://discuss.ai.google.dev/t/manual-sync-request-prepayment-credits-depleted-429-despite-funded-account/172183" target="_blank" rel="noopener">Google staff say</a> there is no manual billing sync'), paragraph);
+    assert.ok(paragraph.includes('request time on <a href="https://discuss.ai.google.dev/" target="_blank" rel="noopener">Google\'s AI developer forum</a>.'), paragraph);
+  });
+});
+
+describe(`${PAGE} on a missed payment for another Google Cloud service`, () => {
+  it("follows what an invoiced account should do with the suspension a declined payment can cause whatever the Prepay balance, before what cannot be undone", () => {
+    const text = withoutTags(prepayParagraph(page));
+    assert.ok(text.includes(
+      "If you received a cutover notice, ask Cloud Billing Support what it requires before the date in it. " +
       "If your Cloud Billing account has a Gemini API Prepay credit balance but your card expired or a payment for another Google Cloud service was declined, the Gemini API can still be suspended. " +
       "This happens with an overdue balance, a declined payment, or an invalid payment method. " +
       "Resolve the issue in the Google Cloud Billing console to restore service. " +
@@ -191,11 +230,51 @@ describe(`${PAGE} on a missed payment for another Google Cloud service`, () => {
   });
 });
 
-describe(`${PAGE} on buying credits by bank transfer`, () => {
-  it("follows the $0 stop with how long a bank transfer can take to clear and when service resumes, before the usage that runs past $0", () => {
+const DENIED_ACCESS_THREAD = "https://discuss.ai.google.dev/t/get-v1beta-models-returns-200-ok-but-generatecontent-returns-http-403-your-project-has-been-denied-access/187288";
+
+describe(`${PAGE} on an account that missed its cutover date`, () => {
+  it("follows the interruption with the switch that stays open, the billing FAQ that says so, and when paid service resumes, before the split between Prepay and Postpay", () => {
+    const text = withoutTags(prepayParagraph(page));
+    assert.ok(text.includes(
+      "or the account's paid Gemini API service is interrupted. " +
+      "An account that missed its cutover date can still switch. " +
+      "Google's billing FAQ says an existing Postpay account can transition to Prepay on the AI Studio Billing page. " +
+      "The doc gives no deadline for the switch. " +
+      "Paid Gemini API service resumes only after the credit purchase is confirmed. " +
+      "Only Gemini API usage moves to Prepay;",
+    ), text);
+  });
+
+  it("links the transition to Google's billing doc", () => {
+    const paragraph = prepayParagraph(page);
+    assert.ok(paragraph.includes('<a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">Google\'s billing FAQ says an existing Postpay account can transition to Prepay</a> on the AI Studio Billing page.'), paragraph);
+  });
+});
+
+describe(`${PAGE} on a free-tier project denied access`, () => {
+  it("follows the $0 stop with what a 403 is not, what Google staff say it means, and their steps for a free-tier project", () => {
     const text = withoutTags(prepayParagraph(page));
     assert.ok(text.includes(
       "When the balance reaches $0, every API key on the billing account stops working until you add credits. " +
+      'Calls failing with HTTP 403 "Your project has been denied access" are not from a $0 Prepay balance, which returns 402. ' +
+      'Google staff say 403 or "Unavailable" in AI Studio means a flag is on the account. ' +
+      "For free-tier projects, complete age verification in your Google Account, then retry or create a new API key. " +
+      "If access is still denied, staff suggest adding Prepay credits, which ends your free tier quota. " +
+      "If you pay by bank transfer,",
+    ), text);
+  });
+
+  it("links what Google staff say to their reply", () => {
+    const paragraph = prepayParagraph(page);
+    assert.ok(paragraph.includes(`<a href="${DENIED_ACCESS_THREAD}" target="_blank" rel="noopener">Google staff say</a> 403 or "Unavailable" in AI Studio`), paragraph);
+  });
+});
+
+describe(`${PAGE} on buying credits by bank transfer`, () => {
+  it("follows the steps for a project denied access with how long a bank transfer can take to clear and when service resumes, before the usage that runs past $0", () => {
+    const text = withoutTags(prepayParagraph(page));
+    assert.ok(text.includes(
+      "If access is still denied, staff suggest adding Prepay credits, which ends your free tier quota. " +
       "If you pay by bank transfer, some payments take several days to clear. " +
       "Most card payments are instant. " +
       "Gemini API service resumes only after the purchase is confirmed. " +
