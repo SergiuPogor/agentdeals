@@ -2322,33 +2322,6 @@ if(e.key==='ArrowUp'){e.preventDefault();links[Math.max(idx-1,0)].focus()}
 })();`;
 }
 
-function mcpCtaCss(): string {
-  return `.mcp-cta{margin:2rem 0;padding:1.5rem;border:1px solid var(--border);border-radius:12px;background:var(--bg-elevated)}
-.mcp-cta h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:0 0 .5rem}
-.mcp-cta .cta-value{color:var(--text-muted);font-size:.85rem;margin:0 0 1rem;line-height:1.5}
-.mcp-cta .cta-install{position:relative;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;margin-bottom:.75rem;font-family:var(--mono);font-size:.85rem;color:var(--accent);overflow-x:auto;white-space:nowrap}
-.mcp-cta .cta-install .copy-btn{position:absolute;top:.5rem;right:.5rem;background:var(--bg-elevated);border:1px solid var(--border);color:var(--text-muted);padding:.2rem .5rem;border-radius:4px;cursor:pointer;font-size:.7rem;font-family:var(--sans);transition:all .15s}
-.mcp-cta .cta-install .copy-btn:hover{color:var(--text);border-color:var(--text-dim)}
-.mcp-cta .cta-install .copy-btn.copied{color:var(--accent);border-color:var(--accent)}
-.mcp-cta .cta-links{font-size:.8rem;color:var(--text-muted)}
-.mcp-cta .cta-links a{color:var(--accent);text-decoration:none}
-.mcp-cta .cta-links a:hover{text-decoration:underline}
-@media(max-width:768px){.mcp-cta{padding:1rem}.mcp-cta .cta-install{font-size:.75rem}}`;
-}
-
-function buildMcpCta(context: string): string {
-  return `<div class="mcp-cta">
-    <h3>Get this data in your AI editor</h3>
-    <p class="cta-value">${context}</p>
-    <div class="cta-install"><button class="copy-btn" onclick="copyCta(this)">Copy</button><code>claude mcp add agentdeals -- npx -y agentdeals</code></div>
-    <p class="cta-links">Works with Claude Desktop, Cursor, Cline, Windsurf &rarr; <a href="/setup">Full setup guide</a></p>
-  </div>`;
-}
-
-function mcpCtaScript(): string {
-  return `function copyCta(btn){var code=btn.parentElement.querySelector('code');if(!code)return;navigator.clipboard.writeText(code.textContent).then(function(){btn.textContent='Copied!';btn.classList.add('copied');setTimeout(function(){btn.textContent='Copy';btn.classList.remove('copied')},2000)})}`;
-}
-
 const relatedCategoriesMap: Record<string, string[]> = {
   "Databases": ["Cloud Hosting", "Search", "Headless CMS"],
   "Cloud Hosting": ["Databases", "CI/CD", "CDN"],
@@ -2672,7 +2645,6 @@ details[open] .faq-q::before{transform:rotate(90deg)}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.offers-table{font-size:.75rem}.offers-table th,.offers-table td{padding:.4rem .5rem}.analysis-cta a{flex-direction:column;text-align:center}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -2733,10 +2705,8 @@ ${offersHtml}
     </div>
   </div>
 
-  ${buildMcpCta("Browse this category from your AI coding assistant. Search 1,600+ deals, compare free tiers, and track pricing changes — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -3294,7 +3264,6 @@ ${auditBlockCss()}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.best-pick{flex-direction:column;gap:.5rem}.best-pick-rank{text-align:left}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -3342,10 +3311,8 @@ ${bestOfFaqHtml}
     ${otherBestOf}
   </div>
 
-  ${buildMcpCta("Get personalized recommendations from your AI. Search 1,600+ deals, compare free tiers, and track pricing changes — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -4123,7 +4090,6 @@ h1{font-family:var(--serif);font-size:2rem;color:var(--text);margin:1rem 0 .5rem
 .related-card:hover{border-color:var(--accent);color:var(--text);text-decoration:none}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-grid,.changes-cols{grid-template-columns:1fr}.verdict-details{flex-direction:column;gap:.5rem}}
-${mcpCtaCss()}
 ${globalNavCss()}
 </style>
 </head>
@@ -4175,10 +4141,8 @@ ${verdictHtml}
   </div>
 ${watchCtaHtml}
 ${relatedHtml}
-  ${buildMcpCta("Compare any two vendors from your AI coding assistant. Search 1,600+ deals, compare free tiers, and track pricing changes — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -4602,7 +4566,6 @@ h2{font-family:var(--serif);font-size:1.25rem;color:var(--text);margin:2rem 0 .7
 .faq-a.open{display:block}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-grid,.changes-cols{grid-template-columns:1fr}}
-${mcpCtaCss()}
 ${globalNavCss()}
 </style>
 </head>
@@ -4676,10 +4639,8 @@ ${faqItems.map(f => `    <div class="faq-item">
     </div>`).join("\n")}
   </div>
 
-  ${buildMcpCta(`Compare ${escHtmlServer(a.vendor)}, ${escHtmlServer(b.vendor)}, and 1,600+ other developer tools from your AI coding assistant.`)}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -6178,7 +6139,6 @@ details[open] .faq-q::before{transform:rotate(90deg)}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.detail-grid{grid-template-columns:1fr}.alt-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}.mini-compare-table{font-size:.8rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -6251,10 +6211,8 @@ ${internalLinksHtml}
     <code>${escHtmlServer(mcpSnippet)}</code>
   </div>
 ${faqHtml}
-  ${buildMcpCta("Want to compare this vendor in your AI? Search 1,600+ deals, compare free tiers, and track pricing changes — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -6597,7 +6555,6 @@ details[open] .faq-q::before{transform:rotate(90deg)}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.risk-row{flex-direction:column;align-items:flex-start;gap:.25rem}.alt-meta{flex-direction:column;gap:.25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -6627,10 +6584,8 @@ ${allAltsHtml}
     ${trendsHtml}
   </div>
 ${altFaqHtml}
-  ${buildMcpCta("Find alternatives from your AI coding assistant. Search 1,600+ deals, compare free tiers, and track pricing changes — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -8811,7 +8766,6 @@ h2{font-family:var(--serif);font-size:1.4rem;color:var(--text);margin:2.5rem 0 1
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -8855,10 +8809,8 @@ ${tableRows}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get personalized recommendations from your AI. Search " + offers.length.toLocaleString() + "+ deals, compare free tiers, and track pricing changes — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -8935,7 +8887,6 @@ h1{font-family:var(--serif);font-size:2rem;margin:0 0 .5rem}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -8957,10 +8908,8 @@ ${mcpCtaCss()}
     <p>Looking for a specific tool? <a href="/alternative-to" style="color:var(--accent)">Browse all ${Array.from(vendorSlugMap.keys()).length.toLocaleString()} vendor alternatives</a> or <a href="/search" style="color:var(--accent)">search</a> our full index of ${offers.length.toLocaleString()}+ developer deals.</p>
   </div>
 
-  ${buildMcpCta("Get personalized migration advice from your AI assistant. Compare free tiers, track pricing changes, and plan your stack — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -9539,7 +9488,7 @@ function buildIntegrationGuidePage(slug: string): string | null {
     'footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}\n' +
     'footer a{color:var(--accent);text-decoration:none}\n' +
     '@media(max-width:768px){h1{font-size:1.5rem}.tools-ref{grid-template-columns:1fr}}\n' +
-    globalNavCss() + '\n' + mcpCtaCss();
+    globalNavCss();
 
   return '<!DOCTYPE html>\n<html lang="en">\n<head>\n' +
     '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initial-scale=1">\n' +
@@ -9574,14 +9523,12 @@ function buildIntegrationGuidePage(slug: string): string | null {
     '  <p style="font-size:.85rem">Full tool documentation: <a href="/api/docs" style="color:var(--accent)">/api/docs</a> &middot; <a href="/setup" style="color:var(--accent)">Setup guide for more clients</a></p>\n' +
     '\n  <h2>Related Guides</h2>\n' +
     '  <div class="cross-links">\n        ' + crossLinksHtml + '\n  </div>\n' +
-    '\n  ' + buildMcpCta("Use AgentDeals tools directly in your AI editor. Works with Claude Desktop, Cursor, Cline, Windsurf, and any MCP-compatible client.") + '\n' +
     '\n  <div class="other-guides">\n' +
     '    <h2>Other Framework Guides</h2>\n' +
     '    <div class="guide-cards">\n      ' + otherGuidesHtml + '\n    </div>\n' +
     '  </div>\n' +
     '\n  <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>\n' +
     '</div>\n' +
-    '<script>' + mcpCtaScript() + '</script>\n' +
     '</body>\n</html>';
 }
 
@@ -10410,7 +10357,6 @@ h1{font-family:var(--serif);font-size:2rem;margin:0 0 .5rem}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.guide-stats{flex-direction:column;gap:.75rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -10435,10 +10381,8 @@ ${mcpCtaCss()}
     <p>Looking for a specific tool? <a href="/search" style="color:var(--accent)">Search</a> our full index of ${offers.length.toLocaleString()}+ developer deals, or <a href="/alternatives" style="color:var(--accent)">browse alternatives guides</a>.</p>
   </div>
 
-  ${buildMcpCta("Get personalized recommendations from your AI assistant. Compare free tiers, track pricing changes, and plan your stack — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -10586,7 +10530,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -10650,10 +10593,8 @@ ${buildCards(enrichedCoding)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get AI tool recommendations from your AI assistant. Compare free tiers, track pricing changes, and plan your stack — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, endedListingsIndex());
 }
@@ -10793,7 +10734,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -10992,10 +10932,8 @@ ${buildCards(startupCredits)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get hosting recommendations from your AI assistant. Compare free tiers, track pricing changes, and plan your stack — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -11137,7 +11075,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -11325,10 +11262,8 @@ ${buildCards(timeSeries)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get database recommendations from your AI assistant. Compare free tiers, track pricing changes, and plan your stack — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -11471,7 +11406,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -11666,10 +11600,8 @@ ${buildCards(startupPrograms)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get monitoring recommendations from your AI assistant. Compare free tiers, track pricing changes, and audit your observability stack — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -11800,7 +11732,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -11973,10 +11904,8 @@ ${buildCards(specialized)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get CI/CD recommendations from your AI assistant. Compare build minutes, track pricing changes, and find the right pipeline tool for your stack \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -12116,7 +12045,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -12310,10 +12238,8 @@ ${buildCards(other)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get security tool recommendations from your AI assistant. Compare SAST scanners, secret managers, auth providers, and container security tools \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -12454,7 +12380,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -12642,10 +12567,8 @@ ${buildCards(other)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get testing tool recommendations from your AI assistant. Compare browser testing, visual regression, load testing, and E2E automation tools \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -12778,7 +12701,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -12954,10 +12876,8 @@ ${buildCards(other)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get cloud storage recommendations from your AI assistant. Compare object storage, media CDNs, and file hosting services \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -13091,7 +13011,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -13264,10 +13183,8 @@ ${buildCards(other)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get analytics tool recommendations from your AI assistant. Compare product analytics, web analytics, and session replay tools \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -13402,7 +13319,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -13575,10 +13491,8 @@ ${buildCards(other)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get AI tool recommendations from your AI assistant. Compare LLM APIs, coding tools, and ML platforms \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, endedListingsIndex());
 }
@@ -13718,7 +13632,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -13906,10 +13819,8 @@ ${buildCards(other)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get email tool recommendations from your AI assistant. Compare transactional APIs, marketing platforms, and email infrastructure — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -14052,7 +13963,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -14244,10 +14154,8 @@ ${buildCards(other)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get design tool recommendations from your AI assistant. Compare UI kits, icons, and prototyping tools \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -14390,7 +14298,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -14582,10 +14489,8 @@ ${buildCards(other)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get project management tool recommendations from your AI assistant. Compare PM tools, team chat, and scheduling — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -14719,7 +14624,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -14899,10 +14803,8 @@ ${buildCards(other)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get IDE and AI coding tool recommendations from your AI assistant. Compare editors, AI assistants, and cloud IDEs — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -15067,7 +14969,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -15149,10 +15050,8 @@ ${buildCards(aiGateways)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get LLM API recommendations from your AI assistant. Compare rate limits, models, and pricing \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, endedListingsIndex());
 }
@@ -15289,7 +15188,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -15463,10 +15361,8 @@ ${buildCards(apiIntegration)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get API tool recommendations from your AI assistant. Compare free tiers, features, and alternatives \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -15605,7 +15501,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -15785,10 +15680,8 @@ ${buildCards(other)}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get team collaboration tool recommendations from your AI assistant. Compare chat, video, and scheduling tools — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -16018,7 +15911,6 @@ h2{font-family:var(--serif);font-size:1.4rem;color:var(--text);margin:2.5rem 0 1
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}.cost-banner .cost-amount{font-size:2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -16077,10 +15969,8 @@ ${stabilityNotes}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get personalized stack recommendations from your AI assistant. Compare free tiers, check stability, and plan your infrastructure — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -16325,7 +16215,6 @@ h2{font-family:var(--serif);font-size:1.4rem;color:var(--text);margin:2.5rem 0 1
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}.oss-table{font-size:.75rem}.oss-table th,.oss-table td{padding:.4rem .5rem}.cost-banner .cost-amount{font-size:2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -16405,10 +16294,8 @@ ${ossAlternatives.map(oss => `      <tr>
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get personalized AI stack recommendations from your AI assistant. Compare free tiers, check model limits, and plan your AI infrastructure — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -16654,7 +16541,6 @@ h2{font-family:var(--serif);font-size:1.4rem;color:var(--text);margin:2.5rem 0 1
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}.oss-table{font-size:.75rem}.oss-table th,.oss-table td{padding:.4rem .5rem}.cost-banner .cost-amount{font-size:2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -16734,10 +16620,8 @@ ${ossAlternatives.map(oss => `      <tr>
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get personalized DevOps stack recommendations from your AI assistant. Compare free tiers, check limits, and plan your infrastructure — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -16983,7 +16867,6 @@ h2{font-family:var(--serif);font-size:1.4rem;color:var(--text);margin:2.5rem 0 1
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}.oss-table{font-size:.75rem}.oss-table th,.oss-table td{padding:.4rem .5rem}.cost-banner .cost-amount{font-size:2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -17063,10 +16946,8 @@ ${ossAlternatives.map(oss => `      <tr>
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get personalized frontend stack recommendations from your AI assistant. Compare free tiers, check limits, and plan your Jamstack infrastructure — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -17339,7 +17220,6 @@ h2{font-family:var(--serif);font-size:1.4rem;color:var(--text);margin:2.5rem 0 1
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}.growth-table{font-size:.75rem}.growth-table th,.growth-table td{padding:.4rem .5rem}.cost-banner .cost-amount{font-size:2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -17426,10 +17306,8 @@ GitHub → GitHub Actions (CI: tests + lint) → Vercel (CD: auto-deploy)</div>
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get personalized Next.js stack recommendations from your AI assistant. Compare free tiers, check limits, and plan your infrastructure — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -17731,7 +17609,6 @@ h2{font-family:var(--serif);font-size:1.4rem;color:var(--text);margin:2.5rem 0 1
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}.growth-table{font-size:.75rem}.growth-table th,.growth-table td{padding:.4rem .5rem}.cost-banner .cost-amount{font-size:2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -17836,10 +17713,8 @@ GitHub → GitHub Actions (CI: pytest + ruff) → Railway (CD: auto-deploy)</div
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get personalized Django stack recommendations from your AI assistant. Compare free tiers, check limits, and plan your infrastructure — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -18143,7 +18018,6 @@ h2{font-family:var(--serif);font-size:1.4rem;color:var(--text);margin:2.5rem 0 1
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}.growth-table{font-size:.75rem}.growth-table th,.growth-table td{padding:.4rem .5rem}.cost-banner .cost-amount{font-size:2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -18261,10 +18135,8 @@ GitHub → GitHub Actions (CI: pytest + ruff) → Railway (CD: auto-deploy)</div
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get personalized FastAPI stack recommendations from your AI assistant. Compare free tiers, check limits, and plan your infrastructure — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -18567,7 +18439,6 @@ h2{font-family:var(--serif);font-size:1.4rem;color:var(--text);margin:2.5rem 0 1
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}.growth-table{font-size:.75rem}.growth-table th,.growth-table td{padding:.4rem .5rem}.cost-banner .cost-amount{font-size:2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -18677,10 +18548,8 @@ GitHub → GitHub Actions (CI: go test + golangci-lint) → Railway (CD: auto-de
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get personalized Go stack recommendations from your AI assistant. Compare free tiers, check limits, and plan your infrastructure — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -19107,7 +18976,6 @@ h2{font-family:var(--serif);font-size:1.4rem;color:var(--text);margin:2.5rem 0 1
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:.4rem .5rem}.growth-table{font-size:.75rem}.growth-table th,.growth-table td{padding:.4rem .5rem}.cost-banner .cost-amount{font-size:2rem}.cost-scale{gap:1rem}.framework-grid{grid-template-columns:1fr}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -19179,10 +19047,8 @@ ${upgradeTable}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Get personalized SaaS stack recommendations from your AI assistant. Compare free tiers, check stability, and plan your infrastructure \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -19346,7 +19212,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -19524,10 +19389,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Track Hetzner pricing changes and compare hosting alternatives from your AI assistant. Get alerts on price increases and find free-tier options — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -20527,7 +20390,6 @@ feedLinkTag(PER_CHANGE_FEED) + "\n" +
 "footer a{color:var(--accent)}\n" +
 "@media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.impact-grid{grid-template-columns:1fr}}\n" +
 globalNavCss() + "\n" +
-mcpCtaCss() + "\n" +
 "</style>\n</head>\n<body>\n<div class=\"container\">\n" +
   buildGlobalNav("changes") + "\n" +
   "<div class=\"breadcrumb\"><a href=\"/\">AgentDeals</a> &rsaquo; <a href=\"/changes\">Changes</a> &rsaquo; Q1 2026 Report</div>\n" +
@@ -20697,10 +20559,8 @@ mcpCtaCss() + "\n" +
 
   buildMoreAlternativesGuides(slug) + "\n" +
 
-  buildMcpCta("Track pricing changes from your AI assistant. Get alerts on free tier removals, limit reductions, and new deals — directly in your editor.") + "\n" +
   "<footer>AgentDeals &mdash; open source, built for agents | <a href=\"/privacy\">Privacy</a> | <a href=\"/disclosure\">Affiliate Disclosure</a> | <a href=\"/contact\">Contact</a></footer>\n" +
 "</div>\n" +
-"<script>" + mcpCtaScript() + "</script>\n" +
 "</body>\n</html>";
 }
 
@@ -20857,7 +20717,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.timeline-item{flex-direction:column;gap:.25rem}.timeline-date{min-width:auto}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -20927,10 +20786,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Track pricing changes from your AI assistant. Get alerts on free tier removals, limit reductions, and new deals — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -21118,7 +20975,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}.migration-step{flex-direction:column;gap:.5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -21352,10 +21208,8 @@ ${gdpChanges.map(c => `      <li><strong>${escHtmlServer(changeEntryLongDateLabe
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Track Google pricing changes and find free alternatives from your AI assistant. Get alerts on free tier removals and discover $0/month infrastructure options — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, endedIndex(offers));
 }
@@ -21540,7 +21394,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -21695,10 +21548,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Compare Supabase, Firebase, and 1,600+ other developer tools from your AI assistant. Get free tier data, pricing alerts, and stack recommendations — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -21865,7 +21716,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -22015,10 +21865,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Compare Vercel, Netlify, and 1,600+ other developer tools from your AI assistant. Get free tier data, pricing alerts, and stack recommendations — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -22184,7 +22032,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -22329,10 +22176,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Compare Neon, Supabase, and 1,600+ other developer tools from your AI assistant. Get free tier data, pricing alerts, and stack recommendations — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -22500,7 +22345,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -22650,10 +22494,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Compare Railway, Render, and 1,600+ other developer tools from your AI assistant. Get free tier data, pricing alerts, and stack recommendations — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -22821,7 +22663,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -22966,10 +22807,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Compare Datadog, New Relic, and 1,600+ other developer tools from your AI assistant. Get free tier data, pricing alerts, and stack recommendations — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -23119,7 +22958,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}.timeline-item{flex-direction:column;gap:.5rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -23337,10 +23175,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Track Gemini API pricing changes and compare free LLM APIs from your AI assistant. Get alerts on rate limit changes and find alternatives — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -23546,7 +23382,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.risk-table{font-size:.75rem}.risk-table td,.risk-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -23857,10 +23692,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Track free tier risk for 1,600+ developer tools from your AI assistant. Get pricing alerts, risk scores, and migration recommendations — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -24063,7 +23896,6 @@ footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.method-grid{grid-template-columns:1fr}.stable-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.summary-stats{grid-template-columns:1fr}.stable-grid{grid-template-columns:1fr}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -24189,10 +24021,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Track vendor stability for 1,600+ developer tools from your AI assistant. Get real-time stability ratings, pricing alerts, and migration recommendations — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -24498,7 +24328,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}.deadline-days{font-size:1.8rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -24719,10 +24548,8 @@ ${upcomingChangesHtml}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Track OpenAI pricing changes and compare AI API free tiers from your AI assistant. Get stability ratings, migration alerts, and cost comparisons \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -25007,7 +24834,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}.deadline-days{font-size:1.8rem}.timeline-event{flex-direction:column;gap:.25rem}.timeline-date{min-width:auto}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -25311,10 +25137,8 @@ ${upcomingChangesHtml}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Track OpenAI pricing changes and compare AI API free tiers from your AI assistant. Get stability ratings, migration alerts, and cost comparisons \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -25476,7 +25300,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}.deadline-days{font-size:1.8rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -25747,10 +25570,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Track GIF API shutdowns and compare developer tool free tiers from your AI assistant. Get stability ratings, migration alerts, and pricing comparisons \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -25936,7 +25757,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}.deadline-days{font-size:1.8rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -26172,10 +25992,8 @@ ${mcpCtaCss()}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Track Firebase pricing changes, compare cloud IDE free tiers, and get shutdown deadline alerts from your AI assistant. Stability ratings, migration guidance, and cost comparisons \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -26462,7 +26280,6 @@ function buildOpenAIAssistantsMigrationPage(): string {
     'footer a{color:var(--accent)}\n' +
     '@media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}.deadline-banner .days{font-size:1.8rem}}\n' +
     globalNavCss() + '\n' +
-    mcpCtaCss() + '\n' +
     '</style>\n</head>\n<body>\n' +
     '<div class="container">\n' +
     '  ' + buildGlobalNav("changes") + '\n' +
@@ -26623,11 +26440,9 @@ function buildOpenAIAssistantsMigrationPage(): string {
     ).join("\n") + '\n' +
     '  </div>\n' +
     '\n' +
-    buildMcpCta("Query our MCP server for real-time pricing data on OpenAI, Azure, Anthropic, Google Gemini, and 1,600+ other developer tools. Compare free tiers, track pricing changes, and find alternatives — all from your AI editor.") + '\n' +
     '\n' +
     '  <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>\n' +
     '</div>\n' +
-    '<script>' + mcpCtaScript() + '</script>\n' +
     '</body>\n</html>', pubDate);
 }
 
@@ -27082,7 +26897,6 @@ h3{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:1.5rem 0 .
 .link-title{font-weight:600;color:var(--text);margin-bottom:.25rem;font-size:.9rem}
 .link-desc{color:var(--text-muted);font-size:.8rem;line-height:1.4}
 ${globalNavCss()}
-${mcpCtaCss()}
 @media(max-width:640px){
   h1{font-size:1.6rem}
   .summary-stats{grid-template-columns:repeat(2,1fr)}
@@ -27157,10 +26971,8 @@ ${buildGlobalNav("guides")}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Query shutdown data and migration deadlines from your AI assistant. Get stability ratings, track vendor changes, and find free alternatives \u2014 directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -27501,7 +27313,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.changes-table{font-size:.75rem}.changes-table td,.changes-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -27618,10 +27429,8 @@ ${mcpCtaCss()}
     ${relatedPages.map(p => `<a href="/${p.slug}" class="related-page-link"><div class="link-title">${escHtmlServer(p.title.split(" — ")[0])}</div><div class="link-desc">${escHtmlServer(p.hubDesc)}</div></a>`).join("\n    ")}
   </div>
 
-  ${buildMcpCta("Track free tier changes across 1,600+ developer tools from your AI assistant. Get pricing alerts, change history, and migration recommendations — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -27884,7 +27693,6 @@ function buildStartupCreditsPage(): string {
     'footer a{color:var(--accent)}\n' +
     '@media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}\n' +
     globalNavCss() + '\n' +
-    mcpCtaCss() + '\n' +
     '</style>\n</head>\n<body>\n' +
     '<div class="container">\n' +
     '  ' + buildGlobalNav("alternatives") + '\n' +
@@ -28007,7 +27815,6 @@ function buildStartupCreditsPage(): string {
     '\n' +
     '  <script type="application/ld+json">' + JSON.stringify(breadcrumbJsonLd) + '</script>\n' +
     '\n' +
-    '  ' + buildMcpCta("Compare startup credit programs, check eligibility, and plan your stacking strategy \u2014 all from your AI coding assistant.") + '\n' +
     '\n' +
     '  <h2>Related Guides</h2>\n' +
     '  <div class="related-pages">\n' +
@@ -28028,7 +27835,6 @@ function buildStartupCreditsPage(): string {
     '    &copy; ' + new Date().getFullYear() + ' <a href="/">AgentDeals</a> &middot; ' + offers.length.toLocaleString() + ' offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>\n' +
     '  </div>\n' +
     '</footer>\n' +
-    '<script>' + mcpCtaScript() + '</script>\n' +
     '</body>\n</html>', pubDate);
 }
 
@@ -28558,7 +28364,6 @@ function buildAiCodingToolsPricingPage(): string {
     'footer a{color:var(--accent)}\n' +
     '@media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}\n' +
     globalNavCss() + '\n' +
-    mcpCtaCss() + '\n' +
     '</style>\n</head>\n<body>\n' +
     '<div class="container">\n' +
     '  ' + buildGlobalNav("changes") + '\n' +
@@ -28764,7 +28569,6 @@ function buildAiCodingToolsPricingPage(): string {
     '\n' +
     '  <script type="application/ld+json">' + JSON.stringify(breadcrumbJsonLd) + '</script>\n' +
     '\n' +
-    '  ' + buildMcpCta("Compare AI coding tool pricing, search free tiers, and track pricing changes \u2014 all from your AI coding assistant.") + '\n' +
     '\n' +
     '  <h2>Related Guides</h2>\n' +
     '  <div class="related-pages">\n' +
@@ -28785,7 +28589,6 @@ function buildAiCodingToolsPricingPage(): string {
     '    &copy; ' + new Date().getFullYear() + ' <a href="/">AgentDeals</a> &middot; ' + offers.length.toLocaleString() + ' offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>\n' +
     '  </div>\n' +
     '</footer>\n' +
-    '<script>' + mcpCtaScript() + '</script>\n' +
     '</body>\n</html>', pubDate);
 }
 
@@ -29289,7 +29092,6 @@ function buildCiCdPricingPage(): string {
     'footer a{color:var(--accent)}\n' +
     '@media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}\n' +
     globalNavCss() + '\n' +
-    mcpCtaCss() + '\n' +
     '</style>\n</head>\n<body>\n' +
     '<div class="container">\n' +
     '  ' + buildGlobalNav("changes") + '\n' +
@@ -29496,7 +29298,6 @@ function buildCiCdPricingPage(): string {
     '\n' +
     '  <script type="application/ld+json">' + JSON.stringify(breadcrumbJsonLd) + '</script>\n' +
     '\n' +
-    '  ' + buildMcpCta("Compare CI/CD tool pricing, search free tiers, and track pricing changes \u2014 all from your AI coding assistant.") + '\n' +
     '\n' +
     '  <h2>Related Guides</h2>\n' +
     '  <div class="related-pages">\n' +
@@ -29517,7 +29318,6 @@ function buildCiCdPricingPage(): string {
     '    &copy; ' + new Date().getFullYear() + ' <a href="/">AgentDeals</a> &middot; ' + offers.length.toLocaleString() + ' offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>\n' +
     '  </div>\n' +
     '</footer>\n' +
-    '<script>' + mcpCtaScript() + '</script>\n' +
     '</body>\n</html>', pubDate);
 }
 
@@ -30158,7 +29958,6 @@ function buildDatabasePricingPage(): string {
     'footer a{color:var(--accent)}\n' +
     '@media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}\n' +
     globalNavCss() + '\n' +
-    mcpCtaCss() + '\n' +
     '</style>\n</head>\n<body>\n' +
     '<div class="container">\n' +
     '  ' + buildGlobalNav("changes") + '\n' +
@@ -30369,7 +30168,6 @@ function buildDatabasePricingPage(): string {
     '\n' +
     '  <script type="application/ld+json">' + JSON.stringify(breadcrumbJsonLd) + '</script>\n' +
     '\n' +
-    '  ' + buildMcpCta("Compare database pricing, search free tiers, and track pricing changes \u2014 all from your AI coding assistant.") + '\n' +
     '\n' +
     '  <h2>Related Guides</h2>\n' +
     '  <div class="related-pages">\n' +
@@ -30390,7 +30188,6 @@ function buildDatabasePricingPage(): string {
     '    &copy; ' + new Date().getFullYear() + ' <a href="/">AgentDeals</a> &middot; ' + offers.length.toLocaleString() + ' offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>\n' +
     '  </div>\n' +
     '</footer>\n' +
-    '<script>' + mcpCtaScript() + '</script>\n' +
     '</body>\n</html>', pubDate);
 }
 
@@ -30803,7 +30600,6 @@ function buildVectorDatabasePricingPage(): string {
     'footer a{color:var(--accent)}\n' +
     '@media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}\n' +
     globalNavCss() + '\n' +
-    mcpCtaCss() + '\n' +
     '</style>\n</head>\n<body>\n' +
     '<div class="container">\n' +
     '  ' + buildGlobalNav("changes") + '\n' +
@@ -31006,7 +30802,6 @@ function buildVectorDatabasePricingPage(): string {
     '\n' +
     '  <script type="application/ld+json">' + JSON.stringify(breadcrumbJsonLd) + '</script>\n' +
     '\n' +
-    '  ' + buildMcpCta("Compare vector database pricing, search free tiers, and track pricing changes \u2014 all from your AI coding assistant.") + '\n' +
     '\n' +
     '  <h2>Related Guides</h2>\n' +
     '  <div class="related-pages">\n' +
@@ -31039,7 +30834,6 @@ function buildVectorDatabasePricingPage(): string {
     '    &copy; ' + new Date().getFullYear() + ' <a href="/">AgentDeals</a> &middot; ' + offers.length.toLocaleString() + ' offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>\n' +
     '  </div>\n' +
     '</footer>\n' +
-    '<script>' + mcpCtaScript() + '</script>\n' +
     '</body>\n</html>', pubDate), endedListingsIndex());
 }
 
@@ -31499,7 +31293,6 @@ function buildHostingPricingPage(): string {
     'footer a{color:var(--accent)}\n' +
     '@media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}\n' +
     globalNavCss() + '\n' +
-    mcpCtaCss() + '\n' +
     '</style>\n</head>\n<body>\n' +
     '<div class="container">\n' +
     '  ' + buildGlobalNav("changes") + '\n' +
@@ -31716,7 +31509,6 @@ function buildHostingPricingPage(): string {
     '\n' +
     '  <script type="application/ld+json">' + JSON.stringify(breadcrumbJsonLd) + '</script>\n' +
     '\n' +
-    '  ' + buildMcpCta("Compare cloud hosting pricing, search free tiers, and track pricing changes \u2014 all from your AI coding assistant.") + '\n' +
     '\n' +
     '  <h2>Related Guides</h2>\n' +
     '  <div class="related-pages">\n' +
@@ -31737,7 +31529,6 @@ function buildHostingPricingPage(): string {
     '    &copy; ' + new Date().getFullYear() + ' <a href="/">AgentDeals</a> &middot; ' + offers.length.toLocaleString() + ' offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>\n' +
     '  </div>\n' +
     '</footer>\n' +
-    '<script>' + mcpCtaScript() + '</script>\n' +
     '</body>\n</html>', pubDate);
 }
 
@@ -32223,7 +32014,6 @@ function buildLlmApiPricingPage(): string {
     'footer a{color:var(--accent)}\n' +
     '@media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}\n' +
     globalNavCss() + '\n' +
-    mcpCtaCss() + '\n' +
     '</style>\n</head>\n<body>\n' +
     '<div class="container">\n' +
     '  ' + buildGlobalNav("changes") + '\n' +
@@ -32399,7 +32189,6 @@ function buildLlmApiPricingPage(): string {
     '\n' +
     '  <script type="application/ld+json">' + JSON.stringify(breadcrumbJsonLd) + '</script>\n' +
     '\n' +
-    '  ' + buildMcpCta("Compare LLM API pricing, search free tiers, and track pricing changes — all from your AI coding assistant.") + '\n' +
     '\n' +
     '  <h2>Related Guides</h2>\n' +
     '  <div class="related-pages">\n' +
@@ -32420,7 +32209,6 @@ function buildLlmApiPricingPage(): string {
     '    &copy; ' + new Date().getFullYear() + ' <a href="/">AgentDeals</a> &middot; ' + offers.length.toLocaleString() + ' offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>\n' +
     '  </div>\n' +
     '</footer>\n' +
-    '<script>' + mcpCtaScript() + '</script>\n' +
     '</body>\n</html>', pubDate);
 }
 
@@ -32625,14 +32413,6 @@ td{padding:.5rem .75rem;font-size:.85rem;color:var(--text-muted);border-bottom:1
 .search-cta{margin:2rem 0;padding:1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;text-align:center;color:var(--text-muted);font-size:.9rem}
 .search-cta a{font-weight:500}
 ${globalNavCss()}
-.mcp-cta{margin:2rem 0;padding:1.5rem;background:linear-gradient(135deg,var(--accent-glow),var(--purple-glow));border:1px solid var(--border);border-radius:12px}
-.mcp-cta h3{font-size:1rem;margin-bottom:.5rem}
-.mcp-cta .cta-value{color:var(--text-muted);font-size:.85rem;margin-bottom:.75rem}
-.mcp-cta .cta-install{display:flex;align-items:center;gap:.5rem;background:var(--bg);padding:.5rem .75rem;border-radius:8px;font-family:var(--mono);font-size:.8rem;overflow-x:auto}
-.mcp-cta .cta-install code{flex:1;color:var(--text)}
-.mcp-cta .copy-btn{background:var(--accent);color:#fff;border:none;padding:.3rem .6rem;border-radius:4px;cursor:pointer;font-size:.75rem;flex-shrink:0}
-.mcp-cta .copy-btn.copied{background:var(--green)}
-.mcp-cta .cta-links{margin-top:.5rem;font-size:.8rem;color:var(--text-dim)}
 @media(max-width:640px){.stats-row{flex-direction:column}.service-grid{grid-template-columns:1fr}table{font-size:.75rem}.desc-cell{display:none}}
 </style>
 </head>
@@ -32725,14 +32505,12 @@ ${faqHtml}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Search for agent-payment-enabled services, compare pricing, and build autonomous stacks \u2014 directly in your AI editor.")}
 
   <footer style="text-align:center;padding:2rem 0;color:var(--text-dim);font-size:.8rem;border-top:1px solid var(--border);margin-top:2rem">
     <p>Data verified ${pubDate}. ${offers.length.toLocaleString()} total offers indexed.</p>
     <p style="margin-top:.5rem"><a href="/">AgentDeals</a> &middot; <a href="/agent-stack">Agent Stacks</a> &middot; <a href="/guides">Guides</a> &middot; <a href="/changes">Changes</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a></p>
   </footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -32882,14 +32660,6 @@ td{padding:.5rem .75rem;font-size:.85rem;color:var(--text-muted);border-bottom:1
 .search-cta{margin:2rem 0;padding:1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;text-align:center;color:var(--text-muted);font-size:.9rem}
 .search-cta a{font-weight:500}
 ${globalNavCss()}
-.mcp-cta{margin:2rem 0;padding:1.5rem;background:linear-gradient(135deg,var(--accent-glow),var(--green-glow));border:1px solid var(--border);border-radius:12px}
-.mcp-cta h3{font-size:1rem;margin-bottom:.5rem}
-.mcp-cta .cta-value{color:var(--text-muted);font-size:.85rem;margin-bottom:.75rem}
-.mcp-cta .cta-install{display:flex;align-items:center;gap:.5rem;background:var(--bg);padding:.5rem .75rem;border-radius:8px;font-family:var(--mono);font-size:.8rem;overflow-x:auto}
-.mcp-cta .cta-install code{flex:1;color:var(--text)}
-.mcp-cta .copy-btn{background:var(--accent);color:#fff;border:none;padding:.3rem .6rem;border-radius:4px;cursor:pointer;font-size:.75rem;flex-shrink:0}
-.mcp-cta .copy-btn.copied{background:var(--green)}
-.mcp-cta .cta-links{margin-top:.5rem;font-size:.8rem;color:var(--text-dim)}
 @media(max-width:640px){.stats-row{flex-direction:column}.service-grid{grid-template-columns:1fr}table{font-size:.75rem}}
 </style>
 </head>
@@ -32942,14 +32712,12 @@ ${faqHtml}
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Search for x402-enabled services, compare pricing, and build agent-native stacks \u2014 directly in your AI editor.")}
 
   <footer style="text-align:center;padding:2rem 0;color:var(--text-dim);font-size:.8rem;border-top:1px solid var(--border);margin-top:2rem">
     <p>Data verified ${pubDate}. ${offers.length.toLocaleString()} total offers indexed.</p>
     <p style="margin-top:.5rem"><a href="/">AgentDeals</a> &middot; <a href="/agent-payments">Agent Payments</a> &middot; <a href="/guides">Guides</a> &middot; <a href="/changes">Changes</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a></p>
   </footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -33169,7 +32937,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}.deadline-days{font-size:1.8rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -33505,10 +33272,8 @@ railway up
 
   ${buildMoreAlternativesGuides(slug)}
 
-  ${buildMcpCta("Track cloud service deprecations and compare container deployment free tiers from your AI assistant. Get stability ratings, migration alerts, and pricing comparisons — directly in your editor.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -33753,7 +33518,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -33913,7 +33677,6 @@ ${mcpCtaCss()}
     <strong>Query AWS data programmatically</strong> via our <a href="/setup">MCP tools</a> — search for AWS services, compare with alternatives, or track pricing changes from your AI coding assistant.
   </div>
 
-  ${buildMcpCta("Search AWS free tier services, compare with alternatives, and track pricing changes — all from your AI coding assistant.")}
 
   <h2>Related Guides</h2>
   <div class="related-pages">
@@ -33932,7 +33695,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -34171,7 +33933,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -34326,7 +34087,6 @@ ${mcpCtaCss()}
     <strong>Query GCP data programmatically</strong> via our <a href="/setup">MCP tools</a> — search for GCP services, compare with alternatives, or track pricing changes from your AI coding assistant.
   </div>
 
-  ${buildMcpCta("Search GCP free tier services, compare with alternatives, and track pricing changes — all from your AI coding assistant.")}
 
   <h2>Related Guides</h2>
   <div class="related-pages">
@@ -34345,7 +34105,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -34593,7 +34352,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -34790,7 +34548,6 @@ ${mcpCtaCss()}
     <strong>Query Azure data programmatically</strong> via our <a href="/setup">MCP tools</a> — search for Azure services, compare with alternatives, or track pricing changes from your AI coding assistant.
   </div>
 
-  ${buildMcpCta("Search Azure free tier services, compare with alternatives, and track pricing changes — all from your AI coding assistant.")}
 
   <h2>Related Guides</h2>
   <div class="related-pages">
@@ -34809,7 +34566,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -35016,7 +34772,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -35202,7 +34957,6 @@ ${mcpCtaCss()}
     <strong>Query DigitalOcean data programmatically</strong> via our <a href="/setup">MCP tools</a> — search for DigitalOcean services, compare with alternatives, or track pricing changes from your AI coding assistant.
   </div>
 
-  ${buildMcpCta("Search DigitalOcean services, compare with alternatives, and track pricing changes — all from your AI coding assistant.")}
 
   <h2>Related Guides</h2>
   <div class="related-pages">
@@ -35221,7 +34975,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -35478,7 +35231,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -35945,7 +35697,6 @@ ${mcpCtaCss()}
     <strong>Query cloud pricing programmatically</strong> via our <a href="/setup">MCP tools</a> — compare cloud services, track pricing changes, or plan your infrastructure stack from your AI coding assistant.
   </div>
 
-  ${buildMcpCta("Compare cloud free tiers, track pricing changes, and plan your infrastructure stack — all from your AI coding assistant.")}
 
 
   ${buildComparisonFaq(slug, title)}
@@ -35972,7 +35723,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate, cloudChanges);
 }
@@ -36148,7 +35898,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -36641,7 +36390,6 @@ ${mcpCtaCss()}
     <strong>Query database pricing programmatically</strong> via our <a href="/setup">MCP tools</a> — compare databases, track pricing changes, or plan your data stack from your AI coding assistant.
   </div>
 
-  ${buildMcpCta("Compare database free tiers, track pricing changes, and plan your data stack — all from your AI coding assistant.")}
 
 
   ${buildComparisonFaq(slug, title)}
@@ -36665,7 +36413,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
   return comparisonPageWithLiveRecords(withNoLongerFreeSentence(page, namesADeclaredDatabase), pubDate, dbChanges);
@@ -36811,7 +36558,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -37302,7 +37048,6 @@ ${mcpCtaCss()}
     <strong>Query CI/CD pricing programmatically</strong> via our <a href="/setup">MCP tools</a> — compare CI/CD providers, track pricing changes, or plan your DevOps stack from your AI coding assistant.
   </div>
 
-  ${buildMcpCta("Compare CI/CD free tiers, track pricing changes, and plan your DevOps stack — all from your AI coding assistant.")}
 
 
   ${buildComparisonFaq(slug, title)}
@@ -37326,7 +37071,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate, cicdChanges);
 }
@@ -37471,7 +37215,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -37946,7 +37689,6 @@ ${mcpCtaCss()}
     <strong>Query serverless pricing programmatically</strong> via our <a href="/setup">MCP tools</a> — compare serverless providers, track pricing changes, or plan your infrastructure stack from your AI coding assistant.
   </div>
 
-  ${buildMcpCta("Compare serverless free tiers, track pricing changes, and plan your infrastructure stack — all from your AI coding assistant.")}
 
 
   ${buildComparisonFaq(slug, title)}
@@ -37970,7 +37712,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate, serverlessChanges);
 }
@@ -38123,7 +37864,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -38777,7 +38517,6 @@ ${mcpCtaCss()}
     <strong>Query auth pricing programmatically</strong> via our <a href="/setup">MCP tools</a> &mdash; compare auth providers, track pricing changes, or plan your infrastructure stack from your AI coding assistant.
   </div>
 
-  ${buildMcpCta("Compare auth service free tiers, track pricing changes, and plan your authentication stack — all from your AI coding assistant.")}
 
 
   ${buildComparisonFaq(slug, title)}
@@ -38801,7 +38540,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate);
 }
@@ -38953,7 +38691,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -39763,7 +39500,6 @@ ${mcpCtaCss()}
     ${relatedPagesHtml}
   </div>
 
-  ${buildMcpCta("email-comparison-2026")}
 
   <div class="search-cta">
     Explore all ${offers.length.toLocaleString()} developer tool deals &rarr; <a href="/">Browse the full index</a> or <a href="/setup">connect via MCP</a>
@@ -39774,7 +39510,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate, emailChanges);
 }
@@ -39926,7 +39661,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -40760,7 +40494,6 @@ ${mcpCtaCss()}
     ${relatedPagesHtml}
   </div>
 
-  ${buildMcpCta("monitoring-comparison-2026")}
 
   <div class="search-cta">
     Explore all ${offers.length.toLocaleString()} developer tool deals &rarr; <a href="/">Browse the full index</a> or <a href="/setup">connect via MCP</a>
@@ -40771,7 +40504,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate, monitoringChanges);
 }
@@ -40960,7 +40692,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -41579,7 +41310,6 @@ ${mcpCtaCss()}
     ${relatedPagesHtml}
   </div>
 
-  ${buildMcpCta("storage-comparison-2026")}
 
   <div class="search-cta">
     Explore all ${offers.length.toLocaleString()} developer tool deals &rarr; <a href="/">Browse the full index</a> or <a href="/setup">connect via MCP</a>
@@ -41590,7 +41320,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate, storageChanges);
 }
@@ -41741,7 +41470,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -42242,7 +41970,6 @@ ${mcpCtaCss()}
     ${relatedPagesHtml}
   </div>
 
-  ${buildMcpCta("testing-free-tier-comparison-2026")}
 
   <div class="search-cta">
     Explore all ${offers.length.toLocaleString()} developer tool deals &rarr; <a href="/">Browse the full index</a> or <a href="/setup">connect via MCP</a>
@@ -42253,7 +41980,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate, testingChanges);
 }
@@ -42406,7 +42132,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -42926,7 +42651,6 @@ ${mcpCtaCss()}
     ${relatedPagesHtml}
   </div>
 
-  ${buildMcpCta("analytics-free-tier-comparison-2026")}
 
   <div class="search-cta">
     Explore all ${offers.length.toLocaleString()} developer tool deals &rarr; <a href="/">Browse the full index</a> or <a href="/setup">connect via MCP</a>
@@ -42937,7 +42661,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate, analyticsChanges);
 }
@@ -43088,7 +42811,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -43522,7 +43244,6 @@ ${mcpCtaCss()}
     ${relatedPagesHtml}
   </div>
 
-  ${buildMcpCta("api-development-free-tier-comparison-2026")}
 
   <div class="search-cta">
     Explore all ${offers.length.toLocaleString()} developer tool deals &rarr; <a href="/">Browse the full index</a> or <a href="/setup">connect via MCP</a>
@@ -43533,7 +43254,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate, apiDevChanges);
 }
@@ -43684,7 +43404,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -44239,7 +43958,6 @@ ${mcpCtaCss()}
     ${relatedPagesHtml}
   </div>
 
-  ${buildMcpCta("security-free-tier-comparison-2026")}
 
   <div class="search-cta">
     Explore all ${offers.length.toLocaleString()} developer tool deals &rarr; <a href="/">Browse the full index</a> or <a href="/setup">connect via MCP</a>
@@ -44250,7 +43968,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate, secChanges);
 }
@@ -44401,7 +44118,6 @@ footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2r
 footer a{color:var(--accent)}
 @media(max-width:768px){h1{font-size:1.6rem}.summary-stats{grid-template-columns:1fr 1fr}.comp-table{font-size:.7rem}.comp-table td,.comp-table th{padding:.35rem .2rem}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -44855,7 +44571,6 @@ ${mcpCtaCss()}
     ${relatedPagesHtml}
   </div>
 
-  ${buildMcpCta("hosting-free-tier-comparison-2026")}
 
   <div class="search-cta">
     Explore all ${offers.length.toLocaleString()} developer tool deals &rarr; <a href="/">Browse the full index</a> or <a href="/setup">connect via MCP</a>
@@ -44866,7 +44581,6 @@ ${mcpCtaCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`, pubDate, hostingChanges);
 }
@@ -45134,7 +44848,6 @@ tr:hover td{background:var(--accent-glow)}
 .key-takeaways li strong{color:var(--text)}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}h2{font-size:1.2rem}.stat-grid{grid-template-columns:repeat(2,1fr)}.stat-card .stat-number{font-size:1.5rem}}
-${mcpCtaCss()}
 ${globalNavCss()}
 </style>
 </head>
@@ -45365,7 +45078,6 @@ ${globalNavCss()}
     ${comparisonLinks}
   </div>
 
-  ${buildMcpCta("Query all " + offers.length.toLocaleString() + " developer tool deals from your AI coding assistant. Search free tiers, compare vendors, track pricing changes — directly in your editor.")}
 
   <div style="margin:2rem 0 1rem;padding:1.25rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-card)">
     <h3 style="margin:0 0 .75rem;font-family:var(--serif);font-size:1rem;color:var(--text)">More Guides</h3>
@@ -45384,7 +45096,6 @@ ${globalNavCss()}
     &copy; ${new Date().getFullYear()} <a href="/">AgentDeals</a> &middot; ${offers.length.toLocaleString()} offers tracked &middot; <a href="/feed.xml">Feed</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/disclosure">Disclosure</a> &middot; <a href="/contact">Contact</a>
   </div>
 </footer>
-<script>${mcpCtaScript()}</script>
 </body>
 </html>`;
 }
@@ -46175,7 +45886,6 @@ function buildStackTemplatePage(slug: string): string | null {
     .related-links{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0}
     .related-link{display:inline-block;padding:.4rem .8rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:6px;font-size:.8rem;color:var(--accent);text-decoration:none}
     .related-link:hover{border-color:var(--accent);text-decoration:none}
-    ${mcpCtaCss()}
     .footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:.8rem}
     .footer a{color:var(--accent)}
     @media(max-width:768px){h1{font-size:1.5rem}.cost-summary{gap:.5rem}.cost-tier .tier-amount{font-size:1.2rem}.stack-table{font-size:.8rem}.stack-table th,.stack-table td{padding:.5rem}.why-cards{grid-template-columns:1fr}.swap-cards{grid-template-columns:1fr}}
@@ -46234,7 +45944,6 @@ function buildStackTemplatePage(slug: string): string | null {
       ${template.relatedGuides.length > 0 ? `<h2>Related Guides</h2><div class="related-links">${guideLinks}</div>` : ""}
     </div>` : ""}
 
-    ${buildMcpCta("Use <code>plan_stack</code> to get AI-powered stack recommendations tailored to your specific use case.")}
 
     <div class="footer">
       <p>${stackFreshnessNote([...templateReadings.values()])} Stability ratings based on <a href="/stability">tracked pricing changes</a>.</p>
@@ -46337,7 +46046,6 @@ function buildStacksIndexPage(): string {
     .cta-section p{margin:.5rem 0}
     .cta-btn{display:inline-flex;align-items:center;gap:.5rem;margin:.75rem 0;padding:.75rem 1.25rem;background:var(--accent);color:#fff;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;transition:opacity .15s}
     .cta-btn:hover{opacity:.9;text-decoration:none;color:#fff}
-    ${mcpCtaCss()}
     .footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:.8rem}
     .footer a{color:var(--accent)}
     @media(max-width:768px){h1{font-size:1.5rem}.template-grid{grid-template-columns:1fr}}
@@ -46360,7 +46068,6 @@ function buildStacksIndexPage(): string {
       <a href="/estimate" class="cta-btn">Open Cost Estimator &rarr;</a>
     </div>
 
-    ${buildMcpCta("Use <code>plan_stack</code> to get AI-powered stack recommendations tailored to your specific use case.")}
 
     <div class="footer">
       <p>${stackFreshnessNote(stackPrimaryReadings(STACK_TEMPLATES.flatMap(t => t.services.map(s => ({ recommended: { vendor: s.vendor } })))))} Stability ratings based on <a href="/stability">tracked pricing changes</a>.</p>
@@ -46676,7 +46383,6 @@ function buildStackCheckPage(): string {
     @keyframes spin{to{transform:rotate(360deg)}}
     #results{display:none}
 
-    ${mcpCtaCss()}
     @media(max-width:640px){
       .input-row{flex-direction:column}
       .risk-summary{grid-template-columns:1fr}
@@ -46731,7 +46437,6 @@ function buildStackCheckPage(): string {
       </div>
     </div>
 
-    ${buildMcpCta("Check your stack risk programmatically — search_deals, plan_stack, compare_vendors, and track_changes in your AI editor.")}
 
     <h2>Frequently Asked Questions</h2>
     <div class="faq-section">
@@ -46756,7 +46461,6 @@ function buildStackCheckPage(): string {
   </div>
 
   <script>
-    ${mcpCtaScript()}
     var VENDOR_LOOKUP = ${JSON.stringify(vendorLookup)};
 
     var RATED_LEVELS = ${JSON.stringify(RATED_LEVELS)};
@@ -47087,7 +46791,6 @@ ${globalNavCss()}
     <button class="share-btn" onclick="copyShareUrl(this)">Copy Link</button>
   </div>
 
-  ${buildMcpCta("Compare any two vendors from your AI coding assistant. Search 1,600+ deals, compare free tiers, and track pricing changes — directly in your editor.")}
 
   <div class="faq-section">
     <h2>FAQ</h2>
@@ -47437,7 +47140,6 @@ function buildEstimatePage(): string {
     .est-empty{text-align:center;padding:2rem;color:var(--text-muted);font-size:.95rem}
     .notes-col{color:var(--text-dim);font-size:.8rem}
     .free-tier-info{font-size:.75rem;color:var(--text-dim);font-weight:normal;display:block;margin-top:.15rem}
-    ${mcpCtaCss()}
     .footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:.8rem}
     .footer a{color:var(--accent)}
     @media(max-width:768px){.est-grid{grid-template-columns:1fr 1fr}.results-table{font-size:.8rem}.results-table th,.results-table td{padding:.5rem}.share-bar{flex-direction:column;align-items:stretch}.share-url{font-size:.7rem}}
@@ -47465,7 +47167,6 @@ function buildEstimatePage(): string {
       <div class="est-empty">Select services above to see cost comparison</div>
     </div>
 
-    ${buildMcpCta("Use <code>plan_stack</code> to get AI-powered stack recommendations with free tier coverage directly in your editor.")}
 
     <div class="footer">
       <p>Prices are approximate and based on published vendor pricing as of April 2026. Actual costs may vary based on usage patterns.</p>
@@ -47642,7 +47343,6 @@ function buildEstimatePage(): string {
       if (hasAny) updateEstimate();
     })();
   </script>
-  ${mcpCtaScript() ? `<script>${mcpCtaScript()}</script>` : ""}
 </body>
 </html>`;
 }
@@ -47731,7 +47431,6 @@ function buildBudgetBuilderPage(): string {
     + '    *{box-sizing:border-box;margin:0}\n'
     + '    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;padding:0 1.5rem;max-width:900px;margin:0 auto}\n'
     + '    ' + globalNavCss() + '\n'
-    + '    ' + mcpCtaCss() + '\n'
     + '    h1{font-family:var(--serif);font-size:1.8rem;margin:1.5rem 0 .5rem;letter-spacing:-.02em}\n'
     + '    h2{font-family:var(--serif);font-size:1.3rem;margin:2rem 0 .75rem;color:var(--text)}\n'
     + '    .subtitle{color:var(--text-muted);font-size:.95rem;margin-bottom:1.5rem;line-height:1.5}\n'
@@ -47852,7 +47551,6 @@ function buildBudgetBuilderPage(): string {
     + '  </div>\n'
     + '</div>\n'
     + '\n'
-    + buildMcpCta("Build and optimize developer stacks programmatically \u2014 search_deals, plan_stack, compare_vendors, and track_changes in your AI editor.") + '\n'
     + '\n'
     + '<h2>Frequently Asked Questions</h2>\n'
     + '<div class="faq-section">\n'
@@ -48081,7 +47779,6 @@ function buildBudgetBuilderPage(): string {
     + '  }\n'
     + '})();\n'
     + '</script>\n'
-    + (mcpCtaScript() ? '<script>' + mcpCtaScript() + '</script>' : '') + '\n'
     + FOOTER_FOR_PAGES_WITHOUT_ONE + '\n'
     + '</body>\n'
     + '</html>';
@@ -48173,7 +47870,6 @@ function buildBadgesPage(): string {
     .vendor-badge-link:hover{border-color:var(--accent);text-decoration:none}
     .vendor-badge-link img{max-height:20px;max-width:100%;height:auto}
     .status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-    ${mcpCtaCss()}
     .footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:.8rem}
     .footer a{color:var(--accent)}
   </style>
@@ -48262,7 +47958,6 @@ ${allVendors.filter(v => v.status !== "unknown").map(v =>
 ).join("\n")}
     </div>
 
-    ${buildMcpCta("Query free tier status for any vendor via MCP tools — search, compare, and track pricing changes programmatically.")}
 
     <div class="footer">
       <p>Badges powered by <a href="/">AgentDeals</a> pricing data · <a href="/pricing-changes">Pricing Changes</a> · <a href="/stability">Stability Dashboard</a> · <a href="/privacy">Privacy</a> · <a href="/contact">Contact</a></p>
@@ -48476,7 +48171,6 @@ function buildEmbedDocsPage(): string {
     .how-to ol{padding-left:1.5rem;color:var(--text-muted);font-size:.9rem}
     .how-to li{margin:.5rem 0}
     .how-to code{background:#0d1117;padding:.15rem .4rem;border-radius:4px;font-size:.8rem;color:#c9d1d9}
-    ${mcpCtaCss()}
     @media(max-width:768px){h1{font-size:1.5rem}.widget-section{padding:1rem}}
   </style>
 </head>
@@ -48546,10 +48240,8 @@ function buildEmbedDocsPage(): string {
     </table>
   </div>
 
-  ${buildMcpCta("Access this pricing data programmatically via MCP tools — search vendors, compare free tiers, and track changes from your AI editor.")}
 </div>
 <script>
-${mcpCtaScript()}
 function copyCode(btn){var block=btn.parentElement;var text=block.textContent.replace(/^Copy/,"").trim();navigator.clipboard.writeText(text).then(function(){btn.textContent="Copied!";btn.classList.add("copied");setTimeout(function(){btn.textContent="Copy";btn.classList.remove("copied")},2000)})}
 </script>
 ${FOOTER_FOR_PAGES_WITHOUT_ONE}
@@ -48660,7 +48352,6 @@ function buildDeveloperHubPage(): string {
     + "    .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}\n"
     + "    .tab-panel{display:none}\n"
     + "    .tab-panel.active{display:block}\n"
-    + "    " + mcpCtaCss() + "\n"
     + "    .footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:.8rem}\n"
     + "    .footer a{color:var(--accent)}\n"
     + "    @media(max-width:768px){.endpoint-table{font-size:.75rem}.endpoint-table th,.endpoint-table td{padding:.4rem .5rem}.highlight-grid{grid-template-columns:repeat(2,1fr)}}\n"
@@ -48887,7 +48578,6 @@ function buildDeveloperHubPage(): string {
     + "    <p>The read endpoints above have <strong>no rate limits</strong>. We trust developers to be reasonable.</p>\n"
     + "    <p>One write path is limited. The attribution beacon at <code>" + SIGNAL_PATH + "</code> allows " + RATE_LIMIT_PER_MINUTE + " per minute &mdash; <a href=\"" + SIGNAL_DOC_PATH + "\">its own page</a> covers how that limit is keyed. Over the limit you get a <code>429</code> with <code>Retry-After</code>.</p>\n"
     + "\n"
-    + "    " + buildMcpCta("Prefer AI-native access? AgentDeals is also an MCP server — " + MCP_TOOL_COUNT + " tools that work in Claude, Cursor, Cline, and any MCP-compatible client.") + "\n"
     + "\n"
     + "    <h2>Related Resources</h2>\n"
     + "    <p>\n"
@@ -50760,7 +50450,6 @@ h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
 @media(max-width:768px){h1{font-size:1.5rem}.stats-bar{flex-direction:column}.programs-table{display:block;overflow-x:auto}.type-cell,.link-cell{display:none}}
 ${globalNavCss()}
-${mcpCtaCss()}
 </style>
 </head>
 <body>
@@ -50824,7 +50513,6 @@ ${unpaidRows}
 
   <p style="margin-top:1.5rem;font-size:.85rem;color:var(--text-dim);text-align:center">Query this data programmatically via <a href="/api/referral-programs">/api/referral-programs</a> (JSON), our <a href="/setup">MCP tools</a>, or <a href="/developers">REST API</a>.</p>
 
-  ${buildMcpCta("Search referral programs and compare vendor free tiers directly in your AI coding assistant.")}
   <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
 </div>
 <script>

@@ -3020,7 +3020,7 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("/hetzner-alternatives"), "Should cross-link to hetzner alternatives");
     assert.ok(html.includes("/changes"), "Should link to changes page");
     assert.ok(html.includes("More Alternatives Guides"), "Should have cross-links");
-    assert.ok(html.includes("/sitemap.xml") || html.includes("agentdeals"), "Should be a proper page");
+    assert.ok(html.includes("AgentDeals"), "Should be a proper page");
   });
 
   it("GET /free-startup-stack renders startup stack guide page", async () => {
@@ -3855,7 +3855,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Hidden Costs"), "Should have hidden costs section");
     assert.ok(html.includes("Best-for-Use-Case Recommendations"), "Should have recommendations");
     assert.ok(html.includes("Frequently Asked Questions"), "Should have FAQ");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/pricing-changes"), "Should cross-link to changes");
     assert.ok(html.includes("/developers"), "Should cross-link to developers");
   });
@@ -3899,7 +3898,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Hidden Costs"), "Should have hidden costs section");
     assert.ok(html.includes("Best-for-Use-Case Recommendations"), "Should have recommendations");
     assert.ok(html.includes("Frequently Asked Questions"), "Should have FAQ");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/pricing-changes"), "Should cross-link to changes");
     assert.ok(html.includes("/developers"), "Should cross-link to developers");
     assert.ok(html.includes("/ci-cd-alternatives"), "Should cross-link to CI/CD hub");
@@ -3947,7 +3945,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Hidden Costs"), "Should have hidden costs section");
     assert.ok(html.includes("Best-for-Use-Case Recommendations"), "Should have recommendations");
     assert.ok(html.includes("Frequently Asked Questions"), "Should have FAQ");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/pricing-changes"), "Should cross-link to changes");
     assert.ok(html.includes("/developers"), "Should cross-link to developers");
     assert.ok(html.includes("Free Storage"), "Should have storage column");
@@ -3984,7 +3981,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Hidden Costs"), "Should have hidden costs section");
     assert.ok(html.includes("Best-for-Use-Case Recommendations"), "Should have recommendations");
     assert.ok(html.includes("Frequently Asked Questions"), "Should have FAQ");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("Free Vectors"), "Should have vectors column");
     assert.ok(html.includes("Dimensions"), "Should have dimensions column");
     assert.ok(html.includes("/database-pricing"), "Should cross-link to database pricing");
@@ -4065,7 +4061,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Migration Timeline"), "Should have timeline");
     assert.ok(html.includes("Recommendations"), "Should have recommendations");
     assert.ok(html.includes("Frequently Asked Questions"), "Should have FAQ");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/pricing-changes"), "Should cross-link to changes");
     assert.ok(html.includes("/vendor/openai"), "Should link to OpenAI vendor page");
     assert.ok(html.includes("/vendor/azure"), "Should link to Azure vendor page");
@@ -4092,7 +4087,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Lambda"), "Should include Lambda");
     assert.ok(html.includes("DynamoDB"), "Should include DynamoDB");
     assert.ok(html.includes("Developer-Focused Stacks"), "Should have stacks section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/changes"), "Should cross-link to changes timeline");
     assert.ok(html.includes("/setup"), "Should cross-link to setup guide");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
@@ -4119,7 +4113,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Hidden Costs"), "Should have gotchas section");
     assert.ok(html.includes("GCP vs AWS"), "Should have alternatives comparison");
     assert.ok(html.includes("Best Picks by Use Case"), "Should have stacks section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/changes"), "Should cross-link to changes timeline");
     assert.ok(html.includes("/setup"), "Should cross-link to setup guide");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
@@ -4150,7 +4143,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Best Picks by Use Case"), "Should have stacks section");
     assert.ok(html.includes("Azure for Startups"), "Should have startups section");
     assert.ok(html.includes("Microsoft for Startups"), "Should include Microsoft for Startups");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/changes"), "Should cross-link to changes timeline");
     assert.ok(html.includes("/setup"), "Should cross-link to setup guide");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
@@ -4181,7 +4173,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Best Use Cases"), "Should have stacks section");
     assert.ok(html.includes("For Startups"), "Should have startups section");
     assert.ok(html.includes("DigitalOcean Startups"), "Should include the DigitalOcean Startups program");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/changes"), "Should cross-link to changes timeline");
     assert.ok(html.includes("/setup"), "Should cross-link to setup guide");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
@@ -4213,7 +4204,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("e2-micro"), "Should mention GCP e2-micro");
     assert.ok(html.includes("Cosmos DB"), "Should mention Azure Cosmos DB");
     assert.ok(html.includes("Droplet"), "Should mention DigitalOcean Droplet");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/aws-free-tier-2026"), "Should cross-link to AWS guide");
     assert.ok(html.includes("/gcp-free-tier-2026"), "Should cross-link to GCP guide");
     assert.ok(html.includes("/azure-free-tier-2026"), "Should cross-link to Azure guide");
@@ -4247,7 +4237,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("By Use Case"), "Should have the use-case section");
     assert.ok(html.includes("PlanetScale Cautionary Tale"), "Should have PlanetScale section");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/neon-vs-supabase"), "Should cross-link to Neon vs Supabase");
     assert.ok(html.includes("/supabase-vs-firebase"), "Should cross-link to Supabase vs Firebase");
     assert.ok(html.includes("/database-alternatives"), "Should cross-link to database alternatives");
@@ -4280,7 +4269,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Best for Each Use Case"), "Should have best-for section");
     assert.ok(html.includes("Hidden Costs and Gotchas"), "Should have hidden costs section");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/ci-cd-alternatives"), "Should cross-link to CI/CD alternatives");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
     assert.ok(html.includes("/setup"), "Should cross-link to setup guide");
@@ -4313,7 +4301,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("By Use Case"), "Should have the use-case section");
     assert.ok(html.includes("Hidden Costs and Gotchas"), "Should have hidden costs section");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/cloud-free-tier-comparison-2026"), "Should cross-link to cloud comparison");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
     assert.ok(html.includes("/setup"), "Should cross-link to setup guide");
@@ -4354,7 +4341,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("By Use Case"), "Should have the use-case section");
     assert.ok(html.includes("Hidden Costs"), "Should have hidden costs section");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
     assert.ok(html.includes("/setup"), "Should cross-link to setup guide");
   });
@@ -4407,7 +4393,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Hidden Costs and Gotchas"), "Should have hidden costs section");
     assert.ok(html.includes("cardinality"), "Should mention cardinality cost trap");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
     assert.ok(html.includes("/setup"), "Should cross-link to setup guide");
   });
@@ -4451,7 +4436,6 @@ describe("HTTP transport", () => {
     assert.ok(!html.includes("Best for Each Use Case"), "Should rank no service in a best-for section");
     assert.ok(html.includes("Hidden Costs and Gotchas"), "Should have hidden costs section");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/supabase-vs-firebase"), "Should cross-link to Supabase vs Firebase");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
     assert.ok(html.includes("/setup"), "Should cross-link to setup guide");
@@ -4527,7 +4511,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("By Use Case"), "Should have the use-case section");
     assert.ok(html.includes("Hidden Costs and Gotchas"), "Should have hidden costs section");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
     assert.ok(html.includes("/setup"), "Should cross-link to setup guide");
   });
@@ -4565,7 +4548,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("By Use Case"), "Should have the use-case section");
     assert.ok(html.includes("Hidden Costs and Gotchas"), "Should have hidden costs section");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
   });
 
@@ -4595,7 +4577,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("By Use Case"), "Should have the use-case section");
     assert.ok(html.includes("Hidden Costs and Gotchas"), "Should have hidden costs section");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
   });
 
@@ -4627,7 +4608,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("By Use Case"), "Should have the use-case section");
     assert.ok(html.includes("Hidden Costs and Gotchas"), "Should have hidden costs section");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
   });
 
@@ -4658,7 +4638,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("By Use Case"), "Should have the use-case section");
     assert.ok(html.includes("Hidden Costs and Gotchas"), "Should have hidden costs section");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
   });
 
@@ -4691,7 +4670,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("By Use Case"), "Should have the use-case section");
     assert.ok(html.includes("Hidden Costs and Gotchas"), "Should have hidden costs section");
     assert.ok(html.includes("Pricing Change Timeline"), "Should have timeline section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/hosting-alternatives"), "Should cross-link to hosting alternatives");
     assert.ok(html.includes("/vercel-vs-netlify"), "Should cross-link to Vercel vs Netlify");
     assert.ok(html.includes("/railway-vs-render"), "Should cross-link to Railway vs Render");
@@ -4727,7 +4705,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("Category Landscape"), "Should have category landscape section");
     assert.ok(html.includes("Cost Trap"), "Should have cost trap section");
     assert.ok(html.includes("Methodology"), "Should have methodology section");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/guides"), "Should link back to guides hub");
   });
 
@@ -4763,7 +4740,6 @@ describe("HTTP transport", () => {
     assert.ok(html.includes("/database-alternatives"), "Should link to category hub");
     assert.ok(html.includes("/free-tier-risk"), "Should link to special report");
     assert.ok(html.includes("guide-badge"), "Should have content type badges");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
   });
 
   it("GET /team-collaboration-alternatives renders team collaboration hub page", async () => {
@@ -5196,73 +5172,6 @@ describe("best-of pages", () => {
     const html = await response.text();
     assert.ok(html.includes("global-nav"), "Should have global nav");
     assert.ok(html.includes('class="nav-link active">Best Of'), "Best Of should be active");
-  });
-});
-
-describe("MCP install CTA banner", () => {
-  let proc: ChildProcess | null = null;
-
-  afterEach(() => {
-    if (proc) {
-      proc.kill();
-      proc = null;
-    }
-  });
-
-  it("CTA appears on category page", async () => {
-    proc = await startHttpServer();
-    const response = await fetch(`http://localhost:${serverPort}/category/databases`);
-    const html = await response.text();
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA banner");
-    assert.ok(html.includes("claude mcp add agentdeals"), "Should have install command");
-    assert.ok(html.includes('href="/setup"'), "Should link to setup guide");
-  });
-
-  it("CTA appears on vendor page", async () => {
-    proc = await startHttpServer();
-    const response = await fetch(`http://localhost:${serverPort}/vendor/vercel`);
-    const html = await response.text();
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA banner");
-    assert.ok(html.includes("claude mcp add agentdeals"), "Should have install command");
-  });
-
-  it("CTA appears on comparison page", async () => {
-    proc = await startHttpServer();
-    const response = await fetch(`http://localhost:${serverPort}/compare/netlify-vs-vercel`);
-    const html = await response.text();
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA banner");
-    assert.ok(html.includes("claude mcp add agentdeals"), "Should have install command");
-  });
-
-  it("CTA appears on best-of page", async () => {
-    proc = await startHttpServer();
-    const response = await fetch(`http://localhost:${serverPort}/best/free-databases`);
-    const html = await response.text();
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA banner");
-    assert.ok(html.includes("claude mcp add agentdeals"), "Should have install command");
-  });
-
-  it("CTA appears on alternative-to page", async () => {
-    proc = await startHttpServer();
-    const response = await fetch(`http://localhost:${serverPort}/alternative-to/vercel`);
-    const html = await response.text();
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA banner");
-    assert.ok(html.includes("claude mcp add agentdeals"), "Should have install command");
-  });
-
-  it("CTA does NOT appear on landing page", async () => {
-    proc = await startHttpServer();
-    const response = await fetch(`http://localhost:${serverPort}/`);
-    const html = await response.text();
-    assert.ok(!html.includes("mcp-cta"), "Landing page should NOT have MCP CTA banner");
-  });
-
-  it("CTA includes copy button", async () => {
-    proc = await startHttpServer();
-    const response = await fetch(`http://localhost:${serverPort}/vendor/vercel`);
-    const html = await response.text();
-    assert.ok(html.includes("copyCta"), "Should have copy button handler");
-    assert.ok(html.includes("copy-btn"), "Should have copy button");
   });
 });
 
@@ -5703,7 +5612,6 @@ describe("shutdown tracker page", () => {
     assert.ok(html.includes("/free-tier-risk"), "Should link to risk index");
     assert.ok(html.includes("/estimate"), "Should link to cost estimator");
 
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
 
     assert.ok(!html.includes("${BASE_URL}"), "Should not have unresolved BASE_URL");
 
@@ -5837,7 +5745,6 @@ describe("shutdown tracker page", () => {
     assert.ok(html.includes("/estimate"), "Should link to cost estimator");
     assert.ok(html.includes("/stack-check"), "Should link to health check");
 
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
 
     assert.ok(html.includes("og:title"), "Should have OG title");
     assert.ok(html.includes("og:description"), "Should have OG description");
@@ -5882,7 +5789,6 @@ describe("shutdown tracker page", () => {
     assert.ok(html.includes("Deal Change Ticker"), "Should document changes widget");
     assert.ok(html.includes("iframe"), "Should show iframe embed codes");
     assert.ok(html.includes("Powered by"), "Should mention attribution");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(!html.includes("${BASE_URL}"), "Should not have unresolved BASE_URL");
   });
 
@@ -6010,7 +5916,6 @@ describe("shutdown tracker page", () => {
     assert.ok(html.includes("Pricing Gotchas"), "Should have gotchas section");
     assert.ok(html.includes("Best-for-Use-Case Recommendations"), "Should have recommendations");
     assert.ok(html.includes("Frequently Asked Questions"), "Should have FAQ");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/api/hosting-pricing"), "Should link to API endpoint");
   });
 
@@ -6111,7 +6016,6 @@ describe("shutdown tracker page", () => {
     assert.ok(html.includes("Pricing Gotchas"), "Should have gotchas section");
     assert.ok(html.includes('<h2 id="recommendations">By Use Case</h2>'), "Should have the use-case section");
     assert.ok(html.includes("Frequently Asked Questions"), "Should have FAQ");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/api/llm-pricing"), "Should link to API endpoint");
   });
 
@@ -6195,7 +6099,6 @@ describe("startup credits comparison page", () => {
     assert.ok(html.includes("Hidden Constraints"), "Should have hidden constraints section");
     assert.ok(html.includes("Stacking Strategy"), "Should have stacking section");
     assert.ok(html.includes("Frequently Asked Questions"), "Should have FAQ");
-    assert.ok(html.includes("mcp-cta"), "Should have MCP CTA");
     assert.ok(html.includes("/api/startup-credits"), "Should link to API endpoint");
   });
 
