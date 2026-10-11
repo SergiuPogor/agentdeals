@@ -212,11 +212,51 @@ describe(`${PAGE} on a missed payment for another Google Cloud service`, () => {
   });
 });
 
-describe(`${PAGE} on buying credits by bank transfer`, () => {
-  it("follows the $0 stop with how long a bank transfer can take to clear and when service resumes, before the usage that runs past $0", () => {
+const DENIED_ACCESS_THREAD = "https://discuss.ai.google.dev/t/get-v1beta-models-returns-200-ok-but-generatecontent-returns-http-403-your-project-has-been-denied-access/187288";
+
+describe(`${PAGE} on an account that missed its cutover date`, () => {
+  it("follows the interruption with the switch that stays open, the billing FAQ that says so, and when paid service resumes, before the split between Prepay and Postpay", () => {
+    const text = withoutTags(prepayParagraph(page));
+    assert.ok(text.includes(
+      "or the account's paid Gemini API service is interrupted. " +
+      "An account that missed its cutover date can still switch. " +
+      "Google's billing FAQ says an existing Postpay account can transition to Prepay on the AI Studio Billing page. " +
+      "The doc gives no deadline for the switch. " +
+      "Paid Gemini API service resumes only after the credit purchase is confirmed. " +
+      "Only Gemini API usage moves to Prepay;",
+    ), text);
+  });
+
+  it("links the transition to Google's billing doc", () => {
+    const paragraph = prepayParagraph(page);
+    assert.ok(paragraph.includes('<a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener">Google\'s billing FAQ says an existing Postpay account can transition to Prepay</a> on the AI Studio Billing page.'), paragraph);
+  });
+});
+
+describe(`${PAGE} on a free-tier project denied access`, () => {
+  it("follows the $0 stop with what a 403 is not, what Google staff say it means, and their steps for a free-tier project", () => {
     const text = withoutTags(prepayParagraph(page));
     assert.ok(text.includes(
       "When the balance reaches $0, every API key on the billing account stops working until you add credits. " +
+      'Calls failing with HTTP 403 "Your project has been denied access" are not from a $0 Prepay balance, which returns 402. ' +
+      'Google staff say 403 or "Unavailable" in AI Studio means a flag is on the account. ' +
+      "For free-tier projects, complete age verification in your Google Account, then retry or create a new API key. " +
+      "If access is still denied, staff suggest adding Prepay credits, which ends your free tier quota. " +
+      "If you pay by bank transfer,",
+    ), text);
+  });
+
+  it("links what Google staff say to their reply", () => {
+    const paragraph = prepayParagraph(page);
+    assert.ok(paragraph.includes(`<a href="${DENIED_ACCESS_THREAD}" target="_blank" rel="noopener">Google staff say</a> 403 or "Unavailable" in AI Studio`), paragraph);
+  });
+});
+
+describe(`${PAGE} on buying credits by bank transfer`, () => {
+  it("follows the steps for a project denied access with how long a bank transfer can take to clear and when service resumes, before the usage that runs past $0", () => {
+    const text = withoutTags(prepayParagraph(page));
+    assert.ok(text.includes(
+      "If access is still denied, staff suggest adding Prepay credits, which ends your free tier quota. " +
       "If you pay by bank transfer, some payments take several days to clear. " +
       "Most card payments are instant. " +
       "Gemini API service resumes only after the purchase is confirmed. " +
