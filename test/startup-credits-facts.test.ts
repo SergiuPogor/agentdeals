@@ -99,6 +99,7 @@ const WHEN_CREDITS_RUN_OUT: Record<string, [string, string, string]> = {
 };
 
 const MODELS_THE_CREDITS_COVER: Record<string, [string, string, string]> = {
+  "AWS Activate": ["AWS Activate credits can also pay for third-party models on Amazon Bedrock, such as Anthropic's Claude.", "https://aws.amazon.com/startups/faq", "2026-10-11"],
   "Google Cloud for Startups": ["Google Cloud for Startups credits cover Google's own models, such as Gemini and Gemma. Third-party models, such as Anthropic's Claude, are billed directly and not covered.", "https://cloud.google.com/startup/ai", "2026-10-11"],
   "Microsoft for Startups (formerly Founders Hub)": ["Anthropic's Claude, Hugging Face models and some Cohere, Meta and Mistral AI models in Microsoft Foundry are not covered by Microsoft for Startups credits; the model provider bills that usage separately. The credits cover Foundry models billed directly by Azure.", "https://learn.microsoft.com/en-us/startups/benefits/technical-benefits/azure-credits/foundry-model-sponsorship-coverage", "2026-10-11"],
 };
@@ -323,7 +324,7 @@ describe("the startup credits guide states each programme's terms as the program
     assert.deepStrictEqual(unlinked, []);
   });
 
-  it("ends the Google and Microsoft inclusions with the AI models their credits cover, linking the page that says so", () => {
+  it("ends the AWS, Google and Microsoft inclusions with the AI models their credits cover, linking the page that says so", () => {
     const html = served.get("/startup-credits")!;
     const cards = programmeCards(html);
     const markup = programmeCardMarkup(html);
