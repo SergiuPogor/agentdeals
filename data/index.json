@@ -32586,10 +32586,16 @@
           "read_on": "2026-10-05"
         },
         {
-          "text": "Models run mainly in the United States. Requests may be routed to Europe or Singapore for capacity.",
-          "quote": "Ollama hosts models and compute resources primarily in the United States. To serve global demand, we may route to Europe and Singapore for additional capacity.",
+          "text": "Models run mainly in the United States. Requests may be routed to Europe for capacity.",
+          "quote": "Ollama hosts models and compute resources primarily in the United States. To serve global demand, we may route to Europe for additional capacity.",
           "url": "https://ollama.com/pricing",
-          "read_on": "2026-10-05"
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Purchased usage credits expire one year after they are added to the account.",
+          "quote": "Purchased usage credits expire one year after they are added to your account",
+          "url": "https://ollama.com/terms",
+          "read_on": "2026-10-11"
         },
         {
           "text": "Requests beyond the 1 concurrent request wait in a queue. When the queue is full, new requests are rejected until a slot frees up.",
