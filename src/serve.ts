@@ -9976,6 +9976,12 @@ function monthIsUnderway(yearMonth: string, servedOn: string): boolean {
   return servedOn.slice(0, 7) === yearMonth;
 }
 
+function daysOfTheMonth(yearMonth: string): string {
+  const [year, month] = yearMonth.split("-").map((part) => parseInt(part, 10));
+  const lastDay = new Date(Date.UTC(year, month, 0)).getUTCDate();
+  return getMonthName(month) + " 1\u2013" + lastDay + ", " + year;
+}
+
 function monthSoFarLine(monthName: string, yearStr: string, inEffect: number, servedOn: string, scheduled: number): string {
   const through = getMonthName(parseInt(servedOn.slice(5, 7), 10)) + " " + parseInt(servedOn.slice(8, 10), 10);
   const happened = monthName + " " + yearStr + " so far: " + inEffect + (inEffect === 1 ? " change" : " changes") + " through " + through + ".";
@@ -10124,8 +10130,10 @@ function buildMonthlyReportPage(yearMonth: string): string | null {
   const monthName = getMonthName(monthNum);
   const title = "Developer Tool Pricing Report — " + monthName + " " + yearStr + " | AgentDeals";
   const metaDesc = notStarted
-    ? scheduledChanges.length + " pricing changes scheduled for " + monthName + " " + yearStr + " — free tier removals, new additions, and trend analysis for developer tools."
-    : monthChanges.length + " pricing changes tracked in " + monthName + " " + yearStr + " — free tier removals, new additions, and trend analysis for developer tools.";
+    ? scheduledChanges.length + " pricing changes scheduled for " + daysOfTheMonth(yearMonth) + " — free tier removals, new additions, and trend analysis for developer tools."
+    : underway
+      ? monthChanges.length + " pricing changes tracked during " + daysOfTheMonth(yearMonth) + " — free tier removals, new additions, and trend analysis for developer tools."
+      : monthChanges.length + " pricing changes tracked in " + monthName + " " + yearStr + " — free tier removals, new additions, and trend analysis for developer tools.";
 
   const negativeTypes = NEGATIVE_CHANGE_TYPES;
   const positiveTypes = POSITIVE_CHANGE_TYPES;

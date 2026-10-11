@@ -196,8 +196,9 @@ describe("a monthly report for a month that has not started", () => {
     );
   });
 
-  it("describes its changes as scheduled, not tracked, in the meta description", () => {
-    assert.ok(report(MID_OCTOBER, NOVEMBER).metaDescription.startsWith("2 pricing changes scheduled for November 2026"), report(MID_OCTOBER, NOVEMBER).metaDescription);
+  it("describes its changes as scheduled, not tracked, for the days the month covers in the meta description", () => {
+    assert.ok(report(MID_OCTOBER, NOVEMBER).metaDescription.startsWith("2 pricing changes scheduled for November 1\u201330, 2026 "), report(MID_OCTOBER, NOVEMBER).metaDescription);
+    assert.ok(report(MID_OCTOBER, DECEMBER).metaDescription.startsWith("1 pricing changes scheduled for December 1\u201331, 2026 "), report(MID_OCTOBER, DECEMBER).metaDescription);
   });
 
   it("counts its changes as scheduled, with no month-on-month deltas and no section but Scheduled", () => {
@@ -226,6 +227,12 @@ describe("the monthly report for the month under way", () => {
       report(MID_OCTOBER, OCTOBER).lineUnderTheHeading,
       "October 2026 so far: 2 changes through October 11. 2 more are scheduled before the month ends.",
     );
+  });
+
+  it("names the days the month covers in its meta description, so the description dates its own change when the month begins and ends", () => {
+    assert.ok(report(MID_OCTOBER, OCTOBER).metaDescription.startsWith("2 pricing changes tracked during October 1\u201331, 2026 "), report(MID_OCTOBER, OCTOBER).metaDescription);
+    assert.ok(report(FIRST_DAY_OF_NOVEMBER, NOVEMBER).metaDescription.startsWith("0 pricing changes tracked during November 1\u201330, 2026 "), report(FIRST_DAY_OF_NOVEMBER, NOVEMBER).metaDescription);
+    assert.ok(report(FIRST_DAY_OF_NOVEMBER, OCTOBER).metaDescription.startsWith("4 pricing changes tracked in October 2026 "), report(FIRST_DAY_OF_NOVEMBER, OCTOBER).metaDescription);
   });
 
   it("drops the sentence about scheduled changes once none is left", () => {
