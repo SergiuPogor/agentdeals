@@ -67,6 +67,15 @@ const STUDENT_OFFER =
 
 const STUDENT_OFFER_TERMS = "https://one.google.com/offer/studentoffer8";
 
+const GEMINI_25_ACCESS =
+  "Since September 18, 2026, Google limits the Gemini 2.5 models to users who have used them before. New projects should use Gemini 3.5 Flash-Lite or 3.8 Flash. See our Free LLM APIs comparison for full details.";
+
+const GEMINI_API_CHANGELOG = "https://ai.google.dev/gemini-api/docs/changelog";
+
+function geminiContextBox(html: string): string {
+  return html.split("<strong>Context — Gemini API free tier reduction:</strong>")[1]?.split("</div>")[0] ?? "";
+}
+
 const PLAN_CELLS: Record<string, [string, string, string]> = {
   "GDP Premium (standalone, closed)": ["$500/year (annual plan) or $45/mo (monthly plan)", "Gemini 3 Pro access; $50/yr GenAI credit (annual plan)", "30 Firebase Studio workspaces"],
   "Google AI Pro": ["$10/mo ($120/yr)", "Expanded Gemini 3.1 Pro and Deep Research", "30 Firebase Studio workspaces"],
@@ -236,6 +245,18 @@ describe("the Google Developer Program guide states Google's, Microsoft's, Appwr
 
   it("dates the end of Workspace renewals in the June 30 timeline entry", () => {
     assert.strictEqual(readable(timelineCard(served.get(PAGE)!, "June 30, 2026 — Monthly renewals end")), MONTHLY_RENEWALS_ENDED);
+  });
+
+  it("follows the free tier reduction and its source with Google's limit on the Gemini 2.5 models since September 18, 2026, linking Google's changelog", () => {
+    const box = geminiContextBox(served.get(PAGE)!);
+    const text = readable(box);
+    const stopped = text.indexOf("Google's rate-limits page stopped listing free-tier limits the same day.");
+    assert.ok(stopped >= 0, text);
+    assert.ok(text.endsWith(GEMINI_25_ACCESS), text);
+    assert.ok(text.indexOf(GEMINI_25_ACCESS) > stopped, text);
+    assert.deepStrictEqual(anchors(box).filter((link) => link.includes("-> https://ai.google.dev")), [`Since September 18, 2026 -> ${GEMINI_API_CHANGELOG}`]);
+    const recordSource = box.indexOf('class="change-source"');
+    assert.ok(recordSource >= 0 && box.indexOf(GEMINI_API_CHANGELOG) > recordSource, "the record keeps its own source link ahead of the new sentence");
   });
 
   it("gives the student offer's countries in the Students card and the student verdict, each linking Google One's offer terms", () => {
