@@ -1263,7 +1263,7 @@
       "changed": "2026-10-11"
     },
     "/category/search": {
-      "hash": "9d51d808865b8c11",
+      "hash": "715967e9d849e8b0",
       "changed": "2026-10-11"
     },
     "/category/secrets-management": {
@@ -1538,15 +1538,15 @@
       "changed": "2026-10-11"
     },
     "/compare/brave-search-api-vs-bonsai-io": {
-      "hash": "9b3f33eca227be3e",
+      "hash": "7279f8793d413ea9",
       "changed": "2026-10-11"
     },
     "/compare/brave-search-api-vs-orama": {
-      "hash": "628478474d68839e",
+      "hash": "2b1625f942155700",
       "changed": "2026-10-11"
     },
     "/compare/brave-search-api-vs-typesense-cloud": {
-      "hash": "5c68eed5479bfe1a",
+      "hash": "15afa8a0651c20ca",
       "changed": "2026-10-11"
     },
     "/compare/bright-data-mcp-server-vs-geekflare-api": {
@@ -4394,7 +4394,7 @@
       "daily": true
     },
     "/vendor/brave-search-api": {
-      "hash": "1e7ee4393e80b4cc",
+      "hash": "ce65be63c8e121bc",
       "changed": "2026-10-11"
     },
     "/vendor/brevo": {

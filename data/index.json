@@ -8130,6 +8130,12 @@
           "quote": "Customer may provide attribution to Provider in the Customer Applications.",
           "url": "https://api-dashboard.search.brave.com/terms-of-service",
           "read_on": "2026-10-11"
+        },
+        {
+          "text": "Brave keeps a record of search queries sent through an API account for up to 90 days for billing and troubleshooting. Zero data retention is available only for Enterprise customers.",
+          "quote": "A record of search queries submitted to the Brave Search API via a customer's Search API account is retained for a maximum of 90 days for the purpose of billing Search API account holders and for troubleshooting subject to Brave's legal obligations.",
+          "url": "https://api-dashboard.search.brave.com/documentation/resources/privacy-notice",
+          "read_on": "2026-10-11"
         }
       ],
       "payment_protocols": [
