@@ -4,6 +4,8 @@ export const HETZNER_PRICES_READ = HETZNER_PLAN_TABLE_READ_ON;
 export const HETZNER_AVAILABILITY_READ = HETZNER_PLAN_AVAILABILITY_READ_ON;
 export const HETZNER_PRICE_SOURCE = "https://www.hetzner.com/cloud/";
 export const HETZNER_PROMO_CODE_PAGE = "https://www.hetzner.com/promo-code/";
+export const HETZNER_COST_OPTIMIZED_PAGE = "https://www.hetzner.com/cloud/cost-optimized/";
+export const HETZNER_PRICE_ADJUSTMENT_PAGE = "https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/";
 
 export interface HetznerPlan {
   sku: string;
@@ -98,6 +100,26 @@ export function cheapestOrderableHetznerPlan(plans: readonly HetznerPlan[] = HET
 
 export function cheapestListedHetznerPlan(plans: readonly HetznerPlan[] = HETZNER_CLOUD_PLANS): HetznerPlan {
   return plans.reduce((a, b) => (a.eur <= b.eur ? a : b));
+}
+
+export interface CostOptimizedLineNobodyCanOrder {
+  plans: HetznerPlan[];
+  cheapestInTheLine: HetznerPlan;
+  cheapestInTheLineEurWithoutIpv4: number;
+  cheapestOrderableEu: HetznerPlan;
+}
+
+export function costOptimizedLineNobodyCanOrder(plans: readonly HetznerPlan[] = HETZNER_CLOUD_PLANS): CostOptimizedLineNobodyCanOrder | null {
+  const line = plans.filter(p => p.line === "Cost-Optimized");
+  const orderableEu = plans.filter(p => p.available && p.region === "EU");
+  if (line.length === 0 || line.some(p => p.available) || orderableEu.length === 0) return null;
+  const cheapestInTheLine = cheapestListedHetznerPlan(line);
+  return {
+    plans: line,
+    cheapestInTheLine,
+    cheapestInTheLineEurWithoutIpv4: (Math.round(cheapestInTheLine.eur * 100) - Math.round(HETZNER_CLOUD_ADD_ON_PRICES.ipv4PerMonth * 100)) / 100,
+    cheapestOrderableEu: cheapestOrderableHetznerPlan(orderableEu),
+  };
 }
 
 export function plansPricedBelowTheCheapestOrderable(plans: readonly HetznerPlan[] = HETZNER_CLOUD_PLANS): HetznerPlan[] {
