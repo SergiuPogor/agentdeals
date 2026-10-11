@@ -20,6 +20,8 @@ const WITHDRAWN = [
   "Premium was folded into",
   "replace most GDP Premium benefits",
   "Same GCP services",
+  "U.S. college students",
+  "Workspace accounts keep existing Premium subscriptions",
 ];
 
 const GUIDE_BLURB = "Standalone Google Developer Program Premium no longer takes sign-ups — current plans, Cloud credits and free alternatives";
@@ -38,13 +40,32 @@ const STATED = [
   "= $0/month within free limits. AWS's free plan closes within 6 months, but its always-free services, such as Lambda's 1M requests a month, continue on a Paid plan.",
   "Switch to always-free tiers (Oracle Cloud, Firebase Spark, free LLM APIs), and use AWS's and Azure's free offers while they last.",
   "The other $9.99 buys expanded Gemini 3.1 Pro access and the rest of the AI Pro bundle, including 5 TB of storage.",
-  "Eligible U.S. college students aged 18+ get Google AI Pro free for a year (redeem by December 31, 2026; a payment method is required, and it then renews at $19.99/month).",
 ];
 
 const PREPAY_CREDITS =
   "The Gemini API keeps a free tier of its own; check Google's pricing page for your model. The monthly Google Cloud credits from Google AI Pro or Ultra are eligible Google Cloud credits. On the Prepay billing plan, these credits pay for Gemini API usage only after you buy Prepay credits in AI Studio. With a $0 Prepay balance, requests fail even with unused Google Cloud credits, according to a Google staff member on discuss.ai.google.dev.";
 
 const PREPAY_CREDITS_SOURCE = "https://discuss.ai.google.dev/t/error-code-402-message-your-prepayment-credits-are-depleted/185524";
+
+const LINK_THE_PLAN =
+  "AI Pro gives expanded access to Gemini 3.1 Pro and Deep Research in the Gemini app. Link your Google AI Pro or Ultra plan on the Google Developer Program site to receive monthly Google Cloud credits and higher Antigravity quotas. Since June 18, 2026, Gemini CLI and the Gemini Code Assist IDE extensions no longer serve Google AI Pro or Ultra subscribers. Google points them to Antigravity. The Gemini API keeps a free tier of its own;";
+
+const PROGRAM_SITE = "https://developers.google.com/program";
+const CODE_ASSIST_DEPRECATION = "https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals";
+
+const RENEWALS_ENDED =
+  "annual plans stopped renewing after March 30, 2026 and monthly plans after June 30, 2026. Google's FAQ (updated 2026-10-07) says no existing subscription can be renewed since September 18, 2026. Monthly subscribers keep benefits until October 18, 2026 and annual subscribers until September 18, 2027. The FAQ does not exempt Workspace accounts, though Google's older benefits page says Workspace subscriptions are not changing. Its Google Cloud credits";
+
+const DEVELOPER_PROGRAM_FAQ = "https://developers.google.com/profile/help/faq";
+const OLDER_BENEFITS_PAGE = "https://developers.google.com/profile/help/benefits";
+
+const MONTHLY_RENEWALS_ENDED =
+  "Monthly standalone Premium ($24.99) on @gmail.com accounts stopped auto-renewing. Workspace subscriptions kept renewing until Google stopped all renewals on September 18, 2026. No new standalone sign-ups are accepted.";
+
+const STUDENT_OFFER =
+  "Eligible college students aged 18+ in countries where the plan is offered, except Bolivia, Albania, Canada, Hong Kong, Macau, and Tunisia, get Google AI Pro free for a year (redeem by December 31, 2026; a payment method is required, and it then renews at $19.99/month).";
+
+const STUDENT_OFFER_TERMS = "https://one.google.com/offer/studentoffer8";
 
 const PLAN_CELLS: Record<string, [string, string, string]> = {
   "GDP Premium (standalone, closed)": ["$500/year (annual plan) or $45/mo (monthly plan)", "Gemini 3 Pro access; $50/yr GenAI credit (annual plan)", "30 Firebase Studio workspaces"],
@@ -55,7 +76,7 @@ const PLAN_CELLS: Record<string, [string, string, string]> = {
 
 const KEPT = [
   "Google no longer sells standalone Google Developer Program Premium ($299/year or $24.99/month).",
-  "annual plans stopped renewing after March 30, 2026 and monthly plans after June 30, 2026; Premium on Workspace accounts did not change.",
+  "annual plans stopped renewing after March 30, 2026 and monthly plans after June 30, 2026.",
   "January 27, 2026 — Announcement",
   "Cloud credits expire a year after they were granted.",
   "$19.99/mo ($199.99/yr)",
@@ -105,6 +126,14 @@ function structuredStrings(html: string): string[] {
 
 function geminiApiUsersCard(html: string): string {
   return html.split("<h3>Gemini API Users</h3>")[1]?.split("</div>")[0] ?? "";
+}
+
+function timelineCard(html: string, heading: string): string {
+  return html.split(`<h3>${heading}</h3>`)[1]?.split("</div>")[0] ?? "";
+}
+
+function anchors(html: string): string[] {
+  return [...html.matchAll(/<a\b[^>]*\bhref="([^"]*)"[^>]*>([\s\S]*?)<\/a>/g)].map(([, href, text]) => `${readable(text)} -> ${href}`);
 }
 
 function planRows(html: string): Map<string, string[]> {
@@ -182,8 +211,37 @@ describe("the Google Developer Program guide states Google's, Microsoft's, Appwr
   it("tells Gemini API users that AI Pro and Ultra credits pay for Prepay usage only once Prepay credits are bought, linking the Google staff member's forum answer", () => {
     const card = geminiApiUsersCard(served.get(PAGE)!);
     assert.ok(readable(card).includes(PREPAY_CREDITS), readable(card));
-    const links = [...card.matchAll(/<a\b[^>]*\bhref="([^"]*)"[^>]*>([\s\S]*?)<\/a>/g)].map(([, href, text]) => `${readable(text)} -> ${href}`);
-    assert.deepStrictEqual(links, [`a Google staff member on discuss.ai.google.dev -> ${PREPAY_CREDITS_SOURCE}`]);
+    assert.strictEqual(anchors(card).at(-1), `a Google staff member on discuss.ai.google.dev -> ${PREPAY_CREDITS_SOURCE}`);
+  });
+
+  it("tells AI Pro and Ultra subscribers to link their plan on the Google Developer Program site for the monthly Cloud credits, and that Gemini CLI and the Code Assist IDE extensions stopped serving them on June 18, 2026", () => {
+    const card = geminiApiUsersCard(served.get(PAGE)!);
+    assert.ok(readable(card).includes(LINK_THE_PLAN), readable(card));
+    assert.deepStrictEqual(anchors(card), [
+      `Google Developer Program site -> ${PROGRAM_SITE}`,
+      `Since June 18, 2026 -> ${CODE_ASSIST_DEPRECATION}`,
+      `a Google staff member on discuss.ai.google.dev -> ${PREPAY_CREDITS_SOURCE}`,
+    ]);
+  });
+
+  it("says no Premium subscription can be renewed since September 18, 2026, when monthly and annual benefits end, and that only the older benefits page exempts Workspace accounts, linking both pages", () => {
+    const page = served.get(PAGE)!;
+    assert.ok(readable(page).includes(RENEWALS_ENDED));
+    const summary = page.split('<div class="executive-summary">')[1]?.split("</p>")[0] ?? "";
+    assert.deepStrictEqual(anchors(summary).filter((link) => link.includes("-> https://")), [
+      `Google's FAQ -> ${DEVELOPER_PROGRAM_FAQ}`,
+      `older benefits page -> ${OLDER_BENEFITS_PAGE}`,
+    ]);
+  });
+
+  it("dates the end of Workspace renewals in the June 30 timeline entry", () => {
+    assert.strictEqual(readable(timelineCard(served.get(PAGE)!, "June 30, 2026 — Monthly renewals end")), MONTHLY_RENEWALS_ENDED);
+  });
+
+  it("gives the student offer's countries in the Students card and the student verdict, each linking Google One's offer terms", () => {
+    const page = served.get(PAGE)!;
+    assert.strictEqual(readable(page).split(STUDENT_OFFER).length - 1, 2);
+    assert.strictEqual(page.split(`get <a href="${STUDENT_OFFER_TERMS}" target="_blank" rel="noopener">Google AI Pro free for a year</a> (redeem`).length - 1, 2);
   });
 
   it("names both Premium plans' credits and every plan's Firebase Studio workspaces in the plan table", () => {
