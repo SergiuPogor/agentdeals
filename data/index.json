@@ -3640,6 +3640,18 @@
           "read_on": "2026-10-11"
         },
         {
+          "text": "A business can use Mistral's API in a commercial product on any plan, including the Free plan; individuals cannot use the API for personal projects.",
+          "quote": "govern the use of Mistral AI Studio, Vibe, and the other websites, products, software, services, and technologies we offer",
+          "url": "https://legal.mistral.ai/terms/commercial-terms-of-service",
+          "read_on": "2026-10-11"
+        },
+        {
+          "text": "Models whose names start with \"labs-\" are free of charge; Mistral calls them experimental and not for production.",
+          "quote": "Are free of charge.",
+          "url": "https://docs.mistral.ai/inference/model-lifecycle",
+          "read_on": "2026-10-11"
+        },
+        {
           "text": "On the Free plan, Mistral may use your Studio and API inputs and outputs to train its models, and you can opt out at any time.",
           "quote": "As stated during subscription, we may use your data (input and output) to train our artificial intelligence models.",
           "url": "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models",
@@ -3652,10 +3664,10 @@
           "read_on": "2026-10-05"
         },
         {
-          "text": "Mistral may train on inputs and outputs from Labs or Preview Models (models with the \"labs\" prefix in Studio) even if you opted out or use zero data retention.",
+          "text": "Mistral may train on inputs and outputs from Labs or Preview Models, which its Commercial Terms define as experimental, preview or pre-release models identified as such, including those with the \"labs\" prefix, even if you opted out or use zero data retention. Mistral Large 4 is a public preview.",
           "quote": "the opt-out preferences you selected for other Mistral AI Products (including through zero data retention) does not apply to Labs or Preview Models.",
           "url": "https://legal.mistral.ai/terms/commercial-terms-of-service",
-          "read_on": "2026-10-05"
+          "read_on": "2026-10-11"
         }
       ],
       "free_plan_excerpt": {

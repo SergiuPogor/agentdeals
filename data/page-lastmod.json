@@ -1089,7 +1089,7 @@
       "changed": "2026-10-11"
     },
     "/category/ai-ml": {
-      "hash": "96460895078ebe50",
+      "hash": "cfd71f50915a38d1",
       "changed": "2026-10-11"
     },
     "/category/analytics": {
@@ -3174,7 +3174,7 @@
       "changed": "2026-10-11"
     },
     "/free-llm-apis": {
-      "hash": "a52997dc64ef693f",
+      "hash": "d595e1e55e67d9e8",
       "changed": "2026-10-11"
     },
     "/free-nextjs-stack": {
@@ -3210,7 +3210,7 @@
       "changed": "2026-10-11"
     },
     "/gemini-api-pricing-2026": {
-      "hash": "53ac10461d5afb5c",
+      "hash": "1ef279b162bce639",
       "changed": "2026-10-11"
     },
     "/github-actions-alternatives": {
@@ -3222,7 +3222,7 @@
       "changed": "2026-10-11"
     },
     "/google-developer-program-2026": {
-      "hash": "032f33c9690173cf",
+      "hash": "afb40402daf81d3e",
       "changed": "2026-10-11"
     },
     "/groq-vs-hugging-face": {
@@ -3230,7 +3230,7 @@
       "changed": "2026-10-11"
     },
     "/groq-vs-mistral-ai": {
-      "hash": "beb4b22c4c799118",
+      "hash": "ee2fe1e6d5d17f6a",
       "changed": "2026-10-11"
     },
     "/guides": {
@@ -3281,7 +3281,7 @@
       "changed": "2026-10-11"
     },
     "/llm-api-pricing": {
-      "hash": "cb69728d72754456",
+      "hash": "5c1f92dbe79740c0",
       "changed": "2026-10-11"
     },
     "/localstack-alternatives": {
@@ -3311,7 +3311,7 @@
       "daily": true
     },
     "/openai-assistants-alternatives": {
-      "hash": "6a42c294b882722c",
+      "hash": "66a15d5efeedea0a",
       "changed": "2026-10-11"
     },
     "/openai-assistants-migration": {
@@ -3319,7 +3319,7 @@
       "changed": "2026-10-11"
     },
     "/openai-assistants-migration-2026": {
-      "hash": "21da484963f08a62",
+      "hash": "1ac42d85744f748c",
       "changed": "2026-10-11"
     },
     "/postman-alternatives": {
