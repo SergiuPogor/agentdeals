@@ -8124,6 +8124,12 @@
           "quote": "Purchases of Prepaid Service Credits are non-refundable.",
           "url": "https://api-dashboard.search.brave.com/terms-of-service/credit-terms",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "Brave's February launch post says the $5 monthly credit requires attributing the Brave Search API on the project's website, while Brave's Terms of Use (updated September 1, 2026) make attribution optional. Brave's help page describes getting the credit with a card at signup and does not mention attribution.",
+          "quote": "Customer may provide attribution to Provider in the Customer Applications.",
+          "url": "https://api-dashboard.search.brave.com/terms-of-service",
+          "read_on": "2026-10-11"
         }
       ],
       "payment_protocols": [
