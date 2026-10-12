@@ -18,15 +18,15 @@
       "changed": "2026-10-12"
     },
     "/ai-coding-tools-pricing": {
-      "hash": "0168450a938b5523",
+      "hash": "0e2c04bdfa80bfcb",
       "changed": "2026-10-12"
     },
     "/ai-free-tiers": {
-      "hash": "f6f810caf6178346",
+      "hash": "0f30b9459bfbd1a9",
       "changed": "2026-10-12"
     },
     "/ai-ml-alternatives": {
-      "hash": "7ce2a4272be8958f",
+      "hash": "573411354aa95e4a",
       "changed": "2026-10-12"
     },
     "/alternative-to": {
@@ -1089,11 +1089,11 @@
       "changed": "2026-10-11"
     },
     "/category/ai-coding": {
-      "hash": "72f047586b316fc0",
+      "hash": "c3d9606c961d69f4",
       "changed": "2026-10-12"
     },
     "/category/ai-ml": {
-      "hash": "2f5a4ec247622b76",
+      "hash": "d6b8bb4de67481cc",
       "changed": "2026-10-12"
     },
     "/category/analytics": {
@@ -1213,8 +1213,8 @@
       "changed": "2026-10-11"
     },
     "/category/ide-code-editors": {
-      "hash": "27afb9693ca14290",
-      "changed": "2026-10-11"
+      "hash": "6e7daaa35815e7f2",
+      "changed": "2026-10-12"
     },
     "/category/infrastructure": {
       "hash": "1ab47650a40b89c8",
@@ -1269,8 +1269,8 @@
       "changed": "2026-10-12"
     },
     "/category/search": {
-      "hash": "8556134ac519a7ec",
-      "changed": "2026-10-11"
+      "hash": "1edd1aa4dbed3de4",
+      "changed": "2026-10-12"
     },
     "/category/secrets-management": {
       "hash": "c1e6a4da7e59a2fc",
@@ -1317,8 +1317,8 @@
       "changed": "2026-10-11"
     },
     "/category/vpn-privacy": {
-      "hash": "96cdfabb29257e35",
-      "changed": "2026-10-11"
+      "hash": "c16e1b9555f61853",
+      "changed": "2026-10-12"
     },
     "/category/web-scraping": {
       "hash": "742a97fec6c466c6",
@@ -1528,8 +1528,8 @@
       "changed": "2026-10-11"
     },
     "/compare/bolt-new-vs-lovable": {
-      "hash": "627b26d6edcf67e8",
-      "changed": "2026-10-11"
+      "hash": "14a86d3ef134035f",
+      "changed": "2026-10-12"
     },
     "/compare/braid-vs-element-io": {
       "hash": "2115da6d3e73ddea",
@@ -1548,8 +1548,8 @@
       "changed": "2026-10-11"
     },
     "/compare/brave-search-api-vs-orama": {
-      "hash": "3e11293586c05226",
-      "changed": "2026-10-11"
+      "hash": "102103ff7be646bd",
+      "changed": "2026-10-12"
     },
     "/compare/brave-search-api-vs-typesense-cloud": {
       "hash": "e0f0080b0594a38d",
@@ -1652,8 +1652,8 @@
       "changed": "2026-10-12"
     },
     "/compare/cloudflare-warp-vs-proton-vpn": {
-      "hash": "67f64b986cefe53b",
-      "changed": "2026-10-11"
+      "hash": "d9d702d2fe36fd5b",
+      "changed": "2026-10-12"
     },
     "/compare/cloudflare-warp-vs-windscribe": {
       "hash": "ed5d6a2a6dd1ff9e",
@@ -2452,12 +2452,12 @@
       "changed": "2026-10-11"
     },
     "/compare/orama-vs-bonsai-io": {
-      "hash": "389d1a021e5ac52d",
-      "changed": "2026-10-11"
+      "hash": "e473fe6d8862decc",
+      "changed": "2026-10-12"
     },
     "/compare/orama-vs-typesense-cloud": {
-      "hash": "d163c96aff6bb5d6",
-      "changed": "2026-10-11"
+      "hash": "49b23d834a28b672",
+      "changed": "2026-10-12"
     },
     "/compare/outlook-com-vs-proton-mail": {
       "hash": "5af8c580ff8bbf6f",
@@ -2520,8 +2520,8 @@
       "changed": "2026-10-11"
     },
     "/compare/proton-vpn-vs-windscribe": {
-      "hash": "c136ca1fddaabd41",
-      "changed": "2026-10-11"
+      "hash": "7210ad1d1d491f95",
+      "changed": "2026-10-12"
     },
     "/compare/puppeteer-vs-steel": {
       "hash": "98698270c721c063",
@@ -3196,7 +3196,7 @@
       "changed": "2026-10-12"
     },
     "/free-nextjs-stack": {
-      "hash": "a260d7e31745cdc8",
+      "hash": "bad0e6e4ca453c85",
       "changed": "2026-10-12"
     },
     "/free-saas-stack": {
@@ -3298,7 +3298,7 @@
       "changed": "2026-10-12"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "9391fd254be1aaf8",
+      "hash": "53944b7d1d844b6d",
       "changed": "2026-10-12"
     },
     "/llm-api-pricing": {
@@ -3575,7 +3575,7 @@
       "changed": "2026-10-12"
     },
     "/stack-check": {
-      "hash": "0b8b3a718113b054",
+      "hash": "e38b57a969f0e578",
       "changed": "2026-10-12"
     },
     "/stacks": {
@@ -3607,7 +3607,7 @@
       "changed": "2026-10-12"
     },
     "/state-of-free-tiers": {
-      "hash": "c41e04865ef5b936",
+      "hash": "54480e69c246db39",
       "changed": "2026-10-12"
     },
     "/storage-alternatives": {
@@ -3891,8 +3891,8 @@
       "changed": "2026-10-12"
     },
     "/vendor": {
-      "hash": "08d28b2183955efd",
-      "changed": "2026-10-11"
+      "hash": "295d926d06488aaf",
+      "changed": "2026-10-12"
     },
     "/vendor/10minutemail": {
       "hash": "d8b3746e62a5ad9a",
@@ -6868,7 +6868,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/lovable": {
-      "hash": "b0e769d06534acbb",
+      "hash": "396aedf7ac5a5f37",
       "changed": "2026-10-12"
     },
     "/vendor/luadns-com": {
@@ -7394,7 +7394,7 @@
       "daily": true
     },
     "/vendor/ona": {
-      "hash": "7806d8a1c7d453c5",
+      "hash": "384518f758f45138",
       "changed": "2026-10-12"
     },
     "/vendor/onecompiler": {
@@ -7466,7 +7466,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/orama": {
-      "hash": "684323348538c07c",
+      "hash": "ab986441c3dae35d",
       "changed": "2026-10-12"
     },
     "/vendor/ory": {
@@ -7804,7 +7804,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/proton-vpn": {
-      "hash": "8f0c7089bebaaba0",
+      "hash": "d27ff41d6cee85e1",
       "changed": "2026-10-12"
     },
     "/vendor/proxysentry": {
