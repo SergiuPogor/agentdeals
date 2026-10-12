@@ -89,10 +89,10 @@ const STATED_ON_THE_PAGE: string[] = [
   "The hosting landscape has shifted: Netlify has used credit plans for accounts created since 2025-09-04, with 300 credits a month on Free. Railway gives new accounts a 30-day trial with a $5 credit, then $1 of credit a month. Fly.io has offered no plans to new customers since October 2024; new accounts get a trial of 2 machine hours or 7 days, whichever comes first. Heroku's free plans ended in November 2022. Koyeb closed its free plan to new users in February 2026. Static hosting is still free on Cloudflare Pages, on GitHub Pages from public repositories on GitHub Free, and on Vercel Hobby for non-commercial personal use.",
   "Platforms for deploying frontend frameworks such as Next.js and Astro, and static sites, with serverless functions.",
   "Free tier: Hobby includes 100 GB of Fast Data Transfer, 1M Edge Requests, 1M Function Invocations, 4 hours of Fluid Active CPU, 360 GB-hrs of Provisioned Memory, 1 GB of Blob Storage and 5K image transformations a month. Vercel is made by the creators of Next.js. Hobby includes preview deployments, Routing Middleware, ISR and image optimization. Key limitation: Hobby is for non-commercial personal use only. Commercial use needs Pro or Enterprise; Pro is $20 a month with one deploying seat and $20 for each additional deploying seat.",
-  "Free tier: 300 credits a month. Bandwidth costs 20 credits per GB, about 15 GB a month if nothing else uses credits. Production deploys cost 15 credits each; deploy previews, branch deploys and failed deploys are free. Function compute costs 10 credits per GB-hour, and web requests 2 credits per 10,000. All projects pause when credits run out, with no overage charges. Accounts created before 2025-09-04 keep their legacy plans; legacy Free includes 100 GB of bandwidth and 300 build minutes a month, and 125,000 function invocations per site a month. Key limitation: bandwidth, deploys, compute and requests all draw on the one 300-credit pool.",
+  "Free tier: 300 credits a month. Netlify's paid credit plans are Personal at $9 a month with 1,000 credits, and Pro at $20 a month with 3,000 credits. Pro has larger tiers with 5,000, 10,000, 15,000 or 20,000 credits a month. Bandwidth costs 20 credits per GB, about 15 GB a month if nothing else uses credits. Production deploys cost 15 credits each; deploy previews, branch deploys and failed deploys are free. Function compute costs 10 credits per GB-hour, and web requests 2 credits per 10,000. All projects pause when credits run out, with no overage charges. Accounts created before 2025-09-04 keep their legacy plans; legacy Free includes 100 GB of bandwidth and 300 build minutes a month, and 125,000 function invocations per site a month. Key limitation: bandwidth, deploys, compute and requests all draw on the one 300-credit pool.",
   "Free tier: 100 projects per account, unlimited static bandwidth, 500 builds a month with a 20-minute timeout each, 100 custom domains per project, and 20,000 files per site, each up to 25 MiB. Pages Functions count toward the Workers Free limit of 100,000 requests a day and run with no cold starts. Cloudflare publishes Pages guides for Astro and SvelteKit. Pages takes only a static export of Next.js; for full-stack Next.js, Cloudflare recommends vinext, a beta reimplementation of the Next.js API, on Workers. Remix's successor is React Router. Cloudflare Workers also serves static assets free and without limit, and Cloudflare now tells new projects to start on Workers.",
   "Free tier: free web services with 512 MB RAM and 0.1 CPU, and 750 free instance hours per workspace a month. They draw on a Hobby workspace's 5 GB of bandwidth and 500 build minutes a month. With a payment method on file, extra bandwidth is $0.15 per GB; without one, Render suspends free services for the rest of the month. One free Postgres database per workspace (256 MB RAM, 1 GB storage) expires 30 days after creation and is deleted 14 days later unless upgraded. One free Key Value instance per workspace (Redis-compatible, 25 MB) keeps its data in memory only. Hobby includes 2 custom domains with managed TLS, then $0.25 per domain a month. Docker images run on free web services. Key limitation: a free web service spins down after 15 minutes with no inbound traffic, and spinning it back up takes about one minute. Render says free instances are not for production.",
-  "Free tier: new accounts get a 30-day trial with a one-time $5 credit and no credit card, allowing up to 2 vCPU and 1 GB RAM per service, 5 services per project and 1 custom domain. After the trial, the Free plan gives $1 of credit a month and allows up to 1 vCPU and 0.5 GB RAM per service and 0.5 GB of volume storage. Builds are free. Docker and many languages are supported. Railway's one-click PostgreSQL, MySQL, Redis and MongoDB templates are unmanaged: you handle backups, tuning, security and maintenance.",
+  "Free tier: new accounts get a 30-day trial with a one-time $5 credit and no credit card, allowing up to 2 vCPU and 1 GB RAM per service, 5 services per project and 1 custom domain. After the trial, the Free plan gives $1 of credit a month and allows up to 1 vCPU and 0.5 GB RAM per service and 0.5 GB of volume storage. Builds are free. Docker and many languages are supported. Railway maintains PostgreSQL, MySQL, Redis and MongoDB templates and applies security patches to the database image. Backups are off by default and the user turns them on. The user also resizes the disk, handles major version upgrades, and enables high availability and connection pooling. (From docs.railway.com/databases, read 2026-10-12.)",
   "Free tier: Fly.io stopped offering plans to new customers on 2024-10-07. New accounts get a trial of 2 hours of machine runtime or 7 days, whichever comes first, before adding a payment method; after it, billing is pay-as-you-go with a payment method on file. Organizations on the Hobby, Launch or Scale plans before 2024-10-07 keep a legacy allowance: up to 3 shared-cpu-1x 256 MB VMs, 3 GB of volume storage, and 100 GB of outbound transfer a month in North America and Europe (30 GB in other regions). Volume snapshots: first 10 GB free each month, then $0.08 per GB-month.",
   "Free tier: none for new users. Since February 2026, new users must subscribe to Pro ($29 a month plus compute, with $10 of compute included) or a higher plan. Every plan can run one free-type Postgres instance with 0.25 vCPU, 1 GB RAM, 1 GB storage and 5 hours of compute a month. Organizations already on the Starter plan keep it. Paid plans deploy containers from any registry or build from Docker.",
   "Serverless platforms that run your code on request with no containers to manage.",
@@ -107,7 +107,7 @@ const STATED_ON_THE_PAGE: string[] = [
   "Vercel is made by the creators of Next.js. Hobby includes ISR, Routing Middleware, image optimization and preview deployments, for non-commercial personal use. For full-stack Next.js on Cloudflare, Cloudflare recommends vinext, a beta reimplementation of the Next.js API, on Workers; Pages takes only a static export.",
   "Render's free web services have 512 MB RAM and 0.1 CPU, with custom domains and TLS. Its free Postgres database expires after 30 days, and its free Key Value instance keeps data in memory only. Free services spin down after 15 idle minutes and take about a minute to return; a paid instance from $7 a month stays on.",
   "Unlimited static bandwidth, 100,000 Workers requests a day, KV and D1 storage, no cold starts, and no commercial-use restriction in Cloudflare's terms. Past 100,000 Worker requests in a day, Cloudflare returns an error for them until the limit resets at midnight UTC; static assets stay free and unlimited. Workers Paid starts at $5 a month.",
-  "Railway bills the greater of a plan's monthly minimum and your usage, with no seat charges: Pro has a $20 minimum that includes $20 of usage, and unlimited seats. New accounts get a 30-day trial with a one-time $5 credit. Builds are free, and Docker is supported. Railway's one-click database templates are unmanaged.",
+  "Railway bills the greater of a plan's monthly minimum and your usage, with no seat charges: Pro has a $20 minimum that includes $20 of usage, and unlimited seats. New accounts get a 30-day trial with a one-time $5 credit. Builds are free, and Docker is supported. Railway applies security patches to its database templates. The user turns on backups.",
   "Google Cloud Run's free tier, per billing account each month on request-based billing, is 2 million requests, 180,000 vCPU-seconds and 360,000 GiB-seconds at us-central1 prices. Services scale to zero by default. It runs any container that meets its contract (Linux x86_64 executables, listening on the configured port). After a scale to zero, a request can wait for a new instance to start, whatever the image size. Koyeb and Fly.io offer new accounts no ongoing free compute.",
   "Cloudflare Pages serves static bandwidth without limit, as does Workers for static assets. The Free plan allows 20,000 files per site, each up to 25 MiB; Cloudflare says to put larger files in R2. Vercel Hobby includes 100 GB a month, GitHub Pages has a soft limit of 100 GB a month, and Netlify's 300 monthly credits cover about 15 GB if nothing else uses them.",
   "Cloudflare Workers runs in 330+ cities with no cold starts, and time spent waiting on the network does not count toward CPU time. The Free plan includes 100,000 requests a day and 10 ms of CPU per invocation. Deno Deploy runs in 2 regions, and its Free plan includes 10 CPU-hours a month.",
@@ -164,7 +164,16 @@ const WITHDRAWN_NEAR_A_HOST: string[] = [
   "6K build min",
   "pay-as-you-go from day one",
   "(Individual)",
-  "Individual plan"
+  "Individual plan",
+  "templates are unmanaged",
+  "containers only",
+  "treats databases as containers",
+  "manage backups yourself",
+  "you handle backups",
+  "DB is self-managed",
+  "self-managing a DB",
+  "no managed databases",
+  "Managed vs. DIY"
 ];
 
 const VERCEL = /Vercel/;
@@ -217,6 +226,12 @@ const STATED_ON_OTHER_PAGES: Record<string, string[]> = {
   ],
   "/cloudflare-pages-vs-vercel": [
     "Vercel Hobby includes builds, up to 45 minutes each."
+  ],
+  "/railway-vs-render": [
+    "Render includes managed Postgres but it expires after 30 days. Railway maintains the templates; you turn on backups and run upgrades.",
+    "Railway maintains its database templates and applies security patches. You turn on backups and high availability and run version upgrades.",
+    "Both ~$12-14/mo total. Railway maintains the templates; you turn on backups and run upgrades.",
+    "Railway stays awake 24/7 (no cold starts) but offers no custom domains."
   ]
 };
 
@@ -226,6 +241,11 @@ const PAGES_GIVING_RENDERS_SPIN_UP: string[] = [
   "/free-django-stack",
   "/free-fastapi-stack",
   "/netlify-vs-render"
+];
+
+const RAILWAY_DATABASE_ROWS_ON_RAILWAY_VS_RENDER: string[][] = [
+  ["Managed Database", "PostgreSQL, MySQL, Redis, MongoDB", "PostgreSQL 256 MB (30-day expiry)", "Render includes managed Postgres but it expires after 30 days. Railway maintains the templates; you turn on backups and run upgrades."],
+  ["Managed Redis", "Redis template", "25 MB Key Value store"],
 ];
 
 let server: ChildProcess;
@@ -377,6 +397,14 @@ describe("the hosting free tier comparison states each host's terms as the host 
       sentences.filter((sentence) => !textOf(served.get(route)!).includes(sentence)).map((sentence) => `${route}: ${sentence}`));
     assert.deepStrictEqual(missing, []);
     assert.deepStrictEqual(PAGES_GIVING_RENDERS_SPIN_UP.filter((route) => !/about one minute/.test(textOf(served.get(route)!))), []);
+  });
+
+  it("gives Railway's database templates their own cells in /railway-vs-render's comparison", () => {
+    const rows = rowsOf(served.get("/railway-vs-render")!);
+    const missing = RAILWAY_DATABASE_ROWS_ON_RAILWAY_VS_RENDER
+      .filter(([feature, ...cells]) => !rows.some((row) => row[0] === feature && cells.every((cell) => row.includes(cell))))
+      .map((cells) => cells.join(" | "));
+    assert.deepStrictEqual(missing, []);
   });
 
   it("gives /hosting-pricing's structured data Railway's minimum and its meta none of the withdrawn claims", () => {

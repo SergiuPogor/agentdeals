@@ -22437,8 +22437,8 @@ function buildRailwayVsRenderPage(): string {
     { feature: "CPU per Service", railway: "1 vCPU (shared)", render: "0.1 CPU", notes: "Railway allocates more CPU on paper. Render's 0.1 CPU is quite constrained" },
     { feature: "Projects", railway: "1", render: "Unlimited (2 environments each)", notes: "Render does not cap the free workspace by project count; Railway's Free plan allows one" },
     { feature: "Services per Project", railway: "3", render: "25 per workspace", notes: "Railway caps at 3 services. Render caps the free workspace at 25 and each consumes compute quota" },
-    { feature: "Managed Database", railway: "None (containers only)", render: "PostgreSQL 256 MB (30-day expiry)", notes: "Render includes managed Postgres but it expires after 30 days. Railway requires self-managing a DB container" },
-    { feature: "Managed Redis", railway: "None (containers only)", render: "25 MB Key Value store", notes: "Render includes managed Redis. Railway requires a Redis container counting toward service limit" },
+    { feature: "Managed Database", railway: "PostgreSQL, MySQL, Redis, MongoDB", render: "PostgreSQL 256 MB (30-day expiry)", notes: "Render includes managed Postgres but it expires after 30 days. Railway maintains the templates; you turn on backups and run upgrades." },
+    { feature: "Managed Redis", railway: "Redis template", render: "25 MB Key Value store", notes: "Render includes managed Redis. Railway requires a Redis container counting toward service limit" },
     { feature: "Custom Domains", railway: "None on Free tier", render: "Yes", notes: "Railway requires Hobby ($5/mo) for custom domains. Render includes them free" },
     { feature: "Sleep Behavior", railway: "No sleep (always on)", render: "Spins down after 15 min inactivity", notes: "Railway stays awake. Render's free services sleep and have cold starts of about one minute" },
     { feature: "Cron Jobs", railway: "None on Free tier", render: "From $1/mo (paid only)", notes: "Neither offers free cron jobs" },
@@ -22455,7 +22455,7 @@ function buildRailwayVsRenderPage(): string {
 
   const differences = [
     { title: "Pricing Philosophy: Usage-Based vs. Fixed-Rate", desc: "Railway charges per-second for CPU, RAM, and egress — you pay exactly what you use. Render charges fixed monthly rates per instance ($7/mo Starter). Railway is cheaper for variable-traffic apps (idle = near-zero cost). Render is predictable — you know the bill before the month starts." },
-    { title: "Databases: Managed vs. DIY", desc: "Render includes managed PostgreSQL (256 MB, 30-day free expiry) and Redis (25 MB) — no setup required. Railway treats databases as containers — you can run Postgres or Redis, but they count toward your service limit and you manage backups yourself. For quick prototypes needing a database, Render wins on convenience." },
+    { title: "Databases", desc: "Render includes managed PostgreSQL (256 MB, 30-day free expiry) and Redis (25 MB) — no setup required. Railway maintains its database templates and applies security patches. You turn on backups and high availability and run version upgrades. For quick prototypes needing a database, Render wins on convenience." },
     { title: "Sleep Behavior: Always-On vs. Spin-Down", desc: "Railway's free services stay running 24/7 (no cold starts). Render's free web services spin down after 15 minutes of inactivity, causing cold starts of about one minute on the next request. For always-on APIs or bots, Railway is better. For low-traffic sites where cold starts are acceptable, Render works fine." },
     { title: "Developer Experience: Fast Iteration vs. Full Platform", desc: "Railway is widely praised for developer experience — fast deploys (often under 30 seconds), intuitive dashboard, and nixpacks auto-detection. Render offers a broader platform (managed DBs, Redis, cron, static sites) but deploys are slower. Railway optimizes for speed; Render optimizes for completeness." },
   ];
@@ -22464,7 +22464,7 @@ function buildRailwayVsRenderPage(): string {
     { metric: "Cheapest paid plan", railway: "$5/mo Hobby ($5 credit incl.)", render: "$7/mo Starter (512 MB, 0.5 CPU)", notes: "Railway Hobby effectively free if usage stays under $5. Render Starter is fixed $7/mo regardless of usage" },
     { metric: "At low utilization (10%)", railway: "~$0.50-1/mo", render: "$7/mo", notes: "Railway wins big for variable/low-traffic workloads — pay only for what you use" },
     { metric: "At full utilization (100%)", railway: "~$5-8/mo (512 MB)", render: "$7/mo", notes: "Break-even around 70-80% utilization. Above that, Render's fixed rate is cheaper" },
-    { metric: "With managed database", railway: "$5/mo + DB container usage", render: "$7/mo (web) + $7/mo (Postgres Starter)", notes: "Both ~$12-14/mo total. Railway's DB is self-managed; Render's is fully managed with backups" },
+    { metric: "With managed database", railway: "$5/mo + DB container usage", render: "$7/mo (web) + $7/mo (Postgres Starter)", notes: "Both ~$12-14/mo total. Railway maintains the templates; you turn on backups and run upgrades." },
     { metric: "Auto-scaling", railway: "Vertical only (auto-scales resources)", render: "Horizontal + Vertical (Pro $19/mo)", notes: "Railway auto-scales CPU/RAM within plan limits. Render requires Pro plan for horizontal auto-scaling" },
     { metric: "SOC 2 / Compliance", railway: "Not advertised", render: "SOC 2 Type II (available on all plans)", notes: "Render has SOC 2 certification. Railway does not currently advertise compliance certifications" },
   ];
@@ -22596,7 +22596,7 @@ ${globalNavCss()}
 
   <div class="executive-summary">
     <p><strong>Quick verdict:</strong> Choose <strong>Railway</strong> for variable-traffic prototypes and MVPs where great developer experience matters — fast deploys, no cold starts, usage-based billing. Choose <strong>Render</strong> for production workloads needing managed databases, predictable billing, and SOC 2 compliance.</p>
-    <p><strong>On free tiers:</strong> Both offer ~512 MB RAM, but with fundamentally different trade-offs. Railway stays awake 24/7 (no cold starts) but offers no managed databases and no custom domains. Render includes managed PostgreSQL and Redis, custom domains, and unlimited free static sites — but web services sleep after 15 minutes.</p>
+    <p><strong>On free tiers:</strong> Both offer ~512 MB RAM, but with fundamentally different trade-offs. Railway stays awake 24/7 (no cold starts) but offers no custom domains. Render includes managed PostgreSQL and Redis, custom domains, and unlimited free static sites — but web services sleep after 15 minutes.</p>
     <p><strong>The key framing:</strong> Railway is <strong>usage-based flexibility</strong> — pay per second, scale to zero, great for variable workloads. Render is <strong>predictable billing</strong> — fixed monthly rates, managed services included, better for production where you need to know the cost upfront.</p>
   </div>
 
@@ -44577,7 +44577,7 @@ ${globalNavCss()}
 
   <div class="diff-card">
     <h3><a href="/vendor/netlify">Netlify</a> &mdash; Credit-Based Free Tier</h3>
-    <div class="diff-desc"><strong>Free tier:</strong> 300 credits a month. Bandwidth costs 20 credits per GB, about 15 GB a month if nothing else uses credits. Production deploys cost 15 credits each; deploy previews, branch deploys and failed deploys are free. Function compute costs 10 credits per GB-hour, and web requests 2 credits per 10,000. All projects pause when credits run out, with no overage charges. Accounts created before 2025-09-04 keep their legacy plans; legacy Free includes 100 GB of bandwidth and 300 build minutes a month, and 125,000 function invocations per site a month. <strong>Key limitation:</strong> bandwidth, deploys, compute and requests all draw on the one 300-credit pool.</div>${vendorPageConditionsHtmlForSlug("netlify")}
+    <div class="diff-desc"><strong>Free tier:</strong> 300 credits a month. Netlify's paid credit plans are Personal at $9 a month with 1,000 credits, and Pro at $20 a month with 3,000 credits. Pro has larger tiers with 5,000, 10,000, 15,000 or 20,000 credits a month. Bandwidth costs 20 credits per GB, about 15 GB a month if nothing else uses credits. Production deploys cost 15 credits each; deploy previews, branch deploys and failed deploys are free. Function compute costs 10 credits per GB-hour, and web requests 2 credits per 10,000. All projects pause when credits run out, with no overage charges. Accounts created before 2025-09-04 keep their legacy plans; legacy Free includes 100 GB of bandwidth and 300 build minutes a month, and 125,000 function invocations per site a month. <strong>Key limitation:</strong> bandwidth, deploys, compute and requests all draw on the one 300-credit pool.</div>${vendorPageConditionsHtmlForSlug("netlify")}
   </div>
 
   <div class="diff-card">
@@ -44595,7 +44595,7 @@ ${globalNavCss()}
 
   <div class="diff-card">
     <h3><a href="/vendor/railway">Railway</a></h3>
-    <div class="diff-desc"><strong>Free tier:</strong> new accounts get a 30-day trial with a one-time $5 credit and no credit card, allowing up to 2 vCPU and 1 GB RAM per service, 5 services per project and 1 custom domain. After the trial, the Free plan gives $1 of credit a month and allows up to 1 vCPU and 0.5 GB RAM per service and 0.5 GB of volume storage. Builds are free. Docker and many languages are supported. Railway's one-click PostgreSQL, MySQL, Redis and MongoDB templates are unmanaged: you handle backups, tuning, security and maintenance.</div>${vendorPageConditionsHtmlForSlug("railway")}
+    <div class="diff-desc"><strong>Free tier:</strong> new accounts get a 30-day trial with a one-time $5 credit and no credit card, allowing up to 2 vCPU and 1 GB RAM per service, 5 services per project and 1 custom domain. After the trial, the Free plan gives $1 of credit a month and allows up to 1 vCPU and 0.5 GB RAM per service and 0.5 GB of volume storage. Builds are free. Docker and many languages are supported. Railway maintains PostgreSQL, MySQL, Redis and MongoDB templates and applies security patches to the database image. Backups are off by default and the user turns them on. The user also resizes the disk, handles major version upgrades, and enables high availability and connection pooling. (From <a href="https://docs.railway.com/databases" rel="nofollow noopener">docs.railway.com/databases</a>, read 2026-10-12.)</div>${vendorPageConditionsHtmlForSlug("railway")}
   </div>
 
   <div class="diff-card">
@@ -44727,7 +44727,7 @@ ${globalNavCss()}
 
     <div class="verdict-item">
       <strong>Usage-based billing &rarr; Railway</strong>
-      <p>Railway bills the greater of a plan's monthly minimum and your usage, with no seat charges: Pro has a $20 minimum that includes $20 of usage, and unlimited seats. New accounts get a 30-day trial with a one-time $5 credit. Builds are free, and Docker is supported. Railway's one-click database templates are unmanaged.</p>
+      <p>Railway bills the greater of a plan's monthly minimum and your usage, with no seat charges: Pro has a $20 minimum that includes $20 of usage, and unlimited seats. New accounts get a 30-day trial with a one-time $5 credit. Builds are free, and Docker is supported. Railway applies security patches to its database templates. The user turns on backups.</p>
     </div>
 
     <div class="verdict-item">
