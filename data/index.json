@@ -32128,6 +32128,12 @@
           "quote": "Any usage that exceeds the Free Tier usage limits is billed at standard rates.",
           "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "The BigQuery sandbox needs no credit card or billing account. It includes 1 TiB of queries a month, and its tables expire after 60 days.",
+          "quote": "The BigQuery sandbox lets you experience BigQuery without providing a credit card or creating a billing account for your project.",
+          "url": "https://cloud.google.com/bigquery/docs/sandbox",
+          "read_on": "2026-10-12"
         }
       ]
     },
@@ -32178,6 +32184,12 @@
           "quote": "Any usage that exceeds the Free Tier usage limits is billed at standard rates.",
           "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "Apps deployed from Google AI Studio can run on Cloud Run under Google's Starter Tier, which needs no credit card or billing account and limits regions, quotas and resources.",
+          "quote": "No Cloud Billing account: You don't need to provide a credit card or set up a Cloud Billing account to deploy your applications.",
+          "url": "https://docs.cloud.google.com/docs/starter-tier",
+          "read_on": "2026-10-12"
         }
       ]
     },

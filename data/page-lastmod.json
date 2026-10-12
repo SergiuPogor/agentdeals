@@ -814,7 +814,7 @@
       "changed": "2026-10-11"
     },
     "/aws-app-runner-migration": {
-      "hash": "c503352ddab06eaf",
+      "hash": "441ca24893c3104c",
       "changed": "2026-10-12"
     },
     "/aws-free-tier-2026": {
@@ -1129,7 +1129,7 @@
       "changed": "2026-10-11"
     },
     "/category/cloud-hosting": {
-      "hash": "d5e9649e1a48692a",
+      "hash": "f4765359e3ec1f34",
       "changed": "2026-10-12"
     },
     "/category/cloud-iaas": {
@@ -1161,8 +1161,8 @@
       "changed": "2026-10-11"
     },
     "/category/databases": {
-      "hash": "6842660614c3b2b4",
-      "changed": "2026-10-11"
+      "hash": "fa4c921fbf9019fb",
+      "changed": "2026-10-12"
     },
     "/category/design": {
       "hash": "04e1336320eb22a4",
@@ -2703,7 +2703,7 @@
       "changed": "2026-10-12"
     },
     "/database-pricing": {
-      "hash": "8f8d6fe507c7da57",
+      "hash": "3ee04f50f163c135",
       "changed": "2026-10-12"
     },
     "/datadog-alternatives": {
@@ -3237,7 +3237,7 @@
       "changed": "2026-10-11"
     },
     "/google-developer-program-2026": {
-      "hash": "2d801da01eb08180",
+      "hash": "f2df5cff166bc34b",
       "changed": "2026-10-12"
     },
     "/groq-vs-hugging-face": {
@@ -3273,7 +3273,7 @@
       "changed": "2026-10-12"
     },
     "/hetzner-alternatives": {
-      "hash": "6e489e3da5ea87e3",
+      "hash": "335b82d1dad03ecc",
       "changed": "2026-10-12"
     },
     "/hetzner-pricing-2026": {
@@ -3281,7 +3281,7 @@
       "changed": "2026-10-12"
     },
     "/hosting-alternatives": {
-      "hash": "9791789dbcc2f471",
+      "hash": "45f490aa24ce82c3",
       "changed": "2026-10-12"
     },
     "/hosting-free-tier-comparison-2026": {
@@ -3289,7 +3289,7 @@
       "changed": "2026-10-12"
     },
     "/hosting-pricing": {
-      "hash": "e23a8736c432f1b0",
+      "hash": "9c47495eae6f8f87",
       "changed": "2026-10-12"
     },
     "/ide-code-editors-alternatives": {
@@ -3551,7 +3551,7 @@
       "changed": "2026-10-11"
     },
     "/serverless-free-tier-comparison-2026": {
-      "hash": "2ef5e80bd8dd23ce",
+      "hash": "4e4921bf18defb30",
       "changed": "2026-10-12"
     },
     "/setup": {
@@ -3566,7 +3566,7 @@
       "changed": "2026-10-12"
     },
     "/stack-check": {
-      "hash": "cf7ec6f5ebba1504",
+      "hash": "e140a88b2757c08a",
       "changed": "2026-10-12"
     },
     "/stacks": {
