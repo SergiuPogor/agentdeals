@@ -2125,7 +2125,6 @@
       "vendors_asserted": [
         "cloudflare-pages",
         "cloudflare-workers",
-        "deno-deploy",
         "fly-io",
         "github-pages",
         "google-cloud-run",
@@ -2762,7 +2761,6 @@
         "cloudflare-durable-objects",
         "cloudflare-workers",
         "dbos",
-        "deno-deploy",
         "google-cloud-run",
         "inngest",
         "trigger-dev",
@@ -3412,7 +3410,6 @@
       ],
       "vendors_tabulated": [
         "cloudflare-pages",
-        "deno-deploy",
         "fly-io",
         "railway",
         "render"
@@ -3425,8 +3422,8 @@
       "review_note": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 47,
-      "table_figures_from_records": 31,
+      "table_figures": 43,
+      "table_figures_from_records": 27,
       "tables": [
         {
           "label": "1. Free Tier Comparison Table",
@@ -3440,8 +3437,8 @@
         },
         {
           "label": "5. Other Hosting Alternatives",
-          "figures": 31,
-          "from_records": 31
+          "figures": 27,
+          "from_records": 27
         }
       ],
       "reads_changes": true,

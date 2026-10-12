@@ -503,9 +503,7 @@
         "serverless",
         "typescript",
         "kv",
-        "free tier",
-        "heroku-alternative",
-        "vercel-alternative"
+        "free tier"
       ],
       "verifiedDate": "2026-09-24",
       "source_check": {
@@ -523,7 +521,15 @@
           }
         ],
         "reviewed": "2026-08-31"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Deno is joining Cloudflare. Deno said on 2026-10-09 that Deno Deploy will keep running for six months and then shut down; it gave no exact date. Deno will help paying customers move to Cloudflare Workers.",
+          "quote": "Deno Deploy will continue operating for six months before shutting down. We will provide migration support for paying customers moving to Cloudflare Workers.",
+          "url": "https://deno.com/blog/cloudflare",
+          "read_on": "2026-10-12"
+        }
+      ]
     },
     {
       "vendor": "Val Town",
@@ -1024,7 +1030,7 @@
     {
       "vendor": "Turso",
       "category": "Databases",
-      "description": "Edge SQLite — 100 databases, 5 GB storage, 500M rows read/month, 10M rows written/month free",
+      "description": "Edge SQLite — 100 databases, 5 GB storage, 500M rows read/month, 10M rows written/month free. On 2026-10-02 Turso announced that Supabase is acquiring it. Turso says the service keeps running and that databases, APIs and workflows continue as they do today.",
       "tier": "Free",
       "url": "https://turso.tech/pricing",
       "tags": [
