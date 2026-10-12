@@ -22,11 +22,11 @@
       "changed": "2026-10-12"
     },
     "/ai-free-tiers": {
-      "hash": "65a75b994b4f32ad",
+      "hash": "408fc39f9ce82e67",
       "changed": "2026-10-12"
     },
     "/ai-ml-alternatives": {
-      "hash": "55b01855af2665a5",
+      "hash": "cca05382b2c6fbb7",
       "changed": "2026-10-12"
     },
     "/alternative-to": {
@@ -1093,7 +1093,7 @@
       "changed": "2026-10-12"
     },
     "/category/ai-ml": {
-      "hash": "63a52046287a047f",
+      "hash": "bc1a52933a3e9c3b",
       "changed": "2026-10-12"
     },
     "/category/analytics": {
@@ -2703,7 +2703,7 @@
       "changed": "2026-10-12"
     },
     "/database-pricing": {
-      "hash": "762046bb2bcd0458",
+      "hash": "dad5d67b84209f3c",
       "changed": "2026-10-12"
     },
     "/datadog-alternatives": {
@@ -3188,7 +3188,7 @@
       "changed": "2026-10-12"
     },
     "/free-llm-apis": {
-      "hash": "cb2b207943fa5803",
+      "hash": "e5116949a3337cd1",
       "changed": "2026-10-12"
     },
     "/free-nextjs-stack": {
@@ -3222,7 +3222,7 @@
       "changed": "2026-10-11"
     },
     "/gcp-free-tier-2026": {
-      "hash": "26bea9ba9fc9ebc0",
+      "hash": "80f2afc5633dce05",
       "changed": "2026-10-12"
     },
     "/gemini-api-pricing-2026": {
@@ -3286,7 +3286,7 @@
       "changed": "2026-10-12"
     },
     "/hosting-free-tier-comparison-2026": {
-      "hash": "784059a199b9c82f",
+      "hash": "83a064f92ccd08ca",
       "changed": "2026-10-12"
     },
     "/hosting-pricing": {
@@ -3298,7 +3298,7 @@
       "changed": "2026-10-12"
     },
     "/llm-api-pricing": {
-      "hash": "50d767fd9e22872a",
+      "hash": "8b397d13653968ed",
       "changed": "2026-10-12"
     },
     "/localstack-alternatives": {
@@ -3377,7 +3377,7 @@
       "changed": "2026-10-12"
     },
     "/railway-vs-render": {
-      "hash": "e3b34e4981ae8fd2",
+      "hash": "f9f1bcea767950e5",
       "changed": "2026-10-12"
     },
     "/redis-alternatives": {
@@ -3563,11 +3563,11 @@
       "daily": true
     },
     "/stability": {
-      "hash": "a5ac446fbcdfc715",
+      "hash": "1a17d8b85e7e2748",
       "changed": "2026-10-12"
     },
     "/stack-check": {
-      "hash": "c4f21b5c6dd6a2b7",
+      "hash": "77575f5e4aa6da21",
       "changed": "2026-10-12"
     },
     "/stacks": {
@@ -3599,7 +3599,7 @@
       "changed": "2026-10-12"
     },
     "/state-of-free-tiers": {
-      "hash": "66caf6e90a2be9d7",
+      "hash": "f7719d02ad69b9d7",
       "changed": "2026-10-12"
     },
     "/storage-alternatives": {
