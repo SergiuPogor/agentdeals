@@ -32443,7 +32443,7 @@
     {
       "vendor": "Google Cloud Shell",
       "category": "Dev Utilities",
-      "description": "Always Free: browser-based terminal with 5 GB persistent disk, pre-installed tools (gcloud, kubectl, docker, git), and built-in code editor",
+      "description": "Always Free: browser-based terminal with 5 GB persistent disk, pre-installed tools (gcloud, kubectl, docker, git), and built-in code editor. The default weekly quota is 50 hours of use. Sessions are capped at 12 hours, and non-interactive sessions end after 40 minutes. Cloud Shell deletes the $HOME directory after 120 days without access.",
       "tier": "Always Free",
       "url": "https://docs.cloud.google.com/shell/docs/quotas-limits",
       "tags": [

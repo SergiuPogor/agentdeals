@@ -14369,7 +14369,7 @@
       "date": "2026-10-23",
       "summary": "The OpenAI API keeps running. The gpt-3.5-turbo, gpt-4, gpt-4-turbo, gpt-4-1106-preview, gpt-4.1-nano, gpt-4o-2024-05-13, gpt-image-1, o1, o1-pro, o3-mini and o4-mini models, with their fine-tuned versions, can be called until October 23, 2026, when OpenAI shuts down their access. OpenAI's substitutes: gpt-5.6-terra for gpt-3.5-turbo and o4-mini; gpt-5.6-sol for gpt-4, gpt-4-turbo, gpt-4-1106-preview, gpt-4o-2024-05-13, o1 and o3-mini; gpt-5.6-sol with reasoning.mode: pro for o1-pro; gpt-5.6-luna for gpt-4.1-nano; gpt-image-2.5-sunburst or gpt-image-2.5-flare for gpt-image-1.",
       "previous_state": "The models were callable in the OpenAI API at pay-as-you-go rates.",
-      "current_state": "OpenAI's deprecations page lists October 23, 2026 as the date after which the models are no longer accessible.",
+      "current_state": "OpenAI's deprecations page gives October 23, 2026 as the shutdown date. The models can be called until then.",
       "impact": "medium",
       "source_url": "https://developers.openai.com/api/docs/deprecations",
       "category": "AI / ML",
@@ -16443,6 +16443,20 @@
         "Google AI Pro/Ultra"
       ],
       "recorded_date": "2026-10-11"
+    },
+    {
+      "vendor": "Mistral AI",
+      "change_type": "restriction",
+      "date": "2026-08-05",
+      "summary": "Since 2026-08-05 Mistral's consumer terms exclude Mistral AI Studio and its API, which Mistral limits to business customers; API use falls under its Commercial Terms.",
+      "previous_state": "\"These Terms of Service (these “Terms”) govern your personal use as a consumer outside of the EEA of Mistral AI Studio, Vibe and the other websites, products, software, services, and technologies we offer\" (Mistral consumer terms outside the EEA, version effective 28 May 2026)",
+      "current_state": "\"govern your personal use as a consumer outside of the EEA of Vibe and the other websites, products, software, services, and technologies we offer, but excluding Mistral AI Studio and access to any of our APIs, which are limited to business customers\" (version effective 5 August 2026, unchanged in the 25 September 2026 version; Mistral's EEA consumer terms made the same change on 7 August 2026)",
+      "impact": "medium",
+      "source_url": "https://legal.mistral.ai/terms/row-consumer-terms",
+      "category": "AI / ML",
+      "alternatives": [],
+      "recorded_date": "2026-10-11",
+      "date_source": "vendor_page"
     }
   ]
 }
