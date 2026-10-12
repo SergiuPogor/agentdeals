@@ -16572,6 +16572,50 @@
       "category": "AI / ML",
       "alternatives": [],
       "recorded_date": "2026-10-12"
+    },
+    {
+      "vendor": "Groq",
+      "change_type": "product_deprecated",
+      "date": "2026-09-14",
+      "date_source": "vendor_page",
+      "summary": "Groq replaced Qwen3.6 27B (qwen/qwen3.6-27b) with its successor, Qwen3.8 27B (qwen/qwen3.8-27b), on its free and developer plans on September 14, 2026, and shut qwen/qwen3.6-27b down that day; code that calls it needs the new model ID.",
+      "what_ends": "Groq Qwen3.6 27B (qwen/qwen3.6-27b)",
+      "listing_effect": "none",
+      "previous_state": "Groq served Qwen3.6 27B on its free and developer plans under the model ID qwen/qwen3.6-27b.",
+      "current_state": "\"we announced the deprecation of qwen/qwen3.6-27b in favor of qwen/qwen3.8-27b. Qwen 3.8 27B is the direct successor: a 27B multimodal model with the same 131K context window, thinking and instruct modes, tunable reasoning effort, tool use, and JSON mode. This deprecation applies to free and developer-tier usage; enterprise customers with a committed-spend contract are not affected.\" Shutdown date 09/14/26 for qwen/qwen3.6-27b (replacement qwen/qwen3.8-27b). (console.groq.com/docs/deprecations)",
+      "impact": "medium",
+      "source_url": "https://console.groq.com/docs/deprecations",
+      "category": "AI / ML",
+      "alternatives": [],
+      "recorded_date": "2026-10-12"
+    },
+    {
+      "vendor": "Modal",
+      "change_type": "limits_reduced",
+      "date": "2026-09-01",
+      "date_source": "vendor_page",
+      "summary": "Since September 1, 2026, the Starter plan's $30 of monthly compute no longer covers Modal's Shared Endpoints: their tokens are billed from the first request, even before the $30 is used.",
+      "previous_state": "Free usage of Shared Endpoints was part of the Starter plan's $30 of included monthly compute; Modal's pricing FAQ dates the change to September 1, 2026.",
+      "current_state": "\"Free usage of Shared Endpoints is not part of the Starter plan. Tokens are billed from your first request, so they will appear on your invoice even if you haven't used your full $30 of included compute. This took effect September 1, 2026.\" (modal.com/pricing)",
+      "impact": "medium",
+      "source_url": "https://modal.com/pricing",
+      "category": "AI / ML",
+      "alternatives": [],
+      "recorded_date": "2026-10-12"
+    },
+    {
+      "vendor": "Modal",
+      "change_type": "limits_reduced",
+      "date": "2026-10-01",
+      "date_source": "vendor_page",
+      "summary": "Since October 1, 2026, Modal charges for network egress: the Starter plan includes 1 TiB a month, Team 10 TiB and Enterprise 100 TiB, and egress beyond that costs $0.04 per GiB.",
+      "previous_state": "Modal did not charge for network egress. From September 1, 2026, egress usage appeared on the Usage & Billing page with no charge.",
+      "current_state": "\"Starting October 1, 2026, Modal charges for network egress.\" Included per billing cycle: Starter 1 TiB, Team 10 TiB, Enterprise 100 TiB. \"Egress beyond the included amount is billed at $0.04 per GiB.\" Reads from and writes to Modal Volumes do not count as egress. (modal.com/docs/guide/network-egress-billing)",
+      "impact": "medium",
+      "source_url": "https://modal.com/docs/guide/network-egress-billing",
+      "category": "AI / ML",
+      "alternatives": [],
+      "recorded_date": "2026-10-12"
     }
   ]
 }

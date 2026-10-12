@@ -1,6 +1,14 @@
 {
   "listings": [
     {
+      "vendor": "NVIDIA NIM",
+      "tier": "Free"
+    },
+    {
+      "vendor": "Google Cloud Run",
+      "tier": "Always Free"
+    },
+    {
       "vendor": "Mistral AI",
       "tier": "Free"
     },
