@@ -23,7 +23,7 @@ const TODAY = "2026-08-27";
 
 const THE_DAY_THE_SERVER_RENDERS = utcToday();
 
-const PROVENANCE = /Figures compiled (\d{4}-\d{2}-\d{2}), (?:not re-checked since|last checked (\d{4}-\d{2}-\d{2}))/;
+const PROVENANCE = /Figures compiled (\d{4}-\d{2}-\d{2})(?:, (?:not re-checked since|last checked (\d{4}-\d{2}-\d{2}))|; \d+ services? re-checked \d{4}-\d{2}-\d{2})/;
 
 const RECORD_PROVENANCE = /Figures from our (.+) record(?:, last read (\d{4}-\d{2}-\d{2}))?\.$/;
 

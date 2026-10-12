@@ -29593,7 +29593,7 @@ function buildDatabasePricingPage(): string {
       category: "managed-postgres",
       dbType: "PostgreSQL",
       freeStorage: "500 MB",
-      freeConnections: "Unlimited (pooled)",
+      freeConnections: "60 direct / 200 pooled",
       freeCompute: "Shared CPU",
       paidFrom: "$25/mo (Pro)",
       pricingModel: "Per-project",
@@ -29675,9 +29675,9 @@ function buildDatabasePricingPage(): string {
       freeStorage: "5 GB total",
       freeConnections: "Unlimited",
       freeCompute: "100 DBs, 500M rows read",
-      paidFrom: "$29/mo (Scaler)",
+      paidFrom: "$5.99/mo (Developer)",
       pricingModel: "Usage-based",
-      freeDetails: "5 GB total storage, 100 databases, 500 million row reads/month, 10 million row writes/month. Built on libSQL (SQLite fork). Embedded replicas for zero-latency reads at the edge. Databases replicate to 26+ locations. No cold starts — SQLite is always fast.",
+      freeDetails: "5 GB total storage, 100 databases, 500 million row reads/month, 10 million row writes/month. Built on libSQL (SQLite fork). Embedded replicas for zero-latency reads at the edge. Edge replicas closed to new users in January 2025. No cold starts — SQLite is always fast. On 2026-10-02 Turso announced that Supabase is acquiring it. Turso says the service keeps running.",
       freeType: "generous",
       monthlyCostSmall: "$0",
       monthlyCostTeam: "$29+",
@@ -29688,12 +29688,12 @@ function buildDatabasePricingPage(): string {
       slug: "cloudflare-d1",
       category: "serverless-edge",
       dbType: "SQLite (Edge)",
-      freeStorage: "5 GB",
+      freeStorage: "5 GB (500 MB per DB)",
       freeConnections: "N/A (HTTP)",
       freeCompute: "5M rows read/day, 100K writes/day",
-      paidFrom: "$0.75/M reads (pay-as-you-go)",
+      paidFrom: "$0.001/M rows read (Workers Paid)",
       pricingModel: "Usage-based",
-      freeDetails: "5 GB storage, 5 million rows read/day, 100,000 rows written/day. SQLite-based database running on Cloudflare's edge network. Works best with Workers. Automatic replication across Cloudflare's network. Point-in-time recovery on paid plans.",
+      freeDetails: "5 GB storage, 5 million rows read/day, 100,000 rows written/day. SQLite-based database running on Cloudflare's edge network. Works best with Workers. Automatic replication across Cloudflare's network. Point-in-time recovery: 7 days free, 30 days paid.",
       freeType: "generous",
       monthlyCostSmall: "$0",
       monthlyCostTeam: "$0\u20135",
@@ -29723,12 +29723,12 @@ function buildDatabasePricingPage(): string {
       freeStorage: "512 MB",
       freeConnections: "Unlimited (WebSocket)",
       freeCompute: "Shared",
-      paidFrom: "$25/mo (Pro)",
-      pricingModel: "Per-project",
+      paidFrom: "$25/dev/mo (Professional)",
+      pricingModel: "Per-developer",
       freeDetails: "512 MB database + file storage, 2 free projects, automatic real-time sync, built-in auth, serverless functions, cron jobs, file storage. TypeScript-first with end-to-end type safety. Automatic caching and reactivity — queries re-run when data changes.",
       freeType: "generous",
       monthlyCostSmall: "$0",
-      monthlyCostTeam: "$25+",
+      monthlyCostTeam: "$125+ (5 devs)",
       hiddenCosts: "Proprietary query language (not SQL). Vendor lock-in — no standard protocol for data export. Limited community compared to PostgreSQL ecosystem. 2-project limit on free tier.",
     },
     {
@@ -29755,12 +29755,12 @@ function buildDatabasePricingPage(): string {
       freeStorage: "N/A (proxy)",
       freeConnections: "1,000 queries/day",
       freeCompute: "Edge caching",
-      paidFrom: "$49/mo (Pro)",
+      paidFrom: "$10/mo (Starter)",
       pricingModel: "Per-query",
-      freeDetails: "1,000 cached queries/day, global edge caching, connection pooling for serverless. Not a database — sits in front of your existing database to provide connection pooling (essential for serverless) and edge caching. Works with any Prisma-supported database.",
+      freeDetails: "Retires December 1, 2026. 1,000 cached queries/day, global edge caching, connection pooling for serverless. Not a database — sits in front of your existing database to provide connection pooling (essential for serverless) and edge caching. Works with any Prisma-supported database.",
       freeType: "limited",
       monthlyCostSmall: "$0",
-      monthlyCostTeam: "$49+",
+      monthlyCostTeam: "$10+",
       hiddenCosts: "1,000 queries/day is very limited. Requires Prisma ORM — doesn't work with other query builders. Cache invalidation complexity. Pro plan at $49/mo for higher query limits.",
     },
     {
@@ -29771,13 +29771,14 @@ function buildDatabasePricingPage(): string {
       freeStorage: "512 MB",
       freeConnections: "500",
       freeCompute: "Shared (M0)",
-      paidFrom: "$0.08/hr (M10)",
+      paidFrom: "$0.011/hr (Flex, up to $30/mo)",
       pricingModel: "Per-cluster",
-      freeDetails: "512 MB storage, shared M0 cluster, 500 connections, 100 operations/second max. Includes Atlas Search (full-text), Charts (visualization), App Services (serverless functions), and Triggers. Available on AWS, GCP, and Azure. MongoDB drivers for every major language.",
+      freeDetails: "512 MB storage, shared M0 cluster, 500 connections, 100 operations/second max. Includes Atlas Search (full-text), Charts (visualization), App Services (serverless functions), and Triggers. Available on AWS, GCP, and Azure. MongoDB drivers for every major language. Free clusters pause after 30 days with zero connections.",
       freeType: "generous",
       monthlyCostSmall: "$0",
-      monthlyCostTeam: "$57+ (M10)",
-      hiddenCosts: "M0 free tier has no backups, no VPC peering, limited to 100 ops/sec. Jump from free to paid is steep: M10 cluster starts at ~$57/month. Atlas Search and App Services have separate usage limits on free tier. No dedicated cluster — noisy neighbor issues possible.",
+      monthlyCostTeam: "$8-30 (Flex); $57+ (M10 dedicated)",
+      hiddenCosts: "M0 free tier has no backups, no VPC peering, limited to 100 ops/sec. Paid starts with Flex at $8-30 a month; dedicated M10 clusters start at about $57. Atlas Search and App Services have separate usage limits on free tier. No dedicated cluster — noisy neighbor issues possible.",
+      keyCostFactor: "M0 free tier has no backups, no VPC peering, limited to 100 ops/sec. Paid starts with Flex at $8-30 a month; dedicated M10 clusters start at about $57.",
     },
     {
       name: "Firebase Firestore",
@@ -29803,13 +29804,13 @@ function buildDatabasePricingPage(): string {
       freeStorage: "Shared",
       freeConnections: "Unlimited",
       freeCompute: "Shared",
-      paidFrom: "$0.093/hr",
+      paidFrom: "$0.15/hr per node (Basic)",
       pricingModel: "Per-node-hour",
-      freeDetails: "Free tier cluster with shared resources. Couchbase Capella is a managed Couchbase service with SQL++ query language, full-text search, key-value access, and mobile sync (via Couchbase Lite). Multi-model: document, key-value, and search in one platform.",
+      freeDetails: "Free tier cluster with shared resources. Couchbase Capella is a managed Couchbase service with SQL++ query language, full-text search, key-value access, and mobile sync (via Couchbase Lite). Multi-model: document, key-value, and search in one platform. Turns off after 72 hours idle (data kept); deleted after 30 days idle.",
       freeType: "limited",
       monthlyCostSmall: "$0",
-      monthlyCostTeam: "$67+",
-      hiddenCosts: "Free tier is minimal shared resources. Paid clusters start at 3 nodes minimum. Multi-model is powerful but adds complexity. Smaller community than MongoDB.",
+      monthlyCostTeam: "≈$110+",
+      hiddenCosts: "Free tier is minimal shared resources. Basic clusters start at 1 node. Multi-model is powerful but adds complexity. Smaller community than MongoDB.",
     },
     {
       name: "SurrealDB Cloud",
@@ -29835,9 +29836,9 @@ function buildDatabasePricingPage(): string {
       freeStorage: "25 GB",
       freeConnections: "N/A (HTTP)",
       freeCompute: "25 WCU, 25 RCU",
-      paidFrom: "$0.25/M WCU",
+      paidFrom: "$0.625/M writes (on-demand)",
       pricingModel: "Per-capacity-unit",
-      freeDetails: "25 GB storage, 25 Write Capacity Units, 25 Read Capacity Units (Always Free). Enough for ~200 million requests/month with on-demand pricing. Global tables, streams, and point-in-time recovery available. Fully managed NoSQL with single-digit millisecond latency at any scale.",
+      freeDetails: "25 GB storage, 25 Write Capacity Units, 25 Read Capacity Units (Always Free). Enough for about 200M requests/month on provisioned capacity. A Free-plan AWS account closes after 6 months unless upgraded. Global tables, streams, and point-in-time recovery available. Fully managed NoSQL with single-digit millisecond latency at any scale.",
       freeType: "generous",
       monthlyCostSmall: "$0",
       monthlyCostTeam: "$0\u201325+",
@@ -29851,7 +29852,7 @@ function buildDatabasePricingPage(): string {
       freeStorage: "10 GiB",
       freeConnections: "N/A (HTTP)",
       freeCompute: "1 TiB queries/mo",
-      paidFrom: "$5/TiB queried",
+      paidFrom: "$6.25/TiB queried",
       pricingModel: "Per-query-volume",
       freeDetails: "10 GiB storage, 1 TiB queries/month (Always Free). Serverless data warehouse — no infrastructure management. Standard SQL, ML models via BigQuery ML, real-time analytics via streaming inserts. Integrates with all GCP services and most BI tools.",
       freeType: "generous",
@@ -29883,12 +29884,12 @@ function buildDatabasePricingPage(): string {
       freeStorage: "30 MB",
       freeConnections: "30",
       freeCompute: "Shared",
-      paidFrom: "$7/mo (Essentials)",
+      paidFrom: "$5/mo (Essentials)",
       pricingModel: "Per-plan",
       freeDetails: "30 MB dataset size, 30 connections on free tier. Managed Redis with persistence, replication, and high availability on paid plans. Supports Redis modules (Search, JSON, TimeSeries, Graph, Bloom) on paid tiers. Available on AWS, GCP, and Azure.",
       freeType: "limited",
-      monthlyCostSmall: "$0\u20137",
-      monthlyCostTeam: "$7\u201350+",
+      monthlyCostSmall: "$0\u20135",
+      monthlyCostTeam: "$5\u201350+",
       hiddenCosts: "30 MB is extremely small — barely enough for caching. Redis license changed to SSPL/RSALv2 (March 2024) — no longer open source. Modules like RedisSearch and RedisJSON only on paid plans. Consider Upstash or Valkey/KeyDB as alternatives.",
     },
     {
@@ -29899,12 +29900,12 @@ function buildDatabasePricingPage(): string {
       freeStorage: "200K nodes, 400K relationships",
       freeConnections: "Unlimited",
       freeCompute: "Shared",
-      paidFrom: "$15/mo (Pro)",
+      paidFrom: "$0.09/GB/hr (Professional, 1 GB min)",
       pricingModel: "Per-instance",
-      freeDetails: "200,000 nodes, 400,000 relationships on free tier. Managed Neo4j graph database with Cypher query language. Includes Graph Data Science library (limited) and Bloom visualization. Single database on free tier. Available on AWS, GCP, and Azure.",
+      freeDetails: "200,000 nodes, 400,000 relationships on free tier. Managed Neo4j graph database with Cypher query language. Includes Graph Data Science library (limited) and Bloom visualization. Single database on free tier. Available on AWS, GCP, and Azure. Free instances pause after 72 hours idle and are deleted after 30 days paused.",
       freeType: "generous",
       monthlyCostSmall: "$0",
-      monthlyCostTeam: "$15+",
+      monthlyCostTeam: "≈$66+",
       hiddenCosts: "200K nodes is enough for development but limiting for production graph applications. Free tier has no backups, no VPC, and limited performance. Graph Data Science algorithms limited on free tier. Cypher has a learning curve.",
     },
     {
@@ -29950,16 +29951,16 @@ function buildDatabasePricingPage(): string {
       slug: "zilliz-cloud",
       category: "specialized",
       dbType: "Vector (Milvus)",
-      freeStorage: "2 collections",
+      freeStorage: "5 collections, 5 GB",
       freeConnections: "Unlimited",
       freeCompute: "Serverless free tier",
       paidFrom: "Usage-based",
       pricingModel: "Per-CU",
-      freeDetails: "Free tier with 2 collections and limited storage on Zilliz Cloud Serverless. Managed Milvus — the most widely deployed open-source vector database. Supports ANN search, hybrid search, multi-vector, and filtering. GPU-accelerated indexing on paid plans.",
+      freeDetails: "Free cluster with up to 5 collections and 5 GB storage; suspended after 7 days of inactivity. Managed Milvus — the most widely deployed open-source vector database. Supports ANN search, hybrid search, multi-vector, and filtering. GPU-accelerated indexing on paid plans.",
       freeType: "limited",
       monthlyCostSmall: "$0",
       monthlyCostTeam: "Usage-based",
-      hiddenCosts: "2-collection limit on free tier is restrictive. CU-based pricing is opaque. Milvus is open-source but Zilliz Cloud adds proprietary features. GPU acceleration only on higher tiers.",
+      hiddenCosts: "5-collection limit on free tier; idle clusters suspend after 7 days. CU-based pricing is opaque. Milvus is open-source but Zilliz Cloud adds proprietary features. GPU acceleration only on higher tiers.",
     },
     {
       name: "Momento",
@@ -30096,7 +30097,7 @@ function buildDatabasePricingPage(): string {
     { q: "Should I use a managed database or self-host?", a: "Managed databases (Supabase, Neon, MongoDB Atlas) are better for small teams — zero ops overhead, automatic backups, and scaling. Self-hosting (PostgreSQL, MongoDB, Redis) makes sense when you need full control, have strict data residency requirements, or are optimizing costs at scale. The break-even point is typically around $200-500/month in managed database costs." },
     { q: "Which database is best for AI/ML applications?", a: "For vector search: Weaviate, Zilliz Cloud (Milvus), or Supabase (pgvector). Weaviate Cloud offers a \"Free Forever\" cluster with 100,000 objects, 1 GB memory, and 10 GB disk. Supabase and Neon both include pgvector on their free plans. For RAG applications, Turso (edge) + any vector store gives low-latency retrieval." },
     { q: "What are the hidden costs of database free tiers?", a: "The biggest gotchas: connection limits (MongoDB Atlas: 500, Redis Cloud: 30), storage caps that force upgrades (Supabase: 500 MB, Neon: 1 GB per project), operation-based pricing that spikes unpredictably (Firestore, DynamoDB), project pausing on inactivity (Supabase), and egress charges not included in free tier marketing." },
-    { q: "How do I migrate away from a database if pricing changes?", a: "PostgreSQL-compatible databases (Supabase, Neon, CockroachDB, Aurora) offer the easiest migration path — pg_dump works across all of them. MongoDB Atlas data can be exported via mongodump. For serverless databases (Turso, D1, Convex), migration is harder due to proprietary APIs. Choose PostgreSQL-compatible databases to minimize lock-in risk." },
+    { q: "How do I migrate away from a database if pricing changes?", a: "PostgreSQL-compatible databases (Supabase, Neon, CockroachDB, Aurora) offer the easiest migration path — pg_dump works across all of them. CockroachDB's pg_dump exports schema only. MongoDB Atlas data can be exported via mongodump. For serverless databases (Turso, D1, Convex), migration is harder due to proprietary APIs. Choose PostgreSQL-compatible databases to minimize lock-in risk." },
   ];
 
   const faqJsonLd = faqPageJsonLd("/database-pricing", faqEntries);
@@ -30327,11 +30328,11 @@ function buildDatabasePricingPage(): string {
     '  </div>\n' +
     '  <div class="hidden-cost-card">\n' +
     '    <h4>Egress and Transfer Fees</h4>\n' +
-    '    <p>Cloud-provider databases (Aurora, DynamoDB, BigQuery) charge standard cloud egress rates. Supabase shares 5 GB egress across all services (database + storage + functions). High-traffic applications can hit egress limits before storage limits. Edge databases (Turso, D1) include replication but may charge for cross-region reads.</p>\n' +
+    '    <p>Cloud-provider databases (Aurora, DynamoDB, BigQuery) charge standard cloud egress rates. Supabase shares 5 GB egress across all services (database + storage + functions). High-traffic applications can hit egress limits before storage limits. D1 charges no egress and nothing extra for read replicas; Turso closed edge replicas to new users in January 2025.</p>\n' +
     '  </div>\n' +
     '  <div class="hidden-cost-card">\n' +
     '    <h4>Vendor Lock-in Migration Costs</h4>\n' +
-    '    <p>Migrating from Firestore, DynamoDB, or Convex requires rewriting queries and data access layers. PostgreSQL-compatible databases (Supabase, Neon, CockroachDB) minimize this risk \u2014 pg_dump works across all of them. PlanetScale users learned this lesson the hard way when the free tier was removed with 30 days notice.</p>\n' +
+    '    <p>Migrating from Firestore, DynamoDB, or Convex requires rewriting queries and data access layers. PostgreSQL-compatible databases (Supabase, Neon, CockroachDB) minimize this risk \u2014 pg_dump works across all of them. CockroachDB\'s pg_dump exports schema only. PlanetScale users learned this lesson the hard way when the free tier was removed with 30 days notice.</p>\n' +
     '  </div>\n' +
     '\n' +
     '  <h2 id="changes">Recent Pricing Changes</h2>\n' +
@@ -30356,7 +30357,7 @@ function buildDatabasePricingPage(): string {
     '\n' +
     '    <div class="verdict-item">\n' +
     '      <strong>Best for serverless / edge</strong>\n' +
-    '      <p><a href="/vendor/turso">Turso</a> (5 GB, 100 databases, edge replicas) or <a href="/vendor/cloudflare-d1">Cloudflare D1</a> (5 GB, integrated with Workers). Both use SQLite \u2014 zero cold starts, global distribution, no connection management.</p>\n' +
+    '      <p><a href="/vendor/turso">Turso</a> (5 GB, 100 databases, embedded replicas) or <a href="/vendor/cloudflare-d1">Cloudflare D1</a> (5 GB, integrated with Workers). Both use SQLite \u2014 zero cold starts, global distribution, no connection management.</p>\n' +
     '    </div>\n' +
     '\n' +
     '    <div class="verdict-item">\n' +
@@ -30376,7 +30377,7 @@ function buildDatabasePricingPage(): string {
     '\n' +
     '    <div class="verdict-item">\n' +
     '      <strong>Best for minimizing lock-in</strong>\n' +
-    '      <p>Any PostgreSQL-compatible database: <a href="/vendor/supabase">Supabase</a>, <a href="/vendor/neon">Neon</a>, <a href="/vendor/cockroachdb">CockroachDB</a>, or <a href="/vendor/amazon-aurora-postgresql">Aurora PostgreSQL</a>. pg_dump works across all \u2014 migration is a single command.</p>\n' +
+    '      <p>Any PostgreSQL-compatible database: <a href="/vendor/supabase">Supabase</a>, <a href="/vendor/neon">Neon</a>, <a href="/vendor/cockroachdb">CockroachDB</a>, or <a href="/vendor/amazon-aurora-postgresql">Aurora PostgreSQL</a>. pg_dump works across all \u2014 migration is a single command. CockroachDB\'s pg_dump exports schema only.</p>\n' +
     '    </div>\n' +
     '\n' +
     '    <div class="verdict-item">\n' +

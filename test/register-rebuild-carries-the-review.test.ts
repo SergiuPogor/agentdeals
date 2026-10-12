@@ -67,6 +67,12 @@ describe("rebuilding the review register to a path of its own", () => {
     assertPopulationFloor(before.length, 1, "pages exempted from the unsourced ratchet by hand");
     assert.deepStrictEqual(exempt([...written.values()]), before);
   });
+
+  it("carries every partial re-check, which no measurement can restore", () => {
+    const rechecked = onRecord().filter((p) => p.partial_recheck !== null);
+    assertPopulationFloor(rechecked.length, 1, "pages holding a partial re-check");
+    for (const page of rechecked) assert.deepStrictEqual(written.get(page.path)?.partial_recheck, page.partial_recheck, page.path);
+  });
 });
 
 describe("rebuilding the register from a job that read no page", () => {
@@ -100,6 +106,16 @@ describe("rebuilding the register from a job that read no page", () => {
       assert.deepStrictEqual(after.vendors_tabulated, onTheRegister.vendors_tabulated);
       assert.match(run.stdout, /~ \/llm-api-pricing tabulated vendors 0 -> \d+/);
       assert.doesNotMatch(run.stdout.split("measured and not written")[1] ?? "", /tabulated vendors/);
+    } finally {
+      run.cleanup();
+    }
+  });
+
+  it("carries a partial re-check", () => {
+    const recheck = { on: "2026-10-12", vendors: ["openai"] };
+    const run = rebuiltFrom({ "/llm-api-pricing": { partial_recheck: recheck } });
+    try {
+      assert.deepStrictEqual(run.written.get("/llm-api-pricing")!.partial_recheck, recheck);
     } finally {
       run.cleanup();
     }

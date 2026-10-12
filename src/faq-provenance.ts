@@ -1,4 +1,4 @@
-import { compiledNotice, getPageReview, qualityBudget, readWithoutClearing, reviewStatus, utcToday, type PageReviewRecord } from "./page-reviews.js";
+import { compiledNotice, getPageReview, partialRecheckAsOf, qualityBudget, readWithoutClearing, reviewStatus, utcToday, type PageReviewRecord } from "./page-reviews.js";
 
 export interface RecordProvenance {
   vendor: string;
@@ -58,7 +58,7 @@ export function statesVendorFigure(answer: string): boolean {
 export function faqProvenanceClause(record: PageReviewRecord | null, today: string): string {
   if (!record) return "";
   const status = reviewStatus(record, today);
-  const notice = compiledNotice(record.published, status.reviewed_at);
+  const notice = compiledNotice(record.published, status.reviewed_at, partialRecheckAsOf(record, today));
   return readWithoutClearing(status) ? `${notice}; corrections outstanding.` : `${notice}.`;
 }
 

@@ -98,7 +98,7 @@ const CARD_LABELS: Record<string, [string, string][]> = {
 };
 
 const COST_TABLES_WITH_STATED_KEY_COST_FACTORS: Record<string, string[]> = {
-  "/database-pricing": ["Weaviate", "PlanetScale"],
+  "/database-pricing": ["Weaviate", "PlanetScale", "MongoDB Atlas"],
   "/ci-cd-pricing": ["Semaphore CI"],
 };
 

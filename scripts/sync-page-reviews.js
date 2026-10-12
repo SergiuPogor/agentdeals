@@ -239,6 +239,7 @@ async function main() {
         reviewer: prior?.reviewer ?? null,
         review_outcome: prior?.review_outcome ?? null,
         review_note: prior?.review_note ?? null,
+        partial_recheck: prior?.partial_recheck ?? null,
         reads_index: readsIndex,
         tables_read_index: readableTableText(html) !== readableTableText(withoutIndex),
         ...censusTableFigures(html, withoutEither),

@@ -181,6 +181,11 @@ export interface TableCredit {
   from_records: number;
 }
 
+export interface PartialRecheck {
+  on: string;
+  vendors: string[];
+}
+
 export interface PageReviewRecord {
   path: string;
   published: string;
@@ -193,6 +198,7 @@ export interface PageReviewRecord {
   reviewer: string | null;
   review_outcome: ReviewOutcome | null;
   review_note: string | null;
+  partial_recheck: PartialRecheck | null;
   reads_index: boolean;
   tables_read_index: boolean;
   table_figures: number;
@@ -264,6 +270,12 @@ function normalizeTableCredits(raw: unknown): TableCredit[] {
   }));
 }
 
+function normalizePartialRecheck(raw: any, published: string): PartialRecheck | null {
+  if (!raw || !isReviewDate(raw.on) || raw.on < published || !Array.isArray(raw.vendors)) return null;
+  const vendors = [...new Set<string>(raw.vendors.filter((s: unknown) => typeof s === "string" && s.trim() !== ""))];
+  return vendors.length > 0 ? { on: raw.on, vendors } : null;
+}
+
 function normalizeRecord(raw: any): PageReviewRecord | null {
   if (!raw || typeof raw.path !== "string" || !raw.path.startsWith("/")) return null;
   if (!isReviewDate(raw.published)) return null;
@@ -281,6 +293,7 @@ function normalizeRecord(raw: any): PageReviewRecord | null {
     reviewer: typeof raw.reviewer === "string" && raw.reviewer ? raw.reviewer : null,
     review_outcome: reviewedAt !== null && REVIEW_OUTCOMES.includes(raw.review_outcome) ? raw.review_outcome : null,
     review_note: reviewedAt !== null && typeof raw.review_note === "string" && raw.review_note.trim() ? raw.review_note.trim() : null,
+    partial_recheck: normalizePartialRecheck(raw.partial_recheck, raw.published),
     reads_index: raw.reads_index === true,
     tables_read_index: raw.tables_read_index === true,
     table_figures: wholeCount(raw.table_figures),
@@ -385,13 +398,24 @@ export function readWithoutClearing(status: ReviewStatus): boolean {
   return status.reviewed_at !== null && status.last_checked === null;
 }
 
-function tailFor(lastChecked: string | null, everRead: boolean): string {
-  if (lastChecked !== null) return `, last checked ${lastChecked}`;
-  return everRead ? "" : ", not re-checked since";
+export function partialRecheckAsOf(record: PageReviewRecord, today: string): PartialRecheck | null {
+  const recheck = record.partial_recheck ?? null;
+  return recheck !== null && recheck.on <= today ? recheck : null;
 }
 
-export function checkedTail(status: ReviewStatus): string {
-  return tailFor(status.last_checked, status.reviewed_at !== null);
+function partialRecheckTail(recheck: PartialRecheck): string {
+  const count = recheck.vendors.length;
+  return `; ${count} ${count === 1 ? "service" : "services"} re-checked ${recheck.on}`;
+}
+
+function tailFor(lastChecked: string | null, everRead: boolean, recheck: PartialRecheck | null = null): string {
+  if (lastChecked !== null) return `, last checked ${lastChecked}`;
+  if (everRead) return "";
+  return recheck === null ? ", not re-checked since" : partialRecheckTail(recheck);
+}
+
+export function checkedTail(status: ReviewStatus, recheck: PartialRecheck | null = null): string {
+  return tailFor(status.last_checked, status.reviewed_at !== null, recheck);
 }
 
 export function freshnessSegmentFor(record: PageReviewRecord | null, today: string): string {
@@ -477,18 +501,22 @@ function scopedCitation(census: TableFigureCensus, indexSize: number): string {
 
 const COMPILED_PREFIX = "Figures compiled";
 
-export function compiledNotice(compiledOn: string, lastChecked: string | null = null): string {
-  return `${COMPILED_PREFIX} ${compiledOn}${tailFor(lastChecked, false)}`;
+export function compiledNotice(
+  compiledOn: string,
+  lastChecked: string | null = null,
+  recheck: PartialRecheck | null = null,
+): string {
+  return `${COMPILED_PREFIX} ${compiledOn}${tailFor(lastChecked, false, recheck)}`;
 }
 
-export function compiledNoticeFor(record: PageReviewRecord, status: ReviewStatus): string {
-  return `${COMPILED_PREFIX} ${record.published}${checkedTail(status)}`;
+export function compiledNoticeFor(record: PageReviewRecord, status: ReviewStatus, today: string): string {
+  return `${COMPILED_PREFIX} ${record.published}${checkedTail(status, partialRecheckAsOf(record, today))}`;
 }
 
 export function dataProvenanceFor(record: PageReviewRecord | null, indexSize: number, today: string): string {
   if (!record) return "";
   if (everyFigureComesFromOurRecords(record)) return recordsCitation(indexSize);
-  const compiled = compiledNoticeFor(record, reviewStatus(record, today));
+  const compiled = compiledNoticeFor(record, reviewStatus(record, today), today);
   if (noFigureComesFromOurRecords(record)) return compiled;
   return compiled + SEPARATOR + scopedCitation(record, indexSize);
 }
@@ -509,7 +537,7 @@ export function pageFigureSource(pagePath: string, indexSize: number): string {
 
 export function compiledClause(record: PageReviewRecord | null, today: string): string {
   if (!record) return "";
-  return `Compiled ${record.published}${checkedTail(reviewStatus(record, today))}`;
+  return `Compiled ${record.published}${checkedTail(reviewStatus(record, today), partialRecheckAsOf(record, today))}`;
 }
 
 export function pageCompiledClause(pagePath: string, today = utcToday()): string {
