@@ -3961,7 +3961,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/airtable": {
-      "hash": "d4777d8057f4554b",
+      "hash": "4197538f7fd6e66d",
       "changed": "2026-10-12"
     },
     "/vendor/airtop": {
@@ -4079,7 +4079,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/apify": {
-      "hash": "2687f57a95e0433e",
+      "hash": "08dc78775a960b3d",
       "changed": "2026-10-12"
     },
     "/vendor/apilayer": {
@@ -4095,7 +4095,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/apollo-graphos": {
-      "hash": "55fcc0e2c87f784c",
+      "hash": "42ecbdb3b6a6504b",
       "changed": "2026-10-12"
     },
     "/vendor/appcircle": {
@@ -4103,7 +4103,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/appetize": {
-      "hash": "ceac261d33651967",
+      "hash": "f7434a3dd20141b1",
       "changed": "2026-10-12"
     },
     "/vendor/appfit": {
@@ -4657,7 +4657,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/cirun-io": {
-      "hash": "4b212bf355ddb5b2",
+      "hash": "e54ca91eff06355b",
       "changed": "2026-10-12"
     },
     "/vendor/clair": {
@@ -5374,7 +5374,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/duo-com": {
-      "hash": "210e0ccdccf8e10f",
+      "hash": "0e17d179a43c0c9c",
       "changed": "2026-10-12"
     },
     "/vendor/duolingo": {
@@ -5549,7 +5549,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/feathery": {
-      "hash": "b1587b1adea9eebe",
+      "hash": "9685eee4d4bba7b1",
       "changed": "2026-10-12"
     },
     "/vendor/feedback-fish": {
@@ -5577,7 +5577,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/filebase": {
-      "hash": "5d22356e186eae61",
+      "hash": "64ea486f8313ddee",
       "changed": "2026-10-12"
     },
     "/vendor/filess-io": {
@@ -5763,7 +5763,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/fusionauth": {
-      "hash": "d7dac6ddbcc6bca7",
+      "hash": "b40e5bb460c26ac6",
       "changed": "2026-10-12"
     },
     "/vendor/fxratesapi": {
@@ -6018,7 +6018,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/google-meet": {
-      "hash": "572ef028d5626ead",
+      "hash": "a0515cf9515212c2",
       "changed": "2026-10-12"
     },
     "/vendor/google-photos": {
@@ -6292,7 +6292,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/icloud": {
-      "hash": "4526c7123a37abf0",
+      "hash": "9c4292d43a046d91",
       "changed": "2026-10-12"
     },
     "/vendor/icon-horse": {
@@ -6320,7 +6320,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/image-charts-com": {
-      "hash": "1373651ca5588b9d",
+      "hash": "c89963f453d0198e",
       "changed": "2026-10-12"
     },
     "/vendor/imageengine": {
@@ -6396,7 +6396,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/installonair": {
-      "hash": "b7583d3fb579027b",
+      "hash": "f5e1816a5bbedfe4",
       "changed": "2026-10-12"
     },
     "/vendor/instatus": {
@@ -6959,7 +6959,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/mapbox": {
-      "hash": "4412cc1291860600",
+      "hash": "d0259dcd5f30344a",
       "changed": "2026-10-12"
     },
     "/vendor/maps-stamen-com": {
@@ -6971,7 +6971,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/market-data-api": {
-      "hash": "e97f3c609a2971e0",
+      "hash": "443d024fa9c57f21",
       "changed": "2026-10-12"
     },
     "/vendor/marscode": {
@@ -7556,7 +7556,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/pdf-api-io": {
-      "hash": "c55cca4c28eb1042",
+      "hash": "ffad51e8193f9a32",
       "changed": "2026-10-12"
     },
     "/vendor/pdfbolt": {
@@ -7564,7 +7564,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/pdfendpoint-com": {
-      "hash": "02d0607d6e1f04d8",
+      "hash": "081c1546cb22e1ad",
       "changed": "2026-10-12"
     },
     "/vendor/pdfmonkey": {
@@ -7947,7 +7947,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/remote-for-startups": {
-      "hash": "7d11960a4cb57d26",
+      "hash": "bbeb714b8160d5a0",
       "changed": "2026-10-12"
     },
     "/vendor/renamer-ai": {
@@ -7976,7 +7976,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/repoforge": {
-      "hash": "c20c703c625a419d",
+      "hash": "932a1650d96c409b",
       "changed": "2026-10-12"
     },
     "/vendor/repohistory": {
@@ -8000,7 +8000,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/resend": {
-      "hash": "1228c99c77284277",
+      "hash": "6b5bf4f79d801966",
       "changed": "2026-10-12"
     },
     "/vendor/resizeappicon-com": {
@@ -8097,7 +8097,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/sauce-labs": {
-      "hash": "4a131d331c6e16a5",
+      "hash": "2e57c7538b37cc63",
       "changed": "2026-10-12"
     },
     "/vendor/savannah-gnu-org": {
@@ -8196,7 +8196,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/semaphore-ci": {
-      "hash": "c63f4344672e23fb",
+      "hash": "8ab711df5af92394",
       "changed": "2026-10-12"
     },
     "/vendor/semaphr": {
@@ -8211,7 +8211,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/sendbird": {
-      "hash": "f9aacbbea2902bb8",
+      "hash": "18a4e687c9fa62c9",
       "changed": "2026-10-12"
     },
     "/vendor/sendpulse": {
@@ -9098,7 +9098,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/uxtweak-com": {
-      "hash": "1b9d4fa049488d78",
+      "hash": "29934158e0b33b3b",
       "changed": "2026-10-12"
     },
     "/vendor/v0-dev": {
@@ -9446,7 +9446,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/zenscrape": {
-      "hash": "4fc0a908935ceb05",
+      "hash": "5424227a5e91a584",
       "changed": "2026-10-12"
     },
     "/vendor/zep": {

@@ -381,6 +381,13 @@ export function whereOurTermsCameFromClause(provenance: TermsProvenance, readOn:
   return HOW_A_PROVENANCE_IS_STATED[provenance.read](provenance, readOn);
 }
 
+export function readRestatedTheTermsWePublish(outcome: string | null, settled: SettledRead | null): boolean {
+  return outcome === OUTCOME_CONTRADICTING_WHAT_WE_STORE && settled?.settlement === "restated_the_terms_we_publish";
+}
+
+export function readFoundTheTermsWePublishedNote(read: string): string {
+  return `The day we last read the vendor's page. Our last read of it, on ${read}, found the terms we published that day.`;
+}
 
 export function noConfirmationNote(
   read: string,
@@ -389,6 +396,7 @@ export function noConfirmationNote(
   settled: SettledRead | null,
   restatedFrom: string | null = null,
 ): string {
+  if (!restatedFrom && readRestatedTheTermsWePublish(outcome, settled)) return readFoundTheTermsWePublishedNote(read);
   const found = whatTheLastReadFound(outcome, settled);
   const reading = restatedFrom
     ? theReadOurTermsCameFrom(read, restatedFrom)
