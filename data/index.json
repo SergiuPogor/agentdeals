@@ -452,7 +452,15 @@
         "text": "Free $ 0 per month Perfect for getting started and deploying small apps on Railway Start with a 30-day free trial with $5 credits, then $1 per month Up to 1 vCPU / 0.5 GB RAM per service 0.5 GB of volume storage Community support Deploy a new project No credit card required",
         "url": "https://railway.com/pricing",
         "read_on": "2026-10-06"
-      }
+      },
+      "conditions": [
+        {
+          "text": "After the 30-day trial, the Free plan allows 1 project, 3 services per project and no custom domains. Cron jobs are available during the trial only.",
+          "quote": "Services per project: 5 during trial, then 3. Custom domains: 1 trial, then 0. Cron jobs per project: Free Trial only.",
+          "url": "https://railway.com/pricing",
+          "read_on": "2026-10-12"
+        }
+      ]
     },
     {
       "vendor": "Fly.io",
