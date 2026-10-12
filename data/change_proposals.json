@@ -1,5 +1,6 @@
 {
-  "proposals": [
+  "proposals": [],
+  "dropped": [
     {
       "proposal_id": "2026-10-12/taskade-com/new_tier",
       "proposed_on": "2026-10-12",
@@ -23,8 +24,9 @@
           "url": "https://www.taskade.com/",
           "refused": "reading_answers_for_something_else"
         }
-      ]
+      ],
+      "dropped_on": "2026-10-12",
+      "drop_reason": "Misreading: the reading is of taskade.com's homepage, which promotes Taskade Genesis and lists no plans. taskade.com/pricing, read 2026-10-12, still shows the Free plan: $0 a month, free forever, 2 users, no monthly AI credits."
     }
-  ],
-  "dropped": []
+  ]
 }
