@@ -74,6 +74,12 @@
           "quote": "Hobby teams get 10GB of Deployment Storage. Every deployment you keep uses some of it, and going over the limit can block you from deploying until you free some up.",
           "url": "https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "After 30 days, Vercel deletes a Hobby project's old deployments except its 3 most recent production deployments, its 3 most recent deployments of any type and its current production deployment. A team over its 10 GB of Deployment Storage loses those other deployments immediately.",
+          "quote": "Each Hobby project now keeps its 3 most recent production deployments, plus its 3 most recent deployments of any type, regardless of age.",
+          "url": "https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage",
+          "read_on": "2026-10-12"
         }
       ]
     },

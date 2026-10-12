@@ -814,15 +814,15 @@
       "changed": "2026-10-11"
     },
     "/aws-app-runner-migration": {
-      "hash": "9dfa56c81b440a59",
+      "hash": "c503352ddab06eaf",
       "changed": "2026-10-12"
     },
     "/aws-free-tier-2026": {
-      "hash": "d25010685233761c",
+      "hash": "524450dcb35844ca",
       "changed": "2026-10-12"
     },
     "/azure-free-tier-2026": {
-      "hash": "f7629a7bb868fd1b",
+      "hash": "3413d686acb99c71",
       "changed": "2026-10-12"
     },
     "/backblaze-b2-vs-cloudflare-r2": {
@@ -1129,7 +1129,7 @@
       "changed": "2026-10-11"
     },
     "/category/cloud-hosting": {
-      "hash": "545a922ac46b6f9f",
+      "hash": "d5e9649e1a48692a",
       "changed": "2026-10-12"
     },
     "/category/cloud-iaas": {
@@ -1352,8 +1352,8 @@
       "changed": "2026-10-12"
     },
     "/cloudflare-pages-vs-vercel": {
-      "hash": "fd2b74151cf819f5",
-      "changed": "2026-10-11"
+      "hash": "22e0f69e70016cc8",
+      "changed": "2026-10-12"
     },
     "/cloudinary-vs-imagekit": {
       "hash": "0f782993cc3f8867",
@@ -1648,8 +1648,8 @@
       "changed": "2026-10-12"
     },
     "/compare/cloudflare-pages-vs-vercel": {
-      "hash": "0a2f6f1a92ee5d59",
-      "changed": "2026-10-11"
+      "hash": "314c55d4bacdb98c",
+      "changed": "2026-10-12"
     },
     "/compare/cloudflare-warp-vs-proton-vpn": {
       "hash": "67f64b986cefe53b",
@@ -1960,8 +1960,8 @@
       "changed": "2026-10-11"
     },
     "/compare/firebase-vs-vercel": {
-      "hash": "039b89977e20ea98",
-      "changed": "2026-10-11"
+      "hash": "cbbf1defebfee5a3",
+      "changed": "2026-10-12"
     },
     "/compare/fivetran-activations-vs-heap-io": {
       "hash": "8a5ef08a971c97ce",
@@ -2408,7 +2408,7 @@
       "changed": "2026-10-12"
     },
     "/compare/netlify-vs-vercel": {
-      "hash": "4d7922e5bc2a8981",
+      "hash": "e830be85ed37335e",
       "changed": "2026-10-12"
     },
     "/compare/nextra-vs-sphinx": {
@@ -2540,7 +2540,7 @@
       "changed": "2026-10-11"
     },
     "/compare/render-vs-vercel": {
-      "hash": "348725e2aa2ee6d2",
+      "hash": "4e1d922b0d8bf0b7",
       "changed": "2026-10-12"
     },
     "/compare/resend-vs-mail-tester-com": {
@@ -3106,7 +3106,7 @@
       "changed": "2026-10-12"
     },
     "/digitalocean-free-tier-2026": {
-      "hash": "4c353211074a79ce",
+      "hash": "3ea946f77902b440",
       "changed": "2026-10-12"
     },
     "/disclosure": {
@@ -3130,7 +3130,7 @@
       "changed": "2026-10-11"
     },
     "/estimate": {
-      "hash": "16ea93d978ebb5b2",
+      "hash": "96d6bce76c8f8e71",
       "changed": "2026-10-12"
     },
     "/events": {
@@ -3221,7 +3221,7 @@
       "changed": "2026-10-11"
     },
     "/gcp-free-tier-2026": {
-      "hash": "110c6fff57953f6f",
+      "hash": "5ce39e73079ac937",
       "changed": "2026-10-12"
     },
     "/gemini-api-pricing-2026": {
@@ -3237,7 +3237,7 @@
       "changed": "2026-10-11"
     },
     "/google-developer-program-2026": {
-      "hash": "028a38852f2effd0",
+      "hash": "2d801da01eb08180",
       "changed": "2026-10-12"
     },
     "/groq-vs-hugging-face": {
@@ -3277,19 +3277,19 @@
       "changed": "2026-10-12"
     },
     "/hetzner-pricing-2026": {
-      "hash": "0cb856bc606f9165",
+      "hash": "b0d640586902b790",
       "changed": "2026-10-12"
     },
     "/hosting-alternatives": {
-      "hash": "6d70a330a7d72ada",
+      "hash": "9791789dbcc2f471",
       "changed": "2026-10-12"
     },
     "/hosting-free-tier-comparison-2026": {
-      "hash": "34c2dee2762c3d14",
+      "hash": "94aed786c38790fa",
       "changed": "2026-10-12"
     },
     "/hosting-pricing": {
-      "hash": "9ff56f3121e4d64b",
+      "hash": "e23a8736c432f1b0",
       "changed": "2026-10-12"
     },
     "/ide-code-editors-alternatives": {
@@ -3376,7 +3376,7 @@
       "changed": "2026-10-12"
     },
     "/railway-vs-render": {
-      "hash": "4234d75b7b32bf76",
+      "hash": "ef3f4f85b6e100b8",
       "changed": "2026-10-12"
     },
     "/redis-alternatives": {
@@ -3551,7 +3551,7 @@
       "changed": "2026-10-11"
     },
     "/serverless-free-tier-comparison-2026": {
-      "hash": "6586784d8d71fcb3",
+      "hash": "2ef5e80bd8dd23ce",
       "changed": "2026-10-12"
     },
     "/setup": {
@@ -3566,7 +3566,7 @@
       "changed": "2026-10-12"
     },
     "/stack-check": {
-      "hash": "ae4569f22e0b06d3",
+      "hash": "cf7ec6f5ebba1504",
       "changed": "2026-10-12"
     },
     "/stacks": {
@@ -3606,8 +3606,8 @@
       "changed": "2026-10-12"
     },
     "/storage-comparison-2026": {
-      "hash": "00e83dd7504abcb2",
-      "changed": "2026-10-11"
+      "hash": "2be6b36809cb2823",
+      "changed": "2026-10-12"
     },
     "/supabase-vs-firebase": {
       "hash": "d9950d99d444867e",
@@ -9587,7 +9587,7 @@
       "changed": "2026-10-12"
     },
     "/vercel-vs-netlify": {
-      "hash": "7fba1a7a96654feb",
+      "hash": "b3367e71a375f45f",
       "changed": "2026-10-12"
     },
     "/whatsapp-business-api-pricing-2026": {
