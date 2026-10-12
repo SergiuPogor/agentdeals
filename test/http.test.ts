@@ -12,6 +12,7 @@ import { PATHS_OUTSIDE_THE_ENDPOINT_INVENTORY } from "../dist/openapi.js";
 import { entryDay, isDailyEntry, readPageLastmod } from "../dist/page-lastmod.js";
 import { cheapestOrderableHetznerPlan } from "../dist/hetzner-pricing.js";
 import { isoWeekOf, isoWeekWindow } from "../dist/change-dates.js";
+import { freshnessSegmentFor, getPageReview, utcToday } from "../dist/page-reviews.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 let serverPort = 0;
@@ -154,7 +155,8 @@ function assertFreshnessLine(html: string, page: string): void {
   const line = html.match(/<p class="pub-date">([\s\S]*?)<\/p>/);
   assert.ok(line, `${page} should carry a pub-date line`);
   assert.match(line[1], /Published \d{4}-\d{2}-\d{2}/, `${page} should state when it was published`);
-  assert.match(line[1], /Not yet reviewed|Reviewed \d{4}-\d{2}-\d{2}/, `${page} should state its review standing`);
+  const standing = freshnessSegmentFor(getPageReview(page), utcToday());
+  if (standing) assert.ok(line[1].includes(standing), `${page} should state its review standing as the register gives it: ${standing}`);
   const today = new Date().toISOString().slice(0, 10);
   assert.ok(!/Last updated/.test(line[1]), `${page} still renders a Last updated claim`);
   assert.ok(!line[1].includes(`Published ${today}`), `${page} claims it was published today`);

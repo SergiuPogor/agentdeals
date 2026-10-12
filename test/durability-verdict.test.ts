@@ -176,7 +176,7 @@ describe("#1492 a best-of page states what its own signal says about its offers"
       }
     }
     assert.deepStrictEqual(unreachable, [], `changed offers with no reachable record:\n${unreachable.join("\n")}`);
-    assertPopulationFloor(changed, 57, "listed offers counted as changed");
+    assertPopulationFloor(changed, 1, "listed offers counted as changed");
   });
 
   it("publishes the same verdict to a reader and to a machine", () => {

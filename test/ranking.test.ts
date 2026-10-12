@@ -389,7 +389,7 @@ describe("stale_verification says something true about who is at fault", () => {
 
   it("with a failure record it states the attempt count and the last success", () => {
     const ledger = new Map([
-      ["acme", { vendor: "Acme", url: "https://example.com", consecutive_failures: 14, last_success: "2026-03-01", last_attempt: "2026-08-24", last_error: "HTTP 403" }],
+      ["Acme|https://example.com/pricing", { vendor: "Acme", url: "https://example.com/pricing", consecutive_failures: 14, last_success: "2026-03-01", last_attempt: "2026-08-24", last_error: "HTTP 403" }],
     ]);
     const r = rankOffers([offer({ verifiedDate: "2026-04-01" })], {
       queryKey: "t",
@@ -410,7 +410,7 @@ describe("stale_verification says something true about who is at fault", () => {
     const withLedger = evaluate(offer({ verifiedDate: "2026-04-01" }), {
       date: TODAY,
       changesForVendor: [],
-      verificationLedger: new Map([["acme", { vendor: "Acme", url: "u", consecutive_failures: 3, last_success: null, last_attempt: "2026-08-24", last_error: "timeout" }]]),
+      verificationLedger: new Map([["Acme|https://example.com/pricing", { vendor: "Acme", url: "https://example.com/pricing", consecutive_failures: 3, last_success: null, last_attempt: "2026-08-24", last_error: "timeout" }]]),
     });
     assert.strictEqual(withoutLedger.demerit_total, withLedger.demerit_total);
   });

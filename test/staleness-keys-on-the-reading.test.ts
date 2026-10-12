@@ -1,5 +1,8 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import path from "node:path";
 import { loadOffers, enrichOffers, loadDealChanges } from "../dist/data.js";
 import {
   DEMERIT_TABLE,
@@ -12,7 +15,7 @@ import {
   type VerificationLedger,
 } from "../dist/ranking.js";
 import { lastReadingFor, WHAT_THE_LAST_READ_FOUND, type LastReading } from "../dist/read-date.js";
-import { loadVerificationState, verificationLedger } from "../dist/verification-state.js";
+import { loadVerificationState, resetVerificationStateCache, verificationLedger } from "../dist/verification-state.js";
 import { howWeSettledTheRead } from "../dist/change-refusal.js";
 import { storedRefusalsFor } from "../dist/refusal-store.js";
 import type { Offer } from "../dist/types.js";
@@ -69,10 +72,13 @@ const COULD_NOT_READ = reading({
   last_error: "HTTP 403",
 });
 
+const CONSTRUCTED_PAGE = "https://example.invalid/pricing";
+const CONSTRUCTED_OTHER_PAGE = "https://example.invalid/cdn";
+
 const FAILING_LEDGER: VerificationLedger = new Map([
-  ["constructed", {
+  [`Constructed|${CONSTRUCTED_PAGE}`, {
     vendor: "Constructed",
-    url: "https://example.invalid/pricing",
+    url: CONSTRUCTED_PAGE,
     consecutive_failures: 4,
     last_success: null,
     last_attempt: shift(DATE, -3),
@@ -80,8 +86,8 @@ const FAILING_LEDGER: VerificationLedger = new Map([
   }],
 ]);
 
-function record(verifiedDate: string): Pick<Offer, "vendor" | "verifiedDate"> {
-  return { vendor: "Constructed", verifiedDate };
+function record(verifiedDate: string): Pick<Offer, "vendor" | "url" | "verifiedDate"> {
+  return { vendor: "Constructed", url: CONSTRUCTED_PAGE, verifiedDate };
 }
 
 const FRESH = shift(DATE, -10);
@@ -153,6 +159,49 @@ describe("the staleness demerit keys on the reading, not on the catalogue date",
   });
 });
 
+describe("failed re-checks count against the page they were recorded on", () => {
+  function stateRecord(url: string, outcome: string, consecutive_failures: number) {
+    return {
+      vendor: "Constructed", url, last_attempt_at: shift(DATE, -3), last_outcome: outcome,
+      last_error: consecutive_failures > 0 ? "HTTP 403" : null, failure_category: null,
+      consecutive_failures, last_success: null, quarantined_since: null,
+    };
+  }
+
+  function ledgerBuiltFrom(records: object[]): VerificationLedger {
+    const dir = mkdtempSync(path.join(tmpdir(), "verification-state-"));
+    const file = path.join(dir, "verification_state.json");
+    writeFileSync(file, JSON.stringify({ records }));
+    const previous = process.env.AGENTDEALS_VERIFICATION_STATE_PATH;
+    process.env.AGENTDEALS_VERIFICATION_STATE_PATH = file;
+    resetVerificationStateCache();
+    try {
+      return verificationLedger();
+    } finally {
+      if (previous === undefined) delete process.env.AGENTDEALS_VERIFICATION_STATE_PATH;
+      else process.env.AGENTDEALS_VERIFICATION_STATE_PATH = previous;
+      resetVerificationStateCache();
+      rmSync(dir, { recursive: true, force: true });
+    }
+  }
+
+  const twoPagesOfOneVendor = () => ledgerBuiltFrom([
+    stateRecord(CONSTRUCTED_OTHER_PAGE, "fetch_failed", 4),
+    stateRecord(CONSTRUCTED_PAGE, "changed", 0),
+  ]);
+
+  it("leaves a record whose own page read without failing to that reading, though another page of the vendor failed", () => {
+    assert.equal(doubtFor(PAST_THE_WINDOW, READ_AND_DISAGREED, twoPagesOfOneVendor())?.basis, "unsettled");
+  });
+
+  it("gives the page that failed its own failed attempts", () => {
+    const otherPage = { ...record(PAST_THE_WINDOW), url: CONSTRUCTED_OTHER_PAGE };
+    const doubt = verificationDoubt(otherPage, DATE, twoPagesOfOneVendor(), null);
+    assert.equal(doubt?.basis, "could_not_read");
+    assert.equal(doubt?.basis === "could_not_read" && doubt.attempts.consecutive_failures, 4);
+  });
+});
+
 describe("what the demerit publishes is what that reading found", () => {
   function demeritFor(
     verifiedDate: string,
@@ -161,7 +210,7 @@ describe("what the demerit publishes is what that reading found", () => {
   ): Demerit {
     const offer = {
       vendor: "Constructed",
-      url: "https://example.invalid/pricing",
+      url: CONSTRUCTED_PAGE,
       category: "Test",
       description: "A constructed record",
       tier: "Free",
@@ -216,7 +265,7 @@ describe("what the demerit publishes is what that reading found", () => {
     const stale = demeritFor(FRESH, ownPage, FAILING_LEDGER);
     assert.match(stale.reason, /2 consecutive re-check attempts have failed/);
     assert.ok(stale.reason.includes(ownPage.date));
-    assert.ok(!stale.reason.includes(FAILING_LEDGER.get("constructed")!.last_attempt));
+    assert.ok(!stale.reason.includes(FAILING_LEDGER.get(`Constructed|${CONSTRUCTED_PAGE}`)!.last_attempt));
   });
 
   it("dates the attempts to the read that failed, not to the confirmation it lost", () => {
