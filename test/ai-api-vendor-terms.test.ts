@@ -113,7 +113,7 @@ const RULES: Rule[] = [
   { vendor: "Together AI", names: /Together(?: AI|\.ai)/g, notAfter: /Fireworks|SiliconFlow/g, within: 200, retired: [/\$1 (?:free )?credits?/] },
   {
     vendor: "Hugging Face", names: /Hugging Face/g, within: 200,
-    retired: [/unlimited (?:model )?hosting/, /800K\+/, /200\+ (?:inference )?providers/, /AWS, GCP/, /Inference Pro(?!viders)/, /\$0\.06\/hr/, /free inference API access/, /Free \(inference API\)/, /models locally with their inference API/],
+    retired: [/unlimited (?:model )?hosting/, /800K\+/, /200\+ (?:inference )?providers/, /AWS, GCP/, /Inference Pro(?!viders)/, /\$0\.06\/hr/, /free inference API access/, /Free \(inference API\)/, /models locally with their inference API/, /\$0\.10(?:\/mo(?:nth)?\b| a month)/],
   },
   {
     vendor: "NVIDIA NIM", names: /NVIDIA NIM|\bNIM\b|build\.nvidia\.com/g, within: 200,
@@ -235,7 +235,7 @@ const STATED: Record<string, string[]> = {
     "OpenRouter — 25+ free models through one OpenAI-compatible API; free models are capped at 20 requests a minute and 50 a day, or 1,000 a day once you have bought at least $10 of credits.",
     "Want to test hosted models before paying?",
     "NVIDIA NIM — free endpoints on build.nvidia.com for models marked Free Endpoint, such as Kimi K3, DeepSeek V4.1 Flash and NVIDIA Nemotron, at up to 40 requests per minute; NVIDIA's API Trial Terms allow testing and evaluation only, not production. Baseten — new workspaces receive credits for testing and deployment; Baseten does not state the amount.",
-    "Or download Hugging Face models and run them locally; Hugging Face's hosted Inference Providers API serves 200+ models, with $0.10 a month of credits for free users (subject to change).",
+    "Or download Hugging Face models and run them locally; Hugging Face's hosted Inference Providers API serves 200+ models; since 2026-10-07, free accounts buy credits to call it, or upgrade to PRO ($9/month, $2.00 a month of credits).",
   ],
   "/gemini-api-pricing-2026": [
     "OpenRouter (25+ free models).",
@@ -249,14 +249,18 @@ const STATED: Record<string, string[]> = {
   ],
   "/ai-ml-alternatives": [
     "25+ free models, 20 RPM, 50 req/day",
-    "$0.10/month inference credits, 100GB private storage",
+    "100GB private storage; no included inference credits (buy credits or PRO, $9/month)",
     "Model hub; 200+ models via Inference Providers",
     "OpenRouter for access to 25+ free models through one API.",
-    "Hugging Face — free accounts get 100GB of private storage and best-effort public storage; Inference Providers serves 200+ models, with $0.10 a month of credits for free users. Replicate for free runs on curated models. Baseten — new workspaces receive credits for testing and deployment; Baseten does not state the amount.",
+    "Hugging Face — free accounts get 100GB of private storage and best-effort public storage; Inference Providers serves 200+ models, and since 2026-10-07 free accounts buy credits to call it, or upgrade to PRO ($9/month, $2.00 a month of credits). Replicate for free runs on curated models. Baseten — new workspaces receive credits for testing and deployment; Baseten does not state the amount.",
+  ],
+  "/groq-vs-hugging-face": [
+    "Since 2026-10-07, Hugging Face's free accounts include no inference credits: free users buy credits to call its 200+ models through Inference Providers, or upgrade to PRO ($9/month, $2.00 a month of credits).",
   ],
   "/free-ai-stack": [
     "OpenRouter (25+ free models) extends the free runway.",
-    "Free users get $0.10 a month of Inference Providers credits — production apps can use Inference Endpoints (dedicated, from $0.033/hour).",
+    "The largest open-source model hub, free with 100GB of private storage — deploy models, share datasets, and collaborate on ML projects. Its Inference Providers API serves 200+ models; since 2026-10-07, free accounts buy credits to call it, or upgrade to PRO ($9/month, $2.00 a month of credits).",
+    "When you need dedicated endpoints or higher throughput: production apps can use Inference Endpoints (dedicated, from $0.033/hour).",
   ],
   "/openai-assistants-migration-2026": [
     "Web search is $10.00 per 1,000 calls, with retrieved content billed as input tokens at the model’s own rate, or $25.00 per 1,000 calls for the preview tool on non-reasoning models, whose search content tokens are free.",
