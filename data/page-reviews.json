@@ -60,8 +60,8 @@
       "review_note": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 19,
-      "table_figures_from_records": 19,
+      "table_figures": 20,
+      "table_figures_from_records": 20,
       "tables": [
         {
           "label": "RAG Agent",
@@ -75,8 +75,8 @@
         },
         {
           "label": "Data Pipeline Agent",
-          "figures": 6,
-          "from_records": 6
+          "figures": 7,
+          "from_records": 7
         },
         {
           "label": "Chat / Customer Agent",
@@ -522,8 +522,8 @@
       "review_note": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 55,
-      "table_figures_from_records": 15,
+      "table_figures": 56,
+      "table_figures_from_records": 16,
       "tables": [
         {
           "label": "Always Free Services",
@@ -547,8 +547,8 @@
         },
         {
           "label": "Recent Azure Changes",
-          "figures": 1,
-          "from_records": 1
+          "figures": 2,
+          "from_records": 2
         }
       ],
       "reads_changes": true,
@@ -3052,8 +3052,8 @@
       "review_note": "The corrections from https://github.com/robhunter/agentdeals/issues/2152 are live. Checked on production on 2026-10-01: 52 programme fields, 23 summary, card, strategy and FAQ strings (the FAQ also in its JSON-LD), Recent Changes against 10 named records, and a census of 2,596 routes for the withdrawn claims.",
       "reads_index": true,
       "tables_read_index": false,
-      "table_figures": 89,
-      "table_figures_from_records": 38,
+      "table_figures": 90,
+      "table_figures_from_records": 39,
       "tables": [
         {
           "label": "Comparison Table",
@@ -3062,8 +3062,8 @@
         },
         {
           "label": "Recent Changes",
-          "figures": 38,
-          "from_records": 38
+          "figures": 39,
+          "from_records": 39
         }
       ],
       "reads_changes": true,
