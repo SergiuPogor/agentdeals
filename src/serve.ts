@@ -4373,7 +4373,7 @@ const VS_PAGES: VsPageConfig[] = [
     verdict: "Groq offers ultra-fast LLM inference on custom LPU hardware with free API access. Hugging Face is the ML model hub with inference credits and a vast open-source ecosystem. Groq is for speed-optimized LLM inference; Hugging Face is for model discovery and flexible inference.",
     keyDifferences: `<ul>
       <li><strong>Focus:</strong> Groq is purely an LLM inference API optimized for speed (custom LPU hardware). Hugging Face is a comprehensive ML platform (model hub, datasets, Spaces, inference API).</li>
-      <li><strong>Free tier:</strong> Groq's free plan allows 30 RPM, 1,000 requests and 200K tokens a day per model. Hugging Face offers $0.10/month in free inference credits with access to 200+ models.</li>
+      <li><strong>Free tier:</strong> Groq's free plan allows 30 RPM, 1,000 requests and 200K tokens a day per model. Since 2026-10-07, Hugging Face's free accounts include no inference credits: free users buy credits to call its 200+ models through Inference Providers, or upgrade to PRO ($9/month, $2.00 a month of credits).</li>
       <li><strong>Speed:</strong> Groq's LPU hardware delivers industry-leading token generation speed — often 5-10x faster than GPU-based inference. Hugging Face inference speed varies by provider.</li>
       <li><strong>Model selection:</strong> Hugging Face provides access to 200+ models across providers. Groq serves a short list of open-weight models on its hardware; the free plan covers gpt-oss-120b, gpt-oss-20b and Qwen3.8 27B.</li>
     </ul>`,
@@ -13511,7 +13511,7 @@ ${buildCards(other)}
       <tr>
         <td style="font-weight:600"><a href="/vendor/hugging-face" style="color:var(--text)">Hugging Face</a></td>
         <td>ML Platform</td>
-        <td>$0.10/month inference credits, 100GB private storage</td>
+        <td>100GB private storage; no included inference credits (buy credits or PRO, $9/month)</td>
         <td>Yes</td>
         <td>Model hub; 200+ models via Inference Providers</td>
       </tr>
@@ -13567,7 +13567,7 @@ ${buildCards(other)}
       <dd><a href="/vendor/kaggle">Kaggle</a> \u2014 a weekly quota of 30 GPU hours (one P100 or two T4s) and up to 20 TPU hours, at no charge. <a href="/vendor/paperspace">Paperspace</a> for free Notebook machines in private workspaces (Free GPU M4000 or Free CPU C4, shut down after at most 6 hours). <a href="/vendor/vast-ai">Vast.ai</a> startup program for $2,500 in GPU credits.</dd>
 
       <dt>Want to host or deploy ML models?</dt>
-      <dd><a href="/vendor/hugging-face">Hugging Face</a> \u2014 free accounts get 100GB of private storage and best-effort public storage; Inference Providers serves 200+ models, with $0.10 a month of credits for free users. <a href="/vendor/replicate">Replicate</a> for free runs on curated models. <a href="/vendor/baseten">Baseten</a> \u2014 new workspaces receive credits for testing and deployment; Baseten does not state the amount.</dd>
+      <dd><a href="/vendor/hugging-face">Hugging Face</a> \u2014 free accounts get 100GB of private storage and best-effort public storage; Inference Providers serves 200+ models, and since 2026-10-07 free accounts buy credits to call it, or upgrade to PRO ($9/month, $2.00 a month of credits). <a href="/vendor/replicate">Replicate</a> for free runs on curated models. <a href="/vendor/baseten">Baseten</a> \u2014 new workspaces receive credits for testing and deployment; Baseten does not state the amount.</dd>
 
       <dt>Need speech-to-text or computer vision?</dt>
       <dd><a href="/vendor/deepgram">Deepgram</a> \u2014 $200 free credits for speech AI (~43K minutes). <a href="/vendor/assemblyai">AssemblyAI</a> \u2014 $50 credits (~185 hours). <a href="/vendor/roboflow">Roboflow</a> for computer vision, with a free Core plan: 10 credits a month and private projects.</dd>
@@ -15132,7 +15132,7 @@ ${buildCards(aiGateways)}
       <dd><a href="/vendor/nvidia-nim">NVIDIA NIM</a> \u2014 free endpoints on build.nvidia.com for models marked Free Endpoint, such as Kimi K3, DeepSeek V4.1 Flash and NVIDIA Nemotron, at up to 40 requests per minute; NVIDIA's API Trial Terms allow testing and evaluation only, not production. <a href="/vendor/baseten">Baseten</a> \u2014 new workspaces receive credits for testing and deployment; Baseten does not state the amount.</dd>
 
       <dt>Want completely free, self-hosted inference?</dt>
-      <dd><a href="/vendor/ollama-cloud">Ollama</a> \u2014 open source (MIT) and free to run on your own machine; its cloud models are paid with usage credits, and the Free plan includes starter credits. Or download <a href="/vendor/hugging-face">Hugging Face</a> models and run them locally; Hugging Face's hosted Inference Providers API serves 200+ models, with $0.10 a month of credits for free users (subject to change).</dd>
+      <dd><a href="/vendor/ollama-cloud">Ollama</a> \u2014 open source (MIT) and free to run on your own machine; its cloud models are paid with usage credits, and the Free plan includes starter credits. Or download <a href="/vendor/hugging-face">Hugging Face</a> models and run them locally; Hugging Face's hosted Inference Providers API serves 200+ models; since 2026-10-07, free accounts buy credits to call it, or upgrade to PRO ($9/month, $2.00 a month of credits).</dd>
     </dl>
   </div>
 
@@ -16108,9 +16108,9 @@ function buildFreeAiStackPage(): string {
     {
       name: "Model Hosting & Inference",
       icon: "🚀",
-      recommended: { vendor: "Hugging Face", why: "Free inference API with $0.10/month credits and access to 200+ models. The largest open-source model hub — deploy models, share datasets, and collaborate on ML projects." },
+      recommended: { vendor: "Hugging Face", why: "The largest open-source model hub, free with 100GB of private storage — deploy models, share datasets, and collaborate on ML projects. Its Inference Providers API serves 200+ models; since 2026-10-07, free accounts buy credits to call it, or upgrade to PRO ($9/month, $2.00 a month of credits)." },
       alternatives: ["Replicate"],
-      outgrow: "When you need dedicated endpoints or higher throughput. Free users get $0.10 a month of Inference Providers credits — production apps can use Inference Endpoints (dedicated, from $0.033/hour).",
+      outgrow: "When you need dedicated endpoints or higher throughput: production apps can use Inference Endpoints (dedicated, from $0.033/hour).",
       relatedPage: "/ai-ml-alternatives",
     },
     {
@@ -31862,8 +31862,8 @@ function buildLlmApiPricingPage(): string {
       name: "Hugging Face",
       slug: "hugging-face",
       category: "open-source-host",
-      freeTier: "$0.10/mo credits",
-      freeType: "limited",
+      freeTier: "None (buy credits or PRO)",
+      freeType: "none",
     },
     {
       name: "Replicate",
@@ -32258,12 +32258,7 @@ function buildLlmApiPricingPage(): string {
     '  <div class="executive-summary">\n' +
     '    <p><strong>LLM API pricing:</strong> ' + providers.length + ' providers across four categories — frontier labs, inference providers, open-source hosts, and specialized services. OpenAI and Anthropic price their top model identically: GPT-6 Astra and Claude Fable 5.1 are both $10/$50 per M tokens. Gemini 3.8 Flash is $0.75/$3.75 through December 31, 2026 and $1.50/$7.50 after it. Mistral Medium 3.5 is $1.50/$7.50. Google\'s Gemini free tier covers the 3.x Flash and Flash-Lite models; 3.1 Pro Preview is paid-only. DeepSeek\'s deepseek-flash offers 1M context at $0.30/M input at peak and $0.15/M off-peak.' + (freeInferenceLeaders === "" ? '' : ' ' + freeInferenceLeaders) + '</p>\n' +
     '    <p><strong>Key trends:</strong> Inference providers (' + namedAsFree(["groq", "cerebras", "openrouter"]) + ') are commoditizing open-source model access — free tiers with no credit card required. xAI retired Grok 4.1 Fast on 2026-05-15; requests to its model names now go to grok-4.3 at $1.25/M input and $2.50/M output (under 200k prompt tokens). The gap between frontier and open-source quality is narrowing, making the price delta harder to justify for many use cases.</p>\n' +
-    '    <p><strong>This guide covers:</strong> pricing tables, provider breakdowns, free tier analysis, cheapest-per-token rankings, pricing gotchas, recent changes, and options by use case.</p>\n' +
-    '  </div>\n' +
-    '\n' +
-    '  <div class="highlight-box">\n' +
-    '    <h3>Cheapest per Million Tokens</h3>\n' +
-    '    <p><strong>Open-source:</strong> Groq gpt-oss-20b ($0.075/M input) &middot; <strong>Long context (1M):</strong> deepseek-flash ($0.30/$1.20/M at peak)</p>\n' +
+    '    <p><strong>This guide covers:</strong> pricing tables, provider breakdowns, free tier analysis, pricing gotchas, recent changes, and options by use case.</p>\n' +
     '  </div>\n' +
     '\n' +
     '  <div class="highlight-box">\n' +

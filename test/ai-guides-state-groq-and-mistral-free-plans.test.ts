@@ -52,7 +52,6 @@ const STATED: Record<string, string[]> = {
   ],
   "/llm-api-pricing": [
     "Groq's free plan allows 30 RPM, 1,000 requests and 200K tokens a day per model",
-    "Groq gpt-oss-20b ($0.075/M input)",
     "For frontier models specifically, Mistral's Free plan includes monthly API usage; its pricing page listed $10 a month until 2026-10-07, then stopped stating the amount.",
     "Mistral AI — Free plan includes monthly API usage whose amount the pricing page has not stated since 2026-10-07",
     "For open models, SiliconFlow's international site lists gpt-oss-120b at $0.05/$0.45 and DeepSeek-V4.1-Flash at $0.15/$0.60 (per 1M tokens).",
@@ -99,6 +98,9 @@ const WITHDRAWN: Record<string, string[]> = {
     "Frontier model pricing is in freefall",
     "5-10x cheaper",
     "Many apps work well with Llama 3.3 70B",
+    "Cheapest per Million Tokens",
+    "Groq gpt-oss-20b ($0.075/M input)",
+    "cheapest-per-token rankings",
     ...MISTRAL_CREDIT_AS_CURRENT,
   ],
   "/free-ai-stack": ["Cerebras (1M tokens/day) or OpenRouter", "500K tokens/day"],
