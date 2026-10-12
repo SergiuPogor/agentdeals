@@ -3378,7 +3378,7 @@
     {
       "vendor": "Hugging Face",
       "category": "AI / ML",
-      "description": "ML model hub. Free users get $0.10 a month of Inference Providers credits (subject to change); Inference Providers serves 200+ models, and extra usage requires a credits purchase. PRO ($9/month) gets $2.00 a month. Free accounts get 100GB of private storage and best-effort public storage; substantial storage needs PRO, Team or Enterprise.",
+      "description": "ML model hub. Since 2026-10-07, free accounts get no included Inference Providers credits: free users buy credits or upgrade to PRO to call Inference Providers, which serves 200+ models. PRO ($9/month) gets $2.00 a month. Free accounts get 100GB of private storage and best-effort public storage; substantial storage needs PRO, Team or Enterprise.",
       "tier": "Free",
       "url": "https://huggingface.co/docs/inference-providers/pricing",
       "tags": [
@@ -3418,11 +3418,6 @@
           }
         ],
         "reviewed": "2026-09-01"
-      },
-      "free_plan_excerpt": {
-        "text": "Free Users $0.10, subject to change Inference Providers yes (credits purchase required)",
-        "url": "https://huggingface.co/docs/inference-providers/pricing",
-        "read_on": "2026-10-05"
       }
     },
     {

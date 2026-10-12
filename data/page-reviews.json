@@ -1277,13 +1277,13 @@
       "review_note": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 5,
-      "table_figures_from_records": 5,
+      "table_figures": 4,
+      "table_figures_from_records": 4,
       "tables": [
         {
           "label": "Stack Overview",
-          "figures": 5,
-          "from_records": 5
+          "figures": 4,
+          "from_records": 4
         },
         {
           "label": "Open-Source Self-Hosted Alternatives",
@@ -2231,8 +2231,8 @@
       "review_note": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 97,
-      "table_figures_from_records": 96,
+      "table_figures": 96,
+      "table_figures_from_records": 95,
       "tables": [
         {
           "label": "Pricing Comparison Table",
@@ -2241,8 +2241,8 @@
         },
         {
           "label": "What You Actually Get for Free",
-          "figures": 29,
-          "from_records": 28
+          "figures": 28,
+          "from_records": 27
         },
         {
           "label": "Recent Pricing Changes",
