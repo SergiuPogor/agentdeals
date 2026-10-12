@@ -1161,8 +1161,8 @@
       "changed": "2026-10-11"
     },
     "/category/databases": {
-      "hash": "6842660614c3b2b4",
-      "changed": "2026-10-11"
+      "hash": "67257576b21586b4",
+      "changed": "2026-10-12"
     },
     "/category/design": {
       "hash": "04e1336320eb22a4",
@@ -2695,7 +2695,7 @@
       "changed": "2026-10-11"
     },
     "/database-alternatives": {
-      "hash": "7bbdf972e4394c33",
+      "hash": "c6f99d3040b14291",
       "changed": "2026-10-12"
     },
     "/database-free-tier-comparison-2026": {
@@ -3130,8 +3130,8 @@
       "changed": "2026-10-11"
     },
     "/estimate": {
-      "hash": "9b8beb6dd31dd172",
-      "changed": "2026-10-11"
+      "hash": "e90a68b7bfbd7e67",
+      "changed": "2026-10-12"
     },
     "/events": {
       "hash": "10c036e7bfb60e32",
@@ -3309,8 +3309,8 @@
       "changed": "2026-10-11"
     },
     "/mongodb-alternatives": {
-      "hash": "ef3c890eec829531",
-      "changed": "2026-10-11"
+      "hash": "f959b98bf8060a8a",
+      "changed": "2026-10-12"
     },
     "/monitoring-alternatives": {
       "hash": "77420171387eec85",
@@ -3321,12 +3321,12 @@
       "changed": "2026-10-11"
     },
     "/neon-vs-supabase": {
-      "hash": "82f8e66dc5061ca4",
+      "hash": "3e3eaed9185bb3b4",
       "changed": "2026-10-12"
     },
     "/neon-vs-turso": {
-      "hash": "1e05c64174bee1b3",
-      "changed": "2026-10-11"
+      "hash": "02f3148e9ee9d0ce",
+      "changed": "2026-10-12"
     },
     "/netlify-vs-render": {
       "hash": "f25a576a61f14b09",
@@ -3566,7 +3566,7 @@
       "changed": "2026-10-12"
     },
     "/stack-check": {
-      "hash": "65cb92c37d24a7d3",
+      "hash": "32cd02a547b42093",
       "changed": "2026-10-12"
     },
     "/stacks": {
@@ -3590,8 +3590,8 @@
       "changed": "2026-10-11"
     },
     "/stacks/side-project": {
-      "hash": "0a514c5b1fe551d3",
-      "changed": "2026-10-11"
+      "hash": "1b0e4f81c1a9dd9b",
+      "changed": "2026-10-12"
     },
     "/startup-credits": {
       "hash": "b675291a6d1f9b3e",

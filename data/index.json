@@ -1024,7 +1024,7 @@
     {
       "vendor": "Turso",
       "category": "Databases",
-      "description": "Edge SQLite — 100 databases, 5 GB storage, 500M rows read/month, 10M rows written/month free",
+      "description": "Edge SQLite — 100 databases, 5 GB storage, 500M rows read/month, 10M rows written/month free. On 2026-10-02 Turso announced that Supabase is acquiring it. Turso says the service keeps running and that databases, APIs and workflows continue as they do today.",
       "tier": "Free",
       "url": "https://turso.tech/pricing",
       "tags": [
