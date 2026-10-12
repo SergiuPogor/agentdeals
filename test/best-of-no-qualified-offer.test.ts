@@ -5,6 +5,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { assertPopulationFloor } from "./population-floor.ts";
+import { DISCLOSURE_RATIONALE } from "../dist/ranking.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.join(__dirname, "..");
@@ -59,6 +60,14 @@ function tieNote(html: string): string {
   return inner.replace(/<[^>]+>/g, " ").replace(/&mdash;/g, "—").replace(/\s+/g, " ").trim();
 }
 
+function demotedBandOpener(html: string): string {
+  const inner = /<h2>Demoted &mdash; and exactly why<\/h2>\s*<p class="page-meta"[^>]*>([\s\S]*?)<\/p>/.exec(html)?.[1] ?? "";
+  return inner.replace(/<[^>]+>/g, " ").replace(/&mdash;/g, "—").replace(/\s+/g, " ").trim();
+}
+
+const OPENER_WITH_NO_LIST_ABOVE = `These offers reach this page. Each one names the recorded fact behind it. ${DISCLOSURE_RATIONALE}`;
+const OPENER_BELOW_THE_LIST = `These offers reach this page too and rank below the list above. Each one names the recorded fact behind it. ${DISCLOSURE_RATIONALE}`;
+
 function demotedCards(html: string): string[] {
   return html
     .split(/(?=<div class="best-pick(?: best-pick-demoted)?">)/)
@@ -110,6 +119,32 @@ describe("a best-of page that no offer qualifies for, read when every confirmati
     }
     assert.deepStrictEqual(unexplained, [], unexplained.join("\n"));
     assertPopulationFloor(withDemoted, 50, "best-of pages keeping a demoted band with no offer qualifying");
+  });
+
+  it("opens its demoted band without ranking it below a list the page does not show", () => {
+    const wrong: string[] = [];
+    let read = 0;
+    for (const [route, page] of aheadPages) {
+      read++;
+      const opener = demotedBandOpener(page.html);
+      if (opener !== OPENER_WITH_NO_LIST_ABOVE) wrong.push(`${route}: ${opener.slice(0, 200)}`);
+    }
+    assert.deepStrictEqual(wrong, [], `demoted bands not opened as on a page with no list:\n${wrong.join("\n")}`);
+    assertPopulationFloor(read, 50, "demoted bands read on best-of pages with no offer qualifying");
+  });
+
+  it("keeps the band below the list on every page an offer qualifies for today", async () => {
+    const wrong: string[] = [];
+    let read = 0;
+    for (const route of todayPaths) {
+      const page = await get(today.port, route);
+      if (tieNote(page.html).startsWith("No offer meets our criteria")) continue;
+      read++;
+      const opener = demotedBandOpener(page.html);
+      if (opener !== OPENER_BELOW_THE_LIST) wrong.push(`${route}: ${opener.slice(0, 200)}`);
+    }
+    assert.deepStrictEqual(wrong, [], `demoted bands under a list not opened as below it:\n${wrong.join("\n")}`);
+    assertPopulationFloor(read, 50, "demoted bands read on best-of pages with a qualified offer today");
   });
 
   it("keeps its address and its sitemap entry", () => {

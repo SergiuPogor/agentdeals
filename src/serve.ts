@@ -3037,6 +3037,10 @@ function buildBestOfPage(slug: string): string | null {
       ? pageVerdictHtml
       : `${pageVerdictHtml} ${orderProse}`;
 
+  const demotedBandOpener = pickCount === 0
+    ? "These offers reach this page. Each one names the recorded fact behind it."
+    : "These offers reach this page too and rank below the list above. Each one names the recorded fact behind it.";
+
   const renderCard = (e: RankedEntry<EnrichedOfferRow>, i: number, demotedCard: boolean, labels?: SubtypeLabel[]) => {
     const o = e.offer;
     const riskBadge = riskBadgeHtml(o.risk_level, o.risk_cause);
@@ -3286,7 +3290,7 @@ ${globalNavCss()}
 ${reviewsHtml}
 
   <h2>Demoted &mdash; and exactly why</h2>
-  <p class="page-meta" style="margin-bottom:1rem">These offers reach this page too and rank below the list above. Each one names the recorded fact behind it. ${escHtmlServer(DISCLOSURE_RATIONALE)}</p>
+  <p class="page-meta" style="margin-bottom:1rem">${demotedBandOpener} ${escHtmlServer(DISCLOSURE_RATIONALE)}</p>
 ${demotedHtml}
 ${excludedHtml}
 
