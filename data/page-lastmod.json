@@ -22,11 +22,11 @@
       "changed": "2026-10-12"
     },
     "/ai-free-tiers": {
-      "hash": "b3a311813a47d13b",
+      "hash": "e790fe9f0c6aca2c",
       "changed": "2026-10-12"
     },
     "/ai-ml-alternatives": {
-      "hash": "38689e1d1d8aa157",
+      "hash": "3a234b77da3b978b",
       "changed": "2026-10-12"
     },
     "/alternative-to": {
@@ -1089,8 +1089,8 @@
       "changed": "2026-10-11"
     },
     "/category/ai-coding": {
-      "hash": "c24049c174956e27",
-      "changed": "2026-10-11"
+      "hash": "d088887b00b2bd28",
+      "changed": "2026-10-12"
     },
     "/category/ai-ml": {
       "hash": "fd2ae028e4117112",
@@ -2691,8 +2691,8 @@
       "daily": true
     },
     "/cursor-alternatives": {
-      "hash": "c5decd6cfd69066c",
-      "changed": "2026-10-11"
+      "hash": "be1d63483d58df62",
+      "changed": "2026-10-12"
     },
     "/database-alternatives": {
       "hash": "6f37174721e53163",
@@ -3294,7 +3294,7 @@
       "changed": "2026-10-12"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "ea0bbb2dec266814",
+      "hash": "2fd1bf46f5e8a0f0",
       "changed": "2026-10-12"
     },
     "/llm-api-pricing": {
@@ -3567,7 +3567,7 @@
       "changed": "2026-10-12"
     },
     "/stack-check": {
-      "hash": "50863b12817166d6",
+      "hash": "b3f3c72ab538f2eb",
       "changed": "2026-10-12"
     },
     "/stacks": {
@@ -5791,7 +5791,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/gemini-cli": {
-      "hash": "390135571da6a672",
+      "hash": "bfe7990a64b6d251",
       "changed": "2026-10-12"
     },
     "/vendor/geoapify-com": {
