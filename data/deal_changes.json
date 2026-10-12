@@ -16488,6 +16488,22 @@
       "category": "Databases",
       "alternatives": [],
       "recorded_date": "2026-10-12"
+    },
+    {
+      "vendor": "Auth0",
+      "change_type": "product_deprecated",
+      "date": "2026-11-18",
+      "date_source": "vendor_page",
+      "summary": "Auth0 keeps running. Auth0 Rules and Hooks reach end of life on November 18, 2026, when they stop executing and are removed. They have been read-only since November 18, 2024, and tenants created from October 16, 2023 never had them. Auth0 says to move to Actions.",
+      "what_ends": "Auth0 Rules and Hooks",
+      "listing_effect": "none",
+      "previous_state": "Auth0 Rules and Hooks ran custom code in the login pipeline. Auth0 deprecated them on May 16, 2023 and made them read-only on November 18, 2024.",
+      "current_state": "\"End-of-life: November 18, 2026. After November 18, 2026, Rules and Hooks will stop being executed and removed.\" (auth0.com/docs, Deprecations and Migrations)",
+      "impact": "medium",
+      "source_url": "https://auth0.com/docs/troubleshoot/product-lifecycle/deprecations-and-migrations",
+      "category": "Auth",
+      "alternatives": [],
+      "recorded_date": "2026-10-12"
     }
   ]
 }
