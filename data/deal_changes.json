@@ -16526,6 +16526,22 @@
       "alternatives": [],
       "recorded_date": "2026-10-12",
       "date_source": "hand_written"
+    },
+    {
+      "vendor": "Groq",
+      "change_type": "product_deprecated",
+      "date": "2026-09-21",
+      "date_source": "vendor_page",
+      "summary": "Groq keeps running. Groq decommissioned its Compound and Compound Mini systems, model IDs groq/compound and groq/compound-mini, on September 21, 2026, after announcing it on August 24; requests to those IDs return errors. Groq named no replacement.",
+      "what_ends": "Groq Compound and Compound Mini",
+      "listing_effect": "none",
+      "previous_state": "Groq offered its Compound and Compound Mini systems through the API under the model IDs groq/compound and groq/compound-mini.",
+      "current_state": "\"On August 24, 2026, we announced the deprecation of groq/compound and groq/compound-mini. Both systems will be decommissioned on September 21, 2026. Beginning on that date, requests to these model IDs will return errors.\" (console.groq.com/docs/deprecations)",
+      "impact": "medium",
+      "source_url": "https://console.groq.com/docs/deprecations",
+      "category": "AI / ML",
+      "alternatives": [],
+      "recorded_date": "2026-10-12"
     }
   ]
 }
