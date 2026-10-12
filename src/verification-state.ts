@@ -77,10 +77,7 @@ export function verificationLedger(): VerificationLedger {
   const ledger: VerificationLedger = new Map();
   for (const record of loadVerificationState().values()) {
     if ((record.consecutive_failures ?? 0) < 1) continue;
-    const key = record.vendor.toLowerCase();
-    const held = ledger.get(key);
-    if (held && held.consecutive_failures >= record.consecutive_failures) continue;
-    ledger.set(key, {
+    ledger.set(`${record.vendor}|${record.url}`, {
       vendor: record.vendor,
       url: record.url,
       consecutive_failures: record.consecutive_failures,

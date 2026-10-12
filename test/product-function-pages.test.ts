@@ -269,7 +269,7 @@ describe("every function with enough vendors to compare has a page", () => {
   it("states, for every record a label put there, the URL and the date it was read from", async () => {
     for (const fn of published.filter(f => f.categories.length === 0)) {
       const { html } = await page(`/best/free-${fn.slug}`);
-      const blocks = [...html.matchAll(/<div class="best-pick">[\s\S]*?<\/div>\s*<\/div>/g)].map(m => m[0]);
+      const blocks = [...html.matchAll(/<div class="best-pick(?: best-pick-demoted)?">[\s\S]*?<\/div>\s*<\/div>/g)].map(m => m[0]);
       assert.ok(blocks.length > 0, `/best/free-${fn.slug} renders no cards`);
       for (const block of blocks) {
         const vendor = /class="best-pick-name">([^<]*)</.exec(block)?.[1];

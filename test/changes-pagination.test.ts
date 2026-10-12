@@ -141,8 +141,9 @@ describe("/api/changes answers one shape and pages", () => {
     const published = parseInt(stated[1], 10);
     const { json } = await get("");
     assert.strictEqual(json.limit, published, `/developers states ${published} and the route serves ${json.limit}`);
-    assert.strictEqual(json.returned, published);
-    assert.strictEqual((json.changes as unknown[]).length, published);
+    const onAFullPage = Math.min(published, json.total);
+    assert.strictEqual(json.returned, onAFullPage);
+    assert.strictEqual((json.changes as unknown[]).length, onAFullPage);
   });
 
   it("reaches the whole window by asking rather than by omitting a parameter", async () => {

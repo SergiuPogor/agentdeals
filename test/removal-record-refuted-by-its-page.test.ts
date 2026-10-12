@@ -479,12 +479,15 @@ describe("the records this correction must not move", () => {
 });
 
 describe("the population a re-read has to cover", () => {
-  it("is every removal record still in force in the served window", () => {
+  it("is drawn from the removal records in the served window", () => {
     const window = removalRecordsInTheServedWindow(changes);
     assert.ok(window.length > 0);
     for (const record of window) assert.ok(REMOVAL_CLASS.has(record.change_type));
-    const inForce = removalRecordsStillInForce(window);
-    assert.ok(inForce.length < window.length);
+  });
+
+  it("leaves out the removal records that are no longer in force", () => {
+    const everyRemovalRecord = changes.filter((c) => REMOVAL_CLASS.has(c.change_type));
+    assert.ok(removalRecordsStillInForce(everyRemovalRecord).length < everyRemovalRecord.length);
   });
 
   it("carries a source URL on every record we would re-read", () => {

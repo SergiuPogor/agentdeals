@@ -590,7 +590,8 @@ describe("#2497 AC-2 and AC-6: the 2026-10-07 run's five records, as proposals",
     "LLM7.io": "/vendor/llm7-io",
     "Clever Bootstrap Program": "/vendor/clever-bootstrap-program",
   };
-  const WHOLE_API_LOG = `/api/changes?limit=${logBeforeTheRun().changes.length + THE_RUN.records.length}`;
+  const FIRST_DAY_IN_THE_LOG = [...logBeforeTheRun().changes, ...THE_RUN.records].map((c) => c.date).sort()[0];
+  const WHOLE_API_LOG = `/api/changes?since=${FIRST_DAY_IN_THE_LOG}&limit=${logBeforeTheRun().changes.length + THE_RUN.records.length}`;
   const SHARED_ROUTES = ["/pricing-changes", "/changes", "/free-tier-tracker", WHOLE_API_LOG];
   const ROUTES = [...SHARED_ROUTES, ...Object.values(VENDOR_PAGES)];
   const SHOWN_WHEN_PUBLISHED = ["/pricing-changes", "/changes", WHOLE_API_LOG];

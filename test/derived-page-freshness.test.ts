@@ -129,6 +129,7 @@ interface StoredReview {
   published: string;
   reviewed_at: string | null;
   review_outcome: string | null;
+  partial_recheck: { on: string; vendors: string[] } | null;
   reads_index: boolean;
   tables_read_index: boolean;
   table_figures: number;
@@ -161,6 +162,11 @@ function claimTheDataSupports(pagePath: string, html: string, today: string): st
   const review = storedReviews.get(pagePath);
   if (review && !everyTableFigureCameFromOurRecords(review)) {
     const read = review.reviewed_at !== null && review.reviewed_at <= today ? review.reviewed_at : null;
+    const recheck = review.partial_recheck !== null && review.partial_recheck.on <= today ? review.partial_recheck : null;
+    if (read === null && recheck !== null) {
+      const count = recheck.vendors.length;
+      return `Compiled ${review.published}; ${count} service${count === 1 ? "" : "s"} re-checked ${recheck.on}.`;
+    }
     if (read === null) return `Compiled ${review.published}, not re-checked since.`;
     return review.review_outcome === "fail"
       ? `Compiled ${review.published}.`

@@ -514,7 +514,7 @@ export type VerificationDoubt =
   | { basis: "no_reading"; verifiedDate: string; age: number };
 
 export function verificationDoubt(
-  offer: Pick<Offer, "vendor" | "verifiedDate">,
+  offer: Pick<Offer, "vendor" | "url" | "verifiedDate">,
   date: string,
   ledger: VerificationLedger | undefined,
   lastReading: LastReading | null,
@@ -533,7 +533,7 @@ export function verificationDoubt(
   const age = daysBetween(offer.verifiedDate, date);
   if (age <= STALE_VERIFICATION_DAYS) return null;
 
-  const fromTheLedger = attemptsOfLedgerEntry(ledger?.get(offer.vendor.toLowerCase()));
+  const fromTheLedger = attemptsOfLedgerEntry(ledger?.get(`${offer.vendor}|${offer.url}`));
   if (fromTheLedger) return { basis: "could_not_read", attempts: fromTheLedger };
   if (reading) return { basis: "unsettled", reading };
   return { basis: "no_reading", verifiedDate: offer.verifiedDate, age };

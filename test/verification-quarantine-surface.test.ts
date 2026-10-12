@@ -111,17 +111,18 @@ describe("the verification state the site reads", () => {
 
   it("builds a ranking ledger only from records that are currently failing", () => {
     const ledger = verificationLedger();
-    assert.strictEqual(ledger.has("fine"), false);
-    assert.strictEqual(ledger.has("wobbly"), true);
-    assert.strictEqual(ledger.has("gone"), true);
+    assert.strictEqual(ledger.has("Fine|https://fine.example/pricing"), false);
+    assert.strictEqual(ledger.has("Wobbly|https://wobbly.example/pricing"), true);
+    assert.strictEqual(ledger.has("Gone|https://gone.example/pricing"), true);
   });
 
-  it("reports the worst failure a vendor has, whichever of its URLs holds it", () => {
+  it("keeps each page's own failures, however many pages its vendor has", () => {
     const ledger = verificationLedger();
-    assert.strictEqual(ledger.get("blocked").consecutive_failures, 14);
-    assert.strictEqual(ledger.get("blocked").last_error, "HTTP 403");
-    assert.strictEqual(ledger.get("patchy").consecutive_failures, 2);
-    assert.strictEqual(ledger.get("patchy").url, "https://patchy.example/pricing");
+    assert.strictEqual(ledger.get("Blocked|https://blocked.example/pricing").consecutive_failures, 14);
+    assert.strictEqual(ledger.get("Blocked|https://blocked.example/pricing").last_error, "HTTP 403");
+    assert.strictEqual(ledger.get("Blocked|https://blocked.example/startup").consecutive_failures, 3);
+    assert.strictEqual(ledger.get("Patchy|https://patchy.example/pricing").consecutive_failures, 2);
+    assert.strictEqual(ledger.get("Patchy|https://patchy.example/docs").consecutive_failures, 1);
   });
 
   it("turns the stale-verification demerit into a statement about attempts, not silence", () => {
