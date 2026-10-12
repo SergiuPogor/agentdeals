@@ -10762,7 +10762,7 @@
     {
       "vendor": "Codemagic",
       "category": "CI/CD",
-      "description": "Mobile CI/CD platform — Single-user plan with unlimited number of applications and 500 free build minutes refilled every month. 30 days build history & artifact storage, 3GB per build cache storage.",
+      "description": "Mobile CI/CD platform — Single-user plan with unlimited number of applications and 500 free build minutes a month on macOS M2 machines, for personal accounts only; Linux and Windows builds get no free minutes, and teams get none. 30 days build history & artifact storage, 3GB per build cache storage.",
       "tier": "Free",
       "url": "https://codemagic.io/pricing/",
       "tags": [

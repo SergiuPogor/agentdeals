@@ -1125,7 +1125,7 @@
       "changed": "2026-10-12"
     },
     "/category/ci-cd": {
-      "hash": "a8925399f62f2076",
+      "hash": "74cee7d8f74f6b53",
       "changed": "2026-10-12"
     },
     "/category/cloud-hosting": {
@@ -1332,7 +1332,7 @@
       "daily": true
     },
     "/ci-cd-alternatives": {
-      "hash": "d308b69fa31cc5c5",
+      "hash": "3530cfccb1492cce",
       "changed": "2026-10-12"
     },
     "/ci-cd-pricing": {
@@ -3567,7 +3567,7 @@
       "changed": "2026-10-12"
     },
     "/stack-check": {
-      "hash": "0894276e5ce21ac3",
+      "hash": "7ca84e412eec30d3",
       "changed": "2026-10-12"
     },
     "/stacks": {
@@ -4868,7 +4868,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/codemagic": {
-      "hash": "4417188f14e662f4",
+      "hash": "962826594f742438",
       "changed": "2026-10-12"
     },
     "/vendor/codemyui": {
