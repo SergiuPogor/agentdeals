@@ -9528,20 +9528,28 @@
     {
       "vendor": "Microsoft for Startups",
       "change_type": "limits_increased",
-      "date": "2026-09-02",
+      "date": "2026-04-04",
       "date_source": "discovered",
-      "summary": "The program now offers up to $150,000 in credits.",
-      "previous_state": "Get access to a wide range of benefits—from technical resources and free Azure cloud, to selling alongside Microsoft salespeople and partner channel.",
+      "summary": "Microsoft for Startups' homepage replaced its two credit offers with one. The Internet Archive's copy of microsoft.com/en-us/startups from 2026-03-29 offers up to $150,000 in Azure credits to startups associated with Microsoft's Investor Network and up to $5,000 through an Azure free trial to the rest; its copy of 2026-04-04 offers up to $150,000 in credits with no split.",
+      "previous_state": "Up to $150,000 in Azure credits for startups associated with the Microsoft for Startups Investor Network, pre-seed to Series A. Up to $5,000 in Azure credits with an Azure startup free trial for startups not associated with it, no investor funding required.",
       "current_state": "Access cutting-edge AI models, developer tools, and up to $150,000 in credits",
       "impact": "high",
-      "source_url": "https://startups.microsoft.com/en-us/",
+      "source_url": "https://www.microsoft.com/en-us/startups",
       "category": "Cloud IaaS",
       "alternatives": [],
       "detected_by": "reverify-ai",
       "recorded_date": "2026-09-02",
       "archive_check": {
-        "checked": "2026-10-02",
-        "outcome": "no_usable_capture"
+        "checked": "2026-10-12",
+        "outcome": "vendor_changed",
+        "brackets": [
+          {
+            "last_old": "2026-03-29",
+            "first_new": "2026-04-04",
+            "last_old_capture": "https://web.archive.org/web/20260329014944/https://www.microsoft.com/en-us/startups",
+            "first_new_capture": "https://web.archive.org/web/20260404144850/https://www.microsoft.com/en-us/startups"
+          }
+        ]
       }
     },
     {
@@ -16504,6 +16512,20 @@
       "category": "Auth",
       "alternatives": [],
       "recorded_date": "2026-10-12"
+    },
+    {
+      "vendor": "Microsoft for Startups",
+      "change_type": "record_corrected",
+      "date": "2026-10-12",
+      "summary": "Data correction - Microsoft for Startups' homepage already offered up to $150,000 in Azure credits in the Internet Archive's copy of 2025-07-31, so the record dated 2026-09-02, \"The program now offers up to $150,000 in credits\", described nothing new that day. What changed is that the homepage stopped splitting the offer by Investor Network membership between its copies of 2026-03-29 and 2026-04-04, so the record is dated 2026-04-04 and describes that.",
+      "previous_state": "Dated 2026-09-02: \"The program now offers up to $150,000 in credits.\"",
+      "current_state": "Dated 2026-04-04 from the archived copies of 2026-03-29 and 2026-04-04",
+      "impact": "low",
+      "source_url": "https://web.archive.org/web/20260404144850/https://www.microsoft.com/en-us/startups",
+      "category": "Cloud IaaS",
+      "alternatives": [],
+      "recorded_date": "2026-10-12",
+      "date_source": "hand_written"
     }
   ]
 }
