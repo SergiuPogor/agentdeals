@@ -1,4 +1,30 @@
 {
-  "proposals": [],
+  "proposals": [
+    {
+      "proposal_id": "2026-10-12/taskade-com/new_tier",
+      "proposed_on": "2026-10-12",
+      "vendor": "taskade.com",
+      "change_type": "new_tier",
+      "date": "2026-10-12",
+      "date_source": "discovered",
+      "summary": "The original free plan's features (real-time collaboration, basic integrations, limited AI credits) are not directly advertised as part of a free offering on this page.",
+      "tier": "Taskade Genesis",
+      "tier_direction": "unchanged",
+      "previous_state": "Real-time collaborative task lists and team outlines — Taskade's free plan includes AI agents, up to 3 automations, basic integrations, limited AI credits (50,000/month), and basic views.",
+      "current_state": "The page promotes Taskade Genesis, an AI app builder allowing users to create apps, agents, and automated workflows from prompts. It highlights features like memory, AI agents, and integrations with tools like Stripe, Slack, and GitHub. Users can build dashboards, portals, CRMs, and trackers.",
+      "impact": "high",
+      "source_url": "https://www.taskade.com/",
+      "category": "Project Management",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-12",
+      "restatement": [
+        {
+          "url": "https://www.taskade.com/",
+          "refused": "reading_answers_for_something_else"
+        }
+      ]
+    }
+  ],
   "dropped": []
 }
