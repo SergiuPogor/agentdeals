@@ -18,15 +18,15 @@
       "changed": "2026-10-12"
     },
     "/ai-coding-tools-pricing": {
-      "hash": "3baf44371bfec695",
+      "hash": "0168450a938b5523",
       "changed": "2026-10-12"
     },
     "/ai-free-tiers": {
-      "hash": "35beecf908577197",
+      "hash": "f6f810caf6178346",
       "changed": "2026-10-12"
     },
     "/ai-ml-alternatives": {
-      "hash": "ca8aa324158cb159",
+      "hash": "7ce2a4272be8958f",
       "changed": "2026-10-12"
     },
     "/alternative-to": {
@@ -1089,11 +1089,11 @@
       "changed": "2026-10-11"
     },
     "/category/ai-coding": {
-      "hash": "d088887b00b2bd28",
+      "hash": "72f047586b316fc0",
       "changed": "2026-10-12"
     },
     "/category/ai-ml": {
-      "hash": "bfa61cf219fec5cc",
+      "hash": "2f5a4ec247622b76",
       "changed": "2026-10-12"
     },
     "/category/analytics": {
@@ -1440,8 +1440,8 @@
       "changed": "2026-10-11"
     },
     "/compare/amazon-q-developer-vs-github-copilot": {
-      "hash": "3c9f4728f2a993a7",
-      "changed": "2026-10-11"
+      "hash": "aa052fc3af6ab8a9",
+      "changed": "2026-10-12"
     },
     "/compare/amplitude-vs-heap-io": {
       "hash": "ba9f067bfa62b5e6",
@@ -1804,8 +1804,8 @@
       "changed": "2026-10-11"
     },
     "/compare/cursor-vs-github-copilot": {
-      "hash": "d3a19a08a629a784",
-      "changed": "2026-10-11"
+      "hash": "098efd0c1661d766",
+      "changed": "2026-10-12"
     },
     "/compare/cursor-vs-windsurf": {
       "hash": "dbee2d193abf89d1",
@@ -2064,8 +2064,8 @@
       "changed": "2026-10-11"
     },
     "/compare/github-copilot-vs-windsurf": {
-      "hash": "dcf7be87a53aa093",
-      "changed": "2026-10-11"
+      "hash": "1e6b80966f16109c",
+      "changed": "2026-10-12"
     },
     "/compare/gleek-io-vs-tldraw-com": {
       "hash": "b956fab6b5de391f",
@@ -2691,7 +2691,7 @@
       "daily": true
     },
     "/cursor-alternatives": {
-      "hash": "be1d63483d58df62",
+      "hash": "7e0fa99b3a06364e",
       "changed": "2026-10-12"
     },
     "/database-alternatives": {
@@ -3298,7 +3298,7 @@
       "changed": "2026-10-12"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "d543a44b80eec015",
+      "hash": "9391fd254be1aaf8",
       "changed": "2026-10-12"
     },
     "/llm-api-pricing": {
@@ -3575,7 +3575,7 @@
       "changed": "2026-10-12"
     },
     "/stack-check": {
-      "hash": "2764a7ac74f53aee",
+      "hash": "0b8b3a718113b054",
       "changed": "2026-10-12"
     },
     "/stacks": {
