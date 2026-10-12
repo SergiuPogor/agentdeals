@@ -74,6 +74,12 @@
           "quote": "Hobby teams get 10GB of Deployment Storage. Every deployment you keep uses some of it, and going over the limit can block you from deploying until you free some up.",
           "url": "https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "After 30 days, Vercel deletes a Hobby project's old deployments except its 3 most recent production deployments, its 3 most recent deployments of any type and its current production deployment. A team over its 10 GB of Deployment Storage loses those other deployments immediately.",
+          "quote": "Each Hobby project now keeps its 3 most recent production deployments, plus its 3 most recent deployments of any type, regardless of age.",
+          "url": "https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage",
+          "read_on": "2026-10-12"
         }
       ]
     },
@@ -155,13 +161,19 @@
           "quote": "any changes to your web service's filesystem (uploaded images, local SQLite databases, etc.) are lost every time the service redeploys, restarts, or spins down.",
           "url": "https://render.com/docs/free",
           "read_on": "2026-10-05"
+        },
+        {
+          "text": "If a workspace uses all 750 free instance hours in a month, Render suspends all of its free web services until the start of the next month.",
+          "quote": "If you consume all of your Free instance hours during a given month, Render suspends all of your Free web services until the start of the next month.",
+          "url": "https://render.com/docs/free",
+          "read_on": "2026-10-12"
         }
       ]
     },
     {
       "vendor": "Cloudflare Workers",
       "category": "Cloud Hosting",
-      "description": "Edge compute with 100K requests/day, 10ms CPU time per invocation, 5 cron triggers/account. KV: 1 GB storage, 100K reads/day, 1K writes/day. D1: 5 GB storage, 5M rows read/day, 100K rows written/day. R2 (Standard storage): 10 GB-month/month, 1M Class A ops/month, 10M Class B ops/month. Durable Objects (SQLite-backed only): 100K requests/day. Queues: 10K operations/day. Vectorize: 30M queried vector dimensions/month, 5M stored vector dimensions. Dynamic Workers are paid only. US students 18+ with a verified .edu billing email: Workers Paid (10M requests/month), $5/mo fee waived for 12 months.",
+      "description": "Edge compute with 100K requests/day, 10ms CPU time per invocation, 5 cron triggers/account. KV: 1 GB storage, 100K reads/day, 1K writes/day. D1: 5 GB storage, 5M rows read/day, 100K rows written/day. R2 (Standard storage): 10 GB-month/month, 1M Class A ops/month, 10M Class B ops/month. Durable Objects (SQLite-backed only): 100K requests/day. Queues: 10K operations/day. Vectorize: 30M queried vector dimensions/month, 5M stored vector dimensions. Dynamic Workers are paid only. US students 18+ with a verified .edu billing email: Workers Paid (10M requests/month), $5/mo fee waived for 12 months. Workers Paid has a minimum charge of $5 per month per account. It includes 10 million requests and 30 million CPU milliseconds monthly. Each additional million requests costs $0.30. Each additional million CPU milliseconds costs $0.02. Duration is not charged.",
       "tier": "Free",
       "url": "https://developers.cloudflare.com/workers/platform/pricing/",
       "tags": [
@@ -446,7 +458,15 @@
         "text": "Free $ 0 per month Perfect for getting started and deploying small apps on Railway Start with a 30-day free trial with $5 credits, then $1 per month Up to 1 vCPU / 0.5 GB RAM per service 0.5 GB of volume storage Community support Deploy a new project No credit card required",
         "url": "https://railway.com/pricing",
         "read_on": "2026-10-06"
-      }
+      },
+      "conditions": [
+        {
+          "text": "After the 30-day trial, the Free plan allows 1 project, 3 services per project and no custom domains. Cron jobs are available during the trial only.",
+          "quote": "Services per project: 5 during trial, then 3. Custom domains: 1 trial, then 0. Cron jobs per project: Free Trial only.",
+          "url": "https://railway.com/pricing",
+          "read_on": "2026-10-12"
+        }
+      ]
     },
     {
       "vendor": "Fly.io",
@@ -2321,7 +2341,7 @@
     {
       "vendor": "Cloudflare R2",
       "category": "Storage",
-      "description": "Object storage with zero egress fees — 10 GB storage, 1M writes, 10M reads/month free.",
+      "description": "Object storage with zero egress fees — 10 GB storage, 1M writes, 10M reads/month free. Standard storage beyond the free tier is $0.015 per GB-month, Class A operations $4.50 per million, Class B $0.36 per million. Standard has no egress or retrieval fee. Infrequent Access is $0.01 per GB-month, Class A $9.00 per million, Class B $0.90 per million, and retrieval $0.01 per GB. The free tier does not apply to Infrequent Access.",
       "tier": "Free",
       "url": "https://developers.cloudflare.com/r2/pricing/",
       "tags": [
@@ -3429,7 +3449,7 @@
     {
       "vendor": "Groq",
       "category": "AI / ML",
-      "description": "Fast LLM inference on Groq's LPU hardware. Free plan: gpt-oss-120b, gpt-oss-20b and Qwen3.8 27B, each at 30 requests a minute, 1,000 requests and 200,000 tokens a day, plus Whisper speech-to-text at 2,000 requests a day. Each of the three free models is also limited to 8,000 tokens a minute, and Groq applies whichever limit is reached first. Whisper is also limited to 20 requests a minute, 7,200 audio seconds an hour and 28,800 audio seconds (8 hours of audio) a day. On the free plan, gpt-oss-safeguard-20b is limited to 3 requests a minute, 1,000 requests a day, 2,000 tokens a minute and 200,000 tokens a day. Qwen3.8 27B, gpt-oss-safeguard-20b, Orpheus Arabic Saudi and Orpheus V1 English are Preview models. Groq says Preview models \"are intended for evaluation purposes only and should not be used in production environments as they may be discontinued at short notice\". Llama 3.3 70B and Llama 3.1 8B left the free and developer plans on 2026-08-16 and are Enterprise-only. Orpheus text-to-speech (English and Saudi Arabic) is also on the free plan, at 10 requests a minute, 100 requests and 3,600 tokens a day. Developer plan prices per 1M tokens: gpt-oss-120b $0.15/$0.60; gpt-oss-20b $0.075/$0.30. Qwen3.8 27B costs $0.80 input and $4.00 output per 1M tokens on the Developer plan. Orpheus text-to-speech costs $22 per 1M characters in English and $40 in Saudi Arabic.",
+      "description": "Fast LLM inference on Groq's LPU hardware. Free plan: gpt-oss-120b, gpt-oss-20b and Qwen3.8 27B, each at 30 requests a minute, 1,000 requests and 200,000 tokens a day, plus Whisper speech-to-text at 2,000 requests a day. Each of the three free models is also limited to 8,000 tokens a minute, and Groq applies whichever limit is reached first. Whisper is also limited to 20 requests a minute, 7,200 audio seconds an hour and 28,800 audio seconds (8 hours of audio) a day. On the free plan, gpt-oss-safeguard-20b is limited to 3 requests a minute, 1,000 requests a day, 2,000 tokens a minute and 200,000 tokens a day. Qwen3.8 27B, gpt-oss-safeguard-20b, Orpheus Arabic Saudi and Orpheus V1 English are Preview models. Groq says Preview models \"are intended for evaluation purposes only and should not be used in production environments as they may be discontinued at short notice\". Llama 3.3 70B and Llama 3.1 8B left the free and developer plans on 2026-08-16 and are Enterprise-only. Orpheus text-to-speech (English and Saudi Arabic) is also on the free plan, at 10 requests a minute, 100 requests and 3,600 tokens a day. Developer plan prices per 1M tokens: gpt-oss-120b $0.15/$0.60; gpt-oss-20b $0.075/$0.30. The Batch API costs 50% less and returns results within 24 hours to 7 days, without impacting standard rate limits. When requests to gpt-oss-20b, gpt-oss-120b or gpt-oss-safeguard-20b start with the same text as a recent request, Groq caches that part automatically and bills those input tokens 50% less. The batch discount does not stack with prompt caching discounts; all batch tokens are billed at the batch rate regardless of cache status. Qwen3.8 27B costs $0.80 input and $4.00 output per 1M tokens on the Developer plan. Orpheus text-to-speech costs $22 per 1M characters in English and $40 in Saudi Arabic.",
       "tier": "Free",
       "url": "https://console.groq.com/docs/rate-limits",
       "tags": [
@@ -8965,7 +8985,15 @@
         "text": "Free $0 / month Free forever. No credit card required. Prisma Compute 1M requests / month 360 GB-hours memory / month 4 active vCPU-hours / month 10 GB outbound bandwidth / month Prisma Postgres 200k operations / month 1.01 GB storage 50 databases",
         "url": "https://www.prisma.io/pricing",
         "read_on": "2026-10-10"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Prisma Accelerate, including hosted Accelerate connections for Prisma Postgres, is retired on December 1, 2026, and the Prisma Console no longer offers Accelerate for new setups.",
+          "quote": "Accelerate is retired on December 1, 2026, including Prisma Postgres connections that go through it. The Console no longer offers Accelerate for new setups.",
+          "url": "https://www.prisma.io/changelog/2026-10-02",
+          "read_on": "2026-10-12"
+        }
+      ]
     },
     {
       "vendor": "Unity DevOps",
@@ -31656,7 +31684,7 @@
     {
       "vendor": "xAI",
       "category": "AI / ML",
-      "description": "Grok API, pay as you go: sign up at console.x.ai, then load it with credits. grok-4.7 $2.00/$6.00 (per 1M tokens, under 200k prompt tokens). grok-4.3 $1.25/$2.50 (under 200k prompt tokens). grok-build-0.1 $1.00/$2.00 (under 200k prompt tokens). grok-4.6 and grok-4.5 cost the same as grok-4.7, and grok-4.20 (0309 reasoning, non-reasoning and multi-agent) the same as grok-4.3. Grok 4.1 Fast was retired on 2026-05-15; its model names now route to grok-4.3 at grok-4.3 rates. Image generation: grok-imagine-image $0.02 per image; grok-imagine-image-2.0 from $0.04 per 1K image at low quality. grok-imagine-image-quality ($0.05 per 1K image) is retired on 2026-11-02, when its requests are served by grok-imagine-image-2.0 at low quality. Voice API: speech-to-text costs $0.10 per hour of audio (REST) or $0.20 per hour (streaming), text-to-speech $15.00 per 1M characters, and speech-to-speech with grok-voice-think-fast-2.0 $0.08 a minute ($4.80 an hour). Video generation: grok-imagine-video-1.5 $0.08 per second at 480p, $0.14 at 720p, $0.25 at 1080p. grok-imagine-video-1.5-lite $0.02 per second at 480p, $0.03 at 720p, $0.14 at 1080p. grok-imagine-video $0.05 per second at 480p, $0.07 at 720p. Batch discounts: grok-4.3, grok-4.20-0309-reasoning, grok-4.20-0309-non-reasoning, and grok-4.20-multi-agent-0309 get 20% off. Other models have no batch discount.",
+      "description": "Grok API, pay as you go: sign up at console.x.ai, then load it with credits. grok-4.7 $2.00/$6.00 (per 1M tokens, under 200k prompt tokens). grok-4.3 $1.25/$2.50 (under 200k prompt tokens). grok-build-0.1 $1.00/$2.00 (under 200k prompt tokens). grok-4.6 and grok-4.5 cost the same as grok-4.7, and grok-4.20 (0309 reasoning, non-reasoning and multi-agent) the same as grok-4.3. A request whose prompt reaches 200k tokens is billed at the long-context rate for all tokens. grok-4.7 and grok-4.6 cost $4.00 input and $12.00 output per 1M tokens. grok-4.3 and grok-4.20 cost $2.50 input and $5.00 output. grok-build-0.1 costs $2.00 input and $4.00 output. Cached input costs $0.50 on grok-4.7 and grok-4.6, $0.30 on grok-4.5, and $0.20 on grok-4.3, grok-4.20 and grok-build-0.1. These cached rates also double from 200k prompt tokens. Context windows: 500k tokens for grok-4.7, grok-4.6 and grok-4.5; 1M for grok-4.3 and grok-4.20; 256k for grok-build-0.1. The US endpoint costs 10% more than the global endpoint. Grok 4.1 Fast was retired on 2026-05-15; its model names now route to grok-4.3 at grok-4.3 rates. Image generation: grok-imagine-image $0.02 per image; grok-imagine-image-2.0 from $0.04 per 1K image at low quality. grok-imagine-image-quality ($0.05 per 1K image) is retired on 2026-11-02, when its requests are served by grok-imagine-image-2.0 at low quality. Voice API: speech-to-text costs $0.10 per hour of audio (REST) or $0.20 per hour (streaming), text-to-speech $15.00 per 1M characters, and speech-to-speech with grok-voice-think-fast-2.0 $0.08 a minute ($4.80 an hour). Video generation: grok-imagine-video-1.5 $0.08 per second at 480p, $0.14 at 720p, $0.25 at 1080p. grok-imagine-video-1.5-lite $0.02 per second at 480p, $0.03 at 720p, $0.14 at 1080p. grok-imagine-video $0.05 per second at 480p, $0.07 at 720p. Batch discounts: grok-4.3, grok-4.20-0309-reasoning, grok-4.20-0309-non-reasoning, and grok-4.20-multi-agent-0309 get 20% off. Other models have no batch discount.",
       "tier": "Pay-as-you-go",
       "url": "https://docs.x.ai/developers/pricing",
       "tags": [
@@ -31997,7 +32025,7 @@
     {
       "vendor": "Gemini CLI",
       "category": "AI Coding",
-      "description": "Open-source terminal AI coding agent by Google, Apache 2.0 licensed. Since 2026-06-18, Login with Google no longer works for personal accounts, according to Google's Gemini Code Assist deprecation notice; the README still advertises 60 requests a minute and 1,000 a day with a personal Google account. With a Gemini API key, use counts against the Gemini API's own free tier and pricing. A Gemini Code Assist Standard or Enterprise licence is unaffected. Google points personal users to its Antigravity products, including Antigravity CLI. Supports MCP tools, shell commands and file editing.",
+      "description": "Open-source terminal AI coding agent by Google, Apache 2.0 licensed. Since 2026-06-18, Login with Google no longer works for personal accounts, according to Google's Gemini Code Assist deprecation notice; the README still advertises 60 requests a minute and 1,000 a day with a personal Google account. With a Gemini API key, use counts against the Gemini API's own free tier and pricing. Google stopped selling new Gemini Code Assist Standard and Enterprise subscriptions on 2026-10-09, so a team cannot buy one now to use Gemini CLI. Subscriptions bought before then still work with Gemini CLI. Annual subscriptions can be renewed until 2027-01-31 and monthly ones until 2027-12-31. Google points personal users to its Antigravity products, including Antigravity CLI. Supports MCP tools, shell commands and file editing.",
       "tier": "Free",
       "url": "https://github.com/google-gemini/gemini-cli",
       "tags": [
@@ -32166,6 +32194,12 @@
           "quote": "Any usage that exceeds the Free Tier usage limits is billed at standard rates.",
           "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "The BigQuery sandbox needs no credit card or billing account. It includes 1 TiB of queries a month, and its tables expire after 60 days.",
+          "quote": "The BigQuery sandbox lets you experience BigQuery without providing a credit card or creating a billing account for your project.",
+          "url": "https://cloud.google.com/bigquery/docs/sandbox",
+          "read_on": "2026-10-12"
         }
       ]
     },
@@ -32216,6 +32250,12 @@
           "quote": "Any usage that exceeds the Free Tier usage limits is billed at standard rates.",
           "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "Apps deployed from Google AI Studio can run on Cloud Run under Google's Starter Tier, which needs no credit card or billing account and limits regions, quotas and resources.",
+          "quote": "No Cloud Billing account: You don't need to provide a credit card or set up a Cloud Billing account to deploy your applications.",
+          "url": "https://docs.cloud.google.com/docs/starter-tier",
+          "read_on": "2026-10-12"
         }
       ]
     },
