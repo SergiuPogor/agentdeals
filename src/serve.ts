@@ -59,6 +59,7 @@ import { ACCOUNTING_PRICES_PATH, ACCOUNTING_PRICES_SLUG, readAccountingPrices, t
 import { BANKING_FEES_PATH, BANKING_FEES_SLUG, readBankingFees, type BankingFees } from "./banking-fees.js";
 import { COMPANY_FORMATION_PATH, COMPANY_FORMATION_SLUG, readCompanyFormationPrices, type CompanyFormationPrices } from "./company-formation-prices.js";
 import { WHATSAPP_PRICES_PATH, WHATSAPP_PRICES_SLUG, costExampleLines, dollars, readWhatsAppPrices, withCostExampleFigures, type WhatsAppPrices } from "./whatsapp-prices.js";
+import { MISTRAL_PRICES_PATH, MISTRAL_PRICES_SLUG, readMistralPrices, type MistralPrices } from "./mistral-prices.js";
 import { archiveCaptureDate, archivedAddress, type ColumnTable } from "./guide-data.js";
 import { MODEL_BELIEFS_CLOSING, MODEL_BELIEFS_HEADING, MODEL_BELIEFS_PATH, MODEL_BELIEFS_RERUN_SENTENCE, MODEL_BELIEFS_SLUG, MODEL_BELIEFS_TITLE, MOSTLY_OLD_ANSWERS, QUOTED_MODEL_BELIEFS_CLASS, answersFor, answersPerFact, answersPerModel, changedLabel, factsByOldAnswers, findingOf, introOf, metaDescriptionOf, methodOf, modelsByOldAnswers, modelsMostlyOld, numberWord, oldAnswersFrom, readModelBeliefs, testedOnOf, type ModelBeliefs } from "./model-beliefs.js";
 import { changesToStartupProgrammes } from "./startup-programme-changes.js";
@@ -584,6 +585,7 @@ const accountingPrices: AccountingPrices = readAccountingPrices();
 const bankingFees: BankingFees = readBankingFees();
 const companyFormationPrices: CompanyFormationPrices = readCompanyFormationPrices();
 const whatsAppPrices: WhatsAppPrices = readWhatsAppPrices();
+const mistralPrices: MistralPrices = readMistralPrices();
 const trackedChangeRecords = trackedChanges(dealChanges);
 const trackedChangeCount = trackedChangeRecords.length;
 
@@ -6706,6 +6708,7 @@ interface AlternativesPageConfig {
   contextHtml: string;
   tag: string;
   primaryVendor: string;
+  notAnAlternativesGuide?: true;
   serviceMatrixHtml?: string;
   hubDesc: string;
 }
@@ -8580,16 +8583,26 @@ const ALTERNATIVES_PAGE_CONTENT: Omit<AlternativesPageConfig, "hubDesc">[] = [
     tag: "whatsapp-business-platform",
     primaryVendor: "AgentDeals",
   },
+  {
+    slug: MISTRAL_PRICES_SLUG,
+    title: mistralPrices.title,
+    metaDesc: mistralPrices.meta_description,
+    contextHtml: "",
+    tag: MISTRAL_PRICES_SLUG,
+    primaryVendor: "Mistral AI",
+    notAnAlternativesGuide: true,
+  },
 ];
 
 const ALTERNATIVES_PAGES: AlternativesPageConfig[] = ALTERNATIVES_PAGE_CONTENT.map(page => ({ ...page, hubDesc: guideBlurb(page.slug) }));
+const ALTERNATIVES_GUIDES = ALTERNATIVES_PAGES.filter(page => !page.notAnAlternativesGuide);
 
 const alternativesPageMap = new Map<string, AlternativesPageConfig>();
 const editorialByVendor = new Map<string, AlternativesPageConfig>();
 const altPagesByVendor = new Map<string, AlternativesPageConfig[]>();
 for (const page of ALTERNATIVES_PAGES) {
   alternativesPageMap.set(page.slug, page);
-  editorialByVendor.set(page.primaryVendor.toLowerCase(), page);
+  if (!page.notAnAlternativesGuide) editorialByVendor.set(page.primaryVendor.toLowerCase(), page);
   const key = page.primaryVendor.toLowerCase();
   if (!altPagesByVendor.has(key)) altPagesByVendor.set(key, []);
   altPagesByVendor.get(key)!.push(page);
@@ -20083,6 +20096,140 @@ function codeSpansAndDaysKeptWholeHtml(text: string): string {
   return daysKeptWholeHtml(text).replace(/`([^`]+)`/g, (_, code: string) => `<code>${code}</code>`);
 }
 
+function sitePageLinksHtml(text: string, links: readonly { text: string; path: string }[], textHtml: (text: string) => string): string {
+  let html = "";
+  let from = 0;
+  for (const link of links) {
+    const at = text.indexOf(link.text, from);
+    if (at < 0) continue;
+    html += textHtml(text.slice(from, at)) + `<a href="${escHtmlServer(link.path)}">${textHtml(link.text)}</a>`;
+    from = at + link.text.length;
+  }
+  return html + textHtml(text.slice(from));
+}
+
+function buildMistralApiPricingPage(prices: MistralPrices = mistralPrices): string {
+  const title = prices.title;
+  const metaDesc = prices.meta_description;
+  const slug = MISTRAL_PRICES_SLUG;
+  const pubDate = prices.published;
+  const text = codeSpansAndDaysKeptWholeHtml;
+  const headerRow = (columns: string[]) => `<thead><tr>${columns.map((column) => `<th>${text(column)}</th>`).join("")}</tr></thead>`;
+
+  const priceRows = prices.prices.rows.map((row) =>
+    `<tr><th scope="row">${text(row.model)}</th><td>${text(dollars(row.input))}</td><td>${text(dollars(row.cached_input))}</td><td>${text(dollars(row.output))}</td></tr>`
+  ).join("\n    ");
+
+  const retirementRows = prices.retirements.rows.map((row) =>
+    `<tr><th scope="row">${text(row.model)}</th><td>${text(row.retired)}</td><td>${text(row.replacement)}</td></tr>`
+  ).join("\n    ");
+
+  const answersHtml = prices.answers.map((answer) => `
+  <h2>${text(answer.heading)}</h2>
+  <p class="section-intro">${text(answer.text)}</p>`).join("\n");
+
+  const other = prices.other_numbers;
+  const otherNumbers = [...other.retired_terms.map((terms) => terms.text), other.text].join(" ");
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description: metaDesc,
+    datePublished: pubDate,
+    dateModified: pageDateModified(MISTRAL_PRICES_PATH, pubDate),
+    author: { "@type": "Organization", name: "AgentDeals", url: BASE_URL },
+    publisher: { "@type": "Organization", name: "AgentDeals", url: BASE_URL },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/${slug}` },
+  };
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${escHtmlServer(title)} — AgentDeals</title>
+<meta name="description" content="${escHtmlServer(metaDesc)}">
+<link rel="canonical" href="${BASE_URL}/${slug}">
+<meta property="og:title" content="${escHtmlServer(title)}">
+<meta property="og:description" content="${escHtmlServer(metaDesc)}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="${BASE_URL}/${slug}">
+<meta property="article:published_time" content="${escHtmlServer(pubDate)}">
+${OG_IMAGE_META}${GOOGLE_VERIFICATION_META}<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="alternate" type="application/atom+xml" title="AgentDeals — Weekly Pricing Digest" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0f172a;--bg-elevated:#1e293b;--bg-card:rgba(255,255,255,0.06);--border:#334155;--border-hover:#3b82f6;--text:#f1f5f9;--text-muted:#94a3b8;--text-dim:#64748b;--accent:#3b82f6;--accent-hover:#60a5fa;--accent-glow:rgba(59,130,246,0.15);--serif:'Inter',-apple-system,sans-serif;--sans:'Inter',-apple-system,sans-serif;--mono:'JetBrains Mono',SFMono-Regular,monospace}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-hover);text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.breadcrumb{padding:1.5rem 0 0;font-size:.8rem;color:var(--text-dim)}
+.breadcrumb a{color:var(--text-muted)}
+h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5rem;letter-spacing:-.02em}
+h2{font-family:var(--serif);font-size:1.4rem;color:var(--text);margin:2.5rem 0 1rem;letter-spacing:-.01em}
+.section-intro{color:var(--text-muted);font-size:.95rem;margin-bottom:1.25rem;line-height:1.7}
+.table-scroll{overflow-x:auto}
+.pricing-table{width:100%;border-collapse:collapse;margin:1rem 0 2rem;font-size:.85rem}
+.pricing-table th{text-align:left;padding:.75rem .5rem;border-bottom:2px solid var(--border);color:var(--text-muted);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em}
+.pricing-table td{padding:.6rem .5rem;border-bottom:1px solid var(--border);vertical-align:top}
+.pricing-table th[scope="row"]{text-transform:none;letter-spacing:normal;font-size:.85rem;border-bottom:1px solid var(--border);vertical-align:top}
+.mistral-guide .day{white-space:nowrap}
+.mistral-guide code{font-family:var(--mono);font-size:.9em;color:var(--text)}
+footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
+footer a{color:var(--accent)}
+@media(max-width:768px){h1{font-size:1.6rem}.pricing-table{font-size:.75rem}.pricing-table td,.pricing-table th{padding:.4rem .25rem}}
+${globalNavCss()}
+</style>
+</head>
+<body>
+<div class="container">
+  ${buildGlobalNav("guides")}
+  <div class="breadcrumb"><a href="/">AgentDeals</a> &rsaquo; <a href="/guides">Guides</a> &rsaquo; ${escHtmlServer(title)}</div>
+  <article class="mistral-guide">
+  <h1>${escHtmlServer(title)}</h1>
+  <p class="section-intro">${text(prices.lead)}</p>
+
+  <h2>${text(prices.prices.heading)}</h2>
+  <p class="section-intro">${text(prices.prices.intro)}</p>
+  <div class="table-scroll">
+  <table class="pricing-table mistral-prices">
+    ${headerRow(prices.prices.columns)}
+    <tbody>
+    ${priceRows}
+    </tbody>
+  </table>
+  </div>
+  <p class="section-intro">${guideLinkedWordsHtml(prices.prices.note.text, prices.prices.note.links, text)}</p>
+${answersHtml}
+
+  <h2>${text(prices.retirements.heading)}</h2>
+  <p class="section-intro">${text(prices.retirements.intro)}</p>
+  <div class="table-scroll">
+  <table class="pricing-table mistral-retirements">
+    ${headerRow(prices.retirements.columns)}
+    <tbody>
+    ${retirementRows}
+    </tbody>
+  </table>
+  </div>
+
+  <h2>${text(other.heading)}</h2>
+  <p class="section-intro">${text(otherNumbers)}</p>
+
+  <p class="section-intro">${sitePageLinksHtml(prices.see_also.text, prices.see_also.links, text)}</p>
+  </article>
+
+  ${buildMoreAlternativesGuides(slug)}
+
+  <footer>AgentDeals &mdash; open source, built for agents | <a href="/privacy">Privacy</a> | <a href="/press">Press</a> | <a href="/disclosure">Affiliate Disclosure</a> | <a href="/contact">Contact</a></footer>
+</div>
+</body>
+</html>`;
+}
+
 function whatsAppMarketingRateHtml(market: WhatsAppPrices["rates"]["markets"][number]): string {
   const rate = codeSpansAndDaysKeptWholeHtml(dollars(market.marketing));
   const note = market.marketing_note;
@@ -23847,7 +23994,7 @@ function buildStabilityDashboardPage(): string {
     const latestChange = entry.changes.reduce((latest, c) => c.date > (latest?.date ?? "") ? c : latest, entry.changes[0]);
     const changeTypeLabel = latestChange?.change_type.replace(/_/g, " ") ?? "";
 
-    const editorialLink = ALTERNATIVES_PAGES.find(p =>
+    const editorialLink = ALTERNATIVES_GUIDES.find(p =>
       p.primaryVendor.toLowerCase() === entry.vendor.toLowerCase() ||
       p.slug.includes(toVendorSlug(entry.vendor))
     );
@@ -26818,7 +26965,7 @@ function buildShutdownTrackerPage(): string {
     const stabColor = stability === "volatile" ? "#f85149" : stability === "watch" ? "#d29922" : stability === "improving" ? "#3fb950" : "var(--text-dim)";
     const color = urgencyColor(s.deadline);
     const vendorOffer = offers.find(o => toSlug(o.vendor) === s.vendorSlug);
-    const editorialLink = ALTERNATIVES_PAGES.find(p =>
+    const editorialLink = ALTERNATIVES_GUIDES.find(p =>
       p.primaryVendor.toLowerCase() === (vendorOffer?.vendor ?? "").toLowerCase() ||
       p.slug.includes(s.vendorSlug)
     );
@@ -54040,6 +54187,7 @@ ${MCP_TOOLS.map(t => `- **${t.name}**: ${t.brief}`).join("\n")}
 - [${bankingFees.title}](${BASE_URL}${BANKING_FEES_PATH})
 - [${companyFormationPrices.title}](${BASE_URL}${COMPANY_FORMATION_PATH})
 - [${whatsAppPrices.title}](${BASE_URL}${WHATSAPP_PRICES_PATH})
+- [${mistralPrices.title}](${BASE_URL}${MISTRAL_PRICES_PATH})
 - [Full details for LLMs](${BASE_URL}/llms-full.txt)
 `;
     res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=3600" });
@@ -54853,6 +55001,11 @@ ${catList}
     logRequest({ ts: new Date().toISOString(), type: "api", endpoint: "/company-formation-pricing-2026", params: {}, user_agent: req.headers["user-agent"] ?? "unknown", result_count: 1 });
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=3600" });
     res.end(buildCompanyFormationPricingPage());
+  } else if (url.pathname === "/mistral-api-pricing-2026" && isGetOrHead) {
+    recordApiHit("/mistral-api-pricing-2026");
+    logRequest({ ts: new Date().toISOString(), type: "api", endpoint: "/mistral-api-pricing-2026", params: {}, user_agent: req.headers["user-agent"] ?? "unknown", result_count: 1 });
+    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=3600" });
+    res.end(buildMistralApiPricingPage());
   } else if (url.pathname === "/whatsapp-business-api-pricing-2026" && isGetOrHead) {
     recordApiHit("/whatsapp-business-api-pricing-2026");
     logRequest({ ts: new Date().toISOString(), type: "api", endpoint: "/whatsapp-business-api-pricing-2026", params: {}, user_agent: req.headers["user-agent"] ?? "unknown", result_count: 1 });

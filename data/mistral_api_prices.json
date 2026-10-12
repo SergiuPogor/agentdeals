@@ -1,0 +1,204 @@
+{
+  "published": "2026-10-11",
+  "title": "Mistral API Pricing 2026: Free Tier, Costs and Limits",
+  "meta_description": "Mistral API prices run from $0.10 to $7.50 per million tokens. The Free plan's monthly usage has no stated amount since 2026-10-07. The API is for business customers only.",
+  "lead": "Mistral API prices range from $0.10 to $7.50 per million tokens. New accounts start in Mistral's Free mode, with monthly usage shared across the API, Studio and Vibe Code; when it runs out, requests stop until the next month unless pay-as-you-go is on. Since August 2026, Mistral's API is for business customers only, under its Commercial Terms of Service.",
+  "prices": {
+    "heading": "What does the Mistral API cost per million tokens?",
+    "intro": "The cheapest text model is Ministral 3 3B at $0.10 per million input and output tokens. The most expensive output is Mistral Medium 3.5 at $7.50 per million output tokens. Mistral Large 4 lists at $1.36 input and $4.18 output; Mistral's pricing page shows a launch sale of $0.68 and $2.09 with no end date. Batch requests cost 50% less.",
+    "columns": [
+      "Model",
+      "Input",
+      "Cached input",
+      "Output"
+    ],
+    "rows": [
+      {
+        "model": "Mistral Large 4 (public preview since 2026-10-06)",
+        "input": "1.36",
+        "cached_input": "0.14",
+        "output": "4.18",
+        "source": "https://docs.mistral.ai/inference/pricing",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Mistral Large 3",
+        "input": "0.50",
+        "cached_input": "0.05",
+        "output": "1.50",
+        "source": "https://docs.mistral.ai/inference/pricing",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Mistral Medium 3.5",
+        "input": "1.50",
+        "cached_input": "0.15",
+        "output": "7.50",
+        "source": "https://docs.mistral.ai/inference/pricing",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Mistral Small 4",
+        "input": "0.15",
+        "cached_input": "0.015",
+        "output": "0.60",
+        "source": "https://docs.mistral.ai/inference/pricing",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Ministral 3 14B",
+        "input": "0.20",
+        "cached_input": "0.02",
+        "output": "0.20",
+        "source": "https://docs.mistral.ai/inference/pricing",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Ministral 3 8B",
+        "input": "0.15",
+        "cached_input": "0.015",
+        "output": "0.15",
+        "source": "https://docs.mistral.ai/inference/pricing",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Ministral 3 3B",
+        "input": "0.10",
+        "cached_input": "0.01",
+        "output": "0.10",
+        "source": "https://docs.mistral.ai/inference/pricing",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Codestral",
+        "input": "0.30",
+        "cached_input": "0.03",
+        "output": "0.90",
+        "source": "https://docs.mistral.ai/inference/pricing",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Z.ai GLM 5.3 (third-party, hosted by Mistral)",
+        "input": "1.40",
+        "cached_input": "0.14",
+        "output": "4.40",
+        "source": "https://docs.mistral.ai/inference/pricing",
+        "read_on": "2026-10-11"
+      }
+    ],
+    "note": {
+      "text": "Prices are US dollars per 1 million tokens. Mistral Embed costs $0.10 per 1 million input tokens and Codestral Embed $0.15. OCR 4.1 costs $4 per 1,000 pages. Voxtral Mini Transcribe 2 costs $0.003 per minute of audio, and Voxtral TTS $16 per 1 million characters. Mistral Moderation 2 is free. Source: Mistral API pricing, read 2026-10-11.",
+      "links": [
+        {
+          "text": "Mistral API pricing",
+          "url": "https://docs.mistral.ai/inference/pricing"
+        }
+      ]
+    }
+  },
+  "answers": [
+    {
+      "heading": "Is the Mistral API free?",
+      "text": "Yes, within a monthly allowance. New accounts start in Mistral's Free mode, and every plan includes monthly usage shared across Studio, the API and Vibe Code. Mistral's pricing page listed $10 a month of API credits on the Free plan until 2026-10-07 and now states no amount. When the usage runs out, requests stop until the next billing period unless pay-as-you-go is on. Models whose names start with \"labs-\" are free, but experimental and not for production. To use Codestral in a code editor, an editor plugin calling the API is billed at the API price and draws on the plan's monthly usage. Mistral's own editor tool is Vibe Code. Mistral says the Free plan is for getting started with Vibe, and Pro gives full access to coding with Mistral Vibe."
+    },
+    {
+      "heading": "Who can use Mistral's API?",
+      "text": "Since 2026-08-05 (2026-08-07 in the EU), Mistral's consumer terms exclude Mistral AI Studio and API access, which are limited to business customers. API use falls under Mistral's Commercial Terms of Service, for the organization, company or other entity you represent. A business can use Mistral's API in a commercial product on any plan, including the Free plan; individuals cannot use the API for personal projects. Labs or Preview Models, such as Mistral Large 4, are provided for testing purposes."
+    },
+    {
+      "heading": "Do Mistral Pro and the Education plan include API credits?",
+      "text": "Yes. Mistral Pro costs $14.99 a month and includes $25.50 a month in API credits; it included $30 until 2026-10-07. Verified students who have not used Vibe or Le Chat before can take the Education plan for $5.99 a month, for up to 12 months, with $15 a month in API credits. The credits are shared across the API, Studio and Vibe Code."
+    },
+    {
+      "heading": "What are the Mistral API rate limits?",
+      "text": "Mistral publishes no rate-limit numbers. Limits apply to each Workspace and are shared by every API key in it: requests per second, tokens per minute and tokens per month. Each organization sees its own limits in Admin Panel > API > Limits."
+    },
+    {
+      "heading": "Does Mistral train on my API data?",
+      "text": "On the Free plan, Mistral may use your API and Studio inputs and outputs to train its models. You can opt out in the Admin Panel under Privacy, Anonymous improvement data; that toggle is separate from the Vibe toggle. Mistral's Commercial Terms say opt-outs and zero data retention do not apply to \"Labs or Preview Models\", which they define as experimental, preview or pre-release models identified as such. Mistral Large 4 is a public preview. To keep an opt-out in force, use a generally available model or confirm with Mistral first."
+    }
+  ],
+  "retirements": {
+    "heading": "Which Mistral models are being retired?",
+    "intro": "Z.ai GLM 5.2 (zai-glm-5-2) retires on 2026-10-31; Mistral names GLM 5.3 as its replacement. Mistral gives 6 months' notice for generally available models and 1 month for public preview, Labs and third-party models. A request to a retired model fails with a 404 error.",
+    "columns": [
+      "Model",
+      "Retired",
+      "Replacement"
+    ],
+    "rows": [
+      {
+        "model": "Z.ai GLM 5.2",
+        "retired": "2026-10-31 (scheduled)",
+        "replacement": "Z.ai GLM 5.3",
+        "source": "https://docs.mistral.ai/models",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "OCR 4.0",
+        "retired": "2026-09-30",
+        "replacement": "OCR 4.1",
+        "source": "https://docs.mistral.ai/models",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Mistral Medium 3, Mistral Medium 3.1",
+        "retired": "2026-08-31",
+        "replacement": "Mistral Medium 3.5",
+        "source": "https://docs.mistral.ai/models",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Devstral 2, Magistral Medium 1.2",
+        "retired": "2026-07-31",
+        "replacement": "Mistral Medium 3.5",
+        "source": "https://docs.mistral.ai/models",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Mistral Small 3.2, Magistral Small 1.2",
+        "retired": "2026-07-31",
+        "replacement": "Mistral Small 4",
+        "source": "https://docs.mistral.ai/models",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Mistral Nemo 12B",
+        "retired": "2026-07-31",
+        "replacement": "Ministral 3 8B",
+        "source": "https://docs.mistral.ai/models",
+        "read_on": "2026-10-11"
+      },
+      {
+        "model": "Mistral Large 2.1",
+        "retired": "2026-05-31",
+        "replacement": "Mistral Medium 3.5",
+        "source": "https://docs.mistral.ai/models",
+        "read_on": "2026-10-11"
+      }
+    ]
+  },
+  "other_numbers": {
+    "heading": "Why do other pages give different Mistral numbers?",
+    "retired_terms": [
+      {
+        "text": "Many pages still give the limits of Mistral's 2024 free API tier on \"la Plateforme\": 1 request per second, 500,000 tokens per minute and 1 billion tokens a month.",
+        "source": "https://web.archive.org/web/20250518045534/https://help.mistral.ai/en/articles/225174-what-are-the-limits-of-the-free-tier"
+      }
+    ],
+    "text": "Mistral's help article with those figures now returns a 404 error, and its current docs publish no rate-limit numbers. Mistral stopped stating the Free plan's $10 credit on 2026-10-07."
+  },
+  "see_also": {
+    "text": "See also: Free LLM APIs and LLM API Free Tiers & Free Credits 2026.",
+    "links": [
+      {
+        "text": "Free LLM APIs",
+        "path": "/free-llm-apis"
+      },
+      {
+        "text": "LLM API Free Tiers & Free Credits 2026",
+        "path": "/llm-api-pricing"
+      }
+    ]
+  }
+}
