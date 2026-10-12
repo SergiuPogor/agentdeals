@@ -155,6 +155,12 @@
           "quote": "any changes to your web service's filesystem (uploaded images, local SQLite databases, etc.) are lost every time the service redeploys, restarts, or spins down.",
           "url": "https://render.com/docs/free",
           "read_on": "2026-10-05"
+        },
+        {
+          "text": "If a workspace uses all 750 free instance hours in a month, Render suspends all of its free web services until the start of the next month.",
+          "quote": "If you consume all of your Free instance hours during a given month, Render suspends all of your Free web services until the start of the next month.",
+          "url": "https://render.com/docs/free",
+          "read_on": "2026-10-12"
         }
       ]
     },
