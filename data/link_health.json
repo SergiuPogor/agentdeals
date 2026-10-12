@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-11",
+  "generated_at": "2026-10-12",
   "links": [
     {
       "url": "https://about.gitlab.com/partners/program/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "reachable",
       "detail": "HEAD 200",
       "terminal": false,
-      "last_reachable": "2026-10-11",
+      "last_reachable": "2026-10-12",
       "consecutive_unreachable": 0,
       "redirected_to": "https://partners.gitlab.com/English/"
     },
     {
       "url": "https://appfit.io/product/pricing",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -22,25 +22,25 @@
     },
     {
       "url": "https://cirrus-ci.org",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
-      "detail": "GET EAI_AGAIN",
+      "detail": "GET UND_ERR_CONNECT_TIMEOUT",
       "terminal": false,
       "last_reachable": "2026-04-12",
       "consecutive_unreachable": 0
     },
     {
       "url": "https://cloud.google.com/vertex-ai/docs/agent-builder",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET 404",
       "terminal": false,
       "last_reachable": "2026-04-15",
-      "consecutive_unreachable": 46
+      "consecutive_unreachable": 47
     },
     {
       "url": "https://cloud.invantive.com/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 451",
       "terminal": false,
@@ -58,7 +58,7 @@
     },
     {
       "url": "https://codepen.io/pricing",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -67,7 +67,7 @@
     },
     {
       "url": "https://codesandbox.io/pricing",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -76,7 +76,7 @@
     },
     {
       "url": "https://coolors.co/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -85,16 +85,16 @@
     },
     {
       "url": "https://cstate.netlify.app",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET 404",
       "terminal": false,
       "last_reachable": "2026-05-02",
-      "consecutive_unreachable": 47
+      "consecutive_unreachable": 48
     },
     {
       "url": "https://dadroit.com/vweb/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -103,7 +103,7 @@
     },
     {
       "url": "https://degoo.com/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 503",
       "terminal": false,
@@ -112,7 +112,7 @@
     },
     {
       "url": "https://developer.x.com/en/portal/products",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -130,7 +130,7 @@
     },
     {
       "url": "https://domain.digitalplat.org",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -139,7 +139,7 @@
     },
     {
       "url": "https://engage.so/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET TIMEOUT",
       "terminal": false,
@@ -148,16 +148,16 @@
     },
     {
       "url": "https://engagespot.co/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET 404",
       "terminal": false,
       "last_reachable": "2026-08-30",
-      "consecutive_unreachable": 42
+      "consecutive_unreachable": 43
     },
     {
       "url": "https://etlr.io",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET ECONNRESET",
       "terminal": false,
@@ -166,16 +166,34 @@
     },
     {
       "url": "https://evernote.com/free",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET 404",
       "terminal": false,
       "last_reachable": "2026-04-23",
-      "consecutive_unreachable": 47
+      "consecutive_unreachable": 48
+    },
+    {
+      "url": "https://fabform.io/",
+      "checked": "2026-10-12",
+      "outcome": "unknown",
+      "detail": "GET UND_ERR_CONNECT_TIMEOUT",
+      "terminal": false,
+      "last_reachable": "2026-10-11",
+      "consecutive_unreachable": 0
+    },
+    {
+      "url": "https://floatui.com/",
+      "checked": "2026-10-12",
+      "outcome": "unknown",
+      "detail": "GET 502",
+      "terminal": false,
+      "last_reachable": "2026-10-11",
+      "consecutive_unreachable": 0
     },
     {
       "url": "https://gitgud.io",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -202,7 +220,7 @@
     },
     {
       "url": "https://gtmetrix.com/free-plan-features.html",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -211,7 +229,7 @@
     },
     {
       "url": "https://hostingchecker.co",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET ERR_SSL_TLSV1_UNRECOGNIZED_NAME",
       "terminal": false,
@@ -220,11 +238,20 @@
     },
     {
       "url": "https://howuku.com",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET TIMEOUT",
       "terminal": false,
       "last_reachable": "2026-10-10",
+      "consecutive_unreachable": 0
+    },
+    {
+      "url": "https://ipaddress.sh",
+      "checked": "2026-10-12",
+      "outcome": "unknown",
+      "detail": "GET UND_ERR_CONNECT_TIMEOUT",
+      "terminal": false,
+      "last_reachable": "2026-10-11",
       "consecutive_unreachable": 0
     },
     {
@@ -238,16 +265,16 @@
     },
     {
       "url": "https://langtrace.ai",
-      "checked": "2026-10-11",
-      "outcome": "unreachable",
-      "detail": "GET 404",
+      "checked": "2026-10-12",
+      "outcome": "unknown",
+      "detail": "GET UND_ERR_CONNECT_TIMEOUT",
       "terminal": false,
       "last_reachable": "2026-05-07",
       "consecutive_unreachable": 47
     },
     {
       "url": "https://mathworks.com/products/startups.html",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -256,16 +283,16 @@
     },
     {
       "url": "https://moss.sh",
-      "checked": "2026-10-11",
-      "outcome": "unknown",
-      "detail": "GET EAI_AGAIN",
+      "checked": "2026-10-12",
+      "outcome": "unreachable",
+      "detail": "GET ENOTFOUND",
       "terminal": false,
       "last_reachable": "2026-04-13",
-      "consecutive_unreachable": 0
+      "consecutive_unreachable": 1
     },
     {
       "url": "https://namae.dev/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 429",
       "terminal": false,
@@ -283,16 +310,16 @@
     },
     {
       "url": "https://newuuid.com/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET ENOTFOUND",
       "terminal": false,
       "last_reachable": "2026-10-02",
-      "consecutive_unreachable": 9
+      "consecutive_unreachable": 10
     },
     {
       "url": "https://nordpass.com/plans/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -301,9 +328,9 @@
     },
     {
       "url": "https://nspolygon.com",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
-      "detail": "GET EAI_AGAIN",
+      "detail": "GET UND_ERR_CONNECT_TIMEOUT",
       "terminal": false,
       "last_reachable": "2026-05-31",
       "consecutive_unreachable": 1
@@ -319,7 +346,7 @@
     },
     {
       "url": "https://openai.com",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -337,7 +364,7 @@
     },
     {
       "url": "https://openai.com/form/partnerintake/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -355,7 +382,7 @@
     },
     {
       "url": "https://openvps.ai",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET UND_ERR_CONNECT_TIMEOUT",
       "terminal": false,
@@ -364,16 +391,16 @@
     },
     {
       "url": "https://postmarkapp.com/partner-program",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET 404",
       "terminal": false,
       "last_reachable": "2026-10-08",
-      "consecutive_unreachable": 3
+      "consecutive_unreachable": 4
     },
     {
       "url": "https://proxysentry.io/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET ECONNRESET",
       "terminal": false,
@@ -382,12 +409,30 @@
     },
     {
       "url": "https://run.claw.cloud",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET ENOTFOUND",
       "terminal": false,
       "last_reachable": "2026-04-24",
-      "consecutive_unreachable": 47
+      "consecutive_unreachable": 48
+    },
+    {
+      "url": "https://savannah.nongnu.org/",
+      "checked": "2026-10-12",
+      "outcome": "unknown",
+      "detail": "GET UND_ERR_CONNECT_TIMEOUT",
+      "terminal": false,
+      "last_reachable": "2026-10-11",
+      "consecutive_unreachable": 0
+    },
+    {
+      "url": "https://seatable.io/",
+      "checked": "2026-10-12",
+      "outcome": "unknown",
+      "detail": "GET TIMEOUT",
+      "terminal": false,
+      "last_reachable": "2026-10-11",
+      "consecutive_unreachable": 0
     },
     {
       "url": "https://segment.com/docs/guides/usage-and-billing/discounts-for-startups-npos/",
@@ -400,17 +445,17 @@
     },
     {
       "url": "https://sentry.io",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "reachable",
       "detail": "HEAD 200",
       "terminal": false,
-      "last_reachable": "2026-10-11",
+      "last_reachable": "2026-10-12",
       "consecutive_unreachable": 0,
       "redirected_to": "https://sentry.io/welcome/"
     },
     {
       "url": "https://smartmockups.com/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -419,7 +464,7 @@
     },
     {
       "url": "https://snapapi.pics",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET UND_ERR_CONNECT_TIMEOUT",
       "terminal": false,
@@ -428,12 +473,12 @@
     },
     {
       "url": "https://soos.io",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET 410",
       "terminal": true,
       "last_reachable": "2026-05-23",
-      "consecutive_unreachable": 47
+      "consecutive_unreachable": 48
     },
     {
       "url": "https://strale.io",
@@ -446,7 +491,7 @@
     },
     {
       "url": "https://substack.com",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -454,8 +499,17 @@
       "consecutive_unreachable": 0
     },
     {
+      "url": "https://swagger.io/tools/swaggerhub/pricing/",
+      "checked": "2026-10-12",
+      "outcome": "unknown",
+      "detail": "GET UND_ERR_CONNECT_TIMEOUT",
+      "terminal": false,
+      "last_reachable": "2026-10-11",
+      "consecutive_unreachable": 0
+    },
+    {
       "url": "https://unsplash.com/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 401",
       "terminal": false,
@@ -464,7 +518,7 @@
     },
     {
       "url": "https://voice-clone.org/tools/audio-enhancer",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET DEPTH_ZERO_SELF_SIGNED_CERT",
       "terminal": false,
@@ -473,34 +527,34 @@
     },
     {
       "url": "https://volaryddns.net",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET ENOTFOUND",
       "terminal": false,
       "last_reachable": "2026-07-12",
-      "consecutive_unreachable": 47
+      "consecutive_unreachable": 48
     },
     {
       "url": "https://wdrfree.com/free-svg",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET 404",
       "terminal": false,
       "last_reachable": "2026-06-01",
-      "consecutive_unreachable": 47
+      "consecutive_unreachable": 48
     },
     {
       "url": "https://whitespace.dev",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET ENOTFOUND",
       "terminal": false,
       "last_reachable": "2026-09-28",
-      "consecutive_unreachable": 12
+      "consecutive_unreachable": 13
     },
     {
       "url": "https://wso2.com/asgardeo",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -509,7 +563,7 @@
     },
     {
       "url": "https://wso2.com/choreo/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -518,7 +572,7 @@
     },
     {
       "url": "https://www.autodesk.in/products/fusion-360/startups",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -527,16 +581,16 @@
     },
     {
       "url": "https://www.bismuth.cloud/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET ENOTFOUND",
       "terminal": false,
       "last_reachable": "2026-07-08",
-      "consecutive_unreachable": 47
+      "consecutive_unreachable": 48
     },
     {
       "url": "https://www.btunnel.in/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET UND_ERR_CONNECT_TIMEOUT",
       "terminal": false,
@@ -545,7 +599,7 @@
     },
     {
       "url": "https://www.canva.com/pricing/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -563,7 +617,7 @@
     },
     {
       "url": "https://www.cmyktopantone.com/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET CERT_HAS_EXPIRED",
       "terminal": false,
@@ -572,7 +626,7 @@
     },
     {
       "url": "https://www.contentful.com/pricing/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 429",
       "terminal": false,
@@ -581,16 +635,16 @@
     },
     {
       "url": "https://www.couchbase.com/products/capella/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
-      "detail": "GET 403",
+      "detail": "GET UND_ERR_CONNECT_TIMEOUT",
       "terminal": false,
       "last_reachable": "2026-07-15",
       "consecutive_unreachable": 0
     },
     {
       "url": "https://www.datree.io/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET ERR_SSL_SSL/TLS_ALERT_HANDSHAKE_FAILURE",
       "terminal": false,
@@ -599,7 +653,7 @@
     },
     {
       "url": "https://www.hashicorp.com/en/partners/become-a-partner",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 429",
       "terminal": false,
@@ -608,7 +662,7 @@
     },
     {
       "url": "https://www.hashicorp.com/products/terraform/pricing",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 429",
       "terminal": false,
@@ -617,7 +671,7 @@
     },
     {
       "url": "https://www.hashicorp.com/products/vault/pricing",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 429",
       "terminal": false,
@@ -635,16 +689,16 @@
     },
     {
       "url": "https://www.karbonsites.space",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET ENOTFOUND",
       "terminal": false,
       "last_reachable": "2026-08-04",
-      "consecutive_unreachable": 10
+      "consecutive_unreachable": 11
     },
     {
       "url": "https://www.knowlarity.com/startups/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET UNABLE_TO_VERIFY_LEAF_SIGNATURE",
       "terminal": false,
@@ -653,7 +707,7 @@
     },
     {
       "url": "https://www.make.com/en/pricing",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -662,7 +716,7 @@
     },
     {
       "url": "https://www.microsoft.com/en-us/microsoft-365/onedrive/compare-onedrive-plans",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET TIMEOUT",
       "terminal": false,
@@ -680,7 +734,7 @@
     },
     {
       "url": "https://www.microsoft.com/en-us/microsoft-teams/free",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET TIMEOUT",
       "terminal": false,
@@ -689,16 +743,16 @@
     },
     {
       "url": "https://www.mongodb.com/referral-program",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET 404",
       "terminal": false,
       "last_reachable": "2026-10-08",
-      "consecutive_unreachable": 3
+      "consecutive_unreachable": 4
     },
     {
       "url": "https://www.namecheap.com/affiliates/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -707,7 +761,7 @@
     },
     {
       "url": "https://www.namecheap.com/domains/freedns/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -716,7 +770,7 @@
     },
     {
       "url": "https://www.namecheap.com/supersonic-cdn/#free-plan",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -725,7 +779,7 @@
     },
     {
       "url": "https://www.oracle.com/cloud/free/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -733,8 +787,17 @@
       "consecutive_unreachable": 0
     },
     {
+      "url": "https://www.pandastack.io/",
+      "checked": "2026-10-12",
+      "outcome": "unknown",
+      "detail": "GET TIMEOUT",
+      "terminal": false,
+      "last_reachable": "2026-10-11",
+      "consecutive_unreachable": 0
+    },
+    {
       "url": "https://www.pexels.com/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -752,7 +815,7 @@
     },
     {
       "url": "https://www.staticforms.xyz/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 429",
       "terminal": false,
@@ -761,7 +824,7 @@
     },
     {
       "url": "https://www.vultr.com/company/referral-program/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -770,7 +833,7 @@
     },
     {
       "url": "https://www.vultr.com/features/advanced-networking/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -779,7 +842,7 @@
     },
     {
       "url": "https://www.vultr.com/free-tier-program/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -788,7 +851,7 @@
     },
     {
       "url": "https://www.webex.com/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unknown",
       "detail": "GET 403",
       "terminal": false,
@@ -797,12 +860,12 @@
     },
     {
       "url": "https://zonomi.com/",
-      "checked": "2026-10-11",
+      "checked": "2026-10-12",
       "outcome": "unreachable",
       "detail": "GET 404",
       "terminal": false,
       "last_reachable": "2026-09-21",
-      "consecutive_unreachable": 19
+      "consecutive_unreachable": 20
     }
   ]
 }
