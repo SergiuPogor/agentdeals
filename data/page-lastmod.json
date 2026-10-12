@@ -14,7 +14,7 @@
       "changed": "2026-10-11"
     },
     "/agent-stack": {
-      "hash": "6f0cab92c79109a0",
+      "hash": "6d78b2e607eb445a",
       "changed": "2026-10-12"
     },
     "/ai-coding-tools-pricing": {
@@ -826,7 +826,7 @@
       "changed": "2026-10-12"
     },
     "/backblaze-b2-vs-cloudflare-r2": {
-      "hash": "1c88b26cdfb0b026",
+      "hash": "972578452c14e151",
       "changed": "2026-10-12"
     },
     "/badges": {
@@ -1129,7 +1129,7 @@
       "changed": "2026-10-12"
     },
     "/category/cloud-hosting": {
-      "hash": "268a4f68f5dbb8c3",
+      "hash": "23f4bf23e3a6abc8",
       "changed": "2026-10-12"
     },
     "/category/cloud-iaas": {
@@ -1297,7 +1297,7 @@
       "changed": "2026-10-11"
     },
     "/category/storage": {
-      "hash": "62b5781151306703",
+      "hash": "db0e95f8275b7d91",
       "changed": "2026-10-12"
     },
     "/category/team-collaboration": {
@@ -1660,11 +1660,11 @@
       "changed": "2026-10-11"
     },
     "/compare/cloudflare-workers-vs-duolingo": {
-      "hash": "ae3c33711a727c8b",
+      "hash": "0e2fb69a75b7b4e7",
       "changed": "2026-10-12"
     },
     "/compare/cloudflare-workers-vs-mit-opencourseware": {
-      "hash": "a652eb68aff47019",
+      "hash": "2ac4b29fa09db63a",
       "changed": "2026-10-12"
     },
     "/compare/cockroachdb-vs-neon": {
@@ -3130,7 +3130,7 @@
       "changed": "2026-10-11"
     },
     "/estimate": {
-      "hash": "6b0ecd7013c5652c",
+      "hash": "376fbda16ca1a690",
       "changed": "2026-10-12"
     },
     "/events": {
@@ -3172,11 +3172,11 @@
       "changed": "2026-10-12"
     },
     "/free-django-stack": {
-      "hash": "68e9d281de97da80",
+      "hash": "3d34b9fbd0215eea",
       "changed": "2026-10-12"
     },
     "/free-fastapi-stack": {
-      "hash": "e55406608013e983",
+      "hash": "be7c16b11e94166d",
       "changed": "2026-10-12"
     },
     "/free-frontend-stack": {
@@ -3184,7 +3184,7 @@
       "changed": "2026-10-12"
     },
     "/free-go-stack": {
-      "hash": "46394528c9ef5e40",
+      "hash": "9d4b2a8f5d99fbfb",
       "changed": "2026-10-12"
     },
     "/free-llm-apis": {
@@ -3192,15 +3192,15 @@
       "changed": "2026-10-12"
     },
     "/free-nextjs-stack": {
-      "hash": "2d35b2ce03399998",
+      "hash": "8331208ad155c9d2",
       "changed": "2026-10-12"
     },
     "/free-saas-stack": {
-      "hash": "32100bb36b4ac81a",
+      "hash": "25afed45914197e3",
       "changed": "2026-10-12"
     },
     "/free-startup-stack": {
-      "hash": "b841e1fb1140ad27",
+      "hash": "94998fe2df72b1fc",
       "changed": "2026-10-12"
     },
     "/free-tier-facts-ai-models-get-wrong": {
@@ -3270,11 +3270,11 @@
       "changed": "2026-10-11"
     },
     "/heroku-alternatives": {
-      "hash": "77634ef1d83ac8e1",
+      "hash": "077c196c66e9a83a",
       "changed": "2026-10-12"
     },
     "/hetzner-alternatives": {
-      "hash": "72eb540f056fedfe",
+      "hash": "8fd74114791e5f6e",
       "changed": "2026-10-12"
     },
     "/hetzner-pricing-2026": {
@@ -3282,7 +3282,7 @@
       "changed": "2026-10-12"
     },
     "/hosting-alternatives": {
-      "hash": "fbf023fefce9504a",
+      "hash": "6f702ddb17c5c94c",
       "changed": "2026-10-12"
     },
     "/hosting-free-tier-comparison-2026": {
@@ -3567,7 +3567,7 @@
       "changed": "2026-10-12"
     },
     "/stack-check": {
-      "hash": "d7c550cbc8c3fead",
+      "hash": "203e665e06c1cfbb",
       "changed": "2026-10-12"
     },
     "/stacks": {
@@ -3603,7 +3603,7 @@
       "changed": "2026-10-12"
     },
     "/storage-alternatives": {
-      "hash": "b4c1e5a0259ad074",
+      "hash": "abcdac6c22f75480",
       "changed": "2026-10-12"
     },
     "/storage-comparison-2026": {
@@ -4773,7 +4773,7 @@
       "changed": "2026-10-12"
     },
     "/vendor/cloudflare-r2": {
-      "hash": "fa62919a7a17eed6",
+      "hash": "d7eb93deaf7edfb9",
       "changed": "2026-10-12"
     },
     "/vendor/cloudflare-sandboxes": {
@@ -9583,7 +9583,7 @@
       "changed": "2026-10-12"
     },
     "/vercel-alternatives": {
-      "hash": "f7d58d33a7e2cb80",
+      "hash": "7862cdc9ddda7987",
       "changed": "2026-10-12"
     },
     "/vercel-vs-netlify": {
