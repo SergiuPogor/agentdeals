@@ -87,9 +87,13 @@ function tieNote(html: string): string {
 }
 
 function statedScope(note: string): string {
-  const stated = /\d+ offers? meets? our criteria ([^.]+)\./.exec(note);
+  const stated = /(?:\d+ offers? meets?|No offer meets) our criteria ([^.]+?)(?: today)?\./.exec(note);
   assert.ok(stated, `no durability denominator in: ${note.slice(0, 200)}`);
   return stated[1]!;
+}
+
+function listsAnOffer(html: string): boolean {
+  return quickComparisonRows(html).length > 0;
 }
 
 function faqAnswers(html: string): Map<string, string> {
@@ -132,7 +136,6 @@ describe("#1492 a best-of page states what its own signal says about its offers"
     let checked = 0;
     for (const [routePath, html] of served) {
       const rows = quickComparisonRows(html);
-      if (rows.length === 0) { disagreeing.push(`${routePath} publishes no ${COLUMN_NAME} column`); continue; }
       const note = tieNote(html);
       const split = durabilitySplit(rows.map(row => row.durability));
       const expected = durabilityVerdictText(split, {
@@ -196,7 +199,7 @@ describe("#1492 a best-of page states what its own signal says about its offers"
     const ranking: string[] = [];
     for (const [routePath, html] of served) {
       for (const claim of superlativeClaims(html)) ranking.push(`${routePath} publishes "${claim.label}"`);
-      if (!visibleText(html).includes(DURABILITY_NOT_A_SIZE_RANKING)) {
+      if (listsAnOffer(html) && !visibleText(html).includes(DURABILITY_NOT_A_SIZE_RANKING)) {
         ranking.push(`${routePath} states no refusal to rank by size`);
       }
     }
@@ -206,7 +209,7 @@ describe("#1492 a best-of page states what its own signal says about its offers"
   it("keeps the refusal to name a best on every page of this family", () => {
     const missing: string[] = [];
     for (const [routePath, html] of served) {
-      if (!visibleText(html).includes(NO_RANKING_HELD)) missing.push(routePath);
+      if (listsAnOffer(html) && !visibleText(html).includes(NO_RANKING_HELD)) missing.push(routePath);
     }
     assert.deepStrictEqual(missing, [], `pages that dropped the refusal:\n${missing.join("\n")}`);
   });

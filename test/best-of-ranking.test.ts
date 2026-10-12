@@ -62,20 +62,21 @@ describe("/best/:slug shows the whole qualified band", () => {
   it("states the durability verdict in plain language, above the list, where the whole page is one set of alternatives", async () => {
     const { html } = await get("/best/free-search");
     const visible = html.replace(/<head>[\s\S]*?<\/head>/, " ").replace(/<script[\s\S]*?<\/script>/g, " ");
-    const firstCard = visible.indexOf('class="best-pick"');
-    assert.ok(firstCard > -1, "the page must list the offers that meet its criteria");
+    const firstCard = visible.search(/class="best-pick[" ]/);
+    assert.ok(firstCard > -1, "the page must list the offers it holds");
     const aboveTheList = visible.slice(0, firstCard);
-    assert.match(aboveTheList, /\b(?:1 offer meets|\d+ offers meet) our criteria for this category\./, "the denominator must be stated above the list");
+    const denominator = /\b(?:1 offer meets|\d+ offers meet) our criteria for this category\.|\bNo offer meets our criteria for this category today\./.exec(aboveTheList);
+    assert.ok(denominator, "the denominator must be stated above the list");
     assert.match(
       aboveTheList,
-      /(?:no recorded change|a recorded narrowing|a recorded widening) to the terms we publish|no durability signal/,
+      /(?:no recorded change|a recorded narrowing|a recorded widening) to the terms we publish|no durability signal|There is no durability split to publish/,
       "the durability split must be stated above the list",
     );
     assert.ok(
       !/distinguishable/i.test(html),
       "the page must not claim that nothing we record distinguishes its offers",
     );
-    assert.match(html, /rotates daily/);
+    if (!denominator![0].startsWith("No offer")) assert.match(html, /rotates daily/);
   });
 
   it("states the split, and a durability verdict scoped to each group, where the page spans several labelled functions", async () => {
