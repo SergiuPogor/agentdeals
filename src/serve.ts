@@ -3033,7 +3033,9 @@ function buildBestOfPage(slug: string): string | null {
 
   const tiePara = groups
     ? `<strong>The offers here are not all alternatives to one another &mdash; they carry ${groups.filter(g => g.subtype).length} different labelled functions.</strong> ${escHtmlServer(FUNCTION_SPLIT_RULE)} ${pageVerdictHtml} ${orderProse}`
-    : `${pageVerdictHtml} ${orderProse}`;
+    : pickCount === 0
+      ? pageVerdictHtml
+      : `${pageVerdictHtml} ${orderProse}`;
 
   const renderCard = (e: RankedEntry<EnrichedOfferRow>, i: number, demotedCard: boolean, labels?: SubtypeLabel[]) => {
     const o = e.offer;
