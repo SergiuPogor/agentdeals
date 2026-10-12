@@ -3401,7 +3401,7 @@
       "source_check": {
         "checked": "2026-10-05",
         "outcome": "ok",
-        "detail": "the page names Hugging Face as \"hugging face\" and states \"$0.10\" and \"$2.00\""
+        "detail": "the page names Hugging Face as \"hugging face\" and states \"$2.00\""
       },
       "product_subtypes": {
         "taxonomy": "AI / ML",
