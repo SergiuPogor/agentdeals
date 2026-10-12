@@ -16,9 +16,11 @@ import {
   type RefusedRead,
 } from "../dist/change-refusal.js";
 import {
+  NO_CONFIRMATION_HELD,
   WHAT_A_SETTLED_READ_FOUND,
   WHAT_A_VOIDED_READ_FOUND,
   WHAT_THE_LAST_READ_FOUND,
+  confirmationDate,
   lastReadNote,
   readingSettledByRefusals,
   whatTheLastReadFound,
@@ -37,6 +39,9 @@ const RESTATED = WHAT_A_SETTLED_READ_FOUND.restated_the_terms_we_publish;
 const NO_FIGURE_MOVED = WHAT_A_SETTLED_READ_FOUND.named_no_figure_that_moved;
 
 const refused = (reason: string, refused_date = READ): RefusedRead => ({ reason, refused_date });
+
+const readFoundTheTermsWePublished = (read: string) =>
+  `The day we last read the vendor's page. Our last read of it, on ${read}, found the terms we published that day.`;
 
 function reading(over: Partial<LastReading> & { outcome: string }): LastReading {
   return {
@@ -277,6 +282,16 @@ describe("the catalogue as it stands", () => {
     assert.deepStrictEqual(wrong.map((o) => `${o.vendor}: ${o.last_read_found}`), []);
   });
 
+  it("says the read found the terms we published that day on every record it restated them for, where no confirmation or earlier read stands behind the terms", () => {
+    const restated = settled.filter((o) => settledFromStore(o) === RESTATED && !o.restated_from && confirmationDate(o) === null);
+    assertPopulationFloor(restated.length, 10, "records whose last read restated the terms we publish, with no confirmation or earlier read behind them");
+    const wrong = restated
+      .map((o) => ({ o, note: lastReadNote(o, null, refusals.get(o.vendor.trim().toLowerCase()) ?? []) }))
+      .filter(({ o, note }) => note !== readFoundTheTermsWePublished(o.last_read_date!))
+      .map(({ o, note }) => `${o.vendor}: ${note}`);
+    assert.deepStrictEqual(wrong, []);
+  });
+
   it("leaves a read no refusal settled reporting the difference it found", () => {
     const unsettled = enriched.filter((o) => {
       const record = state.get(`${o.vendor}|${o.url}`);
@@ -332,22 +347,46 @@ describe("the note the vendor page renders beside the day we last read", () => {
     resetVerificationStateCache();
   });
 
-  function readOn(date: string): void {
+  function readOn(date: string, lastSuccess: string | null = null): void {
     writeFileSync(
       process.env.AGENTDEALS_VERIFICATION_STATE_PATH!,
       JSON.stringify({
         generated_at: date,
-        records: [{ ...record, last_attempt_at: date, last_outcome: "changed", last_success: null, consecutive_failures: 0 }],
+        records: [{ ...record, last_attempt_at: date, last_outcome: "changed", last_success: lastSuccess, consecutive_failures: 0 }],
       }),
     );
     resetVerificationStateCache();
   }
 
-  it("states what we did about the difference where a refusal carries the day of the read", () => {
+  it("says the read found the terms we published that day where a same-day refusal restated them", () => {
     readOn("2026-09-11");
+    for (const reason of REFUSAL_REASONS_THAT_CONFIRM_THE_STORED_TERMS) {
+      const note = lastReadNote(record, null, [refused(reason, "2026-09-11")]);
+      assert.strictEqual(note, readFoundTheTermsWePublished("2026-09-11"), reason);
+    }
+  });
+
+  it("keeps naming the read our terms came from where we restated them from an earlier read", () => {
+    readOn("2026-09-11");
+    const restatedEarlier = { ...record, restated_from: { reading_date: "2026-09-05" } };
+    const note = lastReadNote(restatedEarlier, null, [refused("confirmed_unchanged", "2026-09-11")]);
+    assert.ok(note.includes("The terms above come from our read of 2026-09-05"), note);
+    assert.ok(note.includes(NO_CONFIRMATION_HELD), note);
+  });
+
+  it("keeps the day we last confirmed the terms where a confirmation from before that read stands", () => {
+    readOn("2026-09-11", "2026-09-02");
     const note = lastReadNote(record, null, [refused("confirmed_unchanged", "2026-09-11")]);
-    assert.ok(note.includes(RESTATED), note);
-    assert.ok(!note.includes(A_DISAGREEMENT_STANDS), note);
+    assert.strictEqual(note, "The day we last read the vendor's page. The terms we publish were last confirmed on 2026-09-02.");
+  });
+
+  it("keeps what we did about the difference where the same-day refusal measured no figure moving or voided the read", () => {
+    readOn("2026-09-11");
+    for (const reason of ["measures_no_change", REFUSAL_REASONS_THAT_VOID_THE_READS_STANDING[0]]) {
+      const note = lastReadNote(record, null, [refused(reason, "2026-09-11")]);
+      assert.ok(note.includes(NO_CONFIRMATION_HELD), `${reason}: ${note}`);
+      assert.notStrictEqual(note, readFoundTheTermsWePublished("2026-09-11"), reason);
+    }
   });
 
   it("states the disagreement where the only refusal carries the catalogue date instead", () => {
