@@ -32672,7 +32672,7 @@
       "category": "AI / ML",
       "description": "Free inference endpoints on build.nvidia.com: models marked Free Endpoint, including Kimi K3, DeepSeek V4.1 Flash and NVIDIA Nemotron, can be called at no cost. Up to 40 requests per minute; limits may vary by model, and traffic from other users may cause throttling. NVIDIA's API Trial Terms allow free use for testing and evaluation only, not production.",
       "tier": "Free",
-      "url": "https://build.nvidia.com",
+      "url": "https://build.nvidia.com/api/runtime/content/help-center-faq.yaml",
       "tags": [
         "ai",
         "ml",
@@ -32684,9 +32684,9 @@
       ],
       "verifiedDate": "2026-08-15",
       "source_check": {
-        "checked": "2026-09-02",
-        "outcome": "states_no_terms",
-        "detail": "the page names NVIDIA NIM but states no amount, tier or rate we can read"
+        "checked": "2026-10-12",
+        "outcome": "ok",
+        "detail": "the page names NVIDIA NIM as \"nim\" and states \"40 requests per minute\""
       },
       "product_subtypes": {
         "taxonomy": "AI / ML",
@@ -32710,7 +32710,10 @@
           "text": "Using the API in production, or after the trial credits are used up, needs a separate subscription from NVIDIA or a third-party provider.",
           "quote": "to use the API Service in production or to use the API Service after you have used your available Credits",
           "url": "https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf",
-          "read_on": "2026-10-06"
+          "read_on": "2026-10-06",
+          "rules_out": [
+            "production"
+          ]
         }
       ]
     },
