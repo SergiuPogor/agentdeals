@@ -3269,8 +3269,8 @@
       "changed": "2026-10-11"
     },
     "/heroku-alternatives": {
-      "hash": "aff4bc130c15187e",
-      "changed": "2026-10-11"
+      "hash": "f73e7e2ec7ff5063",
+      "changed": "2026-10-12"
     },
     "/hetzner-alternatives": {
       "hash": "a9bd6ec113205ce5",
@@ -9583,7 +9583,7 @@
       "changed": "2026-10-12"
     },
     "/vercel-alternatives": {
-      "hash": "684a1b839258286f",
+      "hash": "6fc22d80b11327b3",
       "changed": "2026-10-12"
     },
     "/vercel-vs-netlify": {
