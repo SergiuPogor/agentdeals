@@ -160,6 +160,18 @@
       "collided_with": "Algolia|limits_reduced|2026-08-28|https://www.algolia.com/pricing"
     },
     {
+      "vendor": "Alwaysdata",
+      "change_type": "limits_increased",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 6140 characters, so it states no terms to have changed",
+      "summary": "The free tier still exists, but the description is significantly different. The stored information states 1GB storage and 256MB RAM. The current page states unlimited sites, email and databases.",
+      "previous_state": "1 GB free web hosting with support for MySQL, PostgreSQL, RabbitMQ, .NET, Deno, Elixir, Go, Java, Lua, Node.js, PHP, Python, Ruby, Rust. Custom web servers, access via FTP, WebDAV and SSH. Mailbox, mailing list and app installer included. 256 MB RAM and a quarter of a CPU. Sites get an alwaysdata.net address; email can use your own domain. No credit card is required and the plan has no time limit.",
+      "current_state": "Inscription sans carte bleue. Valide sans limite de temps. Utilisation à titre personnel. Toutes les fonctionnalités de l'offre Plus. Sites, boîtes email et bases illimités.",
+      "source_url": "https://www.alwaysdata.com/",
+      "category": "Cloud Hosting",
+      "refused_date": "2026-10-12"
+    },
+    {
       "vendor": "Amazon Kiro (AWS Startups)",
       "change_type": "free_tier_removed",
       "reason": "no_removal_evidence",
@@ -831,6 +843,18 @@
     {
       "vendor": "Braintrust",
       "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-21 (same_transition_graded_differently) stated the same 8 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now includes $10 in credits and token rates, with 1 GB of processed data and 10k scores included, but overages are charged at $4/GB and $2.50/1k respectively. The page also details Pro and Enterprise tiers with different limits and pricing. Data retention is now 14 days for the Starter plan, but the page mentions up to 180-day retention with additional costs.",
+      "previous_state": "Evals, prompt playground, and data management for Gen AI. Starter plan (free): 1 GB processed data/month, 10k scores/month, 14 days data retention. Unlimited users, projects, datasets, playgrounds, and experiments. Overage: $4/GB data, $2.50 per 1k scores.",
+      "current_state": "Starter plan: $0/month, $10 credits + tok rates, 1 GB processed data + $4/GB, 10k scores + $2.50/1k, 14-day retention, Unlimited users, projects, datasets, playgrounds, and experiments.",
+      "source_url": "https://www.braintrust.dev/pricing",
+      "category": "AI / ML",
+      "refused_date": "2026-10-12"
+    },
+    {
+      "vendor": "Braintrust",
+      "change_type": "pricing_restructured",
       "reason": "same_transition_graded_differently",
       "detail": "graded as Braintrust|pricing_restructured|2026-09-03|https://www.braintrust.dev/pricing, a record we withdrew",
       "summary": "The Starter plan now includes $10 in credits and token rates, and the processed data limit is 1 GB + $4/GB. The scores limit is 10k + $2.50/1k. Data retention is 14 days. The page also mentions a 30-day data retention period available with the Pro plan, and custom data retention policies for Enterprise plans.",
@@ -1256,6 +1280,18 @@
       "refused_date": "2026-09-10"
     },
     {
+      "vendor": "Clair",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 2308 characters, so it states no terms to have changed",
+      "summary": "The page indicates access to the 'guided search suite' requires signing up, implying the free access described in the stored deal information is no longer available.",
+      "previous_state": "Clinical AI Reference. Students have free access to the professional tool suite, which includes Open Search, Clinical Summary, Med Review, Drug Interactions, ICD-10 Codes, and Stewardship. Additionally, a free trial for the professional suite is available.",
+      "current_state": "Sign up to access the guided search suite.",
+      "source_url": "https://askclair.ai/",
+      "category": "AI / ML",
+      "refused_date": "2026-10-12"
+    },
+    {
       "vendor": "clevebrush.com",
       "change_type": "free_tier_removed",
       "reason": "page_does_not_name_vendor",
@@ -1611,13 +1647,13 @@
       "vendor": "Composio",
       "change_type": "new_tier",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-08 (confirmed_unchanged) stated the same 4 figures, so the page showed these terms before the date this record gives",
-      "summary": "The free tier is now called 'Hobby' and still exists, but the page details additional paid tiers ('Pro' and 'Enterprise'). The limits (100,000 tool calls / mo, 50,000 triggers / mo, 3 team members) remain the same for the Hobby tier.",
+      "detail": "the reading of this page refused on 2026-10-09 (repeats_a_refused_reading) stated the same 4 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier is now called 'Hobby' and still exists, but the page details additional paid tiers (Pro and Enterprise).",
       "previous_state": "Integration platform for AI Agents and LLMs — Free $0 No credit card required 100,000 tool calls / mo 50,000 triggers / mo 3 team members",
       "current_state": "Hobby $0 No credit card required 100,000 tool calls / mo 50,000 triggers / mo 3 team members",
       "source_url": "https://composio.dev/pricing",
       "category": "AI / ML",
-      "refused_date": "2026-10-09"
+      "refused_date": "2026-10-12"
     },
     {
       "vendor": "ConfigCat",
@@ -1896,6 +1932,18 @@
       "source_url": "https://currencylayer.com/",
       "category": "Payments",
       "refused_date": "2026-10-01"
+    },
+    {
+      "vendor": "dAppling Network",
+      "change_type": "limits_reduced",
+      "reason": "no_terms_to_narrow",
+      "detail": "limits_reduced claimed against \"Decentralized web hosting platform for Web3 frontends focusing on increasing uptime and security and providing an additional access point for users.\", a stored description that states no price, no allowance and nothing free, so there is nothing for the terms to have narrowed from",
+      "summary": "The free tier, 'Sprout', exists but has limits.",
+      "previous_state": "Decentralized web hosting platform for Web3 frontends focusing on increasing uptime and security and providing an additional access point for users.",
+      "current_state": "Sprout plan offers 2 projects and 200 builds per month.",
+      "source_url": "https://www.dappling.network/",
+      "category": "Cloud Hosting",
+      "refused_date": "2026-10-12"
     },
     {
       "vendor": "Databricks (Lakeflow Connect)",
@@ -2411,6 +2459,18 @@
       "collided_with": "E2B|limits_reduced|2026-09-05|https://e2b.dev/pricing"
     },
     {
+      "vendor": "easyretro.io",
+      "change_type": "limits_increased",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 5917 characters, so it states no terms to have changed",
+      "summary": "The page states you can create unlimited public boards and invite unlimited people. It also mentions a 7-day free trial.",
+      "previous_state": "Simple and intuitive sprint retrospective tool. The free plan has three public boards and one survey per board per month.",
+      "current_state": "You can create private or public boards and invite unlimited amounts of people to join your created teams and collaborate. You can also sign up for a 7-day free trial.",
+      "source_url": "https://www.easyretro.io/",
+      "category": "Project Management",
+      "refused_date": "2026-10-12"
+    },
+    {
       "vendor": "economize.cloud",
       "change_type": "rebranded",
       "reason": "no_price_signal",
@@ -2732,13 +2792,13 @@
       "vendor": "Fizzy",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-09 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
-      "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page does not mention any item limits. It does state a 1 GB file storage limit.",
+      "detail": "the reading of this page refused on 2026-10-11 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page states that Fizzy is entirely free with a 1 GB file storage limit.",
       "previous_state": "Kanban-based platform for project management and issue tracking. Create public boards, set up webhooks, use card stamping, and track unlimited users — free for up to 1000 items.",
-      "current_state": "Fizzy is entirely free and subsidized by Basecamp and HEY. File space usage is limited to 1 GB.",
+      "current_state": "Fizzy is entirely free. It does limit file space usage to 1 GB.",
       "source_url": "https://www.fizzy.do/",
       "category": "Project Management",
-      "refused_date": "2026-10-11"
+      "refused_date": "2026-10-12"
     },
     {
       "vendor": "Flagsmith",
@@ -4179,6 +4239,18 @@
       "refused_date": "2026-09-02"
     },
     {
+      "vendor": "Kwes.io",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 8430 characters, so it states no terms to have changed",
+      "summary": "The page does not explicitly mention a free tier with the stated limits (1 website, 50 submissions). It highlights features and integrations but does not detail a specific free plan. It does mention file uploads ranging from 1GB to 50GB+ depending on the plan, suggesting tiered pricing and limits beyond the original free tier description.",
+      "previous_state": "Feature rich form endpoint. Works great with static sites. The free plan includes up to 1 website with up to 50 monthly submissions.",
+      "current_state": "The page details features like spam protection, form validation, integrations (Zapier, Stripe), and various form components. It promotes a 'Get Started Today' call to action but does not specify the details of a free plan. File uploads are available from 1GB to 50GB+ depending on the plan.",
+      "source_url": "https://kwes.io/",
+      "category": "Forms",
+      "refused_date": "2026-10-12"
+    },
+    {
       "vendor": "LambdaTest",
       "change_type": "limits_increased",
       "reason": "repeats_a_refused_claim",
@@ -4913,6 +4985,18 @@
     {
       "vendor": "Mendix",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-08-28 (unquantified_limit) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The Free plan now has several features unavailable, including Project Dashboard, IDP Integration, Vertical Scalability, Horizontal Scalability, HA / Fallback, Multi-region failover, and Support Plan. It also lacks uptime guarantees. The page states the Free plan includes 'unlimited users' but also mentions that pricing scales down as user volume grows, which is a potential contradiction.",
+      "previous_state": "Low-code development platform — Free plan: 1 sandbox environment per app on Mendix Cloud, 0.5 GB storage and 1 GB RAM per app, shared database tenancy, unlimited local development. Studio and Studio Pro IDEs included. Community support (no SLA or uptime guarantee). Suited for demos, prototypes, and small apps.",
+      "current_state": "The Free plan includes a deployment environment for each application with unlimited users. It does not include Project Dashboard, IDP Integration, Vertical Scalability, Horizontal Scalability, HA / Fallback, Multi-region failover, or a Support Plan.",
+      "source_url": "https://www.mendix.com/pricing/",
+      "category": "Low-Code Platforms",
+      "refused_date": "2026-10-12"
+    },
+    {
+      "vendor": "Mendix",
+      "change_type": "limits_reduced",
       "reason": "unquantified_limit",
       "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (1 sandbox, 0.5 storage, 1 ram)",
       "summary": "The free tier still exists, but the details have changed. The stored information states '0.5 GB storage and 1 GB RAM per app', while the current page does not specify storage or RAM limits for the free tier. The stored information states 'unlimited local development', which is not mentioned on the current page. The current page states the free tier includes 'a deployment environment for each application with unlimited users'. Several features previously available in the free tier (Project Dashboard, Private Marketplace, Mendix Cloud Dedicated, IDP Integration, Vertical/Horizontal Scalability, HA/Fallback, Ops Dashboard, Uptime Guarantee, Support Plan) are now only available in Standard or Premium tiers.",
@@ -4983,6 +5067,18 @@
       "category": "Web Scraping",
       "refused_date": "2026-09-10",
       "collided_with": "microlink.io|limits_reduced|2026-08-28|https://microlink.io/"
+    },
+    {
+      "vendor": "Microsoft Ajax",
+      "change_type": "product_deprecated",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 66143 characters, so it states no terms to have changed",
+      "summary": "The Microsoft Ajax CDN is being decommissioned. The page explicitly states it is no longer being actively updated and will be decommissioned in the future.",
+      "previous_state": "The Microsoft Ajax CDN hosts popular third-party JavaScript libraries such as jQuery and enables you to easily add them to your Web application",
+      "current_state": "The CDN is no longer actively updated and will be decommissioned in the future. It has no SLA beyond Azure CDN.",
+      "source_url": "https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview",
+      "category": "CDN",
+      "refused_date": "2026-10-12"
     },
     {
       "vendor": "Microsoft for Startups",
@@ -5253,6 +5349,18 @@
       "refused_date": "2026-10-09"
     },
     {
+      "vendor": "noip",
+      "change_type": "limits_reduced",
+      "reason": "unquantified_limit",
+      "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (3 hostnam)",
+      "summary": "The free tier still exists, but the description is different. The page states the free tier is 'Always stay connected to your devices remotely with a free dynamic hostname' and does not mention the 3 hostname limit or 30-day confirmation requirement.",
+      "previous_state": "a dynamic DNS service that allows up to 3 hostnames free with confirmation every 30 days",
+      "current_state": "Always stay connected to your devices remotely with a free dynamic hostname.",
+      "source_url": "https://www.noip.com/",
+      "category": "DNS & Domain Management",
+      "refused_date": "2026-10-12"
+    },
+    {
       "vendor": "NordPass",
       "change_type": "limits_reduced",
       "reason": "unquantified_limit",
@@ -5349,6 +5457,18 @@
       "category": "DNS & Domain Management",
       "refused_date": "2026-10-02",
       "collided_with": "NS1 Connect|new_free_tier|2026-09-18|https://www.ibm.com/products/ns1-connect/pricing"
+    },
+    {
+      "vendor": "nTask",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 7982 characters, so it states no terms to have changed",
+      "summary": "The free plan is now a 7-day free trial. The original deal offered a free forever plan with 100MB storage and 5 users.",
+      "previous_state": "Project management software that enables your teams to collaborate, plan, analyze, and manage everyday tasks. The essential plan is free forever with 100 MB storage and five users/teams. Unlimited workspaces, meetings, assignments, timesheets, and issue tracking.",
+      "current_state": "Offers a 7-day free trial. No credit card required.",
+      "source_url": "https://www.ntaskmanager.com/",
+      "category": "Project Management",
+      "refused_date": "2026-10-12"
     },
     {
       "vendor": "Nuclei",
@@ -5580,6 +5700,18 @@
       "source_url": "https://outlook.live.com",
       "category": "Consumer Email",
       "refused_date": "2026-09-10"
+    },
+    {
+      "vendor": "outsystems.com",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 13311 characters, so it states no terms to have changed",
+      "summary": "The page no longer explicitly mentions a 'personal environment' or a free tier with a 1 GB database. It prominently features 'Start free' buttons, but these lead to demo requests or general platform exploration rather than a clearly defined free tier. The focus is now on AI-powered development and enterprise solutions.",
+      "previous_state": "Enterprise web development PaaS for on-premise or cloud, free \"personal environment\" offering allows for unlimited code and up to 1 GB database",
+      "current_state": "The page offers options to 'Start free', which lead to demo requests or platform exploration, but does not detail a free 'personal environment' with specific database limits.",
+      "source_url": "https://www.outsystems.com/",
+      "category": "Low-Code Platforms",
+      "refused_date": "2026-10-12"
     },
     {
       "vendor": "OVHcloud",
@@ -7682,6 +7814,18 @@
       "refused_date": "2026-09-26"
     },
     {
+      "vendor": "tilda.cc",
+      "change_type": "limits_reduced",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 17677 characters, so it states no terms to have changed",
+      "summary": "The page does not explicitly mention a free tier with the exact limitations described in the stored deal info. It highlights the ability to create a website for free, but details focus on AI-powered creation and features available across various plans, not a specific free tier with defined limits like page count or storage.",
+      "previous_state": "One site, 50 pages, 50 MB storage, only the main pre-defined blocks among 170+ available, no fonts, no favicon, and no custom domain",
+      "current_state": "The page states you can create a website for free using AI-powered tools and a block library, but does not specify limits on site count, pages, storage, or features like custom domains.",
+      "source_url": "https://tilda.cc/",
+      "category": "Cloud Hosting",
+      "refused_date": "2026-10-12"
+    },
+    {
       "vendor": "TimeCamp",
       "change_type": "limits_reduced",
       "reason": "dangling_reference",
@@ -7802,6 +7946,18 @@
       "source_url": "https://www.tooljet.com/",
       "category": "Low-Code Platforms",
       "refused_date": "2026-09-01"
+    },
+    {
+      "vendor": "toranproxy.com",
+      "change_type": "product_deprecated",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 2274 characters, so it states no terms to have changed",
+      "summary": "Toran Proxy is being phased out in favor of Private Packagist.",
+      "previous_state": "Proxy for Packagist and GitHub. Never fail CD. Free for personal use, one developer, no support",
+      "current_state": "Toran Proxy is being phased out. Private Packagist is the newer, improved version, available as a Software-as-a-Service or self-hosted.",
+      "source_url": "https://toranproxy.com/",
+      "category": "CDN",
+      "refused_date": "2026-10-12"
     },
     {
       "vendor": "TraceLog",
@@ -8230,6 +8386,18 @@
       "source_url": "https://waivercat.com/pricing/",
       "category": "Forms",
       "refused_date": "2026-10-08"
+    },
+    {
+      "vendor": "We.Team",
+      "change_type": "rebranded",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 3934 characters, so it states no terms to have changed",
+      "summary": "The page states you can use We.Team \"unverbindlich und kostenfrei - so lange du willst\" (non-binding and free - for as long as you want) and upgrade to TeamSpace Business for additional benefits. This indicates a free tier still exists, but the description of the free tier is no longer explicitly stated as a 'cloud storage sync and collaboration platform'.",
+      "previous_state": "Cloud storage sync and collaboration platform. Rebranded to We.Team.",
+      "current_state": "You can use We.Team for free indefinitely and upgrade to TeamSpace Business for additional features.",
+      "source_url": "https://we.team/",
+      "category": "Storage",
+      "refused_date": "2026-10-12"
     },
     {
       "vendor": "webhook.site",
