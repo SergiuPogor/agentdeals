@@ -6998,7 +6998,7 @@ const ALTERNATIVES_PAGE_CONTENT: Omit<AlternativesPageConfig, "hubDesc">[] = [
   {
     slug: "heroku-alternatives",
     title: "Heroku Alternatives — Free PaaS Options After the Free Tier Sunset",
-    metaDesc: "Heroku removed its free tier in November 2022 and entered sustaining engineering mode in 2026. Compare free alternatives: Render, Railway, Fly.io, Coolify, Koyeb, Deno Deploy, DigitalOcean. [[freshness]]",
+    metaDesc: "Heroku removed its free tier in November 2022 and entered sustaining engineering mode in 2026. Compare free alternatives: Render, Railway, Fly.io, Coolify, Koyeb, DigitalOcean. [[freshness]]",
     contextHtml: `<p><strong>Heroku</strong> — the PaaS that defined "free tier" for a generation of developers — <strong>removed all free offerings on November 28, 2022</strong> following the Salesforce acquisition. The free dyno (550 hrs/month), free Postgres (10K rows), and free Redis (25 MB) all disappeared. Plans now start at $5/month.</p>
       <p>The decline continued: <strong>major outages in June 2025</strong>, then in <strong>February 2026 Salesforce moved Heroku to "sustaining engineering" mode</strong> — no new features, no new Enterprise contracts. This is the third wave of migration interest, and the largest.</p>
       <p>If you're looking for a Heroku replacement with a generous free tier and similar git-push deployment experience, here are the best alternatives — all with the pricing data we hold in our index.</p>`,
@@ -7060,7 +7060,7 @@ const ALTERNATIVES_PAGE_CONTENT: Omit<AlternativesPageConfig, "hubDesc">[] = [
         <td style="font-weight:600"><a href="/vendor/deno-deploy" style="color:var(--text)">Deno Deploy</a></td>
         <td>1M req/mo, 10 hrs CPU</td><td>1 GiB KV storage</td><td>\u2705</td><td>\u2014</td>
         <td>No (V8 isolates)</td><td>$20/mo</td>
-      </tr>
+      </tr>${vendorPageConditionsRowHtml("deno-deploy", 7)}
     </tbody>
   </table>
   </div>
@@ -7438,10 +7438,10 @@ const ALTERNATIVES_PAGE_CONTENT: Omit<AlternativesPageConfig, "hubDesc">[] = [
   {
     slug: "vercel-alternatives",
     title: "Vercel Alternatives — Best Free Frontend Deployment Platforms for 2026",
-    metaDesc: "Vercel hobby plan too limited? Compare free deployment alternatives: Cloudflare Pages, Netlify, Render, Railway, Deno Deploy, Coolify, and more. [[freshness]]",
+    metaDesc: "Vercel hobby plan too limited? Compare free deployment alternatives: Cloudflare Pages, Netlify, Render, Railway, Coolify, and more. [[freshness]]",
     contextHtml: `<p><strong>Vercel</strong> set the standard for frontend developer experience — instant preview deployments, edge functions, and seamless framework integration. But its pricing is a recurring pain point. The Hobby plan (100 GB bandwidth, 1M function invocations, 4 hrs CPU) works for small projects, but the jump to Pro at <strong>$20/seat/month</strong> is steep for small teams and indie developers.</p>
     <p>The core issue isn't quality — Vercel is excellent. It's <strong>cost scaling</strong>. Teams discover that hobby limits are too restrictive for real traffic, bandwidth overages add up fast, and serverless function costs at scale can surprise. "Vercel alternatives" is one of the most searched hosting queries as developers look for more generous free tiers or predictable pricing.</p>
-    <p>The good news: the deployment landscape in 2026 is competitive. Full-featured platforms (Cloudflare Pages, Netlify) offer unlimited bandwidth or generous credits. Container-based platforms (Railway, Render, Fly.io) give you more control. Edge-first options (Deno Deploy, Cloudflare Workers) optimize for performance. And self-hosted tools (Coolify) eliminate hosting costs entirely if you have your own server.</p>`,
+    <p>The good news: the deployment landscape in 2026 is competitive. Full-featured platforms (Cloudflare Pages, Netlify) offer unlimited bandwidth or generous credits. Container-based platforms (Railway, Render, Fly.io) give you more control. Edge-first options such as Cloudflare Workers optimize for performance. And self-hosted tools (Coolify) eliminate hosting costs entirely if you have your own server.</p>`,
     tag: "vercel-alternative",
     primaryVendor: "Vercel",
     serviceMatrixHtml: `
@@ -7507,7 +7507,7 @@ const ALTERNATIVES_PAGE_CONTENT: Omit<AlternativesPageConfig, "hubDesc">[] = [
         <td>20 GiB/month</td>
         <td>—</td>
         <td>TypeScript edge runtime</td>
-      </tr>
+      </tr>${vendorPageConditionsRowHtml("deno-deploy", 5)}
       <tr>
         <td style="font-weight:600"><a href="/vendor/koyeb" style="color:var(--text)">Koyeb</a></td>
         <td>None for new users</td>
@@ -10707,7 +10707,7 @@ function buildHostingAlternativesPage(): string {
   const riskColors: Record<string, string> = { stable: "#3fb950", caution: "#d29922", risky: "#f85149" };
 
   const paas = enrichedAll.filter(o =>
-    ["Railway", "Render", "Fly.io", "Koyeb", "Back4App", "Deno Deploy", "Northflank", "Coolify", "Sevalla (formerly Kinsta)", "Zeabur", "Alwaysdata", "Qoddi", "Claw.cloud"].includes(o.vendor)
+    ["Railway", "Render", "Fly.io", "Koyeb", "Back4App", "Northflank", "Coolify", "Sevalla (formerly Kinsta)", "Zeabur", "Alwaysdata", "Qoddi", "Claw.cloud"].includes(o.vendor)
   );
   const staticJamstack = enrichedAll.filter(o =>
     ["Cloudflare Pages", "Netlify", "Vercel", "GitHub Pages", "surge.sh", "Neocities", "readthedocs.org", "Versoly", "dAppling Network"].includes(o.vendor)
@@ -10928,7 +10928,7 @@ ${buildCards(startupCredits)}
         <td>1M req/mo, 1M KV read units</td>
         <td>20 GiB/mo</td>
         <td>Deno/TypeScript apps, edge functions</td>
-      </tr>
+      </tr>${vendorPageConditionsRowHtml("deno-deploy", 5)}
       <tr>
         <td style="font-weight:600"><a href="/vendor/cloudflare-pages" style="color:var(--text)">Cloudflare Pages</a></td>
         <td>Static + Functions</td>
@@ -11008,7 +11008,7 @@ ${buildCards(startupCredits)}
       <dd><a href="/vendor/vercel">Vercel</a> is purpose-built for Next.js with the best DX. <a href="/vendor/cloudflare-pages">Cloudflare Pages</a> is the alternative with unlimited bandwidth. <a href="/vendor/netlify">Netlify</a> supports most frameworks.</dd>
 
       <dt>Need an API or serverless functions?</dt>
-      <dd><a href="/vendor/cloudflare-workers">Cloudflare Workers</a> (100K req/day, edge-fast) for lightweight APIs. <a href="/vendor/deno-deploy">Deno Deploy</a> for TypeScript-native. <a href="/vendor/google-cloud-run">Google Cloud Run</a> for containerized APIs with auto-scale.</dd>
+      <dd><a href="/vendor/cloudflare-workers">Cloudflare Workers</a> (100K req/day, edge-fast) for lightweight APIs. <a href="/vendor/google-cloud-run">Google Cloud Run</a> for containerized APIs with auto-scale.</dd>
 
       <dt>Need a full VM with root access?</dt>
       <dd><a href="/vendor/oracle-cloud">Oracle Cloud</a> is unmatched — ${escHtmlServer(oracleAlwaysFreeSpec())}, permanently free. <a href="/vendor/aws">AWS</a> gives new accounts no free EC2 hours; EC2 is paid from the Free plan's credits for up to 6 months. <a href="/vendor/azure">Azure</a> gives 750 hours a month each of B2pts v2 and B2ats v2 VMs for 12 months, for accounts that move to pay-as-you-go within 30 days.</dd>
@@ -21800,7 +21800,7 @@ function buildVercelVsNetlifyPage(): string {
   const netlifyChange = vendorChangesInEffectOnTheDayServed().find(c => c.vendor === "Netlify" && c.change_type === "pricing_restructured");
 
   const hostingAlts = offers.filter(o =>
-    ["Cloudflare Pages", "Railway", "Render", "Fly.io", "Coolify", "Deno Deploy"].includes(o.vendor) && o.category === "Cloud Hosting"
+    ["Cloudflare Pages", "Railway", "Render", "Fly.io", "Coolify"].includes(o.vendor) && o.category === "Cloud Hosting"
   );
 
   const comparisonRows = [
@@ -31408,10 +31408,10 @@ function buildHostingPricingPage(): string {
   );
 
   const faqEntries = [
-    { q: "What is the best free cloud hosting platform in 2026?", a: "Cloudflare Pages offers unlimited sites, unlimited bandwidth, and 500 builds/month. For full-stack apps, Vercel's Hobby plan (100 GB of Fast Data Transfer, builds included; non-commercial use only) and Deno Deploy (1M requests/month) are strong free options. Railway offers $5 in free credits to get started." },
+    { q: "What is the best free cloud hosting platform in 2026?", a: "Cloudflare Pages offers unlimited sites, unlimited bandwidth, and 500 builds/month. For full-stack apps, Vercel's Hobby plan (100 GB of Fast Data Transfer, builds included; non-commercial use only) is a strong free option. Railway offers $5 in free credits to get started." },
     { q: "Is Heroku still worth it without a free tier?", a: "Heroku removed its free tier in November 2022. The cheapest option is now Eco dynos at $5/month (shared compute, sleeps after 30 min). For most use cases, Railway ($5/mo with $5 credit), Render (free tier with spin-down), or Fly.io provide better value." },
     { q: "What are the hidden costs of Vercel?", a: "New Pro projects default to Turbo build machines at $0.126/min — 9x the cost of Standard builds ($0.014/min). The Pro plan moved to a credit-based model ($20/mo credit pool) in January 2026. Image Optimization has separate quotas. The Hobby plan is restricted to personal, non-commercial use." },
-    { q: "Which PaaS is best for side projects?", a: "For static sites: Cloudflare Pages (unlimited free bandwidth) or GitHub Pages. For full-stack: Railway ($5 trial credit for 30 days, no card required), Render (free tier with 15-min spin-down), or Vercel Hobby. For serverless APIs: Cloudflare Workers (100K req/day free) or Deno Deploy (1M req/month)." },
+    { q: "Which PaaS is best for side projects?", a: "For static sites: Cloudflare Pages (unlimited free bandwidth) or GitHub Pages. For full-stack: Railway ($5 trial credit for 30 days, no card required), Render (free tier with 15-min spin-down), or Vercel Hobby. For serverless APIs: Cloudflare Workers (100K req/day free)." },
     { q: "Which hosting platform is best for production apps?", a: "Vercel for Next.js/React apps ($20/seat). Railway for general-purpose apps ($5/mo Hobby; Pro is a $20 monthly minimum with unlimited seats). Google Cloud Run for container workloads with auto-scaling. Fly.io for latency-sensitive apps needing multi-region deployment." },
   ];
 
@@ -31687,7 +31687,7 @@ function buildHostingPricingPage(): string {
     upcomingChangesNamingTheVendorHtml(hostingChangesByDayServed.upcoming.map(changeRowNamingTheVendorHtml)) +
     '\n' +
     '  <div class="context-box">\n' +
-    '    <strong>The pattern:</strong> Free tiers are shrinking across the board. Heroku removed theirs entirely (2022). Render shortened spin-down time (Sep 2025). Netlify moved to credit-based pricing (Sep 2025). Vercel moved to credits (Jan 2026). The edge platforms (Cloudflare, Deno Deploy) have bucked this trend with genuinely generous free tiers \u2014 likely subsidized by their broader platform ecosystems.\n' +
+    '    <strong>The pattern:</strong> Free tiers are shrinking across the board. Heroku removed theirs entirely (2022). Render shortened spin-down time (Sep 2025). Netlify moved to credit-based pricing (Sep 2025). Vercel moved to credits (Jan 2026). Cloudflare has bucked this trend with a generous free tier, likely subsidized by its broader platform.\n' +
     '  </div>\n' +
     '\n' +
     '  <h2 id="recommendations">Best-for-Use-Case Recommendations</h2>\n' +
@@ -31707,7 +31707,7 @@ function buildHostingPricingPage(): string {
     '\n' +
     '    <div class="verdict-item">\n' +
     '      <strong>Best for APIs / serverless</strong>\n' +
-    '      <p><a href="/vendor/cloudflare-workers">Cloudflare Workers</a> (100K req/day free, zero cold starts, 300+ edge locations). <a href="/vendor/deno-deploy">Deno Deploy</a> (1M req/month free). Both offer sub-millisecond cold starts and global distribution.</p>\n' +
+    '      <p><a href="/vendor/cloudflare-workers">Cloudflare Workers</a> (100K req/day free, zero cold starts, 300+ edge locations).</p>\n' +
     '    </div>\n' +
     '\n' +
     '    <div class="verdict-item">\n' +
@@ -37567,7 +37567,7 @@ ${globalNavCss()}
         <td>No hard limit</td>
         <td>CPU time</td>
         <td>&lt;10ms (near-zero)</td>
-        <td style="color:#3fb950">Yes</td>
+        <td style="color:#f85149">No</td>
       </tr>${vendorPageConditionsRowHtml("deno-deploy", 8)}
       <tr>
         <td class="provider-col"><a href="/vendor/val-town" style="color:var(--text)">Val Town</a></td>
@@ -37847,8 +37847,8 @@ ${globalNavCss()}
     </div>
 
     <div class="verdict-item">
-      <strong>Quick scripts and prototypes &rarr; Val Town or Deno Deploy</strong>
-      <p>Val Town: write a function, get a URL. 100K runs/day free with MCP integration. Deno Deploy: full TypeScript runtime with Web APIs, 1M requests/month. Both offer instant deployment with no build step.</p>
+      <strong>Quick scripts and prototypes &rarr; Val Town</strong>
+      <p>Val Town: write a function, get a URL. 100K runs/day free with MCP integration, and instant deployment with no build step.</p>
     </div>
 
     <div class="verdict-item">
@@ -44508,7 +44508,7 @@ ${globalNavCss()}
         <td>Serverless JS/TS apps (2 regions)</td>
         <td class="cross">&#10007;</td>
         <td>≤100 ms (hello world)</td>
-        <td class="check">&#10003;${guideRowReferralHtml("Deno Deploy")}</td>
+        <td class="cross">&#10007;${guideRowReferralHtml("Deno Deploy")}</td>
       </tr>
       <tr>
         <td class="provider-col"><a href="/vendor/cloudflare-workers">Cloudflare Workers</a></td>
