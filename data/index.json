@@ -31883,7 +31883,15 @@
       "restatement_reverted": {
         "record_date": "2026-09-12",
         "reverted_on": "2026-09-28"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Since April 24, 2026, GitHub uses Copilot Free, Pro and Pro+ users' interaction data (inputs, outputs, code snippets and context) to train its AI models unless the user opts out in settings under Privacy; Copilot Business and Enterprise users are not affected.",
+          "quote": "from April 24 onward we will begin using interaction data—specifically inputs, outputs, code snippets, and associated context—from Copilot Free, Pro, and Pro+ users to train and improve our AI models unless you opt out.",
+          "url": "https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data/",
+          "read_on": "2026-10-12"
+        }
+      ]
     },
     {
       "vendor": "Amazon Q Developer",
@@ -35634,7 +35642,21 @@
           }
         ],
         "reviewed": "2026-09-27"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Startups can apply for a one-time credit of up to $5,000 by telling Linkup what they are building.",
+          "quote": "One-time credit Up to $5,000 — that's 1,000,000+ search API calls to get you started.",
+          "url": "https://www.linkup.so/startups",
+          "read_on": "2026-10-12"
+        },
+        {
+          "text": "When the account's credit runs out, the API responds with HTTP 429.",
+          "quote": "If your account runs out, the API will respond with a `429` HTTP error.",
+          "url": "https://docs.linkup.so/pages/documentation/platform/pricing",
+          "read_on": "2026-10-12"
+        }
+      ]
     },
     {
       "vendor": "Parallel",
