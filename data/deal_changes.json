@@ -16542,6 +16542,20 @@
       "category": "AI / ML",
       "alternatives": [],
       "recorded_date": "2026-10-12"
+    },
+    {
+      "vendor": "Groq",
+      "change_type": "limits_reduced",
+      "date": "2026-07-17",
+      "date_source": "vendor_page",
+      "summary": "Groq shut down Llama 4 Scout and Qwen3 32B on its free and developer plans. Their model IDs were meta-llama/llama-4-scout-17b-16e-instruct and qwen/qwen3-32b, and Groq announced the shutdown on June 17. On the free plan Llama 4 Scout had allowed 30,000 tokens a minute and Qwen3 32B 60 requests a minute, each with 500,000 tokens a day. Groq named gpt-oss-120b as the replacement for Qwen3 32B, and gpt-oss-120b or Qwen3.6 27B for Llama 4 Scout.",
+      "previous_state": "Free plan (console.groq.com/docs/rate-limits, Internet Archive capture of 2026-07-13): meta-llama/llama-4-scout-17b-16e-instruct 30 RPM, 1K RPD, 30K TPM, 500K TPD; qwen/qwen3-32b 60 RPM, 1K RPD, 6K TPM, 500K TPD.",
+      "current_state": "\"This deprecation applies to free and developer-tier usage; enterprise customers with a committed-spend contract are not affected.\" Shutdown date 07/17/26 for qwen/qwen3-32b (replacement openai/gpt-oss-120b) and meta-llama/llama-4-scout-17b-16e-instruct (replacement openai/gpt-oss-120b or qwen/qwen3.6-27b).",
+      "impact": "medium",
+      "source_url": "https://console.groq.com/docs/deprecations",
+      "category": "AI / ML",
+      "alternatives": [],
+      "recorded_date": "2026-10-12"
     }
   ]
 }
