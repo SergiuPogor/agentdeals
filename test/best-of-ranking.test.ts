@@ -61,15 +61,20 @@ describe("/best/:slug shows the whole qualified band", () => {
 
   it("states the durability verdict in plain language, above the list, where the whole page is one set of alternatives", async () => {
     const { html } = await get("/best/free-search");
-    const denominator = html.indexOf("offers meet our criteria for this category");
-    const firstCard = html.indexOf('class="best-pick"');
-    assert.ok(denominator > -1, "the denominator must be stated");
-    assert.ok(denominator < firstCard, "the verdict must be stated above the list, not below it");
+    const visible = html.replace(/<head>[\s\S]*?<\/head>/, " ").replace(/<script[\s\S]*?<\/script>/g, " ");
+    const firstCard = visible.indexOf('class="best-pick"');
+    assert.ok(firstCard > -1, "the page must list the offers that meet its criteria");
+    const aboveTheList = visible.slice(0, firstCard);
+    assert.match(aboveTheList, /\b(?:1 offer meets|\d+ offers meet) our criteria for this category\./, "the denominator must be stated above the list");
+    assert.match(
+      aboveTheList,
+      /(?:no recorded change|a recorded narrowing|a recorded widening) to the terms we publish|no durability signal/,
+      "the durability split must be stated above the list",
+    );
     assert.ok(
       !/distinguishable/i.test(html),
       "the page must not claim that nothing we record distinguishes its offers",
     );
-    assert.match(html, /no recorded change to the terms we publish|no durability signal/);
     assert.match(html, /rotates daily/);
   });
 
@@ -113,8 +118,8 @@ describe("/best/:slug shows the whole qualified band", () => {
     const { html } = await get("/best/free-databases");
     assert.match(html, /Recorded, but does not affect rank/);
     const demotedAt = html.indexOf("Demoted &mdash; and exactly why");
-    const supabaseAt = html.indexOf(">Supabase<");
-    assert.ok(supabaseAt > -1 && supabaseAt < demotedAt, "Supabase should be in the qualified band");
+    const disclosedAt = html.indexOf('class="best-disclosure-label">Recorded, but does not affect rank');
+    assert.ok(disclosedAt > -1 && disclosedAt < demotedAt, "an offer in the qualified band should carry a recorded change that does not move it");
   });
 
   it("publishes the seed it used, and the seed is the real one", async () => {
