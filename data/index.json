@@ -22709,7 +22709,7 @@
       "category": "Cloud Hosting",
       "description": "1 GB free web hosting with support for MySQL, PostgreSQL, RabbitMQ, .NET, Deno, Elixir, Go, Java, Lua, Node.js, PHP, Python, Ruby, Rust. Custom web servers, access via FTP, WebDAV and SSH. Mailbox, mailing list and app installer included. 256 MB RAM and a quarter of a CPU. Sites get an alwaysdata.net address; email can use your own domain. No credit card is required and the plan has no time limit.",
       "tier": "Free",
-      "url": "https://www.alwaysdata.com/",
+      "url": "https://www.alwaysdata.com/en/offers/",
       "tags": [
         "hosting",
         "paas",
