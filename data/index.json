@@ -310,6 +310,12 @@
           "quote": "all of your web projects (sites/apps) are paused and visitors to your web projects will find a Site not available page at each of your web project’s URLs. In addition, while your web projects are paused, they will not receive new web requests, web traffic, or form submissions and you cannot trigger new production deploys.",
           "url": "https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/billing-faq-for-credit-based-plans/",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "New Free-plan projects created on or after August 19, 2026 show a \"Powered by Netlify\" badge to every visitor by default; you can turn it off for each project under Project configuration > General.",
+          "quote": "It is on by default for projects on Free plans created on or after August 19, 2026, and off by default on paid plans.",
+          "url": "https://docs.netlify.com/manage/projects/powered-by-netlify-badge/",
+          "read_on": "2026-10-12"
         }
       ]
     },
@@ -33184,7 +33190,7 @@
     {
       "vendor": "TickTick",
       "category": "Productivity & Notes",
-      "description": "Up to 9 lists. Up to 99 tasks per list. 1 calendar subscription. 2 reminders per task. Basic Pomodoro timer. Basic habit tracker (up to 5 habits). No calendar view or task duration on free.",
+      "description": "Up to 9 lists. Up to 99 tasks per list. 1 calendar subscription. 2 reminders per task. Basic Pomodoro timer. Basic habit tracker (up to 5 habits). Free includes a basic calendar view; multiple calendar views and task duration need Premium (US$49.99 a year).",
       "tier": "Free",
       "url": "https://ticktick.com/about/upgrade",
       "tags": [

@@ -1658,10 +1658,10 @@
     {
       "vendor": "Dub.co",
       "change_type": "limits_reduced",
-      "date": "2026-03-22",
-      "summary": "Free tier link limit reduced 40x from 1,000 links to 25 new links/month. Added 30-day analytics retention limit and 1-user cap",
-      "previous_state": "1,000 links, 1,000 tracked clicks/month, up to 3 custom domains",
-      "current_state": "25 new links/month, 1,000 tracked events/month, 3 custom domains, 1 user, 30-day analytics retention",
+      "date": "2024-02-10",
+      "summary": "Dub's free plan went from unlimited branded links to 25 links a month, from up to 3 users to 1, and from unlimited custom domains to 3. The Internet Archive's copy of dub.co/pricing from 2024-01-09 shows the old plan and its copy from 2024-02-10 the new one.",
+      "previous_state": "Free: up to 1K link clicks/mo, unlimited branded links, unlimited custom domains, up to 3 users, 30-day link history",
+      "current_state": "Free: 25 links/mo, 1K tracked clicks/mo, 30-day analytics retention, 3 custom domains, 1 user",
       "impact": "high",
       "source_url": "https://dub.co/pricing",
       "category": "Dev Utilities",
@@ -1670,7 +1670,19 @@
         "Short.io"
       ],
       "recorded_date": "2026-03-22",
-      "date_source": "hand_written"
+      "date_source": "hand_written",
+      "archive_check": {
+        "checked": "2026-10-12",
+        "outcome": "vendor_changed",
+        "brackets": [
+          {
+            "last_old": "2024-01-09",
+            "first_new": "2024-02-10",
+            "last_old_capture": "https://web.archive.org/web/20240109093323/https://dub.co/pricing",
+            "first_new_capture": "https://web.archive.org/web/20240210193454/https://dub.co/pricing"
+          }
+        ]
+      }
     },
     {
       "vendor": "Uploadthing",
@@ -16616,6 +16628,20 @@
       "category": "AI / ML",
       "alternatives": [],
       "recorded_date": "2026-10-12"
+    },
+    {
+      "vendor": "Dub.co",
+      "change_type": "record_corrected",
+      "date": "2026-10-12",
+      "summary": "Data correction - the record dated 2026-03-22 said Dub cut its free plan from 1,000 links to 25 new links a month that day. Dub's pricing page already showed 25 links a month in the Internet Archive's copy of 2024-02-10, and its copy of 2024-01-09 showed unlimited branded links (1,000 links a month was Pro's allowance). The record is dated 2024-02-10 and describes that change.",
+      "previous_state": "Dated 2026-03-22: \"Free tier link limit reduced 40x from 1,000 links to 25 new links/month. Added 30-day analytics retention limit and 1-user cap\"",
+      "current_state": "Dated 2024-02-10 from the archived copies of 2024-01-09 and 2024-02-10",
+      "impact": "low",
+      "source_url": "https://web.archive.org/web/20240210193454/https://dub.co/pricing",
+      "category": "Dev Utilities",
+      "alternatives": [],
+      "recorded_date": "2026-10-12",
+      "date_source": "hand_written"
     }
   ]
 }
