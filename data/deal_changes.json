@@ -16471,6 +16471,23 @@
       "alternatives": [],
       "recorded_date": "2026-10-12",
       "date_source": "vendor_page"
+    },
+    {
+      "vendor": "Prisma Accelerate",
+      "change_type": "product_deprecated",
+      "date": "2026-10-02",
+      "discontinued_date": "2026-12-01",
+      "date_source": "vendor_page",
+      "summary": "Prisma stopped offering Accelerate for new setups in its Console by 2026-10-02, and Accelerate, including Prisma Postgres connections that go through it, is retired on 2026-12-01. Existing Accelerate connections keep working until then. Prisma Postgres keeps running, and its databases come with connection pooling.",
+      "what_ends": "Prisma Accelerate",
+      "listing_effect": "none",
+      "previous_state": "Prisma offered Accelerate, a managed connection pool and query cache, with a free plan, and its Console offered Accelerate when creating a database. From 2026-09-03 Prisma's docs gave December 1, 2026 as the retirement date for standalone Accelerate.",
+      "current_state": "\"Accelerate is retired on December 1, 2026, including Prisma Postgres connections that go through it. The Console no longer offers Accelerate for new setups.\" (prisma.io/changelog/2026-10-02)",
+      "impact": "high",
+      "source_url": "https://www.prisma.io/changelog/2026-10-02",
+      "category": "Databases",
+      "alternatives": [],
+      "recorded_date": "2026-10-12"
     }
   ]
 }

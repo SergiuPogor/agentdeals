@@ -8979,7 +8979,15 @@
         "text": "Free $0 / month Free forever. No credit card required. Prisma Compute 1M requests / month 360 GB-hours memory / month 4 active vCPU-hours / month 10 GB outbound bandwidth / month Prisma Postgres 200k operations / month 1.01 GB storage 50 databases",
         "url": "https://www.prisma.io/pricing",
         "read_on": "2026-10-10"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Prisma Accelerate, including hosted Accelerate connections for Prisma Postgres, is retired on December 1, 2026, and the Prisma Console no longer offers Accelerate for new setups.",
+          "quote": "Accelerate is retired on December 1, 2026, including Prisma Postgres connections that go through it. The Console no longer offers Accelerate for new setups.",
+          "url": "https://www.prisma.io/changelog/2026-10-02",
+          "read_on": "2026-10-12"
+        }
+      ]
     },
     {
       "vendor": "Unity DevOps",
