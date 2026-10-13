@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-12",
+  "generated": "2026-10-13",
   "pages": {
     "/": {
       "daily": true
@@ -18,8 +18,7 @@
       "changed": "2026-10-12"
     },
     "/ai-coding-tools-pricing": {
-      "hash": "0e2c04bdfa80bfcb",
-      "changed": "2026-10-12"
+      "daily": true
     },
     "/ai-free-tiers": {
       "hash": "0f30b9459bfbd1a9",
@@ -1129,8 +1128,8 @@
       "changed": "2026-10-12"
     },
     "/category/cloud-hosting": {
-      "hash": "d2f6cb8f6ce1cbe7",
-      "changed": "2026-10-12"
+      "hash": "839f47239e9094a4",
+      "changed": "2026-10-13"
     },
     "/category/cloud-iaas": {
       "hash": "6348c491c645a365",
@@ -3054,8 +3053,7 @@
       "changed": "2026-10-12"
     },
     "/digest/2026-w42": {
-      "hash": "81d8c4c5411e916b",
-      "changed": "2026-10-12"
+      "daily": true
     },
     "/digest/2026-w43": {
       "hash": "14f833586fdc31de",
@@ -3157,8 +3155,7 @@
       "daily": true
     },
     "/feed.xml": {
-      "hash": "983bf57767d9a09d",
-      "changed": "2026-10-12"
+      "daily": true
     },
     "/firebase-alternatives": {
       "hash": "d615961967016836",
@@ -3212,8 +3209,7 @@
       "changed": "2026-10-11"
     },
     "/free-tier-risk": {
-      "hash": "a7611594f78d6955",
-      "changed": "2026-10-12"
+      "daily": true
     },
     "/free-tier-tracker": {
       "daily": true
@@ -3286,8 +3282,8 @@
       "changed": "2026-10-12"
     },
     "/hosting-alternatives": {
-      "hash": "c8e4e11799005eaa",
-      "changed": "2026-10-12"
+      "hash": "cbef969edd702a9d",
+      "changed": "2026-10-13"
     },
     "/hosting-free-tier-comparison-2026": {
       "hash": "ceeda80f2954f441",
@@ -3302,8 +3298,7 @@
       "changed": "2026-10-12"
     },
     "/llm-api-pricing": {
-      "hash": "50022983b50d4890",
-      "changed": "2026-10-12"
+      "daily": true
     },
     "/localstack-alternatives": {
       "hash": "6786ce15908ff807",
@@ -3393,8 +3388,7 @@
       "changed": "2026-10-11"
     },
     "/reports": {
-      "hash": "c5627b239bb7f11e",
-      "changed": "2026-10-12"
+      "daily": true
     },
     "/reports/2022-11": {
       "hash": "d0778aa8cced1e23",
@@ -3571,12 +3565,11 @@
       "daily": true
     },
     "/stability": {
-      "hash": "490cd630f86147de",
-      "changed": "2026-10-12"
+      "daily": true
     },
     "/stack-check": {
-      "hash": "e38b57a969f0e578",
-      "changed": "2026-10-12"
+      "hash": "fffabce7ac5a0094",
+      "changed": "2026-10-13"
     },
     "/stacks": {
       "hash": "eac3fb64f7c099fb",
@@ -3607,8 +3600,7 @@
       "changed": "2026-10-12"
     },
     "/state-of-free-tiers": {
-      "hash": "54480e69c246db39",
-      "changed": "2026-10-12"
+      "daily": true
     },
     "/storage-alternatives": {
       "hash": "547dc82cbec8897a",
