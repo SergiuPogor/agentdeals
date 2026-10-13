@@ -292,6 +292,18 @@
       "refused_date": "2026-09-24"
     },
     {
+      "vendor": "AndroidIDE",
+      "change_type": "product_deprecated",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 1679 characters, so it states no terms to have changed",
+      "summary": "AndroidIDE has been archived and is no longer maintained. The project has ended, but its successor, Code on the Go, is being developed by App Dev for All. Community forks are also available.",
+      "previous_state": "An Open Source IDE to develop real, Gradle-based Android applications on Android devices.",
+      "current_state": "The project has reached the end of its run and is no longer maintained.",
+      "source_url": "https://m.androidide.com/",
+      "category": "IDE & Code Editors",
+      "refused_date": "2026-10-13"
+    },
+    {
       "vendor": "Apify",
       "change_type": "limits_reduced",
       "reason": "confirmed_unchanged",
@@ -1633,15 +1645,15 @@
     },
     {
       "vendor": "Composio",
-      "change_type": "new_tier",
+      "change_type": "pricing_restructured",
       "reason": "confirmed_unchanged",
-      "detail": "Name change only",
-      "summary": "The free tier is now called 'Hobby' and still exists. The limits (100,000 tool calls / mo, 50,000 triggers / mo, 3 team members) remain the same for the 'Hobby' tier.",
+      "detail": "The current page details match the limits already stored; the report only notes a name change ('Free' to 'Hobby') which doesn't affect functionality.",
+      "summary": "The free tier is still available, but is now called 'Hobby' and is explicitly stated as including 100,000 tool calls and 50,000 triggers per month. Additional features and add-ons are available on paid tiers.",
       "previous_state": "Integration platform for AI Agents and LLMs — Free $0 No credit card required 100,000 tool calls / mo 50,000 triggers / mo 3 team members",
-      "current_state": "Hobby $0 No credit card required 100,000 tool calls / mo 50,000 triggers / mo 3 team members",
+      "current_state": "100,000 tool calls / mo 50,000 triggers / mo 3 team members",
       "source_url": "https://composio.dev/pricing",
       "category": "AI / ML",
-      "refused_date": "2026-10-08"
+      "refused_date": "2026-10-13"
     },
     {
       "vendor": "Composio",
@@ -3299,6 +3311,18 @@
       "refused_date": "2026-09-22"
     },
     {
+      "vendor": "Google Cloud Run",
+      "change_type": "limits_reduced",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (2 request/mo), and drops 7 the stored description carried",
+      "summary": "The free tier for request-based billing is 2 million requests/month, which matches the stored information. However, the page details two billing models: request-based and instance-based. The instance-based billing free tier is 240,000 vCPU-seconds and 450,000 GiB-seconds, differing from the stored 180K vCPU-seconds and 360K GiB-seconds. Additionally, the page mentions a free tier for Jobs with 240,000 vCPU-seconds and 450,000 GiB-seconds, which is also different from the stored information.",
+      "previous_state": "Always Free: 2M requests/month, 360K GB-seconds memory, 180K vCPU-seconds compute, 1 GB North America egress. Fully managed serverless containers. If your service uses instance-based billing, its free tier is 240K vCPU-seconds and 450K GiB-seconds a month instead of 180K and 360K. Jobs get the same 240K and 450K",
+      "current_state": "Services with request-based billing have a free tier of 2 million requests per month.",
+      "source_url": "https://cloud.google.com/run/pricing",
+      "category": "Cloud Hosting",
+      "refused_date": "2026-10-13"
+    },
+    {
       "vendor": "Google Cloud Shell",
       "change_type": "limits_reduced",
       "reason": "no_price_signal",
@@ -4887,6 +4911,18 @@
       "refused_date": "2026-09-26"
     },
     {
+      "vendor": "maps.stamen.com",
+      "change_type": "rebranded",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 1705 characters, so it states no terms to have changed",
+      "summary": "The page states that as of July 31, 2023, Stamen Map Tiles are served by Stadia Maps. While map tiles are still available, the underlying provider has changed.",
+      "previous_state": "Free map tiles and tile hosting.",
+      "current_state": "Stamen Map Tiles are served by Stadia Maps. Attribution is required: &copy; Stadia Maps &copy; Stamen Design &copy; OpenMapTiles &copy; OpenStreetMap contributors.",
+      "source_url": "http://maps.stamen.com/",
+      "category": "Maps/Geolocation",
+      "refused_date": "2026-10-13"
+    },
+    {
       "vendor": "Market Data API",
       "change_type": "limits_reduced",
       "reason": "confirmed_unchanged",
@@ -6333,6 +6369,18 @@
       "collided_with": "PromoProxy|limits_reduced|2026-09-01|https://promoproxy.net/"
     },
     {
+      "vendor": "Proto.io",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 5167 characters, so it states no terms to have changed",
+      "summary": "The page offers a 15-day free trial, but does not mention a free tier available after the trial. It details many features and resources, but does not specify the limits (user, project, prototypes, storage) mentioned in the stored deal info.",
+      "previous_state": "Create fully interactive UI prototypes without coding. The free tier is available when the free trial ends. The free tier includes one user, one project, five prototypes, 100MB of online storage, and a preview of the proto.io app.",
+      "current_state": "Offers a 15-day free trial with full access to features.",
+      "source_url": "https://www.proto.io",
+      "category": "Design",
+      "refused_date": "2026-10-13"
+    },
+    {
       "vendor": "pubnub.com",
       "change_type": "limits_reduced",
       "reason": "unquantified_limit",
@@ -6404,6 +6452,18 @@
       "source_url": "https://qoddi.com",
       "category": "Cloud Hosting",
       "refused_date": "2026-08-28"
+    },
+    {
+      "vendor": "QRME.SH",
+      "change_type": "rebranded",
+      "reason": "page_does_not_name_vendor",
+      "detail": "the page read never names QRME.SH and is not served from its domain, so any terms on it belong to somebody else",
+      "summary": "The domain now hosts an online gambling site called TX88, offering various casino games, sports betting, and promotions. There is no mention of a QR code generator or any free tier related to QR codes.",
+      "previous_state": "There is no free tier: qrme.sh no longer serves the product. Checked 2026-09-01, the domain redirects to hz-mobile.de, which serves an online gambling site, so the expired domain has been taken over by an unrelated party. The former offer was a bulk QR code generator with no login and up to 100 URLs per export.",
+      "current_state": "TX88 is an online gambling platform offering games like sports betting, casino, slots, and fishing games. New members can receive a welcome bonus of up to 88K.",
+      "source_url": "https://qrme.sh",
+      "category": "Storage",
+      "refused_date": "2026-10-13"
     },
     {
       "vendor": "QRtracer",
@@ -6658,6 +6718,18 @@
       "source_url": "https://resend.com/pricing",
       "category": "Email",
       "refused_date": "2026-09-22"
+    },
+    {
+      "vendor": "resmush.it",
+      "change_type": "pricing_model_change",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 1813 characters, so it states no terms to have changed",
+      "summary": "The page highlights that reSmush.it is free, but also heavily promotes ShortPixel as a superior alternative with WebP/AVIF conversion, which reSmush.it currently lacks.",
+      "previous_state": "reSmush.it is a FREE API that provides image optimization. reSmush.it has been implemented on the most common CMS such as WordPress, Drupal, or Magento. reSmush.it is the most used image optimization API with more than seven billion images already treated, and it is still Free of charge.",
+      "current_state": "reSmush.it is a free image compressor, but the page suggests ShortPixel is a better option for advanced optimization including WebP/AVIF conversion.",
+      "source_url": "https://resmush.it",
+      "category": "Storage",
+      "refused_date": "2026-10-13"
     },
     {
       "vendor": "reviewable.io",
@@ -7596,6 +7668,18 @@
       "refused_date": "2026-10-05"
     },
     {
+      "vendor": "Tailkits",
+      "change_type": "limits_increased",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 6557 characters, so it states no terms to have changed",
+      "summary": "The free tier now includes 'Shadcn Admin Free' and 'Hive Free' in addition to 'Mainline Free', and also lists 'Shadcn IDE Extension Free' and 'Iconic Free'. The description no longer accurately reflects the available free resources.",
+      "previous_state": "A curated collection of Tailwind templates, components, and tools, plus useful generators for code, grids, box shadows, and more.",
+      "current_state": "The page lists multiple free options: Shadcn Admin Free, Hive Free, Shadcn IDE Extension Free, Iconic Free, and Mainline Free.",
+      "source_url": "https://tailkits.com/",
+      "category": "Design",
+      "refused_date": "2026-10-13"
+    },
+    {
       "vendor": "taskade.com",
       "change_type": "limits_reduced",
       "reason": "unquantified_limit",
@@ -7873,6 +7957,18 @@
       "category": "API Development",
       "refused_date": "2026-09-10",
       "collided_with": "TinyMCE|limits_reduced|2026-08-28|https://www.tiny.cloud"
+    },
+    {
+      "vendor": "tinypng.com",
+      "change_type": "pricing_restructured",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 16922 characters, so it states no terms to have changed",
+      "summary": "The free tier for image compression is still mentioned, but the page focuses heavily on paid plans (Web Pro, Web Ultra, and CDN). The 500 compressions/month free tier is not explicitly stated as a primary offering, and the page emphasizes API access and CDN services which are paid.",
+      "previous_state": "API to compress and resize PNG and JPEG images, offers 500 compressions for free each month",
+      "current_state": "The page details pricing for the Developer API and Image CDN, with options for different plans. It does not explicitly state a 500 compressions/month free tier as a primary offering.",
+      "source_url": "https://tinypng.com/",
+      "category": "Storage",
+      "refused_date": "2026-10-13"
     },
     {
       "vendor": "Together AI",
@@ -8325,6 +8421,18 @@
       "source_url": "https://vatlayer.com/",
       "category": "Payments",
       "refused_date": "2026-09-02"
+    },
+    {
+      "vendor": "vectr.com",
+      "change_type": "limits_increased",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 11426 characters, so it states no terms to have changed",
+      "summary": "The page details a wide range of AI-powered tools and features beyond a simple free design app. While a free tier appears to exist by implication, the focus is heavily on paid AI features like background removal, image generation, and vectorization. The original description does not mention these AI capabilities, and the page heavily promotes them.",
+      "previous_state": "Free Design App for Web + Desktop.",
+      "current_state": "Vectr offers a suite of AI-powered tools for vector graphics editing, logo creation, image manipulation, and more, including background removal, text-to-image conversion, and AI-powered image generation.",
+      "source_url": "https://vectr.com/",
+      "category": "Design",
+      "refused_date": "2026-10-13"
     },
     {
       "vendor": "Vercel",

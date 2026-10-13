@@ -1,5 +1,17 @@
 {
-  "held": [],
+  "held": [
+    {
+      "vendor": "lensdump.com",
+      "change_type": "free_tier_removed",
+      "impact": "high",
+      "summary": "The free tier no longer exists. The page only lists paid plans starting at $4/month.",
+      "previous_state": "Free image hosting with no storage limits, 100 MB max file size, no compression",
+      "current_state": "Plans start at $4/month for 10,000 images and 10 MB files.",
+      "source_url": "https://lensdump.com/",
+      "category": "Design",
+      "first_read_date": "2026-10-13"
+    }
+  ],
   "resolved": [
     {
       "vendor": "CatchJS.com",
