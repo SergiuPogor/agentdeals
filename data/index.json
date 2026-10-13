@@ -21887,7 +21887,7 @@
       "category": "Cloud Hosting",
       "description": "European PaaS with automated deployments, autoscaling, managed databases, and Git-based workflows. Includes €20 free credits at signup, a limited DEV plan with free MySQL and PostgreSQL databases, and free allowances for services like Heptapod and FS Buckets.",
       "tier": "Free",
-      "url": "https://clever.cloud",
+      "url": "https://www.clever.cloud/automated-and-flexible-deployment/",
       "tags": [
         "hosting",
         "paas",
@@ -22708,7 +22708,7 @@
       "category": "Cloud Hosting",
       "description": "1 GB free web hosting with support for MySQL, PostgreSQL, RabbitMQ, .NET, Deno, Elixir, Go, Java, Lua, Node.js, PHP, Python, Ruby, Rust. Custom web servers, access via FTP, WebDAV and SSH. Mailbox, mailing list and app installer included. 256 MB RAM and a quarter of a CPU. Sites get an alwaysdata.net address; email can use your own domain. No credit card is required and the plan has no time limit.",
       "tier": "Free",
-      "url": "https://www.alwaysdata.com/",
+      "url": "https://www.alwaysdata.com/en/offers/",
       "tags": [
         "hosting",
         "paas",
@@ -34124,7 +34124,7 @@
     {
       "vendor": "Cloudflare Dynamic Workers",
       "category": "Cloud Hosting",
-      "description": "Runtime sandbox for executing AI-generated code in V8 isolates: a Worker can create new Workers at runtime from code supplied on the fly. Only available on the Workers Paid plan (minimum $5 a month per account). Included each month: 1,000 unique Dynamic Workers, 10 million requests and 30 million CPU milliseconds; beyond that, $0.002 per Dynamic Worker per day, $0.30 per million requests and $0.02 per million CPU milliseconds. Dynamic Workers created daily have been billed since May 26, 2026.",
+      "description": "Runtime sandbox for executing AI-generated code in V8 isolates: a Worker can create new Workers at runtime from code supplied on the fly. Only available on the Workers Paid plan (minimum $5 a month per account). Included each month: 1,000 unique Dynamic Workers; beyond that, $0.002 per Dynamic Worker per day. A Dynamic Worker loaded without an ID, or with .load(code), counts as a new one on every invocation; use .get() with a stable ID to count it once. Requests and CPU time count toward the Workers Paid plan's own 10 million requests and 30 million CPU milliseconds a month, shared with your other Workers, and then bill at $0.30 per million requests and $0.02 per million CPU milliseconds. Dynamic Workers created daily have been billed since May 26, 2026.",
       "tier": "Paid",
       "url": "https://developers.cloudflare.com/dynamic-workers/pricing/",
       "tags": [
