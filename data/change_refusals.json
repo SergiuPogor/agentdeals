@@ -682,6 +682,18 @@
       "refused_date": "2026-09-10"
     },
     {
+      "vendor": "Bearer",
+      "change_type": "restriction",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 10661 characters, so it states no terms to have changed",
+      "summary": "The free tier is now focused on the CLI and is open source. The SaaS version is no longer explicitly mentioned as having a free tier.",
+      "previous_state": "Helps implement privacy by design via audits and continuous workflows so that organizations comply with GDPR and other regulations. The free tier is limited to smaller teams and the SaaS version only.",
+      "current_state": "Bearer CLI is a free & open SAST engine.",
+      "source_url": "https://www.bearer.sh/",
+      "category": "Security",
+      "refused_date": "2026-10-14"
+    },
+    {
       "vendor": "Bench",
       "change_type": "limits_increased",
       "reason": "same_transition_graded_differently",
@@ -973,6 +985,18 @@
       "category": "Browser Automation",
       "refused_date": "2026-09-17",
       "collided_with": "Browserbase|limits_increased|2026-09-02|https://www.browserbase.com/pricing"
+    },
+    {
+      "vendor": "BrowserStack",
+      "change_type": "limits_reduced",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 7728 characters, so it states no terms to have changed",
+      "summary": "The open source program now offers unlimited testing on 3500+ browsers and devices, 5 users, and 5 parallels. The number of browsers/devices has decreased from 3000+ to 3500+.",
+      "previous_state": "Free for open source projects: unlimited testing on 3,000+ real browsers and devices, 5 users, 5 parallel sessions. Includes Live, Automate, App Live, and App Automate.",
+      "current_state": "With this program, you get: All products Unlimited testing on desktop and mobile: Live , Automate and Percy Lifetime access Program membership lasts for the duration of your projects. Fast releases Speed up testing and ship faster with access to 5 users and 5 parallels.",
+      "source_url": "https://www.browserstack.com/open-source",
+      "category": "Testing",
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "Bubble",
@@ -1304,6 +1328,18 @@
       "refused_date": "2026-10-12"
     },
     {
+      "vendor": "Claude Code",
+      "change_type": "pricing_restructured",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 13379 characters, so it states no terms to have changed",
+      "summary": "The pricing page does not explicitly state the pricing for Pro, Max, Team Standard, or Enterprise plans as listed in the stored deal info. It only states that a paid subscription is required for the Desktop app and that most surfaces require a Claude subscription or Anthropic Console account.",
+      "previous_state": "Agentic coding tool by Anthropic: it reads a codebase, edits files, runs commands and works with development tools, in the terminal, IDEs, a desktop app and the browser. No free plan: \"Claude Code is included in all paid plans\", and Claude's Free plan does not include it. Pro is $20/month billed monthly ($17/month billed annually), Max is $100/month (5x) or $200/month (20x), Team Standard seats are $25/seat billed monthly ($20 billed annually), and Enterprise is \"$20 per seat per month plus usage billed at API rates\". Plan usage is shared with Claude chat. At the limit, paid plans can turn on usage credits billed at standard API rates, or use an Anthropic API key billed pay-as-you-go.",
+      "current_state": "A paid subscription is required to use Claude Code.",
+      "source_url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+      "category": "AI Coding",
+      "refused_date": "2026-10-14"
+    },
+    {
       "vendor": "clevebrush.com",
       "change_type": "free_tier_removed",
       "reason": "page_does_not_name_vendor",
@@ -1582,6 +1618,18 @@
       "source_url": "https://codemagic.io/pricing/",
       "category": "CI/CD",
       "refused_date": "2026-09-19"
+    },
+    {
+      "vendor": "CodeQL",
+      "change_type": "restriction",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 3375 characters, so it states no terms to have changed",
+      "summary": "The free tier is now restricted to open source projects hosted on GitHub.com, academic research, and specific CI/CD use cases. It can't be used for general automated analysis without contacting sales.",
+      "previous_state": "GitHub semantic code analysis engine. Free for all public repositories with no scan limits. Supports JS/TS, Python, Java, C#, C/C++, Go, Ruby. Integrated into GitHub Actions.",
+      "current_state": "CodeQL can only be used on codebases that are released under an OSI-approved open source license, or to perform academic research, or to generate CodeQL databases for or during automated analysis, continuous integration (CI) or continuous delivery (CD) in the following cases: (1) on any Open Source Codebase hosted and maintained on GitHub.com, and (2) to test CodeQL queries you have released under an OSI-approved open source software license.",
+      "source_url": "https://codeql.github.com/",
+      "category": "Security",
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "coderabbit.ai",
@@ -2804,13 +2852,13 @@
       "vendor": "Fizzy",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-11 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "detail": "the reading of this page refused on 2026-10-12 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
       "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page states that Fizzy is entirely free with a 1 GB file storage limit.",
       "previous_state": "Kanban-based platform for project management and issue tracking. Create public boards, set up webhooks, use card stamping, and track unlimited users — free for up to 1000 items.",
-      "current_state": "Fizzy is entirely free. It does limit file space usage to 1 GB.",
+      "current_state": "Fizzy is entirely free with a 1 GB file storage limit.",
       "source_url": "https://www.fizzy.do/",
       "category": "Project Management",
-      "refused_date": "2026-10-12"
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "Flagsmith",
@@ -3083,6 +3131,18 @@
     },
     {
       "vendor": "Gcore DNS",
+      "change_type": "limits_reduced",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (210 pop, 0.20 currency), and drops 3 the stored description carried",
+      "summary": "The Managed DNS free tier now has a limit of 10,000,000 requests included, and costs €0.20 per 1,000,000 requests over that limit. The stored information stated 10,000,000 requests included and €0.20 per 1,000,000 requests over that limit, but also stated a limit of 1 dynamic RRset per zone.",
+      "previous_state": "Managed DNS has a free tier with unlimited zones, Anycast across 210+ PoPs, DDoS protection, IPv4/IPv6, 10,000,000 requests included, and costs €0.20 per 1,000,000 requests over that limit. It also limits dynamic RRset to 1 per zone.",
+      "current_state": "Anycast DNS 210+ PoPs, DDoS-protected DNS, IPv4/IPv6, Requests included Unlimited, Requests (per 1,000,000) €0.20",
+      "source_url": "https://gcore.com/pricing/edge-network",
+      "category": "DNS & Domain Management",
+      "refused_date": "2026-10-14"
+    },
+    {
+      "vendor": "Gcore DNS",
       "change_type": "limits_increased",
       "reason": "unquantified_limit",
       "detail": "limits_increased claimed, but the current state names no quantity for anything the stored state measured (210 pop, 10,000,000 request, 0.20 currency, 1,000,000 request, 1 zone)",
@@ -3226,6 +3286,18 @@
       "refused_date": "2026-10-09"
     },
     {
+      "vendor": "GitHub Models",
+      "change_type": "product_deprecated",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 1125 characters, so it states no terms to have changed",
+      "summary": "GitHub Models has been retired and is no longer available.",
+      "previous_state": "GitHub retired GitHub Models on 2026-07-30, so there is no free tier. GitHub's own documentation states \"GitHub Models has been retired.\" The former offer was free access to 100+ models via GitHub Marketplace at 10-15 RPM and 50-150 requests/day.",
+      "current_state": "GitHub Models has been retired. As of July 30, 2026, GitHub Models has been fully retired. The playground, model catalog, inference API, and bring your own key (BYOK) are no longer available to any customer.",
+      "source_url": "https://docs.github.com/en/github-models/about-github-models",
+      "category": "AI / ML",
+      "refused_date": "2026-10-14"
+    },
+    {
       "vendor": "GitHub",
       "change_type": "limits_reduced",
       "reason": "unquantified_limit",
@@ -3236,6 +3308,18 @@
       "source_url": "https://education.github.com/pack",
       "category": "Source Control",
       "refused_date": "2026-08-28"
+    },
+    {
+      "vendor": "Gitleaks",
+      "change_type": "restriction",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 26544 characters, so it states no terms to have changed",
+      "summary": "The page does not explicitly state the free tier for the CLI tool or GitHub Actions. It mentions GitHub Advanced Security and Copilot as paid add-ons, and focuses on enterprise solutions. The stored information about the free CLI and GitHub Action for personal/org repos is not confirmed.",
+      "previous_state": "Open source (MIT) secret scanner for git repositories, files, and directories. CLI tool is free with no limits. GitHub Action free for personal repos and 1 org repo.",
+      "current_state": "The page highlights GitHub Advanced Security and Copilot as paid add-ons, and does not detail any free tiers for Gitleaks itself. It mentions Gitleaks-Action as an option, but doesn't specify its pricing.",
+      "source_url": "https://github.com/gitleaks/gitleaks",
+      "category": "Security",
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "Glauca",
@@ -3249,6 +3333,18 @@
       "category": "DNS & Domain Management",
       "refused_date": "2026-09-13",
       "collided_with": "Glauca|pricing_restructured|2026-09-01|https://docs.glauca.digital/hexdns/"
+    },
+    {
+      "vendor": "GoatCounter",
+      "change_type": "restriction",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 2701 characters, so it states no terms to have changed",
+      "summary": "The pricing information has been updated to state that GoatCounter.com is offered for free for 'reasonable public usage' but discourages 'millions of pageviews/day'.",
+      "previous_state": "GoatCounter is an open-source web analytics platform available as a hosted service (free for non-commercial use) or self-hosted app. It aims to offer easy-to-use and meaningful privacy-friendly web analytics as an alternative to Google Analytics or Matomo. The free tier is for non-commercial use and includes unlimited sites, six months of data retention, and 100k pageviews/month.",
+      "current_state": "GoatCounter.com is currently offered for free for reasonable public usage. Running your personal website or small-to-medium business on it is fine, but sending millions of pageviews/day isn’t.",
+      "source_url": "https://www.goatcounter.com/",
+      "category": "Analytics",
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "GoFile.io",
@@ -4579,6 +4675,18 @@
       "source_url": "https://locationiq.com/pricing",
       "category": "Maps/Geolocation",
       "refused_date": "2026-09-26"
+    },
+    {
+      "vendor": "Locust",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 4987 characters, so it states no terms to have changed",
+      "summary": "The page mentions Locust Cloud but does not detail the free tier limits. It only states that Locust.cloud provides dedicated commercial support and a hosted cloud version is available.",
+      "previous_state": "Open source (MIT) Python-based load testing framework with distributed execution. Locust Cloud free tier: 200 VU-hours/month, max 100 concurrent virtual users.",
+      "current_state": "Locust.cloud provides dedicated commercial support for Locust and a hosted cloud version is available.",
+      "source_url": "https://locust.io/",
+      "category": "Testing",
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "logflare.app",
@@ -6161,6 +6269,18 @@
       "collided_with": "Plausible Analytics|free_tier_removed|2026-08-28|https://plausible.io/"
     },
     {
+      "vendor": "Play with Docker",
+      "change_type": "product_deprecated",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 931 characters, so it states no terms to have changed",
+      "summary": "Play with Docker will be unavailable starting March 1, 2026.",
+      "previous_state": "A simple, interactive, fun playground to learn Docker.",
+      "current_state": "Play with Docker will be unavailable starting March 1, 2026.",
+      "source_url": "https://labs.play-with-docker.com/",
+      "category": "Container Registry",
+      "refused_date": "2026-10-14"
+    },
+    {
       "vendor": "ploi.io",
       "change_type": "limits_reduced",
       "reason": "restates_stored_quantities",
@@ -6682,6 +6802,18 @@
       "source_url": "https://repoforge.io",
       "category": "CI/CD",
       "refused_date": "2026-10-03"
+    },
+    {
+      "vendor": "Repohistory",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 2982 characters, so it states no terms to have changed",
+      "summary": "The page states that Repohistory saves traffic data beyond GitHub's 14-day limit and offers interactive charts and star history charts. It does not mention a free plan or a limit of monitoring a single repository. It appears all features are now part of a paid offering.",
+      "previous_state": "Beautiful dashboard for tracking GitHub repo traffic history longer than 14 days. Free Plan allows users to monitor traffic for a single repository.",
+      "current_state": "Repohistory offers features like saving traffic data beyond 14 days, interactive charts, and star history charts. The page does not mention a free plan or any limitations on repository monitoring.",
+      "source_url": "https://repohistory.com",
+      "category": "Analytics",
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "ReportGPT",
@@ -7432,6 +7564,18 @@
       "refused_date": "2026-09-20"
     },
     {
+      "vendor": "StatCounter",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 4341 characters, so it states no terms to have changed",
+      "summary": "The page offers a 30-day free trial of all features, but then lists plans starting at €9/month. The free plan described in the stored information is not explicitly mentioned.",
+      "previous_state": "Website Viewer Analytics. Free plan for analytics of 500 most recent visitors.",
+      "current_state": "Offers a 30 day free trial of all features, then plans from €9 / month.",
+      "source_url": "https://statcounter.com/",
+      "category": "Analytics",
+      "refused_date": "2026-10-14"
+    },
+    {
       "vendor": "StatusCake",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
@@ -7520,6 +7664,18 @@
       "collided_with": "Stream|pricing_restructured|2026-09-12|https://getstream.io/maker-account/"
     },
     {
+      "vendor": "Sublime Text",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 3738 characters, so it states no terms to have changed",
+      "summary": "Sublime Text is no longer offered as a free tier. The page indicates a 'Buy' option and focuses on downloading and purchasing the software.",
+      "previous_state": "Sublime Text is a popular, versatile, and highly customizable text editor used for coding and text editing tasks.",
+      "current_state": "The page offers a 'Buy' option and provides download links for Windows, Linux, and Mac. It highlights new features in Sublime Text 4 and mentions Sublime Merge as a separate product.",
+      "source_url": "https://www.sublimetext.com/",
+      "category": "IDE & Code Editors",
+      "refused_date": "2026-10-14"
+    },
+    {
       "vendor": "Supabase",
       "change_type": "restriction",
       "reason": "same_transition_graded_differently",
@@ -7531,6 +7687,18 @@
       "category": "Databases",
       "refused_date": "2026-09-19",
       "collided_with": "Supabase|pricing_restructured|2026-09-03|https://supabase.com/pricing"
+    },
+    {
+      "vendor": "superfeedr.com",
+      "change_type": "free_tier_removed",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 2431 characters, so it states no terms to have changed",
+      "summary": "The page does not mention a free tier with the described features. It details options for Publishers, Subscribers, and Trackers, and encourages users to 'Go pro' for features like custom CNAMES.",
+      "previous_state": "Real-time PubSubHubbub compliant feeds, export, analytics. Free with less customization",
+      "current_state": "The page details options for Publishers, Subscribers, and Trackers, and encourages users to 'Go pro' for features like custom CNAMES, landing pages, and more.",
+      "source_url": "https://superfeedr.com/",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "Supermaven",
@@ -7568,6 +7736,18 @@
       "source_url": "https://www.suprsend.com/",
       "category": "Messaging",
       "refused_date": "2026-09-01"
+    },
+    {
+      "vendor": "SurveyMonkey.com",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-08-28 (unquantified_limit) claimed the same change, limits_reduced, against the same stored description",
+      "summary": "The page does not explicitly state the limits of the free plan (questions/responses). It only mentions a 'Get started free' button and generally promotes the platform's features.",
+      "previous_state": "Create online surveys. Analyze the results online. The free plan allows only 10 questions and 100 responses per survey.",
+      "current_state": "The page offers a 'Get started free' option but does not specify the number of questions or responses allowed in the free plan.",
+      "source_url": "https://www.surveymonkey.com",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "SurveyMonkey.com",
@@ -7862,6 +8042,18 @@
       "collided_with": "The Intercom Early Stage Program|record_corrected|2026-09-19|https://www.intercom.com/early-stage"
     },
     {
+      "vendor": "thumbnail.ws",
+      "change_type": "limits_reduced",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 1869 characters, so it states no terms to have changed",
+      "summary": "The page states there is a free service, but it limits available resources and does not explicitly state a 1,000 requests/month limit. It also mentions the possibility of sponsoring servers.",
+      "previous_state": "API for generating thumbnails of websites. Free 1,000 requests/month.",
+      "current_state": "There is no thing as a free service! Well there is but we limit the total available resources for free accounts.",
+      "source_url": "https://thumbnail.ws",
+      "category": "Web Scraping",
+      "refused_date": "2026-10-14"
+    },
+    {
       "vendor": "Thunder Client",
       "change_type": "limits_reduced",
       "reason": "restates_stored_quantities",
@@ -7969,6 +8161,18 @@
       "source_url": "https://tinypng.com/",
       "category": "Storage",
       "refused_date": "2026-10-13"
+    },
+    {
+      "vendor": "Todoist",
+      "change_type": "limits_increased",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 4177 characters, so it states no terms to have changed",
+      "summary": "The free tier, now called 'Beginner', has some differences. It offers 5 personal projects, smart quick add, task reminders, flexible list & board layouts, 3 filter views, 1 week activity history, and integration with email and calendar. The stored information stated no reminders, no filters, and no calendar view. The file upload limit remains at 5 MB.",
+      "previous_state": "Up to 5 active projects. Up to 5 collaborators per project. 5 MB file upload limit. Basic priority levels. No reminders, no labels, no filters, no calendar view on free tier. One week of activity history.",
+      "current_state": "An account with: 5 personal projects Smart Quick Add Task reminders Flexible list & board layouts 3 filter views 1 week activity history Integrate email, calendar, and more. File uploads 5 MB",
+      "source_url": "https://todoist.com/pricing",
+      "category": "Productivity & Notes",
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "Together AI",
@@ -8079,6 +8283,18 @@
       "source_url": "https://www.transifex.com/",
       "category": "Localization",
       "refused_date": "2026-10-11"
+    },
+    {
+      "vendor": "TruffleHog",
+      "change_type": "new_tier",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 36585 characters, so it states no terms to have changed",
+      "summary": "The page highlights a paid enterprise product, TruffleHog Enterprise, which offers continuous monitoring of various sources for credentials. The open-source version is still mentioned as a base product, but the focus is on the enterprise offering.",
+      "previous_state": "Open source (Apache 2.0) secret scanner for git repos, Docker images, S3, Slack, and 20+ sources. Detects 800+ credential types with active API verification.",
+      "current_state": "TruffleHog Enterprise provides continuous monitoring of Git, Jira, Slack, Confluence, Microsoft Teams, Sharepoint, and more, and is a paid product that funds the open-source project.",
+      "source_url": "https://github.com/trufflesecurity/trufflehog",
+      "category": "Security",
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "Turbopuffer",
@@ -8506,6 +8722,18 @@
       "source_url": "https://we.team/",
       "category": "Storage",
       "refused_date": "2026-10-12"
+    },
+    {
+      "vendor": "WebComponents.dev",
+      "change_type": "product_deprecated",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 1813 characters, so it states no terms to have changed",
+      "summary": "WebComponents.dev is shutting down on June 1st, 2025. The site still offers a free, no-signup-required IDE with 64 templates, but the service will be discontinued.",
+      "previous_state": "In-browser IDE to code web components in isolation with 58 templates available, supporting stories, and tests.",
+      "current_state": "The site offers a free, no signup required IDE with 64 templates, but will shut down June 1st 2025.",
+      "source_url": "https://webcomponents.dev/",
+      "category": "IDE & Code Editors",
+      "refused_date": "2026-10-14"
     },
     {
       "vendor": "webhook.site",

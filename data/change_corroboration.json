@@ -1,15 +1,26 @@
 {
   "held": [
     {
-      "vendor": "lensdump.com",
-      "change_type": "free_tier_removed",
+      "vendor": "DeepSeek API",
+      "change_type": "pricing_restructured",
+      "impact": "medium",
+      "summary": "Pricing for input tokens has changed. Cache hit prices are now $0.003/$0.022 off-peak and $0.006/$0.044 peak for deepseek-flash/deepseek-v4-pro respectively, and $0.15/$0.66 off-peak and $0.3/$1.32 peak for cache miss. Output tokens are $0.6/$1.98 off-peak and $1.2/$3.96 peak.",
+      "previous_state": "Pay-as-you-go LLM API with no free tier, billed from a prepaid balance. DeepSeek-V4.1-Flash (deepseek-flash): $0.30/M input, $1.20/M output at peak. DeepSeek-V4-Pro (deepseek-v4-pro): $1.32/M input, $3.96/M output at peak. Cache-hit input is $0.006/M on Flash and $0.044/M on Pro. Off-peak rates are half; peak hours are 01:00-04:00 and 06:00-10:00 UTC on weekdays. 1M context, up to 384K output. China-based.",
+      "current_state": "1M INPUT TOKENS (CACHE HIT) OFF-PEAK $0.003 $0.022 PEAK $0.006 $0.044 1M INPUT TOKENS (CACHE MISS) OFF-PEAK $0.15 $0.66 PEAK $0.3 $1.32 1M OUTPUT TOKENS OFF-PEAK $0.6 $1.98 PEAK $1.2 $3.96",
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "category": "AI / ML",
+      "first_read_date": "2026-10-14"
+    },
+    {
+      "vendor": "Gatling",
+      "change_type": "pricing_restructured",
       "impact": "high",
-      "summary": "The free tier no longer exists. The page only lists paid plans starting at $4/month.",
-      "previous_state": "Free image hosting with no storage limits, 100 MB max file size, no compression",
-      "current_state": "Plans start at $4/month for 10,000 images and 10 MB files.",
-      "source_url": "https://lensdump.com/",
-      "category": "Design",
-      "first_read_date": "2026-10-13"
+      "summary": "The Community Edition is still available for download.",
+      "previous_state": "Community Edition: open source load testing tool (Apache 2.0). Self-hosted local execution with multi-language SDKs (Java, Scala, Kotlin, JS, TS). No usage limits.",
+      "current_state": "The Community Edition is available for download and offers no usage limits, but the page focuses on paid plans with limits on VUs, testing time, and features.",
+      "source_url": "https://gatling.io/pricing",
+      "category": "Testing",
+      "first_read_date": "2026-10-14"
     }
   ],
   "resolved": [
@@ -2330,6 +2341,18 @@
       "outcome": "contradicted",
       "detail": "a reading on 2026-10-10 read a change the gate refused as confirmed_unchanged",
       "resolved_date": "2026-10-10"
+    },
+    {
+      "vendor": "lensdump.com",
+      "change_type": "free_tier_removed",
+      "impact": "high",
+      "summary": "The free tier no longer exists. The page only lists paid plans starting at $4/month.",
+      "previous_state": "Free image hosting with no storage limits, 100 MB max file size, no compression",
+      "source_url": "https://lensdump.com/",
+      "first_read_date": "2026-10-13",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-14 read it as free_tier_removed too",
+      "resolved_date": "2026-10-14"
     }
   ]
 }
