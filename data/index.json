@@ -6413,7 +6413,7 @@
     {
       "vendor": "Crowdin",
       "category": "Localization",
-      "description": "Localization management — free forever for open-source via Open Source License (unlimited projects, strings, and members; non-profit/FOSS use only, requires application). Private projects are 14-day trial only (Team plan), no permanent free tier. CLI, GitHub integration, REST API",
+      "description": "Localization management. The Free plan is $0 a month: 60,000 hosted words, 1 private project, unlimited public projects, 1 integration, unlimited translators and Crowdin AI. Users on the Free plan donate their translations to Crowdin's translation memory. Pro starts at $50 a month (2 private projects), Team at $150 and Team+ at $450. Open-source and non-profit projects can apply for a free Open Source License. The CDN for over-the-air translations is free up to 1M requests and 10 GB of data transfer. CLI, GitHub integration, REST API",
       "tier": "Free",
       "url": "https://crowdin.com/pricing",
       "tags": [
@@ -6423,7 +6423,7 @@
         "open source",
         "internationalization"
       ],
-      "verifiedDate": "2026-09-24",
+      "verifiedDate": "2026-10-14",
       "source_check": {
         "checked": "2026-10-04",
         "outcome": "ok",
@@ -6434,11 +6434,6 @@
           "Team USD 150.00",
           "Team+ USD 450.00"
         ]
-      },
-      "free_plan_excerpt": {
-        "text": "If you have up to 1M requests and 10GB of data transfer, it's free.",
-        "url": "https://crowdin.com/pricing",
-        "read_on": "2026-10-04"
       }
     },
     {
