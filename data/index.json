@@ -35869,7 +35869,15 @@
         "ai-agent",
         "credits"
       ],
-      "verifiedDate": "2026-10-14"
+      "verifiedDate": "2026-10-14",
+      "conditions": [
+        {
+          "text": "Browser Use's privacy policy says it uses Inputs, the data, text, files and other content you submit to its agent, to train its AI models, as one of its legitimate business interests. It names no setting that turns this off and no plan that is excluded. Depending on where you live, for example the EEA or UK, it lists a right to object to processing it bases on those interests; requests go to privacy@browser-use.com.",
+          "quote": "We use Inputs to train our AI models in order to improve the Services.",
+          "url": "https://browser-use.com/privacy",
+          "read_on": "2026-10-14"
+        }
+      ]
     },
     {
       "vendor": "Anchor Browser",
