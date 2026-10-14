@@ -16665,7 +16665,7 @@
       "change_type": "product_deprecated",
       "date": "2027-01-14",
       "summary": "The OpenAI API keeps running. The gpt-4o (gpt-4o-2024-08-06 and gpt-4o-2024-11-20), gpt-4o-mini, gpt-4.1 and gpt-4.1-mini models, with their fine-tuned versions, can be called until January 14, 2027, when OpenAI shuts down their access. OpenAI names gpt-6-luna as the replacement for all four.",
-      "previous_state": "The models were callable in the OpenAI API at pay-as-you-go rates.",
+      "previous_state": "gpt-4o (gpt-4o-2024-08-06 and gpt-4o-2024-11-20), gpt-4o-mini, gpt-4.1 and gpt-4.1-mini were callable in the OpenAI API at pay-as-you-go rates.",
       "current_state": "OpenAI's deprecations page gives January 14, 2027 as the shutdown date. The models can be called until then.",
       "impact": "medium",
       "source_url": "https://developers.openai.com/api/docs/deprecations",
