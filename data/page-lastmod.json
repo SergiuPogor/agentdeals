@@ -22,11 +22,11 @@
       "changed": "2026-10-14"
     },
     "/ai-free-tiers": {
-      "hash": "cf8f84dfe96e9047",
+      "hash": "2b6258cf0f40220c",
       "changed": "2026-10-14"
     },
     "/ai-ml-alternatives": {
-      "hash": "1ff4ad6b59e2ec23",
+      "hash": "2b5647f348ed0e16",
       "changed": "2026-10-14"
     },
     "/alternative-to": {
@@ -1093,7 +1093,7 @@
       "changed": "2026-10-14"
     },
     "/category/ai-ml": {
-      "hash": "84a35fadb8fa0415",
+      "hash": "bd8b47259d99f5e1",
       "changed": "2026-10-14"
     },
     "/category/analytics": {
@@ -1221,8 +1221,8 @@
       "changed": "2026-10-11"
     },
     "/category/localization": {
-      "hash": "1f266992d9ca2baa",
-      "changed": "2026-10-12"
+      "hash": "6828c16371dd1018",
+      "changed": "2026-10-14"
     },
     "/category/logging": {
       "hash": "17fd34a30211a773",
@@ -3195,7 +3195,7 @@
       "changed": "2026-10-14"
     },
     "/free-llm-apis": {
-      "hash": "b6c52852b52a8535",
+      "hash": "ec770cbe82854a44",
       "changed": "2026-10-14"
     },
     "/free-nextjs-stack": {
@@ -3305,7 +3305,7 @@
       "changed": "2026-10-14"
     },
     "/llm-api-pricing": {
-      "hash": "9a91782c95b911cb",
+      "hash": "b1bcb69fd01dcb98",
       "changed": "2026-10-14"
     },
     "/localstack-alternatives": {
@@ -5056,7 +5056,7 @@
       "changed": "2026-10-14"
     },
     "/vendor/crowdin": {
-      "hash": "009a89918dc9243f",
+      "hash": "6d34aa8dccb02ce2",
       "changed": "2026-10-14"
     },
     "/vendor/crypteron-com": {

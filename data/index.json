@@ -6413,7 +6413,7 @@
     {
       "vendor": "Crowdin",
       "category": "Localization",
-      "description": "Localization management — free forever for open-source via Open Source License (unlimited projects, strings, and members; non-profit/FOSS use only, requires application). Private projects are 14-day trial only (Team plan), no permanent free tier. CLI, GitHub integration, REST API",
+      "description": "Localization management. The Free plan is $0 a month: 60,000 hosted words, 1 private project, unlimited public projects, 1 integration, unlimited translators and Crowdin AI. Users on the Free plan donate their translations to Crowdin's translation memory. Pro starts at $50 a month (2 private projects), Team at $150 and Team+ at $450. Open-source and non-profit projects can apply for a free Open Source License. The CDN for over-the-air translations is free up to 1M requests and 10 GB of data transfer. CLI, GitHub integration, REST API",
       "tier": "Free",
       "url": "https://crowdin.com/pricing",
       "tags": [
@@ -6423,7 +6423,7 @@
         "open source",
         "internationalization"
       ],
-      "verifiedDate": "2026-09-24",
+      "verifiedDate": "2026-10-14",
       "source_check": {
         "checked": "2026-10-04",
         "outcome": "ok",
@@ -6434,11 +6434,6 @@
           "Team USD 150.00",
           "Team+ USD 450.00"
         ]
-      },
-      "free_plan_excerpt": {
-        "text": "If you have up to 1M requests and 10GB of data transfer, it's free.",
-        "url": "https://crowdin.com/pricing",
-        "read_on": "2026-10-04"
       }
     },
     {
@@ -31758,7 +31753,7 @@
     {
       "vendor": "xAI",
       "category": "AI / ML",
-      "description": "Grok API, pay as you go: sign up at console.x.ai, then load it with credits. grok-4.7 $2.00/$6.00 (per 1M tokens, under 200k prompt tokens). grok-4.3 $1.25/$2.50 (under 200k prompt tokens). grok-build-0.1 $1.00/$2.00 (under 200k prompt tokens). grok-4.6 and grok-4.5 cost the same as grok-4.7, and grok-4.20 (0309 reasoning, non-reasoning and multi-agent) the same as grok-4.3. A request whose prompt reaches 200k tokens is billed at the long-context rate for all tokens. grok-4.7 and grok-4.6 cost $4.00 input and $12.00 output per 1M tokens. grok-4.3 and grok-4.20 cost $2.50 input and $5.00 output. grok-build-0.1 costs $2.00 input and $4.00 output. Cached input costs $0.50 on grok-4.7 and grok-4.6, $0.30 on grok-4.5, and $0.20 on grok-4.3, grok-4.20 and grok-build-0.1. These cached rates also double from 200k prompt tokens. Context windows: 500k tokens for grok-4.7, grok-4.6 and grok-4.5; 1M for grok-4.3 and grok-4.20; 256k for grok-build-0.1. The US endpoint costs 10% more than the global endpoint. Grok 4.1 Fast was retired on 2026-05-15; its model names now route to grok-4.3 at grok-4.3 rates. Image generation: grok-imagine-image $0.02 per image; grok-imagine-image-2.0 from $0.04 per 1K image at low quality. grok-imagine-image-quality ($0.05 per 1K image) is retired on 2026-11-02, when its requests are served by grok-imagine-image-2.0 at low quality. Voice API: speech-to-text costs $0.10 per hour of audio (REST) or $0.20 per hour (streaming), text-to-speech $15.00 per 1M characters, and speech-to-speech with grok-voice-think-fast-2.0 $0.08 a minute ($4.80 an hour). Video generation: grok-imagine-video-1.5 $0.08 per second at 480p, $0.14 at 720p, $0.25 at 1080p. grok-imagine-video-1.5-lite $0.02 per second at 480p, $0.03 at 720p, $0.14 at 1080p. grok-imagine-video $0.05 per second at 480p, $0.07 at 720p. Batch discounts: grok-4.3, grok-4.20-0309-reasoning, grok-4.20-0309-non-reasoning, and grok-4.20-multi-agent-0309 get 20% off. Other models have no batch discount.",
+      "description": "Grok API, pay as you go: sign up at console.x.ai, then load it with credits. grok-4.7 $2.00/$6.00 (per 1M tokens, under 200k prompt tokens). grok-4.3 $1.25/$2.50 (under 200k prompt tokens). grok-build-0.1 $1.00/$2.00 (under 200k prompt tokens). grok-4.6 and grok-4.5 cost the same as grok-4.7, and grok-4.20 (0309 reasoning, non-reasoning and multi-agent) the same as grok-4.3. A request whose prompt reaches 200k tokens is billed at the long-context rate for all tokens. grok-4.7 and grok-4.6 cost $4.00 input and $12.00 output per 1M tokens. grok-4.3 and grok-4.20 cost $2.50 input and $5.00 output. grok-build-0.1 costs $2.00 input and $4.00 output. Cached input costs $0.50 on grok-4.7 and grok-4.6, $0.30 on grok-4.5, and $0.20 on grok-4.3, grok-4.20 and grok-build-0.1. These cached rates also double from 200k prompt tokens. Context windows: 500k tokens for grok-4.7, grok-4.6 and grok-4.5; 1M for grok-4.3 and grok-4.20; 256k for grok-build-0.1. The US endpoint costs 10% more than the global endpoint. Grok 4.1 Fast was retired on 2026-05-15; its model names now route to grok-4.3 at grok-4.3 rates. Image generation: grok-imagine-image $0.02 per image; grok-imagine-image-2.0 from $0.04 per 1K image at low quality. grok-imagine-image-quality ($0.05 per 1K image) is retired on 2026-11-02, when its requests are served by grok-imagine-image-2.0 at low quality. Voice API: speech-to-text costs $0.10 per hour of audio (REST) or $0.20 per hour (streaming), text-to-speech $15.00 per 1M characters, and speech-to-speech with grok-voice-3.0 $0.08 a minute ($4.80 an hour). grok-voice-3.0 replaced grok-voice-2.0 on 2026-10-14 at the same price; grok-voice-2.0 is deprecated, and the grok-voice-latest alias now points to grok-voice-3.0. Video generation: grok-imagine-video-1.5 $0.08 per second at 480p, $0.14 at 720p, $0.25 at 1080p. grok-imagine-video-1.5-lite $0.02 per second at 480p, $0.03 at 720p, $0.14 at 1080p. grok-imagine-video $0.05 per second at 480p, $0.07 at 720p. Batch discounts: grok-4.3, grok-4.20-0309-reasoning, grok-4.20-0309-non-reasoning, and grok-4.20-multi-agent-0309 get 20% off. Other models have no batch discount.",
       "tier": "Pay-as-you-go",
       "url": "https://docs.x.ai/developers/pricing",
       "tags": [
