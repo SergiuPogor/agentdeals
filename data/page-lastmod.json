@@ -22,11 +22,11 @@
       "changed": "2026-10-15"
     },
     "/ai-free-tiers": {
-      "hash": "469991ebb195052d",
+      "hash": "2f548a4e8a8296c1",
       "changed": "2026-10-15"
     },
     "/ai-ml-alternatives": {
-      "hash": "9cff584b272e34fd",
+      "hash": "b9f8b040dfb54eb5",
       "changed": "2026-10-15"
     },
     "/alternative-to": {
@@ -1093,7 +1093,7 @@
       "changed": "2026-10-15"
     },
     "/category/ai-ml": {
-      "hash": "cc522e1ba1983de1",
+      "hash": "c4ac4346adb26a9c",
       "changed": "2026-10-15"
     },
     "/category/analytics": {
@@ -3195,7 +3195,7 @@
       "changed": "2026-10-15"
     },
     "/free-llm-apis": {
-      "hash": "6bc87df40a7330b6",
+      "hash": "ad1293fa62cafd2a",
       "changed": "2026-10-15"
     },
     "/free-nextjs-stack": {
@@ -3249,11 +3249,11 @@
       "changed": "2026-10-15"
     },
     "/groq-vs-hugging-face": {
-      "hash": "07d42f252fbc51f2",
-      "changed": "2026-10-12"
+      "hash": "cc1b446b22f9c34a",
+      "changed": "2026-10-15"
     },
     "/groq-vs-mistral-ai": {
-      "hash": "92626a4a4737a712",
+      "hash": "d418b90865a24799",
       "changed": "2026-10-15"
     },
     "/guides": {
@@ -3305,7 +3305,7 @@
       "changed": "2026-10-15"
     },
     "/llm-api-pricing": {
-      "hash": "eb21894819d4b6d5",
+      "hash": "7835ce832afe412a",
       "changed": "2026-10-15"
     },
     "/localstack-alternatives": {
