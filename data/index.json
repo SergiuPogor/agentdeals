@@ -7312,7 +7312,7 @@
     {
       "vendor": "Cerebras",
       "category": "AI / ML",
-      "description": "Ultra-fast LLM inference API — no permanent free tier. New accounts get $5 in free credits after adding a verified payment method, expiring 30 days after they are granted. Free Trial limits on gpt-oss-120b and qwen-3.8-27b: 5 requests/min and 1M tokens/day. Pay as you go after: GPT OSS 120B $0.35/$0.75 per M tokens, Qwen 3.8 27B $0.99/$1.49 per M tokens. Multi-thousand tokens/sec inference speed.",
+      "description": "Ultra-fast LLM inference API — no permanent free tier. New accounts get $5 in free credits after adding a verified payment method, expiring 30 days after they are granted. Free Trial limits on gpt-oss-120b and qwen-3.8-27b: 5 requests/min and 1M tokens/day. Pay as you go after: GPT OSS 120B $0.35/$0.75 per M tokens, Qwen 3.8 27B $0.99/$1.49 per M tokens. Cerebras's public API now serves only gpt-oss-120b and qwen-3.8-27b, and a request to a model ID it has deprecated fails with 404 model not found. Model IDs Cerebras deprecated in 2026: zai-glm-4.6 on 2026-01-20; llama-3.3-70b on 2026-02-16, replaced by gpt-oss-120b; qwen-3-32b on 2026-02-16, replaced by gpt-oss-120b; llama3.1-8b on 2026-05-27, replaced by gpt-oss-120b; qwen-3-235b-a22b-instruct-2507 on 2026-05-27, replaced by gpt-oss-120b; zai-glm-4.7 on 2026-08-17, with no replacement named; gemma-4-31b on 2026-09-03, replaced by qwen-3.8-27b (Gemma 4 31B stays available on Dedicated Inference). Multi-thousand tokens/sec inference speed.",
       "tier": "Trial",
       "url": "https://inference-docs.cerebras.ai/support/rate-limits",
       "tags": [
