@@ -1353,6 +1353,12 @@
           "read_on": "2026-10-05"
         },
         {
+          "text": "Cron schedules for functions work on the Free and Education plans until October 19, 2026. From that date those plans run functions only on an interval of 60 minutes or longer, and existing cron schedules become intervals close to how often they run now, so a function scheduled every 5 minutes runs every 60 minutes. Keeping a cron schedule needs a paid plan.",
+          "quote": "From Monday, October 19, 2026, cron schedules for functions on Appwrite Cloud will need a paid plan. Functions on the Free and Education plans run on an interval of 60 minutes or longer, and their existing cron schedules become intervals close to how often they run today.",
+          "url": "https://appwrite.io/changelog/entry/2026-10-15-1",
+          "read_on": "2026-10-15"
+        },
+        {
           "text": "If a Free project reaches any resource limit, such as function executions or monthly active users, it freezes and the Console becomes read-only until the next billing cycle, or the owner upgrades to Pro or removes the resources over the limit.",
           "quote": "Your project will freeze, and Appwrite Console will continue running in read-only mode. You need to upgrade to Pro, remove resources that exceed their limit, or wait for the next billing cycle, which resets usage limits.",
           "url": "https://appwrite.io/pricing",
