@@ -33035,7 +33035,7 @@
     {
       "vendor": "DeepSeek API",
       "category": "AI / ML",
-      "description": "Pay-as-you-go LLM API with no free tier, billed from a prepaid balance. DeepSeek-V4.1-Flash (deepseek-flash): $0.30/M input, $1.20/M output at peak. DeepSeek-V4-Pro (deepseek-v4-pro): $1.32/M input, $3.96/M output at peak. Cache-hit input is $0.006/M on Flash and $0.044/M on Pro. Off-peak rates are half; peak hours are 01:00-04:00 and 06:00-10:00 UTC on weekdays. 1M context, up to 384K output. China-based.",
+      "description": "Pay-as-you-go LLM API with no free tier, billed from a prepaid balance. DeepSeek-V4.1-Flash (deepseek-flash): $0.30/M input, $1.20/M output at peak. DeepSeek-V4-Pro (deepseek-v4-pro): $1.32/M input, $3.96/M output at peak. Cache-hit input is $0.006/M on Flash and $0.044/M on Pro. Off-peak rates are half; peak hours are 01:00-04:00 and 06:00-10:00 UTC on weekdays. 1M context, up to 384K output. China-based. To call the API today, use deepseek-flash or deepseek-v4-pro: DeepSeek retired the older model names deepseek-chat and deepseek-reasoner on 2026-07-24 (its change log of 2026-04-24 says they \"will be discontinued in three months (2026-07-24)\"). Until then both ran on the Flash model, deepseek-chat in non-thinking mode and deepseek-reasoner in thinking mode, so deepseek-flash replaces either.",
       "tier": "Pay-as-you-go",
       "url": "https://api-docs.deepseek.com/quick_start/pricing",
       "tags": [
