@@ -3121,16 +3121,16 @@
       "changed": "2026-10-11"
     },
     "/email-alternatives": {
-      "hash": "518636c64a2ea90d",
+      "hash": "dea37728663869fe",
       "changed": "2026-10-15"
     },
     "/email-comparison-2026": {
-      "hash": "1ad6aa4c0f266485",
+      "hash": "b00c529515fd4596",
       "changed": "2026-10-15"
     },
     "/email-service-alternatives": {
-      "hash": "eb8570248fe8f755",
-      "changed": "2026-10-11"
+      "hash": "a5f928b43534a8de",
+      "changed": "2026-10-15"
     },
     "/embed": {
       "hash": "0f2a7d35b82e440f",
@@ -3187,7 +3187,7 @@
       "changed": "2026-10-15"
     },
     "/free-frontend-stack": {
-      "hash": "b4084596c8c400f3",
+      "hash": "fdd6ce89de2716e5",
       "changed": "2026-10-15"
     },
     "/free-go-stack": {
