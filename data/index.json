@@ -2781,7 +2781,7 @@
       "source_check": {
         "checked": "2026-10-03",
         "outcome": "ok",
-        "detail": "the page names Cursor as \"cursor\" and states \"$20\" and \"$40\"",
+        "detail": "the page names Cursor as \"cursor\" and states \"$20\"",
         "unrendered_prices": [
           "Pro+ USD 60",
           "Ultra USD 200"
