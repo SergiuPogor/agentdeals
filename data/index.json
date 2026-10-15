@@ -35874,7 +35874,7 @@
     {
       "vendor": "Anchor Browser",
       "category": "Browser Automation",
-      "description": "Cloud browsers for AI agents. The Free plan gives $5 of credit each month, 5 concurrent browsers, 5 new sessions a minute, the US region only and 7-day data retention (Anchor's docs), without CAPTCHA solving, full stealth or a choice of location. Usage costs $0.01 per browser created and $0.05 per browser-hour. Anchor's proxy costs $8 per GB and proxyless egress $0.20 per GB, and Free cannot use its own proxy. Starter is $50 a month.",
+      "description": "Cloud browsers for AI agents. The Free plan gives $5 of credit each month, 5 concurrent browsers, 5 new sessions a minute, the US region only and 7-day data retention (Anchor's docs), without CAPTCHA solving, full stealth or a choice of location. Usage costs $0.01 per browser created and $0.05 per browser-hour. Since August 21, 2026, AI tasks are billed per step by the tier of the model that runs them: $0.01 for Light models such as GPT-5 Mini and Gemini Flash Lite, $0.05 for Standard models such as Claude Haiku 4.5 and GPT-5, and $0.10 for High Performance models such as Claude Sonnet, Claude Opus and GPT-5.5; with your own model key, every step is a flat $0.01. Before that date every AI step cost $0.01. Anchor's proxy costs $8 per GB and proxyless egress $0.20 per GB, and Free cannot use its own proxy. Starter is $50 a month.",
       "tier": "Free",
       "url": "https://docs.anchorbrowser.io/pricing",
       "tags": [
@@ -35884,7 +35884,7 @@
         "ai-agent",
         "free tier"
       ],
-      "verifiedDate": "2026-09-27"
+      "verifiedDate": "2026-10-15"
     },
     {
       "vendor": "Kernel",
