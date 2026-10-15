@@ -22199,6 +22199,12 @@
           "rules_out": [
             "production"
           ]
+        },
+        {
+          "text": "Beyond the free Sandbox, Northflank bills pay-as-you-go: $0.01667 per vCPU-hour and $0.00833 per GB of memory per hour (the smallest plan, 0.1 vCPU and 256 MB, is $2.70 a month), GPUs from $0.80 an hour (NVIDIA L4) to $2.74 (H100 80GB) and $3.00 (RTX PRO 6000), disk $0.15 per GB a month, and egress $0.06 per GB.",
+          "quote": "Only pay for consumption",
+          "url": "https://northflank.com/pricing",
+          "read_on": "2026-10-15"
         }
       ]
     },

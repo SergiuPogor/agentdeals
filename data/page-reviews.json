@@ -407,8 +407,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 44,
-      "table_figures_from_records": 7,
+      "table_figures": 55,
+      "table_figures_from_records": 18,
       "tables": [
         {
           "label": "Deprecation Timeline",
@@ -417,8 +417,8 @@
         },
         {
           "label": "Container Deployment Alternatives",
-          "figures": 25,
-          "from_records": 2
+          "figures": 36,
+          "from_records": 13
         },
         {
           "label": "Pricing Comparison",
