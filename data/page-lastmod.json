@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-14",
+  "generated": "2026-10-15",
   "pages": {
     "/": {
       "daily": true
@@ -1117,8 +1117,8 @@
       "changed": "2026-10-11"
     },
     "/category/browser-automation": {
-      "hash": "e352946c17a7341f",
-      "changed": "2026-10-14"
+      "hash": "d55ebb78559c65ac",
+      "changed": "2026-10-15"
     },
     "/category/cdn": {
       "hash": "8d6a2f7fe773fb9f",
@@ -1173,8 +1173,7 @@
       "changed": "2026-10-11"
     },
     "/category/dev-utilities": {
-      "hash": "7ddd0ea2c35a67d0",
-      "changed": "2026-10-14"
+      "daily": true
     },
     "/category/diagramming": {
       "hash": "11ec204c48ba55db",
@@ -1261,7 +1260,8 @@
       "changed": "2026-10-14"
     },
     "/category/productivity-notes": {
-      "daily": true
+      "hash": "71d4d94be000220b",
+      "changed": "2026-10-15"
     },
     "/category/project-management": {
       "hash": "d8b6262120f546b2",
@@ -4456,8 +4456,8 @@
       "changed": "2026-10-14"
     },
     "/vendor/browser-use": {
-      "hash": "1abbf7a6aabca230",
-      "changed": "2026-10-14"
+      "hash": "2da21647cb5da463",
+      "changed": "2026-10-15"
     },
     "/vendor/browserbase": {
       "hash": "7fae8b98ab7b9abb",
@@ -7087,7 +7087,8 @@
       "changed": "2026-10-14"
     },
     "/vendor/microsoft-to-do": {
-      "daily": true
+      "hash": "9176635786ee9425",
+      "changed": "2026-10-15"
     },
     "/vendor/middleware-io": {
       "daily": true
@@ -9104,8 +9105,7 @@
       "changed": "2026-10-14"
     },
     "/vendor/uuid-generator": {
-      "hash": "fc94850f69f2e833",
-      "changed": "2026-10-14"
+      "daily": true
     },
     "/vendor/uxtweak-com": {
       "hash": "1138be728f415b59",
