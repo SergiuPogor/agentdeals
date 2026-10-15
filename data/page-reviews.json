@@ -2493,8 +2493,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 45,
-      "table_figures_from_records": 45,
+      "table_figures": 46,
+      "table_figures_from_records": 46,
       "tables": [
         {
           "label": "What’s Changing",
@@ -2503,8 +2503,8 @@
         },
         {
           "label": "Free Tier Comparison Table",
-          "figures": 43,
-          "from_records": 43
+          "figures": 44,
+          "from_records": 44
         },
         {
           "label": "OpenAI Pricing Change Timeline",
