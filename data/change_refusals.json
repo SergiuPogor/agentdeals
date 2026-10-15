@@ -1474,6 +1474,30 @@
       "refused_date": "2026-10-01"
     },
     {
+      "vendor": "Cloudflare Sandboxes",
+      "change_type": "pricing_model_change",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 7968 characters, so it states no terms to have changed",
+      "summary": "The pricing information is no longer explicitly stated as $5/mo. The page states Sandboxes are available on the Workers Paid plan, but does not mention a specific price.",
+      "previous_state": "Persistent isolated Linux environments for AI agents — shell, filesystem, background processes. GA April 2026. Built on Containers platform. Features: credential injection, PTY support, persistent code interpreters (Python/JS/TS), filesystem watching, snapshots, preview URLs. Pay-per-use on Workers Paid plan ($5/mo) — only charges for active CPU cycles. Containers included: 25 GiB-hours memory, 375 vCPU-minutes, 200 GB-hours disk per month",
+      "current_state": "Available on Workers Paid plan.",
+      "source_url": "https://developers.cloudflare.com/sandbox/",
+      "category": "Cloud Hosting",
+      "refused_date": "2026-10-15"
+    },
+    {
+      "vendor": "Cloudflare WARP",
+      "change_type": "new_tier",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 2344 characters, so it states no terms to have changed",
+      "summary": "The page introduces WARP+, a paid subscription that offers a larger network and potentially faster speeds. While the free WARP service is still mentioned, the introduction of a paid tier alters the original deal information which stated 'No bandwidth limits' and implied a fully functional free service without additional options.",
+      "previous_state": "Fully free WARP mode (1.1.1.1 with WARP). Encrypts DNS and all traffic via Cloudflare network. No bandwidth limits. No logs. Faster than traditional VPNs (Cloudflare network). No country selection on free (nearest endpoint).",
+      "current_state": "In addition to the full WARP service, WARP+ subscribers get access to a larger network. More cities to connect to means you’re likely to be closer to a Cloudflare data center – which can reduce the latency between your device and Cloudflare and improve your browsing speed.",
+      "source_url": "https://one.one.one.one/",
+      "category": "VPN & Privacy",
+      "refused_date": "2026-10-15"
+    },
+    {
       "vendor": "Cloudflare Workers AI",
       "change_type": "pricing_restructured",
       "reason": "same_transition_graded_differently",
@@ -1994,6 +2018,18 @@
       "refused_date": "2026-10-01"
     },
     {
+      "vendor": "Cursor",
+      "change_type": "pricing_restructured",
+      "reason": "confirmed_unchanged",
+      "detail": "The report accurately reflects information already present in the stored description. The stored description *already* states Cursor is part of 'The X Subscription', the free tier has limited usage, and details the new tiers and third-party billing.",
+      "summary": "Cursor is now part of 'The X Subscription' and the free tier has limited usage. The pricing structure has been significantly restructured with new tiers (Plus, Premium, Super, Ultra) and team options. Third-party models are now billed separately on all but the Free tier.",
+      "previous_state": "AI code editor built on VS Code. Since 2026-10-12, Cursor's pricing docs (cursor.com/docs/models-and-pricing) say: \"Cursor is sold as part of The X Subscription, one subscription for Grok, Cursor, and X.\" Free is $0, with limited Agent and Chat usage. Paid plans are Plus $8/month, Premium $30/month (4x Plus's usage), Super $100/month (15x) and Ultra $200/month (50x), or $80, $300, $1,000 and $2,000 a year. Each paid plan's usage is one weekly pool shared with Grok, covering Grok 4.7, Grok 4.6, Grok 4.5 and Cursor's Composer 2.5. Claude, GPT, Gemini and other third-party models are outside every plan's pool: on Premium and above they cost the model's API list price, paid from prepaid credit, and Free and Plus cannot use them or your own API keys. Teams seats are $30, $100 or $200 per user a month, and on Teams and Enterprise third-party models cost API list price plus the Cursor Token Rate. Existing Hobby, Pro ($20), Pro+ ($60), Ultra and Teams Standard and Premium subscribers keep their plans, with monthly usage pools and included third-party usage, until they choose to switch. Cursor announced the change on its forum on 2026-10-12 (forum.cursor.com/t/introducing-the-x-subscription/174450).",
+      "current_state": "The Free tier is $0/month with limited AI usage, limited agent requests, and limited Chat requests. It includes posting, replying, and following.",
+      "source_url": "https://www.cursor.com/pricing",
+      "category": "AI Coding",
+      "refused_date": "2026-10-15"
+    },
+    {
       "vendor": "dAppling Network",
       "change_type": "limits_reduced",
       "reason": "no_terms_to_narrow",
@@ -2052,6 +2088,18 @@
       "source_url": "https://www.datocms.com/",
       "category": "Headless CMS",
       "refused_date": "2026-08-29"
+    },
+    {
+      "vendor": "DaVinci Resolve",
+      "change_type": "limits_reduced",
+      "reason": "unquantified_limit",
+      "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (8 multi)",
+      "summary": "The page details both a free version of DaVinci Resolve and a paid 'Studio' version for $295. The free version is described as a full professional editor, but the page highlights new features and collaboration tools (Blackmagic Cloud, multi user timelines) that are only available in the Studio version. The stored deal info stated no team collaboration on the free tier, which is no longer accurate.",
+      "previous_state": "Full professional video editor. Multi-track timeline. Color grading. Fairlight audio editing. Fusion visual effects. Limited to UHD resolution (no 8K). No multi-GPU, HDR tools, or team collaboration on free. No watermark.",
+      "current_state": "DaVinci Resolve is available as a free download. Collaboration features, such as Blackmagic Cloud, multi user timelines, and remote access, are available in the Studio version.",
+      "source_url": "https://www.blackmagicdesign.com/products/davinciresolve",
+      "category": "Design & Creative",
+      "refused_date": "2026-10-15"
     },
     {
       "vendor": "DB Designer",
@@ -2852,13 +2900,13 @@
       "vendor": "Fizzy",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-12 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
-      "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page states that Fizzy is entirely free with a 1 GB file storage limit.",
+      "detail": "the reading of this page refused on 2026-10-14 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page states that Fizzy is entirely free with a file space limit of 1 GB.",
       "previous_state": "Kanban-based platform for project management and issue tracking. Create public boards, set up webhooks, use card stamping, and track unlimited users — free for up to 1000 items.",
-      "current_state": "Fizzy is entirely free with a 1 GB file storage limit.",
+      "current_state": "Fizzy is entirely free. It does limit file space usage to 1 GB.",
       "source_url": "https://www.fizzy.do/",
       "category": "Project Management",
-      "refused_date": "2026-10-14"
+      "refused_date": "2026-10-15"
     },
     {
       "vendor": "Flagsmith",
@@ -2871,6 +2919,18 @@
       "source_url": "https://www.flagsmith.com/pricing",
       "category": "Feature Flags",
       "refused_date": "2026-09-24"
+    },
+    {
+      "vendor": "Flickr",
+      "change_type": "limits_increased",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 617 characters, so it states no terms to have changed",
+      "summary": "The free tier now offers unlimited storage and no ads, a significant upgrade from the previous 1,000 photo/video limit and ad-supported experience.",
+      "previous_state": "Up to 1,000 photos/videos. No storage size limit per photo (originals preserved). Community features (groups, comments, favorites). Basic stats. Ad-supported.",
+      "current_state": "Unlimited storage Full-res uploads with no monthly cap Ad-free browsing No ads for you or your visitors",
+      "source_url": "https://www.flickr.com/account/upgrade",
+      "category": "Cloud Storage",
+      "refused_date": "2026-10-15"
     },
     {
       "vendor": "flightcontrol.dev",
@@ -3119,6 +3179,18 @@
     },
     {
       "vendor": "Gatling",
+      "change_type": "pricing_restructured",
+      "reason": "confirmed_unchanged",
+      "detail": "The report simply confirms the Community Edition is still available, which is consistent with the stored description. The current page adds details about paid tiers, which weren't part of the original description.",
+      "summary": "The Community Edition is still available for download.",
+      "previous_state": "Community Edition: open source load testing tool (Apache 2.0). Self-hosted local execution with multi-language SDKs (Java, Scala, Kotlin, JS, TS). No usage limits.",
+      "current_state": "The Community Edition is available for download and offers no stated limits on the page. Paid tiers offer increasing limits on VUs, testing time, and load generators, along with additional features like distributed testing and professional support.",
+      "source_url": "https://gatling.io/pricing",
+      "category": "Testing",
+      "refused_date": "2026-10-15"
+    },
+    {
+      "vendor": "Gatling",
       "change_type": "limits_reduced",
       "reason": "unquantified_limit",
       "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (2.0 self)",
@@ -3335,6 +3407,18 @@
       "collided_with": "Glauca|pricing_restructured|2026-09-01|https://docs.glauca.digital/hexdns/"
     },
     {
+      "vendor": "Gmail",
+      "change_type": "limits_reduced",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 5572 characters, so it states no terms to have changed",
+      "summary": "While a free tier still exists, the 15 GB storage is now shared with Google Drive and Photos, and Gemini AI features are available with Google AI Pro or Ultra plans (paid). The page highlights features like AI-powered assistance and enhanced security, but also promotes paid Google Workspace plans with additional benefits like a custom email address and increased storage.",
+      "previous_state": "15 GB storage shared with Google Drive and Photos. Advanced spam filtering. Smart Compose. Search with filters. Labels and categories. Multiple accounts. Ads in Promotions tab. Google Workspace integration.",
+      "current_state": "Gmail offers secure, AI-powered email. Gemini in Gmail features (writing assistance, summaries, search) are available with Google AI Pro or Ultra plans.",
+      "source_url": "https://www.google.com/gmail/about/",
+      "category": "Consumer Email",
+      "refused_date": "2026-10-15"
+    },
+    {
       "vendor": "GoatCounter",
       "change_type": "restriction",
       "reason": "no_price_signal",
@@ -3441,6 +3525,18 @@
       "source_url": "https://cloud.google.com/storage/pricing",
       "category": "Storage",
       "refused_date": "2026-10-02"
+    },
+    {
+      "vendor": "Google Content API for Shopping",
+      "change_type": "product_deprecated",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 5772 characters, so it states no terms to have changed",
+      "summary": "The Content API for Shopping is deprecated and will sunset on August 18, 2026, with progressive errors starting September 1, 2026. The page explicitly directs users to migrate to the Merchant API.",
+      "previous_state": "Product data management API for Google Merchant Center. Sunset on 2026-08-18. Its successor, Merchant API, has been generally available since July 2025. Free to use with a Google Merchant Center account. Provided product listing, inventory management, and order management endpoints. Developers must migrate to Merchant API before the sunset date.",
+      "current_state": "The Content API for Shopping is deprecated and will be sunset on August 18, 2026. Requests will experience progressive errors starting September 1, 2026. Users are directed to migrate to the Merchant API.",
+      "source_url": "https://developers.google.com/shopping-content/guides/quickstart",
+      "category": "API Development",
+      "refused_date": "2026-10-15"
     },
     {
       "vendor": "Google Drive",
@@ -4199,6 +4295,18 @@
       "source_url": "https://www.ip2location.io/",
       "category": "Dev Utilities",
       "refused_date": "2026-09-25"
+    },
+    {
+      "vendor": "ipinfo.io",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-22 (same_transition_graded_differently) stated the same 2 figures, so the page showed these terms before the date this record gives",
+      "summary": "The IPinfo Lite plan now has a limit of 50 API requests per month, whereas the stored information states unlimited requests.",
+      "previous_state": "IP geolocation and data API. IPinfo Lite (free plan): unlimited requests, country and continent-level geolocation only (no city/region/postal code), ASN name and domain. Does NOT include company, carrier, or privacy/anonymity detection (paid plans only). Community support.",
+      "current_state": "IPinfo Lite $0 /mo Free forever · no credit card Geolocation Country level ASN Name and domain only Web lookups 50 API req / mo Unlimited Country-level only",
+      "source_url": "https://ipinfo.io/pricing",
+      "category": "Maps/Geolocation",
+      "refused_date": "2026-10-15"
     },
     {
       "vendor": "ipinfo.io",
@@ -7726,6 +7834,18 @@
       "refused_date": "2026-09-22"
     },
     {
+      "vendor": "SuperTokens",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-22 (confirmed_unchanged) stated the same 5 figures, so the page showed these terms before the date this record gives",
+      "summary": "The pricing for Multi-factor Authentication and Account Linking now includes a minimum billing of $100/month. The cloud pricing is now $0.02 per MAU, and the free tier is limited to under 5K MAUs.",
+      "previous_state": "Open source authentication — Self hosting the open source features is free without any limits! Cloud is free under 5K MAUs. Multi-factor Authentication is $0.01 / MAU (Minimum $100 / month). Account Linking is $0.005 / MAU (Minimum $100 / month).",
+      "current_state": "Cloud pricing is $0.02 per MAU (Free under 5K monthly active users). Multi-factor Authentication is $0.01 / MAU (Minimum $100 / month). Account Linking is $0.005 / MAU (Minimum $100 / month).",
+      "source_url": "https://supertokens.com/pricing",
+      "category": "Auth",
+      "refused_date": "2026-10-15"
+    },
+    {
       "vendor": "SuprSend",
       "change_type": "free_tier_removed",
       "reason": "free_tier_still_offered",
@@ -8127,6 +8247,18 @@
     },
     {
       "vendor": "Tinybird",
+      "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-22 (states_no_difference) stated the same 4 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier still exists, but the description is incomplete. The page details several plans, and the free tier includes 0.25 vCPUs, 1 thread/request, 1k requests per day, and 10GB included storage, and community support, which matches the stored information. However, the page also details limits for other plans (Developer, SaaS, Enterprise) that were not in the original description.",
+      "previous_state": "Real-time analytics data platform — Free tier includes 1k requests per day, 10GB included storage, 0.25 vCPUs, and community support.",
+      "current_state": "Free tier includes 0.25 vCPUs, 1 thread/request, 1k requests per day, 10GB included storage, and community support.",
+      "source_url": "https://www.tinybird.co/pricing",
+      "category": "Analytics",
+      "refused_date": "2026-10-15"
+    },
+    {
+      "vendor": "Tinybird",
       "change_type": "limits_increased",
       "reason": "states_no_difference",
       "detail": "the summary states that the page agrees with what we hold, and names no figure the stored description did not already carry",
@@ -8515,6 +8647,18 @@
       "source_url": "https://www.uptimia.com/pricing",
       "category": "Monitoring",
       "refused_date": "2026-09-05"
+    },
+    {
+      "vendor": "Uptimia",
+      "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-05 (confirmed_unchanged) claimed the same change, pricing_restructured, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free plan now offers uptime checks with a 5-minute check interval, but the page details several paid plans with varying limits for uptime checks, advanced checks, and other features. The free plan is still available, but the page does not explicitly state all the features of the free plan as described in the stored deal info.",
+      "previous_state": "Website uptime monitoring — free plan: 1 website, 5-minute check interval, basic uptime monitoring, email alerts. No credit card required",
+      "current_state": "The Basic plan starts at $9/mo and includes 10 uptime checks with a 1-minute interval, 1 advanced check, 5-minute website speed monitoring, 1 SSL certificate monitoring, 10 domain expiry monitoring, 1 DNS monitoring zone, 1 blacklist monitoring domain, 10 heartbeat monitoring, 1 API check, 1 server monitoring, 1 website for Real User Monitoring, 150,000 pageviews, and 50 free SMS alerts.",
+      "source_url": "https://www.uptimia.com/pricing",
+      "category": "Monitoring",
+      "refused_date": "2026-10-15"
     },
     {
       "vendor": "URLscan.io",
