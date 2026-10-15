@@ -36191,7 +36191,7 @@
     {
       "vendor": "Hetzner Inference API",
       "category": "AI / ML",
-      "description": "Hetzner's experimental Inference API: an OpenAI-compatible API for open-weight models, free while it stays experimental. Models listed on 2026-10-09: Qwen3.6-35B-A3B and Qwen3.8-27B, each with a 262,144-token context and image input. Limits per API key, per minute: 4M input tokens, 100k output tokens and 10 requests. Needs a Hetzner account; keys are created at experiments.hetzner.com. Hetzner says it does not store the content of requests or responses.",
+      "description": "Hetzner's experimental Inference API: an OpenAI-compatible API for open-weight models, free while it stays experimental. Base URL: https://inference.hetzner.com/api/v1. Models listed on 2026-10-15, with the IDs Hetzner's docs give: Qwen/Qwen3.6-35B-A3B-FP8 and Qwen3.8-27B, each with a 262,144-token context and image input. Hetzner says the list will change while the API is experimental; GET /v1/models returns the current one. Limits per API key, per minute: 4M input tokens, 100k output tokens and 10 requests. Needs a Hetzner account; keys are created at experiments.hetzner.com. Hetzner says it does not store the content of requests or responses.",
       "tier": "Free",
       "url": "https://docs.hetzner.com/general/company-and-policy/experiments/inference/",
       "tags": [
