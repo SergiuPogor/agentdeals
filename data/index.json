@@ -975,6 +975,12 @@
           "quote": "Eligible projects receive up to $5,000 yearly in credits and promotional support.",
           "url": "https://neon.com/programs/open-source.md",
           "read_on": "2026-10-11"
+        },
+        {
+          "text": "After the free plan, Neon's paid plans bill only for usage, with no monthly minimum: Launch charges $0.106 per CU-hour of compute and Scale $0.222, both charge $0.35 per GB-month of storage, extra branches cost $1.50 per branch-month, and network transfer beyond 500 GB per project costs $0.10 per GB.",
+          "quote": "Paid plans are pay-as-you-go: usage is metered hourly and billed at the end of the month, with no monthly minimum.",
+          "url": "https://neon.com/pricing.md",
+          "read_on": "2026-10-15"
         }
       ]
     },
@@ -22196,6 +22202,12 @@
           "rules_out": [
             "production"
           ]
+        },
+        {
+          "text": "Beyond the free Sandbox, Northflank bills pay-as-you-go: $0.01667 per vCPU-hour and $0.00833 per GB of memory per hour (the smallest plan, 0.1 vCPU and 256 MB, is $2.70 a month), GPUs from $0.80 an hour (NVIDIA L4) to $2.74 (H100 80GB) and $3.00 (RTX PRO 6000), disk $0.15 per GB a month, and egress $0.06 per GB.",
+          "quote": "Only pay for consumption",
+          "url": "https://northflank.com/pricing",
+          "read_on": "2026-10-15"
         }
       ]
     },
