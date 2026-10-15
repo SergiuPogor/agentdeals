@@ -975,6 +975,12 @@
           "quote": "Eligible projects receive up to $5,000 yearly in credits and promotional support.",
           "url": "https://neon.com/programs/open-source.md",
           "read_on": "2026-10-11"
+        },
+        {
+          "text": "After the free plan, Neon's paid plans bill only for usage, with no monthly minimum: Launch charges $0.106 per CU-hour of compute and Scale $0.222, both charge $0.35 per GB-month of storage, extra branches cost $1.50 per branch-month, and network transfer beyond 500 GB per project costs $0.10 per GB.",
+          "quote": "Paid plans are pay-as-you-go: usage is metered hourly and billed at the end of the month, with no monthly minimum.",
+          "url": "https://neon.com/pricing.md",
+          "read_on": "2026-10-15"
         }
       ]
     },
