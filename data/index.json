@@ -986,6 +986,12 @@
           "quote": "Paid plans are pay-as-you-go: usage is metered hourly and billed at the end of the month, with no monthly minimum.",
           "url": "https://neon.com/pricing.md",
           "read_on": "2026-10-15"
+        },
+        {
+          "text": "Neon Realtime has been in public beta since 2026-10-15. It provides live updates from SQL queries without polling and is free during the beta. Compute and egress are billed under the plan; beta runs in four AWS regions: us-east-1, us-east-2, eu-central-1 and ap-southeast-1.",
+          "quote": "Realtime is free to use during the beta. Neon does not charge for the live query engine compute or the Live SQL API service.",
+          "url": "https://neon.com/docs/realtime/overview",
+          "read_on": "2026-10-16"
         }
       ]
     },
