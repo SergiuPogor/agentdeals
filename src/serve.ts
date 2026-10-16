@@ -77,7 +77,7 @@ import { removalDurability, removalReturnRateSentence, removalDurabilityPattern,
 import { cutsByQuarterNewestFirst, cutsWindow, freeTierCutsIn } from "./free-tier-cuts.js";
 import { STARTUP_CREDITS_META_DESCRIPTION, STARTUP_PROGRAMS, type DatedTerms, type StartupProgram } from "./startup-programmes.js";
 import { CHANGE_TIMELINE_LINK_TEXT, CHANGE_TIMELINE_PATH, CUTS_THIS_YEAR_ANCHOR, CUTS_THIS_YEAR_HEADING, CUTS_THIS_YEAR_SUMMARY_CLASS, FIGURES_AS_OF_CLASS, FREE_TIER_TRACKER_HEADING, FREE_TIER_TRACKER_META_DESCRIPTION, FREE_TIER_TRACKER_TITLE, FREE_TIER_TRACKER_YEAR, NO_KNOWN_EFFECTIVE_DATE_LEFT_OUT, UNTIL_ITS_DATE_ARRIVES, changeTypesAmong, cutsThisYearSummary, figuresAsOfTheChangeHtml, isAFirstQuarterCard, neonFiguresWereJanuarysHtml, quarterAnchor, quarterHeading } from "./free-tier-tracker.js";
-import { changeCitesASource, citationLabel, changeIsUncited, changeSourceCitation, changeSourceLinkHtml, changeCitationHtml, citedClaimHtml, changeSummaryHtml, changeSummaryText, citedChanges, uncitedChangeNotice, uncitedChangeNoticeHtml, ratingWithheldForNoSourceClause, ratingWithheldForNoSourceSentence, ratingWithheldClause, ratingWithheldSentence, type WithheldRecordCounts, UNCITED_CHANGE_LABEL, RECORD_SOURCE_CLASS, CITATION_REL, type CitableChangeRow } from "./change-citation.js";
+import { changeCitesASource, citationLabel, changeIsUncited, changeSourceCitation, changeSourceLinkHtml, changeCitationHtml, citedClaimHtml, changeSummaryHtml, changeSummaryText, citedChanges, uncitedChangeNotice, uncitedChangeNoticeHtml, ratingWithheldForNoSourceClause, ratingWithheldForNoSourceSentence, ratingWithheldClause, ratingWithheldSentence, type WithheldRecordCounts, UNCITED_CHANGE_LABEL, RECORD_SOURCE_CLASS, CITATION_REL, listingSourceLinkHtml, type CitableChangeRow } from "./change-citation.js";
 import { growthLimitPhrases } from "./growth-limits.js";
 import { listingStatements, statesUsageBeyondTheFreeTierIsBilled } from "./overage-billing.js";
 import { registerAgent, authenticateRequest, validateVestauthUrl, hashApiKey, updateAgentX402Address, getAgentById } from "./agents.js";
@@ -104,6 +104,7 @@ import { figureProvenanceAgainst, statementsWeHold } from "./figure-provenance.j
 import { statesNoFreeTier } from "./retired-terms.js";
 import { countsDownTo, shutdownDeadlineHtml } from "./shutdown-deadline.js";
 import { forecastShutdownsWithoutACard, whatEnds, type RecordACardCovers } from "./forecast-shutdowns.js";
+import { deadlineTextsOf, quotesTheWholeDescription, statedDeadlines, type StatedDeadline } from "./stated-deadlines.js";
 import { UPCOMING_CHANGES_HEADING, UPCOMING_CHANGES_INTRO, splitAtTheDayServed } from "./upcoming-changes.js";
 import { createRegistrationLimiter, rateLimitHeaders } from "./rate-limit.js";
 import { offerForSlug, vendorRates, cheapestRate, dearestRate, spanOfRates, formatRate, formatRateSpan, monthlyTokenCost, formatDollars, amountValue, type ModelRate } from "./model-rates.js";
@@ -139,7 +140,7 @@ import { buildProductFunctions, functionMembers, functionDefinitions, functionMe
 import { curatedAlternativesFor } from "./curated-alternatives.js";
 import { vendorSubstitutes, substitutesListedFor } from "./vendor-substitutes.js";
 import type { Agent, ChangeDateSource, DealChange, FreePlanExcerpt, RiskCause, RatingWithheld, LinkUnreachable, ListingCondition, Offer, StabilityClass, SubtypeLabel } from "./types.js";
-import { A_DATED_HEADING_MARKER, A_DATED_SECTION_MARKER, archiveBracketOf, datedHeadingNoticeHtml, datedSectionNoticeHtml, namedFromItsDate, namedOnceItsDateArrived, namedWhileAheadOf, namedWhileNotBefore, ANNOUNCED_BADGE, ANNOUNCED_HEADING, announcedIntro, changeDateLabel, changeEntryDateLabel, changeEntryLongDateLabel, changeDateClause, changeDatePublished, changeEventStartDate, capListSections, latestEventDate, offerExpiryAfter, feedEntryUpdated, UNDATED_TILE_LABEL, firstReadHeading, discoveryBatchNote, coveringBracketedChanges, changeEntryDateLabelHtml, isoWeekOf, monthlyChangeSeries, changesInWindow, discoveryMonthSeriesHeading, periodComparisonSentence, DISCOVERED_DATE_PREFIX, EFFECTIVE_DATE_PREFIX, UNKNOWN_EFFECTIVE_DATE_MARKER, EFFECTIVE_BY_DATE_MEANING, BRACKETED_DATE_PREFIX, RECORDED_DATE_PREFIX, CORRECTED_DATE_PREFIX, EFFECTIVE_MONTH_SERIES_NOTE, DISCOVERY_MONTH_SERIES_NOTE, weekRangeLabel, newestChangeInEffect, hasNotTakenEffect, vendorPageLastUpdated } from "./change-dates.js";
+import { A_DATED_HEADING_MARKER, A_DATED_SECTION_MARKER, archiveBracketOf, datedHeadingNoticeHtml, datedSectionNoticeHtml, namedFromItsDate, namedOnceItsDateArrived, namedWhileAheadOf, namedWhileNotBefore, statedDatesShownWhileLaterThan, ANNOUNCED_BADGE, ANNOUNCED_HEADING, announcedIntro, changeDateLabel, changeEntryDateLabel, changeEntryLongDateLabel, changeDateClause, changeDatePublished, changeEventStartDate, capListSections, latestEventDate, offerExpiryAfter, feedEntryUpdated, UNDATED_TILE_LABEL, firstReadHeading, discoveryBatchNote, coveringBracketedChanges, changeEntryDateLabelHtml, isoWeekOf, monthlyChangeSeries, changesInWindow, discoveryMonthSeriesHeading, periodComparisonSentence, DISCOVERED_DATE_PREFIX, EFFECTIVE_DATE_PREFIX, UNKNOWN_EFFECTIVE_DATE_MARKER, EFFECTIVE_BY_DATE_MEANING, BRACKETED_DATE_PREFIX, RECORDED_DATE_PREFIX, CORRECTED_DATE_PREFIX, EFFECTIVE_MONTH_SERIES_NOTE, DISCOVERY_MONTH_SERIES_NOTE, weekRangeLabel, newestChangeInEffect, hasNotTakenEffect, vendorPageLastUpdated } from "./change-dates.js";
 import { changeFeedEntries, feedEntryFields, feedUpdatedTimestamp, changeFeedProvenanceNote, CHANGE_FEED_ENTRY_LIMIT, CHANGE_FEED_DESCRIPTION, CHANGE_FEED_NAMESPACE, CHANGE_FEED_NAMESPACE_PREFIX, channelUpdatedTimestamp, WEEKLY_FEED_POPULATION_NOTE, feedLinkTag, feedEntrySourceXml, digestSourceXml, PER_CHANGE_FEED, WEEKLY_DIGEST_FEED } from "./change-feed.js";
 import { changeLogInPageOrder, changeLogSections, changeLogSectionsHtml, monthHeadingLabel } from "./change-log-sections.js";
 import { FEED_CORRECTIONS, correctionEntriesXml } from "./feed-corrections.js";
@@ -50097,6 +50098,21 @@ ${freshestRows}
 </html>`;
 }
 
+function deadlinesOurTextStates(changes: readonly DealChange[], listed: readonly DealChange[], today: string): StatedDeadline[] {
+  const recordsBeforeToday = changesTheVendorMade(recordsStillInForce(changes)).filter(c => c.date <= today);
+  return statedDeadlines(deadlineTextsOf(offers, recordsBeforeToday), listed, today);
+}
+
+function conditionsAfterAWholeDescriptionHtml(deadline: StatedDeadline): string {
+  return quotesTheWholeDescription(deadline) ? conditionsAfterTheTermsHtml(deadline.listing) : "";
+}
+
+function statedSentenceWithAnyConditions(deadline: StatedDeadline): string {
+  return quotesTheWholeDescription(deadline)
+    ? withConditionsAfter(deadline.sentence, conditionsBesideTheStoredTerms(deadline.listing))
+    : deadline.sentence;
+}
+
 function buildDeadlinesPage(): string {
   const allChanges = loadDealChanges();
   const today = new Date().toISOString().slice(0, 10);
@@ -50105,6 +50121,8 @@ function buildDeadlinesPage(): string {
   const deadlines = changesTheVendorMade(allChanges)
     .filter(c => c.date > today)
     .sort((a, b) => a.date.localeCompare(b.date));
+  const stated = deadlinesOurTextStates(allChanges, deadlines, today);
+  const entryCount = deadlines.length + stated.length;
 
   const migrationGuides: Record<string, string> = {
     "tenor": "/tenor-alternatives",
@@ -50140,31 +50158,46 @@ function buildDeadlinesPage(): string {
   }
 
   const typeGroups = new Map<string, number>();
-  for (const c of deadlines) {
+  for (const c of [...deadlines, ...stated.flatMap(s => s.record ? [s.record] : [])]) {
     const count = typeGroups.get(c.change_type) ?? 0;
     typeGroups.set(c.change_type, count + 1);
   }
 
-  const criticalCount = deadlines.filter(c => {
+  const criticalCount = [...deadlines, ...stated].filter(c => {
     const d = new Date(c.date + "T00:00:00Z").getTime();
     return Math.ceil((d - todayMs) / 86400000) <= 14;
   }).length;
-  const warningCount = deadlines.filter(c => {
+  const warningCount = [...deadlines, ...stated].filter(c => {
     const d = new Date(c.date + "T00:00:00Z").getTime();
     const diff = Math.ceil((d - todayMs) / 86400000);
     return diff > 14 && diff <= 30;
   }).length;
 
-  const cardsHtml = deadlines.map(c => {
-    const badge = changeTypeBadge[c.change_type] ?? { label: c.change_type, color: "#8b949e" };
-    const urgency = urgencyBadge(c.date);
-    const countdown = countdownText(c.date);
-    const guide = findMigrationGuide(c.vendor, c.summary);
-    const altHtml = c.alternatives && c.alternatives.length > 0
-      ? `<div class="dl-alts"><span class="dl-alts-label">Alternatives:</span> ${c.alternatives.map(a => changeVendorLinkHtml(a)).join(", ")}</div>`
+  function badgeOf(c: DealChange): { label: string; color: string } {
+    return changeTypeBadge[c.change_type] ?? { label: c.change_type, color: "#8b949e" };
+  }
+
+  function deadlineCardHtml(due: string, card: {
+    badge: { label: string; color: string } | null;
+    vendor: string;
+    category: string;
+    dateLabel: string;
+    summaryHtml: string;
+    alternatives: readonly string[];
+    guideText: string;
+  }): string {
+    const urgency = urgencyBadge(due);
+    const countdown = countdownText(due);
+    const guide = findMigrationGuide(card.vendor, card.guideText);
+    const altHtml = card.alternatives.length > 0
+      ? `<div class="dl-alts"><span class="dl-alts-label">Alternatives:</span> ${card.alternatives.map(a => changeVendorLinkHtml(a)).join(", ")}</div>`
       : "";
     const guideHtml = guide
       ? `<a href="${guide}" class="dl-guide">Migration guide &rarr;</a>`
+      : "";
+    const badgeHtml = card.badge
+      ? `
+            <span class="badge" style="background:${card.badge.color}">${card.badge.label}</span>`
       : "";
 
     return `      <div class="dl-card ${urgency.cssClass}">
@@ -50173,17 +50206,47 @@ function buildDeadlinesPage(): string {
           <div class="dl-countdown">${countdown}</div>
         </div>
         <div class="dl-body">
-          <div class="dl-meta">
-            <span class="badge" style="background:${badge.color}">${badge.label}</span>
-            ${changeVendorLinkHtml(c.vendor, ' class="dl-vendor"')}
-            <span class="dl-category">${escHtmlServer(c.category)}</span>
+          <div class="dl-meta">${badgeHtml}
+            ${changeVendorLinkHtml(card.vendor, ' class="dl-vendor"')}
+            <span class="dl-category">${escHtmlServer(card.category)}</span>
           </div>
-          <div class="dl-date">${escHtmlServer(changeEntryDateLabel(c))}</div>
-          <div class="dl-summary">${changeSummaryHtml(c, escHtmlServer)}</div>
+          <div class="dl-date">${escHtmlServer(card.dateLabel)}</div>
+          <div class="dl-summary">${card.summaryHtml}</div>
 ${altHtml}${guideHtml}
         </div>
       </div>`;
-  }).join("\n");
+  }
+
+  const recordCards = deadlines.map(c => ({
+    entry: c,
+    html: deadlineCardHtml(c.date, {
+      badge: badgeOf(c),
+      vendor: c.vendor,
+      category: c.category,
+      dateLabel: changeEntryDateLabel(c),
+      summaryHtml: changeSummaryHtml(c, escHtmlServer),
+      alternatives: c.alternatives ?? [],
+      guideText: c.summary,
+    }),
+  }));
+  const statedCards = stated.map(s => ({
+    entry: s,
+    html: deadlineCardHtml(s.date, {
+      badge: s.record ? badgeOf(s.record) : null,
+      vendor: s.vendor,
+      category: s.category,
+      dateLabel: s.date,
+      summaryHtml: s.record
+        ? changeSummaryHtml({ ...s.record, summary: s.sentence }, escHtmlServer)
+        : [escHtmlServer(s.sentence), listingSourceLinkHtml(s.sourceUrl, escHtmlServer)].filter(Boolean).join(" ") + conditionsAfterAWholeDescriptionHtml(s),
+      alternatives: s.record?.alternatives ?? [],
+      guideText: s.sentence,
+    }),
+  }));
+  const cardsHtml = [...recordCards, ...statedCards]
+    .sort((a, b) => a.entry.date.localeCompare(b.entry.date))
+    .map(card => card.html)
+    .join("\n");
 
   const filterButtons = Array.from(typeGroups.entries())
     .sort((a, b) => b[1] - a[1])
@@ -50193,7 +50256,7 @@ ${altHtml}${guideHtml}
     }).join("\n      ");
 
   const title = "Developer Tool Deadlines 2026 \u2014 API Shutdowns, Free Tier Removals & Price Changes";
-  const metaDesc = `Track ${deadlines.length} upcoming developer tool deadlines. API shutdowns, free tier removals, and price increases across cloud, databases, CI/CD, monitoring, and more.`;
+  const metaDesc = `Track ${entryCount} upcoming developer tool deadlines. API shutdowns, free tier removals, and price increases across cloud, databases, CI/CD, monitoring, and more.`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -50201,24 +50264,27 @@ ${altHtml}${guideHtml}
     itemListOrder: listOrderOf("soonest-first"),
     name: title,
     description: metaDesc,
-    numberOfItems: deadlines.length,
+    numberOfItems: entryCount,
     url: `${BASE_URL}/deadlines`,
-    itemListElement: deadlines.slice(0, 50).map((c, i) => ({
+    itemListElement: [
+      ...deadlines.map(c => ({ entry: c, headline: `${c.vendor}: ${(changeTypeBadge[c.change_type] ?? { label: c.change_type }).label}`, description: c.summary })),
+      ...stated.map(s => ({ entry: s, headline: s.record ? `${s.vendor}: ${badgeOf(s.record).label}` : s.vendor, description: statedSentenceWithAnyConditions(s) })),
+    ].sort((a, b) => a.entry.date.localeCompare(b.entry.date)).slice(0, 50).map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,
       item: {
         "@type": "NewsArticle",
-        headline: `${c.vendor}: ${(changeTypeBadge[c.change_type] ?? { label: c.change_type }).label}`,
-        description: c.summary,
-        datePublished: c.date,
-        ...changeVendorUrlField(c.vendor),
+        headline: item.headline,
+        description: item.description,
+        datePublished: item.entry.date,
+        ...changeVendorUrlField(item.entry.vendor),
         publisher: { "@type": "Organization", name: "AgentDeals", url: BASE_URL },
       },
     })),
   };
 
   const faqJsonLd = faqPageJsonLd("/deadlines", [
-    { q: "What developer APIs are shutting down in 2026?", a: `We're tracking ${deadlines.length} upcoming developer tool deadlines including API shutdowns, free tier removals, and pricing changes across cloud infrastructure, databases, CI/CD, monitoring, and more. Major shutdowns include Google Tenor API (June 2026), OpenAI Assistants API (August 2026), and several AWS service deprecations.`, },
+    { q: "What developer APIs are shutting down in 2026?", a: `We're tracking ${entryCount} upcoming developer tool deadlines including API shutdowns, free tier removals, and pricing changes across cloud infrastructure, databases, CI/CD, monitoring, and more. Major shutdowns include Google Tenor API (June 2026), OpenAI Assistants API (August 2026), and several AWS service deprecations.`, },
     { q: "Which free tiers are being removed?", a: `Multiple developer tools are removing or restructuring their free tiers. We track all changes with deadlines, countdown timers, and migration guides so you can plan ahead.`, },
   ]);
 
@@ -50294,20 +50360,21 @@ ${globalNavCss()}
   ${buildGlobalNav("deadlines")}
   <div class="breadcrumb"><a href="/">AgentDeals</a> &rsaquo; Deadlines</div>
   <h1>Developer Tool Deadline Tracker</h1>
-  <p class="page-intro">${deadlines.length} upcoming deadlines across developer infrastructure \u2014 API shutdowns, free tier removals, and price changes. ${listOrderSentence("soonest-first")}</p>
+  <p class="page-intro">${entryCount} upcoming deadlines across developer infrastructure \u2014 API shutdowns, free tier removals, and price changes. ${listOrderSentence("soonest-first")}</p>
   ${datedSectionNoticeHtml(
-    `${namedWhileAheadOf("A deadline", today)} It is not removed because the shutdown was cancelled or because we stopped holding the record.`,
+    `${namedWhileAheadOf("A change record", today)} It is not removed because the shutdown was cancelled or because we stopped holding the record.`,
     [
       { when: "On the day its date arrives it leaves this page for", text: "the full change log", href: "/changes" },
     ],
     escHtmlServer,
     ' class="page-intro dated-rule"',
+    statedDatesShownWhileLaterThan(today),
   )}
   <a href="/feed.xml" class="rss-link">\u{1F4E1} Subscribe to changes</a>
 
   <div class="stats-bar">
     <div class="stat-card">
-      <div class="stat-value">${deadlines.length}</div>
+      <div class="stat-value">${entryCount}</div>
       <div class="stat-label">Upcoming</div>
     </div>
     <div class="stat-card">
@@ -50326,7 +50393,7 @@ ${globalNavCss()}
 
   <div class="filter-bar">
     <span class="filter-label">Filter:</span>
-    <button class="filter-btn active" data-type="all">All (${deadlines.length})</button>
+    <button class="filter-btn active" data-type="all">All (${entryCount})</button>
     ${filterButtons}
   </div>
 
@@ -53833,14 +53900,28 @@ const dispatchRequest = async (req: IncomingMessage, res: ServerResponse) => {
     const today = new Date().toISOString().slice(0, 10);
     const todayMs = new Date(today + "T00:00:00Z").getTime();
     const typeFilter = url.searchParams.get("type") || undefined;
-    const deadlines = allChanges
-      .filter(c => c.date > today)
+    const listed = allChanges.filter(c => c.date > today);
+    const countdownDays = (date: string) => Math.ceil((new Date(date + "T00:00:00Z").getTime() - todayMs) / 86400000);
+    const recordDeadlines = listed
       .filter(c => !typeFilter || c.change_type === typeFilter)
-      .sort((a, b) => a.date.localeCompare(b.date))
       .map(c => ({
         ...c,
-        countdown_days: Math.ceil((new Date(c.date + "T00:00:00Z").getTime() - todayMs) / 86400000),
+        countdown_days: countdownDays(c.date),
       }));
+    const statedDeadlineEntries = deadlinesOurTextStates(allChanges, listed, today)
+      .filter(s => !typeFilter || s.record?.change_type === typeFilter)
+      .map(s => ({
+        vendor: s.vendor,
+        category: s.category,
+        date: s.date,
+        summary: s.sentence,
+        source_url: s.sourceUrl,
+        stated_in: s.record ? "record" : "listing",
+        ...(s.record ? { change_type: s.record.change_type, record_date: s.record.date } : {}),
+        countdown_days: countdownDays(s.date),
+      }));
+    const deadlines = [...recordDeadlines, ...statedDeadlineEntries]
+      .sort((a, b) => a.date.localeCompare(b.date));
     logRequest({ ts: new Date().toISOString(), type: "api", endpoint: "/api/deadlines", params: { type: typeFilter }, user_agent: req.headers["user-agent"] ?? "unknown", result_count: deadlines.length });
     res.writeHead(200, { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" });
     res.end(JSON.stringify(citedAt({ deadlines, count: deadlines.length }, "/deadlines")));
