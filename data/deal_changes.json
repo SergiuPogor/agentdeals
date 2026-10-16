@@ -16762,6 +16762,54 @@
       "date_source": "hand_written",
       "listing_effect": "none",
       "what_ends": "serverless access to meta-llama/Llama-3.3-70B-Instruct-Turbo and deepseek-ai/DeepSeek-V4-Flash-0731"
+    },
+    {
+      "vendor": "NVIDIA NIM",
+      "change_type": "product_deprecated",
+      "date": "2026-10-15",
+      "summary": "NVIDIA's free API endpoints keep running. NVIDIA retired Kimi K3 (moonshotai/kimi-k3) from its free endpoints on build.nvidia.com on October 15, 2026; its model page says it is no longer supported after 10/15/2026.",
+      "previous_state": "Kimi K3 (moonshotai/kimi-k3) could be called at no cost on NVIDIA's free inference endpoints.",
+      "current_state": "NVIDIA's model page says Kimi K3 was deprecated on 10/14/2026 and is no longer supported after 10/15/2026; NVIDIA's API answers calls to it with HTTP 410.",
+      "impact": "low",
+      "source_url": "https://build.nvidia.com/moonshotai/kimi-k3",
+      "category": "AI / ML",
+      "alternatives": [],
+      "recorded_date": "2026-10-16",
+      "date_source": "hand_written",
+      "listing_effect": "none",
+      "what_ends": "free endpoint access to moonshotai/kimi-k3"
+    },
+    {
+      "vendor": "NVIDIA NIM",
+      "change_type": "product_deprecated",
+      "date": "2026-10-19",
+      "summary": "NVIDIA's free API endpoints keep running. NVIDIA Nemotron 3 Super (nvidia/nemotron-3-super-120b-a12b) can be called on NVIDIA's free endpoints until October 19, 2026; NVIDIA's model page says it will no longer be supported after 10/19/2026.",
+      "previous_state": "NVIDIA Nemotron 3 Super (nvidia/nemotron-3-super-120b-a12b) could be called at no cost on NVIDIA's free inference endpoints, with no end date.",
+      "current_state": "NVIDIA's model page says the Nemotron 3 Super API will be deprecated on 10/19/2026 and will no longer be supported after 10/19/2026.",
+      "impact": "low",
+      "source_url": "https://build.nvidia.com/nvidia/nemotron-3-super-120b-a12b",
+      "category": "AI / ML",
+      "alternatives": [],
+      "recorded_date": "2026-10-16",
+      "date_source": "hand_written",
+      "listing_effect": "none",
+      "what_ends": "free endpoint access to nvidia/nemotron-3-super-120b-a12b"
+    },
+    {
+      "vendor": "NVIDIA NIM",
+      "change_type": "product_deprecated",
+      "date": "2026-10-27",
+      "summary": "NVIDIA's free API endpoints keep running, and GLM 5.3 Flash (z-ai/glm-5.3-flash) is not affected. GLM 5.3 (z-ai/glm-5.3) can be called on NVIDIA's free endpoints until October 27, 2026; NVIDIA's model page says it will be deprecated on 10/27/2026 and no longer supported after 10/28/2026.",
+      "previous_state": "GLM 5.3 (z-ai/glm-5.3) could be called at no cost on NVIDIA's free inference endpoints, with no end date.",
+      "current_state": "NVIDIA's model page says the GLM 5.3 API will be deprecated on 10/27/2026 and will no longer be supported after 10/28/2026.",
+      "impact": "low",
+      "source_url": "https://build.nvidia.com/z-ai/glm-5-3",
+      "category": "AI / ML",
+      "alternatives": [],
+      "recorded_date": "2026-10-16",
+      "date_source": "hand_written",
+      "listing_effect": "none",
+      "what_ends": "free endpoint access to z-ai/glm-5.3"
     }
   ]
 }

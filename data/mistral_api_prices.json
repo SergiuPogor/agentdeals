@@ -5,7 +5,7 @@
   "lead": "Mistral API prices range from $0.10 to $7.50 per million tokens. New accounts start in Mistral's Free mode, with monthly usage shared across the API, Studio and Vibe Code; when it runs out, requests stop until the next month unless pay-as-you-go is on. Since August 2026, Mistral's API is for business customers only, under its Commercial Terms of Service.",
   "prices": {
     "heading": "What does the Mistral API cost per million tokens?",
-    "intro": "The cheapest text model is Ministral 3 3B at $0.10 per million input and output tokens. The most expensive output is Mistral Medium 3.5 at $7.50 per million output tokens. Mistral Large 4 lists at $1.36 input and $4.18 output; Mistral's pricing page shows a launch sale of $0.68 and $2.09 with no end date. Batch requests cost 50% less.",
+    "intro": "The cheapest text model is Ministral 3 3B at $0.10 per million input and output tokens. The most expensive output is Mistral Medium 3.5 at $7.50 per million output tokens. Mistral Large 4 lists at $1.36 input and $4.18 output; Mistral's pricing page shows a launch sale of $0.68 and $2.09 with no end date. To call Mistral Large 4, use the model name mistral-large-4; mistral-large-latest still points to Mistral Large 3 (mistral-large-2512). Batch requests cost 50% less.",
     "columns": [
       "Model",
       "Input",
