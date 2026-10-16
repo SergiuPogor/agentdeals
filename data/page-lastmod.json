@@ -4038,7 +4038,7 @@
       "changed": "2026-10-16"
     },
     "/vendor/amplitude": {
-      "hash": "a0e0d7b0ffb23bf5",
+      "hash": "b1bb84206036e4a5",
       "changed": "2026-10-16"
     },
     "/vendor/ampt-dev": {
@@ -7737,7 +7737,7 @@
       "changed": "2026-10-16"
     },
     "/vendor/posthog": {
-      "hash": "a81dc213c1ed8d5e",
+      "hash": "e34e999dea484bff",
       "changed": "2026-10-16"
     },
     "/vendor/postman": {
