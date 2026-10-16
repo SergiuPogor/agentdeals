@@ -18,16 +18,16 @@
       "changed": "2026-10-15"
     },
     "/ai-coding-tools-pricing": {
-      "hash": "0d5975d4d47d4262",
-      "changed": "2026-10-15"
+      "hash": "54eb7ad3e72c9155",
+      "changed": "2026-10-16"
     },
     "/ai-free-tiers": {
-      "hash": "2f548a4e8a8296c1",
-      "changed": "2026-10-15"
+      "hash": "7f83ceffec9e41ce",
+      "changed": "2026-10-16"
     },
     "/ai-ml-alternatives": {
-      "hash": "b9f8b040dfb54eb5",
-      "changed": "2026-10-15"
+      "hash": "79f90aef558580b4",
+      "changed": "2026-10-16"
     },
     "/alternative-to": {
       "hash": "1fc414632854c489",
@@ -1093,8 +1093,8 @@
       "changed": "2026-10-15"
     },
     "/category/ai-ml": {
-      "hash": "c4ac4346adb26a9c",
-      "changed": "2026-10-15"
+      "hash": "43db46b9a9fdc587",
+      "changed": "2026-10-16"
     },
     "/category/analytics": {
       "hash": "2c06870ddf66142d",
@@ -1502,8 +1502,8 @@
       "changed": "2026-10-11"
     },
     "/compare/augment-code-vs-cursor": {
-      "hash": "84db4e818069d660",
-      "changed": "2026-10-15"
+      "hash": "2f6c9e94eb21222d",
+      "changed": "2026-10-16"
     },
     "/compare/auth0-vs-clerk": {
       "hash": "570802d0bdb3d71a",
@@ -2942,8 +2942,8 @@
       "changed": "2026-10-12"
     },
     "/digest/2026-w15": {
-      "hash": "3e443caf71f89741",
-      "changed": "2026-10-09"
+      "hash": "4c88d0d02e076748",
+      "changed": "2026-10-16"
     },
     "/digest/2026-w16": {
       "hash": "fcbf187f36e9342c",
@@ -3192,8 +3192,8 @@
       "changed": "2026-10-15"
     },
     "/free-llm-apis": {
-      "hash": "ad1293fa62cafd2a",
-      "changed": "2026-10-15"
+      "hash": "537ebdf10a62ece8",
+      "changed": "2026-10-16"
     },
     "/free-nextjs-stack": {
       "hash": "09a01801be2e4ee3",
@@ -3302,8 +3302,8 @@
       "changed": "2026-10-15"
     },
     "/llm-api-pricing": {
-      "hash": "7835ce832afe412a",
-      "changed": "2026-10-15"
+      "hash": "a286d302bf6ff820",
+      "changed": "2026-10-16"
     },
     "/localstack-alternatives": {
       "hash": "6786ce15908ff807",
@@ -3377,8 +3377,8 @@
       "changed": "2026-10-15"
     },
     "/q2-pricing-preview-2026": {
-      "hash": "6b8684d26ea34dee",
-      "changed": "2026-10-15"
+      "hash": "f5f32ce476153fce",
+      "changed": "2026-10-16"
     },
     "/railway-vs-render": {
       "hash": "aaa04b8835db24a8",
@@ -3571,8 +3571,8 @@
       "daily": true
     },
     "/stability": {
-      "hash": "feadbe761cffa0a7",
-      "changed": "2026-10-15"
+      "hash": "f86a2c9ca2257f0e",
+      "changed": "2026-10-16"
     },
     "/stack-check": {
       "daily": true
@@ -3650,8 +3650,8 @@
       "changed": "2026-10-15"
     },
     "/trends/ai-coding": {
-      "hash": "7ed152f0f40eee60",
-      "changed": "2026-10-15"
+      "hash": "d4ac168805bef8e8",
+      "changed": "2026-10-16"
     },
     "/trends/ai-ml": {
       "daily": true
