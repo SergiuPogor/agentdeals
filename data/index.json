@@ -80,6 +80,12 @@
           "quote": "Each Hobby project now keeps its 3 most recent production deployments, plus its 3 most recent deployments of any type, regardless of age.",
           "url": "https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage",
           "read_on": "2026-10-12"
+        },
+        {
+          "text": "Flat Rate CDN is available on Pro plans. Pro includes the lowest tier at no extra cost: 1M CDN requests and 1 TB of data transfer a month. Paid tiers are $20 a month for 10M requests and 50 TB, $100 for 50M and 50 TB, and $300 for 150M and 50 TB. A Pro team turns it on in Billing settings. Usage above a tier moves the team to a higher tier at the start of the next cycle. Flat Rate CDN is not for bulk file distribution or download services, or large-scale media or file delivery that uses most bandwidth.",
+          "quote": "Pro includes the lowest tier at no additional cost.",
+          "url": "https://vercel.com/docs/pricing/flat-rate-cdn",
+          "read_on": "2026-10-16"
         }
       ],
       "free_plan_excerpt": {
