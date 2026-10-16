@@ -34701,7 +34701,21 @@
         "text": "KIRO FREE $0 per month 50 credits Access to open weight models* and Claude Sonnet 4.5",
         "url": "https://kiro.dev/pricing",
         "read_on": "2026-10-16"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Kiro subscriptions can be used with Kiro IDE, Kiro CLI, Kiro Web, Kiro Crew, ACP compatible IDEs, and automation in software development. Use through third-party automation harnesses such as OpenClaw is not permitted.",
+          "quote": "Use through third-party automation harnesses (such as OpenClaw) that route requests outside of Kiro's native interfaces is not permitted.",
+          "url": "https://kiro.dev/pricing",
+          "read_on": "2026-10-16"
+        },
+        {
+          "text": "Monthly plan credits reset at the start of each billing month and unused ones do not roll over. Add-on credits roll over and expire 12 months after purchase.",
+          "quote": "Usage limits reset at the start of each billing month. Unused credits do not roll over to the next month.",
+          "url": "https://kiro.dev/pricing",
+          "read_on": "2026-10-16"
+        }
+      ]
     },
     {
       "vendor": "OVHcloud",
