@@ -33192,7 +33192,7 @@
     {
       "vendor": "MiniMax",
       "category": "AI / ML",
-      "description": "MiniMax sells API access pay-as-you-go on platform.minimax.io. Its pricing pages list no free API allowance; one docs page mentions a free quota for new pay-as-you-go users but gives no amount. Text: MiniMax-M3 $0.30/$1.20 (per 1M tokens, inputs up to 512k, after a permanent 50% discount); MiniMax-M2.7 $0.30/$1.20 (per 1M tokens); MiniMax-M2.7-highspeed $0.60/$2.40 (per 1M tokens). Speech: speech-2.8-turbo $60 and speech-2.8-hd $100 per 1M characters. Video: MiniMax-H3 $0.08 per second at 768P. Image: image-01 $0.0035 per image. Music and lyrics APIs closed to new users on 2026-08-20. Subscriptions: M Plan Go $22, Explore $55 and Build $132 a month, with the first month half price on monthly billing during the M Plan launch; annual billing charges 10 months for 12. The Token Plan no longer takes new purchases.",
+      "description": "MiniMax sells API access pay-as-you-go on platform.minimax.io. Its pricing pages list no free API allowance; one docs page mentions a free quota for new pay-as-you-go users but gives no amount. Text: MiniMax-M3 $0.30/$1.20 (per 1M tokens, inputs up to 512k, after a permanent 50% discount); MiniMax-M2.7 $0.30/$1.20 (per 1M tokens); MiniMax-M2.7-highspeed $0.60/$2.40 (per 1M tokens). MiniMax M2.5 and M2.7 models are unavailable to new users from 2026-10-19. They are retired on 2026-11-18, after which API requests will not work. For M Plan and Token Plan users, requests to these models are routed to MiniMax-M3.1-Flash-Preview from 2026-10-19. MiniMax-M3.1-Flash-Preview is not available to pay-as-you-go users; MiniMax-M3 is the pay-as-you-go option. Speech: speech-2.8-turbo $60 and speech-2.8-hd $100 per 1M characters. Video: MiniMax-H3 $0.08 per second at 768P. Image: image-01 $0.0035 per image. Music and lyrics APIs closed to new users on 2026-08-20. Subscriptions: M Plan Go $22, Explore $55 and Build $132 a month, with the first month half price on monthly billing during the M Plan launch; annual billing charges 10 months for 12. The Token Plan no longer takes new purchases.",
       "tier": "Pay-as-you-go",
       "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
       "tags": [
@@ -35934,7 +35934,7 @@
     {
       "vendor": "Jina AI",
       "category": "AI / ML",
-      "description": "Search, Reader, embeddings and reranker APIs. Each new API key comes with 10M free tokens, shared across these APIs and for non-commercial use only (CC-BY-NC); no page says they renew. Search (s.jina.ai) needs a key and costs at least 10,000 tokens a request, so the free tokens cover at most 1,000 searches. Search allows 100 requests a minute with a free key and the same with a paid key; only a premium key raises it, to 1,000. Reader (r.jina.ai), which converts a URL to LLM-friendly text, allows 500 requests a minute with a free or paid key, 5,000 with a premium key, and 20 without a key. Reader without a key is free and uses no tokens, so it keeps working after a key's free tokens run out. Paid tokens are prepaid: 1 billion for $50 ($0.05 per million), or 11 billion for $500 with a premium key. Jina AI has been part of Elastic since October 2025.",
+      "description": "Search, Reader, embeddings and reranker APIs. Each new API key comes with 10M free tokens, shared across these APIs; no page says they renew. Jina's FAQ states for the hosted API: \"No separate license needed. Commercial use is covered by the service terms: sign up and pay through this site or the cloud marketplace.\" CC BY-NC 4.0 covers self-hosting the model weights. The exception is jina-embeddings-v4, which is non-commercial only even through the API. Search (s.jina.ai) needs a key and costs at least 10,000 tokens a request, so the free tokens cover at most 1,000 searches. Search allows 100 requests a minute with a free key and the same with a paid key; only a premium key raises it, to 1,000. Reader (r.jina.ai), which converts a URL to LLM-friendly text, allows 500 requests a minute with a free or paid key, 5,000 with a premium key, and 20 without a key. Reader without a key is free and uses no tokens, so it keeps working after a key's free tokens run out. Paid tokens are prepaid: 1 billion for $50 ($0.05 per million), or 11 billion for $500 with a premium key. Jina AI has been part of Elastic since October 2025.",
       "tier": "Free Credits",
       "url": "https://jina.ai/reader/",
       "tags": [
@@ -35956,7 +35956,15 @@
           }
         ],
         "reviewed": "2026-09-27"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Jina's terms say it does not use customer inputs to train models, but may use aggregated, anonymized operational metadata to improve services.",
+          "quote": "For the avoidance of doubt, Jina AI does not use Customer request data, inputs, prompts, or uploaded content to train its models",
+          "url": "https://jina.ai/legal/",
+          "read_on": "2026-10-16"
+        }
+      ]
     },
     {
       "vendor": "You.com",
