@@ -22,11 +22,11 @@
       "changed": "2026-10-16"
     },
     "/ai-free-tiers": {
-      "hash": "a445d873d060f775",
+      "hash": "3d4c0f7638d266ef",
       "changed": "2026-10-16"
     },
     "/ai-ml-alternatives": {
-      "hash": "d486ab84f0d30f9e",
+      "hash": "60b44d6f83f7e5cd",
       "changed": "2026-10-16"
     },
     "/alternative-to": {
@@ -1093,7 +1093,7 @@
       "changed": "2026-10-15"
     },
     "/category/ai-ml": {
-      "hash": "4a7fcdceb5939b05",
+      "hash": "59741da2f40f946c",
       "changed": "2026-10-16"
     },
     "/category/analytics": {
@@ -2089,8 +2089,8 @@
       "changed": "2026-10-15"
     },
     "/compare/google-gemini-embedding-2-vs-minimax": {
-      "hash": "f661cb85b5c0835b",
-      "changed": "2026-10-11"
+      "hash": "1e3d6a1d8a6a7425",
+      "changed": "2026-10-16"
     },
     "/compare/google-gemini-embedding-2-vs-parallel": {
       "hash": "2449ecb3af328100",
@@ -2344,12 +2344,12 @@
       "daily": true
     },
     "/compare/minimax-vs-parallel": {
-      "hash": "0a6206df28a9a8cd",
-      "changed": "2026-10-11"
+      "hash": "acf7a50506c8c548",
+      "changed": "2026-10-16"
     },
     "/compare/minimax-vs-portkey": {
-      "hash": "cb9ef648e3582aa5",
-      "changed": "2026-10-11"
+      "hash": "3ee2462e6be17c29",
+      "changed": "2026-10-16"
     },
     "/compare/mintlify-vs-apiary-io": {
       "hash": "900b6225f7e7cc59",
