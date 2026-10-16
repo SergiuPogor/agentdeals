@@ -1173,7 +1173,8 @@
       "changed": "2026-10-15"
     },
     "/category/dev-utilities": {
-      "daily": true
+      "hash": "1033e4fbf3b474b8",
+      "changed": "2026-10-16"
     },
     "/category/diagramming": {
       "hash": "749f290ff47f9081",
@@ -1216,8 +1217,7 @@
       "changed": "2026-10-15"
     },
     "/category/infrastructure": {
-      "hash": "05f51a42f0a38df4",
-      "changed": "2026-10-15"
+      "daily": true
     },
     "/category/localization": {
       "hash": "8a7da4eb6b051169",
@@ -1324,8 +1324,7 @@
       "changed": "2026-10-15"
     },
     "/category/workflow-automation": {
-      "hash": "b323910ea99e3581",
-      "changed": "2026-10-15"
+      "daily": true
     },
     "/changes": {
       "daily": true
@@ -1347,8 +1346,8 @@
       "changed": "2026-10-11"
     },
     "/cloud-free-tier-comparison-2026": {
-      "hash": "9b4a0da5793356bc",
-      "changed": "2026-10-15"
+      "hash": "b20a5980f2080399",
+      "changed": "2026-10-16"
     },
     "/cloudflare-pages-vs-vercel": {
       "hash": "c0331a17d05c8396",
@@ -1835,8 +1834,7 @@
       "changed": "2026-10-11"
     },
     "/compare/dbos-vs-make": {
-      "hash": "3a15d90d9a18e160",
-      "changed": "2026-10-11"
+      "daily": true
     },
     "/compare/dbos-vs-zoho-bookings": {
       "hash": "acac6ad9e4d8088a",
@@ -2343,8 +2341,7 @@
       "changed": "2026-10-15"
     },
     "/compare/make-vs-zoho-sign": {
-      "hash": "d56a42e6b886ae6e",
-      "changed": "2026-10-11"
+      "daily": true
     },
     "/compare/minimax-vs-parallel": {
       "hash": "0a6206df28a9a8cd",
@@ -6954,8 +6951,7 @@
       "changed": "2026-10-15"
     },
     "/vendor/make": {
-      "hash": "0215277412ecfe81",
-      "changed": "2026-10-15"
+      "daily": true
     },
     "/vendor/manageengine-log360-cloud": {
       "hash": "2e3fc621ac64a5af",
@@ -9105,7 +9101,8 @@
       "changed": "2026-10-15"
     },
     "/vendor/uuid-generator": {
-      "daily": true
+      "hash": "a118de97bba5ca22",
+      "changed": "2026-10-16"
     },
     "/vendor/uxtweak-com": {
       "hash": "89fbd67c3adfcf22",
