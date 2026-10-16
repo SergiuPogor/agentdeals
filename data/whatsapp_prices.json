@@ -3,7 +3,7 @@
   "title": "WhatsApp Business API Pricing 2026: Service Messages No Longer Free",
   "meta_description": "Since 2026-10-01 each business phone number gets 1,000 free service messages a month and then pays per message.",
   "lead": "Since 2026-10-01 service replies are no longer free. Each business phone number gets 1,000 free service messages a month, then pays the market's rate. Utility templates sent inside the 24-hour window are now charged. An account with no payment method stops delivering replies past 1,000. The next possible price change is 2027-01-01.",
-  "read_line": "Prices read on Meta's pricing page (updated 2026-09-30) and its rate cards effective 2026-10-01, on 2026-10-10. Meta's fees only, before any provider's markup and before tax.",
+  "read_line": "Prices read on Meta's pricing page (updated 2026-09-30) and its USD and BRL rate cards effective 2026-10-01, on 2026-10-10 and 2026-10-16. Meta's fees only, before any provider's markup and before tax.",
   "free_service_messages_per_number": 1000,
   "changes": {
     "heading": "What changed on 2026-10-01",
@@ -67,7 +67,7 @@
   },
   "rates": {
     "heading": "Rates per message by market",
-    "intro": "Rates are per delivered message in US dollars, by the user's country calling code. At list rates, utility, authentication and service cost the same in each market. Past a monthly volume, utility and authentication cost less: in North America, past 80,000 utility or 100,000 authentication messages a month. Every business pays the table's rates, except AI Providers offering a general-purpose AI assistant. Meta permits these only in Brazil and the EU and EEA. In Brazil they pay $0.0625 per non-template message. In the EU and EEA, including Germany, France, Spain and the Netherlands, Meta does not charge them. A business using AI to answer its own customers pays the table's rates.",
+    "intro": "Rates are per delivered message in US dollars, by the user's country calling code. The table gives every country on Meta's rate card: 39 with their own rates, and 100 more at the rate of the region Meta places them in, named after the country. A country named in no row pays the Other rate. At list rates, utility, authentication and service cost the same in each market. Past a monthly volume, utility and authentication cost less: in North America, past 80,000 utility or 100,000 authentication messages a month. Every business pays the table's rates, except AI Providers offering a general-purpose AI assistant. Meta permits these only in Brazil and the EU and EEA. In Brazil they pay $0.0625 per non-template message. In the EU and EEA, including Germany, France, Spain and the Netherlands, Meta does not charge them. A business using AI to answer its own customers pays the table's rates. A business whose Messaging account is billed in Brazilian reais pays Meta's BRL rate card: for users in Brazil, R$0.3217 per marketing message and R$0.035 per utility, authentication or service message.",
     "columns": [
       "Market",
       "Marketing",
@@ -91,11 +91,116 @@
         }
       },
       {
-        "name": "India",
-        "marketing": "0.0118",
-        "utility": "0.0014",
-        "authentication": "0.0014",
-        "service": "0.0014"
+        "name": "Afghanistan (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Albania (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Algeria (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Angola (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Argentina",
+        "marketing": "0.0618",
+        "utility": "0.026",
+        "authentication": "0.026",
+        "service": "0.026"
+      },
+      {
+        "name": "Armenia (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Australia (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Austria (Rest of Western Europe)",
+        "marketing": "0.0592",
+        "utility": "0.0171",
+        "authentication": "0.0171",
+        "service": "0.0171"
+      },
+      {
+        "name": "Azerbaijan (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Bahrain (Rest of Middle East)",
+        "marketing": "0.0392",
+        "utility": "0.0091",
+        "authentication": "0.0091",
+        "service": "0.0091"
+      },
+      {
+        "name": "Bangladesh",
+        "marketing": "0.0732",
+        "utility": "0.0037",
+        "authentication": "0.0037",
+        "service": "0.0037"
+      },
+      {
+        "name": "Belarus (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Belgium (Rest of Western Europe)",
+        "marketing": "0.0592",
+        "utility": "0.0171",
+        "authentication": "0.0171",
+        "service": "0.0171"
+      },
+      {
+        "name": "Benin (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Bolivia (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Botswana (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
       },
       {
         "name": "Brazil",
@@ -105,32 +210,151 @@
         "service": "0.0068"
       },
       {
-        "name": "Mexico",
-        "marketing": "0.0397",
-        "utility": "0.0085",
-        "authentication": "0.0085",
-        "service": "0.0085"
+        "name": "Bulgaria (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
       },
       {
-        "name": "Indonesia",
-        "marketing": "0.0411",
-        "utility": "0.025",
-        "authentication": "0.025",
-        "service": "0.025"
+        "name": "Burkina Faso (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
       },
       {
-        "name": "United Kingdom",
-        "marketing": "0.0635",
-        "utility": "0.022",
-        "authentication": "0.022",
-        "service": "0.022"
+        "name": "Burundi (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
       },
       {
-        "name": "Germany",
-        "marketing": "0.1365",
-        "utility": "0.055",
-        "authentication": "0.055",
-        "service": "0.055"
+        "name": "Cambodia (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Cameroon (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Chad (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Chile",
+        "marketing": "0.0889",
+        "utility": "0.02",
+        "authentication": "0.02",
+        "service": "0.02"
+      },
+      {
+        "name": "China (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Colombia",
+        "marketing": "0.0125",
+        "utility": "0.0008",
+        "authentication": "0.0008",
+        "service": "0.0008"
+      },
+      {
+        "name": "Costa Rica (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Croatia (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Czech Republic (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Denmark (Rest of Western Europe)",
+        "marketing": "0.0592",
+        "utility": "0.0171",
+        "authentication": "0.0171",
+        "service": "0.0171"
+      },
+      {
+        "name": "Dominican Republic (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Ecuador (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Egypt",
+        "marketing": "0.0644",
+        "utility": "0.0036",
+        "authentication": "0.0036",
+        "service": "0.0036"
+      },
+      {
+        "name": "El Salvador (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Eritrea (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Eswatini (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Ethiopia (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Finland (Rest of Western Europe)",
+        "marketing": "0.0592",
+        "utility": "0.0171",
+        "authentication": "0.0171",
+        "service": "0.0171"
       },
       {
         "name": "France",
@@ -140,11 +364,312 @@
         "service": "0.03"
       },
       {
-        "name": "Spain",
-        "marketing": "0.0707",
-        "utility": "0.02",
-        "authentication": "0.02",
-        "service": "0.02"
+        "name": "Gabon (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Gambia (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Georgia (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Germany",
+        "marketing": "0.1365",
+        "utility": "0.055",
+        "authentication": "0.055",
+        "service": "0.055"
+      },
+      {
+        "name": "Ghana (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Greece (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Guatemala (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Guinea-Bissau (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Haiti (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Honduras (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Hong Kong",
+        "marketing": "0.0732",
+        "utility": "0.026",
+        "authentication": "0.026",
+        "service": "0.026"
+      },
+      {
+        "name": "Hungary",
+        "marketing": "0.086",
+        "utility": "0.035",
+        "authentication": "0.035",
+        "service": "0.035"
+      },
+      {
+        "name": "India",
+        "marketing": "0.0118",
+        "utility": "0.0014",
+        "authentication": "0.0014",
+        "service": "0.0014"
+      },
+      {
+        "name": "Indonesia",
+        "marketing": "0.0411",
+        "utility": "0.025",
+        "authentication": "0.025",
+        "service": "0.025"
+      },
+      {
+        "name": "Iraq",
+        "marketing": "0.0341",
+        "utility": "0.0079",
+        "authentication": "0.0079",
+        "service": "0.0079"
+      },
+      {
+        "name": "Ireland (Rest of Western Europe)",
+        "marketing": "0.0592",
+        "utility": "0.0171",
+        "authentication": "0.0171",
+        "service": "0.0171"
+      },
+      {
+        "name": "Israel",
+        "marketing": "0.0353",
+        "utility": "0.0053",
+        "authentication": "0.0053",
+        "service": "0.0053"
+      },
+      {
+        "name": "Italy",
+        "marketing": "0.0795",
+        "utility": "0.03",
+        "authentication": "0.03",
+        "service": "0.03"
+      },
+      {
+        "name": "Ivory Coast (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Jamaica (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Japan (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Jordan (Rest of Middle East)",
+        "marketing": "0.0392",
+        "utility": "0.0091",
+        "authentication": "0.0091",
+        "service": "0.0091"
+      },
+      {
+        "name": "Kazakhstan",
+        "marketing": "0.0604",
+        "utility": "0.018",
+        "authentication": "0.018",
+        "service": "0.018"
+      },
+      {
+        "name": "Kenya (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Kuwait",
+        "marketing": "0.0792",
+        "utility": "0.044",
+        "authentication": "0.044",
+        "service": "0.044"
+      },
+      {
+        "name": "Laos (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Latvia (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Lebanon (Rest of Middle East)",
+        "marketing": "0.0392",
+        "utility": "0.0091",
+        "authentication": "0.0091",
+        "service": "0.0091"
+      },
+      {
+        "name": "Lesotho (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Liberia (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Libya (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Lithuania (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Madagascar (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Malawi (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Malaysia",
+        "marketing": "0.086",
+        "utility": "0.014",
+        "authentication": "0.014",
+        "service": "0.014"
+      },
+      {
+        "name": "Mali (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Mauritania (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Mexico",
+        "marketing": "0.0397",
+        "utility": "0.0085",
+        "authentication": "0.0085",
+        "service": "0.0085"
+      },
+      {
+        "name": "Moldova (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Mongolia (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Morocco",
+        "marketing": "0.0414",
+        "utility": "0.023",
+        "authentication": "0.023",
+        "service": "0.023"
+      },
+      {
+        "name": "Mozambique (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Namibia (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Nepal",
+        "marketing": "0.0732",
+        "utility": "0.0034",
+        "authentication": "0.0034",
+        "service": "0.0034"
       },
       {
         "name": "Netherlands",
@@ -154,11 +679,53 @@
         "service": "0.05"
       },
       {
+        "name": "New Zealand (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Nicaragua (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Niger (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
         "name": "Nigeria",
         "marketing": "0.0516",
         "utility": "0.0067",
         "authentication": "0.0067",
         "service": "0.0067"
+      },
+      {
+        "name": "North Macedonia (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Norway (Rest of Western Europe)",
+        "marketing": "0.0592",
+        "utility": "0.0171",
+        "authentication": "0.0171",
+        "service": "0.0171"
+      },
+      {
+        "name": "Oman",
+        "marketing": "0.0341",
+        "utility": "0.0247",
+        "authentication": "0.0247",
+        "service": "0.0247"
       },
       {
         "name": "Pakistan",
@@ -168,14 +735,336 @@
         "service": "0.015"
       },
       {
-        "name": "Rest of Western Europe",
+        "name": "Panama (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Papua New Guinea (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Paraguay (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Peru",
+        "marketing": "0.0703",
+        "utility": "0.03",
+        "authentication": "0.03",
+        "service": "0.03"
+      },
+      {
+        "name": "Philippines (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Poland",
+        "marketing": "0.0366",
+        "utility": "0.0122",
+        "authentication": "0.0122",
+        "service": "0.0122"
+      },
+      {
+        "name": "Portugal (Rest of Western Europe)",
         "marketing": "0.0592",
         "utility": "0.0171",
         "authentication": "0.0171",
         "service": "0.0171"
       },
       {
-        "name": "Other (countries not listed by Meta)",
+        "name": "Puerto Rico (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Qatar",
+        "marketing": "0.0341",
+        "utility": "0.012",
+        "authentication": "0.012",
+        "service": "0.012"
+      },
+      {
+        "name": "Republic of the Congo (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Romania",
+        "marketing": "0.086",
+        "utility": "0.029",
+        "authentication": "0.029",
+        "service": "0.029"
+      },
+      {
+        "name": "Russia",
+        "marketing": "0.0802",
+        "utility": "0.04",
+        "authentication": "0.04",
+        "service": "0.04"
+      },
+      {
+        "name": "Rwanda (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Saudi Arabia",
+        "marketing": "0.0576",
+        "utility": "0.0107",
+        "authentication": "0.0107",
+        "service": "0.0107"
+      },
+      {
+        "name": "Senegal (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Serbia (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Sierra Leone (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Singapore",
+        "marketing": "0.0732",
+        "utility": "0.016",
+        "authentication": "0.016",
+        "service": "0.016"
+      },
+      {
+        "name": "Slovakia (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Slovenia (Rest of Central & Eastern Europe)",
+        "marketing": "0.086",
+        "utility": "0.0212",
+        "authentication": "0.0212",
+        "service": "0.0212"
+      },
+      {
+        "name": "Somalia (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "South Africa",
+        "marketing": "0.0379",
+        "utility": "0.0095",
+        "authentication": "0.0095",
+        "service": "0.0095"
+      },
+      {
+        "name": "South Sudan (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Spain",
+        "marketing": "0.0707",
+        "utility": "0.02",
+        "authentication": "0.02",
+        "service": "0.02"
+      },
+      {
+        "name": "Sri Lanka",
+        "marketing": "0.0732",
+        "utility": "0.002",
+        "authentication": "0.002",
+        "service": "0.002"
+      },
+      {
+        "name": "Sudan (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Sweden (Rest of Western Europe)",
+        "marketing": "0.0592",
+        "utility": "0.0171",
+        "authentication": "0.0171",
+        "service": "0.0171"
+      },
+      {
+        "name": "Switzerland (Rest of Western Europe)",
+        "marketing": "0.0592",
+        "utility": "0.0171",
+        "authentication": "0.0171",
+        "service": "0.0171"
+      },
+      {
+        "name": "Taiwan (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Tajikistan (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Tanzania (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Thailand (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Togo (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Tunisia (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Turkey",
+        "marketing": "0.0109",
+        "utility": "0.0009",
+        "authentication": "0.0009",
+        "service": "0.0009"
+      },
+      {
+        "name": "Turkmenistan (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Uganda (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Ukraine",
+        "marketing": "0.086",
+        "utility": "0.0298",
+        "authentication": "0.0298",
+        "service": "0.0298"
+      },
+      {
+        "name": "United Arab Emirates",
+        "marketing": "0.0576",
+        "utility": "0.0157",
+        "authentication": "0.0157",
+        "service": "0.0157"
+      },
+      {
+        "name": "United Kingdom",
+        "marketing": "0.0635",
+        "utility": "0.022",
+        "authentication": "0.022",
+        "service": "0.022"
+      },
+      {
+        "name": "Uruguay (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Uzbekistan (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Venezuela (Rest of Latin America)",
+        "marketing": "0.074",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Vietnam (Rest of Asia Pacific)",
+        "marketing": "0.0842",
+        "utility": "0.0113",
+        "authentication": "0.0113",
+        "service": "0.0113"
+      },
+      {
+        "name": "Yemen (Rest of Middle East)",
+        "marketing": "0.0392",
+        "utility": "0.0091",
+        "authentication": "0.0091",
+        "service": "0.0091"
+      },
+      {
+        "name": "Zambia (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Zimbabwe (Rest of Africa)",
+        "marketing": "0.0225",
+        "utility": "0.004",
+        "authentication": "0.004",
+        "service": "0.004"
+      },
+      {
+        "name": "Other (any country not named in another row)",
         "marketing": "0.0604",
         "utility": "0.0077",
         "authentication": "0.0077",
