@@ -13607,6 +13607,18 @@
           "quote": "At Tavily, you have the option to decide whether your query data is used to improve our services. You can change this setting anytime in your account settings.",
           "url": "https://help.tavily.com/articles/4205958832-understanding-the-allow-use-of-query-data-setting",
           "read_on": "2026-10-06"
+        },
+        {
+          "text": "Tavily for Startups gives up to 100,000 API credits for 6 months to accepted startups: early-stage, VC-backed companies building AI agents or LLMs, typically pre-seed through Series A.",
+          "quote": "Who is eligible for Tavily for Startups? Early-stage, VC backed startups building AI agents or LLMs, typically pre-seed through Series A. What do I get if I am accepted? Up to 100k Tavily API credits for 6 months",
+          "url": "https://www.tavily.com/startups",
+          "read_on": "2026-10-16"
+        },
+        {
+          "text": "Students get 4 months of the Project plan (4,000 API credits a month) free after verifying with a student email address or student ID.",
+          "quote": "Students can receive 4 months of free access to the Project Plan, which includes 4,000 API credits per month.",
+          "url": "https://help.tavily.com/articles/6606514713-student-account",
+          "read_on": "2026-10-16"
         }
       ]
     },
