@@ -10981,6 +10981,30 @@
           "read_on": "2026-10-08"
         },
         {
+          "text": "Google AI Plus adds 50 Colab compute units a month, but not during a free trial of the plan.",
+          "quote": "Google AI Plus members get 50 CCUs. … Not available to Google One trial memberships.",
+          "url": "https://support.google.com/googleone/answer/16882689",
+          "read_on": "2026-10-16"
+        },
+        {
+          "text": "Google AI Pro adds 200 Colab compute units a month, but not during a free trial of the plan.",
+          "quote": "Google AI Pro members get 200 CCUs. … Not available to Google One trial memberships.",
+          "url": "https://support.google.com/googleone/answer/14534406",
+          "read_on": "2026-10-16"
+        },
+        {
+          "text": "Google AI Ultra adds 1,000 or 2,000 Colab compute units a month, depending on the plan, with longer background execution and premium GPU access, but not during a free trial of the plan.",
+          "quote": "Google AI Ultra members get 1,000 or 2,000 CCUs depending on your plan. Google AI Ultra members get longer background execution and premium GPU access. … Not available to Google One trial memberships.",
+          "url": "https://support.google.com/googleone/answer/16286513",
+          "read_on": "2026-10-16"
+        },
+        {
+          "text": "Colab Pro for Education, a free year of Colab Pro for students and faculty at US universities, is closed to new signups.",
+          "quote": "Colab Pro for Education subscriptions were free, 1 year, Colab Pro subscriptions for students and faculty members of US-based universities. They are no longer available for new signups at this time.",
+          "url": "https://research.google.com/colaboratory/faq.html",
+          "read_on": "2026-10-16"
+        },
+        {
           "text": "A running notebook can be terminated if compute units run out. The account then uses the free tier's rules until more units are added.",
           "quote": "You can expect to experience backend termination if you exhaust your available compute units on a Pro, Pro+, or Pay As You Go plan. … Paid users whose compute unit balance is exhausted will revert to the free-of-charge tier policies and restrictions until the balance is increased.",
           "url": "https://research.google.com/colaboratory/faq.html",
