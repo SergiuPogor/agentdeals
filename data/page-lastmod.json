@@ -797,11 +797,11 @@
       "changed": "2026-10-09"
     },
     "/auth-comparison-2026": {
-      "hash": "13843560118f0f85",
+      "hash": "9ff77abc2bc4d5fe",
       "changed": "2026-10-17"
     },
     "/auth0-alternatives": {
-      "hash": "1d9c81b89ef62ae2",
+      "hash": "d9dfb1d71dc92d86",
       "changed": "2026-10-17"
     },
     "/auth0-vs-clerk": {
@@ -1160,7 +1160,7 @@
       "changed": "2026-10-15"
     },
     "/category/databases": {
-      "hash": "e72537349dc0973d",
+      "hash": "c433b391fb6b47e7",
       "changed": "2026-10-17"
     },
     "/category/design": {
@@ -1954,11 +1954,11 @@
       "changed": "2026-10-11"
     },
     "/compare/firebase-vs-supabase": {
-      "hash": "fe3352a644949f2f",
+      "hash": "2771efbcfa399dc0",
       "changed": "2026-10-17"
     },
     "/compare/firebase-vs-vercel": {
-      "hash": "9cbd825f69b3d1a0",
+      "hash": "22671aab814879e6",
       "changed": "2026-10-17"
     },
     "/compare/fivetran-activations-vs-heap-io": {
@@ -2693,15 +2693,15 @@
       "changed": "2026-10-16"
     },
     "/database-alternatives": {
-      "hash": "d250d7f05b6d7e88",
+      "hash": "858a04f45a3af2a7",
       "changed": "2026-10-17"
     },
     "/database-free-tier-comparison-2026": {
-      "hash": "8279e03fbfa854d2",
+      "hash": "38c5a40650fafb4c",
       "changed": "2026-10-17"
     },
     "/database-pricing": {
-      "hash": "f53d38cd2ef27dfa",
+      "hash": "7a74e3b0f0fdba5e",
       "changed": "2026-10-17"
     },
     "/datadog-alternatives": {
@@ -3136,7 +3136,7 @@
       "changed": "2026-10-11"
     },
     "/estimate": {
-      "hash": "a73e97b767a01369",
+      "hash": "82f69b846606709f",
       "changed": "2026-10-17"
     },
     "/events": {
@@ -3244,7 +3244,7 @@
       "changed": "2026-10-11"
     },
     "/google-developer-program-2026": {
-      "hash": "0cd2da85dec1595a",
+      "hash": "6aef1769bf354b0e",
       "changed": "2026-10-17"
     },
     "/groq-vs-hugging-face": {
@@ -3315,7 +3315,7 @@
       "changed": "2026-10-16"
     },
     "/mongodb-alternatives": {
-      "hash": "21167b8ffbab00b8",
+      "hash": "57329851f0a69bd4",
       "changed": "2026-10-17"
     },
     "/monitoring-alternatives": {
@@ -3618,7 +3618,7 @@
       "changed": "2026-10-16"
     },
     "/supabase-vs-firebase": {
-      "hash": "b1457f2494359e7e",
+      "hash": "4c55ca73df799261",
       "changed": "2026-10-17"
     },
     "/team-collaboration-alternatives": {
@@ -7392,8 +7392,8 @@
       "daily": true
     },
     "/vendor/ona": {
-      "hash": "9b7b785be4fa6090",
-      "changed": "2026-10-16"
+      "hash": "ae9c76d193eb5215",
+      "changed": "2026-10-17"
     },
     "/vendor/onecompiler": {
       "hash": "cff79b1d666ea75b",
