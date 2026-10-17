@@ -32338,7 +32338,7 @@
     {
       "vendor": "Google Antigravity",
       "category": "AI Coding",
-      "description": "Agentic development platform by Google, generally available: a desktop app to manage multiple local agents in parallel, an agentic IDE, a CLI and an SDK, for macOS, Windows and Linux. Its agents can open and drive a local Chrome browser. The individual plan is $0/month, with Gemini, Claude and gpt-oss agent models, \"Unlimited Tab completions\", \"Unlimited Command requests\" and \"Basic weekly rate limits\". Google AI Pro ($19.99/month) and Google AI Ultra (from $99.99/month) add \"More generous rate limits\" and a \"Flexible AI credit pool\", and organizations can use it through Google Cloud. Announced November 2025.",
+      "description": "Agentic development platform by Google, generally available: a desktop app to manage multiple local agents in parallel, an agentic IDE, a CLI and an SDK, for macOS, Windows and Linux. Its agents can open and drive a local Chrome browser. The individual plan is $0/month, with Gemini, Claude and gpt-oss agent models, \"Unlimited Tab completions\", \"Unlimited Command requests\" and \"Basic weekly rate limits\". Google AI Pro ($19.99/month) adds \"More rate limits\" and Google AI Ultra (from $99.99/month) \"Even more rate limits\", each with a \"Flexible AI credit pool\", and organizations can use it through Google Cloud. Announced November 2025.",
       "tier": "Free",
       "url": "https://antigravity.google/pricing",
       "tags": [
@@ -32354,7 +32354,21 @@
         "checked": "2026-10-08",
         "outcome": "ok",
         "detail": "the page names Google Antigravity as \"google antigravity\" and states \"$0\""
-      }
+      },
+      "conditions": [
+        {
+          "text": "Until November 2, 2026, the Free and Google AI Plus plans include Claude Sonnet 4.6, Claude Opus 4.6 and GPT-OSS-120b; Google removes these models on that date, leaving Gemini 3.8 Flash as the only reasoning model for those plans.",
+          "quote": "Will be removed on November 2, 2026.",
+          "url": "https://antigravity.google/docs/models",
+          "read_on": "2026-10-17"
+        },
+        {
+          "text": "The Google AI Pro and Ultra plans include Gemini 4 Argon, Claude Sonnet 5.5 and Claude Opus 5.5. On Google AI Pro, these are for \"non-trial subscriptions only\". Gemini 4 Argon is not in the Antigravity IDE but is in the Antigravity App, CLI and IDE extensions.",
+          "quote": "Available on Google AI Pro for non-trial subscriptions only.",
+          "url": "https://antigravity.google/docs/models",
+          "read_on": "2026-10-17"
+        }
+      ]
     },
     {
       "vendor": "Gemini CLI",
