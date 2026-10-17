@@ -33291,7 +33291,21 @@
           }
         ],
         "reviewed": "2026-09-01"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Until November 1, 2026, 00:00 Beijing time, server-side Search and Fetch calls via DeepSeek Harness, Claude Code, or Codex are free; after that, they are billed at $0.75 per 1,000 successful requests.",
+          "quote": "These calls are currently free of charge; per-request billing starts at 00:00 Beijing time on November 1, 2026.",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "read_on": "2026-10-17"
+        },
+        {
+          "text": "DeepSeek's Search API and Fetch API are standalone APIs billed per request. Search finds web pages for a query; Fetch retrieves one web page as Markdown. Each costs $0.75 per 1,000 successful requests. Failed requests, empty search results, and timeouts are not billed.",
+          "quote": "Failed requests, empty search results, and timeouts are not billed.",
+          "url": "https://api-docs.deepseek.com/guides/search/",
+          "read_on": "2026-10-17"
+        }
+      ]
     },
     {
       "vendor": "MiniMax",
