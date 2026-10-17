@@ -3653,6 +3653,12 @@
           "read_on": "2026-10-17"
         },
         {
+          "text": "Google's terms say changes to Gemini API paid prices take effect 30 days after Google posts them unless Google specifies otherwise. Pricing for a new paid service takes effect immediately unless Google specifies otherwise.",
+          "quote": "Google may make changes to this pricing from time to time, effective 30 days after they are posted unless otherwise specified (or in the case of new Paid Services, where pricing takes effect immediately unless otherwise specified).",
+          "url": "https://ai.google.dev/gemini-api/terms",
+          "read_on": "2026-10-17"
+        },
+        {
           "text": "Google is moving existing Postpay accounts to Prepay for Gemini API usage. An account that has not switched and added credits by the cutover date in its account notice has its paid service interrupted; other Google Cloud services on the billing account stay on Postpay.",
           "quote": "Google AI Studio is transitioning developer accounts from Postpay to Prepay billing for Gemini API usage. This change applies only to the Gemini API; other Google Cloud services linked to your billing account remain on Postpay. Switch to Prepay and add credits before the cutover date in your account notice to avoid service interruptions.",
           "url": "https://ai.google.dev/gemini-api/docs/billing",
