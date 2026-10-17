@@ -18,15 +18,15 @@
       "changed": "2026-10-16"
     },
     "/ai-coding-tools-pricing": {
-      "hash": "9bbd19c26fa6dd10",
-      "changed": "2026-10-16"
+      "hash": "24660fbd2e5e11ce",
+      "changed": "2026-10-17"
     },
     "/ai-free-tiers": {
-      "hash": "1bc0e0036a786701",
+      "hash": "70c3d4439dae0897",
       "changed": "2026-10-17"
     },
     "/ai-ml-alternatives": {
-      "hash": "fca5633ffc0fefd9",
+      "hash": "21a27f5e94fd5e34",
       "changed": "2026-10-17"
     },
     "/alternative-to": {
@@ -1088,11 +1088,11 @@
       "changed": "2026-10-11"
     },
     "/category/ai-coding": {
-      "hash": "c89dc96ef35267a5",
-      "changed": "2026-10-16"
+      "hash": "5ebf1398fd2d3b13",
+      "changed": "2026-10-17"
     },
     "/category/ai-ml": {
-      "hash": "b02a18ce303f97b2",
+      "hash": "bf9898c062685dc7",
       "changed": "2026-10-17"
     },
     "/category/analytics": {
@@ -3193,8 +3193,8 @@
       "changed": "2026-10-16"
     },
     "/free-llm-apis": {
-      "hash": "6a7b989ad3adbd82",
-      "changed": "2026-10-16"
+      "hash": "da698efd3cb3fa37",
+      "changed": "2026-10-17"
     },
     "/free-nextjs-stack": {
       "hash": "75cc709187b1ba1a",
@@ -3231,7 +3231,7 @@
       "changed": "2026-10-17"
     },
     "/gemini-api-pricing-2026": {
-      "hash": "f4ead0253310003d",
+      "hash": "b9a82acfcd6b95b2",
       "changed": "2026-10-17"
     },
     "/github-actions-alternatives": {
@@ -3302,7 +3302,7 @@
       "daily": true
     },
     "/llm-api-pricing": {
-      "hash": "f7b8c2b7bd313b55",
+      "hash": "112a0f78f71bbe32",
       "changed": "2026-10-17"
     },
     "/localstack-alternatives": {
@@ -3338,7 +3338,7 @@
       "changed": "2026-10-12"
     },
     "/openai-assistants-alternatives": {
-      "hash": "13e071274fe35d22",
+      "hash": "4f1e51b2fc4d27f2",
       "changed": "2026-10-17"
     },
     "/openai-assistants-migration": {
@@ -3346,7 +3346,7 @@
       "changed": "2026-10-14"
     },
     "/openai-assistants-migration-2026": {
-      "hash": "31e9b7831fedaf2a",
+      "hash": "846605caa45073bc",
       "changed": "2026-10-17"
     },
     "/postman-alternatives": {
@@ -5950,8 +5950,8 @@
       "changed": "2026-10-16"
     },
     "/vendor/google-antigravity": {
-      "hash": "bbbc723f29119f49",
-      "changed": "2026-10-16"
+      "hash": "d5b80b5d2d913535",
+      "changed": "2026-10-17"
     },
     "/vendor/google-artifact-registry": {
       "hash": "986a58712b439867",
