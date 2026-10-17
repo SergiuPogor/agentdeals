@@ -3647,6 +3647,12 @@
           "read_on": "2026-10-17"
         },
         {
+          "text": "Google offers the Gemini API and Google AI Studio, free and paid, in 230 countries and territories, including Taiwan, Brazil, Japan, Singapore, and the United Kingdom. China, Hong Kong, Macao, Russia, Belarus, and Iran are not among them. Google says to developers outside the list: \"try the Gemini API in Gemini Enterprise Agent Platform\".",
+          "quote": "The Gemini API and Google AI Studio are available in the following countries and territories. If you're not in one of these countries or territories, try the Gemini API in Gemini Enterprise Agent Platform.",
+          "url": "https://ai.google.dev/gemini-api/docs/available-regions",
+          "read_on": "2026-10-17"
+        },
+        {
           "text": "Google is moving existing Postpay accounts to Prepay for Gemini API usage. An account that has not switched and added credits by the cutover date in its account notice has its paid service interrupted; other Google Cloud services on the billing account stay on Postpay.",
           "quote": "Google AI Studio is transitioning developer accounts from Postpay to Prepay billing for Gemini API usage. This change applies only to the Gemini API; other Google Cloud services linked to your billing account remain on Postpay. Switch to Prepay and add credits before the cutover date in your account notice to avoid service interruptions.",
           "url": "https://ai.google.dev/gemini-api/docs/billing",
