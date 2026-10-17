@@ -30,8 +30,7 @@
       "changed": "2026-10-16"
     },
     "/alternative-to": {
-      "hash": "1fc414632854c489",
-      "changed": "2026-10-15"
+      "daily": true
     },
     "/alternative-to/360-monitoring": {
       "daily": true
@@ -1213,11 +1212,11 @@
       "changed": "2026-10-16"
     },
     "/category/ide-code-editors": {
-      "hash": "afb645146cdd05aa",
-      "changed": "2026-10-15"
+      "daily": true
     },
     "/category/infrastructure": {
-      "daily": true
+      "hash": "58712f6a05511ddd",
+      "changed": "2026-10-17"
     },
     "/category/localization": {
       "hash": "99315ce369eb0dc5",
@@ -1324,7 +1323,8 @@
       "changed": "2026-10-16"
     },
     "/category/workflow-automation": {
-      "daily": true
+      "hash": "057af5e3adcfb208",
+      "changed": "2026-10-17"
     },
     "/changes": {
       "daily": true
@@ -1834,7 +1834,8 @@
       "changed": "2026-10-11"
     },
     "/compare/dbos-vs-make": {
-      "daily": true
+      "hash": "2a7bba58d24f82e4",
+      "changed": "2026-10-17"
     },
     "/compare/dbos-vs-zoho-bookings": {
       "hash": "acac6ad9e4d8088a",
@@ -2341,7 +2342,8 @@
       "changed": "2026-10-15"
     },
     "/compare/make-vs-zoho-sign": {
-      "daily": true
+      "hash": "fb8b64ddeeaf8f2a",
+      "changed": "2026-10-17"
     },
     "/compare/minimax-vs-parallel": {
       "hash": "8c26c88d7d983447",
@@ -3298,8 +3300,7 @@
       "changed": "2026-10-16"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "d5839c2ee60092d0",
-      "changed": "2026-10-16"
+      "daily": true
     },
     "/llm-api-pricing": {
       "hash": "87a6bf6dfb879731",
@@ -3606,8 +3607,7 @@
       "changed": "2026-10-16"
     },
     "/state-of-free-tiers": {
-      "hash": "0f5b8ab8fa9ae430",
-      "changed": "2026-10-16"
+      "daily": true
     },
     "/storage-alternatives": {
       "hash": "e77df6ce4e3365e7",
@@ -3771,8 +3771,7 @@
       "changed": "2026-10-11"
     },
     "/trends/ide-code-editors": {
-      "hash": "e2f5f11c4c24dcfc",
-      "changed": "2026-10-14"
+      "daily": true
     },
     "/trends/infrastructure": {
       "hash": "425fc01fffc8adb3",
@@ -4908,8 +4907,7 @@
       "changed": "2026-10-16"
     },
     "/vendor/codesandbox-io": {
-      "hash": "c8b1006af438f635",
-      "changed": "2026-10-16"
+      "daily": true
     },
     "/vendor/codetoimage": {
       "hash": "b8d96fdc92c16524",
@@ -6951,7 +6949,8 @@
       "changed": "2026-10-16"
     },
     "/vendor/make": {
-      "daily": true
+      "hash": "6b58f1d562697ff5",
+      "changed": "2026-10-17"
     },
     "/vendor/manageengine-log360-cloud": {
       "hash": "d341d8dd636f87bf",
