@@ -2493,8 +2493,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 47,
-      "table_figures_from_records": 47,
+      "table_figures": 49,
+      "table_figures_from_records": 49,
       "tables": [
         {
           "label": "What’s Changing",
@@ -2503,8 +2503,8 @@
         },
         {
           "label": "Free Tier Comparison Table",
-          "figures": 45,
-          "from_records": 45
+          "figures": 47,
+          "from_records": 47
         },
         {
           "label": "OpenAI Pricing Change Timeline",
@@ -2603,8 +2603,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 56,
-      "table_figures_from_records": 56,
+      "table_figures": 58,
+      "table_figures_from_records": 58,
       "tables": [
         {
           "label": "2. Feature Migration Map",
@@ -2613,8 +2613,8 @@
         },
         {
           "label": "Direct API Alternatives",
-          "figures": 24,
-          "from_records": 24
+          "figures": 26,
+          "from_records": 26
         },
         {
           "label": "Agent Frameworks",

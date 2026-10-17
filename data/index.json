@@ -3641,6 +3641,24 @@
           "read_on": "2026-10-04"
         },
         {
+          "text": "Google's terms require users to be 18 years of age or older to use the Gemini API and Google AI Studio. The API may not be used in a website, app, or other service directed towards or likely to be accessed by individuals under 18. These rules apply to both the free and paid tiers.",
+          "quote": "You must be 18 years of age or older to use the APIs. You also will not use the Services as part of a website, application, or other service (collectively, \"API Clients\") that is directed towards or is likely to be accessed by individuals under the age of 18.",
+          "url": "https://ai.google.dev/gemini-api/terms",
+          "read_on": "2026-10-17"
+        },
+        {
+          "text": "Google offers the Gemini API and Google AI Studio, free and paid, in 230 countries and territories, including Taiwan, Brazil, Japan, Singapore, and the United Kingdom. China, Hong Kong, Macao, Russia, Belarus, and Iran are not among them. Google says to developers outside the list: \"try the Gemini API in Gemini Enterprise Agent Platform\".",
+          "quote": "The Gemini API and Google AI Studio are available in the following countries and territories. If you're not in one of these countries or territories, try the Gemini API in Gemini Enterprise Agent Platform.",
+          "url": "https://ai.google.dev/gemini-api/docs/available-regions",
+          "read_on": "2026-10-17"
+        },
+        {
+          "text": "Google's terms say changes to Gemini API paid prices take effect 30 days after Google posts them unless Google specifies otherwise. Pricing for a new paid service takes effect immediately unless Google specifies otherwise.",
+          "quote": "Google may make changes to this pricing from time to time, effective 30 days after they are posted unless otherwise specified (or in the case of new Paid Services, where pricing takes effect immediately unless otherwise specified).",
+          "url": "https://ai.google.dev/gemini-api/terms",
+          "read_on": "2026-10-17"
+        },
+        {
           "text": "Google is moving existing Postpay accounts to Prepay for Gemini API usage. An account that has not switched and added credits by the cutover date in its account notice has its paid service interrupted; other Google Cloud services on the billing account stay on Postpay.",
           "quote": "Google AI Studio is transitioning developer accounts from Postpay to Prepay billing for Gemini API usage. This change applies only to the Gemini API; other Google Cloud services linked to your billing account remain on Postpay. Switch to Prepay and add credits before the cutover date in your account notice to avoid service interruptions.",
           "url": "https://ai.google.dev/gemini-api/docs/billing",
