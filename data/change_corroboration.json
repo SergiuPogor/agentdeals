@@ -1,37 +1,59 @@
 {
   "held": [
     {
-      "vendor": "Google Meet",
+      "vendor": "Algolia",
+      "change_type": "pricing_restructured",
+      "impact": "medium",
+      "summary": "The Free plan limits have been updated. The price for additional search requests in the Grow plan has increased.",
+      "previous_state": "Search-as-a-service. The Free plan needs no credit card and includes 10K search requests/month, 50K records, 5K recommendation requests/month, 5K crawls/month and 1 application, with some features reserved for paid plans. Grow is pay as you go: 10K search requests and 100K records a month included, then $0.50 per 1K search requests and $0.40 per 1K records.",
+      "current_state": "The Free plan includes 10K search requests/month, 50K records, 5K recommendation requests/month, and 5K crawls/month. The Grow plan includes 10K search requests and 100K records a month, then $0.50 per 1K search requests and $0.40 per additional 1K records. Grow Plus is $0/month with 10K search requests/month included then $1.75 per additional 1K search requests and 100K records included then $0.40 per additional 1K records.",
+      "source_url": "https://www.algolia.com/pricing",
+      "category": "Search",
+      "first_read_date": "2026-10-17"
+    },
+    {
+      "vendor": "Harness Feature Flags",
       "change_type": "pricing_restructured",
       "impact": "high",
-      "summary": "1-hour group meetings with up to 100 participants and unlimited 1-on-1 calls are still available, features like recordings and breakout rooms are now premium features requiring a paid plan. Are also part of paid plans.",
-      "previous_state": "1-hour group meetings (up to 100 participants). Unlimited 1-on-1 calls (24-hour limit). Screen sharing. Real-time captions. Background effects. No recording or breakout rooms on free.",
-      "current_state": "Premium features include recordings, transcripts, meetings up to 24 hours long, and up to 1000 participants.",
-      "source_url": "https://workspace.google.com/products/meet/",
-      "category": "Communication & Messaging",
-      "first_read_date": "2026-10-16"
+      "summary": "The free tier exists but the description is different.",
+      "previous_state": "Feature flags (formerly Split.io) — 2 developers, 25K client MAU, unlimited flags and environments, CI/CD pipelines for rollout",
+      "current_state": "The free plan includes Harness Open Source and Litmus Chaos.",
+      "source_url": "https://www.harness.io/pricing",
+      "category": "Feature Flags",
+      "first_read_date": "2026-10-17"
     },
     {
-      "vendor": "Simple Observability",
-      "change_type": "limits_reduced",
-      "impact": "medium",
-      "summary": "The free tier now includes 50 metrics per server, low log volume, 1 server, 1 job, 1 endpoint and 5 alert rules. The paid tier is $3 per month per server.",
-      "previous_state": "Powerful server monitoring in a unified platform for metrics and logs, with no setup complexity. Free for one server.",
-      "current_state": "The free tier includes 50 metrics per server, low log volume, 1 server, 1 job, 1 endpoint and 5 alert rules.",
-      "source_url": "https://simpleobservability.com/pricing",
-      "category": "Monitoring",
-      "first_read_date": "2026-10-16"
-    },
-    {
-      "vendor": "Tugboat",
+      "vendor": "Momento",
       "change_type": "free_tier_removed",
       "impact": "high",
-      "summary": "Tugboat's own page now redirects to tugboatqa.com. The free tier no longer exists. The lowest tier is now 'Intro' at $39/month.",
-      "previous_state": "Preview every pull request, automated and on-demand. Free tier: $0/month, 5GB storage, 512MB RAM, no credit card required.",
-      "current_state": "The Intro plan costs $39/month and includes 15GB preview storage and 1GB RAM.",
-      "source_url": "https://tugboat.qa/pricing",
-      "category": "CI/CD",
-      "first_read_date": "2026-10-16"
+      "summary": "Momento no longer offers a free tier. The page lists pricing for various Valkey products, including Momento Cache Flex from $13 per GB-month, and data transfer at $0.05/GiB (with 200GiB included).",
+      "previous_state": "Managed Valkey cache, cluster and pub/sub, formerly a serverless cache with a free tier. No free tier. gomomento.com/pricing, read 2026-09-05, prices every plan: Momento Cache Flex from $13 per GB-month, Momento Cache Cluster from $0.0105 per instance-hour, Pub/sub Topics from $1 per 1M operations, Valkey Router $0.01 per GB of data transfer. The only $0 on the page is the Starter Basic Support plan, which is a support level and not a product allowance.",
+      "current_state": "Momento Cache Flex from $13 per GB-month. Data Transfer Ingress + Egress 200 GiB included per month $0.05 GiB",
+      "source_url": "https://www.gomomento.com/pricing",
+      "category": "Databases",
+      "first_read_date": "2026-10-17"
+    },
+    {
+      "vendor": "Nhost",
+      "change_type": "restriction",
+      "impact": "medium",
+      "summary": "The free tier (Starter) now allows unlimited projects, pausing is no longer after 1 week of inactivity, and the limits for database, storage, and egress are the same. The page also details additional features and pricing for Pro, Team, and Enterprise tiers, as well as add-ons like AI Toolkit and Nhost Run.",
+      "previous_state": "Open-source backend with Postgres and Hasura GraphQL, plus Auth, Storage and Functions. The Starter plan is $0 a month: 1 GB database, 1 GB storage and 5 GB egress, with functions, realtime APIs and unlimited users. It is limited to 1 project, and the project is paused after 1 week of inactivity. Pro starts at $25 a month with $15 of compute credits, a 10 GB database, 50 GB storage and 50 GB egress.",
+      "current_state": "$0 / month. Limit of 1 project. Project paused after 1 week of inactivity. 1 GB database, 1 GB storage, 5 GB egress. Functions, Realtime APIs, IaC Automated deployments, Unlimited users, OAuth providers, Community support. You can have as many projects as you want in a free organization, as long as only 1 is active at any given time. You can pause and unpause free projects as needed.",
+      "source_url": "https://nhost.io/pricing",
+      "category": "Databases",
+      "first_read_date": "2026-10-17"
+    },
+    {
+      "vendor": "OneSignal",
+      "change_type": "limits_reduced",
+      "impact": "high",
+      "summary": "The free tier now has limits on the number of email sends (20,000/month) and mobile push notifications (up to 1,000 monthly active users).",
+      "previous_state": "Push notification platform — Free $0/mo. Access to: All channels, Basic automation & analytics, OneSignal AI & MCP, Basic personalization. Mobile Push Notifications for organizations with up to 1,000 monthly active users. Web Push Notifications Max 10,000 subscribers per send. Email 10,000 sends / month.",
+      "current_state": "Free $0/mo. Access to: All channels, Basic automation & analytics, OneSignal AI & MCP, Basic personalization. Mobile Push Notifications for organizations with up to 1,000 monthly active users. Email 20,000 free sends / month.",
+      "source_url": "https://onesignal.com/pricing",
+      "category": "Messaging",
+      "first_read_date": "2026-10-17"
     }
   ],
   "resolved": [
@@ -2450,6 +2472,42 @@
       "outcome": "corroborated",
       "detail": "a reading on 2026-10-16 read it as limits_reduced too",
       "resolved_date": "2026-10-16"
+    },
+    {
+      "vendor": "Google Meet",
+      "change_type": "pricing_restructured",
+      "impact": "high",
+      "summary": "1-hour group meetings with up to 100 participants and unlimited 1-on-1 calls are still available, features like recordings and breakout rooms are now premium features requiring a paid plan. Are also part of paid plans.",
+      "previous_state": "1-hour group meetings (up to 100 participants). Unlimited 1-on-1 calls (24-hour limit). Screen sharing. Real-time captions. Background effects. No recording or breakout rooms on free.",
+      "source_url": "https://workspace.google.com/products/meet/",
+      "first_read_date": "2026-10-16",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-17 read it as limits_reduced",
+      "resolved_date": "2026-10-17"
+    },
+    {
+      "vendor": "Simple Observability",
+      "change_type": "limits_reduced",
+      "impact": "medium",
+      "summary": "The free tier now includes 50 metrics per server, low log volume, 1 server, 1 job, 1 endpoint and 5 alert rules. The paid tier is $3 per month per server.",
+      "previous_state": "Powerful server monitoring in a unified platform for metrics and logs, with no setup complexity. Free for one server.",
+      "source_url": "https://simpleobservability.com/pricing",
+      "first_read_date": "2026-10-16",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-17 read it as limits_increased",
+      "resolved_date": "2026-10-17"
+    },
+    {
+      "vendor": "Tugboat",
+      "change_type": "free_tier_removed",
+      "impact": "high",
+      "summary": "Tugboat's own page now redirects to tugboatqa.com. The free tier no longer exists. The lowest tier is now 'Intro' at $39/month.",
+      "previous_state": "Preview every pull request, automated and on-demand. Free tier: $0/month, 5GB storage, 512MB RAM, no credit card required.",
+      "source_url": "https://tugboat.qa/pricing",
+      "first_read_date": "2026-10-16",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-17 read it as free_tier_removed too",
+      "resolved_date": "2026-10-17"
     }
   ]
 }

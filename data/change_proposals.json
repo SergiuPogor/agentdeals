@@ -193,6 +193,56 @@
           "refused": "reading_drops_the_cap_on_who_may_use_it"
         }
       ]
+    },
+    {
+      "proposal_id": "2026-10-17/simple-observability/limits_increased",
+      "proposed_on": "2026-10-17",
+      "vendor": "Simple Observability",
+      "change_type": "limits_increased",
+      "date": "2026-10-17",
+      "date_source": "discovered",
+      "summary": "The free tier now includes 50 metrics per server, low log volume, 1 server, 1 job, 1 endpoint and 5 alert rules.",
+      "tier": "Free",
+      "tier_direction": "widened",
+      "previous_state": "Powerful server monitoring in a unified platform for metrics and logs, with no setup complexity. Free for one server.",
+      "current_state": "The Free plan is $0 / month and includes 50 metrics per server, low log volume, 1 server, 1 job, 1 endpoint and 5 alert rules.",
+      "impact": "medium",
+      "source_url": "https://simpleobservability.com/pricing",
+      "category": "Monitoring",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-17",
+      "restatement": [
+        {
+          "url": "https://simpleobservability.com/pricing",
+          "description": "Powerful server monitoring in a unified platform for metrics and logs, with no setup complexity — The Free plan is $0 / month and includes 50 metrics per server, low log volume, 1 server, 1 job, 1 endpoint and 5 alert rules."
+        }
+      ]
+    },
+    {
+      "proposal_id": "2026-10-17/tugboat/free_tier_removed",
+      "proposed_on": "2026-10-17",
+      "vendor": "Tugboat",
+      "change_type": "free_tier_removed",
+      "date": "2026-10-17",
+      "date_source": "discovered",
+      "summary": "Tugboat's own page now redirects to tugboatqa.com. The free tier no longer exists. The lowest tier is now $39/month with significantly reduced storage (15GB) and RAM (1GB).",
+      "tier": "Intro",
+      "tier_direction": "narrowed",
+      "previous_state": "Preview every pull request, automated and on-demand. Free tier: $0/month, 5GB storage, 512MB RAM, no credit card required.",
+      "current_state": "The Intro plan costs $39/month and includes 15GB preview storage and 1GB RAM.",
+      "impact": "high",
+      "source_url": "https://tugboat.qa/pricing",
+      "category": "CI/CD",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-17",
+      "restatement": [
+        {
+          "url": "https://tugboat.qa/pricing",
+          "refused": "reading_answers_for_something_else"
+        }
+      ]
     }
   ],
   "dropped": [
