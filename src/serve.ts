@@ -49015,7 +49015,7 @@ function buildPricingChangesPage(): string {
 
   const filterCategory: Record<string, string> = CHANGE_DIRECTION;
 
-  function buildChangeEntry(c: ChangeTimelineEntry, originalDate = c.originalRecord?.date ?? c.date): string {
+  function buildChangeEntry(c: ChangeTimelineEntry, originalDate = c.originalRecord?.date ?? c.date, preview = false): string {
     const housekeeping = isIndexHousekeeping(c);
     const badge = housekeeping
       ? { label: INDEX_HOUSEKEEPING_BADGE, color: INDEX_HOUSEKEEPING_BADGE_COLOR }
@@ -49036,7 +49036,7 @@ function buildPricingChangesPage(): string {
     const vendorCat = (c.category || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
     const changeYear = dated ? c.date.slice(0, 4) : "";
     const entryAnchor = originalDate === c.date ? changeAnchor(c) : `${changeAnchor(c)}-retirement-${originalDate}`;
-    return `      <div class="pc-entry${isUpcoming ? " pc-upcoming" : ""}${dated ? "" : " pc-undated"}${isNoLongerInForce(c) ? " pc-resolved" : ""}${changeIsUncited(c) ? " pc-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}" ${originalDate !== c.date ? `data-event-date="${escHtmlServer(originalDate)}" ` : ""}id="${escHtmlServer(entryAnchor)}" data-type="${escHtmlServer(c.change_type)}" data-impact="${escHtmlServer(c.impact)}" data-category="${category}" data-vendor-cat="${vendorCat}" data-year="${changeYear}">
+    return `      <div class="${preview ? "pc-preview" : "pc-entry"}${isUpcoming ? " pc-upcoming" : ""}${dated ? "" : " pc-undated"}${isNoLongerInForce(c) ? " pc-resolved" : ""}${changeIsUncited(c) ? " pc-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}" ${originalDate !== c.date ? `data-event-date="${escHtmlServer(originalDate)}" ` : ""}${preview ? "" : `id="${escHtmlServer(entryAnchor)}" `}data-type="${escHtmlServer(c.change_type)}" data-impact="${escHtmlServer(c.impact)}" data-category="${category}" data-vendor-cat="${vendorCat}" data-year="${changeYear}">
         <div class="pc-left">
           <div class="pc-date${dated ? "" : " pc-date-unknown"}">${changeEntryDateLabelHtml(c, escHtmlServer)}</div>
           ${isUpcoming ? `<div class="pc-upcoming-badge">upcoming</div>` : ""}
@@ -49077,6 +49077,7 @@ ${altHtml}
   const ytdNetLabel = ytdNet > 0 ? "net positive" : ytdNet < 0 ? "net negative" : "neutral";
   const ytdNetColor = ytdNet > 0 ? "#3fb950" : ytdNet < 0 ? "#f85149" : "#8b949e";
 
+  const latest = changesTheVendorMade(trackedChanges<ChangeTimelineEntry>([...sorted, ...retirementEntries])).filter(c => c.date <= today).sort((a, b) => b.date.localeCompare(a.date)).slice(0, LATEST_PRICING_CHANGES_SHOWN);
   const upcomingChanges = countable.map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date >= today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
 
   const vendorCategories = [...new Set(sorted.map(c => c.category || "").filter(Boolean))].sort();
@@ -49271,11 +49272,11 @@ h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5
 .pc-filter-count{font-size:.75rem;color:var(--text-dim);margin-top:.5rem;font-family:var(--mono)}
 .month-group{margin-bottom:2rem}
 .month-heading{font-family:var(--serif);font-size:1.15rem;color:var(--text);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
-.pc-entry{display:flex;gap:1rem;padding:.75rem;margin-bottom:.5rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);transition:border-color .2s,background .2s}
+.pc-entry,.pc-preview{display:flex;gap:1rem;padding:.75rem;margin-bottom:.5rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);transition:border-color .2s,background .2s}
 .pc-resolved{opacity:.6;border-style:dashed}
 .pc-unsourced{opacity:.75}
 .change-source:hover{color:var(--accent)}
-.pc-entry:hover{border-color:var(--accent)}
+.pc-entry:hover,.pc-preview:hover{border-color:var(--accent)}
 .pc-entry:target{border-color:var(--accent);background:var(--accent-glow)}
 .pc-upcoming{border-color:rgba(88,166,255,0.3)}
 .pc-undated{border-style:dashed}
@@ -49285,7 +49286,7 @@ h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5
 .stat-card-undated .stat-value{color:#d29922}
 .pc-upcoming-badge{font-family:var(--mono);font-size:.65rem;color:#58a6ff;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
 .pc-anchor{font-family:var(--mono);font-size:.7rem;color:var(--text-dim);opacity:0;transition:opacity .15s}
-.pc-entry:hover .pc-anchor{opacity:1}
+.pc-entry:hover .pc-anchor,.pc-preview:hover .pc-anchor{opacity:1}
 .pc-anchor:hover{color:var(--accent);text-decoration:none}
 .pc-right{flex:1;min-width:0}
 .pc-head{display:flex;align-items:center;gap:.5rem;margin-bottom:.25rem;flex-wrap:wrap}
@@ -49327,7 +49328,7 @@ h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5
 .cross-links li a{display:inline-block;padding:.25rem .6rem;border:1px solid var(--border);border-radius:6px;font-size:.8rem;color:var(--text-muted)}
 .cross-links li a:hover{border-color:var(--accent);color:var(--text);text-decoration:none}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
-@media(max-width:768px){h1{font-size:1.5rem}.stats-bar{flex-direction:column}.trend-grid{grid-template-columns:repeat(2,1fr)}.pc-entry{flex-direction:column;gap:.25rem}.pc-left{text-align:left;min-width:auto;display:flex;gap:.75rem;align-items:center}.pc-filter-group{flex-direction:column;align-items:flex-start}.pc-anchor{opacity:1}}
+@media(max-width:768px){h1{font-size:1.5rem}.stats-bar{flex-direction:column}.trend-grid{grid-template-columns:repeat(2,1fr)}.pc-entry,.pc-preview{flex-direction:column;gap:.25rem}.pc-left{text-align:left;min-width:auto;display:flex;gap:.75rem;align-items:center}.pc-filter-group{flex-direction:column;align-items:flex-start}.pc-anchor{opacity:1}}
 ${globalNavCss()}
 </style>
 </head>
@@ -49370,6 +49371,16 @@ ${undatedTileHtml(undatedCounted)}
     <div class="trend-net" style="color:${ytdNetColor}">Net: <strong>${ytdNet > 0 ? "+" : ""}${ytdNet}</strong> (${ytdNetLabel}) &mdash; ${ytdChanges.length} changes tracked in ${currentYear}</div>
   </div>
 ${changeVendorIndexHtml(indexSections, today)}
+  <section class="latest-section" id="latest">
+    <h2 class="month-heading">${LATEST_PRICING_CHANGES_HEADING}</h2>
+    ${datedSectionNoticeHtml(
+      `${namedOnceItsDateArrived("A change", today)} Only the ${LATEST_PRICING_CHANGES_SHOWN} newest are shown here; as later changes take effect, older entries leave this summary.`,
+      [{ when: "Every entry remains in", text: "the full timeline below", href: "/pricing-changes" }],
+      escHtmlServer,
+      ' class="month-note dated-rule"',
+    )}
+${latest.map(c => buildChangeEntry(c, c.originalRecord?.date ?? c.date, true)).join("\n")}
+  </section>
 ${upcomingChanges.length > 0 ? `
   <div class="upcoming-section" id="upcoming">
     <h2>${UPCOMING_CHANGES_HEADING}</h2>

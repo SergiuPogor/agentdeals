@@ -54,7 +54,7 @@ function citedUrls(html: string): string[] {
 }
 
 function entriesOn(html: string, route: string, previews = false): string[] {
-  const markers = [...html.matchAll(new RegExp(`<div class="(${ENTRY_CLASS[route]}|chg-preview)\\b[^"]*"`, "g"))];
+  const markers = [...html.matchAll(new RegExp(`<div class="(${ENTRY_CLASS[route]}|(?:pc|chg)-preview)\\b[^"]*"`, "g"))];
   return markers.flatMap((entry, i) => entry[1] === ENTRY_CLASS[route] || previews
     ? [html.slice(entry.index!, markers[i + 1]?.index)]
     : []);
@@ -377,7 +377,7 @@ describe("a record with no source says so where a record with one is cited", () 
   for (const route of CHANGE_LOG_ROUTES) {
     it(`links the source of the sourced record on ${route}`, () => {
       const html = bodies.get(route)!;
-      assert.deepStrictEqual(citedUrls(html), route === "/changes" ? [SOURCE, SOURCE] : [SOURCE]);
+      assert.deepStrictEqual(citedUrls(html), [SOURCE, SOURCE]);
       const tag = citationTags(html)[0];
       assert.ok(tag.includes('target="_blank"'), tag);
       assert.match(tag, /rel="[^"]*\bnoopener\b[^"]*"/, tag);
@@ -407,8 +407,8 @@ describe("a record with no source says so where a record with one is cited", () 
     });
   }
 
-  it("gives every summary card its own source link or missing-source notice", () => {
-    const entries = entriesOn(bodies.get("/changes")!, "/changes", true);
+  for (const route of CHANGE_LOG_ROUTES) it(`gives every summary card on ${route} its own source link or missing-source notice`, () => {
+    const entries = entriesOn(bodies.get(route)!, route, true);
     assert.strictEqual(entries.length, 6);
     for (const vendor of [CITED, UNCITED, BLANK]) {
       const representations = entries.filter(entry => entry.includes(`${vendor} cut its free storage.`));

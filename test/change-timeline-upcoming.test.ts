@@ -123,18 +123,18 @@ describe("the change timelines separate announced changes from their history", (
     });
   }
 
-  for (const name of ["catalogue", "fixtures"]) it(`puts ${name}'s ten latest changes before the upcoming section and within the reading budget`, () => {
-    const html = pages.get(`${name} /changes`)!;
+  for (const name of ["catalogue", "fixtures"]) for (const route of ["/changes", "/pricing-changes"]) it(`puts ${name} ${route}'s ten latest changes before the upcoming section and within the reading budget`, () => {
+    const html = pages.get(`${name} ${route}`)!;
     const indexEnd = html.indexOf('</section>', html.indexOf('class="change-vendor-index"'));
     const latestStart = html.indexOf('class="latest-section"');
     const latestEnd = html.indexOf('</section>', latestStart);
     const upcomingStart = html.indexOf('class="upcoming-section"');
-    const upcomingEnd = html.indexOf('</section>', upcomingStart);
+    const upcomingEnd = route === "/changes" ? html.indexOf('</section>', upcomingStart) : html.indexOf('<div class="pc-filters">', upcomingStart);
     assert.ok(indexEnd < latestStart && latestEnd < upcomingStart);
     const latest = html.slice(latestStart, latestEnd);
     assert.match(latest, /Latest Pricing Changes/);
     assert.match(latest, /older entries leave this summary/);
-    assert.match(latest, /href="\/changes"/);
+    assert.ok(latest.includes(`href="${route}"`));
     assert.equal(dates(latest).length, 10);
     assert.deepEqual(dates(latest), [...dates(latest)].sort().reverse());
     assert.ok(dates(latest).every(date => date <= today));
@@ -165,8 +165,8 @@ describe("the change timelines separate announced changes from their history", (
       assert.match(history, new RegExp(`effective ${day(-10)}`));
       const alreadyRecorded = [...history.matchAll(/class="(?:pc|chg)-summary">([^<]*)/g)].filter(match => match[1].startsWith("Already Recorded changes"));
       assert.equal(alreadyRecorded.length, 2);
-      if (route === "/changes") {
-        assert.equal((retired.match(/<div class="chg-entry/g) ?? []).length, fixtures.length);
+      {
+        if (route === "/changes") assert.equal((retired.match(/<div class="chg-entry/g) ?? []).length, fixtures.length);
         const latest = retired.slice(retired.indexOf('class="latest-section"'), retired.indexOf('</section>', retired.indexOf('class="latest-section"')));
         assert.ok(dates(latest).includes(day(20)));
       }
