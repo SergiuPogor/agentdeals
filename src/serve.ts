@@ -48991,6 +48991,17 @@ ${lines.join("\n")}
   </section>`;
 }
 
+type ChangeTimelineEntry = DealChange & { originalRecord?: DealChange };
+
+function retirementTimelineEntries(changes: DealChange[]): ChangeTimelineEntry[] {
+  const vendorChanges = changesTheVendorMade(changes);
+  return vendorChanges.filter(isEventDated).flatMap(change => {
+    const date = upcomingDateOf(change, change.date);
+    if (date <= change.date || vendorChanges.some(other => other.vendor === change.vendor && other.change_type === change.change_type && other.date === date)) return [];
+    return [{ ...change, date, originalRecord: change }];
+  });
+}
+
 function buildPricingChangesPage(): string {
   const allChanges = loadDealChanges();
   const { dated: eventDated, discovered: undatedChanges } = partitionByDateProvenance(allChanges);
@@ -48999,11 +49010,12 @@ function buildPricingChangesPage(): string {
 
   const sorted = [...eventDated].sort((a, b) => b.date.localeCompare(a.date));
   const indexSections = changeLogSections(allChanges, today);
-  const sections = changeLogSections(allChanges.filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
+  const retirementEntries = retirementTimelineEntries(allChanges);
+  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
 
   const filterCategory: Record<string, string> = CHANGE_DIRECTION;
 
-  function buildChangeEntry(c: typeof allChanges[0], originalDate = c.date): string {
+  function buildChangeEntry(c: ChangeTimelineEntry, originalDate = c.originalRecord?.date ?? c.date): string {
     const housekeeping = isIndexHousekeeping(c);
     const badge = housekeeping
       ? { label: INDEX_HOUSEKEEPING_BADGE, color: INDEX_HOUSEKEEPING_BADGE_COLOR }
@@ -49464,12 +49476,13 @@ function buildChangesPage(): string {
 
   const sorted = [...eventDated].sort((a, b) => b.date.localeCompare(a.date));
   const indexSections = changeLogSections(allChanges, today);
-  const sections = changeLogSections(allChanges.filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
+  const retirementEntries = retirementTimelineEntries(allChanges);
+  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
   const countable = changesTheVendorMade(trackedChanges(sorted));
-  const latest = countable.filter(c => c.date <= today).slice(0, LATEST_PRICING_CHANGES_SHOWN);
+  const latest = changesTheVendorMade(trackedChanges<ChangeTimelineEntry>([...sorted, ...retirementEntries])).filter(c => c.date <= today).sort((a, b) => b.date.localeCompare(a.date)).slice(0, LATEST_PRICING_CHANGES_SHOWN);
   const upcomingOriginals = changesTheVendorMade(sorted).filter(c => c.date >= today).sort((a, b) => upcomingDateOf(a, today).localeCompare(upcomingDateOf(b, today)));
   const upcomingChanges = changesTheVendorMade(sorted).map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date >= today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
-  const inPageOrder = [...upcomingOriginals, ...changeLogInPageOrder(sections)];
+  const inPageOrder = [...upcomingOriginals, ...changeLogInPageOrder(sections).filter(c => !c.originalRecord)];
 
   const byMonth = new Map<string, typeof sorted>();
   for (const c of sorted) {
@@ -49484,7 +49497,7 @@ function buildChangesPage(): string {
     if (anchor && !anchorHolder.has(anchor)) anchorHolder.set(anchor, c);
   }
 
-  function buildChangeEntry(c: typeof allChanges[0], preview = false, original = c): string {
+  function buildChangeEntry(c: ChangeTimelineEntry, preview = Boolean(c.originalRecord), original = c.originalRecord ?? c): string {
     const housekeeping = isIndexHousekeeping(c);
     const badge = housekeeping
       ? { label: INDEX_HOUSEKEEPING_BADGE, color: INDEX_HOUSEKEEPING_BADGE_COLOR }

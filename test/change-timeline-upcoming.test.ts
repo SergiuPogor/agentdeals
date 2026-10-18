@@ -23,6 +23,8 @@ const fixtures = [
   record("Future Announcement", 5, { change_type: "product_deprecated", discontinued_date: day(30), what_ends: "The service" }),
   ...Array.from({ length: 13 }, (_, i) => record(`Past Event ${i}`, -i - 1)),
   record("Retiring Service", -10, { change_type: "product_deprecated", discontinued_date: day(20), what_ends: "The service" }),
+  record("Already Recorded", -12, { change_type: "product_deprecated", discontinued_date: day(-3), what_ends: "The service" }),
+  record("Already Recorded", -3, { change_type: "product_deprecated" }),
   record("Undated Service", 50, { date_source: "discovered" }),
   record("Correction Service", 60, { change_type: "record_corrected" }),
   record("Retracted Service", 70, { resolution: { state: "retracted", date: today, detail: "An incorrect record" } }),
@@ -76,6 +78,8 @@ before(async () => {
   await readPages("fixtures", 0, true);
   await readPages("tomorrow", 1, true);
   await readPages("after", 2, true);
+  await readPages("retirementDay", 20, true);
+  await readPages("retired", 21, true);
 });
 
 after(() => {
@@ -141,12 +145,32 @@ describe("the change timelines separate announced changes from their history", (
     const markupAllowance = (prefix.match(/<[^>]+>/g) ?? []).length * 8;
     assert.ok(visibleText(prefix).length + links + markupAllowance < 100_000);
     if (name === "fixtures") {
-      assert.deepEqual(dates(latest), Array.from({ length: 10 }, (_, i) => day(-i)));
+      assert.deepEqual(dates(latest), [0, -1, -2, -3, -3, -4, -5, -6, -7, -8].map(day));
       assert.doesNotMatch(latest, /Correction Service|Retracted Service|Undated Service/);
     }
   });
 
   for (const route of ["/changes", "/pricing-changes"]) {
+    it(`keeps a retirement in ${route}'s effective month after it leaves Upcoming, beside its earlier event`, () => {
+      const onDay = pages.get(`retirementDay ${route}`)!;
+      const retired = pages.get(`retired ${route}`)!;
+      assert.match(upcoming(onDay), /Retiring Service/);
+      assert.doesNotMatch(upcoming(retired), /Retiring Service/);
+      const retirement = new RegExp(`<div class="(?:pc-entry|chg-preview)[^"]*"[^>]*data-event-date="${day(-10)}"[\\s\\S]*?<div class="(?:pc|chg)-date">[\\s\\S]*?${day(20)}[\\s\\S]*?Retiring Service`);
+      const history = timeline(retired);
+      assert.match(history, retirement);
+      const monthAt = history.indexOf(`id="month-${day(20).slice(0, 7)}"`);
+      assert.ok(monthAt >= 0 && history.search(retirement) > monthAt);
+      assert.match(history, new RegExp(`effective ${day(-10)}`));
+      const alreadyRecorded = [...history.matchAll(/class="(?:pc|chg)-summary">([^<]*)/g)].filter(match => match[1].startsWith("Already Recorded changes"));
+      assert.equal(alreadyRecorded.length, 2);
+      if (route === "/changes") {
+        assert.equal((retired.match(/<div class="chg-entry/g) ?? []).length, fixtures.length);
+        const latest = retired.slice(retired.indexOf('class="latest-section"'), retired.indexOf('</section>', retired.indexOf('class="latest-section"')));
+        assert.ok(dates(latest).includes(day(20)));
+      }
+    });
+
     it(`moves an effective event from ${route}'s upcoming section to its month on the following day`, () => {
       const onDay = pages.get(`tomorrow ${route}`)!;
       const after = pages.get(`after ${route}`)!;
