@@ -1289,7 +1289,7 @@
       "changed": "2026-10-18"
     },
     "/category/startup-perks": {
-      "hash": "ab468fccefba16f8",
+      "hash": "6ab0d5285cd3ea4f",
       "changed": "2026-10-18"
     },
     "/category/status-pages": {
@@ -3152,7 +3152,7 @@
       "changed": "2026-10-18"
     },
     "/events/microsoft-build-2026": {
-      "hash": "5b8670796044cd17",
+      "hash": "9adfca22cef537bc",
       "changed": "2026-10-18"
     },
     "/expiring": {
@@ -3572,7 +3572,7 @@
       "daily": true
     },
     "/stack-check": {
-      "hash": "1b85561de506b0ce",
+      "hash": "d0b3c22a8099879f",
       "changed": "2026-10-18"
     },
     "/stacks": {
@@ -7072,7 +7072,7 @@
       "changed": "2026-10-18"
     },
     "/vendor/microsoft-for-startups": {
-      "hash": "f060b85442330cec",
+      "hash": "91a3fe415f5dba48",
       "changed": "2026-10-18"
     },
     "/vendor/microsoft-teams": {
