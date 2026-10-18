@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-17",
+  "generated": "2026-10-18",
   "pages": {
     "/": {
       "daily": true
@@ -30,7 +30,8 @@
       "changed": "2026-10-17"
     },
     "/alternative-to": {
-      "daily": true
+      "hash": "44ddc63d379f5690",
+      "changed": "2026-10-18"
     },
     "/alternative-to/360-monitoring": {
       "daily": true
@@ -1160,8 +1161,8 @@
       "changed": "2026-10-15"
     },
     "/category/databases": {
-      "hash": "c433b391fb6b47e7",
-      "changed": "2026-10-17"
+      "hash": "08706869a0c15769",
+      "changed": "2026-10-18"
     },
     "/category/design": {
       "hash": "e7a4f745ca5ba4a4",
@@ -1212,7 +1213,8 @@
       "changed": "2026-10-16"
     },
     "/category/ide-code-editors": {
-      "daily": true
+      "hash": "dad16857517722af",
+      "changed": "2026-10-18"
     },
     "/category/infrastructure": {
       "hash": "58712f6a05511ddd",
@@ -2693,8 +2695,8 @@
       "changed": "2026-10-17"
     },
     "/database-alternatives": {
-      "hash": "858a04f45a3af2a7",
-      "changed": "2026-10-17"
+      "hash": "34f9e3083c93dad4",
+      "changed": "2026-10-18"
     },
     "/database-free-tier-comparison-2026": {
       "hash": "38c5a40650fafb4c",
@@ -3055,8 +3057,7 @@
       "daily": true
     },
     "/digest/2026-w43": {
-      "hash": "bf6d9b5a0ba532ab",
-      "changed": "2026-10-16"
+      "daily": true
     },
     "/digest/2026-w44": {
       "hash": "77bd1dd3175b7384",
@@ -3158,8 +3159,7 @@
       "daily": true
     },
     "/feed.xml": {
-      "hash": "fa9b6b90bfe12c79",
-      "changed": "2026-10-16"
+      "daily": true
     },
     "/firebase-alternatives": {
       "hash": "444967b79fb775fb",
@@ -3213,8 +3213,7 @@
       "changed": "2026-10-11"
     },
     "/free-tier-risk": {
-      "hash": "04f8ae671673e754",
-      "changed": "2026-10-16"
+      "daily": true
     },
     "/free-tier-tracker": {
       "daily": true
@@ -3299,11 +3298,11 @@
       "changed": "2026-10-17"
     },
     "/ide-code-editors-alternatives": {
-      "daily": true
+      "hash": "14f2e78d769eddd6",
+      "changed": "2026-10-18"
     },
     "/llm-api-pricing": {
-      "hash": "61aa5a02074557a4",
-      "changed": "2026-10-17"
+      "daily": true
     },
     "/localstack-alternatives": {
       "hash": "6786ce15908ff807",
@@ -3385,16 +3384,15 @@
       "changed": "2026-10-16"
     },
     "/redis-alternatives": {
-      "hash": "38d4891f35f4e377",
-      "changed": "2026-10-11"
+      "hash": "68c9d86010ce2b5b",
+      "changed": "2026-10-18"
     },
     "/referral-programs": {
       "hash": "fadac09c37545d06",
       "changed": "2026-10-15"
     },
     "/reports": {
-      "hash": "5e4226de7ec5d587",
-      "changed": "2026-10-16"
+      "daily": true
     },
     "/reports/2022-11": {
       "hash": "d0778aa8cced1e23",
@@ -3571,11 +3569,11 @@
       "daily": true
     },
     "/stability": {
-      "hash": "2c11e7a6b88c42a1",
-      "changed": "2026-10-16"
+      "daily": true
     },
     "/stack-check": {
-      "daily": true
+      "hash": "8e59d8dbdb364b93",
+      "changed": "2026-10-18"
     },
     "/stacks": {
       "hash": "eac3fb64f7c099fb",
@@ -3769,7 +3767,8 @@
       "changed": "2026-10-11"
     },
     "/trends/ide-code-editors": {
-      "daily": true
+      "hash": "b7634bdc7a785c65",
+      "changed": "2026-10-18"
     },
     "/trends/infrastructure": {
       "hash": "425fc01fffc8adb3",
@@ -4905,7 +4904,8 @@
       "changed": "2026-10-16"
     },
     "/vendor/codesandbox-io": {
-      "daily": true
+      "hash": "41640d2f4e310c3e",
+      "changed": "2026-10-18"
     },
     "/vendor/codetoimage": {
       "hash": "a51c4017b18f6062",
