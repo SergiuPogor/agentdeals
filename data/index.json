@@ -29080,7 +29080,7 @@
     {
       "vendor": "GoatCounter",
       "category": "Analytics",
-      "description": "GoatCounter is an open-source web analytics platform available as a hosted service (free for non-commercial use) or self-hosted app. It aims to offer easy-to-use and meaningful privacy-friendly web analytics as an alternative to Google Analytics or Matomo. The free tier is for non-commercial use and includes unlimited sites, six months of data retention, and 100k pageviews/month.",
+      "description": "GoatCounter is an open source web analytics platform. It is available as a free donation-supported hosted service or as a self-hosted app.",
       "tier": "Free",
       "url": "https://www.goatcounter.com/",
       "tags": [
@@ -29088,7 +29088,7 @@
         "statistics",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-07-20",
+      "verifiedDate": "2026-10-18",
       "source_check": {
         "checked": "2026-10-14",
         "outcome": "states_no_terms",
@@ -29098,7 +29098,15 @@
         "text": "GoatCounter.com is currently offered for free for reasonable public usage. Running your personal website or small-to-medium business on it is fine, but sending millions of pageviews/day isn’t.",
         "url": "https://www.goatcounter.com/",
         "read_on": "2026-10-14"
-      }
+      },
+      "conditions": [
+        {
+          "text": "GoatCounter.com is free for reasonable public usage; personal sites and small-to-medium businesses are fine, but millions of pageviews per day are not.",
+          "quote": "GoatCounter.com is currently offered for free for reasonable public usage. Running your personal website or small-to-medium business on it is fine, but sending millions of pageviews/day isn’t.",
+          "url": "https://www.goatcounter.com/terms",
+          "read_on": "2026-10-18"
+        }
+      ]
     },
     {
       "vendor": "Google Analytics",
