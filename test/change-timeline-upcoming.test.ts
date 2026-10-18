@@ -133,7 +133,13 @@ describe("the change timelines separate announced changes from their history", (
     assert.equal(dates(latest).length, 10);
     assert.deepEqual(dates(latest), [...dates(latest)].sort().reverse());
     assert.ok(dates(latest).every(date => date <= today));
-    assert.ok(visibleText(html.slice(0, upcomingEnd)).length < 100_000);
+    const prefix = html.slice(html.indexOf("<body>"), upcomingEnd + "</section>".length)
+      .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/g, "");
+    const links = [...prefix.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)].reduce((length, link) =>
+      length + new URL(link[1].replaceAll("&amp;", "&"), "https://agentdeals.dev").href.length
+        + (link[0].match(/title="([^"]*)"/)?.[1].length ?? 0) + 8, 0);
+    const markupAllowance = (prefix.match(/<[^>]+>/g) ?? []).length * 8;
+    assert.ok(visibleText(prefix).length + links + markupAllowance < 100_000);
     if (name === "fixtures") {
       assert.deepEqual(dates(latest), Array.from({ length: 10 }, (_, i) => day(-i)));
       assert.doesNotMatch(latest, /Correction Service|Retracted Service|Undated Service/);
