@@ -25,6 +25,7 @@ const fixtures = [
   record("Retiring Service", -10, { change_type: "product_deprecated", discontinued_date: day(20), what_ends: "The service" }),
   record("Already Recorded", -12, { change_type: "product_deprecated", discontinued_date: day(-3), what_ends: "The service" }),
   record("Already Recorded", -3, { change_type: "product_deprecated" }),
+  record("Retiring Service", 20, { change_type: "product_deprecated", date_source: "discovered" }),
   record("Undated Service", 50, { date_source: "discovered" }),
   record("Correction Service", 60, { change_type: "record_corrected" }),
   record("Retracted Service", 70, { resolution: { state: "retracted", date: today, detail: "An incorrect record" } }),

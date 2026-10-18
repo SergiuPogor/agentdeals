@@ -48997,7 +48997,7 @@ function retirementTimelineEntries(changes: DealChange[]): ChangeTimelineEntry[]
   const vendorChanges = changesTheVendorMade(changes);
   return vendorChanges.filter(isEventDated).flatMap(change => {
     const date = upcomingDateOf(change, change.date);
-    if (date <= change.date || vendorChanges.some(other => other.vendor === change.vendor && other.change_type === change.change_type && other.date === date)) return [];
+    if (date <= change.date || vendorChanges.some(other => isEventDated(other) && other.vendor === change.vendor && other.change_type === change.change_type && other.date === date)) return [];
     return [{ ...change, date, originalRecord: change }];
   });
 }
@@ -49035,11 +49035,12 @@ function buildPricingChangesPage(): string {
       : "";
     const vendorCat = (c.category || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
     const changeYear = dated ? c.date.slice(0, 4) : "";
-    return `      <div class="pc-entry${isUpcoming ? " pc-upcoming" : ""}${dated ? "" : " pc-undated"}${isNoLongerInForce(c) ? " pc-resolved" : ""}${changeIsUncited(c) ? " pc-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}" ${originalDate !== c.date ? `data-event-date="${escHtmlServer(originalDate)}" ` : ""}id="${changeAnchor(c)}" data-type="${escHtmlServer(c.change_type)}" data-impact="${escHtmlServer(c.impact)}" data-category="${category}" data-vendor-cat="${vendorCat}" data-year="${changeYear}">
+    const entryAnchor = originalDate === c.date ? changeAnchor(c) : `${changeAnchor(c)}-retirement-${originalDate}`;
+    return `      <div class="pc-entry${isUpcoming ? " pc-upcoming" : ""}${dated ? "" : " pc-undated"}${isNoLongerInForce(c) ? " pc-resolved" : ""}${changeIsUncited(c) ? " pc-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}" ${originalDate !== c.date ? `data-event-date="${escHtmlServer(originalDate)}" ` : ""}id="${escHtmlServer(entryAnchor)}" data-type="${escHtmlServer(c.change_type)}" data-impact="${escHtmlServer(c.impact)}" data-category="${category}" data-vendor-cat="${vendorCat}" data-year="${changeYear}">
         <div class="pc-left">
           <div class="pc-date${dated ? "" : " pc-date-unknown"}">${changeEntryDateLabelHtml(c, escHtmlServer)}</div>
           ${isUpcoming ? `<div class="pc-upcoming-badge">upcoming</div>` : ""}
-          <a href="#${changeAnchor(c)}" class="pc-anchor" title="Link to this change">#</a>
+          <a href="#${escHtmlServer(entryAnchor)}" class="pc-anchor" title="Link to this change">#</a>
         </div>
         <div class="pc-right">
           <div class="pc-head">
