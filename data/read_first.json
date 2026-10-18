@@ -175,6 +175,18 @@
     {
       "vendor": "PostHog",
       "tier": "YC Deal"
+    },
+    {
+      "vendor": "Buttondown",
+      "tier": "Free"
+    },
+    {
+      "vendor": "Neocities",
+      "tier": "Free"
+    },
+    {
+      "vendor": "APITemplate.io",
+      "tier": "Free"
     }
   ]
 }
