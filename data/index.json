@@ -5733,7 +5733,7 @@
     {
       "vendor": "Microsoft for Startups",
       "category": "Startup Perks",
-      "description": "Azure credits for software startups, up to $150,000 in total, unlocked over time as a startup verifies its progress and uses more Azure, or sooner with backing from a partner in Microsoft's Investor Network (a VC, accelerator, incubator or university). No investor is needed to join. Investor Network-backed startups may also get GitHub Enterprise (up to 20 users), Microsoft 365 Business Premium (up to 50 seats), Dynamics 365, Power Platform and LinkedIn Premium, and Azure Standard Support.",
+      "description": "Azure credits for software startups, up to $150,000, are unlocked over time as a startup verifies its progress and uses more Azure. Startups backed by a partner in Microsoft's Investor Network (a VC, accelerator, incubator or university) may unlock up to $200,000, and sooner. No investor is needed to join. Investor Network-backed startups may also get GitHub Enterprise (up to 20 users), Microsoft 365 Business Premium (up to 50 seats), Dynamics 365, Power Platform and LinkedIn Premium, and Azure Standard Support.",
       "tier": "Startup Credits",
       "url": "https://www.microsoft.com/en-us/startups",
       "tags": [
