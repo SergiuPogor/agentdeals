@@ -1101,7 +1101,7 @@
   },
   "cost_example": {
     "heading": "What {replies} replies a month cost",
-    "intro": "The table counts {charged} charged messages after the {free} free ones, from one number, Meta's fee only.",
+    "intro": "The table counts {charged} charged messages after the {free} free ones, from one number, Meta's fee only. Twilio adds $0.005 per message sent or received, on top of Meta's fee, so a reply to a user's message costs $0.01 in Twilio fees: $0.005 for the user's message and $0.005 for the reply. For the table's 10,000 replies, answering 10,000 user messages, Twilio's fees add $100. Twilio also charges $0.001 per failed message.",
     "columns": [
       "Users in",
       "Service rate",
@@ -1132,10 +1132,10 @@
     ]
   },
   "free_messages": {
-    "heading": "Free messages",
+    "heading": "Free allowances and messaging limits",
     "columns": [
       "Case",
-      "What is free",
+      "Applies to",
       "Limit"
     ],
     "rows": [
@@ -1157,7 +1157,21 @@
         "label": "Messages from users",
         "cells": [
           "Every message a user sends to the business",
-          "No limit"
+          "Free, with no limit"
+        ]
+      },
+      {
+        "label": "Messaging limit (business-initiated messages)",
+        "cells": [
+          "Only messages delivered outside a customer service window, counted per unique user in a moving 24 hours and shared by all numbers in the business portfolio. Replies inside a customer service window are not limited",
+          "250 unique users for a new business portfolio. From 250, the limit rises to 2,000 only after the business completes one scaling path: verify the business, or deliver 2,000 messages outside customer service windows to unique users in 30 days with high-quality templates; Meta then approves or denies the increase"
+        ]
+      },
+      {
+        "label": "Raising a limit of 2,000 or more",
+        "cells": [
+          "A business portfolio whose limit is already 2,000, 10,000 or 100,000",
+          "Meta raises it automatically, one level within 6 hours (to 10,000, then 100,000, then unlimited), when messages are high quality and the business used at least half its current limit in the last 7 days. Nothing else is required"
         ]
       }
     ]
@@ -1208,7 +1222,7 @@
     "heading": "Why other pages say replies are free",
     "text": "Many third-party pages, and some copies of Meta's own page, still say service messages are free. That was Meta's rule from 2024-11-01 to 2026-09-30. The current rule applies from 2026-10-01.",
     "sources": {
-      "text": "Sources: developers.facebook.com/documentation/business-messaging/whatsapp/pricing (updated 2026-09-30, read 2026-10-10); Meta's rate cards linked from that page, effective 2026-10-01; Meta's AI Providers page (updated 2026-10-15, read 2026-10-18), its authentication-international page (updated 2026-05-21) and section 4.7 of Meta's terms for the WhatsApp Business Platform, read 2026-10-11.",
+      "text": "Sources: developers.facebook.com/documentation/business-messaging/whatsapp/pricing (updated 2026-09-30, read 2026-10-10); Meta's rate cards linked from that page, effective 2026-10-01; Meta's AI Providers page (updated 2026-10-15, read 2026-10-18), its authentication-international page (updated 2026-05-21) and section 4.7 of Meta's terms for the WhatsApp Business Platform, read 2026-10-11; Meta's messaging-limits page (updated 2026-05-21) and Twilio's WhatsApp pricing page (current as of September 2026), read 2026-10-18.",
       "links": [
         {
           "text": "developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
@@ -1229,6 +1243,14 @@
         {
           "text": "Meta's terms for the WhatsApp Business Platform",
           "url": "https://www.facebook.com/legal/Meta-Terms-for-WhatsApp-Business-Platform"
+        },
+        {
+          "text": "Meta's messaging-limits page",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits/"
+        },
+        {
+          "text": "Twilio's WhatsApp pricing page",
+          "url": "https://www.twilio.com/en-us/whatsapp/pricing"
         }
       ]
     }
