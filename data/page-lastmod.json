@@ -22,11 +22,11 @@
       "changed": "2026-10-18"
     },
     "/ai-free-tiers": {
-      "hash": "20a4b37c0f280125",
+      "hash": "99eaea9cf341fde7",
       "changed": "2026-10-18"
     },
     "/ai-ml-alternatives": {
-      "hash": "adb7ba084501f38c",
+      "hash": "e41a45beafaead59",
       "changed": "2026-10-18"
     },
     "/alternative-to": {
@@ -1089,8 +1089,8 @@
       "changed": "2026-10-11"
     },
     "/category/ai-coding": {
-      "hash": "27a6fd5402a203a9",
-      "changed": "2026-10-17"
+      "hash": "023fe89fe1be3561",
+      "changed": "2026-10-18"
     },
     "/category/ai-ml": {
       "hash": "9a4a8fa3dedc25e8",
@@ -1161,7 +1161,7 @@
       "changed": "2026-10-15"
     },
     "/category/databases": {
-      "hash": "5f071e49b961bc92",
+      "hash": "983ad6c6bcdf36c9",
       "changed": "2026-10-18"
     },
     "/category/design": {
@@ -1237,7 +1237,7 @@
       "changed": "2026-10-18"
     },
     "/category/messaging": {
-      "hash": "2b8e2e05395a9a51",
+      "hash": "2ee63b55e037e849",
       "changed": "2026-10-18"
     },
     "/category/mobile-development": {
@@ -2691,19 +2691,19 @@
       "daily": true
     },
     "/cursor-alternatives": {
-      "hash": "d52c029211a8d26d",
-      "changed": "2026-10-17"
+      "hash": "6ede0115cb4eab1b",
+      "changed": "2026-10-18"
     },
     "/database-alternatives": {
-      "hash": "d7d684f9e447dfd7",
+      "hash": "6a58f5c4f28c6c8a",
       "changed": "2026-10-18"
     },
     "/database-free-tier-comparison-2026": {
-      "hash": "ef08024e4d7ac24c",
+      "hash": "c8c34b67af861ed3",
       "changed": "2026-10-18"
     },
     "/database-pricing": {
-      "hash": "8b97d19c51c10853",
+      "hash": "6e7efb6e0133db35",
       "changed": "2026-10-18"
     },
     "/datadog-alternatives": {
@@ -3136,8 +3136,8 @@
       "changed": "2026-10-11"
     },
     "/estimate": {
-      "hash": "82f69b846606709f",
-      "changed": "2026-10-17"
+      "hash": "4e70204c6c66e637",
+      "changed": "2026-10-18"
     },
     "/events": {
       "hash": "10c036e7bfb60e32",
@@ -3298,7 +3298,7 @@
       "changed": "2026-10-18"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "9fc70a492f0e3912",
+      "hash": "26d361a6720c6336",
       "changed": "2026-10-18"
     },
     "/llm-api-pricing": {
@@ -3572,7 +3572,7 @@
       "daily": true
     },
     "/stack-check": {
-      "hash": "d0b3c22a8099879f",
+      "hash": "f818e16f25a3aa49",
       "changed": "2026-10-18"
     },
     "/stacks": {
@@ -3883,7 +3883,7 @@
       "changed": "2026-10-09"
     },
     "/vector-database-pricing": {
-      "hash": "a7cbf81a56b06d69",
+      "hash": "d3347a3cee1529ec",
       "changed": "2026-10-18"
     },
     "/vendor": {
@@ -5795,7 +5795,7 @@
       "changed": "2026-10-18"
     },
     "/vendor/gemini-cli": {
-      "hash": "5b5c3576a11673c7",
+      "hash": "4fe619d6f8cd6c93",
       "changed": "2026-10-18"
     },
     "/vendor/geoapify-com": {
@@ -9327,7 +9327,7 @@
       "changed": "2026-10-18"
     },
     "/vendor/whatsapp-business-platform": {
-      "hash": "a81cfcd3432d223a",
+      "hash": "c977815478b0b15f",
       "changed": "2026-10-18"
     },
     "/vendor/whereby": {
@@ -9595,8 +9595,8 @@
       "changed": "2026-10-18"
     },
     "/whatsapp-business-api-pricing-2026": {
-      "hash": "2ab0ddef7056ec4b",
-      "changed": "2026-10-16"
+      "hash": "9e12b35d7da83379",
+      "changed": "2026-10-18"
     },
     "/x402-services": {
       "hash": "44bba475eabd788c",
