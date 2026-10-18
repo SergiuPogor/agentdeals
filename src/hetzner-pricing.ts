@@ -55,6 +55,7 @@ export const HETZNER_APRIL_DOLLAR_EXAMPLE = { sku: "CX23", before: 3.49, after: 
 export const HETZNER_CLOUD_ADD_ON_PRICES = {
   trafficPerTbBeyondTheIncluded: { euAndUs: 1, singapore: 7.4 },
   ipv4PerMonth: 0.5,
+  ipv4PerMonthUsd: 0.6,
   backupShareOfThePriceWithoutIpv4: 0.2,
   snapshotPerGbMonth: 0.0143,
 };

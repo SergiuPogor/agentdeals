@@ -104,7 +104,7 @@ const VOLUME_PRICE_CONDITION = "Volumes (block storage) cost";
 const VOLUME_SIZE_CONDITION = "A Volume can be made larger";
 const STORAGE_BOX_CONDITION = "Storage Boxes cost";
 
-const { trafficPerTbBeyondTheIncluded, ipv4PerMonth, backupShareOfThePriceWithoutIpv4, snapshotPerGbMonth } = HETZNER_CLOUD_ADD_ON_PRICES;
+const { trafficPerTbBeyondTheIncluded, ipv4PerMonth, ipv4PerMonthUsd, backupShareOfThePriceWithoutIpv4, snapshotPerGbMonth } = HETZNER_CLOUD_ADD_ON_PRICES;
 const { basePerMonth, storagePerTbHourBeyondTheQuota, egressPerTbBeyondTheQuota } = HETZNER_OBJECT_STORAGE_PRICES;
 
 const eurosIn = (text: string) => text.match(/€\d+\.\d{2,}/g) ?? [];
@@ -131,13 +131,24 @@ const VOLUME_EUROS_AS_WRITTEN = [asWritten(volumePerGbMonth.eur), asWritten(volu
 const VOLUME_DOLLARS_AS_WRITTEN = [dollarsAsWritten(volumePerGbMonth.usd)];
 const STORAGE_BOX_EUROS_AS_WRITTEN = HETZNER_STORAGE_BOX_PRICES.map(box => asWritten(box.eur));
 
-function backupExample(text: string) {
-  const skus = text.match(/\bC[A-Z]*X\d+\b/g) ?? [];
-  assert.equal(skus.length, 1, `the backup condition should name one plan: ${text}`);
-  const plan = HETZNER_CLOUD_PLANS.find(p => p.sku === skus[0]);
-  assert.ok(plan, `${skus[0]} is not in the plan table`);
-  const backup = Math.round((cents(plan.eur) - cents(ipv4PerMonth)) * backupShareOfThePriceWithoutIpv4);
-  return { backup: fromCents(backup), withBackups: fromCents(cents(plan.eur) + backup) };
+const backupPrices = (plan: HetznerPlan) => ({
+  eur: fromCents(Math.round((cents(plan.eur) - cents(ipv4PerMonth)) * backupShareOfThePriceWithoutIpv4)),
+  usd: dollars(Math.round((cents(plan.usd) - cents(ipv4PerMonthUsd)) * backupShareOfThePriceWithoutIpv4) / 100),
+});
+
+function assertBackupPrices(text: string) {
+  assert.deepEqual([...text.matchAll(/(\d+)%/g)].map(([, share]) => Number(share)), [Math.round(backupShareOfThePriceWithoutIpv4 * 100)], text);
+  const named = text.match(/\bC[A-Z]*X\d+\b/g) ?? [];
+  assert.deepEqual([...named].sort(), HETZNER_CLOUD_PLANS.map(plan => plan.sku).sort(), text);
+  const entries = [...text.matchAll(/\b(C[A-Z]*X\d+)\s+(€\d+\.\d{2})\s+\((\$\d+\.\d{2})\)/g)];
+  assert.equal(entries.length, named.length, text);
+  for (const [, sku, eur, usd] of entries) {
+    const plan = HETZNER_CLOUD_PLANS.find(plan => plan.sku === sku)!;
+    assert.deepEqual({ eur, usd }, backupPrices(plan), `${sku}: ${text}`);
+  }
+  const prices = HETZNER_CLOUD_PLANS.map(backupPrices);
+  assert.deepEqual((text.match(/€\d+(?:\.\d+)?/g) ?? []).sort(), [asWritten(ipv4PerMonth), ...prices.map(price => price.eur)].sort(), text);
+  assert.deepEqual((text.match(/\$\d+(?:\.\d+)?/g) ?? []).sort(), [dollars(ipv4PerMonthUsd), ...prices.map(price => price.usd)].sort(), text);
 }
 
 function snapshotExample(text: string) {
@@ -152,10 +163,10 @@ function objectStorageMonthExample(text: string) {
   return fromCents(Math.round(days[0] * 24 * storagePerTbHourBeyondTheQuota.eur * 100));
 }
 
-const addOnExamples = () => {
-  const { backup, withBackups } = backupExample(hetznerConditionOpening(BACKUP_PRICE_CONDITION));
-  return [backup, withBackups, snapshotExample(hetznerConditionOpening(SNAPSHOT_CONDITION))];
-};
+const addOnExamples = () => [
+  ...HETZNER_CLOUD_PLANS.map(plan => backupPrices(plan).eur),
+  snapshotExample(hetznerConditionOpening(SNAPSHOT_CONDITION)),
+];
 
 const objectStorageExamples = () => [objectStorageMonthExample(hetznerConditionOpening(OBJECT_STORAGE_PRICE_CONDITION))];
 
@@ -481,6 +492,8 @@ describe("the pricing page prices what Hetzner sells today", () => {
     const { body } = await get("/hetzner-pricing-2026");
     const allowed = new Set([
       ...HETZNER_CLOUD_PLANS.map(p => dollars(p.usd)),
+      dollars(ipv4PerMonthUsd),
+      ...HETZNER_CLOUD_PLANS.map(plan => backupPrices(plan).usd),
       dollars(HETZNER_APRIL_DOLLAR_EXAMPLE.before),
       dollars(HETZNER_APRIL_DOLLAR_EXAMPLE.after),
       ...OBJECT_STORAGE_DOLLARS_AS_WRITTEN,
@@ -984,11 +997,41 @@ describe("the add-on prices Hetzner's listing states", () => {
     assert.deepEqual(eurosIn(text), [trafficPerTbBeyondTheIncluded.euAndUs, trafficPerTbBeyondTheIncluded.singapore].map(asWritten), text);
   });
 
-  it("price backups at the table's share of the server price less its IPv4 address, with an example derived from the plan it names", () => {
+  it("price backups for every plan in euros and dollars at the table's share of its server price less IPv4", () => {
+    assertBackupPrices(hetznerConditionOpening(BACKUP_PRICE_CONDITION));
+  });
+
+  it("rejects a backup price a cent off for any plan in either currency", () => {
     const text = hetznerConditionOpening(BACKUP_PRICE_CONDITION);
-    const { backup, withBackups } = backupExample(text);
-    assert.equal(text.match(/(\d+)%/)?.[1], String(Math.round(backupShareOfThePriceWithoutIpv4 * 100)), text);
-    assert.deepEqual(eurosIn(text).sort(), [asWritten(ipv4PerMonth), withBackups, backup].sort(), text);
+    for (const plan of HETZNER_CLOUD_PLANS) {
+      const { eur, usd } = backupPrices(plan);
+      const entry = `${plan.sku} ${eur} (${usd})`;
+      assert.ok(text.includes(entry), entry);
+      for (const currency of ["eur", "usd"] as const) {
+        const wrongEur = currency === "eur" ? fromCents(cents(Number(eur.slice(1))) + 1) : eur;
+        const wrongUsd = currency === "usd" ? dollars((cents(Number(usd.slice(1))) + 1) / 100) : usd;
+        const changed = text.replace(entry, `${plan.sku} ${wrongEur} (${wrongUsd})`);
+        assert.throws(() => assertBackupPrices(changed), { code: "ERR_ASSERTION" }, `${plan.sku} ${currency}`);
+      }
+    }
+  });
+
+  it("rejects missing, repeated or unknown plans, misplaced currency pairs and extra figures", () => {
+    const text = hetznerConditionOpening(BACKUP_PRICE_CONDITION);
+    const first = HETZNER_CLOUD_PLANS[0];
+    const second = HETZNER_CLOUD_PLANS[1];
+    const { eur, usd } = backupPrices(first);
+    const entry = `${first.sku} ${eur} (${usd})`;
+    for (const changed of [
+      text.replace(entry, ""),
+      `${text} ${entry}`,
+      text.replace(first.sku, "CPX999"),
+      text.replace(first.sku, second.sku).replace(`${second.sku} ${backupPrices(second).eur}`, `${first.sku} ${backupPrices(second).eur}`),
+      text.replace(entry, `${first.sku} ${usd} (${eur})`),
+      `${text} €999`,
+      `${text} $999`,
+      text.replace("20%", "21%"),
+    ]) assert.throws(() => assertBackupPrices(changed), { code: "ERR_ASSERTION" });
   });
 
   it("price snapshots per GB, with an example derived from that price", () => {
