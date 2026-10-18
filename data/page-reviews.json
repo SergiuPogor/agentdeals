@@ -3128,12 +3128,12 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": false,
-      "table_figures": 90,
+      "table_figures": 95,
       "table_figures_from_records": 39,
       "tables": [
         {
           "label": "Comparison Table",
-          "figures": 51,
+          "figures": 56,
           "from_records": 0
         },
         {

@@ -53,8 +53,11 @@ function citedUrls(html: string): string[] {
   );
 }
 
-function entriesOn(html: string, route: string): string[] {
-  return html.split(new RegExp(`<div class="${ENTRY_CLASS[route]}[^"]*"`)).slice(1);
+function entriesOn(html: string, route: string, previews = false): string[] {
+  const markers = [...html.matchAll(new RegExp(`<div class="(${ENTRY_CLASS[route]}|(?:pc|chg)-preview)\\b[^"]*"`, "g"))];
+  return markers.flatMap((entry, i) => entry[1] === ENTRY_CLASS[route] || previews
+    ? [html.slice(entry.index!, markers[i + 1]?.index)]
+    : []);
 }
 
 function startServer(env: Record<string, string>): Promise<{ proc: ChildProcess; port: number }> {
@@ -374,7 +377,7 @@ describe("a record with no source says so where a record with one is cited", () 
   for (const route of CHANGE_LOG_ROUTES) {
     it(`links the source of the sourced record on ${route}`, () => {
       const html = bodies.get(route)!;
-      assert.deepStrictEqual(citedUrls(html), [SOURCE]);
+      assert.deepStrictEqual(citedUrls(html), [SOURCE, SOURCE]);
       const tag = citationTags(html)[0];
       assert.ok(tag.includes('target="_blank"'), tag);
       assert.match(tag, /rel="[^"]*\bnoopener\b[^"]*"/, tag);
@@ -403,6 +406,19 @@ describe("a record with no source says so where a record with one is cited", () 
       assert.strictEqual(cited, 1, `${route} cites ${cited} of 3 entries`);
     });
   }
+
+  for (const route of CHANGE_LOG_ROUTES) it(`gives every summary card on ${route} its own source link or missing-source notice`, () => {
+    const entries = entriesOn(bodies.get(route)!, route, true);
+    assert.strictEqual(entries.length, 6);
+    for (const vendor of [CITED, UNCITED, BLANK]) {
+      const representations = entries.filter(entry => entry.includes(`${vendor} cut its free storage.`));
+      assert.strictEqual(representations.length, 2);
+      for (const entry of representations) {
+        assert.deepStrictEqual(citedUrls(entry), vendor === CITED ? [SOURCE] : []);
+        assert.strictEqual(entry.includes(`class="${UNSOURCED_NOTE_CLASS}"`), vendor !== CITED);
+      }
+    }
+  });
 
   it("leaves the citation out of the machine-readable entry that has no source", () => {
     const list = [...bodies.get("/changes")!.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]

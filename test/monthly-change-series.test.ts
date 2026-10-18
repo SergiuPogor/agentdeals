@@ -22,8 +22,6 @@ const INJECTED_MONTH = "2026-02";
 const INJECTED_DATE = `${INJECTED_MONTH}-15`;
 const INJECTED_COUNT = 40;
 
-const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
 const DISCOVERY_SERIES_LEAD = discoveryMonthSeriesHeading(1).split(" (")[0];
 
 interface StoredChange {
@@ -85,25 +83,15 @@ function startServer(changesPath?: string): Promise<{ proc: ChildProcess; port: 
   });
 }
 
-function monthKeyFromHeading(heading: string): string | null {
-  const m = heading.match(/^(\w+) (\d{4})$/);
-  if (!m) return null;
-  const index = MONTH_NAMES.indexOf(m[1]);
-  if (index < 0) return null;
-  return `${m[2]}-${String(index + 1).padStart(2, "0")}`;
-}
-
 function changeLogMonths(body: string): Map<string, number> {
   const months = new Map<string, number>();
-  for (const group of body.split(/<h2 class="month-heading"[^>]*>/).slice(1)) {
-    const heading = group.slice(0, group.indexOf("<"));
-    const key = monthKeyFromHeading(heading);
-    if (!key) continue;
-    const entries = [...group.matchAll(/<div class="(chg-entry[^"]*)"/g)];
-    months.set(
-      key,
-      entries.filter(([, classes]) => NOT_A_TRACKED_CHANGE.every(mark => !classes.includes(mark))).length,
-    );
+  for (const entry of body.matchAll(/<div class="(chg-entry[^"]*)"([^>]*)>([\s\S]*?)(?=<div class="(?:chg-entry|chg-preview)|$)/g)) {
+    if ([...NOT_A_TRACKED_CHANGE, "chg-undated"].some(mark => entry[1].includes(mark))) continue;
+    const date = entry[2].match(/data-event-date="(\d{4}-\d{2}-\d{2})"/)?.[1]
+      ?? entry[3].match(/<div class="chg-date">[\s\S]*?(\d{4}-\d{2}-\d{2})[\s\S]*?<\/div>/)?.[1];
+    assert.ok(date, "a dated canonical entry has no effective date");
+    const month = date.slice(0, 7);
+    months.set(month, (months.get(month) ?? 0) + 1);
   }
   return months;
 }
@@ -137,6 +125,17 @@ const SURFACES = [
 ];
 
 describe("the month a change is counted in", () => {
+  it("counts canonical events across sections using their original dates, without summaries or discoveries", () => {
+    const html = `
+      <section class="latest-section"><div class="chg-preview"><div class="chg-date">effective 2026-01-01</div></div></section>
+      <section class="upcoming-section"><div class="chg-entry" data-event-date="2026-12-15"><div class="chg-date">effective 2030-05-01</div></div></section>
+      <div class="month-group"><h2 class="month-heading">January 2026</h2><div class="chg-entry"><div class="chg-date">effective 2026-01-01</div></div></div>
+      <div class="month-group"><div class="chg-preview"><div class="chg-date">effective 2026-03-05</div></div></div>
+      <div class="chg-entry chg-undated"><div class="chg-date chg-date-unknown">discovered 2026-02-15</div></div>
+      <div class="chg-entry chg-resolved"><div class="chg-date">effective 2026-03-01</div></div>`;
+    assert.deepStrictEqual(Object.fromEntries(changeLogMonths(html)), { "2026-12": 1, "2026-01": 1 });
+  });
+
   it("puts a record in the effective series only when its date is the date the terms changed", () => {
     const changes = storedChanges();
     const { effective, discovered } = monthlyChangeSeries(changes as never);

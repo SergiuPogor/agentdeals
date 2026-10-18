@@ -60,7 +60,7 @@ const WITHDRAWN = [
 const PROGRAMMES: Record<string, [string, string, string, string]> = {
   "AWS Activate": ["$1K–$5K (Founders), up to $200K (Portfolio)", "Pre-Series B, founded in the last 10 years, AWS account on a paid plan. Founders: self-funded. Portfolio: needs an Activate Provider Org ID.", "Activate credits expire on a date shown in the AWS Billing console.", "One award per approved application; a later, larger award pays only the difference"],
   "Google Cloud for Startups": ["$2K (Start), up to $200K (Scale), up to $350K (Scale AI)", "Start: no funding yet but plans to raise venture funding soon, founded within 24 months, working MVP; Scale: VC funding from pre-seed to Series A (Series A within the last 12 months; angel money does not count), founded within 5 years.", "12 months (Start), 2 years (Scale)", "Scale: year 1 covers usage up to $100K ($250K for AI); year 2 covers 20% of spend, up to $100K more"],
-  "Microsoft for Startups (formerly Founders Hub)": ["$200 on sign-up; up to $150K as Azure usage grows or with an Investor Network partner", "B2B software, AI or tech startups, pre-seed through Series B, privately held; no investor needed. Business verification and sustained Azure usage unlock more credits, and Investor Network backing starts most startups at $100K.", "Activate within 90 days; the first $200 lasts 90 days, the verification credit 180 days, and credits from the $25K milestone up to 2 years", "Released in milestones as you verify the business and use more Azure"],
+  "Microsoft for Startups (formerly Founders Hub)": ["Up to $200 on joining Microsoft for Startups; up to $150K over time as Azure usage grows; up to $200K for Investor Network-backed startups. Startups new to Azure can start with $1,000 for 90 days and $4,000 more after business verification.", "B2B software, AI or tech startups, pre-seed through Series B, privately held; no investor needed. Business verification and sustained Azure usage unlock more credits, and Investor Network backing starts most startups at $100K.", "Activate Microsoft for Startups credits within 90 days; the first $200 lasts 90 days, the verification credit 180 days, and credits from the $25K milestone up to 2 years. The Azure startup credit offer's $1,000 lasts 90 days and its $4,000 lasts 180 days after business verification.", "Released in milestones as you verify the business and use more Azure"],
   "DigitalOcean Startups": ["Credits for 12 months; amount varies, up to $10,000 a month", "Raised $10M or less; apply through a partner or directly", "12 months", ""],
   "Cloudflare Startup Program": ["$10K, $100K or $350K by tier", "Tier 3 ($10K): bootstrapped or self-funded, under $1M raised; Tiers 2 ($100K) and 1 ($350K): funded by an affiliated partner, Tier 1 with $5M+ raised.", "1 year or until used up", "Lump sum per tier"],
   "Stripe Atlas": ["Over $50K in partner discounts, plus $2.5K of Stripe credits", "Companies incorporated through Atlas ($500, then $100 a year after the first year)", "Varies by perk; Stripe credits last the first year", "Available once the Atlas application is approved"],
@@ -129,7 +129,7 @@ const STATED_ON_THE_GUIDE = [
   "Revenue & Funding Caps Google Scale requires VC funding; angel money doesn't count. PostHog's YC deal has a $25M fundraising cap and renews only while you stay under it.",
   "Overlapping Perks Problem Brex, Mercury, Ramp, SVB and Stripe Atlas all offer AWS Activate credits. A later AWS Activate award pays only the difference, so several $5,000 perks give $5,000 in total. Mercury states that credits are not added on.",
   "Funded startup, three clouds (up to $500K) Google Scale (up to $200K) + AWS Activate Portfolio (up to $200K) + Cloudflare Tier 2 ($100K). Requires VC funding and an affiliated partner.",
-  "Bootstrapped founder ($63K+) AWS Activate Founders offers $1,000. Google Start offers $2,000. Microsoft offers $200 on sign-up, with more after verification. Cloudflare Tier 3 offers $10,000. PostHog offers $50,000 for startups under 2 years old. None needs funding.",
+  "Bootstrapped founder ($63K+) AWS Activate Founders offers $1,000. Google Start offers $2,000. Microsoft offers $1,000 for 90 days to startups new to Azure, then $4,000 more after business verification. Microsoft for Startups gives up to $200 at once, with more at milestones. Cloudflare Tier 3 offers $10,000. PostHog offers $50,000 for startups under 2 years old. None needs funding.",
   "YC / Accelerator company (up to $350K) AWS Activate Portfolio (up to $200K) + Google Scale (up to $100K in the first year) + PostHog ($50K) = up to $350K in the first year.",
   "AI-focused startup (up to $550K, plus Kiro) Google Scale AI (up to $350K) + Kiro (up to one year of Kiro Pro+, $40 per user a month) + AWS Activate Portfolio (up to $200K). Apply for Kiro first: it excludes startups with active Activate credits.",
   "Careful: their AWS credits don't add up; a later Activate award pays only the difference.",
@@ -137,7 +137,7 @@ const STATED_ON_THE_GUIDE = [
 ];
 
 const FAQ_ANSWERS = [
-  "The largest published offers are Google Scale AI and Cloudflare Tier 1, each up to $350,000. Then Google Scale and AWS Activate Portfolio, up to $200,000 each. Then Microsoft for Startups, up to $150,000. Most require VC funding or an affiliated partner.",
+  "The largest published offers are Google Scale AI and Cloudflare Tier 1, each up to $350,000. Google Scale, AWS Activate Portfolio and Microsoft for Startups with an Investor Network partner each offer up to $200,000. Microsoft for Startups without one offers up to $150,000. Most require VC funding or an affiliated partner.",
   "Yes. Programs on different platforms stack: Google Scale (up to $200K), AWS Activate Portfolio (up to $200K) and Cloudflare Tier 2 ($100K) can combine to $500K. Credits from fintech platforms come from the same programmes: a later AWS Activate award pays only the difference, and Stripe Atlas's Cloudflare and Azure credits are Cloudflare's and Microsoft's own programmes.",
   "Programmes that need no funding: AWS Founders, Google Start, Microsoft, Cloudflare Tier 3, PostHog, Amplitude, DigitalOcean Startups and Kiro. Programmes that need VC backing or an affiliated partner: Google Scale, AWS Portfolio, Cloudflare Tiers 1 and 2. Banking programs (Brex, Mercury, Ramp, SVB) need an account; Stripe Atlas needs incorporation through Atlas.",
   "Yes, startup credits expire. AWS Activate credits expire on a date shown in the AWS Billing console.",
@@ -154,8 +154,8 @@ const STATED_ELSEWHERE: Record<string, string[]> = {
     "Google for Startups offers up to $350K to AI-first startups. Its Scale tier needs VC funding; its $2K Start tier needs none.",
   ],
   "/azure-free-tier-2026": [
-    "AWS Activate: up to $200K credits (Portfolio needs an Activate Provider Org ID). Google for Startups: up to $200K, or $350K for AI-first startups (VC funding, pre-seed to Series A). Microsoft for Startups: up to $150K with no investor needed.",
-    "B2B tech startups get $200 on sign-up and up to $150K as they verify the business and use Azure. GitHub Enterprise and Microsoft 365 offers are for startups backed by Microsoft's Investor Network.",
+    "AWS Activate: up to $200K credits (Portfolio needs an Activate Provider Org ID). Google for Startups: up to $200K, or $350K for AI-first startups (VC funding, pre-seed to Series A). Microsoft for Startups: up to $150K with no investor needed, or up to $200K for startups backed by its Investor Network.",
+    "Microsoft for Startups requires an application on its website and gives up to $200 in credits immediately while eligibility is verified. Startups get up to $150K in credits over time as they demonstrate verified progress, service adoption and Azure usage. Startups backed by Microsoft's Investor Network may unlock up to $200K. To be eligible, the startup must own a software product, be privately held and for-profit, have no Series C funding or later, and no more than $350,000 in lifetime free Azure credits. GitHub Enterprise and Microsoft 365 offers are for startups backed by Microsoft's Investor Network.",
     "Investor Network-backed startups also get GitHub Enterprise and Visual Studio Enterprise offers.",
   ],
   "/digitalocean-free-tier-2026": [
@@ -356,6 +356,16 @@ describe("the startup credits guide states each programme's terms as the program
     const structured = structuredStrings(html);
     const inStructuredData = (answer: string) => structured.some((s) => s === answer || s.startsWith(`${answer} `));
     assert.deepStrictEqual(FAQ_ANSWERS.filter((answer) => !text.includes(answer) || !inStructuredData(answer)), []);
+  });
+
+  it("states both credit offers' expiry windows in the guide and its FAQ", () => {
+    const html = served.get("/startup-credits")!;
+    const claim = "The Azure startup credit offer's $1,000 lasts 90 days and its $4,000 lasts 180 days after business verification.";
+    const text = readable(html);
+    const expirySection = html.slice(html.indexOf("Credit Expiry Timelines"), html.indexOf("Vesting Schedules"));
+    assert.ok(readable(expirySection).includes(claim));
+    assert.ok(readable(html.slice(html.indexOf('id="faq"'))).includes(claim));
+    assert.ok(structuredStrings(html).some(line => line.includes(claim)));
   });
 
   it("lists each cloud's startup programme on the cloud comparison as the programme states it", () => {

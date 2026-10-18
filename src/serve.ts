@@ -106,7 +106,7 @@ import { countsDownTo, shutdownDeadlineHtml } from "./shutdown-deadline.js";
 import { forecastShutdownsWithoutACard, whatEnds, type RecordACardCovers } from "./forecast-shutdowns.js";
 import { deadlineTextsOf, quotesTheWholeDescription, statedDeadlines, type StatedDeadline } from "./stated-deadlines.js";
 import { COMING_UP_HEADING, lastDayComingUp } from "./coming-up.js";
-import { UPCOMING_CHANGES_HEADING, UPCOMING_CHANGES_INTRO, splitAtTheDayServed, upcomingDateOf, atUpcomingDate } from "./upcoming-changes.js";
+import { UPCOMING_CHANGES_HEADING, UPCOMING_CHANGES_INTRO, LATEST_PRICING_CHANGES_HEADING, LATEST_PRICING_CHANGES_SHOWN, splitAtTheDayServed, upcomingDateOf, atUpcomingDate } from "./upcoming-changes.js";
 import { createRegistrationLimiter, rateLimitHeaders } from "./rate-limit.js";
 import { offerForSlug, vendorRates, cheapestRate, dearestRate, spanOfRates, formatRate, formatRateSpan, monthlyTokenCost, formatDollars, amountValue, type ModelRate } from "./model-rates.js";
 import { DECLARED_FIGURE_READS, READ_DATES_THAT_ARE_NOT_FIGURE_READS, STALE_FACT_PAGES_BASELINE, TABLE_STALENESS_DISCLOSURES, declaredFigureReadsFor, factsOutdatedBy, linkifyVerdictBlocks, newestChangeBySlug, overdueReport, pageCompiledClause, pageDataProvenance, pageDateModified, pageFigureSource, tabulatedVendorSlots, tabulatedVendors, utcToday, verdictsOutdatedBy } from "./page-reviews.js";
@@ -27890,7 +27890,7 @@ function buildStartupCreditsPage(): string {
   }).join("\n\n  ");
 
   const hiddenConstraintCards = [
-    { title: "Credit Expiry Timelines", desc: "AWS Activate credits expire on a date shown in the AWS Billing console. Google's Start tier credits last 12 months; Scale tier credits last two years. Microsoft for Startups credits must be activated within 90 days; the first $200 lasts 90 days and the business-verification credit 180 days, and from the $25K milestone credits last up to two years. Cloudflare credits last one year or until used up. PostHog credits last 12 months from application. Kiro credits expire one year after they are issued." },
+    { title: "Credit Expiry Timelines", desc: "AWS Activate credits expire on a date shown in the AWS Billing console. Google's Start tier credits last 12 months; Scale tier credits last two years. Microsoft for Startups credits must be activated within 90 days; the first $200 lasts 90 days and the business-verification credit 180 days, and from the $25K milestone credits last up to two years. The Azure startup credit offer's $1,000 lasts 90 days and its $4,000 lasts 180 days after business verification. Cloudflare credits last one year or until used up. PostHog credits last 12 months from application. Kiro credits expire one year after they are issued." },
     { title: "Vesting Schedules", desc: "AWS Activate gives one award per approved application. Google's Scale tier covers 100% of usage up to $100,000 in year 1, then 20% of spend, up to $100,000 more, in year 2. Microsoft for Startups releases credits in milestones." },
     { title: "Revenue & Funding Caps", desc: "Google Scale requires VC funding; angel money doesn't count. PostHog's YC deal has a $25M fundraising cap and renews only while you stay under it." },
     { title: "Platform Lock-in After Credits", desc: "Credits only work on the issuing platform. After credits expire, you\u2019re on production pricing with established data gravity. Migration costs can exceed the original credit value." },
@@ -27901,9 +27901,9 @@ function buildStartupCreditsPage(): string {
   const changeTimelineRows = startupChangesByDayServed.inEffect.map(changeRowNamingTheVendorHtml).join("\n        ");
 
   const faqEntries = [
-    { q: "What are the highest-value startup credit programs?", a: "The largest published offers are Google Scale AI and Cloudflare Tier 1, each up to $350,000. Then Google Scale and AWS Activate Portfolio, up to $200,000 each. Then Microsoft for Startups, up to $150,000. Most require VC funding or an affiliated partner." },
+    { q: "What are the highest-value startup credit programs?", a: "The largest published offers are Google Scale AI and Cloudflare Tier 1, each up to $350,000. Google Scale, AWS Activate Portfolio and Microsoft for Startups with an Investor Network partner each offer up to $200,000. Microsoft for Startups without one offers up to $150,000. Most require VC funding or an affiliated partner." },
     { q: "Can I stack multiple startup programs?", a: "Yes. Programs on different platforms stack: Google Scale (up to $200K), AWS Activate Portfolio (up to $200K) and Cloudflare Tier 2 ($100K) can combine to $500K. Credits from fintech platforms come from the same programmes: a later AWS Activate award pays only the difference, and Stripe Atlas's Cloudflare and Azure credits are Cloudflare's and Microsoft's own programmes." },
-    { q: "Do startup credits expire?", a: "Yes, startup credits expire. AWS Activate credits expire on a date shown in the AWS Billing console. Google's Start tier credits last 12 months; Scale tier credits last two years. Microsoft for Startups credits must be activated within 90 days; the first $200 lasts 90 days and the business-verification credit 180 days, and from the $25K milestone credits last up to two years. Cloudflare credits last one year or until used up. PostHog credits last 12 months from application. Kiro credits expire one year after they are issued." },
+    { q: "Do startup credits expire?", a: "Yes, startup credits expire. AWS Activate credits expire on a date shown in the AWS Billing console. Google's Start tier credits last 12 months; Scale tier credits last two years. Microsoft for Startups credits must be activated within 90 days; the first $200 lasts 90 days and the business-verification credit 180 days, and from the $25K milestone credits last up to two years. The Azure startup credit offer's $1,000 lasts 90 days and its $4,000 lasts 180 days after business verification. Cloudflare credits last one year or until used up. PostHog credits last 12 months from application. Kiro credits expire one year after they are issued." },
     { q: "What do I need to qualify for startup credits?", a: "Programmes that need no funding: AWS Founders, Google Start, Microsoft, Cloudflare Tier 3, PostHog, Amplitude, DigitalOcean Startups and Kiro. Programmes that need VC backing or an affiliated partner: Google Scale, AWS Portfolio, Cloudflare Tiers 1 and 2. Banking programs (Brex, Mercury, Ramp, SVB) need an account; Stripe Atlas needs incorporation through Atlas." },
     { q: "Are startup credits worth the lock-in?", a: "Credits significantly lower early-stage cloud costs but create platform dependency. After credits expire, you're on full production pricing with established data gravity. Mitigate this by using credits for experimentation and development rather than production architecture. A multi-cloud strategy with credits from 2\u20133 providers reduces single-vendor risk." },
   ];
@@ -28096,7 +28096,7 @@ function buildStartupCreditsPage(): string {
     '\n' +
     '    <div class="verdict-item">\n' +
     '      <strong>Bootstrapped founder ($63K+)</strong>\n' +
-    '      <p>AWS Activate Founders offers $1,000. Google Start offers $2,000. Microsoft offers $200 on sign-up, with more after verification. Cloudflare Tier 3 offers $10,000. PostHog offers $50,000 for startups under 2 years old. None needs funding.</p>\n' +
+    '      <p>AWS Activate Founders offers $1,000. Google Start offers $2,000. Microsoft offers $1,000 for 90 days to startups new to Azure, then $4,000 more after business verification. Microsoft for Startups gives up to $200 at once, with more at milestones. Cloudflare Tier 3 offers $10,000. PostHog offers $50,000 for startups under 2 years old. None needs funding.</p>\n' +
     '    </div>\n' +
     '\n' +
     '    <div class="verdict-item">\n' +
@@ -34758,6 +34758,9 @@ ${globalNavCss()}
 
   <h2 id="trial">$200 Trial Credit</h2>
   <p class="section-intro">New accounts get $200 in Azure credits valid for 30 days. Unlike GCP's $300/90-day trial, Azure's credit expires faster. It does not cover Marketplace purchases or Spot VMs, and free trials start with zero GPU quota and aren't eligible for limit or quota increases.</p>
+  <p class="section-intro">To sign up for the <a href="https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account" rel="nofollow noopener">Azure free account</a>, you need a phone number, a non-prepaid credit or debit card (only credit cards in Hong Kong and Brazil), and a Microsoft or GitHub account. Your card verifies identity and is not charged, except for a temporary $1 authorization that is reversed. Only one account with free services and $200 credit is allowed per new customer.</p>
+  <p class="section-intro">If you are a full-time university student aged 18 or older without a credit card, use <a href="https://azure.microsoft.com/en-us/free/students" rel="nofollow noopener">Azure for Students</a>: $100 in credits to use within 12 months plus free services, with no credit card required. Sign up with your school email. It is for students at accredited degree-granting institutions, one subscription per student, renewable yearly.</p>
+
 
   <div style="overflow-x:auto">
   <table class="pricing-table">
@@ -34839,13 +34842,14 @@ ${globalNavCss()}
 
   <h2 id="startups">Azure for Startups</h2>
   <p class="section-intro">Microsoft offers some of the most generous startup programs in the industry.</p>
+  <p class="section-intro">Separately from Microsoft for Startups, new Azure customers can get <a href="https://learn.microsoft.com/en-us/startups/microsoft-for-startups/mfs-faqs" rel="nofollow noopener">Azure for Startups</a>: $1,000 in credits instantly with no application, up to $5,000 in total after business verification. Credits are valid for 90 days initially and 180 days post-verification. A credit card is required only for identity verification and usage beyond the credits.</p>
 
   <div class="verdict-box">
     <h3>Microsoft for Startups</h3>
 
     <div class="verdict-item">
       <strong>Up to $150K in Azure credits</strong>
-      <p>Free to join, no funding required. B2B tech startups get $200 on sign-up and up to $150K as they verify the business and use Azure. GitHub Enterprise and Microsoft 365 offers are for startups backed by Microsoft's Investor Network.</p>
+      <p><a href="https://learn.microsoft.com/en-us/startups/microsoft-for-startups/overview" rel="nofollow noopener">Microsoft for Startups</a> requires an application on its website and gives <a href="https://learn.microsoft.com/en-us/startups/microsoft-for-startups/getting-started-mfs" rel="nofollow noopener">up to $200 in credits immediately</a> while eligibility is verified. Startups get up to $150K in credits over time as they demonstrate verified progress, service adoption and Azure usage. Startups backed by Microsoft's Investor Network may unlock <a href="https://learn.microsoft.com/en-us/startups/benefits" rel="nofollow noopener">up to $200K</a>. To be eligible, the startup must own a software product, be privately held and for-profit, have no Series C funding or later, and no more than $350,000 in lifetime free Azure credits. GitHub Enterprise and Microsoft 365 offers are for startups backed by Microsoft's Investor Network.</p>
     </div>
 
     <div class="verdict-item">
@@ -34855,7 +34859,7 @@ ${globalNavCss()}
 
     <div class="verdict-item">
       <strong>How it compares</strong>
-      <p>AWS Activate: up to $200K credits (Portfolio needs an Activate Provider Org ID). Google for Startups: up to $200K, or $350K for AI-first startups (VC funding, pre-seed to Series A). Microsoft for Startups: up to $150K with no investor needed. See our <a href="/startup-credits">Startup Credits guide</a> for a full comparison of all programs.</p>
+      <p>AWS Activate: up to $200K credits (Portfolio needs an Activate Provider Org ID). Google for Startups: up to $200K, or $350K for AI-first startups (VC funding, pre-seed to Series A). Microsoft for Startups: up to $150K with no investor needed, or <a href="https://learn.microsoft.com/en-us/startups/benefits" rel="nofollow noopener">up to $200K</a> for startups backed by its Investor Network. See our <a href="/startup-credits">Startup Credits guide</a> for a full comparison of all programs.</p>
     </div>
   </div>
 
@@ -48966,7 +48970,7 @@ ${rows}
   </div>`;
 }
 
-function changeVendorIndexHtml(sections: ReturnType<typeof changeLogSections<DealChange>>): string {
+function changeVendorIndexHtml(sections: ReturnType<typeof changeLogSections<DealChange>>, today: string): string {
   const dated = [...sections.recentMonths, ...sections.olderMonths]
     .flatMap(group => group.changes)
     .sort((a, b) => b.date.localeCompare(a.date));
@@ -48977,7 +48981,7 @@ function changeVendorIndexHtml(sections: ReturnType<typeof changeLogSections<Dea
     const label = isIndexHousekeeping(change)
       ? INDEX_HOUSEKEEPING_BADGE
       : changeTypeBadge[change.change_type]?.label ?? change.change_type;
-    entries.push(`${escHtmlServer(label)} ${escHtmlServer(date)}`);
+    entries.push(`${escHtmlServer(label)} ${escHtmlServer(date)}${isEventDated(change) && change.date > today ? " (upcoming)" : ""}`);
     vendors.set(change.vendor, entries);
   }
   const lines = [...vendors].sort(([a], [b]) => a.localeCompare(b)).map(([vendor, entries]) =>
@@ -48991,6 +48995,17 @@ ${lines.join("\n")}
   </section>`;
 }
 
+type ChangeTimelineEntry = DealChange & { originalRecord?: DealChange };
+
+function retirementTimelineEntries(changes: DealChange[]): ChangeTimelineEntry[] {
+  const vendorChanges = changesTheVendorMade(changes);
+  return vendorChanges.filter(isEventDated).flatMap(change => {
+    const date = upcomingDateOf(change, change.date);
+    if (date <= change.date || vendorChanges.some(other => isEventDated(other) && other.vendor === change.vendor && other.change_type === change.change_type && other.date === date)) return [];
+    return [{ ...change, date, originalRecord: change }];
+  });
+}
+
 function buildPricingChangesPage(): string {
   const allChanges = loadDealChanges();
   const { dated: eventDated, discovered: undatedChanges } = partitionByDateProvenance(allChanges);
@@ -48998,11 +49013,13 @@ function buildPricingChangesPage(): string {
   const currentYear = new Date().getFullYear();
 
   const sorted = [...eventDated].sort((a, b) => b.date.localeCompare(a.date));
-  const sections = changeLogSections(allChanges, today);
+  const indexSections = changeLogSections(allChanges, today);
+  const retirementEntries = retirementTimelineEntries(allChanges);
+  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
 
   const filterCategory: Record<string, string> = CHANGE_DIRECTION;
 
-  function buildChangeEntry(c: typeof allChanges[0]): string {
+  function buildChangeEntry(c: ChangeTimelineEntry, originalDate = c.originalRecord?.date ?? c.date, preview = false): string {
     const housekeeping = isIndexHousekeeping(c);
     const badge = housekeeping
       ? { label: INDEX_HOUSEKEEPING_BADGE, color: INDEX_HOUSEKEEPING_BADGE_COLOR }
@@ -49022,11 +49039,12 @@ function buildPricingChangesPage(): string {
       : "";
     const vendorCat = (c.category || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
     const changeYear = dated ? c.date.slice(0, 4) : "";
-    return `      <div class="pc-entry${isUpcoming ? " pc-upcoming" : ""}${dated ? "" : " pc-undated"}${isNoLongerInForce(c) ? " pc-resolved" : ""}${changeIsUncited(c) ? " pc-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}" id="${changeAnchor(c)}" data-type="${escHtmlServer(c.change_type)}" data-impact="${escHtmlServer(c.impact)}" data-category="${category}" data-vendor-cat="${vendorCat}" data-year="${changeYear}">
+    const entryAnchor = originalDate === c.date ? changeAnchor(c) : `${changeAnchor(c)}-retirement-${originalDate}`;
+    return `      <div class="${preview ? "pc-preview" : "pc-entry"}${isUpcoming ? " pc-upcoming" : ""}${dated ? "" : " pc-undated"}${isNoLongerInForce(c) ? " pc-resolved" : ""}${changeIsUncited(c) ? " pc-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}" ${originalDate !== c.date ? `data-event-date="${escHtmlServer(originalDate)}" ` : ""}${preview ? "" : `id="${escHtmlServer(entryAnchor)}" `}data-type="${escHtmlServer(c.change_type)}" data-impact="${escHtmlServer(c.impact)}" data-category="${category}" data-vendor-cat="${vendorCat}" data-year="${changeYear}">
         <div class="pc-left">
           <div class="pc-date${dated ? "" : " pc-date-unknown"}">${changeEntryDateLabelHtml(c, escHtmlServer)}</div>
           ${isUpcoming ? `<div class="pc-upcoming-badge">upcoming</div>` : ""}
-          <a href="#${changeAnchor(c)}" class="pc-anchor" title="Link to this change">#</a>
+          <a href="#${escHtmlServer(entryAnchor)}" class="pc-anchor" title="Link to this change">#</a>
         </div>
         <div class="pc-right">
           <div class="pc-head">
@@ -49063,7 +49081,8 @@ ${altHtml}
   const ytdNetLabel = ytdNet > 0 ? "net positive" : ytdNet < 0 ? "net negative" : "neutral";
   const ytdNetColor = ytdNet > 0 ? "#3fb950" : ytdNet < 0 ? "#f85149" : "#8b949e";
 
-  const upcomingChanges = countable.map(c => atUpcomingDate(c, today)).filter(c => c.date >= today);
+  const latest = changesTheVendorMade(trackedChanges<ChangeTimelineEntry>([...sorted, ...retirementEntries])).filter(c => c.date <= today).sort((a, b) => b.date.localeCompare(a.date)).slice(0, LATEST_PRICING_CHANGES_SHOWN);
+  const upcomingChanges = countable.map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date >= today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
 
   const vendorCategories = [...new Set(sorted.map(c => c.category || "").filter(Boolean))].sort();
   const years = [...new Set(sorted.map(c => c.date.slice(0, 4)))].sort().reverse();
@@ -49257,11 +49276,11 @@ h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5
 .pc-filter-count{font-size:.75rem;color:var(--text-dim);margin-top:.5rem;font-family:var(--mono)}
 .month-group{margin-bottom:2rem}
 .month-heading{font-family:var(--serif);font-size:1.15rem;color:var(--text);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
-.pc-entry{display:flex;gap:1rem;padding:.75rem;margin-bottom:.5rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);transition:border-color .2s,background .2s}
+.pc-entry,.pc-preview{display:flex;gap:1rem;padding:.75rem;margin-bottom:.5rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);transition:border-color .2s,background .2s}
 .pc-resolved{opacity:.6;border-style:dashed}
 .pc-unsourced{opacity:.75}
 .change-source:hover{color:var(--accent)}
-.pc-entry:hover{border-color:var(--accent)}
+.pc-entry:hover,.pc-preview:hover{border-color:var(--accent)}
 .pc-entry:target{border-color:var(--accent);background:var(--accent-glow)}
 .pc-upcoming{border-color:rgba(88,166,255,0.3)}
 .pc-undated{border-style:dashed}
@@ -49271,7 +49290,7 @@ h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5
 .stat-card-undated .stat-value{color:#d29922}
 .pc-upcoming-badge{font-family:var(--mono);font-size:.65rem;color:#58a6ff;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
 .pc-anchor{font-family:var(--mono);font-size:.7rem;color:var(--text-dim);opacity:0;transition:opacity .15s}
-.pc-entry:hover .pc-anchor{opacity:1}
+.pc-entry:hover .pc-anchor,.pc-preview:hover .pc-anchor{opacity:1}
 .pc-anchor:hover{color:var(--accent);text-decoration:none}
 .pc-right{flex:1;min-width:0}
 .pc-head{display:flex;align-items:center;gap:.5rem;margin-bottom:.25rem;flex-wrap:wrap}
@@ -49313,7 +49332,7 @@ h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5
 .cross-links li a{display:inline-block;padding:.25rem .6rem;border:1px solid var(--border);border-radius:6px;font-size:.8rem;color:var(--text-muted)}
 .cross-links li a:hover{border-color:var(--accent);color:var(--text);text-decoration:none}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
-@media(max-width:768px){h1{font-size:1.5rem}.stats-bar{flex-direction:column}.trend-grid{grid-template-columns:repeat(2,1fr)}.pc-entry{flex-direction:column;gap:.25rem}.pc-left{text-align:left;min-width:auto;display:flex;gap:.75rem;align-items:center}.pc-filter-group{flex-direction:column;align-items:flex-start}.pc-anchor{opacity:1}}
+@media(max-width:768px){h1{font-size:1.5rem}.stats-bar{flex-direction:column}.trend-grid{grid-template-columns:repeat(2,1fr)}.pc-entry,.pc-preview{flex-direction:column;gap:.25rem}.pc-left{text-align:left;min-width:auto;display:flex;gap:.75rem;align-items:center}.pc-filter-group{flex-direction:column;align-items:flex-start}.pc-anchor{opacity:1}}
 ${globalNavCss()}
 </style>
 </head>
@@ -49355,11 +49374,21 @@ ${undatedTileHtml(undatedCounted)}
     </div>
     <div class="trend-net" style="color:${ytdNetColor}">Net: <strong>${ytdNet > 0 ? "+" : ""}${ytdNet}</strong> (${ytdNetLabel}) &mdash; ${ytdChanges.length} changes tracked in ${currentYear}</div>
   </div>
-${changeVendorIndexHtml(sections)}
+${changeVendorIndexHtml(indexSections, today)}
+  <section class="latest-section" id="latest">
+    <h2 class="month-heading">${LATEST_PRICING_CHANGES_HEADING}</h2>
+    ${datedSectionNoticeHtml(
+      `${namedOnceItsDateArrived("A change", today)} Only the ${LATEST_PRICING_CHANGES_SHOWN} newest are shown here; as later changes take effect, older entries leave this summary.`,
+      [{ when: "Every entry remains in", text: "the full timeline below", href: "/pricing-changes" }],
+      escHtmlServer,
+      ' class="month-note dated-rule"',
+    )}
+${latest.map(c => buildChangeEntry(c, c.originalRecord?.date ?? c.date, true)).join("\n")}
+  </section>
 ${upcomingChanges.length > 0 ? `
   <div class="upcoming-section" id="upcoming">
-    <h2>Upcoming Changes</h2>
-    <p class="upcoming-intro">Announced pricing changes with future effective dates. Plan ahead.</p>
+    <h2>${UPCOMING_CHANGES_HEADING}</h2>
+    <p class="upcoming-intro">${UPCOMING_CHANGES_INTRO}</p>
     ${datedSectionNoticeHtml(
       namedWhileNotBefore("A change", today),
       [
@@ -49368,7 +49397,7 @@ ${upcomingChanges.length > 0 ? `
       escHtmlServer,
       ' class="upcoming-intro dated-rule"',
     )}
-${upcomingChanges.map(c => buildChangeEntry(c)).join("\n")}
+${upcomingChanges.map(c => buildChangeEntry(c.shown, c.original.date)).join("\n")}
   </div>
 ` : ""}
 ${filterButtonsHtml}
@@ -49462,8 +49491,14 @@ function buildChangesPage(): string {
   const undatedCounted = trackedChanges(undatedChanges).length;
 
   const sorted = [...eventDated].sort((a, b) => b.date.localeCompare(a.date));
-  const sections = changeLogSections(allChanges, today);
-  const inPageOrder = changeLogInPageOrder(sections);
+  const indexSections = changeLogSections(allChanges, today);
+  const retirementEntries = retirementTimelineEntries(allChanges);
+  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
+  const countable = changesTheVendorMade(trackedChanges(sorted));
+  const latest = changesTheVendorMade(trackedChanges<ChangeTimelineEntry>([...sorted, ...retirementEntries])).filter(c => c.date <= today).sort((a, b) => b.date.localeCompare(a.date)).slice(0, LATEST_PRICING_CHANGES_SHOWN);
+  const upcomingOriginals = changesTheVendorMade(sorted).filter(c => c.date >= today).sort((a, b) => upcomingDateOf(a, today).localeCompare(upcomingDateOf(b, today)));
+  const upcomingChanges = changesTheVendorMade(sorted).map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date >= today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
+  const inPageOrder = [...upcomingOriginals, ...changeLogInPageOrder(sections).filter(c => !c.originalRecord)];
 
   const byMonth = new Map<string, typeof sorted>();
   for (const c of sorted) {
@@ -49478,7 +49513,7 @@ function buildChangesPage(): string {
     if (anchor && !anchorHolder.has(anchor)) anchorHolder.set(anchor, c);
   }
 
-  function buildChangeEntry(c: typeof allChanges[0]): string {
+  function buildChangeEntry(c: ChangeTimelineEntry, preview = Boolean(c.originalRecord), original = c.originalRecord ?? c): string {
     const housekeeping = isIndexHousekeeping(c);
     const badge = housekeeping
       ? { label: INDEX_HOUSEKEEPING_BADGE, color: INDEX_HOUSEKEEPING_BADGE_COLOR }
@@ -49487,11 +49522,11 @@ function buildChangesPage(): string {
     const dated = isEventDated(c);
     const isUpcoming = dated && c.date >= today;
     const anchor = changeLogAnchorFor(c.vendor);
-    const anchorAttr = anchor && anchorHolder.get(anchor) === c ? ` id="${anchor}"` : "";
+    const anchorAttr = !preview && anchor && anchorHolder.get(anchor) === original ? ` id="${anchor}"` : "";
     const altHtml = c.alternatives && c.alternatives.length > 0
       ? `<div class="chg-alts"><span class="chg-alts-label">Alternatives:</span> ${c.alternatives.map(a => changeVendorLinkHtml(a)).join(", ")}</div>`
       : "";
-    return `      <div class="chg-entry${isUpcoming ? " chg-upcoming" : ""}${dated ? "" : " chg-undated"}${isNoLongerInForce(c) ? " chg-resolved" : ""}${changeIsUncited(c) ? " chg-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}${isACorrectionToOurOwnRecord(c) ? ` ${CORRECTION_TO_OUR_OWN_RECORD_CLASS}` : ""}"${anchorAttr}>
+    return `      <div class="${preview ? "chg-preview" : "chg-entry"}${isUpcoming ? " chg-upcoming" : ""}${dated ? "" : " chg-undated"}${isNoLongerInForce(c) ? " chg-resolved" : ""}${changeIsUncited(c) ? " chg-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}${isACorrectionToOurOwnRecord(c) ? ` ${CORRECTION_TO_OUR_OWN_RECORD_CLASS}` : ""}"${original.date !== c.date ? ` data-event-date="${escHtmlServer(original.date)}"` : ""}${anchorAttr}>
         <div class="chg-left">
           <div class="chg-date${dated ? "" : " chg-date-unknown"}">${changeEntryDateLabelHtml(c, escHtmlServer)}</div>
           ${isUpcoming ? `<div class="chg-upcoming-badge">upcoming</div>` : ""}
@@ -49510,7 +49545,7 @@ ${altHtml}
       </div>`;
   }
 
-  const upcomingCount = changesTheVendorMade(trackedChanges(sorted)).filter(c => c.date >= today).length;
+  const upcomingCount = countable.filter(c => upcomingDateOf(c, today) >= today).length;
   const removedCount = changesTheVendorMade(counted).filter(endsAFreeTier).length;
   const entriesListed = inPageOrder.length;
 
@@ -49584,8 +49619,8 @@ h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5
 .rule-table th{text-align:left;color:var(--text-dim);font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;padding:.4rem .5rem;border-bottom:1px solid var(--border)}
 .rule-table td{padding:.45rem .5rem;border-bottom:1px solid var(--border);color:var(--text-muted);vertical-align:top}
 .rule-table td:first-child{font-family:var(--mono);color:var(--text);white-space:nowrap}
-.chg-entry{display:flex;gap:1rem;padding:.75rem;margin-bottom:.5rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);transition:border-color .2s}
-.chg-entry:hover{border-color:var(--accent)}
+.chg-entry,.chg-preview{display:flex;gap:1rem;padding:.75rem;margin-bottom:.5rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);transition:border-color .2s}
+.chg-entry:hover,.chg-preview:hover{border-color:var(--accent)}
 .chg-upcoming{border-color:rgba(88,166,255,0.3)}
 .chg-undated{border-style:dashed}
 .chg-resolved{opacity:.6;border-style:dashed}
@@ -49612,7 +49647,7 @@ h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5
 .mcp-cta p{color:var(--text-muted);font-size:.9rem;margin-bottom:.5rem}
 .mcp-cta a{font-weight:600}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
-@media(max-width:768px){h1{font-size:1.5rem}.stats-bar{flex-direction:column}.chg-entry{flex-direction:column;gap:.25rem}.chg-left{text-align:left;min-width:auto;display:flex;gap:.75rem;align-items:center}}
+@media(max-width:768px){h1{font-size:1.5rem}.stats-bar{flex-direction:column}.chg-entry,.chg-preview{flex-direction:column;gap:.25rem}.chg-left{text-align:left;min-width:auto;display:flex;gap:.75rem;align-items:center}}
 ${globalNavCss()}
 </style>
 </head>
@@ -49651,7 +49686,30 @@ ${undatedTileHtml(undatedCounted)}
 
 ${changeLogFreshnessNote()}
 ${whatCountsAsAChangeHtml(dealChanges, entriesListed)}
-${changeVendorIndexHtml(sections)}
+${changeVendorIndexHtml(indexSections, today)}
+  <section class="latest-section" id="latest">
+    <h2 class="month-heading">${LATEST_PRICING_CHANGES_HEADING}</h2>
+    ${datedSectionNoticeHtml(
+      `${namedOnceItsDateArrived("A change", today)} Only the ${LATEST_PRICING_CHANGES_SHOWN} newest are shown here; as later changes take effect, older entries leave this summary.`,
+      [{ when: "Every entry remains in", text: "the full timeline below", href: "/changes" }],
+      escHtmlServer,
+      ' class="month-note dated-rule"',
+    )}
+${latest.map(c => buildChangeEntry(c, true)).join("\n")}
+  </section>
+${upcomingChanges.length > 0 ? `
+  <section class="upcoming-section" id="upcoming">
+    <h2 class="month-heading">${UPCOMING_CHANGES_HEADING}</h2>
+    <p class="month-note">${UPCOMING_CHANGES_INTRO}</p>
+    ${datedSectionNoticeHtml(
+      namedWhileNotBefore("A change", today),
+      [{ when: "The day after that date it stops being upcoming and is listed only under the month it falls in, in", text: "the timeline below", href: "/changes" }],
+      escHtmlServer,
+      ' class="month-note dated-rule"',
+    )}
+${upcomingChanges.map(c => buildChangeEntry(c.shown, c.original !== c.shown && c.original.date < today, c.original)).join("\n")}
+  </section>
+` : ""}
 ${changeLogSectionsHtml(sections, allChanges.length, buildChangeEntry, escHtmlServer)}
 
   <div class="mcp-cta">

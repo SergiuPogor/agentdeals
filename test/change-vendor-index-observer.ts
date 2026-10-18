@@ -21,28 +21,28 @@ export function assertChangeVendorIndex(html: string, route: string) {
   assert.match(index[0], /<h2[^>]*>Every vendor on this page<\/h2>/);
   const groups = [...html.matchAll(/<div class="month-group(?: [^"]*)?"[^>]*>/g)];
   const expected = new Map<string, Vendor>();
-  for (let i = 0; i < groups.length; i++) {
-    const group = html.slice(groups[i].index!, groups[i + 1]?.index);
-    if (group.includes('id="month-ours"')) continue;
-    const undated = group.includes('id="month-undated"');
-    const entries = [...group.matchAll(/<div class="(?:pc|chg)-entry\b[^>]*>/g)];
-    for (let j = 0; j < entries.length; j++) {
-      const entry = group.slice(entries[j].index!, entries[j + 1]?.index);
-      const vendor = entry.match(/<(a|span)\b([^>]*\bclass="(?:pc|chg)-vendor"[^>]*)>([\s\S]*?)<\/\1>/);
-      assert.ok(vendor, `${route}: entry has a vendor`);
-      const name = visibleText(vendor[3]);
-      const href = vendor[2].match(/href="([^"]+)"/)?.[1] ?? null;
-      const label = entry.match(/<span class="badge"[^>]*>([^<]*)<\/span>/)?.[1];
-      assert.ok(label, `${route}: ${name} has a change label`);
-      const dateMarkup = entry.match(/<div class="(?:pc|chg)-date(?: [^"]*)?">([\s\S]*?)<\/div>/)?.[1];
-      assert.ok(dateMarkup, `${route}: ${name} has a date label`);
-      const date = undated ? "(date unknown)" : visibleText(dateMarkup).match(/\bEffective:? (\d{4}-\d{2}-\d{2})\b/i)?.[1];
-      assert.ok(date, `${route}: ${name} has an effective date`);
-      const bucket = expected.get(name) ?? { href, entries: [] };
-      assert.equal(bucket.href, href, `${route}: ${name} has a consistent link`);
-      bucket.entries.push({ label: visibleText(label), date });
-      expected.set(name, bucket);
-    }
+  const entries = [...html.matchAll(/<div class="(?:pc|chg)-entry\b[^>]*>/g)];
+  const oursAt = html.indexOf('id="month-ours"');
+  const today = new Date().toISOString().slice(0, 10);
+  for (let j = 0; j < entries.length; j++) {
+    if (oursAt >= 0 && entries[j].index! > oursAt) continue;
+    const originalDate = entries[j][0].match(/data-event-date="([^"]+)"/)?.[1];
+    if (originalDate && originalDate < today) continue;
+    const entry = html.slice(entries[j].index!, entries[j + 1]?.index);
+    const vendor = entry.match(/<(a|span)\b([^>]*\bclass="(?:pc|chg)-vendor"[^>]*)>([\s\S]*?)<\/\1>/);
+    assert.ok(vendor, `${route}: entry has a vendor`);
+    const name = visibleText(vendor[3]);
+    const href = vendor[2].match(/href="([^"]+)"/)?.[1] ?? null;
+    const label = entry.match(/<span class="badge"[^>]*>([^<]*)<\/span>/)?.[1];
+    assert.ok(label, `${route}: ${name} has a change label`);
+    const dateMarkup = entry.match(/<div class="(?:pc|chg)-date(?: [^"]*)?">([\s\S]*?)<\/div>/)?.[1];
+    assert.ok(dateMarkup, `${route}: ${name} has a date label`);
+    const date = originalDate ?? (/\b(?:pc|chg)-undated\b/.test(entries[j][0]) ? "(date unknown)" : visibleText(dateMarkup).match(/\bEffective:? (\d{4}-\d{2}-\d{2})\b/i)?.[1]);
+    assert.ok(date, `${route}: ${name} has an effective date`);
+    const bucket = expected.get(name) ?? { href, entries: [] };
+    assert.equal(bucket.href, href, `${route}: ${name} has a consistent link`);
+    bucket.entries.push({ label: visibleText(label), date });
+    expected.set(name, bucket);
   }
   assert.ok(expected.size > 0, `${route}: vendor entries exist`);
   const actual = [...index[0].matchAll(/<li>([\s\S]*?)<\/li>/g)].map(([, line]) => {
@@ -60,7 +60,7 @@ export function assertChangeVendorIndex(html: string, route: string) {
       return b.date.localeCompare(a.date);
     });
     assert.equal(line.href, vendor.href, `${route}: ${line.name} uses its entry's vendor link`);
-    assert.equal(line.text, sorted.map(entry => `${entry.label} ${entry.date === "(date unknown)" ? entry.date : `effective ${entry.date}`}`).join("; "), `${route}: ${line.name} lists every change label and date newest first`);
+    assert.equal(line.text, sorted.map(entry => `${entry.label} ${entry.date === "(date unknown)" ? entry.date : `effective ${entry.date}${entry.date > today ? " (upcoming)" : ""}`}`).join("; "), `${route}: ${line.name} lists every change label and date newest first`);
   }
   const following = route === "/pricing-changes" ? html.indexOf('<div class="upcoming-section"') : -1;
   const firstVendorMonth = groups.find(group => /<h2 class="month-heading" id="month-(?!ours)/.test(html.slice(group.index!, group.index! + 220)))?.index;
