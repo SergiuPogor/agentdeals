@@ -1054,7 +1054,21 @@
           }
         ],
         "reviewed": "2026-08-31"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Atlas automatically pauses Free (M0) clusters after 30 days of inactivity where there are zero connections to the cluster.",
+          "quote": "Atlas automatically pauses Free clusters after 30 days of inactivity where there are zero connections to the cluster.",
+          "url": "https://www.mongodb.com/docs/atlas/reference/free-shared-limitations/",
+          "read_on": "2026-10-18"
+        },
+        {
+          "text": "A Free cluster allows at most 500 connections and 100 read and write operations per second; operations over that limit are queued.",
+          "quote": "Free clusters can only have a maximum of 500 connections.",
+          "url": "https://www.mongodb.com/docs/atlas/reference/free-shared-limitations/",
+          "read_on": "2026-10-18"
+        }
+      ]
     },
     {
       "vendor": "CockroachDB",
