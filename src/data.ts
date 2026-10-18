@@ -1105,9 +1105,10 @@ export function changeContext(
     (c) => c.impact === "high"
   ).length;
 
+  const now = Date.now();
   const sinceDay = sinceFilterDay(since);
-  const sinceDate = sinceDay ? new Date(sinceDay) : new Date(Date.now() - DEFAULT_CHANGE_WINDOW_DAYS * 24 * 60 * 60 * 1000);
-  const periodDays = Math.max(1, Math.ceil((Date.now() - sinceDate.getTime()) / (24 * 60 * 60 * 1000)));
+  const sinceDate = sinceDay ? new Date(sinceDay) : new Date(now - DEFAULT_CHANGE_WINDOW_DAYS * 24 * 60 * 60 * 1000);
+  const periodDays = Math.max(1, Math.ceil((now - sinceDate.getTime()) / (24 * 60 * 60 * 1000)));
 
   return {
     advisory,

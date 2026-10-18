@@ -48963,6 +48963,31 @@ ${rows}
   </div>`;
 }
 
+function changeVendorIndexHtml(sections: ReturnType<typeof changeLogSections<DealChange>>): string {
+  const dated = [...sections.recentMonths, ...sections.olderMonths]
+    .flatMap(group => group.changes)
+    .sort((a, b) => b.date.localeCompare(a.date));
+  const vendors = new Map<string, string[]>();
+  for (const change of [...dated, ...sections.undated]) {
+    const entries = vendors.get(change.vendor) ?? [];
+    const date = isEventDated(change) ? changeEntryDateLabel(change) : "(date unknown)";
+    const label = isIndexHousekeeping(change)
+      ? INDEX_HOUSEKEEPING_BADGE
+      : changeTypeBadge[change.change_type]?.label ?? change.change_type;
+    entries.push(`${escHtmlServer(label)} ${escHtmlServer(date)}`);
+    vendors.set(change.vendor, entries);
+  }
+  const lines = [...vendors].sort(([a], [b]) => a.localeCompare(b)).map(([vendor, entries]) =>
+    `      <li>${changeVendorLinkHtml(vendor)}: ${entries.join("; ")}</li>`,
+  );
+  return `  <section class="change-vendor-index" style="margin-bottom:2rem">
+    <h2 style="font-size:1.15rem;margin-bottom:.75rem">Every vendor on this page</h2>
+    <ul style="padding-left:1.25rem;font-size:.85rem;color:var(--text-muted)">
+${lines.join("\n")}
+    </ul>
+  </section>`;
+}
+
 function buildPricingChangesPage(): string {
   const allChanges = loadDealChanges();
   const { dated: eventDated, discovered: undatedChanges } = partitionByDateProvenance(allChanges);
@@ -49327,6 +49352,7 @@ ${undatedTileHtml(undatedCounted)}
     </div>
     <div class="trend-net" style="color:${ytdNetColor}">Net: <strong>${ytdNet > 0 ? "+" : ""}${ytdNet}</strong> (${ytdNetLabel}) &mdash; ${ytdChanges.length} changes tracked in ${currentYear}</div>
   </div>
+${changeVendorIndexHtml(sections)}
 ${upcomingChanges.length > 0 ? `
   <div class="upcoming-section" id="upcoming">
     <h2>Upcoming Changes</h2>
@@ -49622,6 +49648,7 @@ ${undatedTileHtml(undatedCounted)}
 
 ${changeLogFreshnessNote()}
 ${whatCountsAsAChangeHtml(dealChanges, entriesListed)}
+${changeVendorIndexHtml(sections)}
 ${changeLogSectionsHtml(sections, allChanges.length, buildChangeEntry, escHtmlServer)}
 
   <div class="mcp-cta">
