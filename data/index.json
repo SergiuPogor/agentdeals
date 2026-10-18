@@ -36622,6 +36622,18 @@
           "read_on": "2026-10-11"
         },
         {
+          "text": "Meta's terms permit AI Providers to offer a general-purpose AI assistant only where Meta is legally required to allow it. Meta lists Brazil ($0.0625 per service message), the EU and EEA (no charge since 2026-05-13) and Türkiye (permitted since 2026-10-15, no charge through at least 2027-04-11). These are the only permitted locations; the United States is not one of them. A business using AI to answer its own customers pays normal rates.",
+          "quote": "“AI Providers” are only permitted to offer general-purpose AI assistants on the WhatsApp Business Platform where Meta is legally required to permit this use case.",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers/",
+          "read_on": "2026-10-18"
+        },
+        {
+          "text": "WhatsApp does not currently deliver marketing templates to users with US phone numbers (+1 with a US area code), and sending one returns an error. Meta's North America marketing rate of $0.025 is charged on Canadian numbers.",
+          "quote": "WhatsApp does not currently deliver marketing template messages to WhatsApp users with United States phone numbers (numbers composed of a +1 dialing code and a US area code).",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/per-user-limits/",
+          "read_on": "2026-10-18"
+        },
+        {
           "text": "Meta may update pricing only on January 1, April 1, July 1 or October 1. The next possible change is 2027-01-01.",
           "quote": "Meta may update pricing only on the 1st day of each quarter, thus up to 4 times per year: January 1, April 1, July 1, and/or October 1.",
           "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing",
