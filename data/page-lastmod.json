@@ -1217,8 +1217,8 @@
       "changed": "2026-10-18"
     },
     "/category/infrastructure": {
-      "hash": "58712f6a05511ddd",
-      "changed": "2026-10-17"
+      "hash": "ae565fdc601318f9",
+      "changed": "2026-10-18"
     },
     "/category/localization": {
       "hash": "99315ce369eb0dc5",
@@ -3112,8 +3112,8 @@
       "changed": "2026-10-16"
     },
     "/digitalocean-free-tier-2026": {
-      "hash": "2518e9473792c7cf",
-      "changed": "2026-10-17"
+      "hash": "b0fc8826d5a4c4a1",
+      "changed": "2026-10-18"
     },
     "/disclosure": {
       "hash": "c63bbb64815c1ddb",
@@ -3282,8 +3282,8 @@
       "changed": "2026-10-17"
     },
     "/hetzner-pricing-2026": {
-      "hash": "730e6bc2413ea1f6",
-      "changed": "2026-10-16"
+      "hash": "414bc5fa940b0d1f",
+      "changed": "2026-10-18"
     },
     "/hosting-alternatives": {
       "hash": "79e30c5effe39088",
@@ -3572,7 +3572,7 @@
       "daily": true
     },
     "/stack-check": {
-      "hash": "8e59d8dbdb364b93",
+      "hash": "4d087da1d064437c",
       "changed": "2026-10-18"
     },
     "/stacks": {
