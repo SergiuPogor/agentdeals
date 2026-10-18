@@ -39673,7 +39673,7 @@ ${globalNavCss()}
         <td><strong>50K emails</strong></td>
         <td class="cheapest">$5.00</td>
         <td>$20.00</td>
-        <td>$39.00</td>
+        <td>$15.00</td>
         <td>$28.00</td>
         <td>$19.95</td>
         <td>$42.50</td>
@@ -39682,9 +39682,9 @@ ${globalNavCss()}
       <tr>
         <td><strong>100K emails</strong></td>
         <td class="cheapest">$10.00</td>
-        <td>$40.00</td>
-        <td>$79.00</td>
-        <td>$55.00</td>
+        <td>$35.00</td>
+        <td>$30.00</td>
+        <td>$68.00</td>
         <td>$89.95</td>
         <td>$70.00</td>
         <td>$65.00</td>
@@ -39692,8 +39692,8 @@ ${globalNavCss()}
       <tr>
         <td><strong>500K emails</strong></td>
         <td class="cheapest">$50.00</td>
-        <td>$225.00</td>
-        <td>$299.00</td>
+        <td>$350.00</td>
+        <td>$140.00</td>
         <td>$210.00</td>
         <td class="expensive">$449.95</td>
         <td>$245.00</td>
@@ -39702,8 +39702,8 @@ ${globalNavCss()}
       <tr>
         <td><strong>1M emails</strong></td>
         <td class="cheapest">$100.00</td>
-        <td class="expensive">$475.00</td>
-        <td>Custom</td>
+        <td class="expensive">$650.00</td>
+        <td>$250.00</td>
         <td>$360.00</td>
         <td class="expensive">$749.95</td>
         <td>$400.00</td>
