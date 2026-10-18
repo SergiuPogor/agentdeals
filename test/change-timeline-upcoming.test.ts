@@ -20,6 +20,7 @@ const record = (vendor: string, offset: number, extra = {}) => ({
 });
 const fixtures = [
   record("Later Future", 40), record("Sooner Future", 1), record("Today Event", 0),
+  record("Future Announcement", 5, { change_type: "product_deprecated", discontinued_date: day(30), what_ends: "The service" }),
   ...Array.from({ length: 13 }, (_, i) => record(`Past Event ${i}`, -i - 1)),
   record("Retiring Service", -10, { change_type: "product_deprecated", discontinued_date: day(20), what_ends: "The service" }),
   record("Undated Service", 50, { date_source: "discovered" }),
@@ -98,7 +99,10 @@ describe("the change timelines separate announced changes from their history", (
       }
       assert.match(upcoming(html), /listed soonest first/);
       const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
-      if (name === "fixtures") assert.equal(ids.length, new Set(ids).size, `${route}: duplicate anchor`);
+      if (name === "fixtures") {
+        assert.equal(ids.length, new Set(ids).size, `${route}: duplicate anchor`);
+        if (route === "/changes") assert.equal((html.match(/<div class="chg-entry/g) ?? []).length, fixtures.length);
+      }
     });
 
     it(`marks future dates in ${name} ${route}'s vendor index`, () => {
@@ -124,6 +128,8 @@ describe("the change timelines separate announced changes from their history", (
     assert.ok(indexEnd < latestStart && latestEnd < upcomingStart);
     const latest = html.slice(latestStart, latestEnd);
     assert.match(latest, /Latest Pricing Changes/);
+    assert.match(latest, /older entries leave this summary/);
+    assert.match(latest, /href="\/changes"/);
     assert.equal(dates(latest).length, 10);
     assert.deepEqual(dates(latest), [...dates(latest)].sort().reverse());
     assert.ok(dates(latest).every(date => date <= today));

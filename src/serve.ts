@@ -49467,7 +49467,7 @@ function buildChangesPage(): string {
   const sections = changeLogSections(allChanges.filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
   const countable = changesTheVendorMade(trackedChanges(sorted));
   const latest = countable.filter(c => c.date <= today).slice(0, LATEST_PRICING_CHANGES_SHOWN);
-  const upcomingOriginals = changesTheVendorMade(sorted).filter(c => c.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+  const upcomingOriginals = changesTheVendorMade(sorted).filter(c => c.date >= today).sort((a, b) => upcomingDateOf(a, today).localeCompare(upcomingDateOf(b, today)));
   const upcomingChanges = changesTheVendorMade(sorted).map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date >= today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
   const inPageOrder = [...upcomingOriginals, ...changeLogInPageOrder(sections)];
 
@@ -49484,7 +49484,7 @@ function buildChangesPage(): string {
     if (anchor && !anchorHolder.has(anchor)) anchorHolder.set(anchor, c);
   }
 
-  function buildChangeEntry(c: typeof allChanges[0], preview = false): string {
+  function buildChangeEntry(c: typeof allChanges[0], preview = false, original = c): string {
     const housekeeping = isIndexHousekeeping(c);
     const badge = housekeeping
       ? { label: INDEX_HOUSEKEEPING_BADGE, color: INDEX_HOUSEKEEPING_BADGE_COLOR }
@@ -49493,11 +49493,11 @@ function buildChangesPage(): string {
     const dated = isEventDated(c);
     const isUpcoming = dated && c.date >= today;
     const anchor = changeLogAnchorFor(c.vendor);
-    const anchorAttr = !preview && anchor && anchorHolder.get(anchor) === c ? ` id="${anchor}"` : "";
+    const anchorAttr = !preview && anchor && anchorHolder.get(anchor) === original ? ` id="${anchor}"` : "";
     const altHtml = c.alternatives && c.alternatives.length > 0
       ? `<div class="chg-alts"><span class="chg-alts-label">Alternatives:</span> ${c.alternatives.map(a => changeVendorLinkHtml(a)).join(", ")}</div>`
       : "";
-    return `      <div class="${preview ? "chg-preview" : "chg-entry"}${isUpcoming ? " chg-upcoming" : ""}${dated ? "" : " chg-undated"}${isNoLongerInForce(c) ? " chg-resolved" : ""}${changeIsUncited(c) ? " chg-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}${isACorrectionToOurOwnRecord(c) ? ` ${CORRECTION_TO_OUR_OWN_RECORD_CLASS}` : ""}"${anchorAttr}>
+    return `      <div class="${preview ? "chg-preview" : "chg-entry"}${isUpcoming ? " chg-upcoming" : ""}${dated ? "" : " chg-undated"}${isNoLongerInForce(c) ? " chg-resolved" : ""}${changeIsUncited(c) ? " chg-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}${isACorrectionToOurOwnRecord(c) ? ` ${CORRECTION_TO_OUR_OWN_RECORD_CLASS}` : ""}"${original.date !== c.date ? ` data-event-date="${escHtmlServer(original.date)}"` : ""}${anchorAttr}>
         <div class="chg-left">
           <div class="chg-date${dated ? "" : " chg-date-unknown"}">${changeEntryDateLabelHtml(c, escHtmlServer)}</div>
           ${isUpcoming ? `<div class="chg-upcoming-badge">upcoming</div>` : ""}
@@ -49660,6 +49660,12 @@ ${whatCountsAsAChangeHtml(dealChanges, entriesListed)}
 ${changeVendorIndexHtml(indexSections, today)}
   <section class="latest-section" id="latest">
     <h2 class="month-heading">${LATEST_PRICING_CHANGES_HEADING}</h2>
+    ${datedSectionNoticeHtml(
+      `${namedOnceItsDateArrived("A change", today)} Only the ${LATEST_PRICING_CHANGES_SHOWN} newest are shown here; as later changes take effect, older entries leave this summary.`,
+      [{ when: "Every entry remains in", text: "the full timeline below", href: "/changes" }],
+      escHtmlServer,
+      ' class="month-note dated-rule"',
+    )}
 ${latest.map(c => buildChangeEntry(c, true)).join("\n")}
   </section>
 ${upcomingChanges.length > 0 ? `
@@ -49672,7 +49678,7 @@ ${upcomingChanges.length > 0 ? `
       escHtmlServer,
       ' class="month-note dated-rule"',
     )}
-${upcomingChanges.map(c => buildChangeEntry(c.shown, c.original !== c.shown)).join("\n")}
+${upcomingChanges.map(c => buildChangeEntry(c.shown, c.original !== c.shown && c.original.date < today, c.original)).join("\n")}
   </section>
 ` : ""}
 ${changeLogSectionsHtml(sections, allChanges.length, buildChangeEntry, escHtmlServer)}

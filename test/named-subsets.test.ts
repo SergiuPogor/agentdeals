@@ -218,6 +218,8 @@ const SECTIONS_GROUPED_BY_A_DATE: SectionGroupedByADate[] = [
   { page: "/free-tier-tracker", heading: CUTS_THIS_YEAR_HEADING, served: "always" },
   { page: "/", heading: "Upcoming deal changes", served: "when it holds one" },
   { page: "/pricing-changes", heading: "Upcoming Changes", served: "when it holds one" },
+  { page: "/changes", heading: "Latest Pricing Changes", served: "always" },
+  { page: "/changes", heading: "Upcoming Changes", served: "when it holds one" },
   { page: "/trends/cloud-hosting", heading: ANNOUNCED_HEADING, served: "when it holds one" },
   { page: "/this-week", heading: COMING_UP_HEADING, served: "when it holds one" },
 ];
