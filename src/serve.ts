@@ -106,7 +106,7 @@ import { countsDownTo, shutdownDeadlineHtml } from "./shutdown-deadline.js";
 import { forecastShutdownsWithoutACard, whatEnds, type RecordACardCovers } from "./forecast-shutdowns.js";
 import { deadlineTextsOf, quotesTheWholeDescription, statedDeadlines, type StatedDeadline } from "./stated-deadlines.js";
 import { COMING_UP_HEADING, lastDayComingUp } from "./coming-up.js";
-import { UPCOMING_CHANGES_HEADING, UPCOMING_CHANGES_INTRO, splitAtTheDayServed, upcomingDateOf, atUpcomingDate } from "./upcoming-changes.js";
+import { UPCOMING_CHANGES_HEADING, UPCOMING_CHANGES_INTRO, LATEST_PRICING_CHANGES_HEADING, LATEST_PRICING_CHANGES_SHOWN, splitAtTheDayServed, upcomingDateOf, atUpcomingDate } from "./upcoming-changes.js";
 import { createRegistrationLimiter, rateLimitHeaders } from "./rate-limit.js";
 import { offerForSlug, vendorRates, cheapestRate, dearestRate, spanOfRates, formatRate, formatRateSpan, monthlyTokenCost, formatDollars, amountValue, type ModelRate } from "./model-rates.js";
 import { DECLARED_FIGURE_READS, READ_DATES_THAT_ARE_NOT_FIGURE_READS, STALE_FACT_PAGES_BASELINE, TABLE_STALENESS_DISCLOSURES, declaredFigureReadsFor, factsOutdatedBy, linkifyVerdictBlocks, newestChangeBySlug, overdueReport, pageCompiledClause, pageDataProvenance, pageDateModified, pageFigureSource, tabulatedVendorSlots, tabulatedVendors, utcToday, verdictsOutdatedBy } from "./page-reviews.js";
@@ -48966,7 +48966,7 @@ ${rows}
   </div>`;
 }
 
-function changeVendorIndexHtml(sections: ReturnType<typeof changeLogSections<DealChange>>): string {
+function changeVendorIndexHtml(sections: ReturnType<typeof changeLogSections<DealChange>>, today: string): string {
   const dated = [...sections.recentMonths, ...sections.olderMonths]
     .flatMap(group => group.changes)
     .sort((a, b) => b.date.localeCompare(a.date));
@@ -48977,7 +48977,7 @@ function changeVendorIndexHtml(sections: ReturnType<typeof changeLogSections<Dea
     const label = isIndexHousekeeping(change)
       ? INDEX_HOUSEKEEPING_BADGE
       : changeTypeBadge[change.change_type]?.label ?? change.change_type;
-    entries.push(`${escHtmlServer(label)} ${escHtmlServer(date)}`);
+    entries.push(`${escHtmlServer(label)} ${escHtmlServer(date)}${isEventDated(change) && change.date > today ? " (upcoming)" : ""}`);
     vendors.set(change.vendor, entries);
   }
   const lines = [...vendors].sort(([a], [b]) => a.localeCompare(b)).map(([vendor, entries]) =>
@@ -48998,11 +48998,12 @@ function buildPricingChangesPage(): string {
   const currentYear = new Date().getFullYear();
 
   const sorted = [...eventDated].sort((a, b) => b.date.localeCompare(a.date));
-  const sections = changeLogSections(allChanges, today);
+  const indexSections = changeLogSections(allChanges, today);
+  const sections = changeLogSections(allChanges.filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
 
   const filterCategory: Record<string, string> = CHANGE_DIRECTION;
 
-  function buildChangeEntry(c: typeof allChanges[0]): string {
+  function buildChangeEntry(c: typeof allChanges[0], originalDate = c.date): string {
     const housekeeping = isIndexHousekeeping(c);
     const badge = housekeeping
       ? { label: INDEX_HOUSEKEEPING_BADGE, color: INDEX_HOUSEKEEPING_BADGE_COLOR }
@@ -49022,7 +49023,7 @@ function buildPricingChangesPage(): string {
       : "";
     const vendorCat = (c.category || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
     const changeYear = dated ? c.date.slice(0, 4) : "";
-    return `      <div class="pc-entry${isUpcoming ? " pc-upcoming" : ""}${dated ? "" : " pc-undated"}${isNoLongerInForce(c) ? " pc-resolved" : ""}${changeIsUncited(c) ? " pc-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}" id="${changeAnchor(c)}" data-type="${escHtmlServer(c.change_type)}" data-impact="${escHtmlServer(c.impact)}" data-category="${category}" data-vendor-cat="${vendorCat}" data-year="${changeYear}">
+    return `      <div class="pc-entry${isUpcoming ? " pc-upcoming" : ""}${dated ? "" : " pc-undated"}${isNoLongerInForce(c) ? " pc-resolved" : ""}${changeIsUncited(c) ? " pc-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}" ${originalDate !== c.date ? `data-event-date="${escHtmlServer(originalDate)}" ` : ""}id="${changeAnchor(c)}" data-type="${escHtmlServer(c.change_type)}" data-impact="${escHtmlServer(c.impact)}" data-category="${category}" data-vendor-cat="${vendorCat}" data-year="${changeYear}">
         <div class="pc-left">
           <div class="pc-date${dated ? "" : " pc-date-unknown"}">${changeEntryDateLabelHtml(c, escHtmlServer)}</div>
           ${isUpcoming ? `<div class="pc-upcoming-badge">upcoming</div>` : ""}
@@ -49063,7 +49064,7 @@ ${altHtml}
   const ytdNetLabel = ytdNet > 0 ? "net positive" : ytdNet < 0 ? "net negative" : "neutral";
   const ytdNetColor = ytdNet > 0 ? "#3fb950" : ytdNet < 0 ? "#f85149" : "#8b949e";
 
-  const upcomingChanges = countable.map(c => atUpcomingDate(c, today)).filter(c => c.date >= today);
+  const upcomingChanges = countable.map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date >= today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
 
   const vendorCategories = [...new Set(sorted.map(c => c.category || "").filter(Boolean))].sort();
   const years = [...new Set(sorted.map(c => c.date.slice(0, 4)))].sort().reverse();
@@ -49355,11 +49356,11 @@ ${undatedTileHtml(undatedCounted)}
     </div>
     <div class="trend-net" style="color:${ytdNetColor}">Net: <strong>${ytdNet > 0 ? "+" : ""}${ytdNet}</strong> (${ytdNetLabel}) &mdash; ${ytdChanges.length} changes tracked in ${currentYear}</div>
   </div>
-${changeVendorIndexHtml(sections)}
+${changeVendorIndexHtml(indexSections, today)}
 ${upcomingChanges.length > 0 ? `
   <div class="upcoming-section" id="upcoming">
-    <h2>Upcoming Changes</h2>
-    <p class="upcoming-intro">Announced pricing changes with future effective dates. Plan ahead.</p>
+    <h2>${UPCOMING_CHANGES_HEADING}</h2>
+    <p class="upcoming-intro">${UPCOMING_CHANGES_INTRO}</p>
     ${datedSectionNoticeHtml(
       namedWhileNotBefore("A change", today),
       [
@@ -49368,7 +49369,7 @@ ${upcomingChanges.length > 0 ? `
       escHtmlServer,
       ' class="upcoming-intro dated-rule"',
     )}
-${upcomingChanges.map(c => buildChangeEntry(c)).join("\n")}
+${upcomingChanges.map(c => buildChangeEntry(c.shown, c.original.date)).join("\n")}
   </div>
 ` : ""}
 ${filterButtonsHtml}
@@ -49462,8 +49463,13 @@ function buildChangesPage(): string {
   const undatedCounted = trackedChanges(undatedChanges).length;
 
   const sorted = [...eventDated].sort((a, b) => b.date.localeCompare(a.date));
-  const sections = changeLogSections(allChanges, today);
-  const inPageOrder = changeLogInPageOrder(sections);
+  const indexSections = changeLogSections(allChanges, today);
+  const sections = changeLogSections(allChanges.filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
+  const countable = changesTheVendorMade(trackedChanges(sorted));
+  const latest = countable.filter(c => c.date <= today).slice(0, LATEST_PRICING_CHANGES_SHOWN);
+  const upcomingOriginals = changesTheVendorMade(sorted).filter(c => c.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+  const upcomingChanges = changesTheVendorMade(sorted).map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date >= today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
+  const inPageOrder = [...upcomingOriginals, ...changeLogInPageOrder(sections)];
 
   const byMonth = new Map<string, typeof sorted>();
   for (const c of sorted) {
@@ -49478,7 +49484,7 @@ function buildChangesPage(): string {
     if (anchor && !anchorHolder.has(anchor)) anchorHolder.set(anchor, c);
   }
 
-  function buildChangeEntry(c: typeof allChanges[0]): string {
+  function buildChangeEntry(c: typeof allChanges[0], preview = false): string {
     const housekeeping = isIndexHousekeeping(c);
     const badge = housekeeping
       ? { label: INDEX_HOUSEKEEPING_BADGE, color: INDEX_HOUSEKEEPING_BADGE_COLOR }
@@ -49487,11 +49493,11 @@ function buildChangesPage(): string {
     const dated = isEventDated(c);
     const isUpcoming = dated && c.date >= today;
     const anchor = changeLogAnchorFor(c.vendor);
-    const anchorAttr = anchor && anchorHolder.get(anchor) === c ? ` id="${anchor}"` : "";
+    const anchorAttr = !preview && anchor && anchorHolder.get(anchor) === c ? ` id="${anchor}"` : "";
     const altHtml = c.alternatives && c.alternatives.length > 0
       ? `<div class="chg-alts"><span class="chg-alts-label">Alternatives:</span> ${c.alternatives.map(a => changeVendorLinkHtml(a)).join(", ")}</div>`
       : "";
-    return `      <div class="chg-entry${isUpcoming ? " chg-upcoming" : ""}${dated ? "" : " chg-undated"}${isNoLongerInForce(c) ? " chg-resolved" : ""}${changeIsUncited(c) ? " chg-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}${isACorrectionToOurOwnRecord(c) ? ` ${CORRECTION_TO_OUR_OWN_RECORD_CLASS}` : ""}"${anchorAttr}>
+    return `      <div class="${preview ? "chg-preview" : "chg-entry"}${isUpcoming ? " chg-upcoming" : ""}${dated ? "" : " chg-undated"}${isNoLongerInForce(c) ? " chg-resolved" : ""}${changeIsUncited(c) ? " chg-unsourced" : ""}${housekeeping ? ` ${INDEX_HOUSEKEEPING_CLASS}` : ""}${isACorrectionToOurOwnRecord(c) ? ` ${CORRECTION_TO_OUR_OWN_RECORD_CLASS}` : ""}"${anchorAttr}>
         <div class="chg-left">
           <div class="chg-date${dated ? "" : " chg-date-unknown"}">${changeEntryDateLabelHtml(c, escHtmlServer)}</div>
           ${isUpcoming ? `<div class="chg-upcoming-badge">upcoming</div>` : ""}
@@ -49510,7 +49516,7 @@ ${altHtml}
       </div>`;
   }
 
-  const upcomingCount = changesTheVendorMade(trackedChanges(sorted)).filter(c => c.date >= today).length;
+  const upcomingCount = countable.filter(c => upcomingDateOf(c, today) >= today).length;
   const removedCount = changesTheVendorMade(counted).filter(endsAFreeTier).length;
   const entriesListed = inPageOrder.length;
 
@@ -49584,8 +49590,8 @@ h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5
 .rule-table th{text-align:left;color:var(--text-dim);font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;padding:.4rem .5rem;border-bottom:1px solid var(--border)}
 .rule-table td{padding:.45rem .5rem;border-bottom:1px solid var(--border);color:var(--text-muted);vertical-align:top}
 .rule-table td:first-child{font-family:var(--mono);color:var(--text);white-space:nowrap}
-.chg-entry{display:flex;gap:1rem;padding:.75rem;margin-bottom:.5rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);transition:border-color .2s}
-.chg-entry:hover{border-color:var(--accent)}
+.chg-entry,.chg-preview{display:flex;gap:1rem;padding:.75rem;margin-bottom:.5rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);transition:border-color .2s}
+.chg-entry:hover,.chg-preview:hover{border-color:var(--accent)}
 .chg-upcoming{border-color:rgba(88,166,255,0.3)}
 .chg-undated{border-style:dashed}
 .chg-resolved{opacity:.6;border-style:dashed}
@@ -49612,7 +49618,7 @@ h1{font-family:var(--serif);font-size:2.25rem;color:var(--text);margin:1rem 0 .5
 .mcp-cta p{color:var(--text-muted);font-size:.9rem;margin-bottom:.5rem}
 .mcp-cta a{font-weight:600}
 footer{text-align:center;color:var(--text-dim);font-size:.8rem;padding:3rem 0 2rem;border-top:1px solid var(--border);margin-top:3rem}
-@media(max-width:768px){h1{font-size:1.5rem}.stats-bar{flex-direction:column}.chg-entry{flex-direction:column;gap:.25rem}.chg-left{text-align:left;min-width:auto;display:flex;gap:.75rem;align-items:center}}
+@media(max-width:768px){h1{font-size:1.5rem}.stats-bar{flex-direction:column}.chg-entry,.chg-preview{flex-direction:column;gap:.25rem}.chg-left{text-align:left;min-width:auto;display:flex;gap:.75rem;align-items:center}}
 ${globalNavCss()}
 </style>
 </head>
@@ -49651,7 +49657,24 @@ ${undatedTileHtml(undatedCounted)}
 
 ${changeLogFreshnessNote()}
 ${whatCountsAsAChangeHtml(dealChanges, entriesListed)}
-${changeVendorIndexHtml(sections)}
+${changeVendorIndexHtml(indexSections, today)}
+  <section class="latest-section" id="latest">
+    <h2 class="month-heading">${LATEST_PRICING_CHANGES_HEADING}</h2>
+${latest.map(c => buildChangeEntry(c, true)).join("\n")}
+  </section>
+${upcomingChanges.length > 0 ? `
+  <section class="upcoming-section" id="upcoming">
+    <h2 class="month-heading">${UPCOMING_CHANGES_HEADING}</h2>
+    <p class="month-note">${UPCOMING_CHANGES_INTRO}</p>
+    ${datedSectionNoticeHtml(
+      namedWhileNotBefore("A change", today),
+      [{ when: "The day after that date it stops being upcoming and is listed only under the month it falls in, in", text: "the timeline below", href: "/changes" }],
+      escHtmlServer,
+      ' class="month-note dated-rule"',
+    )}
+${upcomingChanges.map(c => buildChangeEntry(c.shown, c.original !== c.shown)).join("\n")}
+  </section>
+` : ""}
 ${changeLogSectionsHtml(sections, allChanges.length, buildChangeEntry, escHtmlServer)}
 
   <div class="mcp-cta">
