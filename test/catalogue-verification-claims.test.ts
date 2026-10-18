@@ -570,6 +570,7 @@ const THE_WORD_IS_NOT_A_CLAIM_OVER_OUR_LISTINGS: AnExemption[] = [
   { why: `the word names one record on one date, the form this repo labels ${CONFIRMED_DATE_LABEL}`, sentence: A_PER_RECORD_STAMP },
   { why: "the sentence is a record we store as the vendor stated it", storedVerbatim: true },
   { why: "the word qualifies whom a vendor checks, not what we list", sentence: /\bverified (?:students|teachers|recipients|paid signups?|compute spend|partners|domains?|accounts?)\b/i },
+  { why: "Microsoft for Startups checks the applicant eligibility and progress", route: /^\/azure-free-tier-2026$/, sentence: /\b(?:Microsoft for Startups requires an application on its website and gives up to \$200 in credits immediately while eligibility is verified|Startups get up to \$150K in credits over time as they demonstrate verified progress, service adoption and Azure usage)\b/i },
   { why: "a bare column label is not a sentence about a set of listings", sentence: /^verified\s*\.?$/i },
   { why: "#1058 owns what a per-record stamp means on /best", route: /^\/best\// },
   { why: "#1081 AC-2 owns the freshness claim on the vs-pair pages", route: /^\/[a-z0-9-]+-vs-[a-z0-9-]+$/ },
