@@ -36628,7 +36628,7 @@
           "read_on": "2026-10-18"
         },
         {
-          "text": "WhatsApp does not currently deliver marketing templates to users with US phone numbers (+1 with a US area code), and sending one returns an error. Meta's North America marketing rate of $0.025 is charged on Canadian numbers.",
+          "text": "WhatsApp does not currently deliver marketing template messages to users with United States phone numbers (+1 with a US area code). Sending a marketing template to a US number returns an error. Utility and authentication templates and service messages to US numbers are delivered and cost $0.0034 each. Service messages are free up to 1,000 a month per business phone number. The $0.025 North America marketing rate is charged on Canadian numbers.",
           "quote": "WhatsApp does not currently deliver marketing template messages to WhatsApp users with United States phone numbers (numbers composed of a +1 dialing code and a US area code).",
           "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/per-user-limits/",
           "read_on": "2026-10-18"
