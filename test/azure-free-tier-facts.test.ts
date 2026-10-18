@@ -50,6 +50,12 @@ const HEADING = "Azure Free Tier 2026";
 const META = "Microsoft lists 65+ always-free Azure services. This page covers the main ones, the 12-month offers, the $200 credit, and billing rules.";
 
 const STATED_ON_THE_PAGE = [
+  "To sign up for the Azure free account, you need a phone number, a non-prepaid credit or debit card (only credit cards in Hong Kong and Brazil), and a Microsoft or GitHub account. Your card verifies identity and is not charged, except for a temporary $1 authorization that is reversed. Only one account with free services and $200 credit is allowed per new customer.",
+  "If you are a full-time university student aged 18 or older without a credit card, use Azure for Students: $100 in credits to use within 12 months plus free services, with no credit card required. Sign up with your school email. It is for students at accredited degree-granting institutions, one subscription per student, renewable yearly.",
+  "Separately from Microsoft for Startups, new Azure customers can get Azure for Startups: $1,000 in credits instantly with no application, up to $5,000 in total after business verification. Credits are valid for 90 days initially and 180 days post-verification. A credit card is required only for identity verification and usage beyond the credits.",
+  "Microsoft for Startups requires an application on its website and gives up to $200 in credits immediately while eligibility is verified. Startups get up to $150K in credits over time as they demonstrate verified progress, service adoption and Azure usage. Startups backed by Microsoft's Investor Network may unlock up to $200K. To be eligible, the startup must own a software product, be privately held and for-profit, have no Series C funding or later, and no more than $350,000 in lifetime free Azure credits.",
+  "Microsoft for Startups: up to $150K with no investor needed, or up to $200K for startups backed by its Investor Network.",
+
   "The free account has the spending limit turned on by default, so your card is not charged. At 30 days or when the credit runs out, your account and services are disabled unless you move to pay-as-you-go. Only pay-as-you-go has no spending cap: once you exceed free limits there, charges start immediately.",
   "Customers who try Azure free must move to pay as you go within 30 days to continue receiving 12 months free services.",
   "When the 12 months end, pay-as-you-go rates apply, and Microsoft will send you an email notifying you when it's time to upgrade.",
@@ -183,6 +189,44 @@ describe("the Azure free tier guide states Microsoft's terms as Microsoft's own 
   it("states the free account's spending limit, the move to pay-as-you-go and the credit's exclusions as written", () => {
     const text = textOf(html);
     assert.deepStrictEqual(STATED_ON_THE_PAGE.filter((line) => !text.includes(line)), []);
+  });
+
+  it("places the sign-up and startup terms in their sections with Microsoft source links", () => {
+    const paragraphs = [...html.matchAll(/<p\b[^>]*>[\s\S]*?<\/p>/g)].map(([paragraph]) => paragraph);
+    const claims: [string, string][] = [
+    [
+        "To sign up for the Azure free account, you need a phone number, a non-prepaid credit or debit card (only credit cards in Hong Kong and Brazil), and a Microsoft or GitHub account. Your card verifies identity and is not charged, except for a temporary $1 authorization that is reversed. Only one account with free services and $200 credit is allowed per new customer.",
+        "https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account"
+    ],
+    [
+        "If you are a full-time university student aged 18 or older without a credit card, use Azure for Students: $100 in credits to use within 12 months plus free services, with no credit card required. Sign up with your school email. It is for students at accredited degree-granting institutions, one subscription per student, renewable yearly.",
+        "https://azure.microsoft.com/en-us/free/students"
+    ],
+    [
+        "Separately from Microsoft for Startups, new Azure customers can get Azure for Startups: $1,000 in credits instantly with no application, up to $5,000 in total after business verification. Credits are valid for 90 days initially and 180 days post-verification. A credit card is required only for identity verification and usage beyond the credits.",
+        "https://learn.microsoft.com/en-us/startups/microsoft-for-startups/mfs-faqs"
+    ],
+    [
+        "Microsoft for Startups requires an application on its website and gives up to $200 in credits immediately while eligibility is verified. Startups get up to $150K in credits over time as they demonstrate verified progress, service adoption and Azure usage. Startups backed by Microsoft's Investor Network may unlock up to $200K. To be eligible, the startup must own a software product, be privately held and for-profit, have no Series C funding or later, and no more than $350,000 in lifetime free Azure credits.",
+        "https://learn.microsoft.com/en-us/startups/benefits"
+    ],
+    [
+        "Microsoft for Startups: up to $150K with no investor needed, or up to $200K for startups backed by its Investor Network.",
+        "https://learn.microsoft.com/en-us/startups/benefits"
+    ]
+];
+    for (const [claim, url] of claims) {
+      const paragraph = paragraphs.find(paragraph => textOf(paragraph).includes(claim));
+      assert.ok(paragraph, claim);
+      assert.ok(paragraph.includes(`href="${url}"`));
+    }
+    const trialAt = html.indexOf('id="trial"');
+    const trialTable = html.indexOf('<table', trialAt);
+    const signupAt = html.indexOf('To sign up for the ');
+    const studentAt = html.indexOf('If you are a full-time university student');
+    const startupAt = html.indexOf('Separately from Microsoft for Startups');
+    assert.ok(trialAt < signupAt && signupAt < studentAt && studentAt < trialTable);
+    assert.ok(html.indexOf('id="startups"') < startupAt && startupAt < html.indexOf('<h3>Microsoft for Startups</h3>'));
   });
 
   it("lists SQL Database and Container Apps as always free, and Blob Storage only for 12 months", () => {

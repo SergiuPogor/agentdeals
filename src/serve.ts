@@ -27890,7 +27890,7 @@ function buildStartupCreditsPage(): string {
   }).join("\n\n  ");
 
   const hiddenConstraintCards = [
-    { title: "Credit Expiry Timelines", desc: "AWS Activate credits expire on a date shown in the AWS Billing console. Google's Start tier credits last 12 months; Scale tier credits last two years. Microsoft for Startups credits must be activated within 90 days; the first $200 lasts 90 days and the business-verification credit 180 days, and from the $25K milestone credits last up to two years. Cloudflare credits last one year or until used up. PostHog credits last 12 months from application. Kiro credits expire one year after they are issued." },
+    { title: "Credit Expiry Timelines", desc: "AWS Activate credits expire on a date shown in the AWS Billing console. Google's Start tier credits last 12 months; Scale tier credits last two years. Microsoft for Startups credits must be activated within 90 days; the first $200 lasts 90 days and the business-verification credit 180 days, and from the $25K milestone credits last up to two years. The Azure startup credit offer's $1,000 lasts 90 days and its $4,000 lasts 180 days after business verification. Cloudflare credits last one year or until used up. PostHog credits last 12 months from application. Kiro credits expire one year after they are issued." },
     { title: "Vesting Schedules", desc: "AWS Activate gives one award per approved application. Google's Scale tier covers 100% of usage up to $100,000 in year 1, then 20% of spend, up to $100,000 more, in year 2. Microsoft for Startups releases credits in milestones." },
     { title: "Revenue & Funding Caps", desc: "Google Scale requires VC funding; angel money doesn't count. PostHog's YC deal has a $25M fundraising cap and renews only while you stay under it." },
     { title: "Platform Lock-in After Credits", desc: "Credits only work on the issuing platform. After credits expire, you\u2019re on production pricing with established data gravity. Migration costs can exceed the original credit value." },
@@ -27901,9 +27901,9 @@ function buildStartupCreditsPage(): string {
   const changeTimelineRows = startupChangesByDayServed.inEffect.map(changeRowNamingTheVendorHtml).join("\n        ");
 
   const faqEntries = [
-    { q: "What are the highest-value startup credit programs?", a: "The largest published offers are Google Scale AI and Cloudflare Tier 1, each up to $350,000. Then Google Scale and AWS Activate Portfolio, up to $200,000 each. Then Microsoft for Startups, up to $150,000. Most require VC funding or an affiliated partner." },
+    { q: "What are the highest-value startup credit programs?", a: "The largest published offers are Google Scale AI and Cloudflare Tier 1, each up to $350,000. Google Scale, AWS Activate Portfolio and Microsoft for Startups with an Investor Network partner each offer up to $200,000. Microsoft for Startups without one offers up to $150,000. Most require VC funding or an affiliated partner." },
     { q: "Can I stack multiple startup programs?", a: "Yes. Programs on different platforms stack: Google Scale (up to $200K), AWS Activate Portfolio (up to $200K) and Cloudflare Tier 2 ($100K) can combine to $500K. Credits from fintech platforms come from the same programmes: a later AWS Activate award pays only the difference, and Stripe Atlas's Cloudflare and Azure credits are Cloudflare's and Microsoft's own programmes." },
-    { q: "Do startup credits expire?", a: "Yes, startup credits expire. AWS Activate credits expire on a date shown in the AWS Billing console. Google's Start tier credits last 12 months; Scale tier credits last two years. Microsoft for Startups credits must be activated within 90 days; the first $200 lasts 90 days and the business-verification credit 180 days, and from the $25K milestone credits last up to two years. Cloudflare credits last one year or until used up. PostHog credits last 12 months from application. Kiro credits expire one year after they are issued." },
+    { q: "Do startup credits expire?", a: "Yes, startup credits expire. AWS Activate credits expire on a date shown in the AWS Billing console. Google's Start tier credits last 12 months; Scale tier credits last two years. Microsoft for Startups credits must be activated within 90 days; the first $200 lasts 90 days and the business-verification credit 180 days, and from the $25K milestone credits last up to two years. The Azure startup credit offer's $1,000 lasts 90 days and its $4,000 lasts 180 days after business verification. Cloudflare credits last one year or until used up. PostHog credits last 12 months from application. Kiro credits expire one year after they are issued." },
     { q: "What do I need to qualify for startup credits?", a: "Programmes that need no funding: AWS Founders, Google Start, Microsoft, Cloudflare Tier 3, PostHog, Amplitude, DigitalOcean Startups and Kiro. Programmes that need VC backing or an affiliated partner: Google Scale, AWS Portfolio, Cloudflare Tiers 1 and 2. Banking programs (Brex, Mercury, Ramp, SVB) need an account; Stripe Atlas needs incorporation through Atlas." },
     { q: "Are startup credits worth the lock-in?", a: "Credits significantly lower early-stage cloud costs but create platform dependency. After credits expire, you're on full production pricing with established data gravity. Mitigate this by using credits for experimentation and development rather than production architecture. A multi-cloud strategy with credits from 2\u20133 providers reduces single-vendor risk." },
   ];
@@ -28096,7 +28096,7 @@ function buildStartupCreditsPage(): string {
     '\n' +
     '    <div class="verdict-item">\n' +
     '      <strong>Bootstrapped founder ($63K+)</strong>\n' +
-    '      <p>AWS Activate Founders offers $1,000. Google Start offers $2,000. Microsoft offers $200 on sign-up, with more after verification. Cloudflare Tier 3 offers $10,000. PostHog offers $50,000 for startups under 2 years old. None needs funding.</p>\n' +
+    '      <p>AWS Activate Founders offers $1,000. Google Start offers $2,000. Microsoft offers $1,000 for 90 days to startups new to Azure, then $4,000 more after business verification. Microsoft for Startups gives up to $200 at once, with more at milestones. Cloudflare Tier 3 offers $10,000. PostHog offers $50,000 for startups under 2 years old. None needs funding.</p>\n' +
     '    </div>\n' +
     '\n' +
     '    <div class="verdict-item">\n' +
@@ -34758,6 +34758,9 @@ ${globalNavCss()}
 
   <h2 id="trial">$200 Trial Credit</h2>
   <p class="section-intro">New accounts get $200 in Azure credits valid for 30 days. Unlike GCP's $300/90-day trial, Azure's credit expires faster. It does not cover Marketplace purchases or Spot VMs, and free trials start with zero GPU quota and aren't eligible for limit or quota increases.</p>
+  <p class="section-intro">To sign up for the <a href="https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account" rel="nofollow noopener">Azure free account</a>, you need a phone number, a non-prepaid credit or debit card (only credit cards in Hong Kong and Brazil), and a Microsoft or GitHub account. Your card verifies identity and is not charged, except for a temporary $1 authorization that is reversed. Only one account with free services and $200 credit is allowed per new customer.</p>
+  <p class="section-intro">If you are a full-time university student aged 18 or older without a credit card, use <a href="https://azure.microsoft.com/en-us/free/students" rel="nofollow noopener">Azure for Students</a>: $100 in credits to use within 12 months plus free services, with no credit card required. Sign up with your school email. It is for students at accredited degree-granting institutions, one subscription per student, renewable yearly.</p>
+
 
   <div style="overflow-x:auto">
   <table class="pricing-table">
@@ -34839,13 +34842,14 @@ ${globalNavCss()}
 
   <h2 id="startups">Azure for Startups</h2>
   <p class="section-intro">Microsoft offers some of the most generous startup programs in the industry.</p>
+  <p class="section-intro">Separately from Microsoft for Startups, new Azure customers can get <a href="https://learn.microsoft.com/en-us/startups/microsoft-for-startups/mfs-faqs" rel="nofollow noopener">Azure for Startups</a>: $1,000 in credits instantly with no application, up to $5,000 in total after business verification. Credits are valid for 90 days initially and 180 days post-verification. A credit card is required only for identity verification and usage beyond the credits.</p>
 
   <div class="verdict-box">
     <h3>Microsoft for Startups</h3>
 
     <div class="verdict-item">
       <strong>Up to $150K in Azure credits</strong>
-      <p>Free to join, no funding required. B2B tech startups get $200 on sign-up and up to $150K as they verify the business and use Azure. GitHub Enterprise and Microsoft 365 offers are for startups backed by Microsoft's Investor Network.</p>
+      <p><a href="https://learn.microsoft.com/en-us/startups/microsoft-for-startups/overview" rel="nofollow noopener">Microsoft for Startups</a> requires an application on its website and gives <a href="https://learn.microsoft.com/en-us/startups/microsoft-for-startups/getting-started-mfs" rel="nofollow noopener">up to $200 in credits immediately</a> while eligibility is verified. Startups get up to $150K in credits over time as they demonstrate verified progress, service adoption and Azure usage. Startups backed by Microsoft's Investor Network may unlock <a href="https://learn.microsoft.com/en-us/startups/benefits" rel="nofollow noopener">up to $200K</a>. To be eligible, the startup must own a software product, be privately held and for-profit, have no Series C funding or later, and no more than $350,000 in lifetime free Azure credits. GitHub Enterprise and Microsoft 365 offers are for startups backed by Microsoft's Investor Network.</p>
     </div>
 
     <div class="verdict-item">
@@ -34855,7 +34859,7 @@ ${globalNavCss()}
 
     <div class="verdict-item">
       <strong>How it compares</strong>
-      <p>AWS Activate: up to $200K credits (Portfolio needs an Activate Provider Org ID). Google for Startups: up to $200K, or $350K for AI-first startups (VC funding, pre-seed to Series A). Microsoft for Startups: up to $150K with no investor needed. See our <a href="/startup-credits">Startup Credits guide</a> for a full comparison of all programs.</p>
+      <p>AWS Activate: up to $200K credits (Portfolio needs an Activate Provider Org ID). Google for Startups: up to $200K, or $350K for AI-first startups (VC funding, pre-seed to Series A). Microsoft for Startups: up to $150K with no investor needed, or <a href="https://learn.microsoft.com/en-us/startups/benefits" rel="nofollow noopener">up to $200K</a> for startups backed by its Investor Network. See our <a href="/startup-credits">Startup Credits guide</a> for a full comparison of all programs.</p>
     </div>
   </div>
 
