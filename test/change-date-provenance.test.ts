@@ -485,9 +485,9 @@ describe("no surface renders a discovery date as the date the vendor changed som
         `${route} rendered no dated entry in a month group, so the absence below proves nothing`
       );
       assert.strictEqual(
-        countEntriesFor(monthsOf(dated), prefix, SUBJECT) >= 1,
-        true,
-        `${route} should put the dated control in a month group`
+        countEntriesFor(monthsOf(dated), prefix, SUBJECT),
+        0,
+        `${route} should keep an event effective today in Upcoming until the following day`
       );
       assert.strictEqual(
         countEntriesFor(monthsOf(discovered), prefix, SUBJECT),
