@@ -1405,7 +1405,7 @@
     {
       "vendor": "Aiven",
       "category": "Databases",
-      "description": "Managed PostgreSQL, MySQL, or Valkey (Redis-compatible) — 1 CPU, 1 GB RAM, 1 GB disk per service. No time limit",
+      "description": "Managed PostgreSQL, MySQL, Valkey (Redis-compatible), Apache Kafka, or OpenSearch — one free service of each type per organization. PostgreSQL and MySQL: 1 CPU, 1 GB RAM, 1 GB disk; PostgreSQL has 20 connections and no connection pooling. Valkey: 1 CPU, 1 GB RAM. Apache Kafka: 250 KiB/s ingress and 250 KiB/s egress, up to 5 topics with two partitions each. OpenSearch: 4 GB RAM, 20 GB storage. No credit card, no time limit. Developer plan for PostgreSQL is $5 a month with 8 GB storage.",
       "tier": "Free",
       "url": "https://aiven.io/pricing",
       "tags": [
@@ -1438,7 +1438,15 @@
         "text": "Free $0 / month Get building 1 dedicated VM 1 CPU per VM 1 GB RAM per VM 1 GB total storage Cannot select a specific cloud or region No integrations or connection pooling",
         "url": "https://aiven.io/pricing",
         "read_on": "2026-10-06"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Aiven may power off a free service that has no usage in its first few hours, or that has no continuing activity. Aiven sends a notification before powering off an inactive service. The service can be powered back on.",
+          "quote": "Power off free services with no continuative activity on the service. A notification is sent before the service is powered off.",
+          "url": "https://aiven.io/docs/platform/concepts/service-pricing",
+          "read_on": "2026-10-18"
+        }
+      ]
     },
     {
       "vendor": "Xata",
