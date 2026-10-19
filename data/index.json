@@ -8316,7 +8316,7 @@
     },
     {
       "vendor": "Brave Search API",
-      "category": "Search",
+      "category": "AI / ML",
       "description": "$5 in free credits every month, applied automatically. Search is $5 per 1,000 requests; Answers is $4 per 1,000 requests plus $5 per million tokens. Web search, news, videos, images, LLM context endpoints. 50 queries/sec. Credit card required. The earlier free plan (2,000 queries/mo) ended Feb 2026",
       "tier": "Free",
       "url": "https://brave.com/search/api/",
@@ -8329,6 +8329,17 @@
         "deal-change"
       ],
       "verifiedDate": "2026-10-03",
+      "product_subtypes": {
+        "taxonomy": "AI / ML",
+        "labels": [
+          {
+            "subtype": "web_search_api",
+            "source_url": "https://brave.com/search/api/",
+            "source_quote": "The real-time search data your chatbots & agents need to generate answers."
+          }
+        ],
+        "reviewed": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-03",
         "outcome": "ok",

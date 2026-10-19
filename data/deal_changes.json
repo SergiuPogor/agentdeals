@@ -199,7 +199,7 @@
       "current_state": "$5 of free credit every month on each plan (Search, Answers, Spellcheck, Autocomplete). Search is $5 per 1,000 requests. Attribution required for the credit. Credit card required.",
       "impact": "medium",
       "source_url": "https://brave.com/blog/most-powerful-search-api-for-ai/",
-      "category": "Search",
+      "category": "AI / ML",
       "alternatives": [
         "SerpAPI",
         "Google Custom Search"
@@ -15389,7 +15389,7 @@
       "current_state": "Search: $5 per 1,000 requests, with $5 in free credits every month. A credit card is required, and for free plans it is used only to confirm identity.",
       "impact": "medium",
       "source_url": "https://brave.com/search/api/",
-      "category": "Search",
+      "category": "AI / ML",
       "alternatives": [],
       "recorded_date": "2026-10-01",
       "date_source": "hand_written"
