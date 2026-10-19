@@ -2958,8 +2958,8 @@
       "changed": "2026-10-10"
     },
     "/digest/2026-w17": {
-      "hash": "7361e5643600e049",
-      "changed": "2026-10-09"
+      "hash": "976d334f242cd05e",
+      "changed": "2026-10-19"
     },
     "/digest/2026-w18": {
       "hash": "6012e16f518e38d5",
@@ -3050,8 +3050,8 @@
       "changed": "2026-10-12"
     },
     "/digest/2026-w40": {
-      "hash": "36bdb32af1d1a236",
-      "changed": "2026-10-14"
+      "hash": "d4d2ce62e82e45ce",
+      "changed": "2026-10-19"
     },
     "/digest/2026-w41": {
       "hash": "e4e24096e75c1b7e",
@@ -3296,8 +3296,8 @@
       "changed": "2026-10-19"
     },
     "/hosting-free-tier-comparison-2026": {
-      "hash": "977f4b1d257ee778",
-      "changed": "2026-10-18"
+      "hash": "ff2ca75417f717e4",
+      "changed": "2026-10-19"
     },
     "/hosting-pricing": {
       "hash": "f17e46e75527ad92",
@@ -3496,8 +3496,8 @@
       "changed": "2026-10-18"
     },
     "/reports/2026-04": {
-      "hash": "2796d970b2da407e",
-      "changed": "2026-10-18"
+      "hash": "5072ecc8737939cd",
+      "changed": "2026-10-19"
     },
     "/reports/2026-05": {
       "hash": "b7d5f7525ecf7b36",
@@ -3516,8 +3516,8 @@
       "changed": "2026-10-18"
     },
     "/reports/2026-09": {
-      "hash": "259094fe10a16bd8",
-      "changed": "2026-10-18"
+      "hash": "eaef9bcbf731c1c9",
+      "changed": "2026-10-19"
     },
     "/reports/2026-10": {
       "daily": true
@@ -3647,7 +3647,7 @@
       "daily": true
     },
     "/trends": {
-      "hash": "62b4938069a9f062",
+      "hash": "ecc30584c19ca785",
       "changed": "2026-10-19"
     },
     "/trends/ai-coding": {
@@ -3687,11 +3687,11 @@
       "changed": "2026-10-18"
     },
     "/trends/cloud-hosting": {
-      "hash": "a41594857f42d775",
-      "changed": "2026-10-18"
+      "hash": "231f64cce3dba2d2",
+      "changed": "2026-10-19"
     },
     "/trends/cloud-iaas": {
-      "hash": "54eac7b8ad28d6fd",
+      "hash": "5df2d5ccbec8f557",
       "changed": "2026-10-19"
     },
     "/trends/cloud-storage": {

@@ -2093,7 +2093,7 @@
       "current_state": "\"Amazon WorkSpaces Thin Client will no longer accept new customers beginning April 20, 2026. As an existing customer, you can continue to use the service as normal until March 31, 2027.\" \"For existing Amazon Business customers, we will allowlist your account to purchase Amazon WorkSpaces thin clients.\" (docs.aws.amazon.com, Amazon WorkSpaces Thin Client end of support, read 2026-10-06)",
       "impact": "low",
       "source_url": "https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html",
-      "category": "Cloud Hosting",
+      "category": "Cloud IaaS",
       "alternatives": [
         "Standard WorkSpaces clients",
         "Windows client",
@@ -2164,7 +2164,7 @@
       "current_state": "App Mesh: end of support 2026-09-30; console and App Mesh resources inaccessible after that date",
       "impact": "medium",
       "source_url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/what-is-app-mesh.html",
-      "category": "Cloud Hosting",
+      "category": "Cloud IaaS",
       "alternatives": [
         "Istio",
         "Linkerd",
