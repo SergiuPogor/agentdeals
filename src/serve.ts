@@ -5307,7 +5307,7 @@ ${categorySections}
 </html>`;
 }
 
-const categoryComparisonMap: Record<string, { comparison?: string; hub?: string }> = {
+const categoryComparisonMap: Record<string, { comparison?: string; hub?: string; vendorOffers?: boolean }> = {
   "Databases": { comparison: "/database-free-tier-comparison-2026", hub: "/database-alternatives" },
   "Cloud Hosting": { comparison: "/hosting-pricing", hub: "/hosting-alternatives" },
   "Monitoring": { comparison: "/monitoring-comparison-2026", hub: "/monitoring-alternatives" },
@@ -5328,38 +5328,38 @@ const categoryComparisonMap: Record<string, { comparison?: string; hub?: string 
   "Project Management": { hub: "/project-management-alternatives" },
   "Error Tracking": { comparison: "/monitoring-comparison-2026", hub: "/monitoring-alternatives" },
   "Logging": { comparison: "/monitoring-comparison-2026", hub: "/monitoring-alternatives" },
-  "Container Registry": { hub: "/ci-cd-alternatives" },
+  "Container Registry": { hub: "/ci-cd-alternatives", vendorOffers: true },
   "Infrastructure": { hub: "/hosting-alternatives" },
   "Secrets Management": { hub: "/security-alternatives" },
-  "Feature Flags": { hub: "/monitoring-alternatives" },
-  "Search": { hub: "/database-alternatives" },
-  "Headless CMS": { hub: "/database-alternatives" },
-  "Payments": { hub: "/free-saas-stack" },
-  "Documentation": { hub: "/api-development-alternatives" },
-  "Messaging": { hub: "/email-alternatives" },
-  "Forms": { hub: "/design-alternatives" },
-  "Low-Code Platforms": { hub: "/design-alternatives" },
-  "Workflow Automation": { hub: "/project-management-alternatives" },
-  "Team Collaboration": { hub: "/project-management-alternatives" },
-  "Source Control": { hub: "/ci-cd-alternatives" },
-  "Code Quality": { hub: "/testing-alternatives" },
-  "Browser Automation": { hub: "/testing-alternatives" },
-  "Web Scraping": { hub: "/testing-alternatives" },
-  "Server Management": { hub: "/hosting-alternatives" },
+  "Feature Flags": { hub: "/monitoring-alternatives", vendorOffers: true },
+  "Search": { hub: "/database-alternatives", vendorOffers: true },
+  "Headless CMS": { hub: "/database-alternatives", vendorOffers: true },
+  "Payments": { hub: "/free-saas-stack", vendorOffers: true },
+  "Documentation": { hub: "/api-development-alternatives", vendorOffers: true },
+  "Messaging": { hub: "/email-alternatives", vendorOffers: true },
+  "Forms": { hub: "/design-alternatives", vendorOffers: true },
+  "Low-Code Platforms": { hub: "/design-alternatives", vendorOffers: true },
+  "Workflow Automation": { hub: "/project-management-alternatives", vendorOffers: true },
+  "Team Collaboration": { hub: "/project-management-alternatives", vendorOffers: true },
+  "Source Control": { hub: "/ci-cd-alternatives", vendorOffers: true },
+  "Code Quality": { hub: "/testing-alternatives", vendorOffers: true },
+  "Browser Automation": { hub: "/testing-alternatives", vendorOffers: true },
+  "Web Scraping": { hub: "/testing-alternatives", vendorOffers: true },
+  "Server Management": { hub: "/hosting-alternatives", vendorOffers: true },
   "Cloud IaaS": { comparison: "/cloud-free-tier-comparison-2026", hub: "/hosting-alternatives" },
   "Status Pages": { hub: "/monitoring-alternatives" },
-  "Notebooks & Data Science": { hub: "/ai-ml-alternatives" },
-  "Mobile Development": { hub: "/design-alternatives" },
-  "Video": { hub: "/storage-alternatives" },
-  "Maps/Geolocation": { hub: "/api-development-alternatives" },
-  "Localization": { hub: "/api-development-alternatives" },
-  "DNS & Domain Management": { hub: "/hosting-alternatives" },
-  "Tunneling & Networking": { hub: "/hosting-alternatives" },
-  "Diagramming": { hub: "/design-alternatives" },
-  "Dev Utilities": { hub: "/api-development-alternatives" },
+  "Notebooks & Data Science": { hub: "/ai-ml-alternatives", vendorOffers: true },
+  "Mobile Development": { hub: "/design-alternatives", vendorOffers: true },
+  "Video": { hub: "/storage-alternatives", vendorOffers: true },
+  "Maps/Geolocation": { hub: "/api-development-alternatives", vendorOffers: true },
+  "Localization": { hub: "/api-development-alternatives", vendorOffers: true },
+  "DNS & Domain Management": { hub: "/hosting-alternatives", vendorOffers: true },
+  "Tunneling & Networking": { hub: "/hosting-alternatives", vendorOffers: true },
+  "Diagramming": { hub: "/design-alternatives", vendorOffers: true },
+  "Dev Utilities": { hub: "/api-development-alternatives", vendorOffers: true },
   "Startup Perks": { hub: "/startup-credits" },
-  "Background Jobs": { hub: "/hosting-alternatives" },
-  "API Gateway": { hub: "/api-development-alternatives" },
+  "Background Jobs": { hub: "/hosting-alternatives", vendorOffers: true },
+  "API Gateway": { hub: "/api-development-alternatives", vendorOffers: true },
 };
 
 const saasRelevantCategories = new Set([
@@ -5703,15 +5703,18 @@ function buildVendorPage(slug: string): string | null {
   </div>`;
 
   const catMapping = categoryComparisonMap[primary.category];
+  const categoryOffersPath = catMapping?.vendorOffers ? `/category/${toSlug(primary.category)}` : null;
   const categoryCount = offers.filter(o => o.category === primary.category).length;
-  const catContextLink = catMapping?.comparison
+  const catContextLink = categoryOffersPath
+    ? `<a href="${categoryOffersPath}">every ${escHtmlServer(primary.category)} offer we track</a>`
+    : catMapping?.comparison
     ? `<a href="${catMapping.comparison}">full ${escHtmlServer(primary.category)} Free Tier Comparison</a>`
     : catMapping?.hub
     ? `<a href="${catMapping.hub}">${escHtmlServer(primary.category)} alternatives guide</a>`
     : `<a href="/category/${toSlug(primary.category)}">${escHtmlServer(primary.category)} category</a>`;
   const categoryContextHtml = `
   <div class="category-context">
-    <span class="cat-context-label">One of ${categoryCount} ${escHtmlServer(primary.category)} services we track.</span> See our ${catContextLink} &rarr;
+    <span class="cat-context-label">One of ${categoryCount} ${escHtmlServer(primary.category)} services we track.</span> See ${categoryOffersPath ? "" : "our "}${catContextLink} &rarr;
   </div>`;
 
   const usageBeyondTheFreeTierIsBilled = statesUsageBeyondTheFreeTierIsBilled(listingStatements(primary));
@@ -5875,7 +5878,9 @@ ${allCompareLinks.join("\n")}
   if (catMapping?.comparison) {
     internalLinks.push(`<a href="${catMapping.comparison}">${escHtmlServer(primary.category)} Free Tier Comparison</a>`);
   }
-  if (catMapping?.hub && catMapping.hub !== catMapping?.comparison) {
+  if (categoryOffersPath) {
+    internalLinks.push(`<a href="${categoryOffersPath}">${escHtmlServer(primary.category)} offers we track</a>`);
+  } else if (catMapping?.hub && catMapping.hub !== catMapping?.comparison) {
     internalLinks.push(`<a href="${catMapping.hub}">${escHtmlServer(primary.category)} Alternatives Guide</a>`);
   }
   if (saasRelevantCategories.has(primary.category)) {
