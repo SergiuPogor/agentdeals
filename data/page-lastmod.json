@@ -3565,7 +3565,7 @@
       "changed": "2026-10-19"
     },
     "/security-free-tier-comparison-2026": {
-      "hash": "98e7f2e4a4f30cea",
+      "hash": "7cb0be168d684723",
       "changed": "2026-10-19"
     },
     "/serverless-free-tier-comparison-2026": {
@@ -8106,7 +8106,7 @@
       "changed": "2026-10-19"
     },
     "/vendor/sanity": {
-      "hash": "1de9fa88294dffd5",
+      "hash": "885b348e71ca0be4",
       "changed": "2026-10-19"
     },
     "/vendor/sauce-labs": {
@@ -8416,7 +8416,7 @@
       "changed": "2026-10-19"
     },
     "/vendor/socket-dev": {
-      "hash": "76aa0b48b505b137",
+      "hash": "0f3444a5a943abdb",
       "changed": "2026-10-19"
     },
     "/vendor/sofodata": {

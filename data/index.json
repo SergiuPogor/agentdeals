@@ -3479,7 +3479,7 @@
       "source_check": {
         "checked": "2026-10-18",
         "outcome": "ok",
-        "detail": "the page names Sanity as \"sanity\" and states \"$ 0\" and \"$0\""
+        "detail": "the page names Sanity as \"sanity\" and states \"$ 0\""
       }
     },
     {
@@ -4668,7 +4668,7 @@
       "source_check": {
         "checked": "2026-10-15",
         "outcome": "ok",
-        "detail": "the page names Socket.dev as \"socket\" and states \"$0\" and \"1,000 scans per month\" and \"500 API quota per hour\""
+        "detail": "the page names Socket.dev as \"socket\" and states \"1,000 scans per month\" and \"500 API quota per hour\""
       }
     },
     {
