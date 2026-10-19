@@ -467,8 +467,8 @@ describe("no surface renders a discovery date as the date the vendor changed som
     for (const route of ["/changes", "/pricing-changes"]) {
       const { dated, discovered } = await bodies(route);
       assert.ok(
-        renderedBadge.test(dated),
-        `${route} did not mark the dated control as upcoming, so the check below would pass for the wrong reason`
+        !renderedBadge.test(dated),
+        `${route} marked an event effective today as upcoming`
       );
       assert.ok(discovered.includes(undatedGroupHeading(1, 2)), `${route} has no undated group`);
       assert.ok(!renderedBadge.test(discovered), `${route} marked a discovery as upcoming`);
@@ -486,8 +486,8 @@ describe("no surface renders a discovery date as the date the vendor changed som
       );
       assert.strictEqual(
         countEntriesFor(monthsOf(dated), prefix, SUBJECT),
-        0,
-        `${route} should keep an event effective today in Upcoming until the following day`
+        1,
+        `${route} should place an event effective today in its calendar month`
       );
       assert.strictEqual(
         countEntriesFor(monthsOf(discovered), prefix, SUBJECT),
