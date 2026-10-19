@@ -11,7 +11,7 @@ const REPO = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DAY_MS = 86_400_000;
 const dayFromToday = (days: number): string => new Date(Date.now() + days * DAY_MS).toISOString().slice(0, 10);
 
-const A_NAME_EVERY_LIST_SELECTS =
+const A_NAME_THE_SUBSTRING_LISTS_SELECT =
   "Fixture OpenAI Railway Supabase Sentry GitHub Actions Postman Cloudflare PostHog SendGrid Resend Figma Slack Cursor Vercel Neon Clerk Langfuse Portkey Deepgram Roboflow";
 
 const BOXES: Record<string, number> = {
@@ -48,7 +48,7 @@ const STACKS: Record<string, number> = {
 
 function aChange(daysFromToday: number, summary: string, extra: Record<string, unknown> = {}) {
   return {
-    vendor: A_NAME_EVERY_LIST_SELECTS,
+    vendor: A_NAME_THE_SUBSTRING_LISTS_SELECT,
     change_type: "limits_reduced",
     date: dayFromToday(daysFromToday),
     date_source: "vendor_page",
@@ -110,33 +110,37 @@ function stabilityNoteItems(page: string): string[] | null {
 
 describe("every Recent Pricing Changes box and every stack page's Stability Notes list the newest changes in effect first", () => {
   let dir = "";
-  let proc: ChildProcess | null = null;
+  const processes: ChildProcess[] = [];
   const pages = new Map<string, string>();
 
   before(async () => {
     dir = mkdtempSync(path.join(tmpdir(), "recent-changes-newest-first-"));
-    const changesPath = path.join(dir, "deal_changes.json");
-    writeFileSync(changesPath, JSON.stringify({ changes: FIXTURES }));
-    const child = spawn("node", [path.join(REPO, "dist", "serve.js")], {
-      stdio: ["pipe", "pipe", "pipe"],
-      env: { ...process.env, PORT: "0", BASE_URL: "http://localhost", TZ: "UTC", AGENTDEALS_CHANGES_PATH: changesPath },
-    });
-    proc = child;
-    const port = await new Promise<number>((resolve, reject) => {
-      const timeout = setTimeout(() => { child.kill(); reject(new Error("Server startup timeout")); }, 60000);
-      child.stderr!.on("data", (data: Buffer) => {
-        const m = data.toString().match(/running on http:\/\/localhost:(\d+)/);
-        if (m) { clearTimeout(timeout); resolve(parseInt(m[1], 10)); }
+    const renderFixtures = async (changes: typeof FIXTURES, routes: string[]) => {
+      const changesPath = path.join(dir, `changes-${processes.length}.json`);
+      writeFileSync(changesPath, JSON.stringify({ changes }));
+      const child = spawn("node", [path.join(REPO, "dist", "serve.js")], {
+        stdio: ["pipe", "pipe", "pipe"],
+        env: { ...process.env, PORT: "0", BASE_URL: "http://localhost", TZ: "UTC", AGENTDEALS_CHANGES_PATH: changesPath },
       });
-      child.on("error", (err) => { clearTimeout(timeout); reject(err); });
-    });
-    for (const route of [...Object.keys(BOXES), ...Object.keys(STACKS)]) {
-      pages.set(route, await (await fetch(`http://localhost:${port}${route}`)).text());
-    }
+      processes.push(child);
+      const port = await new Promise<number>((resolve, reject) => {
+        const timeout = setTimeout(() => { child.kill(); reject(new Error("Server startup timeout")); }, 60000);
+        child.stderr!.on("data", (data: Buffer) => {
+          const m = data.toString().match(/running on http:\/\/localhost:(\d+)/);
+          if (m) { clearTimeout(timeout); resolve(parseInt(m[1], 10)); }
+        });
+        child.on("error", (err) => { clearTimeout(timeout); reject(err); });
+      });
+      for (const route of routes) {
+        pages.set(route, await (await fetch(`http://localhost:${port}${route}`)).text());
+      }
+    };
+    await renderFixtures(FIXTURES, [...Object.keys(BOXES).filter(route => route !== "/hosting-alternatives"), ...Object.keys(STACKS)]);
+    await renderFixtures(FIXTURES.map(change => ({ ...change, vendor: "Railway" })), ["/hosting-alternatives"]);
   });
 
   after(() => {
-    proc?.kill();
+    for (const proc of processes) proc.kill();
     rmSync(dir, { recursive: true, force: true });
   });
 
