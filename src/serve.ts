@@ -141,7 +141,7 @@ import { buildProductFunctions, functionMembers, functionDefinitions, functionMe
 import { curatedAlternativesFor } from "./curated-alternatives.js";
 import { vendorSubstitutes, substitutesListedFor } from "./vendor-substitutes.js";
 import type { Agent, ChangeDateSource, DealChange, FreePlanExcerpt, RiskCause, RatingWithheld, LinkUnreachable, ListingCondition, Offer, StabilityClass, SubtypeLabel } from "./types.js";
-import { A_DATED_HEADING_MARKER, A_DATED_SECTION_MARKER, archiveBracketOf, datedHeadingNoticeHtml, datedSectionNoticeHtml, namedFromItsDate, namedOnceItsDateArrived, namedWhileAheadOf, namedWhileNotBefore, statedDatesShownWhileLaterThan, ANNOUNCED_BADGE, ANNOUNCED_HEADING, announcedIntro, changeDateLabel, changeEntryDateLabel, changeEntryLongDateLabel, changeDateClause, changeDatePublished, changeEventStartDate, capListSections, latestEventDate, offerExpiryAfter, feedEntryUpdated, UNDATED_TILE_LABEL, firstReadHeading, discoveryBatchNote, coveringBracketedChanges, changeEntryDateLabelHtml, isoWeekOf, monthlyChangeSeries, changesInWindow, discoveryMonthSeriesHeading, periodComparisonSentence, DISCOVERED_DATE_PREFIX, EFFECTIVE_DATE_PREFIX, UNKNOWN_EFFECTIVE_DATE_MARKER, EFFECTIVE_BY_DATE_MEANING, BRACKETED_DATE_PREFIX, RECORDED_DATE_PREFIX, CORRECTED_DATE_PREFIX, EFFECTIVE_MONTH_SERIES_NOTE, DISCOVERY_MONTH_SERIES_NOTE, weekRangeLabel, newestChangeInEffect, hasNotTakenEffect, vendorPageLastUpdated } from "./change-dates.js";
+import { A_DATED_HEADING_MARKER, A_DATED_SECTION_MARKER, archiveBracketOf, datedHeadingNoticeHtml, datedSectionNoticeHtml, namedFromItsDate, namedOnceItsDateArrived, namedWhileAheadOf, statedDatesShownWhileLaterThan, ANNOUNCED_BADGE, ANNOUNCED_HEADING, announcedIntro, changeDateLabel, changeEntryDateLabel, changeEntryLongDateLabel, changeDateClause, changeDatePublished, changeEventStartDate, capListSections, latestEventDate, offerExpiryAfter, feedEntryUpdated, UNDATED_TILE_LABEL, firstReadHeading, discoveryBatchNote, coveringBracketedChanges, changeEntryDateLabelHtml, isoWeekOf, monthlyChangeSeries, changesInWindow, discoveryMonthSeriesHeading, periodComparisonSentence, DISCOVERED_DATE_PREFIX, EFFECTIVE_DATE_PREFIX, UNKNOWN_EFFECTIVE_DATE_MARKER, EFFECTIVE_BY_DATE_MEANING, BRACKETED_DATE_PREFIX, RECORDED_DATE_PREFIX, CORRECTED_DATE_PREFIX, EFFECTIVE_MONTH_SERIES_NOTE, DISCOVERY_MONTH_SERIES_NOTE, weekRangeLabel, newestChangeInEffect, hasNotTakenEffect, vendorPageLastUpdated } from "./change-dates.js";
 import { changeFeedEntries, feedEntryFields, feedUpdatedTimestamp, changeFeedProvenanceNote, CHANGE_FEED_ENTRY_LIMIT, CHANGE_FEED_DESCRIPTION, CHANGE_FEED_NAMESPACE, CHANGE_FEED_NAMESPACE_PREFIX, channelUpdatedTimestamp, WEEKLY_FEED_POPULATION_NOTE, feedLinkTag, feedEntrySourceXml, digestSourceXml, PER_CHANGE_FEED, WEEKLY_DIGEST_FEED } from "./change-feed.js";
 import { changeLogInPageOrder, changeLogSections, changeLogSectionsHtml, monthHeadingLabel } from "./change-log-sections.js";
 import { FEED_CORRECTIONS, correctionEntriesXml } from "./feed-corrections.js";
@@ -49029,7 +49029,7 @@ function buildPricingChangesPage(): string {
   const sorted = [...eventDated].sort((a, b) => b.date.localeCompare(a.date));
   const indexSections = changeLogSections(allChanges, today);
   const retirementEntries = retirementTimelineEntries(allChanges);
-  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
+  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date <= today || isOurOwnBookkeeping(c)), today);
 
   const filterCategory: Record<string, string> = CHANGE_DIRECTION;
 
@@ -49040,7 +49040,7 @@ function buildPricingChangesPage(): string {
       : changeTypeBadge[c.change_type] ?? { label: c.change_type, color: "#8b949e" };
     const impactColor = changeImpactColor(c.impact);
     const dated = isEventDated(c);
-    const isUpcoming = dated && c.date >= today;
+    const isUpcoming = dated && c.date > today;
     const category = filterCategory[c.change_type] ?? "neutral";
     const altHtml = c.alternatives && c.alternatives.length > 0
       ? `<div class="pc-alts"><span class="pc-alts-label">Alternatives:</span> ${c.alternatives.map(a => changeVendorLinkHtml(a)).join(", ")}</div>`
@@ -49078,7 +49078,7 @@ ${altHtml}
   const countedAll = trackedChanges(allChanges);
   const countable = changesTheVendorMade(trackedChanges(sorted));
   const undatedCounted = trackedChanges(undatedChanges).length;
-  const upcomingCount = countable.filter(c => upcomingDateOf(c, today) >= today).length;
+  const upcomingCount = countable.filter(c => upcomingDateOf(c, today) > today).length;
   const removedCount = changesTheVendorMade(countedAll).filter(endsAFreeTier).length;
   const thisMonth = today.slice(0, 7);
   const thisMonthCount = countable.filter(c => c.date.slice(0, 7) === thisMonth).length;
@@ -49096,7 +49096,7 @@ ${altHtml}
   const ytdNetColor = ytdNet > 0 ? "#3fb950" : ytdNet < 0 ? "#f85149" : "#8b949e";
 
   const latest = changesTheVendorMade(trackedChanges<ChangeTimelineEntry>([...sorted, ...retirementEntries])).filter(c => c.date <= today).sort((a, b) => b.date.localeCompare(a.date)).slice(0, LATEST_PRICING_CHANGES_SHOWN);
-  const upcomingChanges = countable.map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date >= today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
+  const upcomingChanges = countable.map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date > today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
 
   const vendorCategories = [...new Set(sorted.map(c => c.category || "").filter(Boolean))].sort();
   const years = [...new Set(sorted.map(c => c.date.slice(0, 4)))].sort().reverse();
@@ -49404,9 +49404,9 @@ ${upcomingChanges.length > 0 ? `
     <h2>${UPCOMING_CHANGES_HEADING}</h2>
     <p class="upcoming-intro">${UPCOMING_CHANGES_INTRO}</p>
     ${datedSectionNoticeHtml(
-      namedWhileNotBefore("A change", today),
+      `A change is named here only while its effective date is later than ${today}.`,
       [
-        { when: "The day after that date it stops being upcoming and is listed only under the month it falls in, in the timeline below and in", text: "the full change log", href: "/changes" },
+        { when: "On that date it stops being upcoming and is listed only under the month it falls in, in the timeline below and in", text: "the full change log", href: "/changes" },
       ],
       escHtmlServer,
       ' class="upcoming-intro dated-rule"',
@@ -49507,11 +49507,11 @@ function buildChangesPage(): string {
   const sorted = [...eventDated].sort((a, b) => b.date.localeCompare(a.date));
   const indexSections = changeLogSections(allChanges, today);
   const retirementEntries = retirementTimelineEntries(allChanges);
-  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
+  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date <= today || isOurOwnBookkeeping(c)), today);
   const countable = changesTheVendorMade(trackedChanges(sorted));
   const latest = changesTheVendorMade(trackedChanges<ChangeTimelineEntry>([...sorted, ...retirementEntries])).filter(c => c.date <= today).sort((a, b) => b.date.localeCompare(a.date)).slice(0, LATEST_PRICING_CHANGES_SHOWN);
-  const upcomingOriginals = changesTheVendorMade(sorted).filter(c => c.date >= today).sort((a, b) => upcomingDateOf(a, today).localeCompare(upcomingDateOf(b, today)));
-  const upcomingChanges = changesTheVendorMade(sorted).map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date >= today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
+  const upcomingOriginals = changesTheVendorMade(sorted).filter(c => c.date > today).sort((a, b) => upcomingDateOf(a, today).localeCompare(upcomingDateOf(b, today)));
+  const upcomingChanges = changesTheVendorMade(sorted).map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date > today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
   const inPageOrder = [...upcomingOriginals, ...changeLogInPageOrder(sections).filter(c => !c.originalRecord)];
 
   const byMonth = new Map<string, typeof sorted>();
@@ -49534,7 +49534,7 @@ function buildChangesPage(): string {
       : changeTypeBadge[c.change_type] ?? { label: c.change_type, color: "#8b949e" };
     const impactColor = changeImpactColor(c.impact);
     const dated = isEventDated(c);
-    const isUpcoming = dated && c.date >= today;
+    const isUpcoming = dated && c.date > today;
     const anchor = changeLogAnchorFor(c.vendor);
     const anchorAttr = !preview && anchor && anchorHolder.get(anchor) === original ? ` id="${anchor}"` : "";
     const altHtml = c.alternatives && c.alternatives.length > 0
@@ -49559,7 +49559,7 @@ ${altHtml}
       </div>`;
   }
 
-  const upcomingCount = countable.filter(c => upcomingDateOf(c, today) >= today).length;
+  const upcomingCount = countable.filter(c => upcomingDateOf(c, today) > today).length;
   const removedCount = changesTheVendorMade(counted).filter(endsAFreeTier).length;
   const entriesListed = inPageOrder.length;
 
@@ -49716,12 +49716,12 @@ ${upcomingChanges.length > 0 ? `
     <h2 class="month-heading">${UPCOMING_CHANGES_HEADING}</h2>
     <p class="month-note">${UPCOMING_CHANGES_INTRO}</p>
     ${datedSectionNoticeHtml(
-      namedWhileNotBefore("A change", today),
-      [{ when: "The day after that date it stops being upcoming and is listed only under the month it falls in, in", text: "the timeline below", href: "/changes" }],
+      `A change is named here only while its effective date is later than ${today}.`,
+      [{ when: "On that date it stops being upcoming and is listed only under the month it falls in, in", text: "the timeline below", href: "/changes" }],
       escHtmlServer,
       ' class="month-note dated-rule"',
     )}
-${upcomingChanges.map(c => buildChangeEntry(c.shown, c.original !== c.shown && c.original.date < today, c.original)).join("\n")}
+${upcomingChanges.map(c => buildChangeEntry(c.shown, c.original !== c.shown && c.original.date <= today, c.original)).join("\n")}
   </section>
 ` : ""}
 ${changeLogSectionsHtml(sections, allChanges.length, buildChangeEntry, escHtmlServer)}

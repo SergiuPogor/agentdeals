@@ -402,7 +402,7 @@ function surfacesOf(body: string, day = new Date().toISOString().slice(0, 10)): 
     timelineEntries: timelineEntriesOf(body),
     upcomingDeclaresMonthMove: headingsWhoseSectionSays(body, section =>
       section.includes(A_DATED_SECTION_MARKER)
-      && section.includes("The day after that date it stops being upcoming and is listed only under the month it falls in")
+      && section.includes("On that date it stops being upcoming and is listed only under the month it falls in")
     ).includes("Upcoming Changes") && dated.some(declaration => declaration.headings.includes("Upcoming Changes")),
     changesStated: changes ? asCount(changes[1] ?? changes[2]!) : null,
     changesListed: headingsOf(body)
@@ -561,7 +561,7 @@ function entersItsEffectiveMonth(before: Surfaces, after: Surfaces, vendor: stri
   if (!before.upcomingDeclaresMonthMove) return false;
   if (Date.parse(after.day) - Date.parse(before.day) !== A_DAY_IN_MS) return false;
   return before.timelineEntries.some(entry =>
-    entry.heading === "Upcoming Changes" && entry.vendor === vendor && entry.date === before.day
+    entry.heading === "Upcoming Changes" && entry.vendor === vendor && entry.date === after.day
     && heading === monthHeadingLabel(entry.date.slice(0, 7))
     && !after.timelineEntries.some(next => next.heading === "Upcoming Changes" && next.vendor === vendor && next.date === entry.date)
     && after.timelineEntries.some(next => next.heading === heading && next.vendor === vendor && next.date === entry.date));
@@ -725,15 +725,15 @@ describe("a quoted deadline can leave without a change-log entry", () => {
 });
 
 describe("a timeline entry moves into its effective month", () => {
-  const rule = `${A_DATED_SECTION_MARKER} A change is upcoming while its effective date is 2026-10-20 or later. The day after that date it stops being upcoming and is listed only under the month it falls in, in <a href="/changes">the timeline below</a>.`;
+  const rule = `${A_DATED_SECTION_MARKER} A change is upcoming while its effective date is later than 2026-10-19. On that date it stops being upcoming and is listed only under the month it falls in, in <a href="/changes">the timeline below</a>.`;
   const section = (heading: string, content: string, note = "") => `<h2>${heading}</h2><p>${note}</p>${content}`;
   const page = (content: string, day: string) => surfacesOf(`<title>Changes</title>${content}`, day);
 
   for (const layout of ["chg", "pc"]) {
     const entry = (vendor = "alfa", date = "2026-10-20", label = "effective", kind = "entry") =>
       `<div class="${layout}-${kind}"><div class="${layout}-left"><div class="${layout}-date">${label} ${date}</div></div><div><a href="/vendor/${vendor}" class="${layout}-vendor">${vendor}</a></div></div>`;
-    const before = (content = entry(), note = rule, day = "2026-10-20") => page(section("Upcoming Changes", content, note), day);
-    const after = (content = entry(), heading = "October 2026", day = "2026-10-21", upcoming = "") =>
+    const before = (content = entry(), note = rule, day = "2026-10-19") => page(section("Upcoming Changes", content, note), day);
+    const after = (content = entry(), heading = "October 2026", day = "2026-10-20", upcoming = "") =>
       page(section("Upcoming Changes", upcoming, rule) + section(heading, content), day);
     const unexplained = (first: Surfaces, next: Surfaces) => movesWithNoDatedReason(first, next);
 
@@ -741,23 +741,23 @@ describe("a timeline entry moves into its effective month", () => {
       assert.deepEqual(before().timelineEntries, [{ heading: "Upcoming Changes", vendor: "alfa", date: "2026-10-20" }]);
     });
 
-    it(`${layout}: explains an entry leaving Upcoming the day after its effective date`, () => {
+    it(`${layout}: explains an entry leaving Upcoming on its effective date`, () => {
       assert.deepEqual(unexplained(before(), after()), []);
       assert.deepEqual(unexplained(before(entry("alfa", "2026-10-20", "effective", "preview")), after()), []);
     });
 
     it(`${layout}: handles the last day of a month without assigning the entry to the new month`, () => {
-      assert.deepEqual(unexplained(before(entry("alfa", "2026-10-31"), rule, "2026-10-31"), after(entry("alfa", "2026-10-31"), "October 2026", "2026-11-01")), []);
+      assert.deepEqual(unexplained(before(entry("alfa", "2026-10-31"), rule, "2026-10-30"), after(entry("alfa", "2026-10-31"), "October 2026", "2026-10-31")), []);
     });
 
     it(`${layout}: explains a month gain while another entry keeps the vendor in Upcoming`, () => {
       const later = entry("alfa", "2026-11-01");
-      assert.deepEqual(unexplained(before(entry() + later), after(entry(), "October 2026", "2026-10-21", later)), []);
+      assert.deepEqual(unexplained(before(entry() + later), after(entry(), "October 2026", "2026-10-20", later)), []);
     });
 
     it(`${layout}: rejects a vendor gaining an older month even when another entry crosses its date`, () => {
       const older = entry("alfa", "2026-09-20");
-      const next = page(section("October 2026", entry()) + section("September 2026", older), "2026-10-21");
+      const next = page(section("October 2026", entry()) + section("September 2026", older), "2026-10-20");
       assert.deepEqual(unexplained(before(), next), ["alfa"]);
     });
 
@@ -774,7 +774,7 @@ describe("a timeline entry moves into its effective month", () => {
     });
 
     it(`${layout}: rejects a move when the same entry remains in Upcoming`, () => {
-      assert.deepEqual(unexplained(before(), after(entry(), "October 2026", "2026-10-21", entry())), ["alfa"]);
+      assert.deepEqual(unexplained(before(), after(entry(), "October 2026", "2026-10-20", entry())), ["alfa"]);
     });
 
     it(`${layout}: does not borrow another vendor's crossing date`, () => {
@@ -792,7 +792,7 @@ describe("a timeline entry moves into its effective month", () => {
     });
 
     it(`${layout}: requires Upcoming to state the calendar rule, its month destination and a link`, () => {
-      for (const note of ["", rule.replace(A_DATED_SECTION_MARKER, ""), rule.replace("The day after that date it stops being upcoming and is listed only under the month it falls in", "The entry moves elsewhere"), rule.replace(/<a[^>]*>.*?<\/a>/, "the timeline below")]) {
+      for (const note of ["", rule.replace(A_DATED_SECTION_MARKER, ""), rule.replace("On that date it stops being upcoming and is listed only under the month it falls in", "The entry moves elsewhere"), rule.replace(/<a[^>]*>.*?<\/a>/, "the timeline below")]) {
         assert.deepEqual(unexplained(before(entry(), note), after()), ["alfa"]);
       }
     });
