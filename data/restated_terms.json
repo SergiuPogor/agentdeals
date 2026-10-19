@@ -173,7 +173,8 @@
       "source_url": "https://fingerprint.com/pricing/",
       "record_date": "2026-09-02",
       "change_type": "limits_increased",
-      "summary": "The free tier now includes a 14-day free trial of the Pro Plus plan and offers 500k Android API calls/mo."
+      "summary": "The free tier now includes a 14-day free trial of the Pro Plus plan and offers 500k Android API calls/mo.",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "Fastly",
@@ -1094,7 +1095,8 @@
       "source_url": "https://www.tomorrow.io/weather-api/",
       "record_date": "2026-08-28",
       "change_type": "limits_increased",
-      "summary": "The free tier now includes access to 60+ data layers, historical data, and various APIs (Weather Forecast, Historical Weather, Weather Maps, Weather Monitoring)."
+      "summary": "The free tier now includes access to 60+ data layers, historical data, and various APIs (Weather Forecast, Historical Weather, Weather Maps, Weather Monitoring).",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "UniRateAPI",
@@ -1213,7 +1215,8 @@
       "source_url": "https://www.transfernow.net/en/prices",
       "record_date": "2026-09-07",
       "change_type": "limits_increased",
-      "summary": "The free tier now offers 5 GB per transfer and 100 GB of storage, with files available for 7 days. A 'Starter' plan with 10 GB per transfer and 100 GB of storage for 3 EUR/month has also been added."
+      "summary": "The free tier now offers 5 GB per transfer and 100 GB of storage, with files available for 7 days. A 'Starter' plan with 10 GB per transfer and 100 GB of storage for 3 EUR/month has also been added.",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "userforge.com",
@@ -1449,7 +1452,8 @@
       "source_url": "https://betterstack.com/logs/pricing",
       "record_date": "2026-09-07",
       "change_type": "limits_increased",
-      "summary": "The free tier now offers 3 GB logs retained for 3 days, 3 GB traces retained for 3 days, 30 GB metrics, and 3 GB web events retained for 3 days. It also includes 10 monitors & heartbeats, 1 status page, Slack & e-mail alerts, 100,000 exceptions per month, and 5,000 session replays."
+      "summary": "The free tier now offers 3 GB logs retained for 3 days, 3 GB traces retained for 3 days, 30 GB metrics, and 3 GB web events retained for 3 days. It also includes 10 monitors & heartbeats, 1 status page, Slack & e-mail alerts, 100,000 exceptions per month, and 5,000 session replays.",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "linkok.com",
@@ -2117,7 +2121,8 @@
       "source_url": "https://www.fivetran.com/pricing",
       "record_date": "2026-09-09",
       "change_type": "limits_increased",
-      "summary": "The free tier for Activations now offers 500,000 MAR for connections and 3,500 MAR for Activations."
+      "summary": "The free tier for Activations now offers 500,000 MAR for connections and 3,500 MAR for Activations.",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "Hotjar",
@@ -2301,7 +2306,8 @@
       "source_url": "https://lovable.dev/pricing",
       "record_date": "2026-09-03",
       "change_type": "limits_increased",
-      "summary": "The free tier now includes 20 Cloud credits in addition to the 5 daily (up to 30/month) build credits, and 4 credits for AI features."
+      "summary": "The free tier now includes 20 Cloud credits in addition to the 5 daily (up to 30/month) build credits, and 4 credits for AI features.",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "GitHub Copilot",
@@ -2544,7 +2550,8 @@
       "source_url": "https://penpot.app/pricing",
       "record_date": "2026-09-25",
       "change_type": "limits_increased",
-      "summary": "The Professional plan is now $0/user/month but has unlimited teams and storage up to 25GB (previously 10GB). It also includes 90 days of autosave versions and file recovery (previously 7 days)."
+      "summary": "The Professional plan is now $0/user/month but has unlimited teams and storage up to 25GB (previously 10GB). It also includes 90 days of autosave versions and file recovery (previously 7 days).",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "ConfigCat",
