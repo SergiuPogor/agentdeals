@@ -16433,7 +16433,7 @@
     {
       "vendor": "BugBug",
       "category": "Testing",
-      "description": "Lightweight test automation tool for web applications — The Free plan includes: Unlimited local test runs, unlimited tests, unlimited test suites, unlimited users, unlimited projects, AI Test recorder, Components, Edit & rewind, Screenshots, 7 days of tests history.",
+      "description": "Lightweight test automation tool for web applications — The Free plan includes: Unlimited local test runs, 15 tests, 4 test suites, 1 user, 1 project, AI Test recorder, Components, Edit & rewind, Screenshots, 7 days of tests history.",
       "tier": "Free",
       "url": "https://bugbug.io/",
       "tags": [
@@ -16442,17 +16442,21 @@
         "free-for-dev"
       ],
       "verifiedDate": "2026-08-04",
+      "restatement_reverted": {
+        "record_date": "2026-09-28",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-09-28",
         "outcome": "ok",
         "detail": "the page names BugBug as \"bugbug\" and states amounts, none of which we matched to the terms we publish"
       },
       "restated_from": {
-        "reading_date": "2026-09-28",
+        "reading_date": "2026-08-28",
         "source_url": "https://bugbug.io/",
-        "record_date": "2026-09-28",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-28"
+        "record_date": "2026-08-28",
+        "change_type": "limits_reduced",
+        "restated_on": "2026-09-20"
       }
     },
     {
@@ -33530,7 +33534,7 @@
     {
       "vendor": "Notion",
       "category": "Productivity & Notes",
-      "description": "Free $0 per seat/month. Pages & blocks Unlimited for individuals limited for 2+ members Unlimited Unlimited. File uploads Up to 5 MB Unlimited Unlimited Unlimited. Page history 7 days 30 days 90 days Unlimited. External guest limit 10 Unlimited guests Unlimited guests Unlimited guests",
+      "description": "Notion Free is $0 per member a month. Workspaces with one member have unlimited pages and blocks, while workspaces with two or more members have a block limit. The Free plan includes file uploads up to 5 MB per file, 7 days of page history, and 10 external guests. It also includes a trial of Notion AI, basic forms, basic sites, Notion Calendar, and databases. Plus costs $10 per seat a month and provides unlimited file uploads, 30 days of page history, and unlimited guests.",
       "tier": "Free",
       "url": "https://www.notion.com/pricing",
       "tags": [
@@ -33552,17 +33556,14 @@
         "commission_type": "recurring",
         "notes": "Commission on Plus, Business, or AI Plan upgrades. Paid monthly via PayPal/Stripe."
       },
+      "restatement_reverted": {
+        "record_date": "2026-08-28",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-06",
         "outcome": "ok",
         "detail": "the page names Notion as \"notion\" and states \"$0\""
-      },
-      "restated_from": {
-        "reading_date": "2026-08-28",
-        "source_url": "https://www.notion.com/pricing",
-        "record_date": "2026-08-28",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-20"
       }
     },
     {

@@ -6280,6 +6280,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing increased. Notion's pricing table gives the Free plan file uploads \"Up to 5 MB\", \"7 days\" of page history and an external guest limit of \"10\". The \"Unlimited\" values the reading took for the Free plan are the Plus, Business and Enterprise columns of the same rows.",
+        "source_url": "https://www.notion.com/pricing"
       }
     },
     {
@@ -14912,6 +14918,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing increased. BugBug's pricing page lists the Free plan with \"Only local testing\", 4 test suites, 1 user, 1 project and 15 tests, and its FAQ answers \"Can I use BugBug for free?\" with \"Unlimited local test runs, 15 tests, 4 test suites, 1 user, 1 project\". The unlimited tests, users and projects the reading gave the Free plan are the Pro plan's.",
+        "source_url": "https://bugbug.io/"
       }
     },
     {

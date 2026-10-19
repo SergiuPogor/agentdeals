@@ -2341,7 +2341,8 @@
       "source_url": "https://www.notion.com/pricing",
       "record_date": "2026-08-28",
       "change_type": "limits_increased",
-      "summary": "The free tier still exists. The details have changed. The free tier now includes unlimited pages and blocks. The free tier now includes unlimited file uploads. It was previously limited to 5MB. The free tier now includes unlimited guest collaborators. It was previously limited to 10. The page history is now unlimited on the free tier. It was previously 7 days."
+      "summary": "The free tier still exists. The details have changed. The free tier now includes unlimited pages and blocks. The free tier now includes unlimited file uploads. It was previously limited to 5MB. The free tier now includes unlimited guest collaborators. It was previously limited to 10. The page history is now unlimited on the free tier. It was previously 7 days.",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "Airtable",
@@ -2719,7 +2720,8 @@
       "source_url": "https://bugbug.io/",
       "record_date": "2026-09-28",
       "change_type": "limits_increased",
-      "summary": "The free plan now offers unlimited tests, test suites, users, and projects, and includes AI Test recorder, Components, Edit & rewind, Screenshots, and 7 days of tests history. Previously limits of 15 tests, 4 test suites, 1 user, and 1 project."
+      "summary": "The free plan now offers unlimited tests, test suites, users, and projects, and includes AI Test recorder, Components, Edit & rewind, Screenshots, and 7 days of tests history. Previously limits of 15 tests, 4 test suites, 1 user, and 1 project.",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "Mockerito",
