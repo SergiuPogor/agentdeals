@@ -35353,6 +35353,13 @@ function comparisonCatalogueOffers(meta: ComparisonPageMeta): Offer[] {
   return offers.filter(o => o.category === meta.catalogueCategory);
 }
 
+function comparisonCategoryChanges(category: string): DealChange[] {
+  const vendors = new Set(offers.filter(o => o.category === category).map(o => o.vendor));
+  return changesTheVendorMade(dealChanges)
+    .filter(c => vendors.has(c.vendor))
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
+
 function buildComparisonCategoryBackLink(slug: string): string {
   const meta = comparisonMetaBySlug.get(slug);
   if (!meta || meta.catalogueCategory === null) return "";
@@ -38884,11 +38891,7 @@ function buildEmailComparison2026Page(): string {
   const slug = "email-comparison-2026";
   const pubDate = "2026-04-03";
 
-  const emailVendorKeywords = ["SendGrid", "Resend", "Postmark", "Brevo", "Mailchimp", "Amazon SES", "Mailgun", "Mailtrap", "Loops", "MailerSend", "Mailjet", "SparkPost", "MessageBird", "Plunk", "EmailOctopus", "Buttondown", "ImprovMX", "SimpleLogin", "ForwardEmail", "Postal", "Maileroo", "AhaSend", "Sweego", "SMTP2GO", "MailerLite", "EmailLabs", "Substack", "Inboxes App", "debugmail"];
-  const emailChanges = dealChanges.filter((c: any) =>
-    emailVendorKeywords.some(v => c.vendor === v || c.vendor.startsWith(v + " ") || c.vendor.includes(v)) ||
-    (c.summary && (c.summary.toLowerCase().includes("email") || c.summary.toLowerCase().includes("smtp") || c.summary.toLowerCase().includes("transactional")))
-  ).sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const emailChanges = comparisonCategoryChanges("Email");
 
   const changeTimelineRows = emailChanges.slice(0, 12).map((c: any) => {
     const dateStr = changeEntryLongDateLabel(c);
@@ -38910,7 +38913,7 @@ function buildEmailComparison2026Page(): string {
       <div class="link-desc">${escHtmlServer(p.hubDesc)}</div>
     </a>`).join("\n    ");
 
-  const changeTimelineHtml = emailChanges.length > 0 ? `<div style="overflow-x:auto">
+  const changeTimelineHtml = `<div style="overflow-x:auto">
   <table class="pricing-table">
     <thead>
       <tr>
@@ -38924,7 +38927,7 @@ function buildEmailComparison2026Page(): string {
         ${changeTimelineRows}
     </tbody>
   </table>
-  </div>` : `<p class="section-intro">No email-specific pricing changes tracked yet.</p>`;
+  </div>`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -39854,11 +39857,7 @@ function buildMonitoringComparison2026Page(): string {
   const slug = "monitoring-comparison-2026";
   const pubDate = "2026-04-03";
 
-  const monitoringVendorKeywords = ["Datadog", "Grafana", "New Relic", "Sentry", "Axiom", "Sematext", "Middleware", "BetterStack", "Better Stack", "UptimeRobot", "StatusCake", "Hyperping", "Pulsetic", "Pingbreak", "OnlineOrNot", "PagerDuty", "incident.io", "PagerTree", "Healthchecks", "Cronitor", "Dead Man", "Prometheus", "Jaeger", "Netdata", "Robusta", "AppSignal", "Inspector", "Uptimia", "Checkly", "Rollbar", "Bugsnag", "HyperDX", "SigNoz", "Elastic"];
-  const monitoringChanges = dealChanges.filter((c: any) =>
-    monitoringVendorKeywords.some(v => c.vendor === v || c.vendor.startsWith(v + " ") || c.vendor.includes(v)) ||
-    (c.summary && (c.summary.toLowerCase().includes("monitoring") || c.summary.toLowerCase().includes("observability") || c.summary.toLowerCase().includes("apm") || c.summary.toLowerCase().includes("uptime")))
-  ).sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const monitoringChanges = comparisonCategoryChanges("Monitoring");
 
   const changeTimelineRows = monitoringChanges.slice(0, 12).map((c: any) => {
     const dateStr = changeEntryLongDateLabel(c);
@@ -39880,7 +39879,7 @@ function buildMonitoringComparison2026Page(): string {
       <div class="link-desc">${escHtmlServer(p.hubDesc)}</div>
     </a>`).join("\n    ");
 
-  const changeTimelineHtml = monitoringChanges.length > 0 ? `<div style="overflow-x:auto">
+  const changeTimelineHtml = `<div style="overflow-x:auto">
   <table class="pricing-table">
     <thead>
       <tr>
@@ -39894,7 +39893,7 @@ function buildMonitoringComparison2026Page(): string {
         ${changeTimelineRows}
     </tbody>
   </table>
-  </div>` : `<p class="section-intro">No monitoring-specific pricing changes tracked yet.</p>`;
+  </div>`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -40885,11 +40884,7 @@ function buildStorageComparison2026Page(): string {
   const slug = "storage-comparison-2026";
   const pubDate = "2026-04-03";
 
-  const storageVendorKeywords = ["Cloudflare R2", "Cloudflare", "Backblaze", "AWS S3", "Amazon S3", "Google Cloud Storage", "Azure Blob", "DigitalOcean Spaces", "Supabase", "Firebase", "Storj", "Tigris", "Wasabi", "MinIO", "Cloudinary", "ImageKit", "Uploadcare", "Vercel Blob", "Oracle Cloud", "BunnyCDN", "Bunny", "KeyCDN", "Gumlet", "Pinata", "SeaweedFS", "Garage"];
-  const storageChanges = dealChanges.filter((c: any) =>
-    storageVendorKeywords.some(v => c.vendor === v || c.vendor.startsWith(v + " ") || c.vendor.includes(v)) ||
-    (c.summary && (c.summary.toLowerCase().includes("storage") || c.summary.toLowerCase().includes("egress") || c.summary.toLowerCase().includes("object stor")))
-  ).sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const storageChanges = comparisonCategoryChanges("Storage");
 
   const changeTimelineRows = storageChanges.slice(0, 12).map((c: any) => {
     const dateStr = changeEntryLongDateLabel(c);
@@ -40911,7 +40906,7 @@ function buildStorageComparison2026Page(): string {
       <div class="link-desc">${escHtmlServer(p.hubDesc)}</div>
     </a>`).join("\n    ");
 
-  const changeTimelineHtml = storageChanges.length > 0 ? `<div style="overflow-x:auto">
+  const changeTimelineHtml = `<div style="overflow-x:auto">
   <table class="pricing-table">
     <thead>
       <tr>
@@ -40925,7 +40920,7 @@ function buildStorageComparison2026Page(): string {
         ${changeTimelineRows}
     </tbody>
   </table>
-  </div>` : `<p class="section-intro">No storage-specific pricing changes tracked yet.</p>`;
+  </div>`;
 
   const jsonLd = {
     "@context": "https://schema.org",
