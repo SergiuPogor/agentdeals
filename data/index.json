@@ -8608,7 +8608,7 @@
     {
       "vendor": "GitHub Codespaces",
       "category": "IDE & Code Editors",
-      "description": "Cloud development environments — 120 core hours/month (60 hours on 2-core machine) + 15 GB storage free for every GitHub Free personal account. Pre-configured dev containers with VS Code in browser",
+      "description": "GitHub Free personal accounts include 120 core hours monthly (60 hours on a 2-core machine) and 15 GB storage. GitHub Pro and verified students get 180 core hours (90 hours on a 2-core machine) and 20 GB storage. Beyond free quotas, a 2-core machine costs $0.18 per hour. Storage is $0.07 per GB-month.",
       "tier": "Free",
       "url": "https://github.com/features/codespaces",
       "tags": [

@@ -1213,8 +1213,8 @@
       "changed": "2026-10-19"
     },
     "/category/ide-code-editors": {
-      "hash": "aefa729b185c7dfb",
-      "changed": "2026-10-18"
+      "hash": "04dbaca17dc872a4",
+      "changed": "2026-10-19"
     },
     "/category/infrastructure": {
       "hash": "81a71c3bfe633100",
@@ -3159,8 +3159,8 @@
       "daily": true
     },
     "/events/microsoft-build-2026": {
-      "hash": "9adfca22cef537bc",
-      "changed": "2026-10-18"
+      "hash": "2704dce249064abf",
+      "changed": "2026-10-19"
     },
     "/expiring": {
       "daily": true
@@ -3304,7 +3304,7 @@
       "changed": "2026-10-19"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "0c886c835d5b48b8",
+      "hash": "8b2df6924d234366",
       "changed": "2026-10-19"
     },
     "/llm-api-pricing": {
@@ -3577,7 +3577,7 @@
       "daily": true
     },
     "/stack-check": {
-      "hash": "dd852ee8d3f01ed4",
+      "hash": "7c50bdc6207afd0a",
       "changed": "2026-10-19"
     },
     "/stacks": {
@@ -5885,7 +5885,7 @@
       "daily": true
     },
     "/vendor/github-codespaces": {
-      "hash": "aa5402d66e3deefb",
+      "hash": "e759d2bfee7851e7",
       "changed": "2026-10-19"
     },
     "/vendor/github-container-registry": {
