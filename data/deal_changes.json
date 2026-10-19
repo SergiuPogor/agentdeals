@@ -11484,6 +11484,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: socket.dev/pricing showed the Free plan with \"3 members\" in every Internet Archive capture from 2026-01-09 to 2026-10-10, so the free tier never went from 5 members to 3; the 5 came from our own older listing. The \"500 API quota per hour\" line appeared on the Free card between the 2026-06-09 and 2026-08-05 captures, with no earlier figure to compare.",
+        "source_url": "https://socket.dev/pricing"
       }
     },
     {
