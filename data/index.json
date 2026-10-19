@@ -8317,7 +8317,7 @@
     {
       "vendor": "Brave Search API",
       "category": "AI / ML",
-      "description": "$5 in free credits every month, applied automatically. Search is $5 per 1,000 requests; Answers is $4 per 1,000 requests plus $5 per million tokens. Web search, news, videos, images, LLM context endpoints. 50 queries/sec. Credit card required. The earlier free plan (2,000 queries/mo) ended Feb 2026",
+      "description": "$5 in free credits every month, applied automatically. Brave's \"up to $20\" figure is $5 on each of four plans: Search, Answers, Spellcheck and Autosuggest. Search is $5 per 1,000 requests; Answers is $4 per 1,000 requests plus $5 per million tokens. Web search, news, videos, images, LLM context endpoints. 50 queries/sec. Credit card required. The earlier free plan (2,000 queries/mo) ended Feb 2026",
       "tier": "Free",
       "url": "https://brave.com/search/api/",
       "tags": [
