@@ -1121,8 +1121,8 @@
       "changed": "2026-10-18"
     },
     "/category/cdn": {
-      "hash": "791ce718d864535a",
-      "changed": "2026-10-18"
+      "hash": "0ec9c6638aa0dfd7",
+      "changed": "2026-10-19"
     },
     "/category/ci-cd": {
       "hash": "c79b5c3322ecdba6",
@@ -1133,8 +1133,8 @@
       "changed": "2026-10-18"
     },
     "/category/cloud-iaas": {
-      "hash": "86b7360f04c29f47",
-      "changed": "2026-10-16"
+      "hash": "e698752690c2cec9",
+      "changed": "2026-10-19"
     },
     "/category/cloud-storage": {
       "hash": "14b74e443e7c2469",
@@ -1364,8 +1364,8 @@
       "changed": "2026-10-11"
     },
     "/compare": {
-      "hash": "fa6b78bcbb49c427",
-      "changed": "2026-10-11"
+      "hash": "61a2180ab09b3c62",
+      "changed": "2026-10-19"
     },
     "/compare-tool": {
       "hash": "0d839ff581e66e34",
@@ -1415,13 +1415,13 @@
       "hash": "1aa481e87b6d1988",
       "changed": "2026-10-11"
     },
-    "/compare/amazon-cloudfront-vs-stellate": {
-      "hash": "1a7046cc67f6fb91",
-      "changed": "2026-10-11"
+    "/compare/amazon-cloudfront-vs-ovhcloud": {
+      "hash": "1f22bd6122a9df54",
+      "changed": "2026-10-19"
     },
-    "/compare/amazon-cloudfront-vs-weserv": {
-      "hash": "bb3b639098b26bca",
-      "changed": "2026-10-16"
+    "/compare/amazon-cloudfront-vs-toranproxy-com": {
+      "hash": "af4a0eb3d51c0d6b",
+      "changed": "2026-10-19"
     },
     "/compare/amazon-ecr-public-vs-container-registry-service": {
       "hash": "4fc77bb6a4c0a715",
@@ -2168,8 +2168,8 @@
       "changed": "2026-10-18"
     },
     "/compare/hcp-terraform-vs-ovhcloud": {
-      "hash": "12518644e3956d89",
-      "changed": "2026-10-18"
+      "hash": "eca69703abe918fe",
+      "changed": "2026-10-19"
     },
     "/compare/hcp-terraform-vs-spacelift": {
       "hash": "dac14e14af892267",
@@ -2468,12 +2468,20 @@
       "changed": "2026-10-16"
     },
     "/compare/ovhcloud-vs-deployment-io": {
-      "hash": "e2a5a0777e126515",
-      "changed": "2026-10-15"
+      "hash": "ac5233efc6bbfaa8",
+      "changed": "2026-10-19"
+    },
+    "/compare/ovhcloud-vs-raw-githack-com": {
+      "hash": "67b049f21e0321e4",
+      "changed": "2026-10-19"
     },
     "/compare/ovhcloud-vs-spacelift": {
-      "hash": "5fee700e65f82967",
-      "changed": "2026-10-15"
+      "hash": "a79585a5be170157",
+      "changed": "2026-10-19"
+    },
+    "/compare/ovhcloud-vs-toranproxy-com": {
+      "hash": "18547a6357d342e8",
+      "changed": "2026-10-19"
     },
     "/compare/pagure-io-vs-sourceforge": {
       "hash": "3330a6099a93081b",
@@ -2503,14 +2511,6 @@
       "hash": "77c710f46b5c0997",
       "changed": "2026-10-14"
     },
-    "/compare/promoproxy-vs-stellate": {
-      "hash": "183a30961697cd50",
-      "changed": "2026-10-11"
-    },
-    "/compare/promoproxy-vs-weserv": {
-      "hash": "0fd87ff86f7b1dfb",
-      "changed": "2026-10-16"
-    },
     "/compare/proton-mail-vs-tutanota": {
       "hash": "5cf8109a450ad093",
       "changed": "2026-10-16"
@@ -2538,6 +2538,10 @@
     "/compare/rapidapi-vs-treblle": {
       "hash": "4b114447d8fc0242",
       "changed": "2026-10-16"
+    },
+    "/compare/raw-githack-com-vs-toranproxy-com": {
+      "hash": "e0acfb8e68e8434d",
+      "changed": "2026-10-19"
     },
     "/compare/render-vs-vercel": {
       "hash": "54b4f6b5ac7efbfc",
@@ -2598,10 +2602,6 @@
     "/compare/sololearn-vs-wave-terminal": {
       "hash": "b204f9ca8562c8aa",
       "changed": "2026-10-14"
-    },
-    "/compare/stellate-vs-weserv": {
-      "hash": "b2866b0d42488b49",
-      "changed": "2026-10-16"
     },
     "/compare/storyblok-vs-wpjack": {
       "hash": "76f2d335bf16648e",
@@ -3284,8 +3284,8 @@
       "changed": "2026-10-17"
     },
     "/hetzner-alternatives": {
-      "hash": "7e1f1385370d0d82",
-      "changed": "2026-10-17"
+      "hash": "edaec1bb34191d13",
+      "changed": "2026-10-19"
     },
     "/hetzner-pricing-2026": {
       "hash": "26109ea89b9a809a",
@@ -3577,7 +3577,7 @@
       "daily": true
     },
     "/stack-check": {
-      "hash": "7c50bdc6207afd0a",
+      "hash": "6a479432d01c0aff",
       "changed": "2026-10-19"
     },
     "/stacks": {
@@ -3612,7 +3612,7 @@
       "daily": true
     },
     "/storage-alternatives": {
-      "hash": "78e3b6e415055158",
+      "hash": "2c21bde379360a9d",
       "changed": "2026-10-19"
     },
     "/storage-comparison-2026": {
@@ -3891,8 +3891,8 @@
       "changed": "2026-10-19"
     },
     "/vendor": {
-      "hash": "f7c17abc6b12f22d",
-      "changed": "2026-10-18"
+      "hash": "22be521cfd8aed31",
+      "changed": "2026-10-19"
     },
     "/vendor/10minutemail": {
       "hash": "509387fa3e0d5963",
@@ -4005,7 +4005,7 @@
       "daily": true
     },
     "/vendor/amazon-cloudfront": {
-      "hash": "a12a9524a8146ac0",
+      "hash": "16d67d206fc31350",
       "changed": "2026-10-19"
     },
     "/vendor/amazon-cognito": {
@@ -7780,7 +7780,7 @@
       "daily": true
     },
     "/vendor/promoproxy": {
-      "hash": "cb12b97da8a39242",
+      "hash": "4a13c8091d06c88b",
       "changed": "2026-10-19"
     },
     "/vendor/propelauth": {
@@ -7922,7 +7922,7 @@
       "daily": true
     },
     "/vendor/raw-githack-com": {
-      "hash": "3efd8c1f0feac471",
+      "hash": "bf05f68be688e71a",
       "changed": "2026-10-19"
     },
     "/vendor/ray-so": {
@@ -8532,7 +8532,7 @@
       "changed": "2026-10-19"
     },
     "/vendor/stellate": {
-      "hash": "74738eb9500231a6",
+      "hash": "baba39f742558e74",
       "changed": "2026-10-19"
     },
     "/vendor/stickies": {
@@ -8895,7 +8895,7 @@
       "changed": "2026-10-19"
     },
     "/vendor/toranproxy-com": {
-      "hash": "21fee0d04d438b9a",
+      "hash": "559f8834846e7b93",
       "changed": "2026-10-19"
     },
     "/vendor/tracelog": {
@@ -9319,7 +9319,7 @@
       "daily": true
     },
     "/vendor/weserv": {
-      "hash": "92fc6f3b14a2eb10",
+      "hash": "d07230d00b13dc35",
       "changed": "2026-10-19"
     },
     "/vendor/what-the-diff": {
