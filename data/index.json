@@ -13570,7 +13570,7 @@
     },
     {
       "vendor": "SerpApi",
-      "category": "Web Scraping",
+      "category": "AI / ML",
       "description": "Real-time search engine scraping API. Returns structured JSON results for Google, YouTube, Bing, Baidu, Walmart, and many other engines. Free plan: 250 searches/month, 50 requests/hour throughput limit. Month-to-month, cancel anytime. See [serpapi.com/pricing](https://serpapi.com/pricing).",
       "tier": "Free",
       "url": "https://serpapi.com/pricing",
@@ -13579,6 +13579,17 @@
         "free-for-dev"
       ],
       "verifiedDate": "2026-10-04",
+      "product_subtypes": {
+        "taxonomy": "AI / ML",
+        "labels": [
+          {
+            "subtype": "web_search_api",
+            "source_url": "https://serpapi.com/use-cases/web-search-api",
+            "source_quote": "Turn raw web data into JSON or Markdown for your AI applications."
+          }
+        ],
+        "reviewed": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-04",
         "outcome": "ok",
