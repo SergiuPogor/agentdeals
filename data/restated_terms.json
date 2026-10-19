@@ -1252,7 +1252,8 @@
       "source_url": "https://www.storyblok.com/pricing",
       "record_date": "2026-09-07",
       "change_type": "limits_increased",
-      "summary": "The free tier (Starter) still exists. The description of included features is more detailed on the pricing page."
+      "summary": "The free tier (Starter) still exists. The description of included features is more detailed on the pricing page.",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "Supermaven",

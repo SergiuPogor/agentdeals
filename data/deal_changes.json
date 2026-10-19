@@ -520,12 +520,12 @@
     {
       "vendor": "Sentry",
       "change_type": "pricing_restructured",
-      "date": "2025-08-15",
-      "summary": "Switched from performance units to spans-based metrics for error and performance monitoring",
-      "previous_state": "Performance units pricing model",
-      "current_state": "Spans-based metrics: Developer plan includes 50K errors + 10M spans/month free. Reserved volume pricing replaces on-demand",
+      "date": "2024-06-11",
+      "summary": "Sentry changed how it bills tracing from performance units to span units.",
+      "previous_state": "Tracing was billed in performance units.",
+      "current_state": "Paid plans include 50k errors, 10M spans, 50 replays, 1 cron monitor, 1GB of attachments a month.",
       "impact": "medium",
-      "source_url": "https://sentry.io/pricing/",
+      "source_url": "https://github.com/getsentry/sentry-docs/commit/80bf7e0c1e22dcc6cbe4512e9d25a45aacf70268",
       "category": "Monitoring",
       "alternatives": [
         "Datadog",
@@ -533,7 +533,7 @@
         "BetterStack"
       ],
       "recorded_date": "2026-02-25",
-      "date_source": "hand_written"
+      "date_source": "vendor_page"
     },
     {
       "vendor": "Neon",
@@ -16887,6 +16887,55 @@
           }
         ]
       }
+    },
+    {
+      "vendor": "Sentry",
+      "change_type": "limits_reduced",
+      "date": "2025-08-27",
+      "summary": "Sentry cut the included spans in all plans from 10M to 5M a month and added 5GB of logs to every plan, including the free Developer plan.",
+      "previous_state": "All plans included 10M spans a month.",
+      "current_state": "All plans include 5M spans and 5GB of logs a month.",
+      "impact": "medium",
+      "source_url": "https://github.com/getsentry/sentry-docs/commit/e16e8824eadd3229b46dd8f4b3d217e7a776b68b",
+      "category": "Monitoring",
+      "alternatives": [
+        "Datadog",
+        "New Relic",
+        "BetterStack"
+      ],
+      "date_source": "vendor_page",
+      "listing_effect": "none",
+      "recorded_date": "2026-10-19"
+    },
+    {
+      "vendor": "Sentry",
+      "change_type": "record_corrected",
+      "date": "2026-10-19",
+      "summary": "Data correction - the record dated 2025-08-15 said Sentry switched from performance units to spans-based metrics that day. Sentry's docs began billing tracing in span units on 2024-06-11. The Internet Archive's copy of 2024-04-13 priced performance units; its copy of 2024-06-12 priced spans. The record is now dated 2024-06-11 and describes the switch to span-based billing with the paid-plan figures.",
+      "previous_state": "Dated 2025-08-15: \"Switched from performance units to spans-based metrics. Developer plan includes 50K errors + 10M spans/month free. Reserved volume pricing replaces on-demand\"",
+      "current_state": "Dated 2024-06-11 from Sentry's docs and the Internet Archive's copy of 2024-06-12",
+      "impact": "low",
+      "source_url": "https://github.com/getsentry/sentry-docs/commit/80bf7e0c1e22dcc6cbe4512e9d25a45aacf70268",
+      "category": "Monitoring",
+      "alternatives": [],
+      "recorded_date": "2026-10-19",
+      "date_source": "hand_written"
+    },
+    {
+      "vendor": "Google Antigravity",
+      "change_type": "product_deprecated",
+      "date": "2026-11-02",
+      "summary": "Google Antigravity's Free and Google AI Plus plans keep running. Until November 2, 2026, they include Claude Sonnet 4.6, Claude Opus 4.6 and GPT-OSS-120b; Google removes these models on that date, leaving Gemini 3.8 Flash as the only reasoning model on those plans.",
+      "previous_state": "On 2026-10-17, Google Antigravity's Free and Google AI Plus plans offered Claude Sonnet 4.6, Claude Opus 4.6, GPT-OSS-120b and Gemini 3.8 Flash.",
+      "current_state": "Google Antigravity's models page (read 2026-10-19) marks Claude Sonnet 4.6, Claude Opus 4.6 and GPT-OSS-120b on Free and Google AI Plus: \"Will be removed on November 2, 2026.\"",
+      "impact": "low",
+      "source_url": "https://antigravity.google/docs/models",
+      "category": "AI Coding",
+      "alternatives": [],
+      "recorded_date": "2026-10-19",
+      "date_source": "hand_written",
+      "listing_effect": "none",
+      "what_ends": "Claude 4.6 models and GPT-OSS-120b on Antigravity's Free and Google AI Plus plans"
     }
   ]
 }

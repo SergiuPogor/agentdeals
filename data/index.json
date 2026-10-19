@@ -1391,7 +1391,7 @@
           "read_on": "2026-10-11"
         },
         {
-          "text": "A Free project with no development activity in the Console for 7 days is paused. Traffic from users does not keep it active. A paused project is not accessible to its users and runs no backups, cron jobs or scheduled functions until it is reactivated in the Console.",
+          "text": "A Free project with no development activity in the Appwrite Console for 7 days is paused. User traffic does not prevent pausing. The project becomes inaccessible to users and stops running backups, cron jobs, and scheduled functions until reactivated in the Console.",
           "quote": "projects on the Free plan with no development activity for 7 consecutive days will be automatically paused.",
           "url": "https://appwrite.io/changelog/entry/2026-02-20-1",
           "read_on": "2026-10-11"
@@ -1403,10 +1403,10 @@
           "read_on": "2026-10-05"
         },
         {
-          "text": "Cron schedules for functions work on the Free and Education plans until October 19, 2026. From that date those plans run functions only on an interval of 60 minutes or longer, and existing cron schedules become intervals close to how often they run now, so a function scheduled every 5 minutes runs every 60 minutes. Keeping a cron schedule needs a paid plan.",
+          "text": "From October 19, 2026, cron schedules for functions on Appwrite Cloud need a paid plan. On the Free and Education plans, functions run only on an interval of 60 minutes or longer. Existing cron schedules become intervals close to how often they ran.",
           "quote": "From Monday, October 19, 2026, cron schedules for functions on Appwrite Cloud will need a paid plan. Functions on the Free and Education plans run on an interval of 60 minutes or longer, and their existing cron schedules become intervals close to how often they run today.",
           "url": "https://appwrite.io/changelog/entry/2026-10-15-1",
-          "read_on": "2026-10-15"
+          "read_on": "2026-10-19"
         },
         {
           "text": "If a Free project reaches any resource limit, such as function executions or monthly active users, it freezes and the Console becomes read-only until the next billing cycle, or the owner upgrades to Pro or removes the resources over the limit.",
@@ -15460,7 +15460,7 @@
     {
       "vendor": "Storyblok",
       "category": "Headless CMS",
-      "description": "Headless CMS with visual editor for developers and marketers — Starter plan is free and includes 1 space, 1 user seat (with an additional seat available for $15/month), 100GB traffic/month, 100k API requests/month, 2 locales, 200 components, 20,000 stories, 2,000 assets, 1 day content versioning retention, 500MB max asset size, and 3 webhooks.",
+      "description": "Headless CMS with visual editor for developers and marketers — Starter plan is free and includes 1 space, 1 user seat (with an additional seat available for $15/month), 100GB traffic/month, 100k API requests/month, 2 locales, 25k AI credits, 200 components, 20,000 stories, 2,000 assets, 1 day content versioning retention, 500MB max asset size, and 3 webhooks.",
       "tier": "Free",
       "url": "https://www.storyblok.com/pricing",
       "tags": [
@@ -15475,12 +15475,9 @@
         "outcome": "ok",
         "detail": "the page names Storyblok as \"storyblok\" and states \"$15.00\" and \"100GB traffic/month\" and \"100k API requests/month\""
       },
-      "restated_from": {
-        "reading_date": "2026-09-07",
-        "source_url": "https://www.storyblok.com/pricing",
+      "restatement_reverted": {
         "record_date": "2026-09-07",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-20"
+        "reverted_on": "2026-10-19"
       }
     },
     {
