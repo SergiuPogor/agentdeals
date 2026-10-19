@@ -2,6 +2,8 @@ import { describe, it, before, after } from "node:test";
 import assert from "node:assert";
 import { assertPopulationFloor } from "./population-floor.ts";
 import { spawn, type ChildProcess } from "node:child_process";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -21,6 +23,7 @@ import {
 } from "../dist/stack-claim.js";
 import { toSlug } from "../dist/vendor-slug.js";
 import { conditionsHtml } from "../dist/listing-conditions.js";
+import type { DealChange, Offer } from "../dist/types.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.join(__dirname, "..");
@@ -46,18 +49,21 @@ const STACK_PAGES = [
 let proc: ChildProcess | null = null;
 let port = 0;
 
-function startHttpServer(): Promise<{ child: ChildProcess; port: number }> {
+function startHttpServer(env: NodeJS.ProcessEnv = {}): Promise<{ child: ChildProcess; port: number }> {
   return new Promise((resolve, reject) => {
     const child = spawn("node", [path.join(REPO, "dist", "serve.js")], {
       stdio: ["pipe", "pipe", "pipe"],
-      env: { ...process.env, PORT: "0", BASE_URL: "http://localhost" },
+      env: { ...process.env, PORT: "0", BASE_URL: "http://localhost", ...env },
     });
+    let stderr = "";
     const timeout = setTimeout(() => { child.kill(); reject(new Error("Server startup timeout")); }, 30000);
     child.stderr!.on("data", (data: Buffer) => {
+      stderr += data.toString();
       const m = data.toString().match(/running on http:\/\/localhost:(\d+)/);
       if (m) { clearTimeout(timeout); resolve({ child, port: parseInt(m[1], 10) }); }
     });
     child.on("error", (err) => { clearTimeout(timeout); reject(err); });
+    child.on("exit", (code) => { clearTimeout(timeout); reject(new Error(`Server exited ${code}: ${stderr}`)); });
   });
 }
 
@@ -235,7 +241,6 @@ describe("stack pages do not out-claim the badge", () => {
 
   it("cites the reading behind a limit our stored terms no longer supply", async () => {
     const uncited: string[] = [];
-    let cited = 0;
     for (const route of STACK_PAGES) {
       const html = pages.get(route)!;
       let fromAReading = 0;
@@ -244,10 +249,8 @@ describe("stack pages do not out-claim the badge", () => {
         if (offer?.terms_superseded?.reading) fromAReading += 1;
       }
       const citations = (html.match(/class="stack-limit-source"/g) ?? []).length;
-      cited += citations;
       if (citations !== fromAReading) uncited.push(`${route}: ${fromAReading} limits read from a change record, ${citations} of them cited`);
     }
-    assert.ok(cited > 0, "no limit on any stack page is served from a change record, so nothing was checked");
     assert.deepStrictEqual(uncited, [], `limits published without the reading behind them:\n${uncited.join("\n")}`);
   });
 
@@ -287,6 +290,95 @@ describe("stack pages do not out-claim the badge", () => {
     }
     assert.deepStrictEqual([...new Set(unqualified)], [], `unqualified $0 headlines:\n${unqualified.join("\n")}`);
     assert.ok(priced.length > 0, "no stack page totals $0, so nothing above was checked");
+  });
+});
+
+describe("stack limit citations with supplied readings", () => {
+  const fixtures = [
+    { vendor: "Vercel", category: "Cloud Hosting", route: "/free-nextjs-stack", slug: "vercel" },
+    { vendor: "Deepgram", category: "AI / ML", route: "/free-ai-stack", slug: "deepgram" },
+  ];
+  const previous = "Fixture free plan includes 12000 requests a month.";
+  const current = "Fixture free plan includes 8000 requests a month.";
+  const date = "2026-01-15";
+  const processes: ChildProcess[] = [];
+  const rendered = new Map<string, Map<string, string>>();
+  let dir = "";
+
+  before(async () => {
+    dir = mkdtempSync(path.join(tmpdir(), "stack-limit-citations-"));
+    const indexPath = path.join(dir, "index.json");
+    writeFileSync(indexPath, JSON.stringify({ offers: fixtures.map(fixture => ({
+      vendor: fixture.vendor,
+      category: fixture.category,
+      description: previous,
+      tier: "Free",
+      url: `https://${fixture.slug}.example/pricing`,
+      verifiedDate: date,
+      tags: [],
+    } satisfies Offer)) }));
+    for (const state of ["superseded", "reversed"]) {
+      const changesPath = path.join(dir, `${state}.json`);
+      writeFileSync(changesPath, JSON.stringify({ changes: fixtures.map(fixture => ({
+        vendor: fixture.vendor,
+        category: fixture.category,
+        change_type: "limits_reduced",
+        date,
+        date_source: "vendor_page",
+        recorded_date: date,
+        previous_state: previous,
+        current_state: current,
+        summary: current,
+        source_url: `https://${fixture.slug}.example/pricing`,
+        impact: "medium",
+        alternatives: [],
+        ...(state === "reversed" ? { resolution: {
+          state: "reversed",
+          date,
+          detail: "Fixture change no longer applies.",
+          source_url: `https://${fixture.slug}.example/pricing`,
+        } } : {}),
+      } satisfies DealChange)) }));
+      const started = await startHttpServer({
+        AGENTDEALS_INDEX_PATH: indexPath,
+        AGENTDEALS_CHANGES_PATH: changesPath,
+      });
+      processes.push(started.child);
+      const pages = new Map<string, string>();
+      for (const fixture of fixtures) {
+        const res = await fetch(`http://localhost:${started.port}${fixture.route}`);
+        assert.strictEqual(res.status, 200);
+        pages.set(fixture.route, await res.text());
+      }
+      rendered.set(state, pages);
+    }
+  });
+
+  after(() => {
+    for (const child of processes) child.kill();
+    if (dir) rmSync(dir, { recursive: true, force: true });
+  });
+
+  it("cites every supplied superseding limit with its vendor and reading date", () => {
+    for (const { route, slug } of fixtures) {
+      const html = rendered.get("superseded")!.get(route)!;
+      const limits = limitsPublishedOn(html).filter(limit => limit.slug === slug);
+      assert.ok(limits.length > 0, `${route} publishes no ${slug} limit`);
+      assert.deepStrictEqual(limits.map(limit => limit.limit), limits.map(() => current));
+      const citations = [...html.matchAll(/<a href="([^"]+)" class="stack-limit-source"[^>]*>([^<]*)<\/a>/g)];
+      assert.deepStrictEqual(citations.map(citation => [citation[1], citation[2]]),
+        limits.map(() => [`/vendor/${slug}#changes`, `read ${date}`]));
+    }
+  });
+
+  it("needs no superseding limit once all supplied changes are reversed", () => {
+    for (const { route, slug } of fixtures) {
+      const html = rendered.get("reversed")!.get(route)!;
+      const limits = limitsPublishedOn(html).filter(limit => limit.slug === slug);
+      assert.ok(limits.length > 0, `${route} publishes no ${slug} limit`);
+      assert.deepStrictEqual(limits.map(limit => limit.limit), limits.map(() => previous));
+      assert.doesNotMatch(html, /class="stack-limit-source"/);
+    }
   });
 });
 
