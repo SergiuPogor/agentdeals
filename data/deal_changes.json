@@ -6868,6 +6868,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing increased. ImgBB's homepage gives free uploads a \"32 MB limit\", in the Internet Archive's captures of 2025-01-01 and 2026-08-01 as today. The \"64 MB file size per image\" and \"Unlimited space\" the reading quoted belong to the ImgBB Pro account, which the same page offered in both captures.",
+        "source_url": "https://imgbb.com/"
       }
     },
     {

@@ -25659,7 +25659,7 @@
     {
       "vendor": "ImgBB",
       "category": "Storage",
-      "description": "ImgBB is an unlimited image hosting servce. Drag and drop your image anywhere on the screen. 32 MB / image limit. Receive Direct image links, BBCode and HTML thumbnails after uploading image. Login to see the upload history.",
+      "description": "ImgBB is a free image hosting service. It allows 32 MB per image, direct image links, BBCode and HTML thumbnails, and optional automatic deletion after 5 minutes to 6 months. Pro costs $3.99 a month on the 3-year plan, $7.99 a month on the annual plan, or $12.99 billed monthly. It adds no ads, unlimited space, and 64 MB per image.",
       "tier": "Free",
       "url": "https://imgbb.com/",
       "tags": [
