@@ -2973,17 +2973,14 @@
         "free tier"
       ],
       "verifiedDate": "2026-10-06",
+      "restatement_reverted": {
+        "record_date": "2026-09-02",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-06",
         "outcome": "ok",
         "detail": "the page names Fingerprint as \"fingerprint\" and states \"$0\" and \"1,000 API calls per month\" and \"500k Android API calls/mo\""
-      },
-      "restated_from": {
-        "reading_date": "2026-09-02",
-        "source_url": "https://fingerprint.com/pricing/",
-        "record_date": "2026-09-02",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-20"
       },
       "free_plan_excerpt": {
         "text": "$0 /month up to 1,000 API calls per month",
@@ -6074,7 +6071,7 @@
     {
       "vendor": "Penpot",
       "category": "Design",
-      "description": "Open-source design platform — Professional $0 user/​month. Unlimited Teams. Up to 25GB of storage (typical file size: 10–100MB). 90 days of autosave versions and 90 days file recovery.",
+      "description": "Open-source design platform — Professional $0 / user / month. Up to 8 team members, and unlimited viewers. Up to 10GB of storage (typical file size: 10–100MB).",
       "tier": "Free",
       "url": "https://penpot.app/pricing",
       "tags": [
@@ -6086,22 +6083,26 @@
         "figma alternative"
       ],
       "verifiedDate": "2026-07-07",
+      "restatement_reverted": {
+        "record_date": "2026-09-25",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-19",
         "outcome": "ok",
         "detail": "the page names Penpot as \"penpot\" and states \"$0\""
       },
+      "restated_from": {
+        "reading_date": "2026-08-28",
+        "source_url": "https://penpot.app/pricing",
+        "record_date": "2026-08-28",
+        "change_type": "limits_reduced",
+        "restated_on": "2026-09-20"
+      },
       "free_grounds": [
         "licence",
         "plan"
-      ],
-      "restated_from": {
-        "reading_date": "2026-09-25",
-        "source_url": "https://penpot.app/pricing",
-        "record_date": "2026-09-25",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-25"
-      }
+      ]
     },
     {
       "vendor": "GitGuardian",
@@ -13661,7 +13662,7 @@
     },
     {
       "vendor": "SerpApi",
-      "category": "Web Scraping",
+      "category": "AI / ML",
       "description": "Real-time search engine scraping API. Returns structured JSON results for Google, YouTube, Bing, Baidu, Walmart, and many other engines. Free plan: 250 searches/month, 50 requests/hour throughput limit. Month-to-month, cancel anytime. See [serpapi.com/pricing](https://serpapi.com/pricing).",
       "tier": "Free",
       "url": "https://serpapi.com/pricing",
@@ -13670,6 +13671,17 @@
         "free-for-dev"
       ],
       "verifiedDate": "2026-10-04",
+      "product_subtypes": {
+        "taxonomy": "AI / ML",
+        "labels": [
+          {
+            "subtype": "web_search_api",
+            "source_url": "https://serpapi.com/use-cases/web-search-api",
+            "source_quote": "Turn raw web data into JSON or Markdown for your AI applications."
+          }
+        ],
+        "reviewed": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-04",
         "outcome": "ok",
@@ -13941,13 +13953,6 @@
         "checked": "2026-09-26",
         "outcome": "ok",
         "detail": "the page names Tomorrow.io Weather API as \"tomorrow io weather api\" and states amounts, none of which we matched to the terms we publish"
-      },
-      "restated_from": {
-        "reading_date": "2026-08-28",
-        "source_url": "https://www.tomorrow.io/weather-api/",
-        "record_date": "2026-08-28",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-20"
       },
       "restatement_reverted": {
         "record_date": "2026-09-26",
@@ -15182,7 +15187,7 @@
     {
       "vendor": "transfernow",
       "category": "Storage",
-      "description": "simplest, fastest and safest interface to transfer and share files — TransferNow Free – 5 GB per transfer to send and receive files quickly and for free. 100 GB of storage. Retention up to 7 days.",
+      "description": "TransferNow Free includes 5 GB per transfer with files available for 7 days and requires no sign-up. The Free plan has no account storage. Starter costs 3 euros a month on a 2-year plan and adds 10 GB per transfer, 100 GB of storage, and 30-day file availability.",
       "tier": "Free",
       "url": "https://www.transfernow.net/en/prices",
       "tags": [
@@ -15190,6 +15195,10 @@
         "free-for-dev"
       ],
       "verifiedDate": "2026-07-10",
+      "restatement_reverted": {
+        "record_date": "2026-09-07",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-16",
         "outcome": "ok",
@@ -15198,13 +15207,6 @@
           "EUR 96",
           "EUR 288"
         ]
-      },
-      "restated_from": {
-        "reading_date": "2026-09-07",
-        "source_url": "https://www.transfernow.net/en/prices",
-        "record_date": "2026-09-07",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-20"
       }
     },
     {
@@ -16518,7 +16520,7 @@
     {
       "vendor": "BugBug",
       "category": "Testing",
-      "description": "Lightweight test automation tool for web applications — The Free plan includes: Unlimited local test runs, unlimited tests, unlimited test suites, unlimited users, unlimited projects, AI Test recorder, Components, Edit & rewind, Screenshots, 7 days of tests history.",
+      "description": "Lightweight test automation tool for web applications — The Free plan includes: Unlimited local test runs, 15 tests, 4 test suites, 1 user, 1 project, AI Test recorder, Components, Edit & rewind, Screenshots, 7 days of tests history.",
       "tier": "Free",
       "url": "https://bugbug.io/",
       "tags": [
@@ -16527,17 +16529,21 @@
         "free-for-dev"
       ],
       "verifiedDate": "2026-08-04",
+      "restatement_reverted": {
+        "record_date": "2026-09-28",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-09-28",
         "outcome": "ok",
         "detail": "the page names BugBug as \"bugbug\" and states amounts, none of which we matched to the terms we publish"
       },
       "restated_from": {
-        "reading_date": "2026-09-28",
+        "reading_date": "2026-08-28",
         "source_url": "https://bugbug.io/",
-        "record_date": "2026-09-28",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-28"
+        "record_date": "2026-08-28",
+        "change_type": "limits_reduced",
+        "restated_on": "2026-09-20"
       }
     },
     {
@@ -18375,17 +18381,14 @@
         "free-for-dev"
       ],
       "verifiedDate": "2026-10-16",
+      "restatement_reverted": {
+        "record_date": "2026-09-07",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-16",
         "outcome": "ok",
         "detail": "the page writes \"betterstack\", the domain we cite Better Stack Logs from, and states \"$0\" and \"100,000 exceptions per month\" and \"3 GB per month\" and \"100k exceptions / month\""
-      },
-      "restated_from": {
-        "reading_date": "2026-09-07",
-        "source_url": "https://betterstack.com/logs/pricing",
-        "record_date": "2026-09-07",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-20"
       },
       "free_plan_excerpt": {
         "text": "Free for personal projects $0 per month Start for free 10 monitors & heartbeats, 1 status page Slack & e-mail alerts 100,000 exceptions per month 5,000 session replays 3 GB logs retained for 3 days 3 GB traces retained for 3 days 30 GB metrics",
@@ -29053,17 +29056,14 @@
         "free-for-dev"
       ],
       "verifiedDate": "2026-10-19",
+      "restatement_reverted": {
+        "record_date": "2026-09-09",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-19",
         "outcome": "ok",
         "detail": "the page names Fivetran Activations as \"fivetran activations\" and states \"$0.00\""
-      },
-      "restated_from": {
-        "reading_date": "2026-09-09",
-        "source_url": "https://www.fivetran.com/pricing",
-        "record_date": "2026-09-09",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-20"
       }
     },
     {
@@ -32352,17 +32352,14 @@
         "developer tools"
       ],
       "verifiedDate": "2026-10-09",
+      "restatement_reverted": {
+        "record_date": "2026-09-03",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-09",
         "outcome": "states_a_free_price",
         "detail": "the page names Lovable and states its price in words as \"free plan\", and the 2 structured-data blocks in its markup state no price"
-      },
-      "restated_from": {
-        "reading_date": "2026-09-03",
-        "source_url": "https://lovable.dev/pricing",
-        "record_date": "2026-09-03",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-20"
       },
       "referral_program": {
         "available": true,
@@ -33640,7 +33637,7 @@
     {
       "vendor": "Notion",
       "category": "Productivity & Notes",
-      "description": "Free $0 per seat/month. Pages & blocks Unlimited for individuals limited for 2+ members Unlimited Unlimited. File uploads Up to 5 MB Unlimited Unlimited Unlimited. Page history 7 days 30 days 90 days Unlimited. External guest limit 10 Unlimited guests Unlimited guests Unlimited guests",
+      "description": "Notion Free is $0 per member a month. Workspaces with one member have unlimited pages and blocks, while workspaces with two or more members have a block limit. The Free plan includes file uploads up to 5 MB per file, 7 days of page history, and 10 external guests. It also includes a trial of Notion AI, basic forms, basic sites, Notion Calendar, and databases. Plus costs $10 per seat a month and provides unlimited file uploads, 30 days of page history, and unlimited guests.",
       "tier": "Free",
       "url": "https://www.notion.com/pricing",
       "tags": [
@@ -33662,17 +33659,14 @@
         "commission_type": "recurring",
         "notes": "Commission on Plus, Business, or AI Plan upgrades. Paid monthly via PayPal/Stripe."
       },
+      "restatement_reverted": {
+        "record_date": "2026-08-28",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-06",
         "outcome": "ok",
         "detail": "the page names Notion as \"notion\" and states \"$0\""
-      },
-      "restated_from": {
-        "reading_date": "2026-08-28",
-        "source_url": "https://www.notion.com/pricing",
-        "record_date": "2026-08-28",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-20"
       }
     },
     {
@@ -34286,7 +34280,7 @@
     {
       "vendor": "Slack",
       "category": "Communication & Messaging",
-      "description": "The free plan includes 90 days of message history, up to 10 apps, 1:1 meetings with screen sharing, 1:1 external messages, basic AI features, SAML-based single sign-on, and SCIM user management.",
+      "description": "Slack's free plan includes 90 days of message history, up to 10 apps, 1:1 meetings and 1:1 external messages. It does not include AI features, SAML-based single sign-on or SCIM user management. AI conversation summaries start on Pro. SAML-based single sign-on and SCIM user management start on Business+.",
       "tier": "Free",
       "url": "https://slack.com/pricing",
       "tags": [
@@ -34301,17 +34295,14 @@
         "free tier"
       ],
       "verifiedDate": "2026-10-18",
+      "restatement_reverted": {
+        "record_date": "2026-09-24",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-18",
         "outcome": "ok",
         "detail": "the page names Slack as \"slack\" and states \"$0\""
-      },
-      "restated_from": {
-        "reading_date": "2026-09-24",
-        "source_url": "https://slack.com/pricing",
-        "record_date": "2026-09-24",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-24"
       }
     },
     {

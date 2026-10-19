@@ -21,17 +21,6 @@
       "source_url": "https://www.imgix.com/pricing",
       "category": "CDN",
       "first_read_date": "2026-10-19"
-    },
-    {
-      "vendor": "Penpot",
-      "change_type": "limits_reduced",
-      "impact": "high",
-      "summary": "The free Professional tier now has a storage limit of 10GB instead of 25GB, 7 days of autosave versions and file recovery instead of 90 days, and no longer includes 50% discount on Penpot events.",
-      "previous_state": "Open-source design platform — Professional $0 user/​month. Unlimited Teams. Up to 25GB of storage (typical file size: 10–100MB). 90 days of autosave versions and 90 days file recovery.",
-      "current_state": "Up to 10GB of storage (typical file size: 10–100MB), 7 days of autosaved versions, 7 days file recovery.",
-      "source_url": "https://penpot.app/pricing",
-      "category": "Design",
-      "first_read_date": "2026-10-19"
     }
   ],
   "resolved": [
@@ -2521,6 +2510,18 @@
       "first_read_date": "2026-10-18",
       "outcome": "corroborated",
       "detail": "a reading on 2026-10-19 read it as pricing_restructured too",
+      "resolved_date": "2026-10-19"
+    },
+    {
+      "vendor": "Penpot",
+      "change_type": "limits_reduced",
+      "impact": "high",
+      "summary": "The free Professional tier now has a storage limit of 10GB instead of 25GB, 7 days of autosave versions and file recovery instead of 90 days, and no longer includes 50% discount on Penpot events.",
+      "previous_state": "Open-source design platform — Professional $0 user/​month. Unlimited Teams. Up to 25GB of storage (typical file size: 10–100MB). 90 days of autosave versions and 90 days file recovery.",
+      "source_url": "https://penpot.app/pricing",
+      "first_read_date": "2026-10-19",
+      "outcome": "baseline_moved",
+      "detail": "the terms it was read against are no longer the terms we publish",
       "resolved_date": "2026-10-19"
     }
   ]

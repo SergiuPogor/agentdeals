@@ -6119,6 +6119,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing changed on 2026-08-28. Tomorrow.io's Free plan card listed the same features (5-Day Forecast, Core Weather Data Layers, 24 hours of historical weather data, 1 automatically monitored location) in the Internet Archive's captures of 2025-06-08 and 2026-08-01, as it does today. The reading compared the page with our shorter description.",
+        "source_url": "https://www.tomorrow.io/weather-api/"
       }
     },
     {
@@ -6280,6 +6286,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing increased. Notion's pricing table gives the Free plan file uploads \"Up to 5 MB\", \"7 days\" of page history and an external guest limit of \"10\". The \"Unlimited\" values the reading took for the Free plan are the Plus, Business and Enterprise columns of the same rows.",
+        "source_url": "https://www.notion.com/pricing"
       }
     },
     {
@@ -9718,6 +9730,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing changed on 2026-09-02. fingerprint.com/pricing listed the Free plan with \"up to 1,000 API calls per month\" and \"500k Android API calls/mo\" in the Internet Archive's captures of 2026-05-01 and 2026-08-02, as it does today. The reading compared the page with our shorter description. The listing has stated Fingerprint's own terms since 2026-09-20.",
+        "source_url": "https://fingerprint.com/pricing/"
       }
     },
     {
@@ -10085,6 +10103,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing changed on 2026-09-03. lovable.dev/pricing carried the same sentence in the Internet Archive's capture of 2026-08-03: \"The free plan includes a daily grant of 5 build credits (up to 30 a month), plus monthly grants of 20 Cloud credits.\" The reading compared the page with our shorter description. The listing has stated Lovable's own terms since 2026-09-20.",
+        "source_url": "https://lovable.dev/pricing"
       }
     },
     {
@@ -10208,6 +10232,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: Slack's pricing page shows AI conversation summaries greyed out on the Free plan, and the reading took the AI features as included. 1:1 external messages are on the Free plan, but we hold no date for when Slack added them.",
+        "source_url": "https://slack.com/pricing"
       }
     },
     {
@@ -11050,6 +11080,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing increased. TransferNow's Free plan card marks \"No storage\" as not included, and its plan comparison table gives Free \"Max. storage: No storage\". The 100 GB of storage belongs to the Starter plan (3 euros a month on a 2-year plan), though one summary card on the same page also gives it to Free.",
+        "source_url": "https://www.transfernow.net/en/prices"
       }
     },
     {
@@ -11197,6 +11233,12 @@
             "first_new_capture": null
           }
         ]
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing increased. Storyblok's pricing table gives the Starter plan 100,000 API requests a month, 200 components, 2,000 assets and 25,000 AI credits a month in the Internet Archive's capture of 2026-08-29, as it does today. The reading found a more detailed description of the same plan, which its own summary says.",
+        "source_url": "https://www.storyblok.com/pricing"
       }
     },
     {
@@ -11348,6 +11390,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing changed on 2026-09-07. betterstack.com/pricing gave the free plan the same allowances (3 GB of logs and 3 GB of traces retained for 3 days, 30 GB of metrics, 100,000 exceptions and 5,000 session replays a month) in the Internet Archive's capture of 2026-08-02. The reading compared the page with our older description.",
+        "source_url": "https://betterstack.com/logs/pricing"
       }
     },
     {
@@ -11521,6 +11569,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing changed on 2026-09-09. fivetran.com/pricing gave the Free plan 3,500 monthly active rows for activations in the Internet Archive's captures of 2026-02-19 and 2026-08-04, as it does today. The 500,000 monthly active rows are for connections, a separate Fivetran product.",
+        "source_url": "https://www.fivetran.com/pricing"
       }
     },
     {
@@ -13159,6 +13213,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: Slack's pricing page shows AI conversation summaries, SAML-based single sign-on and SCIM user management greyed out on the Free plan, and the reading took those rows as included. Pro adds AI conversation summaries; SAML-based single sign-on and SCIM user management start on Business+.",
+        "source_url": "https://slack.com/pricing"
       }
     },
     {
@@ -13230,6 +13290,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing increased. Penpot's pricing table gives the free Professional plan \"Up to 8 team members, and unlimited viewers\", \"Up to 10GB of storage\" and 7 days of autosaved versions and of file recovery. The 25 GB belongs to the Unlimited plan ($7 per editor a month) and the 90 days to Enterprise. Unlimited teams come with every plan.",
+        "source_url": "https://penpot.app/pricing"
       }
     },
     {
@@ -14900,6 +14966,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: nothing increased. BugBug's pricing page lists the Free plan with \"Only local testing\", 4 test suites, 1 user, 1 project and 15 tests, and its FAQ answers \"Can I use BugBug for free?\" with \"Unlimited local test runs, 15 tests, 4 test suites, 1 user, 1 project\". The unlimited tests, users and projects the reading gave the Free plan are the Pro plan's.",
+        "source_url": "https://bugbug.io/"
       }
     },
     {
