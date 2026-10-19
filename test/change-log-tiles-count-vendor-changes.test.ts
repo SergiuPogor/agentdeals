@@ -126,7 +126,7 @@ describe("the change log's activity counts read the changes the vendor made", ()
     for (const route of Object.keys(MARKET_TILES)) {
       const live = tilesOf(pages.get(`live ${route}`)!);
       const withVendorChanges = tilesOf(pages.get(`vendor ${route}`)!);
-      assert.strictEqual(withVendorChanges.Upcoming, live.Upcoming + 2, `${route}'s Upcoming`);
+      assert.strictEqual(withVendorChanges.Upcoming, live.Upcoming + 1, `${route}'s Upcoming`);
       assert.strictEqual(withVendorChanges.Removals, live.Removals + 1, `${route}'s Removals`);
     }
     const live = tilesOf(pages.get("live /changes")!);

@@ -79,6 +79,7 @@ before(async () => {
   await readPages("fixtures", 0, true);
   await readPages("tomorrow", 1, true);
   await readPages("after", 2, true);
+  await readPages("announcementDay", 5, true);
   await readPages("retirementDay", 20, true);
   await readPages("retired", 21, true);
 });
@@ -95,8 +96,10 @@ describe("the change timelines separate announced changes from their history", (
       const announced = dates(upcoming(html));
       assert.ok(announced.length > 0);
       assert.deepEqual(announced, [...announced].sort());
-      assert.ok(announced.every(date => date >= today));
-      assert.ok(dates(timeline(html)).every(date => date < today));
+      assert.ok(announced.every(date => date > today));
+      assert.ok(dates(timeline(html)).every(date => date <= today));
+      assert.match(upcoming(html), /class="(?:pc|chg)-upcoming-badge"/);
+      assert.doesNotMatch(upcoming(html), /Undated Service/);
       for (const vendor of ["Sooner Future", "Later Future"]) if (name === "fixtures") {
         const summaries = [...html.matchAll(/class="(?:pc|chg)-summary">([\s\S]*?)<\/div>/g)].map(match => visibleText(match[1]));
         assert.equal(summaries.filter(summary => summary.startsWith(`${vendor} changes its plan`)).length, 1);
@@ -152,10 +155,46 @@ describe("the change timelines separate announced changes from their history", (
   });
 
   for (const route of ["/changes", "/pricing-changes"]) {
+
+    it(`treats today's event as in effect throughout ${route}`, () => {
+      for (const [name, vendor, effectiveDay] of [["fixtures", "Today Event", today], ["tomorrow", "Sooner Future", day(1)], ["retirementDay", "Retiring Service", day(20)]]) {
+        const html = pages.get(`${name} ${route}`)!;
+        const latest = html.slice(html.indexOf('class="latest-section"'), html.indexOf('</section>', html.indexOf('class="latest-section"')));
+        assert.match(latest, new RegExp(vendor));
+        assert.doesNotMatch(latest, /upcoming-badge|(?:pc|chg)-upcoming/);
+        assert.doesNotMatch(upcoming(html), new RegExp(vendor));
+        const history = timeline(html);
+        assert.ok(history.includes(`id="month-${effectiveDay.slice(0, 7)}"`));
+        assert.match(history, new RegExp(vendor));
+        assert.doesNotMatch(history, /upcoming-badge|(?:pc|chg)-upcoming/);
+        const tile = html.match(/<div class="stat-value">(\d+)<\/div>\s*<div class="stat-label">Upcoming<\/div>/);
+        assert.ok(tile);
+        assert.equal(Number(tile[1]), dates(upcoming(html)).length);
+        const servedDay = name === "fixtures" ? today : name === "tomorrow" ? day(1) : day(20);
+        assert.match(upcoming(html), new RegExp(`effective date is later than ${servedDay}`));
+        assert.match(upcoming(html), /On that date it stops being upcoming and is listed only under the month it falls in/);
+      }
+    });
+
+    it(`keeps a separate future retirement when its announcement becomes effective on ${route}`, () => {
+      const html = pages.get(`announcementDay ${route}`)!;
+      const latest = html.slice(html.indexOf('class="latest-section"'), html.indexOf('</section>', html.indexOf('class="latest-section"')));
+      assert.match(latest, /Future Announcement/);
+      assert.doesNotMatch(latest, /upcoming-badge/);
+      assert.match(upcoming(html), /Future Announcement/);
+      assert.ok(dates(upcoming(html)).includes(day(30)));
+      assert.match(timeline(html), /Future Announcement/);
+      assert.ok(dates(timeline(html)).includes(day(5)));
+      if (route === "/changes") assert.equal((html.match(/<div class="chg-entry/g) ?? []).length, fixtures.length);
+      const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+      assert.equal(ids.length, new Set(ids).size);
+    });
+
     it(`keeps a retirement in ${route}'s effective month after it leaves Upcoming, beside its earlier event`, () => {
       const onDay = pages.get(`retirementDay ${route}`)!;
       const retired = pages.get(`retired ${route}`)!;
-      assert.match(upcoming(onDay), /Retiring Service/);
+      assert.doesNotMatch(upcoming(onDay), /Retiring Service/);
+      assert.match(timeline(onDay), /Retiring Service/);
       assert.doesNotMatch(upcoming(retired), /Retiring Service/);
       const retirement = new RegExp(`<div class="(?:pc-entry|chg-preview)[^"]*"[^>]*data-event-date="${day(-10)}"[\\s\\S]*?<div class="(?:pc|chg)-date">[\\s\\S]*?${day(20)}[\\s\\S]*?Retiring Service`);
       const history = timeline(retired);
@@ -172,11 +211,14 @@ describe("the change timelines separate announced changes from their history", (
       }
     });
 
-    it(`moves an effective event from ${route}'s upcoming section to its month on the following day`, () => {
+    it(`moves an effective event from ${route}'s upcoming section to its month on its effective day`, () => {
       const onDay = pages.get(`tomorrow ${route}`)!;
       const after = pages.get(`after ${route}`)!;
-      assert.match(upcoming(onDay), /Sooner Future/);
-      assert.doesNotMatch(timeline(onDay), /Sooner Future/);
+      const before = pages.get(`fixtures ${route}`)!;
+      assert.match(upcoming(before), /Sooner Future/);
+      assert.doesNotMatch(timeline(before), /Sooner Future/);
+      assert.doesNotMatch(upcoming(onDay), /Sooner Future/);
+      assert.match(timeline(onDay), /Sooner Future/);
       assert.doesNotMatch(upcoming(after), /Sooner Future/);
       assert.match(timeline(after), /Sooner Future/);
       assert.match(timeline(after), new RegExp(`id="month-${day(1).slice(0, 7)}"`));

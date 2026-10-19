@@ -141,7 +141,7 @@ import { buildProductFunctions, functionMembers, functionDefinitions, functionMe
 import { curatedAlternativesFor } from "./curated-alternatives.js";
 import { vendorSubstitutes, substitutesListedFor } from "./vendor-substitutes.js";
 import type { Agent, ChangeDateSource, DealChange, FreePlanExcerpt, RiskCause, RatingWithheld, LinkUnreachable, ListingCondition, Offer, StabilityClass, SubtypeLabel } from "./types.js";
-import { A_DATED_HEADING_MARKER, A_DATED_SECTION_MARKER, archiveBracketOf, datedHeadingNoticeHtml, datedSectionNoticeHtml, namedFromItsDate, namedOnceItsDateArrived, namedWhileAheadOf, namedWhileNotBefore, statedDatesShownWhileLaterThan, ANNOUNCED_BADGE, ANNOUNCED_HEADING, announcedIntro, changeDateLabel, changeEntryDateLabel, changeEntryLongDateLabel, changeDateClause, changeDatePublished, changeEventStartDate, capListSections, latestEventDate, offerExpiryAfter, feedEntryUpdated, UNDATED_TILE_LABEL, firstReadHeading, discoveryBatchNote, coveringBracketedChanges, changeEntryDateLabelHtml, isoWeekOf, monthlyChangeSeries, changesInWindow, discoveryMonthSeriesHeading, periodComparisonSentence, DISCOVERED_DATE_PREFIX, EFFECTIVE_DATE_PREFIX, UNKNOWN_EFFECTIVE_DATE_MARKER, EFFECTIVE_BY_DATE_MEANING, BRACKETED_DATE_PREFIX, RECORDED_DATE_PREFIX, CORRECTED_DATE_PREFIX, EFFECTIVE_MONTH_SERIES_NOTE, DISCOVERY_MONTH_SERIES_NOTE, weekRangeLabel, newestChangeInEffect, hasNotTakenEffect, vendorPageLastUpdated } from "./change-dates.js";
+import { A_DATED_HEADING_MARKER, A_DATED_SECTION_MARKER, archiveBracketOf, datedHeadingNoticeHtml, datedSectionNoticeHtml, namedFromItsDate, namedOnceItsDateArrived, namedWhileAheadOf, statedDatesShownWhileLaterThan, ANNOUNCED_BADGE, ANNOUNCED_HEADING, announcedIntro, changeDateLabel, changeEntryDateLabel, changeEntryLongDateLabel, changeDateClause, changeDatePublished, changeEventStartDate, capListSections, latestEventDate, offerExpiryAfter, feedEntryUpdated, UNDATED_TILE_LABEL, firstReadHeading, discoveryBatchNote, coveringBracketedChanges, changeEntryDateLabelHtml, isoWeekOf, monthlyChangeSeries, changesInWindow, discoveryMonthSeriesHeading, periodComparisonSentence, DISCOVERED_DATE_PREFIX, EFFECTIVE_DATE_PREFIX, UNKNOWN_EFFECTIVE_DATE_MARKER, EFFECTIVE_BY_DATE_MEANING, BRACKETED_DATE_PREFIX, RECORDED_DATE_PREFIX, CORRECTED_DATE_PREFIX, EFFECTIVE_MONTH_SERIES_NOTE, DISCOVERY_MONTH_SERIES_NOTE, weekRangeLabel, newestChangeInEffect, hasNotTakenEffect, vendorPageLastUpdated } from "./change-dates.js";
 import { changeFeedEntries, feedEntryFields, feedUpdatedTimestamp, changeFeedProvenanceNote, CHANGE_FEED_ENTRY_LIMIT, CHANGE_FEED_DESCRIPTION, CHANGE_FEED_NAMESPACE, CHANGE_FEED_NAMESPACE_PREFIX, channelUpdatedTimestamp, WEEKLY_FEED_POPULATION_NOTE, feedLinkTag, feedEntrySourceXml, digestSourceXml, PER_CHANGE_FEED, WEEKLY_DIGEST_FEED } from "./change-feed.js";
 import { changeLogInPageOrder, changeLogSections, changeLogSectionsHtml, monthHeadingLabel } from "./change-log-sections.js";
 import { FEED_CORRECTIONS, correctionEntriesXml } from "./feed-corrections.js";
@@ -5307,7 +5307,7 @@ ${categorySections}
 </html>`;
 }
 
-const categoryComparisonMap: Record<string, { comparison?: string; hub?: string }> = {
+const categoryComparisonMap: Record<string, { comparison?: string; hub?: string; vendorOffers?: boolean }> = {
   "Databases": { comparison: "/database-free-tier-comparison-2026", hub: "/database-alternatives" },
   "Cloud Hosting": { comparison: "/hosting-pricing", hub: "/hosting-alternatives" },
   "Monitoring": { comparison: "/monitoring-comparison-2026", hub: "/monitoring-alternatives" },
@@ -5328,38 +5328,38 @@ const categoryComparisonMap: Record<string, { comparison?: string; hub?: string 
   "Project Management": { hub: "/project-management-alternatives" },
   "Error Tracking": { comparison: "/monitoring-comparison-2026", hub: "/monitoring-alternatives" },
   "Logging": { comparison: "/monitoring-comparison-2026", hub: "/monitoring-alternatives" },
-  "Container Registry": { hub: "/ci-cd-alternatives" },
+  "Container Registry": { hub: "/ci-cd-alternatives", vendorOffers: true },
   "Infrastructure": { hub: "/hosting-alternatives" },
   "Secrets Management": { hub: "/security-alternatives" },
-  "Feature Flags": { hub: "/monitoring-alternatives" },
-  "Search": { hub: "/database-alternatives" },
-  "Headless CMS": { hub: "/database-alternatives" },
-  "Payments": { hub: "/free-saas-stack" },
-  "Documentation": { hub: "/api-development-alternatives" },
-  "Messaging": { hub: "/email-alternatives" },
-  "Forms": { hub: "/design-alternatives" },
-  "Low-Code Platforms": { hub: "/design-alternatives" },
-  "Workflow Automation": { hub: "/project-management-alternatives" },
-  "Team Collaboration": { hub: "/project-management-alternatives" },
-  "Source Control": { hub: "/ci-cd-alternatives" },
-  "Code Quality": { hub: "/testing-alternatives" },
-  "Browser Automation": { hub: "/testing-alternatives" },
-  "Web Scraping": { hub: "/testing-alternatives" },
-  "Server Management": { hub: "/hosting-alternatives" },
+  "Feature Flags": { hub: "/monitoring-alternatives", vendorOffers: true },
+  "Search": { hub: "/database-alternatives", vendorOffers: true },
+  "Headless CMS": { hub: "/database-alternatives", vendorOffers: true },
+  "Payments": { hub: "/free-saas-stack", vendorOffers: true },
+  "Documentation": { hub: "/api-development-alternatives", vendorOffers: true },
+  "Messaging": { hub: "/email-alternatives", vendorOffers: true },
+  "Forms": { hub: "/design-alternatives", vendorOffers: true },
+  "Low-Code Platforms": { hub: "/design-alternatives", vendorOffers: true },
+  "Workflow Automation": { hub: "/project-management-alternatives", vendorOffers: true },
+  "Team Collaboration": { hub: "/project-management-alternatives", vendorOffers: true },
+  "Source Control": { hub: "/ci-cd-alternatives", vendorOffers: true },
+  "Code Quality": { hub: "/testing-alternatives", vendorOffers: true },
+  "Browser Automation": { hub: "/testing-alternatives", vendorOffers: true },
+  "Web Scraping": { hub: "/testing-alternatives", vendorOffers: true },
+  "Server Management": { hub: "/hosting-alternatives", vendorOffers: true },
   "Cloud IaaS": { comparison: "/cloud-free-tier-comparison-2026", hub: "/hosting-alternatives" },
   "Status Pages": { hub: "/monitoring-alternatives" },
-  "Notebooks & Data Science": { hub: "/ai-ml-alternatives" },
-  "Mobile Development": { hub: "/design-alternatives" },
-  "Video": { hub: "/storage-alternatives" },
-  "Maps/Geolocation": { hub: "/api-development-alternatives" },
-  "Localization": { hub: "/api-development-alternatives" },
-  "DNS & Domain Management": { hub: "/hosting-alternatives" },
-  "Tunneling & Networking": { hub: "/hosting-alternatives" },
-  "Diagramming": { hub: "/design-alternatives" },
-  "Dev Utilities": { hub: "/api-development-alternatives" },
+  "Notebooks & Data Science": { hub: "/ai-ml-alternatives", vendorOffers: true },
+  "Mobile Development": { hub: "/design-alternatives", vendorOffers: true },
+  "Video": { hub: "/storage-alternatives", vendorOffers: true },
+  "Maps/Geolocation": { hub: "/api-development-alternatives", vendorOffers: true },
+  "Localization": { hub: "/api-development-alternatives", vendorOffers: true },
+  "DNS & Domain Management": { hub: "/hosting-alternatives", vendorOffers: true },
+  "Tunneling & Networking": { hub: "/hosting-alternatives", vendorOffers: true },
+  "Diagramming": { hub: "/design-alternatives", vendorOffers: true },
+  "Dev Utilities": { hub: "/api-development-alternatives", vendorOffers: true },
   "Startup Perks": { hub: "/startup-credits" },
-  "Background Jobs": { hub: "/hosting-alternatives" },
-  "API Gateway": { hub: "/api-development-alternatives" },
+  "Background Jobs": { hub: "/hosting-alternatives", vendorOffers: true },
+  "API Gateway": { hub: "/api-development-alternatives", vendorOffers: true },
 };
 
 const saasRelevantCategories = new Set([
@@ -5703,15 +5703,18 @@ function buildVendorPage(slug: string): string | null {
   </div>`;
 
   const catMapping = categoryComparisonMap[primary.category];
+  const categoryOffersPath = catMapping?.vendorOffers ? `/category/${toSlug(primary.category)}` : null;
   const categoryCount = offers.filter(o => o.category === primary.category).length;
-  const catContextLink = catMapping?.comparison
+  const catContextLink = categoryOffersPath
+    ? `<a href="${categoryOffersPath}">every ${escHtmlServer(primary.category)} offer we track</a>`
+    : catMapping?.comparison
     ? `<a href="${catMapping.comparison}">full ${escHtmlServer(primary.category)} Free Tier Comparison</a>`
     : catMapping?.hub
     ? `<a href="${catMapping.hub}">${escHtmlServer(primary.category)} alternatives guide</a>`
     : `<a href="/category/${toSlug(primary.category)}">${escHtmlServer(primary.category)} category</a>`;
   const categoryContextHtml = `
   <div class="category-context">
-    <span class="cat-context-label">One of ${categoryCount} ${escHtmlServer(primary.category)} services we track.</span> See our ${catContextLink} &rarr;
+    <span class="cat-context-label">One of ${categoryCount} ${escHtmlServer(primary.category)} services we track.</span> See ${categoryOffersPath ? "" : "our "}${catContextLink} &rarr;
   </div>`;
 
   const usageBeyondTheFreeTierIsBilled = statesUsageBeyondTheFreeTierIsBilled(listingStatements(primary));
@@ -5875,7 +5878,9 @@ ${allCompareLinks.join("\n")}
   if (catMapping?.comparison) {
     internalLinks.push(`<a href="${catMapping.comparison}">${escHtmlServer(primary.category)} Free Tier Comparison</a>`);
   }
-  if (catMapping?.hub && catMapping.hub !== catMapping?.comparison) {
+  if (categoryOffersPath) {
+    internalLinks.push(`<a href="${categoryOffersPath}">${escHtmlServer(primary.category)} offers we track</a>`);
+  } else if (catMapping?.hub && catMapping.hub !== catMapping?.comparison) {
     internalLinks.push(`<a href="${catMapping.hub}">${escHtmlServer(primary.category)} Alternatives Guide</a>`);
   }
   if (saasRelevantCategories.has(primary.category)) {
@@ -49029,7 +49034,7 @@ function buildPricingChangesPage(): string {
   const sorted = [...eventDated].sort((a, b) => b.date.localeCompare(a.date));
   const indexSections = changeLogSections(allChanges, today);
   const retirementEntries = retirementTimelineEntries(allChanges);
-  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
+  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date <= today || isOurOwnBookkeeping(c)), today);
 
   const filterCategory: Record<string, string> = CHANGE_DIRECTION;
 
@@ -49040,7 +49045,7 @@ function buildPricingChangesPage(): string {
       : changeTypeBadge[c.change_type] ?? { label: c.change_type, color: "#8b949e" };
     const impactColor = changeImpactColor(c.impact);
     const dated = isEventDated(c);
-    const isUpcoming = dated && c.date >= today;
+    const isUpcoming = dated && c.date > today;
     const category = filterCategory[c.change_type] ?? "neutral";
     const altHtml = c.alternatives && c.alternatives.length > 0
       ? `<div class="pc-alts"><span class="pc-alts-label">Alternatives:</span> ${c.alternatives.map(a => changeVendorLinkHtml(a)).join(", ")}</div>`
@@ -49078,7 +49083,7 @@ ${altHtml}
   const countedAll = trackedChanges(allChanges);
   const countable = changesTheVendorMade(trackedChanges(sorted));
   const undatedCounted = trackedChanges(undatedChanges).length;
-  const upcomingCount = countable.filter(c => upcomingDateOf(c, today) >= today).length;
+  const upcomingCount = countable.filter(c => upcomingDateOf(c, today) > today).length;
   const removedCount = changesTheVendorMade(countedAll).filter(endsAFreeTier).length;
   const thisMonth = today.slice(0, 7);
   const thisMonthCount = countable.filter(c => c.date.slice(0, 7) === thisMonth).length;
@@ -49096,7 +49101,7 @@ ${altHtml}
   const ytdNetColor = ytdNet > 0 ? "#3fb950" : ytdNet < 0 ? "#f85149" : "#8b949e";
 
   const latest = changesTheVendorMade(trackedChanges<ChangeTimelineEntry>([...sorted, ...retirementEntries])).filter(c => c.date <= today).sort((a, b) => b.date.localeCompare(a.date)).slice(0, LATEST_PRICING_CHANGES_SHOWN);
-  const upcomingChanges = countable.map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date >= today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
+  const upcomingChanges = countable.map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date > today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
 
   const vendorCategories = [...new Set(sorted.map(c => c.category || "").filter(Boolean))].sort();
   const years = [...new Set(sorted.map(c => c.date.slice(0, 4)))].sort().reverse();
@@ -49404,9 +49409,9 @@ ${upcomingChanges.length > 0 ? `
     <h2>${UPCOMING_CHANGES_HEADING}</h2>
     <p class="upcoming-intro">${UPCOMING_CHANGES_INTRO}</p>
     ${datedSectionNoticeHtml(
-      namedWhileNotBefore("A change", today),
+      `A change is named here only while its effective date is later than ${today}.`,
       [
-        { when: "The day after that date it stops being upcoming and is listed only under the month it falls in, in the timeline below and in", text: "the full change log", href: "/changes" },
+        { when: "On that date it stops being upcoming and is listed only under the month it falls in, in the timeline below and in", text: "the full change log", href: "/changes" },
       ],
       escHtmlServer,
       ' class="upcoming-intro dated-rule"',
@@ -49507,11 +49512,11 @@ function buildChangesPage(): string {
   const sorted = [...eventDated].sort((a, b) => b.date.localeCompare(a.date));
   const indexSections = changeLogSections(allChanges, today);
   const retirementEntries = retirementTimelineEntries(allChanges);
-  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date < today || isOurOwnBookkeeping(c)), today);
+  const sections = changeLogSections<ChangeTimelineEntry>([...allChanges, ...retirementEntries].filter(c => !isEventDated(c) || c.date <= today || isOurOwnBookkeeping(c)), today);
   const countable = changesTheVendorMade(trackedChanges(sorted));
   const latest = changesTheVendorMade(trackedChanges<ChangeTimelineEntry>([...sorted, ...retirementEntries])).filter(c => c.date <= today).sort((a, b) => b.date.localeCompare(a.date)).slice(0, LATEST_PRICING_CHANGES_SHOWN);
-  const upcomingOriginals = changesTheVendorMade(sorted).filter(c => c.date >= today).sort((a, b) => upcomingDateOf(a, today).localeCompare(upcomingDateOf(b, today)));
-  const upcomingChanges = changesTheVendorMade(sorted).map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date >= today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
+  const upcomingOriginals = changesTheVendorMade(sorted).filter(c => c.date > today).sort((a, b) => upcomingDateOf(a, today).localeCompare(upcomingDateOf(b, today)));
+  const upcomingChanges = changesTheVendorMade(sorted).map(c => ({ original: c, shown: atUpcomingDate(c, today) })).filter(c => c.shown.date > today).sort((a, b) => a.shown.date.localeCompare(b.shown.date));
   const inPageOrder = [...upcomingOriginals, ...changeLogInPageOrder(sections).filter(c => !c.originalRecord)];
 
   const byMonth = new Map<string, typeof sorted>();
@@ -49534,7 +49539,7 @@ function buildChangesPage(): string {
       : changeTypeBadge[c.change_type] ?? { label: c.change_type, color: "#8b949e" };
     const impactColor = changeImpactColor(c.impact);
     const dated = isEventDated(c);
-    const isUpcoming = dated && c.date >= today;
+    const isUpcoming = dated && c.date > today;
     const anchor = changeLogAnchorFor(c.vendor);
     const anchorAttr = !preview && anchor && anchorHolder.get(anchor) === original ? ` id="${anchor}"` : "";
     const altHtml = c.alternatives && c.alternatives.length > 0
@@ -49559,7 +49564,7 @@ ${altHtml}
       </div>`;
   }
 
-  const upcomingCount = countable.filter(c => upcomingDateOf(c, today) >= today).length;
+  const upcomingCount = countable.filter(c => upcomingDateOf(c, today) > today).length;
   const removedCount = changesTheVendorMade(counted).filter(endsAFreeTier).length;
   const entriesListed = inPageOrder.length;
 
@@ -49716,12 +49721,12 @@ ${upcomingChanges.length > 0 ? `
     <h2 class="month-heading">${UPCOMING_CHANGES_HEADING}</h2>
     <p class="month-note">${UPCOMING_CHANGES_INTRO}</p>
     ${datedSectionNoticeHtml(
-      namedWhileNotBefore("A change", today),
-      [{ when: "The day after that date it stops being upcoming and is listed only under the month it falls in, in", text: "the timeline below", href: "/changes" }],
+      `A change is named here only while its effective date is later than ${today}.`,
+      [{ when: "On that date it stops being upcoming and is listed only under the month it falls in, in", text: "the timeline below", href: "/changes" }],
       escHtmlServer,
       ' class="month-note dated-rule"',
     )}
-${upcomingChanges.map(c => buildChangeEntry(c.shown, c.original !== c.shown && c.original.date < today, c.original)).join("\n")}
+${upcomingChanges.map(c => buildChangeEntry(c.shown, c.original !== c.shown && c.original.date <= today, c.original)).join("\n")}
   </section>
 ` : ""}
 ${changeLogSectionsHtml(sections, allChanges.length, buildChangeEntry, escHtmlServer)}
