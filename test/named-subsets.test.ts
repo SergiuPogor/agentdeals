@@ -770,6 +770,7 @@ describe("a timeline entry moves into its effective month", () => {
 
     it(`${layout}: requires consecutive days and the month named by the effective date`, () => {
       assert.deepEqual(unexplained(before(), after(entry(), "October 2026", "2026-10-22")), ["alfa"]);
+      assert.deepEqual(unexplained(before(entry("alfa", "2026-10-22")), after(entry("alfa", "2026-10-22"), "October 2026", "2026-10-22")), ["alfa"]);
       assert.deepEqual(unexplained(before(), after(entry(), "September 2026")), ["alfa"]);
     });
 
