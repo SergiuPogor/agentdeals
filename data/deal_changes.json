@@ -8001,12 +8001,6 @@
       "archive_check": {
         "checked": "2026-10-03",
         "outcome": "no_usable_capture"
-      },
-      "resolution": {
-        "state": "reversed",
-        "date": "2026-09-12",
-        "detail": "No longer in force from 2026-09-12, the end date the record states for free Flux TTS. deepgram.com/pricing, read 2026-10-19, prices Flux TTS at $0.0450 per 1k characters on Pay As You Go and adds $1 in credits for every $1 spent on Flux TTS, up to $500, until December 31, 2026. The $200 free credit for new accounts is unchanged: Deepgram's FAQ says it is \"available until you use it up\".",
-        "source_url": "https://deepgram.com/pricing"
       }
     },
     {
