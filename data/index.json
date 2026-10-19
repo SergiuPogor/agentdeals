@@ -33416,7 +33416,7 @@
     {
       "vendor": "LLM7.io",
       "category": "AI / ML",
-      "description": "LLM inference gateway. With a free token from dash.llm7.io: 1 request a second, 60 a minute, 250 an hour and 100,000 tokens per 24 hours, counting input and output tokens; LLM7 says free quotas may be reduced without notice. Free access covers turbo-tier models not marked usage-only, such as GLM-5.3-Flash and codestral-latest. Other models, including all image and speech-to-text models, need Pro ($12/mo) or a paid balance.",
+      "description": "LLM inference gateway. With a free token from dash.llm7.io: 1 request a second, 60 a minute, 250 an hour and 100,000 tokens per 24 hours, counting input and output tokens; LLM7 says free quotas may be reduced without notice. Free access covers turbo-tier models not marked usage-only, such as GLM-5.3-Flash and codestral-latest. Other models, including all image and speech-to-text models, need Pro ($12/mo) or a paid balance. LLM7's limits page no longer lists limits for requests without a token. A text request without a token still worked on 2026-10-19.",
       "tier": "Free",
       "url": "https://docs.llm7.io/limits",
       "tags": [
