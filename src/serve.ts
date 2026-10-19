@@ -10840,8 +10840,8 @@ function buildHostingAlternativesPage(): string {
       </div>`;
   }).join("\n");
 
-  const hostingChangeVendors = ["Railway", "Render", "Fly.io", "Heroku", "Vercel", "Hetzner", "Netlify", "Cloudflare", "Koyeb", "Oracle Cloud", "DigitalOcean"];
-  const hostingChanges = newestChangesInEffect(changesTheVendorMade(dealChanges).filter(c => hostingChangeVendors.some(v => c.vendor.includes(v))));
+  const hostingChangeVendors = ["Railway", "Render", "Fly.io", "Heroku", "Vercel", "Hetzner", "Netlify", "Cloudflare Workers", "Cloudflare Pages", "Koyeb", "Oracle Cloud", "DigitalOcean"];
+  const hostingChanges = newestChangesInEffect(changesTheVendorMade(dealChanges).filter(c => hostingChangeVendors.includes(c.vendor)));
   const changesHtml = hostingChanges.length > 0 ? `
   <div class="context-box" style="border-left:3px solid ${riskColors.caution}">
     <div style="font-weight:600;color:${riskColors.caution};margin-bottom:.5rem">Recent Hosting Pricing Changes</div>
@@ -31179,7 +31179,7 @@ function buildHostingPricingPage(): string {
 
   const hostingVendorNames = ["Railway", "Vercel", "Render", "Netlify", "Fly.io", "Cloudflare Workers", "Cloudflare Pages", "Deno Deploy", "Koyeb", "Val Town", "Google Cloud Run", "Heroku", "GitHub Pages", "PythonAnywhere", "Northflank"];
   const hostingChanges = changesTheVendorMade(dealChanges).filter(c =>
-    hostingVendorNames.some(v => c.vendor.includes(v) || v.includes(c.vendor))
+    hostingVendorNames.includes(c.vendor)
   ).sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   interface HostingService {
@@ -44320,7 +44320,7 @@ function buildHostingFreeTierComparison2026Page(): string {
 
   const hostingVendorKeywords = ["Vercel", "Netlify", "Render", "Railway", "Fly.io", "Cloudflare Pages", "Cloudflare Workers", "Koyeb", "Deno Deploy", "GitHub Pages", "PythonAnywhere", "Hetzner", "Heroku", "Clever Cloud"];
   const hostingChanges = dealChanges.filter((c: any) =>
-    hostingVendorKeywords.some(v => c.vendor === v || c.vendor.startsWith(v + " ") || c.vendor.includes(v)) || c.category === "Cloud Hosting" || c.category === "Hosting"
+    hostingVendorKeywords.includes(c.vendor) || c.category === "Cloud Hosting" || c.category === "Hosting"
   ).sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const changeTimelineRows = hostingChanges.slice(0, 15).map((c: any) => {
