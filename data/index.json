@@ -21983,26 +21983,6 @@
       }
     },
     {
-      "vendor": "OVHcloud",
-      "category": "CDN",
-      "description": "Free DDoS protection and SSL certificate via SSL Gateway. Includes Always-on DDoS protection, free Let's Encrypt SSL, and HTTP/2 support",
-      "tier": "Free",
-      "url": "https://www.ovhcloud.com/en/web-hosting/options/ssl/",
-      "tags": [
-        "cdn",
-        "protection",
-        "free-for-dev",
-        "ddos",
-        "ssl"
-      ],
-      "verifiedDate": "2026-08-18",
-      "source_check": {
-        "checked": "2026-10-14",
-        "outcome": "ok",
-        "detail": "the page names OVHcloud as \"ovhcloud\" and states amounts, none of which we matched to the terms we publish"
-      }
-    },
-    {
       "vendor": "PromoProxy",
       "category": "CDN",
       "description": "The Free plan is ¥0 /month, includes up to 5 users, and 3 GB of data per day.",
@@ -34910,7 +34890,7 @@
     {
       "vendor": "OVHcloud",
       "category": "Cloud IaaS",
-      "description": "Public Cloud free trial: a €200 credit (US$200 on its international site) for a first Public Cloud project, valid for one month after activation; a payment method is required. VPS from €4.49/month ex-VAT without commitment (VPS-1 2027: 2 vCores, 4 GB RAM, 40 GB NVMe; €3.81 on 12 months). Discovery instances (d2-2) from ~€5/mo. Object Storage (S3-compatible). Managed Kubernetes (free control plane). 40+ regions across Europe, NA, APAC. From April 2026, OVHcloud raised VPS 2026 list prices 36-49% (VPS-1 €4.49 to €6.49), and Public Cloud, Private Cloud and Bare Metal prices by 9-11% on average for new deployments.",
+      "description": "Public Cloud free trial: a €200 credit (US$200 on its international site) for a first Public Cloud project, valid for one month after activation; a payment method is required. VPS from €4.49/month ex-VAT without commitment (VPS-1 2027: 2 vCores, 4 GB RAM, 40 GB NVMe; €3.81 on 12 months). This is the range OVHcloud sells now. Discovery instances (d2-2) from ~€5/mo. Object Storage (S3-compatible). Managed Kubernetes (free control plane). 40+ regions across Europe, NA, APAC. From April 2026, OVHcloud raised VPS 2026 list prices 36-49% (VPS-1 €4.49 to €6.49). The VPS 2027 range launched after that rise. Public Cloud, Private Cloud and Bare Metal prices rose 9-11% on average for new deployments.",
       "tier": "Credits",
       "url": "https://www.ovhcloud.com/en/public-cloud/",
       "tags": [
@@ -34955,6 +34935,26 @@
       "verifiedDate": "2026-08-18",
       "source_check": {
         "checked": "2026-10-01",
+        "outcome": "ok",
+        "detail": "the page names OVHcloud as \"ovhcloud\" and states amounts, none of which we matched to the terms we publish"
+      }
+    },
+    {
+      "vendor": "OVHcloud",
+      "category": "CDN",
+      "description": "Free DDoS protection and SSL certificate via SSL Gateway. Includes Always-on DDoS protection, free Let's Encrypt SSL, and HTTP/2 support",
+      "tier": "Free",
+      "url": "https://www.ovhcloud.com/en/web-hosting/options/ssl/",
+      "tags": [
+        "cdn",
+        "protection",
+        "free-for-dev",
+        "ddos",
+        "ssl"
+      ],
+      "verifiedDate": "2026-08-18",
+      "source_check": {
+        "checked": "2026-10-14",
         "outcome": "ok",
         "detail": "the page names OVHcloud as \"ovhcloud\" and states amounts, none of which we matched to the terms we publish"
       }
