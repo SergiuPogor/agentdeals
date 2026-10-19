@@ -8,9 +8,9 @@ import { fileURLToPath } from "node:url";
 
 const REPO = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SUBJECTS = [
-  { slug: "email", category: "Email", compared: "Resend", prefix: "Resend Other Product", keywords: ["email", "smtp", "transactional"] },
-  { slug: "monitoring", category: "Monitoring", compared: "Datadog", prefix: "Elastic Other Product", keywords: ["monitoring", "observability", "apm", "uptime"] },
-  { slug: "storage", category: "Storage", compared: "Storj", prefix: "Cloudflare Other Product", keywords: ["storage", "egress", "object storage"] },
+  { slug: "email", categories: ["Email"], compared: "Resend", keywords: ["email", "smtp", "transactional"] },
+  { slug: "monitoring", categories: ["Monitoring", "Logging", "Error Tracking"], compared: "Datadog", keywords: ["monitoring", "observability", "apm", "uptime"] },
+  { slug: "storage", categories: ["Storage", "Cloud Storage", "CDN"], compared: "Storj", keywords: ["storage", "egress", "object storage"] },
 ];
 
 type RunningServer = { process: ChildProcess; base: string };
@@ -59,6 +59,7 @@ function data(file: string) {
 describe("comparison timeline membership", () => {
   let live: RunningServer;
   let fixture: RunningServer;
+  let catalogueChanged: RunningServer;
   let categoryEmpty: RunningServer;
   let aliases: RunningServer;
   let dir = "";
@@ -69,81 +70,93 @@ describe("comparison timeline membership", () => {
     const changes = data("deal_changes.json");
     const template = changes.changes.find((c: { vendor: string; change_type: string; resolution?: unknown }) =>
       c.vendor === "Resend" && c.change_type === "limits_increased" && !c.resolution,
-    ) ?? changes.changes.find((c: { change_type: string; resolution?: unknown }) => c.change_type === "limits_increased" && !c.resolution);
+    );
     assert.ok(template);
     const date = new Date().toISOString().slice(0, 10);
     const records: object[] = [];
+    const record = (vendor: string, category: string, summary: string) => ({
+      ...template, vendor, category, summary, date, recorded_date: date,
+      source_url: "https://example.com/change",
+    });
     for (const subject of SUBJECTS) {
-      for (const offer of index.offers) if (offer.vendor === subject.compared) offer.category = "Dev Utilities";
-      const categoryVendor = `Category Only ${subject.category}`;
-      const offer = index.offers.find((o: { vendor: string }) => o.vendor === subject.compared);
-      assert.ok(offer);
-      index.offers.push({ ...offer, vendor: categoryVendor, category: "Dev Utilities", url: `https://example.com/${subject.slug}/other` });
-      index.offers.push({ ...offer, vendor: categoryVendor, category: subject.category, url: `https://example.com/${subject.slug}` });
-      const record = (vendor: string, summary: string) => ({ ...template, vendor, summary, date, recorded_date: date, category: "Dev Utilities", source_url: `https://example.com/${subject.slug}/change` });
-      records.push(record(subject.compared, `Compared ${subject.slug} terms changed`));
-      records.push(record(categoryVendor, `Category ${subject.slug} terms changed`));
-      for (const keyword of subject.keywords) records.push(record(`Unrelated ${subject.slug} ${keyword}`, `Another product mentions ${keyword}`));
-      records.push(record(subject.prefix, `Another product has revised its terms`));
-      records.push(record(`Unknown ${subject.slug}`, `Uncatalogued terms changed`));
+      for (const category of subject.categories) {
+        records.push(record(`Uncatalogued ${category}`, category, `Changed ${category} terms`));
+        records.push(record(subject.compared, category, `Compared ${category} terms`));
+      }
+      records.push(record(subject.compared, "Dev Utilities", `Other product from ${subject.compared}`));
+      records.push(record(`${subject.compared} Other Product`, "Dev Utilities", "Other product terms"));
+      for (const keyword of subject.keywords) {
+        records.push(record(`Unrelated ${keyword}`, "Dev Utilities", `Another product mentions ${keyword}`));
+      }
+      records.push(record(`Almost ${subject.categories[0]}`, `${subject.categories[0]} Other`, "Other category terms"));
     }
+    records.push(record("AWS", "DevOps", "AWS Proton ends support"));
+    records.push(record("AWS", "Cloud Hosting", "AWS Fargate version ends support"));
+    records.push(record("Oracle Cloud", "Cloud IaaS", "Always Free VM terms changed"));
     const write = (name: string, value: unknown) => {
       const file = path.join(dir, name);
       writeFileSync(file, JSON.stringify(value));
       return file;
     };
     const changePath = write("changes.json", { ...changes, changes: records });
-    aliases = await startServer({ AGENTDEALS_CHANGES_PATH: write("aliases.json", {
-      ...changes,
-      changes: ["Mailtrap", "MailerLite"].map(vendor => ({
-        ...template, vendor, date, recorded_date: date, summary: `Table spelling retained for ${vendor}`,
-      })),
-    }) });
     live = await startServer();
-    fixture = await startServer({ AGENTDEALS_INDEX_PATH: write("index.json", index), AGENTDEALS_CHANGES_PATH: changePath });
-    categoryEmpty = await startServer({
-      AGENTDEALS_INDEX_PATH: write("category-empty.json", { ...index, offers: index.offers.map((o: object) => ({ ...o, category: "Dev Utilities" })) }),
+    fixture = await startServer({ AGENTDEALS_CHANGES_PATH: changePath });
+    catalogueChanged = await startServer({
       AGENTDEALS_CHANGES_PATH: changePath,
+      AGENTDEALS_INDEX_PATH: write("index.json", { ...index, offers: index.offers.map((o: object) => ({ ...o, category: "Dev Utilities" })) }),
     });
+    categoryEmpty = await startServer({
+      AGENTDEALS_CHANGES_PATH: write("empty.json", { ...changes, changes: records.map((c: object) => ({ ...c, category: "Dev Utilities" })) }),
+    });
+    aliases = await startServer({ AGENTDEALS_CHANGES_PATH: write("aliases.json", {
+      ...changes, changes: ["Mailtrap", "MailerLite", "MailerSend"].map(vendor => record(vendor, "Email", `Email history for ${vendor}`)),
+    }) });
   });
 
   after(() => {
-    for (const server of [live, fixture, categoryEmpty, aliases]) server?.process.kill();
+    for (const server of [live, fixture, catalogueChanged, categoryEmpty, aliases]) server?.process.kill();
     if (dir) rmSync(dir, { recursive: true, force: true });
   });
 
   for (const subject of SUBJECTS) {
-    it(`${subject.slug} retains compared vendors and exact catalogue-category members`, async () => {
+    it(`${subject.slug} selects every subject category by the change record alone`, async () => {
       const rows = await readTimeline(fixture, subject.slug);
-      assert.deepEqual(rows.map(row => row[1]).sort(), [subject.compared, `Category Only ${subject.category}`].sort());
-      assert.ok(rows.some(row => row[2].includes(`Compared ${subject.slug} terms changed`)));
-      assert.ok(rows.some(row => row[2].includes(`Category ${subject.slug} terms changed`)));
+      assert.deepEqual(rows.map(row => row[2]!.split(/ Unconfirmed\.| Source/)[0]).sort(), subject.categories.flatMap(category =>
+        [`Changed ${category} terms`, `Compared ${category} terms`],
+      ).sort());
     });
 
-    it(`${subject.slug} retains compared vendors when its catalogue category has no changes`, async () => {
-      const rows = await readTimeline(categoryEmpty, subject.slug);
-      assert.deepEqual(rows.map(row => row[1]), [subject.compared]);
+    it(`${subject.slug} membership is independent of catalogue categories`, async () => {
+      assert.deepEqual(await readTimeline(catalogueChanged, subject.slug), await readTimeline(fixture, subject.slug));
+    });
+
+    it(`${subject.slug} excludes compared vendors when no record has a subject category`, async () => {
+      assert.deepEqual(await readTimeline(categoryEmpty, subject.slug), []);
     });
   }
 
-  it("keeps changes filed under the exact names the email tables print", async () => {
+  it("keeps Email records under each table spelling", async () => {
     const rows = await readTimeline(aliases, "email");
-    assert.equal(rows.length, 2);
-    for (const vendor of ["Mailtrap", "MailerLite"]) {
-      assert.ok(rows.some(row => row[2].includes(`Table spelling retained for ${vendor}`)));
+    assert.equal(rows.length, 3);
+    for (const vendor of ["Mailtrap", "MailerLite", "MailerSend"]) {
+      assert.ok(rows.some(row => row[2].includes(`Email history for ${vendor}`)));
     }
   });
 
-  it("excludes the unrelated products from the published timelines", async () => {
-    const banned = {
-      email: ["CatchJS.com", "AppFit", "Appwrite Cloud", "OneSignal"],
-      monitoring: ["Svix", "LastPass", "Tomorrow.io Weather API", "Hotjar", "Hasura"],
-      storage: ["SurrealDB Cloud", "Neon", "OVHcloud", "Modal", "Nango", "Penpot", "CockroachDB", "Chroma"],
-    };
+  it("every published row belongs to its page's subject categories", async () => {
+    const changes = data("deal_changes.json").changes;
     for (const subject of SUBJECTS) {
       const rows = await readTimeline(live, subject.slug);
       assert.ok(rows.length > 0 && rows.length <= 12);
-      assert.deepEqual(rows.filter(row => banned[subject.slug as keyof typeof banned].includes(row[1]!)), []);
+      const allowedNames = new Set(changes.filter((c: { category: string }) => subject.categories.includes(c.category)).map((c: { vendor: string }) => c.vendor));
+      for (const row of rows) assert.ok(allowedNames.has(row[1]), row[1]);
+      const text = JSON.stringify(rows);
+      const excluded = {
+        email: /CatchJS|AppFit|Appwrite Cloud/,
+        monitoring: /Svix|LastPass|Tomorrow.io|Hotjar|Hasura/,
+        storage: /AWS Proton|AWS App Mesh|Fargate|SurrealDB Cloud|Neon|OVHcloud|Modal|Nango|Penpot|CockroachDB|Chroma/,
+      };
+      assert.doesNotMatch(text, excluded[subject.slug as keyof typeof excluded]);
     }
   });
 });

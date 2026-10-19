@@ -1621,12 +1621,13 @@ function comparisonPageWithLiveRecords(
   html: string,
   compiledOn: string,
   declaredScope: readonly DealChange[],
+  includeComparedVendors = true,
 ): string {
   const marked = compiledFiguresMarked(html, compiledOn);
 
   const rows = timelineRecordsFor(
     changesTheVendorMade(declaredScope),
-    vendorSubjectsOnCompiledPage(html),
+    includeComparedVendors ? vendorSubjectsOnCompiledPage(html) : [],
     (vendor) => changesTheVendorMade(changesFor(vendor)),
     TIMELINE_ROW_LIMIT,
   );
@@ -35353,19 +35354,21 @@ function comparisonCatalogueOffers(meta: ComparisonPageMeta): Offer[] {
   return offers.filter(o => o.category === meta.catalogueCategory);
 }
 
-function comparisonCategoryChanges(category: string): DealChange[] {
-  const vendors = new Set(offers.filter(o => o.category === category).map(o => o.vendor));
+const COMPARISON_CHANGE_CATEGORIES = {
+  Email: ["Email"],
+  Monitoring: ["Monitoring", "Logging", "Error Tracking"],
+  Storage: ["Storage", "Cloud Storage", "CDN"],
+};
+
+function comparisonCategoryChanges(subject: keyof typeof COMPARISON_CHANGE_CATEGORIES): DealChange[] {
+  const categories = COMPARISON_CHANGE_CATEGORIES[subject];
   return changesTheVendorMade(dealChanges)
-    .filter(c => vendors.has(c.vendor))
+    .filter(c => categories.includes(c.category))
     .sort((a, b) => b.date.localeCompare(a.date));
 }
 
-function comparisonPageWithCategoryChanges(html: string, compiledOn: string, category: string): string {
-  const compared = vendorSubjectsOnCompiledPage(html);
-  return comparisonPageWithLiveRecords(html, compiledOn, [
-    ...comparisonCategoryChanges(category),
-    ...compared.flatMap(subject => changesFor(subject.label)),
-  ]);
+function comparisonPageWithCategoryChanges(html: string, compiledOn: string, subject: keyof typeof COMPARISON_CHANGE_CATEGORIES): string {
+  return comparisonPageWithLiveRecords(html, compiledOn, comparisonCategoryChanges(subject), false);
 }
 
 function buildComparisonCategoryBackLink(slug: string): string {
