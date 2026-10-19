@@ -209,6 +209,79 @@ describe("an email free tier typed into a page states what the vendor's own reco
   });
 });
 
+describe("the email growth table prices monthly sending volumes", () => {
+  let proc: ChildProcess | undefined;
+  let columns: string[];
+  let rows: Map<string, string[]>;
+
+  before(async () => {
+    proc = await startServer();
+    const response = await fetch(`${base}${COMPARISON}`, { redirect: "error" });
+    assert.strictEqual(response.status, 200);
+    const html = await response.text();
+    const section = html.match(/<h2 id="cost-trap">Growth Cost Trap<\/h2>([\s\S]*?)(?=<h2\b)/);
+    assert.ok(section, "the growth cost section is missing");
+    const tables = [...section[1].matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/g)];
+    assert.strictEqual(tables.length, 1);
+    const table = tables[0][1];
+    columns = [...table.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/g)].map((m) => readableText(m[1]));
+    rows = new Map();
+    for (const [, row] of table.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)) {
+      const cells = [...row.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)].map((m) => readableText(m[1]));
+      if (!cells.length) continue;
+      assert.strictEqual(cells.length, 8, cells.join(" | "));
+      assert.ok(!rows.has(cells[0]), `duplicate volume: ${cells[0]}`);
+      rows.set(cells[0], cells.slice(1));
+    }
+  });
+
+  after(() => { proc?.kill(); });
+
+  function price(volume: string, vendor: string): string {
+    assert.ok(rows.has(`${volume} emails`), `missing volume: ${volume}`);
+    const column = columns.indexOf(vendor);
+    assert.ok(column > 0, `missing vendor: ${vendor}`);
+    return rows.get(`${volume} emails`)![column - 1];
+  }
+
+  it("keeps all six volumes and all seven vendor columns", () => {
+    assert.deepStrictEqual(columns, ["Monthly Volume", "Amazon SES", "Resend", "Maileroo", "MailerSend", "SendGrid", "Postmark", "Brevo"]);
+    assert.deepStrictEqual([...rows.keys()], ["3K emails", "10K emails", "50K emails", "100K emails", "500K emails", "1M emails"]);
+  });
+
+  it("uses Maileroo's published monthly plans at 50K, 100K, 500K and 1M", () => {
+    for (const [volume, expected] of [["50K", "$15.00"], ["100K", "$30.00"], ["500K", "$140.00"], ["1M", "$250.00"]]) {
+      assert.strictEqual(price(volume, "Maileroo"), expected, `Maileroo at ${volume}`);
+    }
+  });
+
+  it("uses Resend Pro at 100K and Scale at 500K and 1M", () => {
+    for (const [volume, expected] of [["100K", "$35.00"], ["500K", "$350.00"], ["1M", "$650.00"]]) {
+      assert.strictEqual(price(volume, "Resend"), expected, `Resend at ${volume}`);
+    }
+  });
+
+  it("uses MailerSend's 100K monthly subscription", () => {
+    assert.strictEqual(price("100K", "MailerSend"), "$68.00");
+  });
+
+  it("preserves every other price, including SES at one million emails", () => {
+    const unchanged: Record<string, Array<string | null>> = {
+      "3K": ["$0.30", "$0 (free)", "$0 (free)", "$7.00", "$19.95", "$15.00", "$0 (free)"],
+      "10K": ["$1.00", "$20.00", "$10.00", "$28.00", "$19.95", "$15.00", "$0 (free)"],
+      "50K": ["$5.00", "$20.00", null, "$28.00", "$19.95", "$42.50", "$25.00"],
+      "100K": ["$10.00", null, null, null, "$89.95", "$70.00", "$65.00"],
+      "500K": ["$50.00", null, null, "$210.00", "$449.95", "$245.00", "$169.00"],
+      "1M": ["$100.00", null, null, "$360.00", "$749.95", "$400.00", "$339.00"],
+    };
+    for (const [volume, expected] of Object.entries(unchanged)) {
+      expected.forEach((value, column) => {
+        if (value !== null) assert.strictEqual(price(volume, columns[column + 1]), value, `${columns[column + 1]} at ${volume}`);
+      });
+    }
+  });
+});
+
 describe("a catalogue record carries what its own newest change record states", () => {
   it("gives Resend the domain count its 2026-09-05 change record announced", () => {
     const change = newestChangeFor("Resend");

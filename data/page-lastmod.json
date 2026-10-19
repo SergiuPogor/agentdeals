@@ -2699,7 +2699,7 @@
       "changed": "2026-10-19"
     },
     "/database-free-tier-comparison-2026": {
-      "hash": "f6fe28b1f3714367",
+      "hash": "77e755c873b5782a",
       "changed": "2026-10-19"
     },
     "/database-pricing": {
@@ -3133,8 +3133,8 @@
       "changed": "2026-10-19"
     },
     "/email-comparison-2026": {
-      "hash": "a2314b929c4a166a",
-      "changed": "2026-10-18"
+      "hash": "9c638031ec563c5e",
+      "changed": "2026-10-19"
     },
     "/email-service-alternatives": {
       "hash": "79de5da08b3b69ac",
@@ -3887,7 +3887,7 @@
       "changed": "2026-10-09"
     },
     "/vector-database-pricing": {
-      "hash": "a149df92c1089f39",
+      "hash": "54421be22c47e45d",
       "changed": "2026-10-19"
     },
     "/vendor": {

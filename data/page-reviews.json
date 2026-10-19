@@ -859,7 +859,6 @@
         "cloudflare-kv",
         "convex",
         "firebase",
-        "lancedb",
         "mongodb-atlas",
         "neon",
         "nile",
@@ -880,13 +879,13 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 81,
+      "table_figures": 80,
       "table_figures_from_records": 49,
       "tables": [
         {
           "label": "Main Comparison Table",
           "figures": 35,
-          "from_records": 20
+          "from_records": 21
         },
         {
           "label": "Postgres-Compatible Databases",
@@ -910,8 +909,8 @@
         },
         {
           "label": "Vector Databases",
-          "figures": 7,
-          "from_records": 3
+          "figures": 6,
+          "from_records": 2
         },
         {
           "label": "Pricing Change Timeline",
@@ -1198,7 +1197,7 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 53,
+      "table_figures": 54,
       "table_figures_from_records": 4,
       "tables": [
         {
@@ -1218,7 +1217,7 @@
         },
         {
           "label": "Growth Cost Trap",
-          "figures": 41,
+          "figures": 42,
           "from_records": 0
         },
         {
@@ -3458,12 +3457,12 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": false,
-      "table_figures": 76,
+      "table_figures": 75,
       "table_figures_from_records": 13,
       "tables": [
         {
           "label": "Free Tier Comparison Table",
-          "figures": 27,
+          "figures": 26,
           "from_records": 0
         },
         {
