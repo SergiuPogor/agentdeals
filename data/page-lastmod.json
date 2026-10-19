@@ -22,11 +22,11 @@
       "changed": "2026-10-19"
     },
     "/ai-free-tiers": {
-      "hash": "53ac6467b85300f9",
+      "hash": "1905a88749d106cd",
       "changed": "2026-10-19"
     },
     "/ai-ml-alternatives": {
-      "hash": "24be35e14d75936b",
+      "hash": "51c81cb8035811a4",
       "changed": "2026-10-19"
     },
     "/alternative-to": {
@@ -1099,7 +1099,7 @@
       "changed": "2026-10-19"
     },
     "/category/ai-ml": {
-      "hash": "98224c3319497d5a",
+      "hash": "8eb7ea64383383dc",
       "changed": "2026-10-19"
     },
     "/category/analytics": {
@@ -1243,7 +1243,7 @@
       "changed": "2026-10-19"
     },
     "/category/messaging": {
-      "hash": "749583f43d7f62ab",
+      "hash": "57bfa7e236e74c0e",
       "changed": "2026-10-19"
     },
     "/category/mobile-development": {
@@ -3583,7 +3583,7 @@
       "daily": true
     },
     "/stack-check": {
-      "hash": "fe03935809dd0e26",
+      "hash": "df193eb7c73c1b25",
       "changed": "2026-10-19"
     },
     "/stacks": {
@@ -5473,7 +5473,7 @@
       "changed": "2026-10-19"
     },
     "/vendor/emqx-serverless": {
-      "hash": "c0a93441ad299c93",
+      "hash": "591a307c7b744152",
       "changed": "2026-10-19"
     },
     "/vendor/encore-dev": {
