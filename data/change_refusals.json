@@ -1352,6 +1352,18 @@
       "refused_date": "2026-10-12"
     },
     {
+      "vendor": "Clarifai",
+      "change_type": "product_deprecated",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 8759 characters, so it states no terms to have changed",
+      "summary": "Clarifai is no longer offering its platform directly. Nebius has acquired Clarifai's inference technology and core team. The pricing page focuses entirely on Nebius's products and services, and makes no mention of a Clarifai free tier or platform.",
+      "previous_state": "Clarifai's platform is no longer available, so there is no free tier. On May 12, 2026 Nebius announced it was licensing Clarifai's inference technology and that Clarifai's core engineering and research team was joining Nebius. Clarifai's site said platform credit purchases would be disabled after June 18, 2026. Its pricing page returned 404 from June 2026, and on 2026-09-27 Clarifai's API and documentation hosts did not resolve.",
+      "current_state": "Nebius has licensed Clarifai's inference IP and the Clarifai team has joined Nebius. Clarifai's legacy computer vision models are not included in the license.",
+      "source_url": "https://nebius.com/newsroom/nebius-welcomes-clarifai-s-core-team-and-licenses-inference-ip-to-strengthen-nebius-token-factory",
+      "category": "AI / ML",
+      "refused_date": "2026-10-19"
+    },
+    {
       "vendor": "Claude Code",
       "change_type": "pricing_restructured",
       "reason": "no_price_signal",
@@ -1777,6 +1789,18 @@
     },
     {
       "vendor": "Composio",
+      "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-13 (confirmed_unchanged) claimed the same change, pricing_restructured, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier is now called 'Hobby' and has the same limits as previously stated (100,000 tool calls / mo, 50,000 triggers / mo, 3 team members). However, there are now paid tiers ('Pro' and 'Enterprise') with additional features and limits.",
+      "previous_state": "Integration platform for AI Agents and LLMs — Free $0 No credit card required 100,000 tool calls / mo 50,000 triggers / mo 3 team members",
+      "current_state": "Hobby $0 No credit card required 100,000 tool calls / mo Think of it as letting your AI agent call tools 100,000 times per month, far more than most individuals will need. Think of it as letting your AI agent call tools 100,000 times per month, far more than most individuals will need. Connect unlimited accounts A connected account is an individual authorized account, such as a user&#x27;s Gmail account. A connected account is an individual authorized account, such as a user&#x27;s Gmail account. 50,000 triggers / mo 3 team members Start for free",
+      "source_url": "https://composio.dev/pricing",
+      "category": "AI / ML",
+      "refused_date": "2026-10-19"
+    },
+    {
+      "vendor": "Composio",
       "change_type": "new_tier",
       "reason": "repeats_a_refused_reading",
       "detail": "the reading of this page refused on 2026-10-16 (repeats_a_refused_reading) stated the same 4 figures, so the page showed these terms before the date this record gives",
@@ -1894,6 +1918,18 @@
       "source_url": "https://www.coupler.io/",
       "category": "Notebooks & Data Science",
       "refused_date": "2026-09-30"
+    },
+    {
+      "vendor": "CraftMyPDF",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-09 (unquantified_limit) claimed the same change, limits_reduced, against the same stored description",
+      "summary": "The page does not explicitly mention a free tier with 50 PDFs/images per month and three templates. It highlights features like drag-and-drop editor, API access, and integrations but does not detail specific limits for a free plan. It does offer a 'Start Free' option, but the details of that free offering are not provided in the provided text.",
+      "previous_state": "Auto-Generate PDF documents from reusable templates with a drop-and-drop editor and a simple API. The free plan comes with 50 PDFs/images per month and three templates.",
+      "current_state": "The page offers a 'Start Free' option but does not specify any limits on PDFs/images per month or the number of templates included in the free plan.",
+      "source_url": "https://craftmypdf.com",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-19"
     },
     {
       "vendor": "CraftMyPDF",
@@ -2972,13 +3008,13 @@
       "vendor": "Fizzy",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-15 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
-      "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page states that Fizzy is entirely free with a 1 GB file storage limit.",
+      "detail": "the reading of this page refused on 2026-10-18 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page does not mention any item limits. It does state a 1 GB file storage limit.",
       "previous_state": "Kanban-based platform for project management and issue tracking. Create public boards, set up webhooks, use card stamping, and track unlimited users — free for up to 1000 items.",
-      "current_state": "Fizzy is entirely free with a 1 GB file storage limit.",
+      "current_state": "Fizzy is entirely free and subsidized by Basecamp and HEY. File space usage is limited to 1 GB.",
       "source_url": "https://www.fizzy.do/",
       "category": "Project Management",
-      "refused_date": "2026-10-18"
+      "refused_date": "2026-10-19"
     },
     {
       "vendor": "Flagsmith",
@@ -3380,6 +3416,18 @@
       "source_url": "https://www.gitbook.com/pricing",
       "category": "Documentation",
       "refused_date": "2026-09-25"
+    },
+    {
+      "vendor": "GitBook",
+      "change_type": "limits_increased",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-25 (measures_no_change) stated the same 2 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free plan now includes AI features like LLM optimizations, MCP server, WebMCP support, and GitBook Agent (with a 10 message/week limit). The stored information stated these were not included in the free tier.",
+      "previous_state": "Documentation platform — Free includes 1 free user. AI search, AI writing and editing, and custom domain are not included. GitBook Agent has a 10 message limit per week.",
+      "current_state": "Free Includes 1 free user. LLM-optimizations, MCP server, WebMCP support, and GitBook Agent (10 message limit per week) are included.",
+      "source_url": "https://www.gitbook.com/pricing",
+      "category": "Documentation",
+      "refused_date": "2026-10-19"
     },
     {
       "vendor": "GitDailies",
@@ -3896,12 +3944,12 @@
       "change_type": "pricing_restructured",
       "reason": "same_transition_graded_differently",
       "detail": "graded as Harness Feature Flags|pricing_restructured|2026-09-09|https://www.harness.io/pricing, a record we withdrew",
-      "summary": "The free plan now includes Harness Open Source and Litmus Chaos, and limits users to 500.",
+      "summary": "The free tier exists but has different features than originally stated. It now includes Harness Open Source and Litmus Chaos.",
       "previous_state": "Feature flags (formerly Split.io) — 2 developers, 25K client MAU, unlimited flags and environments, CI/CD pipelines for rollout",
-      "current_state": "The Free Plan includes Harness Open Source, Litmus Chaos, and Community support, and is for individual developers and small teams. It supports up to 500 users.",
+      "current_state": "The Free Plan includes Harness Open Source and Litmus Chaos, and Community support.",
       "source_url": "https://www.harness.io/pricing",
       "category": "Feature Flags",
-      "refused_date": "2026-09-25",
+      "refused_date": "2026-10-19",
       "collided_with": "Harness Feature Flags|pricing_restructured|2026-09-09|https://www.harness.io/pricing"
     },
     {
@@ -4467,6 +4515,18 @@
     {
       "vendor": "IP2Location.io",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-25 (unquantified_limit) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier limits for Domain WHOIS API have been reduced.",
+      "previous_state": "Freemium, fast, and reliable IP geolocation API. Get data like city, coordinates, ISP, ASN, AS data and more. The free plan includes 50k credits per month. IP2Location.io also offers 500 free WHOIS and hosted domain lookups per month. See domain registration details and find domains hosted on a specific IP. Upgrade to a paid plan for more features.",
+      "current_state": "Get up to 500 queries free each month.",
+      "source_url": "https://www.ip2location.io/",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-19"
+    },
+    {
+      "vendor": "IP2Location.io",
+      "change_type": "limits_reduced",
       "reason": "unquantified_limit",
       "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (50 credit, 500 whoi)",
       "summary": "The free plan now offers 500 WHOIS queries and 50 hosted domain lookups per month, down from 500 WHOIS and unlimited hosted domain lookups.",
@@ -4561,6 +4621,18 @@
       "source_url": "https://jitpack.io/",
       "category": "CI/CD",
       "refused_date": "2026-10-10"
+    },
+    {
+      "vendor": "JotForm",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-25 (unquantified_limit) claimed the same change, limits_reduced, against the same stored description",
+      "summary": "The free Starter plan still exists, but the page does not explicitly state the limits of 5 forms and 100 monthly submissions. It only states that the Starter plan includes all standard features and has limits that require upgrading to a paid plan.",
+      "previous_state": "Online form builder. Free plan: 5 forms, 100 monthly submissions, 100 MB upload space, 1,000 form views/month. Drag-and-drop builder with 10,000+ templates",
+      "current_state": "The Starter plan includes all standard features, but users will need to upgrade to a paid plan to increase limits. Forms and signed documents will include Jotform branding unless a paid subscription is used.",
+      "source_url": "https://www.jotform.com/pricing/",
+      "category": "Forms",
+      "refused_date": "2026-10-19"
     },
     {
       "vendor": "JotForm",
@@ -5122,6 +5194,18 @@
       "source_url": "https://logz.io/pricing/",
       "category": "Logging",
       "refused_date": "2026-10-18"
+    },
+    {
+      "vendor": "Lokalise",
+      "change_type": "free_tier_removed",
+      "reason": "confirmed_unchanged",
+      "detail": "The report restates information already present in the stored description - that a free tier doesn't exist, and all plans require a paid subscription after a 14-day trial. The current page simply details the features of the paid plans.",
+      "summary": "No longer does. The current pricing page confirms this, stating all plans come with a 14-day free trial. Require a paid subscription to continue. The pricing is now structured around Explorer, Growth, Advanced, and Enterprise plans with specific features and limits for each.",
+      "previous_state": "Localization and translation management platform, formerly with a free plan. No free tier. lokalise.com/pricing, read 2026-09-25, prices every plan: Explorer $149/month and Growth $379/month with annual billing, Advanced from $1,049/month with annual billing, Enterprise by estimate. Every plan comes with a free 14-day trial, no credit card required, and when the trial ends a paid plan is needed to continue.",
+      "current_state": "Explorer plan is $149/mo or billed yearly, and includes hosted words, standard AI/MT translated words, projects, languages, standard seats, processed words, pro AI translated words, advanced seats, integrations, automations, OTA calls, AI features, context-aware scoring, multi-LLM, smart routing, custom AI profiles, Vantage, contextual text grouping, in-context previews, smart HITL routing, translation management, paged documents, spelling/grammar, glossary, translation memory, translation history, in-context editors, screenshots, shared glossary, translation memory management, styleguide, auto snapshots, collaborative web-based editor, tasks, task locks, custom translation statuses, versioning of documents, chained tasks, branching, workflow triggers, workflow templates, custom workflows, translation quality dashboard, usage dashboard, tasks insights, audit logs, vendor rate profiles, ability to download granular tasks data, additional filters, AI scoring, permissions management, user groups, secure password configuration, 2FA, single sign-on, 24/7 support, digital success services.",
+      "source_url": "https://lokalise.com/pricing/",
+      "category": "Localization",
+      "refused_date": "2026-10-19"
     },
     {
       "vendor": "Lokalise",
@@ -6302,6 +6386,18 @@
       "refused_date": "2026-08-28"
     },
     {
+      "vendor": "OpenStatus",
+      "change_type": "limits_reduced",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (1 monitor, 1 statu), and drops 4 the stored description carried",
+      "summary": "The free plan now includes only 1 monitor and 1 status page, with checks every 10 minutes. The stored information stated 3 components, 6 global regions, and 14-day data retention, which are not mentioned on the current pricing page for the free plan.",
+      "previous_state": "Open-source status page and monitoring. Free plan: 1 monitor, 1 status page, 3 components, 10-minute check intervals, 6 global regions, 14-day data retention",
+      "current_state": "The Hobby plan is free and includes 1 monitor, 1 status page, checks every 10 min.",
+      "source_url": "https://www.openstatus.dev/",
+      "category": "Status Pages",
+      "refused_date": "2026-10-19"
+    },
+    {
       "vendor": "OpenWeatherMap",
       "change_type": "limits_reduced",
       "reason": "page_does_not_name_vendor",
@@ -6843,6 +6939,18 @@
       "source_url": "https://www.progress.com/podio/pricing",
       "category": "Storage",
       "refused_date": "2026-09-07"
+    },
+    {
+      "vendor": "podio.com",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-07 (measures_no_change) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The Free plan now has a limit of 100 items per organization, which was previously unlimited according to the stored information. The Free plan also no longer includes unlimited workspaces and apps.",
+      "previous_state": "Work management platform owned by Progress Software. The Free plan is $0 for up to 5 users, with unlimited workspaces and apps, 100 items per organization and 1000 API calls per hour.",
+      "current_state": "The Free plan includes unlimited workspaces and apps, but limits users to 100 items per organization.",
+      "source_url": "https://www.progress.com/podio/pricing",
+      "category": "Storage",
+      "refused_date": "2026-10-19"
     },
     {
       "vendor": "Polar",
@@ -7736,6 +7844,18 @@
       "refused_date": "2026-09-25"
     },
     {
+      "vendor": "Sendbird",
+      "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-25 (confirmed_unchanged) stated the same 3 figures, so the page showed these terms before the date this record gives",
+      "summary": "The Developer tier (1,000 MAU) is still offered as a free trial, but it's now called 'Free trial' and has a 6-month retention period for messages, as stated in the stored deal info. However, the page now prominently displays paid plans (Starter, Pro, Enterprise) with specific monthly costs and limits. The 'Free trial' plan does not explicitly state 'unlimited messages/month' and 'all Pro features included' as the stored deal info suggests.",
+      "previous_state": "Chat SDK — Developer plan: 1,000 MAU, 20 peak concurrent connections, unlimited messages/month, unlimited storage (6-month retention). All Pro features included (typing indicators, read receipts, push notifications)",
+      "current_state": "The Free trial plan offers up to 1,000 MAU and up to 20 peak concurrent connections, unlimited messages/month, and message retention of 6 months. All pro features are included. No credit card is required.",
+      "source_url": "https://sendbird.com/pricing/chat",
+      "category": "Communication",
+      "refused_date": "2026-10-19"
+    },
+    {
       "vendor": "Sentry",
       "change_type": "limits_reduced",
       "reason": "confirmed_unchanged",
@@ -7870,6 +7990,18 @@
       "source_url": "https://siliconflow.cn/pricing",
       "category": "AI / ML",
       "refused_date": "2026-09-16"
+    },
+    {
+      "vendor": "SimpleLocalize",
+      "change_type": "limits_increased",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-25 (same_transition_graded_differently) stated the same 4 figures, so the page showed these terms before the date this record gives",
+      "summary": "The Community plan now offers 500 translation keys instead of 250.",
+      "previous_state": "Free Community plan — 250 translation keys, unlimited strings, 10 languages, 10 projects, 1 team member. Discount plans available for educational institutions, indie developers, and open-source projects (contact sales)",
+      "current_state": "The Community plan includes 500 translation keys, unlimited strings, 10 languages, 10 projects, and 1 team member.",
+      "source_url": "https://simplelocalize.io/pricing",
+      "category": "Localization",
+      "refused_date": "2026-10-19"
     },
     {
       "vendor": "SimpleLocalize",
@@ -9688,6 +9820,18 @@
       "source_url": "https://zapier.com/pricing",
       "category": "Workflow Automation",
       "refused_date": "2026-09-09"
+    },
+    {
+      "vendor": "Zapier",
+      "change_type": "limits_increased",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-25 (restates_stored_quantities) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now includes unlimited Zaps, Tables, and Forms, but limits Zaps to two steps. The stored information stated a limit of 100 tasks/month, 2,500 table records, and 10 form pages.",
+      "previous_state": "Workflow automation — 100 tasks/month, unlimited Zaps but limited to 2-step only (one trigger + one action), 2,500 table records, 10 form pages",
+      "current_state": "Zaps, Tables, and Forms included (100 tasks per month). Unlimited Zaps, Tables, and Forms. Two-step Zaps",
+      "source_url": "https://zapier.com/pricing",
+      "category": "Workflow Automation",
+      "refused_date": "2026-10-19"
     },
     {
       "vendor": "Zapier",
