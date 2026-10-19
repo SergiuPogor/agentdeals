@@ -10208,6 +10208,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: Slack's pricing page shows AI conversation summaries greyed out on the Free plan, and the reading took the AI features as included. 1:1 external messages are on the Free plan, but we hold no date for when Slack added them.",
+        "source_url": "https://slack.com/pricing"
       }
     },
     {
@@ -13159,6 +13165,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: Slack's pricing page shows AI conversation summaries, SAML-based single sign-on and SCIM user management greyed out on the Free plan, and the reading took those rows as included. Pro adds AI conversation summaries; SAML-based single sign-on and SCIM user management start on Business+.",
+        "source_url": "https://slack.com/pricing"
       }
     },
     {

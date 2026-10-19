@@ -2502,7 +2502,8 @@
       "source_url": "https://slack.com/pricing",
       "record_date": "2026-09-24",
       "change_type": "limits_increased",
-      "summary": "The free tier now includes 1:1 external messages via Slack Connect and basic AI features (AI conversation summaries, Slackbot, AI workflow generation, AI search, AI daily recaps, AI file summaries). It also includes SAML-based single sign-on and SCIM user management."
+      "summary": "The free tier now includes 1:1 external messages via Slack Connect and basic AI features (AI conversation summaries, Slackbot, AI workflow generation, AI search, AI daily recaps, AI file summaries). It also includes SAML-based single sign-on and SCIM user management.",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "Fastly",

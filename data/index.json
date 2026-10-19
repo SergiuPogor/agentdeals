@@ -34176,7 +34176,7 @@
     {
       "vendor": "Slack",
       "category": "Communication & Messaging",
-      "description": "The free plan includes 90 days of message history, up to 10 apps, 1:1 meetings with screen sharing, 1:1 external messages, basic AI features, SAML-based single sign-on, and SCIM user management.",
+      "description": "Slack's free plan includes 90 days of message history, up to 10 apps, 1:1 meetings and 1:1 external messages. It does not include AI features, SAML-based single sign-on or SCIM user management. AI conversation summaries start on Pro. SAML-based single sign-on and SCIM user management start on Business+.",
       "tier": "Free",
       "url": "https://slack.com/pricing",
       "tags": [
@@ -34191,17 +34191,14 @@
         "free tier"
       ],
       "verifiedDate": "2026-10-18",
+      "restatement_reverted": {
+        "record_date": "2026-09-24",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-18",
         "outcome": "ok",
         "detail": "the page names Slack as \"slack\" and states \"$0\""
-      },
-      "restated_from": {
-        "reading_date": "2026-09-24",
-        "source_url": "https://slack.com/pricing",
-        "record_date": "2026-09-24",
-        "change_type": "limits_increased",
-        "restated_on": "2026-09-24"
       }
     },
     {
