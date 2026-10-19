@@ -30654,9 +30654,9 @@ function buildVectorDatabasePricingPage(): string {
       freeStorage: "Unlimited (OSS)",
       freeDimensions: "Unlimited",
       freeQueries: "Unlimited (OSS)",
-      paidFrom: "Cloud: usage-based after $100 credits",
+      paidFrom: "Cloud: closed to new accounts",
       pricingModel: "Self-hosted: free; Cloud: usage-based",
-      freeDetails: "Embedded vector database built on Lance columnar format. OSS: fully free, runs locally or on your cloud storage (S3, GCS, Azure). Zero-copy reads, automatic versioning, multi-modal (text, images, video). LanceDB Cloud: $100 one-time free credits for serverless managed offering.",
+      freeDetails: "Embedded vector database built on Lance columnar format. OSS: fully free, runs locally or on your cloud storage (S3, GCS, Azure). Zero-copy reads, automatic versioning, multi-modal (text, images, video). LanceDB Cloud is closed to new accounts.",
       freeType: "oss-only",
       monthlyCostSmall: "$0 (self-hosted)",
       monthlyCostTeam: "$0\u2013100+ (cloud)",
@@ -36592,8 +36592,8 @@ ${globalNavCss()}
         <td class="provider-col">Redis Cloud</td>
         <td>Redis</td>
         <td style="font-family:var(--mono)">30 MB</td>
-        <td>Unlimited (shared)</td>
-        <td class="check">Yes</td>
+        <td>100 ops/sec, 30 connections</td>
+        <td class="cross">No (not on the free plan)</td>
         <td>Dev/test Redis instances</td>
       </tr>${vendorPageConditionsRowHtml("redis-cloud", 6)}
     </tbody>
@@ -36601,7 +36601,7 @@ ${globalNavCss()}
   </div>
 
   <div class="context-box">
-    <strong>Upstash is the standout</strong> for serverless Redis — 256 MB data and 500K commands/month with true pay-per-request pricing beyond the free tier. Cloudflare KV has more storage (1 GB) but very low write limits (1K/day) making it best for read-heavy config data. Redis Cloud's 30 MB free tier is tiny but useful for development. <strong>Note:</strong> Redis switched to a non-open-source license (SSPL/RSALv2) in March 2024 — Valkey is now the leading open-source alternative, and Dragonfly a source-available one.
+    <strong>Upstash is the standout</strong> for serverless Redis — 256 MB data and 500K commands/month with true pay-per-request pricing beyond the free tier. Cloudflare KV has more storage (1 GB) but very low write limits (1K/day) making it best for read-heavy config data. Redis Cloud's 30 MB free tier is tiny but useful for development. <strong>Note:</strong> Redis 8 added AGPLv3, an open-source license, besides RSALv2 and SSPLv1. Valkey is the leading open-source alternative, and Dragonfly a source-available one.
   </div>
 
   <h2 id="vector">Vector Databases</h2>
@@ -36637,7 +36637,7 @@ ${globalNavCss()}
         <td class="provider-col">LanceDB</td>
         <td>Unlimited (embedded)</td>
         <td>Unlimited (embedded)</td>
-        <td>OSS: free. Cloud: $100 credits</td>
+        <td>OSS: free. Cloud: closed to new accounts</td>
         <td>Embedded vector search, local development</td>
       </tr>${vendorPageConditionsRowHtml("lancedb", 5)}
       <tr>

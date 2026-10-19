@@ -42,7 +42,7 @@ const CORRECTED: [string, string][] = [
   ["/vendor/hetzner", "dedicated servers by 2-21%"],
   ["/hetzner-alternatives", "dedicated servers by 2-21%"],
   ["/github-actions-alternatives", "remains strong for GitHub-hosted runners.</p>"],
-  ["/database-free-tier-comparison-2026", "Valkey is now the leading open-source alternative, and Dragonfly a source-available one."],
+  ["/database-free-tier-comparison-2026", "Valkey is the leading open-source alternative, and Dragonfly a source-available one."],
   ["/free-saas-stack", "At 100,000 users: Clerk costs $1,025 a month; Supabase costs $25 a month on Pro."],
 ];
 
