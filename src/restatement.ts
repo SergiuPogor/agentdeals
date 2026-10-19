@@ -81,12 +81,6 @@ export interface AReadingHeldBackByName {
 
 export const READINGS_HELD_BACK_BY_NAME: readonly AReadingHeldBackByName[] = [
   {
-    vendor: "ImgBB",
-    reading_opens: "ImgBB is a free image hosting service. Upgrade to unlock all the features.",
-    we_go_on_storing: "32 MB / image limit",
-    the_rule_that_should_reach_it: "https://github.com/robhunter/agentdeals/issues/1424",
-  },
-  {
     vendor: "Prisma Accelerate",
     reading_opens: "Free tier includes 1M requests / month",
     we_go_on_storing: "100,000 operations/month",
