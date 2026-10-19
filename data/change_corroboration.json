@@ -1,37 +1,26 @@
 {
   "held": [
     {
-      "vendor": "Algolia",
+      "vendor": "Corgea",
       "change_type": "pricing_restructured",
       "impact": "medium",
-      "summary": "The price per additional 1K search requests is now $1.75 for Grow Plus and $0.50 for Grow, differing from the stored $0.50 and $0.40 respectively.",
-      "previous_state": "Search-as-a-service. The Free plan needs no credit card and includes 10K search requests/month, 50K records, 5K recommendation requests/month, 5K crawls/month and 1 application, with some features reserved for paid plans. Grow is pay as you go: 10K search requests and 100K records a month included, then $0.50 per 1K search requests and $0.40 per 1K records.",
-      "current_state": "Grow Plus: 10K search requests /month included then $1.75 per additional 1K search requests, 100K records included then $0.40 per additional 1K records. Grow: 10K search requests /month included then $0.50 per additional 1K search requests, 100K records included then $0.40 per additional 1K records.",
-      "source_url": "https://www.algolia.com/pricing",
-      "category": "Search",
-      "first_read_date": "2026-10-18"
+      "summary": "The free plan now has a limit of 2 team members. The free plan also includes Logic and Auth Scanning.",
+      "previous_state": "Free autonomous security platform that finds, validates and fixes insecure code and packages across +20 languages and frameworks. Free plan includes 10 repos, 10 PR scans/month, and 10 SAST auto fixes. Features: AI SAST, Logic/Auth Scanning, Dependency Scanning, Secrets Detection, Container Scanning, IaC Scanning.",
+      "current_state": "The Free plan is $0 for individual devs and includes AI SAST, Logic and Auth Scanning, Dependency Scanning, Secrets Detection, Container Scanning, and IaC Scanning for up to 2 team members and 10 repositories.",
+      "source_url": "https://corgea.com/pricing/",
+      "category": "Security",
+      "first_read_date": "2026-10-19"
     },
     {
-      "vendor": "Directus",
-      "change_type": "pricing_restructured",
-      "impact": "medium",
-      "summary": "Directus's own page now redirects to directus.com. Team plan is now $499/mo billed annually or $599/mo rolling monthly, up from $499/mo billed annually.",
-      "previous_state": "Self-hostable headless CMS. Core is $0 a month with 3 user seats, 25 collections and 5 flows. The Open Innovation Grant gives organizations under $5M in annual revenue and fewer than 50 employees a fully permissive license at no cost. Directus Cloud hosting is a $99 a month add-on; Team is $499 a month billed annually.",
-      "current_state": "Team is $499/mo billed annually or $599/mo on a rolling monthly basis.",
-      "source_url": "https://directus.io/pricing",
-      "category": "Headless CMS",
-      "first_read_date": "2026-10-18"
-    },
-    {
-      "vendor": "Harness Feature Flags",
+      "vendor": "imgix",
       "change_type": "pricing_restructured",
       "impact": "high",
-      "summary": "The free tier now includes Harness Open Source and Litmus Chaos.",
-      "previous_state": "Feature flags (formerly Split.io) — 2 developers, 25K client MAU, unlimited flags and environments, CI/CD pipelines for rollout",
-      "current_state": "The Free Plan includes Harness Open Source and Litmus Chaos, Community support.",
-      "source_url": "https://www.harness.io/pricing",
-      "category": "Feature Flags",
-      "first_read_date": "2026-10-18"
+      "summary": "The free trial still exists, offering 30 days and 100 credits, but the pricing structure has been significantly restructured with multiple tiers (Starter, Basic, Midrange, Growth, Growth Plus, Enterprise) and a credits-based system for storage, delivery, and transformations. The Starter plan is $25/month for 100 credits, 50GB media, and 100GB delivery.",
+      "previous_state": "Image CDN and optimization — no permanent free tier. 30-day free trial with 100 credits, no credit card required. Paid plans start at Starter $25/mo (100 credits, 50 GB storage, 100 GB bandwidth); credit system charges 2 credits/GB/month for storage and 1 credit/GB for delivery.",
+      "current_state": "The Starter plan is $25/mo or $250/yr and includes 100 credits, up to 50GB of media, and up to 100GB delivery bandwidth.",
+      "source_url": "https://www.imgix.com/pricing",
+      "category": "CDN",
+      "first_read_date": "2026-10-19"
     }
   ],
   "resolved": [
@@ -2486,6 +2475,54 @@
       "outcome": "corroborated",
       "detail": "a reading on 2026-10-18 read it as free_tier_removed too",
       "resolved_date": "2026-10-18"
+    },
+    {
+      "vendor": "Algolia",
+      "change_type": "pricing_restructured",
+      "impact": "medium",
+      "summary": "The price per additional 1K search requests is now $1.75 for Grow Plus and $0.50 for Grow, differing from the stored $0.50 and $0.40 respectively.",
+      "previous_state": "Search-as-a-service. The Free plan needs no credit card and includes 10K search requests/month, 50K records, 5K recommendation requests/month, 5K crawls/month and 1 application, with some features reserved for paid plans. Grow is pay as you go: 10K search requests and 100K records a month included, then $0.50 per 1K search requests and $0.40 per 1K records.",
+      "source_url": "https://www.algolia.com/pricing",
+      "first_read_date": "2026-10-18",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-19 read it as pricing_restructured too",
+      "resolved_date": "2026-10-19"
+    },
+    {
+      "vendor": "Directus",
+      "change_type": "pricing_restructured",
+      "impact": "medium",
+      "summary": "Directus's own page now redirects to directus.com. Team plan is now $499/mo billed annually or $599/mo rolling monthly, up from $499/mo billed annually.",
+      "previous_state": "Self-hostable headless CMS. Core is $0 a month with 3 user seats, 25 collections and 5 flows. The Open Innovation Grant gives organizations under $5M in annual revenue and fewer than 50 employees a fully permissive license at no cost. Directus Cloud hosting is a $99 a month add-on; Team is $499 a month billed annually.",
+      "source_url": "https://directus.io/pricing",
+      "first_read_date": "2026-10-18",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-19 read the page as unchanged",
+      "resolved_date": "2026-10-19"
+    },
+    {
+      "vendor": "Harness Feature Flags",
+      "change_type": "pricing_restructured",
+      "impact": "high",
+      "summary": "The free tier now includes Harness Open Source and Litmus Chaos.",
+      "previous_state": "Feature flags (formerly Split.io) — 2 developers, 25K client MAU, unlimited flags and environments, CI/CD pipelines for rollout",
+      "source_url": "https://www.harness.io/pricing",
+      "first_read_date": "2026-10-18",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-19 read it as pricing_restructured too",
+      "resolved_date": "2026-10-19"
+    },
+    {
+      "vendor": "Penpot",
+      "change_type": "limits_reduced",
+      "impact": "high",
+      "summary": "The free Professional tier now has a storage limit of 10GB instead of 25GB, 7 days of autosave versions and file recovery instead of 90 days, and no longer includes 50% discount on Penpot events.",
+      "previous_state": "Open-source design platform — Professional $0 user/​month. Unlimited Teams. Up to 25GB of storage (typical file size: 10–100MB). 90 days of autosave versions and 90 days file recovery.",
+      "source_url": "https://penpot.app/pricing",
+      "first_read_date": "2026-10-19",
+      "outcome": "baseline_moved",
+      "detail": "the terms it was read against are no longer the terms we publish",
+      "resolved_date": "2026-10-19"
     }
   ]
 }
