@@ -60,6 +60,7 @@ describe("comparison timeline membership", () => {
   let live: RunningServer;
   let fixture: RunningServer;
   let categoryEmpty: RunningServer;
+  let aliases: RunningServer;
   let dir = "";
 
   before(async () => {
@@ -92,6 +93,12 @@ describe("comparison timeline membership", () => {
       return file;
     };
     const changePath = write("changes.json", { ...changes, changes: records });
+    aliases = await startServer({ AGENTDEALS_CHANGES_PATH: write("aliases.json", {
+      ...changes,
+      changes: ["Mailtrap", "MailerLite"].map(vendor => ({
+        ...template, vendor, date, recorded_date: date, summary: `Table spelling retained for ${vendor}`,
+      })),
+    }) });
     live = await startServer();
     fixture = await startServer({ AGENTDEALS_INDEX_PATH: write("index.json", index), AGENTDEALS_CHANGES_PATH: changePath });
     categoryEmpty = await startServer({
@@ -101,7 +108,7 @@ describe("comparison timeline membership", () => {
   });
 
   after(() => {
-    for (const server of [live, fixture, categoryEmpty]) server?.process.kill();
+    for (const server of [live, fixture, categoryEmpty, aliases]) server?.process.kill();
     if (dir) rmSync(dir, { recursive: true, force: true });
   });
 
@@ -118,6 +125,14 @@ describe("comparison timeline membership", () => {
       assert.deepEqual(rows.map(row => row[1]), [subject.compared]);
     });
   }
+
+  it("keeps changes filed under the exact names the email tables print", async () => {
+    const rows = await readTimeline(aliases, "email");
+    assert.equal(rows.length, 2);
+    for (const vendor of ["Mailtrap", "MailerLite"]) {
+      assert.ok(rows.some(row => row[2].includes(`Table spelling retained for ${vendor}`)));
+    }
+  });
 
   it("excludes the unrelated products from the published timelines", async () => {
     const banned = {

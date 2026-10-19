@@ -35360,6 +35360,14 @@ function comparisonCategoryChanges(category: string): DealChange[] {
     .sort((a, b) => b.date.localeCompare(a.date));
 }
 
+function comparisonPageWithCategoryChanges(html: string, compiledOn: string, category: string): string {
+  const compared = vendorSubjectsOnCompiledPage(html);
+  return comparisonPageWithLiveRecords(html, compiledOn, [
+    ...comparisonCategoryChanges(category),
+    ...compared.flatMap(subject => changesFor(subject.label)),
+  ]);
+}
+
 function buildComparisonCategoryBackLink(slug: string): string {
   const meta = comparisonMetaBySlug.get(slug);
   if (!meta || meta.catalogueCategory === null) return "";
@@ -38941,7 +38949,7 @@ function buildEmailComparison2026Page(): string {
     mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/${slug}` },
   };
 
-  return comparisonPageWithLiveRecords(`<!DOCTYPE html>
+  return comparisonPageWithCategoryChanges(`<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -39848,7 +39856,7 @@ ${globalNavCss()}
   </div>
 </footer>
 </body>
-</html>`, pubDate, emailChanges);
+</html>`, pubDate, "Email");
 }
 
 function buildMonitoringComparison2026Page(): string {
@@ -39907,7 +39915,7 @@ function buildMonitoringComparison2026Page(): string {
     mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/${slug}` },
   };
 
-  return comparisonPageWithLiveRecords(`<!DOCTYPE html>
+  return comparisonPageWithCategoryChanges(`<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -40838,7 +40846,7 @@ ${globalNavCss()}
   </div>
 </footer>
 </body>
-</html>`, pubDate, monitoringChanges);
+</html>`, pubDate, "Monitoring");
 }
 
 const STORAGE_SCALE_COLUMNS = ["Cloudflare R2", "AWS S3", "Backblaze B2", "Google Cloud Storage"];
@@ -40934,7 +40942,7 @@ function buildStorageComparison2026Page(): string {
     mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/${slug}` },
   };
 
-  return comparisonPageWithLiveRecords(`<!DOCTYPE html>
+  return comparisonPageWithCategoryChanges(`<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -41650,7 +41658,7 @@ ${globalNavCss()}
   </div>
 </footer>
 </body>
-</html>`, pubDate, storageChanges);
+</html>`, pubDate, "Storage");
 }
 
 function buildTestingFreeTierComparison2026Page(): string {
