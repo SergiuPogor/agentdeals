@@ -98,6 +98,8 @@ describe("the change timelines separate announced changes from their history", (
       assert.deepEqual(announced, [...announced].sort());
       assert.ok(announced.every(date => date > today));
       assert.ok(dates(timeline(html)).every(date => date <= today));
+      assert.match(upcoming(html), /class="(?:pc|chg)-upcoming-badge"/);
+      assert.doesNotMatch(upcoming(html), /Undated Service/);
       for (const vendor of ["Sooner Future", "Later Future"]) if (name === "fixtures") {
         const summaries = [...html.matchAll(/class="(?:pc|chg)-summary">([\s\S]*?)<\/div>/g)].map(match => visibleText(match[1]));
         assert.equal(summaries.filter(summary => summary.startsWith(`${vendor} changes its plan`)).length, 1);
