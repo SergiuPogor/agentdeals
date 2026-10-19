@@ -214,7 +214,8 @@
       "source_url": "https://www.sanity.io/pricing",
       "record_date": "2026-08-28",
       "change_type": "limits_reduced",
-      "summary": "The free tier now includes 2 datasets (public only). Previously 10K documents, 1M CDN requests/month, 100 GB assets, and 20 users. The free tier now has limits on datasets, documents, and CDN requests."
+      "summary": "The free tier now includes 2 datasets (public only). Previously 10K documents, 1M CDN requests/month, 100 GB assets, and 20 users. The free tier now has limits on datasets, documents, and CDN requests.",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "OpenRouter",
@@ -255,7 +256,8 @@
       "source_url": "https://socket.dev/pricing",
       "record_date": "2026-09-07",
       "change_type": "limits_reduced",
-      "summary": "The free tier now has 3 members instead of 5, and 500 API quota per hour instead of unlimited. It also includes Socket Basics - SAST, Secrets, and Container scans."
+      "summary": "The free tier now has 3 members instead of 5, and 500 API quota per hour instead of unlimited. It also includes Socket Basics - SAST, Secrets, and Container scans.",
+      "reverted_on": "2026-10-19"
     },
     {
       "vendor": "Infisical",
