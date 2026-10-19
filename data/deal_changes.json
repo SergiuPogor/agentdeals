@@ -7397,6 +7397,12 @@
       "archive_check": {
         "checked": "2026-10-02",
         "outcome": "no_usable_capture"
+      },
+      "resolution": {
+        "state": "retracted",
+        "date": "2026-10-19",
+        "detail": "Retracted 2026-10-19: sanity.io/pricing on 2026-08-23 (Internet Archive, before this record) and on 2026-10-19 shows the same Free plan: up to 20 user seats, 2 datasets (public only), and in its usage table 10k documents, 1M API CDN requests a month, 250k API requests a month, 100GB assets and 100GB bandwidth. The reading read only the plan card and took the quotas it did not see as removed.",
+        "source_url": "https://www.sanity.io/pricing"
       }
     },
     {
@@ -17020,6 +17026,33 @@
       "date_source": "hand_written",
       "listing_effect": "none",
       "what_ends": "Claude 4.6 models and GPT-OSS-120b on Antigravity's Free and Google AI Plus plans"
+    },
+    {
+      "vendor": "Socket.dev",
+      "change_type": "limits_reduced",
+      "date": "2026-10-19",
+      "date_source": "hand_written",
+      "summary": "By October 19, 2026, Socket.dev's Free plan covers 1 dev seat, which Socket defines as an active developer who contributes code to your repositories. Its pricing page read \"Unlimited developers & repos\" for the Free plan on October 10.",
+      "tier": "Free",
+      "previous_state": "\"Unlimited developers & repos. 1,000 scans per month. 500 API quota per hour. 3 members, 1 repository label.\" (socket.dev/pricing, Internet Archive 2026-10-10)",
+      "current_state": "Free: $0 per dev seat a month. Dev Seats: 1 (\"Active developers who contribute code to your repositories and count toward your paid seats\"). Free Dashboard users: Unlimited. Public and private repositories: Unlimited. Scans per month: 1,000. API quota: 500 / hour. API tokens: 1. Repository Labels: 1. Team: $25 per dev seat a month, from 5 dev seats. (socket.dev/pricing, read 2026-10-19)",
+      "impact": "high",
+      "source_url": "https://socket.dev/pricing",
+      "category": "Security",
+      "alternatives": [],
+      "recorded_date": "2026-10-19",
+      "archive_check": {
+        "checked": "2026-10-19",
+        "outcome": "vendor_changed",
+        "brackets": [
+          {
+            "last_old": "2026-10-10",
+            "first_new": "2026-10-19",
+            "last_old_capture": "https://web.archive.org/web/20261010055057/https://socket.dev/pricing",
+            "first_new_capture": "https://web.archive.org/web/20261019140822/https://socket.dev/pricing"
+          }
+        ]
+      }
     }
   ]
 }

@@ -3460,7 +3460,7 @@
     {
       "vendor": "Sanity",
       "category": "Headless CMS",
-      "description": "Structured content platform — Free: $0 forever. Includes: Up to 20 user seats, 2 permission roles, 2 datasets (public only), Unlimited content types and locales, Content Agent, Agent Context, Compute and Agent Actions, Hosted, real-time content database, Live previews and visual editing tools.",
+      "description": "Sanity is a structured content platform. The Free plan offers 20 user seats and 2 public datasets. It includes 10,000 documents, 1M API CDN requests a month, 250,000 API requests a month, 100 GB assets, and 100 GB bandwidth a month. Usage above these quotas requires the Growth plan at $15 per seat a month.",
       "tier": "Free",
       "url": "https://www.sanity.io/pricing",
       "tags": [
@@ -3472,17 +3472,14 @@
         "free tier"
       ],
       "verifiedDate": "2026-10-18",
+      "restatement_reverted": {
+        "record_date": "2026-08-28",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-18",
         "outcome": "ok",
         "detail": "the page names Sanity as \"sanity\" and states \"$ 0\" and \"$0\""
-      },
-      "restated_from": {
-        "reading_date": "2026-08-28",
-        "source_url": "https://www.sanity.io/pricing",
-        "record_date": "2026-08-28",
-        "change_type": "limits_reduced",
-        "restated_on": "2026-09-20"
       }
     },
     {
@@ -4654,7 +4651,7 @@
     {
       "vendor": "Socket.dev",
       "category": "Security",
-      "description": "Supply chain security for open source dependencies — Free: $0 per month, per developer. Unlimited developers & repos. 1,000 scans per month. 500 API quota per hour. 3 members, 1 repository label.",
+      "description": "Socket.dev is a supply chain security tool for open source dependencies. The Free plan includes 1 dev seat, unlimited dashboard users and repositories, 1,000 scans a month, and 500 API requests an hour. Team starts at $25 per dev seat a month from 5 seats. Open-source projects can ask for a free Team account.",
       "tier": "Free",
       "url": "https://socket.dev/pricing",
       "tags": [
@@ -4663,18 +4660,15 @@
         "dependencies",
         "open-source"
       ],
-      "verifiedDate": "2026-10-15",
+      "verifiedDate": "2026-10-19",
+      "restatement_reverted": {
+        "record_date": "2026-09-07",
+        "reverted_on": "2026-10-19"
+      },
       "source_check": {
         "checked": "2026-10-15",
         "outcome": "ok",
         "detail": "the page names Socket.dev as \"socket\" and states \"$0\" and \"1,000 scans per month\" and \"500 API quota per hour\""
-      },
-      "restated_from": {
-        "reading_date": "2026-09-07",
-        "source_url": "https://socket.dev/pricing",
-        "record_date": "2026-09-07",
-        "change_type": "limits_reduced",
-        "restated_on": "2026-09-20"
       }
     },
     {
