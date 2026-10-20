@@ -179,6 +179,17 @@
           "url": "https://render.com/docs/free",
           "read_on": "2026-10-12"
         }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://mcp.render.com/mcp",
+          "transport": "HTTP",
+          "authentication": "OAuth, or a Render API key in the header \"Authorization: Bearer <YOUR_API_KEY>\"",
+          "doc_url": "https://render.com/docs/mcp-server",
+          "source_quote": "Manage your Render resources from Claude, Codex, and Cursor.",
+          "read_on": "2026-10-20"
+        }
       ]
     },
     {
@@ -339,6 +350,17 @@
           "quote": "It is on by default for projects on Free plans created on or after August 19, 2026, and off by default on paid plans.",
           "url": "https://docs.netlify.com/manage/projects/powered-by-netlify-badge/",
           "read_on": "2026-10-12"
+        }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://netlify-mcp.netlify.app/mcp",
+          "transport": "HTTP",
+          "authentication": "OAuth",
+          "doc_url": "https://docs.netlify.com/build/build-with-ai/netlify-mcp-server/",
+          "source_quote": "Our recommendation is to use the remote MCP server to have the most up-to-date version of the MCP capabilities.",
+          "read_on": "2026-10-20"
         }
       ]
     },
@@ -902,6 +924,17 @@
           "url": "https://supabase.com/docs/guides/platform/billing-faq",
           "read_on": "2026-10-05"
         }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://mcp.supabase.com/mcp",
+          "transport": "HTTP",
+          "authentication": "OAuth with dynamic client registration, so no personal access token is needed",
+          "doc_url": "https://supabase.com/docs/guides/getting-started/mcp",
+          "source_quote": "By default the hosted Supabase MCP server uses dynamic client registration to authenticate with your Supabase org.",
+          "read_on": "2026-10-20"
+        }
       ]
     },
     {
@@ -1010,6 +1043,33 @@
           "quote": "Realtime is free to use during the beta. Neon does not charge for the live query engine compute or the Live SQL API service.",
           "url": "https://neon.com/docs/realtime/overview",
           "read_on": "2026-10-16"
+        }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://mcp.neon.tech/mcp",
+          "transport": "Streamable HTTP",
+          "authentication": "OAuth in the browser, or a Neon API key as a bearer token",
+          "doc_url": "https://neon.com/docs/ai/neon-mcp-server",
+          "source_quote": "The Neon MCP Server implements the Model Context Protocol (MCP), letting AI assistants interact with your Neon projects on your behalf.",
+          "read_on": "2026-10-20",
+          "retired_names": [
+            {
+              "kind": "npm",
+              "target": "@neondatabase/mcp-server-neon",
+              "notice": "This package is deprecated. Use the remote MCP server at mcp.neon.tech instead.",
+              "url": "https://www.npmjs.com/package/@neondatabase/mcp-server-neon",
+              "read_on": "2026-10-20"
+            },
+            {
+              "kind": "remote",
+              "target": "https://mcp.neon.tech/sse",
+              "notice": "deprecated and will stop working on or after October 1, 2026.",
+              "url": "https://neon.com/docs/ai/neon-mcp-server",
+              "read_on": "2026-10-20"
+            }
+          ]
         }
       ]
     },
@@ -1420,6 +1480,17 @@
           "url": "https://appwrite.io/pricing",
           "read_on": "2026-10-05"
         }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://mcp.appwrite.io/",
+          "transport": "HTTP",
+          "authentication": "OAuth",
+          "doc_url": "https://appwrite.io/docs/tooling/ai/mcp-servers",
+          "source_quote": "The Appwrite MCP server is a remote server that uses the HTTP transport.",
+          "read_on": "2026-10-20"
+        }
       ]
     },
     {
@@ -1507,7 +1578,18 @@
         "text": "Free Self-host on your own infrastructure. Branching Included Scale-to-zero Included Wake-up time ~10s Storage OpenEBS/Mayastor Anonymization Standard Provisioning Self-managed Support Community Observability Not included Compliance Not included Multi-region Not included",
         "url": "https://xata.io/pricing",
         "read_on": "2026-10-08"
-      }
+      },
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://api.xata.tech/mcp",
+          "transport": "Streamable HTTP",
+          "authentication": "OAuth in the browser, or a Xata API key in the header \"Authorization: Bearer YOUR_XATA_API_KEY\"",
+          "doc_url": "https://xata.io/docs/platform/mcp",
+          "source_quote": "A hosted MCP server that runs alongside the Xata API — there is nothing to install or run locally.",
+          "read_on": "2026-10-20"
+        }
+      ]
     },
     {
       "vendor": "Cloudflare D1",
@@ -3556,7 +3638,18 @@
           }
         ],
         "reviewed": "2026-09-01"
-      }
+      },
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://huggingface.co/mcp",
+          "transport": "HTTP",
+          "authentication": "your Hugging Face account, through the client configuration that https://huggingface.co/settings/mcp generates",
+          "doc_url": "https://huggingface.co/docs/hub/en/hf-mcp-server",
+          "source_quote": "The Hugging Face MCP (Model Context Protocol) Server connects your MCP‑compatible AI assistant (for example Codex, Cursor, VS Code extensions, Zed, ChatGPT or Claude Desktop) directly to the Hugging Face Hub.",
+          "read_on": "2026-10-20"
+        }
+      ]
     },
     {
       "vendor": "Groq",
@@ -3755,7 +3848,7 @@
     {
       "vendor": "Mistral AI",
       "category": "AI / ML",
-      "description": "Mistral's Free plan includes monthly usage shared across Studio, the API and Vibe Code. The pricing page no longer states the amount as of 2026-10-07; it previously listed $10 a month in API credits. When it is used up, usage can stop until the next month unless pay-as-you-go is turned on. Mistral Pro costs $14.99 a month and includes $25.50 a month in API credits, shared across the API, Studio and Vibe Code. It included $30 a month until 2026-10-07. Verified students who have not used Vibe or Le Chat before can take the Education plan for $5.99 a month, for up to 12 months, with $15 a month in API credits. API keys work with no credit card, within rate limits. The plan also has limited messages, web searches and coding sessions in Vibe. API prices: Ministral 3 (3B) $0.1/$0.1 (per 1M tokens); Mistral Small 4 $0.15/$0.6 (per 1M tokens); Mistral Large 3 $0.5/$1.5 (per 1M tokens); Mistral Large 4 (mistral-large-4; public preview since 2026-10-06, 1M-token context) $1.36/$4.18 (per 1M tokens); its launch discount to half that ended on 2026-10-20; Mistral Medium 3.5 $1.5/$7.5 (per 1M tokens); Codestral $0.3/$0.9 (per 1M tokens). To call Mistral Large 4, use the model name mistral-large-4; mistral-large-latest still points to Mistral Large 3 (mistral-large-2512). Mistral Embed is $0.1 per 1M input tokens, and Codestral Embed is $0.15 per 1M input tokens. OCR 4.1 costs $4 per 1,000 pages. Mistral Moderation 2 is free. Speech: Voxtral Mini Transcribe 2 (speech-to-text) costs $0.003 per minute of audio, Voxtral Mini Transcribe Realtime $0.006 per minute, and Voxtral TTS (text-to-speech) $16 per 1M characters. Mistral retired these models in 2026, and a request to a retired model fails with a 404 error: Mistral Large 2.1 (mistral-large-2411), Pixtral Large (pixtral-large-2411) and Devstral Medium 1.0 (devstral-medium-2507) on 2026-05-31, replaced by Mistral Medium 3.5; Devstral Small 1.1 (devstral-small-2507) on 2026-05-31, replaced by Mistral Small 4; Voxtral Mini and Voxtral Mini Transcribe (voxtral-mini-2507) on 2026-05-31, replaced by Voxtral Mini Transcribe 2; OCR 2 (mistral-ocr-2505) on 2026-05-31 and OCR 4.0 (mistral-ocr-4-0) on 2026-09-30, replaced by OCR 4.1; Mistral Moderation (mistral-moderation-2411) on 2026-06-30, replaced by Mistral Moderation 2; Mistral Small 3.2 (mistral-small-2506) and Magistral Small 1.2 (magistral-small-2509) on 2026-07-31, replaced by Mistral Small 4; Mistral Nemo 12B (open-mistral-nemo-2407) on 2026-07-31, replaced by Ministral 3 8B; Devstral 2 (devstral-2512) and Magistral Medium 1.2 (magistral-medium-2509) on 2026-07-31, and Mistral Medium 3 and 3.1 (mistral-medium-2505, mistral-medium-2508) on 2026-08-31, replaced by Mistral Medium 3.5. Mistral's table at docs.mistral.ai/models also lists the Labs models it retired. Z.ai GLM 5.2 (zai-glm-5-2) retires on 2026-10-31, replaced by GLM 5.3. Batch processing is half price, and cached input tokens cost up to 90% less. Mistral publishes no rate-limit figures. Each organization's per-model limits (tokens per minute, requests per second) appear in Admin Panel > API > Limits.",
+      "description": "Mistral's Free plan includes monthly usage shared across Studio, the API and Vibe Code. The pricing page no longer states the amount as of 2026-10-07; it previously listed $10 a month in API credits. When it is used up, usage can stop until the next month unless pay-as-you-go is turned on. Mistral Pro costs $14.99 a month and includes $25.50 a month in API credits, shared across the API, Studio and Vibe Code. It included $30 a month until 2026-10-07. Verified students who have not used Vibe or Le Chat before can take the Education plan for $5.99 a month, for up to 12 months, with $15 a month in API credits. API keys work with no credit card, within rate limits. The plan also has limited messages, web searches and coding sessions in Vibe. API prices: Ministral 3 (3B) $0.1/$0.1 (per 1M tokens); Mistral Small 4 $0.15/$0.6 (per 1M tokens); Mistral Large 3 $0.5/$1.5 (per 1M tokens); Mistral Large 4 (mistral-large-4; public preview since 2026-10-06, 1M-token context) $1.36/$4.18 (per 1M tokens); its launch discount to half that ended on 2026-10-20; Mistral Medium 3.5 $1.5/$7.5 (per 1M tokens); Codestral $0.3/$0.9 (per 1M tokens). To call Mistral Large 4, use the model name mistral-large-4; mistral-large-latest still points to Mistral Large 3 (mistral-large-2512). Mistral Embed is $0.1 per 1M input tokens, and Codestral Embed is $0.15 per 1M input tokens. OCR 4.1 costs $4 per 1,000 pages. Mistral Moderation 2 is free. Speech: Voxtral Mini Transcribe 2 (speech-to-text) costs $0.003 per minute of audio, Voxtral Mini Transcribe Realtime $0.006 per minute, and Voxtral TTS (text-to-speech) $16 per 1M characters. Mistral retired these models in 2026, and a request to a retired model fails with a 404 error: Mistral Large 2.1 (mistral-large-2411), Pixtral Large (pixtral-large-2411) and Devstral Medium 1.0 (devstral-medium-2507) on 2026-05-31, replaced by Mistral Medium 3.5; Devstral Small 1.1 (devstral-small-2507) on 2026-05-31, replaced by Mistral Small 4; Voxtral Mini and Voxtral Mini Transcribe (voxtral-mini-2507) on 2026-05-31, replaced by Voxtral Mini Transcribe 2; OCR 2 (mistral-ocr-2505) on 2026-05-31 and OCR 4.0 (mistral-ocr-4-0) on 2026-09-30, replaced by OCR 4.1; Mistral Moderation (mistral-moderation-2411) on 2026-06-30, replaced by Mistral Moderation 2; Mistral Small 3.2 (mistral-small-2506) and Magistral Small 1.2 (magistral-small-2509) on 2026-07-31, replaced by Mistral Small 4; Mistral Nemo 12B (open-mistral-nemo-2407) on 2026-07-31, replaced by Ministral 3 8B; Devstral 2 (devstral-2512) and Magistral Medium 1.2 (magistral-medium-2509) on 2026-07-31, and Mistral Medium 3 and 3.1 (mistral-medium-2505, mistral-medium-2508) on 2026-08-31, replaced by Mistral Medium 3.5. Mistral's table at docs.mistral.ai/models also lists the Labs models it retired. Z.ai GLM 5.2 (zai-glm-5-2) retires on 2026-10-31, replaced by GLM 5.3. Batch processing is half price, and cached input tokens cost up to 90% less. Mistral publishes no rate-limit figures. Each organization's per-model limits (tokens per minute, requests per second) appear in Admin Panel > API > Limits. The tools of Mistral's MCP server are grouped by Studio capability: Skills, Workflows, Connectors, Observability, Evaluations, Organization and Apps.",
       "tier": "Free",
       "url": "https://mistral.ai/pricing",
       "tags": [
@@ -3825,7 +3918,18 @@
         "text": "Free Your personal AI agent for everyday tasks. Test out Vibe’s capabilities. Access on web and mobile. Limited messages and web searches. Limited coding sessions. Basic image generation and editing. 100+ connectors.",
         "url": "https://mistral.ai/pricing",
         "read_on": "2026-10-08"
-      }
+      },
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://api.mistral.ai/mcp",
+          "transport": "Streamable HTTP",
+          "authentication": "the header \"Authorization: Bearer <MISTRAL_API_KEY>\"",
+          "doc_url": "https://docs.mistral.ai/resources/mcp",
+          "source_quote": "The Mistral MCP server connects an AI agent to your Studio workspace over the Model Context Protocol.",
+          "read_on": "2026-10-20"
+        }
+      ]
     },
     {
       "vendor": "OpenRouter",
@@ -8133,6 +8237,17 @@
           "url": "https://www.localstack.cloud/pricing",
           "read_on": "2026-10-05"
         }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "npm",
+          "target": "@localstack/localstack-mcp-server",
+          "transport": "stdio, run through npx",
+          "authentication": "the environment variable LOCALSTACK_AUTH_TOKEN",
+          "doc_url": "https://docs.localstack.cloud/aws/developer-tools/running-localstack/mcp-server/",
+          "source_quote": "It enables AI agents to manage the full local cloud development lifecycle: starting containers, deploying infrastructure, analyzing logs, injecting chaos faults, managing state snapshots, and running AWS CLI commands, all through natural language prompts.",
+          "read_on": "2026-10-20"
+        }
       ]
     },
     {
@@ -8369,7 +8484,7 @@
     {
       "vendor": "Brave Search API",
       "category": "AI / ML",
-      "description": "$5 in free credits every month, applied automatically. Brave's \"up to $20\" figure is $5 on each of four plans: Search, Answers, Spellcheck and Autosuggest. Search is $5 per 1,000 requests; Answers is $4 per 1,000 requests plus $5 per million tokens. Web search, news, videos, images, LLM context endpoints. 50 queries/sec. Credit card required. The earlier free plan (2,000 queries/mo) ended Feb 2026. Brave runs its own MCP server. \"An MCP server implementation that integrates the Brave Search API, providing comprehensive search capabilities including web search, local business search, place search, image search, video search, news search, LLM context, and AI-powered summarization.\" (From https://github.com/brave/brave-search-mcp-server, read 2026-10-20.) The package @brave/brave-search-mcp-server runs with npx -y @brave/brave-search-mcp-server and the BRAVE_API_KEY environment variable. Its tools include brave_web_search, brave_news_search, brave_image_search, brave_llm_context and brave_summarizer. npm marks @modelcontextprotocol/server-brave-search \"Package no longer supported.\" (From https://www.npmjs.com/package/@modelcontextprotocol/server-brave-search, read 2026-10-20.)",
+      "description": "$5 in free credits every month, applied automatically. Brave's \"up to $20\" figure is $5 on each of four plans: Search, Answers, Spellcheck and Autosuggest. Search is $5 per 1,000 requests; Answers is $4 per 1,000 requests plus $5 per million tokens. Web search, news, videos, images, LLM context endpoints. 50 queries/sec. Credit card required. The earlier free plan (2,000 queries/mo) ended Feb 2026. The tools of Brave's MCP server include brave_web_search, brave_news_search, brave_image_search, brave_llm_context and brave_summarizer.",
       "tier": "Free",
       "url": "https://brave.com/search/api/",
       "tags": [
@@ -8456,6 +8571,26 @@
           "source_url": "https://search.agent.s.brave.app/llms.txt",
           "source_quote": "A pay-per-request proxy in front of the Brave Search API. Each request carries a stablecoin micropayment, and the signed payment is the credential. No API key, no account, no signup. … x402 rail, USDC on Base … 5000 is the price of one search. … Prices are in base units of a six decimal token, so 5000 is $0.005.",
           "read_on": "2026-10-07"
+        }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "npm",
+          "target": "@brave/brave-search-mcp-server",
+          "transport": "stdio, run with npx -y @brave/brave-search-mcp-server",
+          "authentication": "the BRAVE_API_KEY environment variable",
+          "doc_url": "https://github.com/brave/brave-search-mcp-server",
+          "source_quote": "An MCP server implementation that integrates the Brave Search API, providing comprehensive search capabilities including web search, local business search, place search, image search, video search, news search, LLM context, and AI-powered summarization.",
+          "read_on": "2026-10-20",
+          "retired_names": [
+            {
+              "kind": "npm",
+              "target": "@modelcontextprotocol/server-brave-search",
+              "notice": "Package no longer supported.",
+              "url": "https://www.npmjs.com/package/@modelcontextprotocol/server-brave-search",
+              "read_on": "2026-10-20"
+            }
+          ]
         }
       ]
     },
@@ -9624,7 +9759,7 @@
     {
       "vendor": "Kaggle",
       "category": "AI / ML",
-      "description": "Google's data science platform with free notebooks, datasets and competitions. Notebooks get a weekly GPU quota of 30 hours, sometimes more depending on demand (one NVIDIA Tesla P100 or two Tesla T4s), and a TPU v3-8 for up to 20 hours per week. Sessions run up to 12 hours on CPU or GPU and 9 hours on TPU, with 20 GB of auto-saved disk in /kaggle/working. Free GPUs and TPUs may queue at busy times. Datasets are capped at 200 GB each and 200 GB of private datasets in total. Kaggle's one paid service is hosting a competition. Kaggle's MCP documentation states: \"The remote server URL is https://www.kaggle.com/mcp.\" (From https://www.kaggle.com/docs/mcp, read 2026-10-20.) Sign-in uses OAuth or a token. Tools include save_notebook (run with GPU or TPU), get_notebook_session_status, download_notebook_output and get_accelerator_quota (read weekly GPU and TPU usage). The Kaggle API also pushes a notebook version without the web editor. (From https://www.kaggle.com/docs/efficient-gpu-usage, read 2026-10-20.)",
+      "description": "Google's data science platform with free notebooks, datasets and competitions. Notebooks get a weekly GPU quota of 30 hours, sometimes more depending on demand (one NVIDIA Tesla P100 or two Tesla T4s), and a TPU v3-8 for up to 20 hours per week. Sessions run up to 12 hours on CPU or GPU and 9 hours on TPU, with 20 GB of auto-saved disk in /kaggle/working. Free GPUs and TPUs may queue at busy times. Datasets are capped at 200 GB each and 200 GB of private datasets in total. Kaggle's one paid service is hosting a competition. The tools of Kaggle's MCP server include save_notebook (run with GPU or TPU), get_notebook_session_status, download_notebook_output and get_accelerator_quota (read weekly GPU and TPU usage). The Kaggle API also pushes a notebook version without the web editor. (From https://www.kaggle.com/docs/efficient-gpu-usage, read 2026-10-20.)",
       "tier": "Free",
       "url": "https://www.kaggle.com/docs/efficient-gpu-usage",
       "tags": [
@@ -9674,6 +9809,17 @@
           "quote": "This is a limited time promotion … Colab Pro and Pro+ users will get 15 and 30 hours of extra GPU hours per week respectively on Kaggle. … Kaggle reserves the right to end or suspend the Promotion at any time",
           "url": "https://www.kaggle.com/docs/notebooks",
           "read_on": "2026-10-08"
+        }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://www.kaggle.com/mcp",
+          "transport": "HTTP",
+          "authentication": "OAuth 2.0, or a Kaggle API token (it begins \"KGAT\") in the header \"Authorization: Bearer YOUR_TOKEN\"",
+          "doc_url": "https://www.kaggle.com/docs/mcp.md",
+          "source_quote": "Some resources, or endpoints require authorization. To unlock full access you can authorize using OAuth 2.0",
+          "read_on": "2026-10-20"
         }
       ]
     },
@@ -21971,7 +22117,7 @@
     {
       "vendor": "Pollinations.AI",
       "category": "AI / ML",
-      "description": "Pollen credits earned by completing quests. No credit card is required. On 2026-10-11, the nine setup quests paid 3 Pollen in total, worth about $3 because 1 Pollen is worth about $1. The documented API for text, image, audio and video requires a GitHub sign-in and an API key. Free use draws from Quest Pollen, with no promise of future grants. Paid-only models, such as Claude models, DeepSeek V4 Pro and Gemini 4 Argon, need purchased Pollen. To run Claude Code on free Quest Pollen, run \"polli harness claude-code on\", start Claude Code with \"claude --settings ~/.pollinations/claude-code.json\", and use a model that is not paid-only. Quest Pollen pays for any model that Pollinations' live catalog (enter.pollinations.ai/models) does not mark paid-only. On 2026-10-18, more than 30 text models were not paid-only, among them GPT-6 Sol, GPT-6.1 Sol, GPT-6 Luna, GLM 5.3, Kimi K3, DeepSeek V4 Flash and DeepSeek V4.1 Flash. The command \"polli harness claude-code on\" connects Claude Code to Pollinations and uses openai/gpt-6-sol unless you specify another model. To use Pollinations, start Claude Code with \"claude --settings ~/.pollinations/claude-code.json\". Plain \"claude\" keeps your own Claude login and does not use Pollinations. GPT-6 Sol costs 2 Pollen per million input tokens and 10 Pollen per million output tokens. GPT-5 Nano costs 0.0375 and 0.30. GPT-OSS 20B costs 0.05 and 0.18. NVIDIA Nemotron 3.5 Lightning costs 0.05 and 0.20. Adding --model <id> to \"polli harness claude-code on\" picks another model. Older keyless endpoints for image and text still answered on 2026-10-05, but the current docs do not cover them and state no terms for them. The documented API is OpenAI-compatible at the base URL https://gen.pollinations.ai/v1, with an API key from https://enter.pollinations.ai/keys. Pollinations' MCP documentation says: \"Use Pollinations-hosted MCP servers from any Model Context Protocol client that supports Streamable HTTP.\" (From https://github.com/pollinations/pollinations/blob/main/gen.pollinations.ai/src/docs/mcp.md, read 2026-10-20.) The endpoint is https://gen.pollinations.ai/mcp/pollinations with an Authorization: Bearer YOUR_KEY header. The doc gives this Claude Code command: \"claude mcp add --transport http pollinations https://gen.pollinations.ai/mcp/pollinations --header 'Authorization: Bearer YOUR_KEY'\". Tools include generateImage, generateText, generateVideo, generateAudio, listModels and getBalance. \"Calls use the same Pollen wallet as the Pollinations API.\" npm marks @pollinations/model-context-protocol and @pollinations/mcp with: \"Retired. Use the hosted MCP server: https://gen.pollinations.ai/mcp/pollinations\" (From https://www.npmjs.com/package/@pollinations/model-context-protocol, read 2026-10-20.) The \"polli harness claude-code on\" command runs Claude Code itself on a Pollinations model; the MCP server gives an agent Pollinations tools. Model IDs of some of the models Quest Pollen can pay for: openai/gpt-6-sol, openai/gpt-6.1-sol, openai/gpt-6-luna, z-ai/glm-5.3, moonshotai/kimi-k3, deepseek/deepseek-v4-flash, deepseek/deepseek-v4.1-flash, openai/gpt-5-nano, openai/gpt-oss-20b, nvidia/nemotron-3.5-lightning.",
+      "description": "Pollen credits earned by completing quests. No credit card is required. On 2026-10-11, the nine setup quests paid 3 Pollen in total, worth about $3 because 1 Pollen is worth about $1. The documented API for text, image, audio and video requires a GitHub sign-in and an API key. Free use draws from Quest Pollen, with no promise of future grants. Paid-only models, such as Claude models, DeepSeek V4 Pro and Gemini 4 Argon, need purchased Pollen. To run Claude Code on free Quest Pollen, run \"polli harness claude-code on\", start Claude Code with \"claude --settings ~/.pollinations/claude-code.json\", and use a model that is not paid-only. Quest Pollen pays for any model that Pollinations' live catalog (enter.pollinations.ai/models) does not mark paid-only. On 2026-10-18, more than 30 text models were not paid-only, among them GPT-6 Sol, GPT-6.1 Sol, GPT-6 Luna, GLM 5.3, Kimi K3, DeepSeek V4 Flash and DeepSeek V4.1 Flash. The command \"polli harness claude-code on\" connects Claude Code to Pollinations and uses openai/gpt-6-sol unless you specify another model. Pollinations' harness documentation says the command writes \"a Claude Code settings file\" and: \"Claude Code reads the file only when launched with --settings; plain claude keeps your native login and ~/.claude settings.\" (From https://github.com/pollinations/pollinations/blob/main/CODING_HARNESSES.md, read 2026-10-20.) GPT-6 Sol costs 2 Pollen per million input tokens and 10 Pollen per million output tokens. GPT-5 Nano costs 0.0375 and 0.30. GPT-OSS 20B costs 0.05 and 0.18. NVIDIA Nemotron 3.5 Lightning costs 0.05 and 0.20. Adding --model <id> to \"polli harness claude-code on\" picks another model. Older keyless endpoints for image and text still answered on 2026-10-05, but the current docs do not cover them and state no terms for them. The documented API is OpenAI-compatible at the base URL https://gen.pollinations.ai/v1, with an API key from https://enter.pollinations.ai/keys. Pollinations' MCP documentation gives this Claude Code command: \"claude mcp add --transport http pollinations https://gen.pollinations.ai/mcp/pollinations --header 'Authorization: Bearer YOUR_KEY'\". Its tools include generateImage, generateText, generateVideo, generateAudio, listModels and getBalance. \"Calls use the same Pollen wallet as the Pollinations API.\" The \"polli harness claude-code on\" command runs Claude Code itself on a Pollinations model; the MCP server gives an agent Pollinations tools. Model IDs of some of the models Quest Pollen can pay for: openai/gpt-6-sol, openai/gpt-6.1-sol, openai/gpt-6-luna, z-ai/glm-5.3, moonshotai/kimi-k3, deepseek/deepseek-v4-flash, deepseek/deepseek-v4.1-flash, openai/gpt-5-nano, openai/gpt-oss-20b, nvidia/nemotron-3.5-lightning.",
       "tier": "Free Credits",
       "url": "https://github.com/pollinations/pollinations/blob/main/enter.pollinations.ai/POLLEN_FAQ.md",
       "tags": [
@@ -21996,7 +22142,34 @@
           }
         ],
         "reviewed": "2026-09-01"
-      }
+      },
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://gen.pollinations.ai/mcp/pollinations",
+          "transport": "Streamable HTTP",
+          "authentication": "the header \"Authorization: Bearer YOUR_KEY\" with a key from https://enter.pollinations.ai/keys",
+          "doc_url": "https://github.com/pollinations/pollinations/blob/main/gen.pollinations.ai/src/docs/mcp.md",
+          "source_quote": "Use Pollinations-hosted MCP servers from any Model Context Protocol client that supports Streamable HTTP.",
+          "read_on": "2026-10-20",
+          "retired_names": [
+            {
+              "kind": "npm",
+              "target": "@pollinations/model-context-protocol",
+              "notice": "Retired. Use the hosted MCP server: https://gen.pollinations.ai/mcp/pollinations",
+              "url": "https://www.npmjs.com/package/@pollinations/model-context-protocol",
+              "read_on": "2026-10-20"
+            },
+            {
+              "kind": "npm",
+              "target": "@pollinations/mcp",
+              "notice": "Retired. Use the hosted MCP server: https://gen.pollinations.ai/mcp/pollinations",
+              "url": "https://www.npmjs.com/package/@pollinations/mcp",
+              "read_on": "2026-10-20"
+            }
+          ]
+        }
+      ]
     },
     {
       "vendor": "Portkey",
@@ -22746,6 +22919,17 @@
           "quote": "Only pay for consumption",
           "url": "https://northflank.com/pricing",
           "read_on": "2026-10-15"
+        }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://mcp.northflank.com/mcp",
+          "transport": "Streamable HTTP",
+          "authentication": "a team API token or team workload identity token in the header \"Authorization: Bearer <token>\"",
+          "doc_url": "https://northflank.com/docs/v1/application/ai-agents/mcp-server.md",
+          "source_quote": "The hosted server lets agents deploy applications and jobs, manage databases, and inspect resources.",
+          "read_on": "2026-10-20"
         }
       ]
     },
@@ -33008,6 +33192,17 @@
           "url": "https://docs.cloud.google.com/compute/docs/disks/persistent-disks",
           "read_on": "2026-10-11"
         }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://compute.googleapis.com/mcp",
+          "transport": "HTTP",
+          "authentication": "OAuth 2.0 with Identity and Access Management (IAM), for any Google Cloud identity",
+          "doc_url": "https://docs.cloud.google.com/compute/docs/use-compute-engine-mcp",
+          "source_quote": "The Compute Engine remote MCP server is enabled when you enable the Compute Engine API.",
+          "read_on": "2026-10-20"
+        }
       ]
     },
     {
@@ -35244,6 +35439,17 @@
           "url": "https://trust.exa.ai/faq",
           "read_on": "2026-10-06"
         }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://mcp.exa.ai/mcp",
+          "transport": "HTTP",
+          "authentication": "OAuth sign-in, or an Exa API key in the x-api-key header",
+          "doc_url": "https://exa.ai/docs/get-started/exa-mcp",
+          "source_quote": "Use Exa MCP to improve the built-in web search in ChatGPT, Claude, and MCP-compatible tools with Exa’s search capabilities, including web search, code search, Exa Agent, and Exa Connect.",
+          "read_on": "2026-10-20"
+        }
       ]
     },
     {
@@ -36438,6 +36644,17 @@
           "url": "https://docs.linkup.so/pages/documentation/platform/pricing",
           "read_on": "2026-10-12"
         }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://mcp.linkup.so/mcp",
+          "transport": "HTTP",
+          "authentication": "a Linkup API key in the header \"Authorization: Bearer YOUR_API_KEY\", or in the apiKey URL parameter",
+          "doc_url": "https://docs.linkup.so/pages/integrations/mcp/mcp",
+          "source_quote": "Linkup MCP Server allows you to use the Linkup API in your MCP clients.",
+          "read_on": "2026-10-20"
+        }
       ]
     },
     {
@@ -36500,6 +36717,17 @@
           "quote": "For the avoidance of doubt, Jina AI does not use Customer request data, inputs, prompts, or uploaded content to train its models",
           "url": "https://jina.ai/legal/",
           "read_on": "2026-10-16"
+        }
+      ],
+      "official_mcp_servers": [
+        {
+          "kind": "remote",
+          "target": "https://mcp.jina.ai/v1",
+          "transport": "HTTP",
+          "authentication": "a Jina API key in the header \"Authorization: Bearer <JINA_API_KEY>\"",
+          "doc_url": "https://github.com/jina-ai/MCP",
+          "source_quote": "A remote Model Context Protocol (MCP) server for the Jina Reader, Search, Embeddings and Reranker APIs",
+          "read_on": "2026-10-20"
         }
       ]
     },
