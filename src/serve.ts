@@ -45,7 +45,7 @@ import { comparisonVerdictText, freeTierFaqAnswer, stabilityFaqAnswer, type Comp
 import { gateStatesAnEnding, publishedVendorLevel, restorationClause, restoredRemovalReason, vendorVerdictSentence, withheldRecordCountsOf, WITHHOLDING_BADGE_LABELS, vendorBadge, freeTierClaim, endingStatedInPlaceOfARating, endingShutsTheProductDown, endedClaimReliabilityAnswer, statesRiskCause, withholdingThatDoesNotLapse, demotionTheVerdictNames, narrowingSentence, ourOwnRecordsSentence, changeKindNoun, isOurOwnBookkeeping, emptyHistoryCaveatSentence, emptyHistoryBesideARefusalSentence, notRatedTodaySentence, recordedLimitSentence, refusalWithholdsTheTerms, WE_PUBLISH_NO_REFUSED_CHANGE, withTheConfirmationWeHold, refusedReadOurConfirmationSupersedes, refusedReadWeHold, refusedReadWithholdingSentence, nothingWeReadDescribesTheTerms, unconfirmedThresholdSentence, unconfirmedTermsOpening, whyWeCannotConfirmTheseTerms, withheldForARefusedRead, withUnconfirmedTerms, refusalWithholdsStability, termsUnconfirmedBySource, termsTheVerdictWithholds, closingTerms, termsWithTheReasonWeCannotConfirmThem, termsNotVerifiedMetaSentence, termsWithheldLabel, theReadConfirmedThePrice, unconfirmedTermsSentence, whereTheDoubtSits, withheldBadgeLabel, type BadgeWithholding, type UnconfirmedTerms, type FreeTierClaim, type VendorVerdictInput, type WhereTheDoubtSits } from "./vendor-verdict.js";
 import { descriptionDeniesAFreeTier, listingOffersAFreeTier, tierMayCarryAFreePlanExcerpt, tierRecordsAFreeTier, tierWhoseFreeOfferIsTheLicence } from "./free-tier-record.js";
 import { whyTheExcerptCannotStand } from "./free-plan-excerpt-rules.js";
-import { alternativesUnderTheVendorsRule, conditionRulingOut, conditionsBesideStoredTerms, conditionsForTheBrowser, conditionsHtml, conditionsOf, levelBesideTheVendorsRule, productionAnswerOpening, rowSpanningTheTableHtml, stableRatingBesideTheVendorsRule, theVendorsRuleOnProduction, trialProductionAnswer, withConditionsAfter, type TheVendorsRule } from "./listing-conditions.js";
+import { alternativesUnderTheVendorsRule, conditionRulingOut, conditionsBesideStoredTerms, conditionsInPlainText, conditionsForTheBrowser, conditionsHtml, conditionsOf, levelBesideTheVendorsRule, productionAnswerOpening, rowSpanningTheTableHtml, stableRatingBesideTheVendorsRule, theVendorsRuleOnProduction, trialProductionAnswer, withConditionsAfter, type TheVendorsRule } from "./listing-conditions.js";
 import { officialMcpPassage, withOfficialMcpPassages } from "./official-mcp.js";
 import { conditionsField } from "./conditions-field.js";
 import { PAGE_HEAD_OPEN, withLedeBeforeNav } from "./page-lede.js";
@@ -856,12 +856,20 @@ function supersedingChangeFor(offer: StoredTermsOf): DealChange | null {
   return supersedingChange(offer, changesFor(offer.vendor));
 }
 
-function publishedTermsText(offer: Offer): string {
+function publishedTermsText(offer: Offer, includeOfficialMcp = false): string {
   const superseded = supersedingChangeFor(offer);
-  if (superseded) return supersededTermsNotice(offer.vendor, superseded);
+  if (superseded) {
+    const notice = supersededTermsNotice(offer.vendor, superseded);
+    return includeOfficialMcp ? withOfficialMcpPassages(notice, offer) : notice;
+  }
   const unconfirmed = reasonWeCannotConfirmFor(offer);
   const terms = unconfirmed ? termsWithTheReasonWeCannotConfirmThem(offer.description, unconfirmed) : offer.description;
-  return withConditionsAfter(terms, conditionsBesideTheStoredTerms(offer));
+  const conditions = conditionsBesideTheStoredTerms(offer);
+  if (includeOfficialMcp && offer.official_mcp_servers?.length) {
+    const described = withOfficialMcpPassages(conditions.length ? closingTerms(terms) : terms, offer);
+    return conditions.length ? `${described} ${conditionsInPlainText(conditions)}` : described;
+  }
+  return withConditionsAfter(terms, conditions);
 }
 
 function conditionsBesideTheStoredTerms(offer: StoredTermsOf): readonly ListingCondition[] {
@@ -5963,7 +5971,7 @@ ${allCompareLinks.join("\n")}
     ...eventResolutionFields(c),
     description: c.summary,
   }));
-  const primaryDescribedAs = withOfficialMcpPassages(publishedTermsText(primary), primary);
+  const primaryDescribedAs = publishedTermsText(primary, true);
   const jsonLd: Record<string, any> = {
     "@context": "https://schema.org",
     "@type": "WebPage",

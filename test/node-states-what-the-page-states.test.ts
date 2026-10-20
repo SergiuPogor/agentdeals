@@ -5,6 +5,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { assertPopulationFloor } from "./population-floor.ts";
+import { plainMcpPassagesByVendor, withoutItsOwnMcpPassages } from "./official-mcp-after-descriptions.ts";
 import { plainConditionsByVendor, withoutConditionsLists, withoutItsOwnConditions } from "./conditions-after-descriptions.ts";
 
 const { UNVERIFIED_TERMS_CAVEAT, notRatedTodaySentence } = await import("../dist/vendor-verdict.js");
@@ -14,7 +15,9 @@ const LEFT_TO_THE_LAST_READ_NOTE = notRatedTodaySentence("this offer");
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.join(__dirname, "..");
 
-const OWN_CONDITIONS = plainConditionsByVendor(JSON.parse(readFileSync(path.join(REPO, "data", "index.json"), "utf-8")).offers);
+const LISTINGS = JSON.parse(readFileSync(path.join(REPO, "data", "index.json"), "utf-8")).offers;
+const OWN_CONDITIONS = plainConditionsByVendor(LISTINGS);
+const OWN_MCP_PASSAGES = plainMcpPassagesByVendor(LISTINGS);
 
 const EVERY_NTH_VENDOR_PAGE = 3;
 const COMPARISON_PAGES_READ = 120;
@@ -61,7 +64,7 @@ function softwareNodes(html: string): ServedNode[] {
     if (record["@type"] === "SoftwareApplication" && typeof record.description === "string") {
       found.push({
         vendor: String(record.name ?? ""),
-        description: withoutItsOwnConditions(record.description, OWN_CONDITIONS.get(String(record.name ?? ""))),
+        description: withoutItsOwnConditions(withoutItsOwnMcpPassages(record.description, OWN_MCP_PASSAGES.get(String(record.name ?? ""))), OWN_CONDITIONS.get(String(record.name ?? ""))),
         offerTier: typeof record.offers?.name === "string" ? record.offers.name : null,
         offerDescription: typeof record.offers?.description === "string" ? record.offers.description : null,
         pricedAtZero: record.offers?.price === "0",

@@ -4,6 +4,7 @@ import { spawn, type ChildProcess } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { assertPopulationFloor } from "./population-floor.ts";
+import { plainMcpPassagesByVendor, withoutItsOwnMcpPassages } from "./official-mcp-after-descriptions.ts";
 import { plainConditionsByVendor, withoutItsOwnConditions } from "./conditions-after-descriptions.ts";
 
 const { CANNOT_CONFIRM_THESE_TERMS, refusalWithholdsTheTerms, whyWeCannotConfirmTheseTerms } = await import("../dist/vendor-verdict.js");
@@ -13,6 +14,7 @@ const { vendorSlugMap } = await import("../dist/vendor-slug.js");
 const { ENDED_TIERS } = await import("../dist/retirement.js");
 
 const OWN_CONDITIONS = plainConditionsByVendor(loadOffers());
+const OWN_MCP_PASSAGES = plainMcpPassagesByVendor(loadOffers());
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.join(__dirname, "..");
@@ -216,7 +218,7 @@ describe("a vendor page states the reason it cannot confirm the terms where a re
           headerLine: headerLineOf(html),
           lastReadNote: lastReadNoteOf(html),
           visible,
-          reason: reasonTheNodeAdds(withoutItsOwnConditions(description, OWN_CONDITIONS.get(vendorSlugMap.get(slug) ?? "")), displayed),
+          reason: reasonTheNodeAdds(withoutItsOwnConditions(withoutItsOwnMcpPassages(description, OWN_MCP_PASSAGES.get(vendorSlugMap.get(slug) ?? "")), OWN_CONDITIONS.get(vendorSlugMap.get(slug) ?? "")), displayed),
           refusedOn: withholding?.refusedOn ?? null,
           citesARead: /class="free-tier-source-line"/.test(html),
           restated: withholding ? restatements(visible, withholding) : null,
