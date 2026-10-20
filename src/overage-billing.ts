@@ -15,10 +15,14 @@ export function sentencesOf(texts: readonly string[]): string[] {
   return texts.flatMap(text => text.split(/(?<=[.!?])\s+/)).filter(sentence => sentence.trim() !== "");
 }
 
-export function statesUsageBeyondTheFreeTierIsBilled(texts: readonly string[]): boolean {
+export function usageBeyondTheFreeTierBillingSentence(texts: readonly string[]): string | null {
   const sentences = sentencesOf(texts);
-  return sentences.some(sentence => USAGE_BEYOND_THE_FREE_TIER_IS_BILLED.some(pattern => pattern.test(sentence)))
-    && !sentences.some(sentence => THE_SERVICE_STOPS_AT_ITS_LIMIT.some(pattern => pattern.test(sentence)));
+  if (sentences.some(sentence => THE_SERVICE_STOPS_AT_ITS_LIMIT.some(pattern => pattern.test(sentence)))) return null;
+  return sentences.find(sentence => USAGE_BEYOND_THE_FREE_TIER_IS_BILLED.some(pattern => pattern.test(sentence)))?.trim() ?? null;
+}
+
+export function statesUsageBeyondTheFreeTierIsBilled(texts: readonly string[]): boolean {
+  return usageBeyondTheFreeTierBillingSentence(texts) !== null;
 }
 
 export function listingStatements(listing: { description: string; conditions?: readonly { text: string }[] }): string[] {
