@@ -355,6 +355,18 @@
     {
       "vendor": "APIVerve",
       "change_type": "limits_increased",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-26 (unquantified_limit) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now offers 200 free credits per month instead of 50 API Tokens.",
+      "previous_state": "Get instant access to over 120+ APIs for free, built with quality, consistency, and reliability in mind. The free plan covers up to 50 API Tokens per month. (Possibly taken down, 2025-06-25)",
+      "current_state": "Sign up free — 200 credits a month, no card required.",
+      "source_url": "https://apiverve.com",
+      "category": "API Development",
+      "refused_date": "2026-10-20"
+    },
+    {
+      "vendor": "APIVerve",
+      "change_type": "limits_increased",
       "reason": "unquantified_limit",
       "detail": "limits_increased claimed, but the current state names no quantity for anything the stored state measured (120 api, 50 api)",
       "summary": "The free plan now offers 200 free credits per month instead of 50 API Tokens.",
@@ -375,6 +387,18 @@
       "source_url": "https://www.apollographql.com/pricing",
       "category": "API Development",
       "refused_date": "2026-09-26"
+    },
+    {
+      "vendor": "Apollo GraphOS",
+      "change_type": "pricing_model_change",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-26 (confirmed_unchanged) stated the same 4 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now includes $50 in credit, but requires a credit card. The stored information stated no credit card was required. The free tier also has more detailed feature breakdowns and limits.",
+      "previous_state": "GraphQL federation and supergraph platform — forever free: up to 3 users, 1-day data retention, self-hosted router (60 req/min rate limit), community support. No credit card required",
+      "current_state": "Start for free with $50 in credit for new signups. No credit card required. Includes GraphOS, self-hosted Router (60 req/min), up to 3 developers, 1-day data retention, and community support.",
+      "source_url": "https://www.apollographql.com/pricing",
+      "category": "API Development",
+      "refused_date": "2026-10-20"
     },
     {
       "vendor": "Apollo GraphOS",
@@ -1122,15 +1146,15 @@
     },
     {
       "vendor": "Calendly",
-      "change_type": "limits_reduced",
+      "change_type": "limits_increased",
       "reason": "unquantified_limit",
-      "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (1 calendar)",
-      "summary": "The free plan is no longer explicitly mentioned with specific features. While the page states 'Start for free' and 'Sign up with Google/Microsoft/email • No credit card required', it focuses heavily on paid features like Callie, Notetaker, and Payments. The core scheduling functionality remains accessible without a credit card, but the description of 'Unlimited sessions' and '1 Calendar connection per user' is not confirmed. The page emphasizes AI-powered features and paid add-ons, suggesting the free tier is significantly more limited than previously described.",
+      "detail": "limits_increased claimed, but the current state names no quantity for anything the stored state measured (1 calendar)",
+      "summary": "The free plan is still offered, but the description is significantly expanded. The free plan now includes features like Callie (AI assistant), Notetaker, and Payments, which were not mentioned in the stored deal information. The page highlights features beyond just scheduling, such as AI-powered scheduling, automated recaps, and payment collection.",
       "previous_state": "Calendly is the tool for connecting and scheduling meetings. The free plan provides 1 Calendar connection per user and Unlimited sessions. Desktop and Mobile apps are also offered.",
-      "current_state": "The page offers a 'Start for free' option with no credit card required, allowing users to book meetings. However, details about calendar connections or session limits are not provided. The focus is on features like Callie, Notetaker, and Payments, which are likely part of paid plans.",
+      "current_state": "The free plan includes scheduling, Callie (AI assistant), Notetaker, Payments, and integrations with various tools. It allows users to book meetings, capture discussions, and receive payments.",
       "source_url": "https://calendly.com",
       "category": "Team Collaboration",
-      "refused_date": "2026-09-26"
+      "refused_date": "2026-10-20"
     },
     {
       "vendor": "cally.com",
@@ -1728,6 +1752,18 @@
       "refused_date": "2026-09-09"
     },
     {
+      "vendor": "coderabbit.ai",
+      "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-09 (no_baseline) claimed the same change, free_tier_removed, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier as described is no longer available. The lowest tier is now 'Essentials' at $24/user/month, which includes many features not present in the previously described free tier. The free trial is now a 14-day trial of the Essentials plan.",
+      "previous_state": "AI-powered code review tool for GitHub/GitLab/Bitbucket. Free tier: basic PR summarization and reviews in IDE on unlimited public and private repositories, with a 14-day Pro trial included (no credit card). Paid Pro is $24/user/month billed annually and adds detailed reviews with 5 reviews/hour; Pro Plus adds 10 reviews/hour. Free-for-open-source may still apply but is no longer prominently featured on the pricing page.",
+      "current_state": "Essentials plan is $24 /user/mo. Includes AI Code Review before the PR in CLI, IDE, and coding-agent loops, plain language summary & walkthrough, CodeRabbit Chat, learnings, autofix, slop detection, and pre-merge checks. Review velocity is 5 reviews/hour.",
+      "source_url": "https://www.coderabbit.ai/pricing",
+      "category": "Code Quality",
+      "refused_date": "2026-10-20"
+    },
+    {
       "vendor": "Cohere",
       "change_type": "free_tier_removed",
       "reason": "no_removal_evidence",
@@ -1803,13 +1839,13 @@
       "vendor": "Composio",
       "change_type": "new_tier",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-16 (repeats_a_refused_reading) stated the same 4 figures, so the page showed these terms before the date this record gives",
+      "detail": "the reading of this page refused on 2026-10-18 (repeats_a_refused_reading) stated the same 4 figures, so the page showed these terms before the date this record gives",
       "summary": "The free tier is now called \"Hobby\" and is still available with the same limits (100,000 tool calls / mo, 50,000 triggers / mo, 3 team members). However, there are now paid tiers (Pro and Enterprise) with additional features and limits.",
       "previous_state": "Integration platform for AI Agents and LLMs — Free $0 No credit card required 100,000 tool calls / mo 50,000 triggers / mo 3 team members",
       "current_state": "Hobby $0 No credit card required 100,000 tool calls / mo 50,000 triggers / mo 3 team members",
       "source_url": "https://composio.dev/pricing",
       "category": "AI / ML",
-      "refused_date": "2026-10-18"
+      "refused_date": "2026-10-20"
     },
     {
       "vendor": "ConfigCat",
@@ -3008,13 +3044,13 @@
       "vendor": "Fizzy",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-18 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "detail": "the reading of this page refused on 2026-10-19 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
       "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page does not mention any item limits. It does state a 1 GB file storage limit.",
       "previous_state": "Kanban-based platform for project management and issue tracking. Create public boards, set up webhooks, use card stamping, and track unlimited users — free for up to 1000 items.",
-      "current_state": "Fizzy is entirely free and subsidized by Basecamp and HEY. File space usage is limited to 1 GB.",
+      "current_state": "Fizzy is entirely free and is subsidized by Basecamp and HEY. File space usage is limited to 1 GB.",
       "source_url": "https://www.fizzy.do/",
       "category": "Project Management",
-      "refused_date": "2026-10-19"
+      "refused_date": "2026-10-20"
     },
     {
       "vendor": "Flagsmith",
@@ -3371,6 +3407,18 @@
     },
     {
       "vendor": "Geocodio",
+      "change_type": "restriction",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-26 (unquantified_limit) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free tier is now 2,500 lookups/day, but is limited to US, Canada, and Mexico only. The stored information did not mention geographic restrictions.",
+      "previous_state": "Geocoding and reverse geocoding API for US and Canada — free tier: 2,500 lookups/day. Includes address parsing, congressional districts, timezone, and census data fields",
+      "current_state": "Pay-as-you-go is 2,500 lookups free daily, US, Canada, and Mexico only.",
+      "source_url": "https://www.geocod.io/pricing/",
+      "category": "Maps/Geolocation",
+      "refused_date": "2026-10-20"
+    },
+    {
+      "vendor": "Geocodio",
       "change_type": "limits_reduced",
       "reason": "states_no_difference",
       "detail": "limits_reduced claimed, summary asserts the page matches what we stored, and the two states carry the same quantities",
@@ -3452,6 +3500,18 @@
       "source_url": "https://about.gitea.com/",
       "category": "Source Control",
       "refused_date": "2026-09-10"
+    },
+    {
+      "vendor": "Gitea",
+      "change_type": "new_tier",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-10 (confirmed_unchanged) claimed the same change, new_tier, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free OSS tier still exists, but Gitea now prominently promotes paid tiers (Gitea Cloud and Gitea Enterprise) with 30-day free trials. Gitea Cloud is a fully managed service, and Gitea Enterprise is a self-hosted option with SSO, audit logs, and SLA support. The free tier is now explicitly listed as 'Open Source' and includes code hosting, issue tracking, pull requests, project management, Gitea Actions (CI/CD), and packages.",
+      "previous_state": "Free OSS (MIT). Lightweight self-hosted Git service. Repository hosting, issue tracking, pull requests, CI/CD (Gitea Actions), packages registry. Low resource usage",
+      "current_state": "Gitea Cloud is a fully managed Gitea environment with a 30-day free trial. Gitea Enterprise is a self-hosted option with SSO, audit logs, and SLA support, also with a 30-day free trial. The free 'Open Source' tier includes code hosting, issue tracking, pull requests, project management, Gitea Actions, and packages.",
+      "source_url": "https://about.gitea.com/",
+      "category": "Source Control",
+      "refused_date": "2026-10-20"
     },
     {
       "vendor": "GitHub Actions",
@@ -3729,6 +3789,18 @@
       "source_url": "https://cloud.google.com/vertex-ai/docs/generative-ai/embeddings/get-text-embeddings",
       "category": "AI / ML",
       "refused_date": "2026-09-16"
+    },
+    {
+      "vendor": "Google Maps Platform",
+      "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-26 (states_no_terms) claimed the same change, pricing_restructured, against the same stored description",
+      "summary": "The page does not mention the specific free tier limits (10K/5K/1K calls per SKU) described in the stored deal info. It highlights new pricing subscriptions and a Maps Demo Key with no credit card required, but doesn't detail the per-SKU free usage.",
+      "previous_state": "Per-SKU free usage (restructured March 2025): Essentials 10K calls/SKU/month, Pro 5K, Enterprise 1K. Covers Maps, Routes, Places, Environment APIs. Separate from one-time $300 trial credit",
+      "current_state": "The page highlights new pricing subscriptions and a Maps Demo Key, but does not detail the per-SKU free usage limits.",
+      "source_url": "https://mapsplatform.google.com/pricing/",
+      "category": "Maps/Geolocation",
+      "refused_date": "2026-10-20"
     },
     {
       "vendor": "Google Maps Platform",
@@ -4477,6 +4549,18 @@
     },
     {
       "vendor": "IP Geolocation API by ipwho.org",
+      "change_type": "limits_increased",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-10 (same_transition_graded_differently) stated the same 2 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier still exists, but the limits have changed. The stored information states 2,000 lookups/day, while the current pricing page states a free tier with no stated lookup limit, but implies a higher limit than 2,000/day when comparing to the $2.50/mo plan which offers 5,000/day.",
+      "previous_state": "IP geolocation API. Free forever for side projects, learning and non-profits: 2,000 lookups/day, all features, 100 requests/second burst cap, no card, no support. Commercial use needs a paid plan: $2.50/mo clears you for business use. 16 global data centres.",
+      "current_state": "The free tier offers unlimited requests, with no card required. A $2.50/mo plan offers 5,000 requests/day.",
+      "source_url": "https://ipwho.org/",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-20"
+    },
+    {
+      "vendor": "IP Geolocation API by ipwho.org",
       "change_type": "limits_reduced",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as IP Geolocation API by ipwho.org|pricing_restructured|2026-08-28|https://ipwho.org/",
@@ -4499,6 +4583,18 @@
       "source_url": "https://ipwho.org/",
       "category": "Dev Utilities",
       "refused_date": "2026-08-28"
+    },
+    {
+      "vendor": "IP Geolocation",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-26 (unquantified_limit) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free plan now has a limit of 1 credit per successful request and does not include all modules (hostname, network, company, abuse, security, user agent). The User Agent module is only available on the Developer plan.",
+      "previous_state": "IP Geolocation API - Forever free plan for developers with a 1,000 requests per day limit.",
+      "current_state": "The Free Plan provides 1 credit per successful request and includes core modules: location, country metadata, currency, ASN, and time zone.",
+      "source_url": "https://ipgeolocation.io/",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-20"
     },
     {
       "vendor": "IP Geolocation",
@@ -4572,6 +4668,18 @@
       "source_url": "https://www.iplocate.io",
       "category": "Dev Utilities",
       "refused_date": "2026-08-29"
+    },
+    {
+      "vendor": "IPTrace",
+      "change_type": "rebranded",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this vendor refused on 2026-09-26 (same_transition_graded_differently) stated the same current state, word for word",
+      "summary": "IPTrace is joining ipstack.com and users are directed to switch to ipstack to continue using the API. The free tier is no longer directly offered by IPTrace.",
+      "previous_state": "An embarrassingly simple API that provides your business with reliable and helpful IP geolocation data with 50,000 free lookups per month.",
+      "current_state": "To keep using our API, switch to ipstack and get your free API key.",
+      "source_url": "https://iptrace.io",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-20"
     },
     {
       "vendor": "IPTrace",
@@ -5085,6 +5193,18 @@
       "refused_date": "2026-09-26"
     },
     {
+      "vendor": "LocationIQ",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-26 (measures_the_opposite) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free plan now has a limit of 5000 requests/day, but also a limit of 60 requests per minute. The description also explicitly states commercial use requires attribution.",
+      "previous_state": "Geocoding, reverse geocoding, and routing API. Free plan: 5,000 requests/day, commercial use allowed with attribution",
+      "current_state": "Free $25 value $0 €0 R$0 ₹0 Free sign up 5000 requests /day 2 requests /second Geocoding APIs Routing APIs Street & Static Maps 60 requests per minute Limited Commercial Use You can use our free plan in commercial projects if you spread the love by adding a prominent link back to us on your website or app in this format: <a href='https://locationiq.com'>Search by LocationIQ.com</a>",
+      "source_url": "https://locationiq.com/pricing",
+      "category": "Maps/Geolocation",
+      "refused_date": "2026-10-20"
+    },
+    {
       "vendor": "Locust",
       "change_type": "free_tier_removed",
       "reason": "no_price_signal",
@@ -5485,6 +5605,18 @@
       "source_url": "https://www.mapbox.com/pricing",
       "category": "Maps/Geolocation",
       "refused_date": "2026-09-26"
+    },
+    {
+      "vendor": "Mapbox",
+      "change_type": "limits_reduced",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (100 mau, 1,000 trip, 0.30 currency, 0.08 currency), and drops 5 the stored description carried",
+      "summary": "The Navigation SDK v3.x free tier now has limits of 100 MAUs and 1,000 trips. After that, it costs $0.30 per MAU and $0.08 per trip. There is also a new unlimited trips option at a per-user cost.",
+      "previous_state": "Maps, navigation and search APIs with monthly free tiers: 50,000 web map loads (GL JS), 25,000 mobile MAUs (Maps SDKs), 100,000 requests each for Temporary Geocoding, Directions and Tilequery, 200,000 vector tile requests, 50,000 Static Images requests; Navigation SDK v3.x up to 100 MAUs and 1,000 trips, then $0.30 per MAU and $0.08 per trip. Permanent Geocoding API is paid only.",
+      "current_state": "Up to 100 MAUs and 1,000 trips are free. After that, it's $0.30 per MAU and $0.08 per trip. An alternative is unlimited trips for a per-user fee.",
+      "source_url": "https://www.mapbox.com/pricing",
+      "category": "Maps/Geolocation",
+      "refused_date": "2026-10-20"
     },
     {
       "vendor": "maps.stamen.com",
@@ -5983,6 +6115,18 @@
       "source_url": "https://neo4j.com/pricing/",
       "category": "Databases",
       "refused_date": "2026-10-06"
+    },
+    {
+      "vendor": "Neptune.ai",
+      "change_type": "product_deprecated",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 8792 characters, so it states no terms to have changed",
+      "summary": "The free tier/individual plan no longer exists. New sign-ups and trials are closed, and the hosted service will be shut down on March 5, 2026. Existing SaaS customers have access until that date, and data will be deleted after that.",
+      "previous_state": "ML experiment tracker, now shut down. After agreeing to be acquired by OpenAI, Neptune closed new sign-ups and trials on December 3, 2025, and set March 5, 2026 as the day its hosted app and API would be turned off and remaining hosted data deleted; on 2026-09-27 neptune.ai returned errors. Its free plan for individuals and researchers ended with the service. Neptune's migration guides cover Weights & Biases, Comet, MLflow and ZenML, among others.",
+      "current_state": "New sign-ups and trials are closed. Existing SaaS customers have access until March 5, 2026, after which the service will be discontinued and data deleted.",
+      "source_url": "https://docs.neptune.ai/transition_hub",
+      "category": "AI / ML",
+      "refused_date": "2026-10-20"
     },
     {
       "vendor": "netdata.cloud",
@@ -6697,6 +6841,18 @@
       "source_url": "https://pdf-api.io",
       "category": "Dev Utilities",
       "refused_date": "2026-09-26"
+    },
+    {
+      "vendor": "PDF-API.io",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-26 (confirmed_unchanged) stated the same 3 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free plan now includes 100 PDFs/month, which matches the stored information, but the page states it's a limited free plan with only 1 user and 1 template.",
+      "previous_state": "PDF Automation API, visual template editor or HTML to PDF, dynamic data integration, and PDF rendering with an API. The free plan comes with one template, 100 PDFs/month.",
+      "current_state": "The free plan includes 1 user, 1 template, and 100 PDFs per month.",
+      "source_url": "https://pdf-api.io",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-20"
     },
     {
       "vendor": "PDFBolt",
@@ -8117,6 +8273,18 @@
     {
       "vendor": "SmartParse",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-26 (states_no_difference) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now has a limit of 300 processing units, which matches the stored information. However, the free tier is now explicitly named 'Intro' and only allows browser uploads, whereas the stored information stated browser uploads *and* other features were included in the free tier.",
+      "previous_state": "SmartParse is a data migration and CSV to API platform that offers time- and cost-saving developer tools. The Free tier includes 300 Processing Units per month, Browser uploads, Data quarantining, Circuit breakers, and Job Alerts.",
+      "current_state": "The 'Intro' plan offers up to 300 processing units, is free, and only allows browser uploads. It also includes data quarantining, circuit breakers, and notifications.",
+      "source_url": "https://smartparse.io",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-20"
+    },
+    {
+      "vendor": "SmartParse",
+      "change_type": "limits_reduced",
       "reason": "states_no_difference",
       "detail": "limits_reduced claimed, summary asserts the page matches what we stored, and the two states carry the same quantities",
       "summary": "The free tier now has a processing unit limit of 300, which matches the stored information. However, the free tier is now explicitly named 'Intro' and only allows browser uploads, whereas the stored information did not mention upload restrictions.",
@@ -8870,6 +9038,18 @@
       "refused_date": "2026-09-26"
     },
     {
+      "vendor": "tickgit.com",
+      "change_type": "restriction",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-26 (no_terms_to_narrow) stated the same 2 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier is now limited to public repositories. Private repositories require a $3/month subscription with a 3-day free trial.",
+      "previous_state": "Surfaces `TODO` comments (and other markers) to identify areas of code worth returning to for improvement.",
+      "current_state": "Free for Public Repositories 🎉 No login required. $3/month for Private Repositories 💵 3 day free trial.",
+      "source_url": "https://www.tickgit.com/",
+      "category": "Code Quality",
+      "refused_date": "2026-10-20"
+    },
+    {
       "vendor": "tilda.cc",
       "change_type": "limits_reduced",
       "reason": "no_price_signal",
@@ -9026,6 +9206,19 @@
       "source_url": "https://www.tomorrow.io/weather-api/",
       "category": "Dev Utilities",
       "refused_date": "2026-09-10"
+    },
+    {
+      "vendor": "Tomorrow.io Weather API",
+      "change_type": "limits_increased",
+      "reason": "same_transition_graded_differently",
+      "detail": "graded as Tomorrow.io Weather API|limits_increased|2026-09-26|https://www.tomorrow.io/weather-api/, a record we withdrew",
+      "summary": "The free tier now includes access to 80+ data layers instead of 60+, and offers access to historical weather data up to 20 years in the past. Previously 24 hours. The free tier also includes access to Weather on Routes API, On-Demand Events API, and Custom Vector Events API. Previously 1 automatically monitored location.",
+      "previous_state": "Tomorrow.io offers a free tier with access to 60+ data layers, 5-Day Forecast, Weather Timelines, Core Weather Data Layers, Industry-Based Insights Templates, 24 hours Historical Weather Data, and 1 automatically monitored Location. Enterprise plans offer more features like 14-Day Forecast, Custom SLAs, and access to Premium Data Layers.",
+      "current_state": "The free tier includes access to 80+ data layers, Weather Forecast & Real-Time API, Historical Weather API, Weather Maps API, Weather Monitoring API, and access to several advanced APIs like On-Demand Events API and Custom Vector Events API. It also provides access to historical data up to 20 years in the past.",
+      "source_url": "https://www.tomorrow.io/weather-api/",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-20",
+      "collided_with": "Tomorrow.io Weather API|limits_increased|2026-09-26|https://www.tomorrow.io/weather-api/"
     },
     {
       "vendor": "ToolJet",
