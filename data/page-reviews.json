@@ -879,12 +879,12 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 80,
-      "table_figures_from_records": 49,
+      "table_figures": 82,
+      "table_figures_from_records": 51,
       "tables": [
         {
           "label": "Main Comparison Table",
-          "figures": 35,
+          "figures": 37,
           "from_records": 21
         },
         {
@@ -895,7 +895,7 @@
         {
           "label": "Firebase / BaaS Databases",
           "figures": 9,
-          "from_records": 4
+          "from_records": 5
         },
         {
           "label": "Edge / Embedded Databases",
@@ -910,7 +910,7 @@
         {
           "label": "Vector Databases",
           "figures": 6,
-          "from_records": 2
+          "from_records": 3
         },
         {
           "label": "Pricing Change Timeline",

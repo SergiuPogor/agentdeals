@@ -3956,7 +3956,7 @@
     {
       "vendor": "OpenRouter",
       "category": "AI / ML",
-      "description": "AI model router. Free plan: 50 requests a day, no BYOK. OpenRouter's pricing page says \"25+ free models\" and \"4 free providers\"; its model list (openrouter.ai/api/v1/models) had 17 model IDs ending in \":free\" on 2026-10-20, and that list changes from week to week. Free models are capped at 20 requests a minute; accounts that have bought at least $10 of credits get 1,000 free-model requests a day. The Standard plan (pay-as-you-go) charges a 5.5% fee on credit purchases and includes BYOK up to $25,000 of list-price inference a month with no fees, 5% after. On 2026-08-19 OpenRouter announced it is joining Stripe. OpenRouter says it will continue to operate as it is, with the same name, product and roadmap, and that existing integrations do not change.",
+      "description": "AI model router. Free plan: 50 requests a day, no BYOK. Free models are capped at 20 requests a minute; accounts that have bought at least $10 of credits get 1,000 free-model requests a day. OpenRouter's pricing page says \"25+ free models\" and \"4 free providers\"; its model list (openrouter.ai/api/v1/models) had 17 model IDs ending in \":free\" on 2026-10-20, and that list changes from week to week. The Standard plan (pay-as-you-go) charges a 5.5% fee on credit purchases and includes BYOK up to $25,000 of list-price inference a month with no fees, 5% after. On 2026-08-19 OpenRouter announced it is joining Stripe. OpenRouter says it will continue to operate as it is, with the same name, product and roadmap, and that existing integrations do not change.",
       "tier": "Free",
       "url": "https://openrouter.ai/pricing",
       "tags": [
