@@ -6138,7 +6138,7 @@ ${allCompareLinks.join("\n")}
     ),
   });
   const faqOutgrowAnswer = publishedUsageBillingSentence
-    ? `${publishedUsageBillingSentence}${alternatives.length > 2 ? ` The ${alternatives.length} alternatives in ${primary.category} are each listed above with the free tier they offer.` : ""}`
+    ? `${publishedUsageBillingSentence}${alternatives.length > 0 ? ` The ${alternatives.length} alternatives in ${primary.category} are each listed above with the free tier they offer.` : ""}`
     : usageBeyondTheFreeTierIsBilled && outgrowStatementsBeforeTheAlternatives === 0
     ? WHEN_YOU_OUTGROW_THE_FREE_TIER
     : growthBullets.length > 0

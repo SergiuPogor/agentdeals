@@ -128,7 +128,7 @@ describe("a vendor page whose listing bills usage past the free tier", () => {
         .map(([, json]) => JSON.parse(json)).find(item => item["@type"] === "FAQPage");
       const structuredAnswer = structured.mainEntity.find((item: { name: string }) => item.name.startsWith("When will I outgrow ")).acceptedAnswer.text;
       assert.equal(structuredAnswer, plain(answer), vendor);
-      const count = growth.match(/href="#alternatives">(\d+) alternatives in /)?.[1];
+      const count = pages.get(vendor)!.match(/compares against every one of the (\d+) we list/)?.[1];
       assert.equal(plain(answer), sentence + (count ? ` The ${count} alternatives in ${listing.category} are each listed above with the free tier they offer.` : ""));
       assert.ok(!answer.startsWith("At that point"), `${vendor}'s outgrow answer opens on the list of alternatives: ${answer}`);
     }
