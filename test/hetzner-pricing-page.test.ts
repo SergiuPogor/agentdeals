@@ -257,7 +257,7 @@ function plan(sku: string, eur: number, available: boolean, vcpu = 2, ram = 4): 
   return { sku, line: "Synthetic", cpu: "AMD", vcpu, ram, region: "EU", eur, available };
 }
 
-describe("the table note's count of listed prices nobody can pay", () => {
+describe("the table note's count of unavailable lower-priced plans", () => {
   it("says nothing when the cheapest listed plan can be ordered", () => {
     assert.equal(unpayableLowestPricesSentence([plan("CX1", 3, true), plan("CX2", 2.5, true), plan("CX3", 4, false)]), "");
   });
@@ -265,14 +265,14 @@ describe("the table note's count of listed prices nobody can pay", () => {
   it("speaks of one plan in the singular", () => {
     assert.equal(
       unpayableLowestPricesSentence([plan("CX1", 3, false), plan("CX2", 4, true), plan("CX3", 5, false)]),
-      "The cheapest listed price belongs to a plan marked not available, so the lowest number on the page is not a number you can pay.",
+      "The cheapest listed price is for an unavailable plan.",
     );
   });
 
   it("counts every listed price below the cheapest orderable one, and none level with it", () => {
     assert.equal(
       unpayableLowestPricesSentence([plan("CX1", 3, false), plan("CX2", 3.5, false), plan("CX3", 4, false), plan("CX4", 4, true), plan("CX5", 3.9, false)]),
-      "The 3 cheapest listed prices all belong to plans marked not available, so the lowest number on the page is not a number you can pay.",
+      "The 3 cheapest listed prices are for unavailable plans.",
     );
   });
 
@@ -393,7 +393,7 @@ describe("what /hetzner-pricing-2026 needs before it says every Cost-Optimized p
 });
 
 describe("the paragraph on /hetzner-pricing-2026 that says every Cost-Optimized plan is unavailable", () => {
-  const OPENING = "<strong>Every Cost-Optimized plan is currently unavailable.</strong>";
+  const OPENING = "<strong>Cost-Optimized plans are currently unavailable.</strong>";
 
   it("is in the executive summary, once, while no Cost-Optimized plan can be ordered, and nowhere otherwise", async () => {
     const { body } = await get("/hetzner-pricing-2026");
@@ -410,11 +410,12 @@ describe("the paragraph on /hetzner-pricing-2026 that says every Cost-Optimized 
     const cheapest = cheapestOf(COST_OPTIMIZED_LINE);
     const entry = cheapestOf(HETZNER_CLOUD_PLANS.filter(isOrderableInTheEu));
     assert.equal(
-      visible(paragraph).trim(),
-      `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]} are marked "currently unavailable" on hetzner.com (read ${HETZNER_AVAILABILITY_READ}). Hetzner's price-adjustment page lists ${cheapest.sku} at ${withoutIpv4(cheapest.eur)} a month without IPv4, but this plan cannot be ordered. ${entry.sku} is the cheapest orderable plan in the EU at €${entry.eur.toFixed(2)} a month, IPv4 included.`,
+      visible(paragraph.replace(/<\/?a\b[^>]*>/g, "")).trim(),
+      `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]} are labeled "not available" on hetzner.com. The Create button says "This product is currently unavailable. Please check back later." The page notes "the number of available servers is limited." (From https://www.hetzner.com/cloud/cost-optimized/, read ${HETZNER_AVAILABILITY_READ}.) ${cheapest.sku} is ${withoutIpv4(cheapest.eur)} a month without IPv4 on Hetzner's price-adjustment page. ${entry.sku}, at €${entry.eur.toFixed(2)} a month with IPv4, is the cheapest EU plan without that notice.`,
     );
     assert.deepEqual([...paragraph.matchAll(/<a href="([^"]+)"[^>]*>([^<]+)<\/a>/g)].map(([, href, text]) => `${text} -> ${href}`), [
       "hetzner.com -> https://www.hetzner.com/cloud/cost-optimized/",
+      "https://www.hetzner.com/cloud/cost-optimized/ -> https://www.hetzner.com/cloud/cost-optimized/",
       "price-adjustment page -> https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/",
     ]);
   });
@@ -448,11 +449,11 @@ describe("the pricing page prices what Hetzner sells today", () => {
     const text = visible(body);
     const cheapest = cheapestOrderableHetznerPlan();
     const below = HETZNER_CLOUD_PLANS.filter(p => p.eur < cheapest.eur);
-    const several = text.match(/The (\d+) cheapest listed prices all belong to plans marked not available/)?.[1];
-    const one = text.includes("The cheapest listed price belongs to a plan marked not available");
+    const several = text.match(/The (\d+) cheapest listed prices are for unavailable plans/)?.[1];
+    const one = text.includes("The cheapest listed price is for an unavailable plan");
     assert.equal(several === undefined ? (one ? 1 : 0) : Number(several), below.length, "the note counts a different number of unpayable prices than the table holds");
     assert.ok(
-      text.includes(`The first orderable row is ${cheapest.sku} at €${cheapest.eur.toFixed(2)}, and it is a ${cheapest.vcpu}-vCPU, ${cheapest.ram} GB machine`),
+      text.includes(`The first row marked orderable is ${cheapest.sku} at €${cheapest.eur.toFixed(2)} for ${cheapest.vcpu} vCPU and ${cheapest.ram} GB`),
       "the note does not name the cheapest orderable plan",
     );
   });
@@ -1237,5 +1238,45 @@ describe("the account currency and payment methods Hetzner's listing states", ()
       const printed = [...body.matchAll(/<ul class="listing-conditions"[\s\S]*?<\/ul>/g)].map(([list]) => visible(list)).join(" ");
       for (const text of texts) assert.ok(printed.includes(text), `${route} does not print: ${text}`);
     }
+  });
+});
+
+
+describe("Hetzner's stock notice and retired server types", () => {
+  const RETIRED_TYPES = "Hetzner stopped selling cx22, cx32, cx42 and cx52 on 1 January 2026. These server types no longer work by name in the API. cpx11, cpx21, cpx31, cpx41 and cpx51 are no longer sold in Falkenstein, Nuremberg, Helsinki and Singapore. Existing servers keep working. (From https://docs.hetzner.cloud/changelog, read 2026-10-20.)";
+
+  it("places the retired types immediately after the executive summary's opening and cites the changelog", async () => {
+    const { body } = await get("/hetzner-pricing-2026");
+    const summary = body.split('<div class="executive-summary">')[1]?.split("</div>")[0] ?? "";
+    const paragraphs = [...summary.matchAll(/<p>([\s\S]*?)<\/p>/g)].map(([, inner]) => visible(inner.replace(/<\/?a\b[^>]*>/g, "")).trim());
+    assert.ok(paragraphs[0].endsWith("Cost-Optimized (CX, CAX) plans 30-38% in Germany and Finland."));
+    assert.equal(paragraphs[1], RETIRED_TYPES);
+    assert.ok(summary.includes('<a href="https://docs.hetzner.cloud/changelog" target="_blank" rel="noopener">https://docs.hetzner.cloud/changelog</a>'));
+    assert.equal(visible(body.replace(/<\/?a\b[^>]*>/g, "")).split(RETIRED_TYPES).length - 1, 1);
+  });
+
+  it("dates the availability notice to the October 20 read", () => {
+    assert.equal(HETZNER_AVAILABILITY_READ, "2026-10-20");
+  });
+
+  it("describes limited stock in the hobby card and bottom line", async () => {
+    const { body } = await get("/hetzner-pricing-2026");
+    const hobby = body.match(/<p class="impact-desc">If you already run a small server,[\s\S]*?<\/p>/)?.[0] ?? "";
+    assert.ok(visible(hobby).trim().endsWith("and the Cost-Optimized line you would once have reached for is sold only when Hetzner has stock."));
+    const bottom = body.split("<strong>Bottom line:</strong>")[1]?.split("</div>")[0] ?? "";
+    assert.ok(visible(bottom).includes("and the plans that used to sit below them are sold only when Hetzner has stock."));
+  });
+
+  it("keeps the table note's computed price and specification comparison with the availability labels", async () => {
+    const { body } = await get("/hetzner-pricing-2026");
+    const entry = cheapestOrderableHetznerPlan();
+    const above = cheaperUnorderablePlanWithMoreServer();
+    const expected = `Read this table by availability first. ${unpayableLowestPricesSentence()} The first row marked orderable is ${entry.sku} at €${entry.eur.toFixed(2)} for ${entry.vcpu} vCPU and ${entry.ram} GB${above ? `, less server than the ${above.sku} above it at €${above.eur.toFixed(2)}` : ""}.`;
+    assert.equal(sectionOneParagraphs(body).find(isTheAvailabilityNote), expected);
+  });
+
+  it("does not describe the stock-limited plans as impossible to order", async () => {
+    const { body } = await get("/hetzner-pricing-2026");
+    assert.doesNotMatch(body, /cannot be ordered/i);
   });
 });
