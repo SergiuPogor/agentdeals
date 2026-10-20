@@ -1876,7 +1876,7 @@
     {
       "vendor": "Grafana Cloud",
       "category": "Monitoring",
-      "description": "Free tier includes access to all Grafana Cloud services with limited usage, 14-day retention, and community support. 10k metric series, 50 GB logs, and 50 GB traces are included. The Pro plan costs $19 a month plus usage. It includes 10k active series and 50 GB of logs and of traces, with usage above that billed. Pro keeps metrics for 13 months and logs, traces, profiles and k6 tests for 30 days.",
+      "description": "Free tier includes access to all Grafana Cloud services with limited usage, 14-day retention, and community support. 10k metric series, 50 GB logs, and 50 GB traces are included. Pro costs $19 a month plus usage, includes 10k active series and 50 GB each of logs and traces, and bills usage above them. Pro keeps metrics for 13 months and logs, traces, profiles and k6 tests for 30 days.",
       "tier": "Free",
       "url": "https://grafana.com/pricing/",
       "tags": [

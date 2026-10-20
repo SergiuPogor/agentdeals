@@ -180,7 +180,7 @@ describe("the hetzner plan table is dated by the read that produced it", () => {
     factsOutdatedBy(page, () => changed, reads).filter(f => f.surface === "table").map(f => f.slug).sort();
 
   it("flags the vendor its plan table states a read for only where the record is newer than the read", () => {
-    const read = declared.find(entry => entry.vendors.includes("hetzner"));
+    const read = declared.filter(entry => entry.vendors.includes("hetzner")).sort((a, b) => b.read_on.localeCompare(a.read_on))[0];
     assert.ok(read);
     assert.ok(read!.read_on > page.clock_starts, "the read is no newer than the page clock, so it dates nothing");
     assert.ok(!tableFlags(read!.read_on).includes("hetzner"));

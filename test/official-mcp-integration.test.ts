@@ -35,7 +35,8 @@ it("publishes and withholds checked entries across pages, APIs and both MCP tran
   const saved = { index: process.env.AGENTDEALS_INDEX_PATH, state: process.env.AGENTDEALS_OFFICIAL_MCP_CHECKS_PATH };
   process.env.AGENTDEALS_INDEX_PATH = indexPath;
   process.env.AGENTDEALS_OFFICIAL_MCP_CHECKS_PATH = storePath;
-  const offers = [{ ...listing, official_mcp_servers: [remote, { ...remote, target: "https://api.example.com/independent" }] },
+  const condition = { text: "Personal projects only.", quote: "Personal projects only.", url: "https://example.com/terms", read_on: "2026-10-20" };
+  const offers = [{ ...listing, conditions: [condition], official_mcp_servers: [remote, { ...remote, target: "https://api.example.com/independent" }] },
     { ...listing, category: "Startup Perks", tier: "Startup", url: "https://example.com/startups", official_mcp_servers: [npm] },
     { ...listing, vendor: "Zqplain", url: "https://plain.example/pricing" }];
   writeFileSync(indexPath, JSON.stringify({ offers }));
@@ -74,6 +75,14 @@ it("publishes and withholds checked entries across pages, APIs and both MCP tran
       const scripts = [...page.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m => JSON.parse(m[1]));
       const web = scripts.find(node => node["@type"] === "WebPage");
       assert.equal(web.mainEntity.description.includes(passage), mainPassage, "application description");
+      const conditionText = `${condition.text} (From ${condition.url}, read ${condition.read_on}.)`;
+      assert.ok(web.mainEntity.description.endsWith(conditionText), "conditions follow MCP passages in structured data");
+      if (mainPassage) {
+        assert.ok(web.mainEntity.description.indexOf(passage) < web.mainEntity.description.indexOf(conditionText));
+        const lastPassage = passage.replace("https://api.example.com/mcp", "https://api.example.com/independent");
+        assert.ok(web.mainEntity.description.endsWith(`${lastPassage} ${conditionText}`), "no extra punctuation separates the passage and conditions");
+        assert.ok(page.indexOf(escapeHtml(passage)) < page.indexOf('<ul class="listing-conditions"'), "visible passages precede conditions");
+      }
       const faq = scripts.find(node => node["@type"] === "FAQPage");
       for (const q of ["Is Zqmcp free?", "What is Zqmcp's free tier?"]) {
         const answer = faq.mainEntity.find((node: { name: string }) => node.name === q).acceptedAnswer.text;

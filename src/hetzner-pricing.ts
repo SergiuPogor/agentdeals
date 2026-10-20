@@ -131,10 +131,9 @@ export function plansPricedBelowTheCheapestOrderable(plans: readonly HetznerPlan
 export function unpayableLowestPricesSentence(plans: readonly HetznerPlan[] = HETZNER_CLOUD_PLANS): string {
   const below = plansPricedBelowTheCheapestOrderable(plans);
   if (below.length === 0) return "";
-  const subject = below.length === 1
-    ? "The cheapest listed price belongs to a plan"
-    : `The ${below.length} cheapest listed prices all belong to plans`;
-  return `${subject} marked not available, so the lowest number on the page is not a number you can pay.`;
+  return below.length === 1
+    ? "The cheapest listed price is for an unavailable plan."
+    : `The ${below.length} cheapest listed prices are for unavailable plans.`;
 }
 
 export function cheaperUnorderablePlanWithMoreServer(plans: readonly HetznerPlan[] = HETZNER_CLOUD_PLANS): HetznerPlan | null {
