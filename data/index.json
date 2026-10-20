@@ -1597,6 +1597,20 @@
       "description": "SQLite at the edge — 5M rows read/day, 100K rows written/day, 5 GB total storage. Resets daily at midnight UTC",
       "tier": "Free",
       "url": "https://developers.cloudflare.com/d1/platform/pricing/",
+      "conditions": [
+        {
+          "text": "On the Free plan, once the account reaches its daily read or write limit, D1 refuses queries and returns errors until the limits reset at 00:00 UTC; upgrading to Workers Paid removes the limits.",
+          "quote": "When your account hits the daily read and/or write limits, you will not be able to run queries against D1. D1 API will return errors to your client indicating that your daily limits have been exceeded.",
+          "url": "https://developers.cloudflare.com/d1/platform/pricing/",
+          "read_on": "2026-10-20"
+        },
+        {
+          "text": "On the Free plan a single D1 database can hold at most 500 MB, and an account can have at most 10 databases, within the 5 GB account total.",
+          "quote": "Databases per account 50,000 (Workers Paid) / 10 (Free) Maximum database size 10 GB (Workers Paid) / 500 MB (Free)",
+          "url": "https://developers.cloudflare.com/d1/platform/limits/",
+          "read_on": "2026-10-20"
+        }
+      ],
       "tags": [
         "database",
         "sqlite",
@@ -2362,6 +2376,14 @@
       "description": "Developer-first email API — 3K emails/month free (100/day cap), 3 domains, 1K marketing contacts/month, 5 AI credits, 30-day data retention",
       "tier": "Free",
       "url": "https://resend.com/pricing",
+      "conditions": [
+        {
+          "text": "Until you verify a domain, Resend sends only from its resend.dev test domain, and only to the email address on your Resend account; mail to anyone else is refused with a 403 error.",
+          "quote": "The resend.dev domain is only available for testing purposes and can only send emails to the email address associated with your Resend account.",
+          "url": "https://resend.com/docs/knowledge-base/403-error-resend-dev-domain",
+          "read_on": "2026-10-20"
+        }
+      ],
       "tags": [
         "email",
         "api",
