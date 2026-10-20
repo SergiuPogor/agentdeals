@@ -6,8 +6,8 @@
       "daily": true
     },
     "/accounting-software-pricing-2026": {
-      "hash": "9fbd109e28ac8cca",
-      "changed": "2026-10-11"
+      "hash": "40318b23bddb3e65",
+      "changed": "2026-10-20"
     },
     "/agent-payments": {
       "hash": "13d3a64593ce1204",
@@ -22,12 +22,12 @@
       "changed": "2026-10-19"
     },
     "/ai-free-tiers": {
-      "hash": "e30ff1f59be35003",
-      "changed": "2026-10-19"
+      "hash": "22608b5bd067e560",
+      "changed": "2026-10-20"
     },
     "/ai-ml-alternatives": {
-      "hash": "69ed7bbac8212631",
-      "changed": "2026-10-19"
+      "hash": "7afb7fcb4c7b898f",
+      "changed": "2026-10-20"
     },
     "/alternative-to": {
       "daily": true
@@ -1097,8 +1097,8 @@
       "changed": "2026-10-19"
     },
     "/category/ai-ml": {
-      "hash": "150b3ec2ef088a95",
-      "changed": "2026-10-19"
+      "hash": "a6d5b76560655b0d",
+      "changed": "2026-10-20"
     },
     "/category/analytics": {
       "hash": "d989d5b462387861",
@@ -1291,8 +1291,8 @@
       "changed": "2026-10-19"
     },
     "/category/startup-perks": {
-      "hash": "c7661564284c5977",
-      "changed": "2026-10-19"
+      "hash": "25c16fb375cbb960",
+      "changed": "2026-10-20"
     },
     "/category/status-pages": {
       "hash": "a417d648b5e2f22a",
@@ -3302,7 +3302,7 @@
       "changed": "2026-10-19"
     },
     "/llm-api-pricing": {
-      "hash": "556a6e296ea9f8ee",
+      "hash": "44f5b07a23c88f82",
       "changed": "2026-10-20"
     },
     "/localstack-alternatives": {
@@ -4244,8 +4244,8 @@
       "daily": true
     },
     "/vendor/aws-activate": {
-      "hash": "87fe7a9fa6bcffb2",
-      "changed": "2026-10-19"
+      "hash": "11015d1cf6ad33aa",
+      "changed": "2026-10-20"
     },
     "/vendor/aws-sam-cli": {
       "hash": "c1de8a1180e26a1b",
@@ -4936,8 +4936,8 @@
       "changed": "2026-10-19"
     },
     "/vendor/composio": {
-      "hash": "c4774c31be0ec751",
-      "changed": "2026-10-19"
+      "hash": "08987a9a107af798",
+      "changed": "2026-10-20"
     },
     "/vendor/configcat": {
       "hash": "42c2d3d5f898a9a4",
