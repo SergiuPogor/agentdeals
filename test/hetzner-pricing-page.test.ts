@@ -1292,8 +1292,10 @@ describe("Hetzner's cloud names and dedicated-server standardization", () => {
     const text = visible(summary.replace(/<\/?a\b[^>]*>/g, "")).trim();
     assert.equal(text.split(CORRECTION).length - 1, 1, text);
     assert.ok(text.startsWith("Hetzner raised cloud prices twice in 2026. Dedicated-server memory add-ons rose in February."), text);
+    assert.ok(summary.includes('href="https://www.hetzner.com/pressroom/standardization-and-price-adjustment-of-our-server-products/" target="_blank" rel="noopener" style="overflow-wrap:anywhere"'));
     for (const url of ["https://www.hetzner.com/pressroom/standardization-and-price-adjustment-of-our-server-products/", "https://docs.hetzner.cloud/changelog"]) {
-      assert.ok(summary.includes(`<a href="${url}" target="_blank" rel="noopener">${url}</a>`), url);
+      assert.ok(summary.includes(`href="${url}" target="_blank" rel="noopener"`), url);
+      assert.ok(summary.includes(`>${url}</a>`), url);
     }
   });
 
