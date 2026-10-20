@@ -14,7 +14,7 @@
       "changed": "2026-10-19"
     },
     "/agent-stack": {
-      "hash": "6ea2dae54e48cb45",
+      "hash": "b1f082f56e02b7f2",
       "changed": "2026-10-20"
     },
     "/ai-coding-tools-pricing": {
@@ -22,11 +22,11 @@
       "changed": "2026-10-20"
     },
     "/ai-free-tiers": {
-      "hash": "fedb6d488593ea65",
+      "hash": "14493b0702837d01",
       "changed": "2026-10-20"
     },
     "/ai-ml-alternatives": {
-      "hash": "de6535cefeb4d653",
+      "hash": "7023f8dc2b154139",
       "changed": "2026-10-20"
     },
     "/alternative-to": {
@@ -1078,8 +1078,8 @@
       "daily": true
     },
     "/brevo-vs-resend": {
-      "hash": "6e45fc6235e91f7b",
-      "changed": "2026-10-17"
+      "hash": "e0dbb7da6b2e5187",
+      "changed": "2026-10-20"
     },
     "/budget-builder": {
       "daily": true
@@ -1097,7 +1097,7 @@
       "changed": "2026-10-19"
     },
     "/category/ai-ml": {
-      "hash": "f9ab3a1c97567a3e",
+      "hash": "f7859f614963c3c8",
       "changed": "2026-10-20"
     },
     "/category/analytics": {
@@ -1165,7 +1165,7 @@
       "changed": "2026-10-19"
     },
     "/category/databases": {
-      "hash": "684a2ebb7bc71572",
+      "hash": "956e5c8b1b3e103f",
       "changed": "2026-10-20"
     },
     "/category/design": {
@@ -1196,8 +1196,8 @@
       "changed": "2026-10-19"
     },
     "/category/email": {
-      "hash": "bc0eb7e72ee4efc1",
-      "changed": "2026-10-19"
+      "hash": "80bb7b5353d69735",
+      "changed": "2026-10-20"
     },
     "/category/error-tracking": {
       "hash": "36e04da150b31079",
@@ -1378,8 +1378,8 @@
       "changed": "2026-10-12"
     },
     "/compare/10minutemail-vs-resend": {
-      "hash": "f64b641ea96d17c2",
-      "changed": "2026-10-16"
+      "hash": "cb9db734ac33e355",
+      "changed": "2026-10-20"
     },
     "/compare/adapty-io-vs-coinmarketcap": {
       "hash": "5b7328b3baac2177",
@@ -1953,8 +1953,8 @@
       "changed": "2026-10-12"
     },
     "/compare/emaillabs-io-vs-resend": {
-      "hash": "1357e4841d6ac744",
-      "changed": "2026-10-16"
+      "hash": "2d91d517d9be8c85",
+      "changed": "2026-10-20"
     },
     "/compare/expo-vs-loadly": {
       "hash": "d785246ee68dd941",
@@ -2546,8 +2546,8 @@
       "daily": true
     },
     "/compare/resend-vs-mail-tester-com": {
-      "hash": "76cef1e1934241f9",
-      "changed": "2026-10-16"
+      "hash": "e77495bad8c14c8c",
+      "changed": "2026-10-20"
     },
     "/compare/resmush-it-vs-wormhol-org": {
       "hash": "0bc0448355e03bfc",
@@ -2693,15 +2693,15 @@
       "changed": "2026-10-18"
     },
     "/database-alternatives": {
-      "hash": "bfedf2ad356344cd",
+      "hash": "5f25883a89d7a120",
       "changed": "2026-10-20"
     },
     "/database-free-tier-comparison-2026": {
-      "hash": "5b2b7aec3e2472a0",
+      "hash": "ac4072a9604ef9e9",
       "changed": "2026-10-20"
     },
     "/database-pricing": {
-      "hash": "dcb5d63c4df0cd33",
+      "hash": "d75c3fd4e1960bed",
       "changed": "2026-10-20"
     },
     "/datadog-alternatives": {
@@ -3128,23 +3128,23 @@
       "changed": "2026-10-11"
     },
     "/email-alternatives": {
-      "hash": "9fefeac2d79da164",
+      "hash": "b2520e03002c68ed",
       "changed": "2026-10-20"
     },
     "/email-comparison-2026": {
-      "hash": "2ce6e01996266c35",
-      "changed": "2026-10-19"
+      "hash": "d2456c6f7312e49d",
+      "changed": "2026-10-20"
     },
     "/email-service-alternatives": {
-      "hash": "79de5da08b3b69ac",
-      "changed": "2026-10-18"
+      "hash": "7617b776592c8c54",
+      "changed": "2026-10-20"
     },
     "/embed": {
       "hash": "0f2a7d35b82e440f",
       "changed": "2026-10-11"
     },
     "/estimate": {
-      "hash": "a27356d69a90bd99",
+      "hash": "557607776b04d8ee",
       "changed": "2026-10-20"
     },
     "/events": {
@@ -3191,18 +3191,18 @@
       "daily": true
     },
     "/free-frontend-stack": {
-      "hash": "a30541f1fb4da916",
+      "hash": "770022fce9fd0c02",
       "changed": "2026-10-20"
     },
     "/free-go-stack": {
       "daily": true
     },
     "/free-llm-apis": {
-      "hash": "c6a8de49774e9e27",
+      "hash": "d38917d78a3d0f99",
       "changed": "2026-10-20"
     },
     "/free-nextjs-stack": {
-      "hash": "c4b3189a7f8bebf4",
+      "hash": "d955ada2e1da0e75",
       "changed": "2026-10-20"
     },
     "/free-saas-stack": {
@@ -3234,7 +3234,7 @@
       "changed": "2026-10-20"
     },
     "/gemini-api-pricing-2026": {
-      "hash": "deb0f433d674fb6f",
+      "hash": "492521b74c60a293",
       "changed": "2026-10-20"
     },
     "/github-actions-alternatives": {
@@ -3303,7 +3303,7 @@
       "changed": "2026-10-20"
     },
     "/llm-api-pricing": {
-      "hash": "3d645ba8779a2bc7",
+      "hash": "27bdac37b2ca6718",
       "changed": "2026-10-20"
     },
     "/localstack-alternatives": {
@@ -3315,7 +3315,7 @@
       "changed": "2026-10-20"
     },
     "/mongodb-alternatives": {
-      "hash": "c580f55c6d6fe6b6",
+      "hash": "a4e6ad6a66edd295",
       "changed": "2026-10-20"
     },
     "/monitoring-alternatives": {
@@ -3354,8 +3354,8 @@
       "changed": "2026-10-18"
     },
     "/postmark-vs-resend": {
-      "hash": "a2319b2004d406d4",
-      "changed": "2026-10-16"
+      "hash": "ea33d60086d1c105",
+      "changed": "2026-10-20"
     },
     "/press": {
       "hash": "a2157fffe6e2dcfe",
@@ -3590,12 +3590,12 @@
       "changed": "2026-10-12"
     },
     "/stacks/open-source": {
-      "hash": "566121631bf750ae",
-      "changed": "2026-10-15"
+      "hash": "3b8e7618e1cba852",
+      "changed": "2026-10-20"
     },
     "/stacks/saas-mvp": {
-      "hash": "e0402b99996640ff",
-      "changed": "2026-10-19"
+      "hash": "f1d3ce41db3f9c91",
+      "changed": "2026-10-20"
     },
     "/stacks/side-project": {
       "daily": true
@@ -8002,7 +8002,7 @@
       "changed": "2026-10-20"
     },
     "/vendor/resend": {
-      "hash": "298428727df86737",
+      "hash": "1c6e39ab0fec7fe6",
       "changed": "2026-10-20"
     },
     "/vendor/resizeappicon-com": {
