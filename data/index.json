@@ -4184,7 +4184,7 @@
     {
       "vendor": "AWS Activate",
       "category": "Startup Perks",
-      "description": "Founders: $1,000 to $5,000 in AWS credits for self-funded startups. Portfolio: up to $200,000 for startups with an Activate Provider Org ID. Both are for startups before Series B, founded in the last 10 years, with an AWS account on a paid plan. Activate credits have expiration dates, shown in the AWS Billing console, and AWS cannot extend them. They can also pay for AWS Support. One award per approved application; a later, larger award pays only the difference.",
+      "description": "Founders: $1,000 to $5,000 in AWS credits for self-funded startups. Portfolio: up to $200,000 for startups with an Activate Provider Org ID. AWS Credits for AI Startups is by invitation only, for startups ready to scale after Activate Portfolio, through an AWS account manager; AWS states \"$200,000+\" with no upper amount. Both are for startups before Series B, founded in the last 10 years, with an AWS account on a paid plan. Activate credits have expiration dates, shown in the AWS Billing console, and AWS cannot extend them. They can also pay for AWS Support. One award per approved application; a later, larger award pays only the difference.",
       "tier": "Startup Credits",
       "url": "https://aws.amazon.com/activate/",
       "tags": [
@@ -12098,7 +12098,21 @@
         "record_date": "2026-09-26",
         "change_type": "limits_reduced",
         "restated_on": "2026-09-26"
-      }
+      },
+      "conditions": [
+        {
+          "text": "On the free Hobby plan, calls stop at the monthly limit and Composio does not charge overage.",
+          "quote": "The Hobby plan stops at your included limit, so we won't charge you unexpectedly.",
+          "url": "https://composio.dev/pricing",
+          "read_on": "2026-10-20"
+        },
+        {
+          "text": "Tool calls and trigger events made through Composio-managed apps count only up to 20,000 of the 100,000 free tool calls and 10,000 of the 50,000 free trigger events a month; your own OAuth app gets the full allowance.",
+          "quote": "Up to 20K of your 100K free, then $0.0005 / tool call",
+          "url": "https://composio.dev/pricing",
+          "read_on": "2026-10-20"
+        }
+      ]
     },
     {
       "vendor": "Conversion Tools",
@@ -33448,7 +33462,7 @@
     {
       "vendor": "SiliconFlow",
       "category": "AI / ML",
-      "description": "Pay-as-you-go model inference. siliconflow.cn, run by a Beijing company, lists these models at no charge: the chat models Qwen3-8B, Qwen2.5-7B-Instruct (Free), Qwen3.5-4B, GLM-4-9B-0414, GLM-Z1-9B-0414, DeepSeek-R1-0528-Qwen3-8B (Free) and Xing4.0-29B; the translation model Hunyuan-MT-7B; the OCR models PaddleOCR-VL-1.5 and DeepSeek-OCR; the embedding models bge-m3, bge-large-zh-v1.5 and bge-large-en-v1.5; the reranker bge-reranker-v2-m3; Kolors image generation; and six speech recognition models. The Pro versions are paid: Qwen2.5-7B-Instruct (Pro), bge-m3 (Pro) and bge-reranker-v2-m3 (Pro). All other models are paid too, including DeepSeek-V4-Flash, DeepSeek-V4-Pro and GLM-5.3. Using all the free models requires real-name verification, and online personal verification accepts only Chinese-issued documents, such as a resident ID card or a Foreign Permanent Resident ID Card. The international site, siliconflow.com, is run by SiliconFlow Labs Pte. Ltd. under Singapore law, is not offered in mainland China, and gives $1 in free credits to start. Its paid rates per million input/output tokens: gpt-oss-20b $0.04/$0.18; gpt-oss-120b $0.05/$0.45; DeepSeek-V4.1-Flash $0.15/$0.60.",
+      "description": "Pay-as-you-go model inference. siliconflow.cn, run by a Beijing company, lists these models at no charge: the chat models Qwen3-8B, Qwen2.5-7B-Instruct (Free), Qwen3.5-4B, GLM-4-9B-0414, GLM-Z1-9B-0414, DeepSeek-R1-0528-Qwen3-8B (Free) and Xing4.0-29B; the translation model Hunyuan-MT-7B; the OCR models PaddleOCR-VL-1.5 and DeepSeek-OCR; the embedding models bge-m3, bge-large-zh-v1.5 and bge-large-en-v1.5; the reranker bge-reranker-v2-m3; Kolors image generation; and the speech recognition models XingChenAGI/XingChenGSR-V1.0, XingChenAGI/XingChenASR-V3.2-Ultra, XingChenAGI/XingChenASR-Diarize-V3.0, XingChenAGI/XingChenASR-V3.2 and FunAudioLLM/SenseVoiceSmall. Qwen3-ASR-1.7B is paid at ¥0.00022 per second of audio. The Pro versions are paid: Qwen2.5-7B-Instruct (Pro), bge-m3 (Pro) and bge-reranker-v2-m3 (Pro). All other models are paid too, including DeepSeek-V4-Flash, DeepSeek-V4-Pro and GLM-5.3. Using all the free models requires real-name verification, and online personal verification accepts only Chinese-issued documents, such as a resident ID card or a Foreign Permanent Resident ID Card. The international site, siliconflow.com, is run by SiliconFlow Labs Pte. Ltd. under Singapore law, is not offered in mainland China, and gives $1 in free credits to start. Its paid rates per million input/output tokens: gpt-oss-20b $0.04/$0.18; gpt-oss-120b $0.05/$0.45; DeepSeek-V4.1-Flash $0.15/$0.60.",
       "tier": "Free",
       "url": "https://siliconflow.cn/pricing",
       "tags": [
