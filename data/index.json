@@ -9619,7 +9619,7 @@
     {
       "vendor": "Kaggle",
       "category": "AI / ML",
-      "description": "Google's data science platform with free notebooks, datasets and competitions. Notebooks get a weekly GPU quota of 30 hours, sometimes more depending on demand (one NVIDIA Tesla P100 or two Tesla T4s), and a TPU v3-8 for up to 20 hours per week. Sessions run up to 12 hours on CPU or GPU and 9 hours on TPU, with 20 GB of auto-saved disk in /kaggle/working. Free GPUs and TPUs may queue at busy times. Datasets are capped at 200 GB each and 200 GB of private datasets in total. Kaggle's one paid service is hosting a competition.",
+      "description": "Google's data science platform with free notebooks, datasets and competitions. Notebooks get a weekly GPU quota of 30 hours, sometimes more depending on demand (one NVIDIA Tesla P100 or two Tesla T4s), and a TPU v3-8 for up to 20 hours per week. Sessions run up to 12 hours on CPU or GPU and 9 hours on TPU, with 20 GB of auto-saved disk in /kaggle/working. Free GPUs and TPUs may queue at busy times. Datasets are capped at 200 GB each and 200 GB of private datasets in total. Kaggle's one paid service is hosting a competition. Kaggle's MCP documentation states: \"The remote server URL is https://www.kaggle.com/mcp.\" (From https://www.kaggle.com/docs/mcp, read 2026-10-20.) Sign-in uses OAuth or a token. Tools include save_notebook (run with GPU or TPU), get_notebook_session_status, download_notebook_output and get_accelerator_quota (read weekly GPU and TPU usage). The Kaggle API also pushes a notebook version without the web editor. (From https://www.kaggle.com/docs/efficient-gpu-usage, read 2026-10-20.)",
       "tier": "Free",
       "url": "https://www.kaggle.com/docs/efficient-gpu-usage",
       "tags": [
