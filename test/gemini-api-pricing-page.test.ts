@@ -161,8 +161,10 @@ function retirementRecordDated(day: string) {
 }
 
 function retirementsStated(html: string): { models: string[]; day: string }[] {
-  const stated = withoutTags(prepayParagraph(html)).match(/Agent Platform retires (.+?)\. On the Gemini API none of these/)?.[1] ?? "";
-  return [...stated.matchAll(/((?:gemini-[\d.]+-[a-z-]+(?:, | and )?)+) on ([A-Z][a-z]+ \d{1,2}, \d{4})/g)].map(([, models, day]) => ({
+  const text = withoutTags(prepayParagraph(html));
+  const retired = text.match(/Agent Platform retired ((?:gemini-[\d.]+-[a-z-]+(?:, | and )?)+) on ([A-Z][a-z]+ \d{1,2}, \d{4})\./);
+  const upcoming = text.match(/(gemini-[\d.]+-[a-z-]+) can be called on Agent Platform until ([A-Z][a-z]+ \d{1,2}, \d{4}), when Google retires it there\./);
+  return [retired, upcoming].filter((match) => match !== null).map(([, models, day]) => ({
     models: modelsIn(models),
     day,
   }));
@@ -177,8 +179,9 @@ describe(`${PAGE} on paying after use once Prepay starts`, () => {
       "Google bills it on the standard Cloud charging cycle, not Prepay. " +
       "Calls to gemini-3.5-flash cost $1.50 input and $9.00 output per million tokens on Agent Platform, compared to $0.75 input and $3.75 output on the Gemini API, which routes to gemini-3.6-flash. " +
       "Change the model ID to gemini-3.8-flash before moving; it costs the same on both platforms. " +
-      "Agent Platform retires gemini-3.6-flash on November 19, 2026, and gemini-2.5-pro, gemini-2.5-flash and gemini-2.5-flash-lite on October 20, 2026. " +
-      "On the Gemini API none of these four has a shutdown date. " +
+      "Agent Platform retired gemini-2.5-pro, gemini-2.5-flash and gemini-2.5-flash-lite on October 20, 2026. " +
+      "gemini-3.6-flash can be called on Agent Platform until November 19, 2026, when Google retires it there. " +
+      "On the Gemini API, none of these four models has a shutdown date. " +
       "Agent Platform charges $0.75 input and $3.75 output per million tokens for Gemini 3.8 Flash and 3.6 Flash on the global endpoint through 2026-12-31, then $1.50 input and $7.50 output. " +
       "Non-global endpoints cost 10% more. " +
       "These match Gemini API paid-tier prices for gemini-3.6-flash and gemini-3.8-flash. " +
@@ -206,7 +209,7 @@ describe(`${PAGE} on paying after use once Prepay starts`, () => {
   });
 
   it("says the Gemini API gives those models no shutdown date only while each record retiring them on Agent Platform says the Gemini API keeps serving them", () => {
-    assert.ok(withoutTags(prepayParagraph(page)).includes("On the Gemini API none of these four has a shutdown date."));
+    assert.ok(withoutTags(prepayParagraph(page)).includes("On the Gemini API, none of these four models has a shutdown date."));
     const stated = retirementsStated(page);
     assert.strictEqual(stated.flatMap(({ models }) => models).length, 4);
     for (const { day } of stated) {
