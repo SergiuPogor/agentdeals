@@ -67,25 +67,55 @@ function isoOf(year: number, month: number, day: number): string | null {
   return new Date(`${iso}T00:00:00Z`).toISOString().slice(0, 10) === iso ? iso : null;
 }
 
-export function datesNamedIn(text: string): string[] {
-  const found = new Set<string>();
-  for (const [, year, month, day] of text.matchAll(ISO_DATE)) {
+interface NamedDate {
+  date: string;
+  start: number;
+  end: number;
+}
+
+function dateMentionsIn(text: string): NamedDate[] {
+  const found: NamedDate[] = [];
+  for (const match of text.matchAll(ISO_DATE)) {
+    const [, year, month, day] = match;
     const iso = isoOf(Number(year), Number(month), Number(day));
-    if (iso) found.add(iso);
+    if (iso) found.push({ date: iso, start: match.index!, end: match.index! + match[0].length });
   }
-  for (const [, month, day, year] of text.matchAll(MONTH_DAY_YEAR)) {
+  for (const match of text.matchAll(MONTH_DAY_YEAR)) {
+    const [, month, day, year] = match;
     const iso = isoOf(Number(year), MONTHS.indexOf(month.toLowerCase()) + 1, Number(day));
-    if (iso) found.add(iso);
+    if (iso) found.push({ date: iso, start: match.index!, end: match.index! + match[0].length });
   }
-  for (const [, day, month, year] of text.matchAll(DAY_MONTH_YEAR)) {
+  for (const match of text.matchAll(DAY_MONTH_YEAR)) {
+    const [, day, month, year] = match;
     const iso = isoOf(Number(year), MONTHS.indexOf(month.toLowerCase()) + 1, Number(day));
-    if (iso) found.add(iso);
+    if (iso) found.push({ date: iso, start: match.index!, end: match.index! + match[0].length });
   }
-  return [...found].sort();
+  return found.sort((a, b) => a.start - b.start);
+}
+
+export function datesNamedIn(text: string): string[] {
+  return [...new Set(dateMentionsIn(text).map(mention => mention.date))].sort();
 }
 
 export function sentencesOf(text: string): string[] {
   return text.split(/(?<=[.!?])\s+/).map((sentence) => sentence.trim()).filter((sentence) => sentence.length > 0);
+}
+
+const OFFER_CHANGE = /\b(?:shut(?:s|ting)?\s?down|retir\w*|discontinu\w*|deprecat\w*|end(?:s|ed|ing)?|until|through|deadline|delet\w*|renew\w*|block\w*|remov\w*|stop\w*|no longer|unavailable|not available|no charge|bill\w*|costs?|keep|kept|permitted|replaced|deactivat\w*|credits don.t pay)\b/i;
+const DEADLINE_LIST = /\b(?:retired|removed|deprecated|discontinued)\b[^.!?]*\b(?:include|following|these)\b/i;
+
+function datesWithDeadlineMeaning(sentence: string): string[] {
+  return [...new Set(dateMentionsIn(sentence).filter(({ start, end }) => {
+    const before = sentence.slice(0, start);
+    const after = sentence.slice(end);
+    if (/\b(?:read|checked|observed|fetched|retrieved|reviewed|published|posted|launched|released|announced)(?:\s+(?:on|at|as of|since))?\s*$/i.test(before)) return false;
+    if (/\b(?:terms|post|change\s?log|announcement|publication)(?:\s+(?:of|dated|published on|from))?\s*\(?\s*$/i.test(before)) return false;
+    if (/\b(?:generally available|general availability|public preview)(?:\s+(?:on|since|from))?\s*$/i.test(before)) return false;
+    if (/\b(?:acquisition\s+(?:closed|completed)|acquired)(?:\s+on)?\s*$/i.test(before)) return false;
+    if (/\buntil at least\s*$/i.test(before) && /^,?\s*(?:the\s+)?(?:pricing\s+)?page\s+(?:offered|showed|listed)/i.test(after)) return false;
+    if (/\b(?:on|as of)\s*$/i.test(before) && /^[, ]*(?:[^,;!?]*?\b(?:returned errors|still lists|still shows|page (?:offered|showed|listed)))\b/i.test(after)) return false;
+    return true;
+  }).map(mention => mention.date))].sort();
 }
 
 function daysBetween(a: string, b: string): number {
@@ -127,8 +157,12 @@ export function statedDeadlines(
   const byVendorAndDay = new Map<string, StatedDeadline>();
   for (const text of texts) {
     if (!DEADLINE_WORDS.test(text.text)) continue;
+    let inDeadlineList = false;
     for (const sentence of sentencesOf(text.text)) {
-      for (const date of datesNamedIn(sentence).filter((day) => day > today)) {
+      const listItem = inDeadlineList && /^[^:;.!?]+:\s/.test(sentence);
+      if (!listItem) inDeadlineList = DEADLINE_LIST.test(sentence);
+      if (!listItem && !OFFER_CHANGE.test(sentence)) continue;
+      for (const date of datesWithDeadlineMeaning(sentence).filter((day) => day > today)) {
         const key = `${text.vendor}\u0000${date}`;
         const held = byVendorAndDay.get(key);
         if (held && PREFERENCE[held.statedIn] <= PREFERENCE[text.statedIn]) continue;
