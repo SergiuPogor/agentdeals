@@ -78,6 +78,11 @@ const visible = (body: string) =>
     .replace(/&euro;/g, "€")
     .replace(/\s+/g, " ");
 
+
+const HETZNER_CUSTOMER_STATUS_URL = "https://status.hetzner.com/incident/0a75c7ae-3377-41dc-aabe-601063724d24";
+const HETZNER_CUSTOMER_AVAILABILITY_NOTE = "Hetzner’s status page (status.hetzner.com) notes “restrict the creation of new cloud servers for both new customers and some of our existing customers” starting June 26, 2026. Affected customers cannot create or rescale cloud servers at the affected location, per Hetzner’s FAQ.";
+const HETZNER_ORDERABLE_MEANING = '"Orderable" means hetzner.com shows the plan without its "not available" notice. Hetzner’s status page (status.hetzner.com) states: “we are currently required to restrict the creation of new cloud servers for both new customers and some of our existing customers.” A plan marked orderable may still be one a new customer cannot create.';
+
 const CATALOGUE_OFFERS = JSON.parse(readFileSync(path.join(REPO, "data", "index.json"), "utf8")).offers as { vendor: string; conditions?: ListingCondition[] }[];
 
 const OTHER_LISTED_VENDORS = new Set(
@@ -411,12 +416,13 @@ describe("the paragraph on /hetzner-pricing-2026 that says every Cost-Optimized 
     const entry = cheapestOf(HETZNER_CLOUD_PLANS.filter(isOrderableInTheEu));
     assert.equal(
       visible(paragraph.replace(/<\/?a\b[^>]*>/g, "")).trim(),
-      `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]} are labeled "not available" on hetzner.com. The Create button says "This product is currently unavailable. Please check back later." The page notes "the number of available servers is limited." (From https://www.hetzner.com/cloud/cost-optimized/, read ${HETZNER_AVAILABILITY_READ}.) ${cheapest.sku} is ${withoutIpv4(cheapest.eur)} a month without IPv4 on Hetzner's price-adjustment page. ${entry.sku}, at €${entry.eur.toFixed(2)} a month with IPv4, is the cheapest EU plan without that notice.`,
+      `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]} are labeled "not available" on hetzner.com. The Create button says "This product is currently unavailable. Please check back later." The page notes "the number of available servers is limited." (From https://www.hetzner.com/cloud/cost-optimized/, read ${HETZNER_AVAILABILITY_READ}.) ${cheapest.sku} is ${withoutIpv4(cheapest.eur)} a month without IPv4 on Hetzner's price-adjustment page. ${entry.sku}, at €${entry.eur.toFixed(2)} a month with IPv4, is the cheapest EU plan without that notice. ${HETZNER_CUSTOMER_AVAILABILITY_NOTE}`,
     );
     assert.deepEqual([...paragraph.matchAll(/<a href="([^"]+)"[^>]*>([^<]+)<\/a>/g)].map(([, href, text]) => `${text} -> ${href}`), [
       "hetzner.com -> https://www.hetzner.com/cloud/cost-optimized/",
       "https://www.hetzner.com/cloud/cost-optimized/ -> https://www.hetzner.com/cloud/cost-optimized/",
       "price-adjustment page -> https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/",
+      `status.hetzner.com -> ${HETZNER_CUSTOMER_STATUS_URL}`,
     ]);
   });
 });
@@ -1272,7 +1278,7 @@ describe("Hetzner's stock notice and retired server types", () => {
     const entry = cheapestOrderableHetznerPlan();
     const above = cheaperUnorderablePlanWithMoreServer();
     const expected = `Read this table by availability first. ${unpayableLowestPricesSentence()} The first row marked orderable is ${entry.sku} at €${entry.eur.toFixed(2)} for ${entry.vcpu} vCPU and ${entry.ram} GB${above ? `, less server than the ${above.sku} above it at €${above.eur.toFixed(2)}` : ""}.`;
-    assert.equal(sectionOneParagraphs(body).find(isTheAvailabilityNote), expected);
+    assert.equal(sectionOneParagraphs(body).find(isTheAvailabilityNote)?.replace(/\(\s+/g, "(").replace(/\s+\)/g, ")"), `${expected} ${HETZNER_ORDERABLE_MEANING}`);
   });
 
   it("does not describe the stock-limited plans as impossible to order", async () => {
@@ -1313,5 +1319,33 @@ describe("Hetzner's cloud names and dedicated-server standardization", () => {
       if (/renamed the (?:plans|lineup)|second round changed the lineup/i.test(visible(body))) violations.push(route);
     }
     assert.deepEqual(violations, []);
+  });
+});
+
+describe("Hetzner's restrictions on customers creating cloud servers", () => {
+  const noteText = (html: string) => visible(html).replace(/\(\s+/g, "(").replace(/\s+\)/g, ")");
+
+
+  it("states the restriction once, immediately after the cheapest EU plan's availability", async (t) => {
+    if (!NO_COST_OPTIMIZED_PLAN_IS_ORDERABLE) return t.skip("a Cost-Optimized plan can be ordered, so the paragraph is not printed");
+    const { status, body } = await get("/hetzner-pricing-2026");
+    assert.equal(status, 200);
+    const summary = body.match(/<div class="executive-summary">([\s\S]*?)<\/div>/)?.[1] ?? "";
+    const paragraph = summary.match(/<p><strong>Cost-Optimized plans[\s\S]*?<\/p>/)?.[0] ?? "";
+    const text = noteText(paragraph).trim();
+    assert.ok(text.endsWith(`is the cheapest EU plan without that notice. ${HETZNER_CUSTOMER_AVAILABILITY_NOTE}`), text);
+    assert.equal(noteText(body).split(HETZNER_CUSTOMER_AVAILABILITY_NOTE).length - 1, 1);
+    assert.ok(paragraph.includes(`<a href="${HETZNER_CUSTOMER_STATUS_URL}" target="_blank" rel="noopener">status.hetzner.com</a>`));
+  });
+
+  it("defines orderable once in the note directly following the price table", async () => {
+    const { body } = await get("/hetzner-pricing-2026");
+    const pricing = body.split('<h2 id="pricing">')[1]?.split('<h2 id="april">')[0] ?? "";
+    const paragraph = pricing.match(/<\/table>\s*<\/div>\s*(<p[^>]*>[\s\S]*?<\/p>)/)?.[1] ?? "";
+    const text = noteText(paragraph).trim();
+    assert.ok(text.startsWith("Read this table by availability first."), text);
+    assert.ok(text.endsWith(`. ${HETZNER_ORDERABLE_MEANING}`), text);
+    assert.equal(noteText(body).split(HETZNER_ORDERABLE_MEANING).length - 1, 1);
+    assert.ok(paragraph.includes(`<a href="${HETZNER_CUSTOMER_STATUS_URL}" target="_blank" rel="noopener">status.hetzner.com</a>`));
   });
 });

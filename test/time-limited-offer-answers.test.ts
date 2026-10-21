@@ -138,7 +138,41 @@ const BARE_PREVIEW: Offer = {
   verifiedDate: TODAY,
 };
 
-const FIXTURES = [LAPSED_TRIAL, RESTRICTED_CREDITS, EXPIRED_TRIAL, NARROWED_TRIAL, ABANDONED_CREDITS, SCHOLARSHIP, PREVIEW, BARE_PREVIEW];
+const READING_FIXTURES: Offer[] = [
+  {
+    vendor: "Zqcredit Price Read",
+    category: "Monitoring",
+    description: "Log search with a one-time $25 credit, then usage-billed.",
+    tier: "Free Credits",
+    url: "https://zqcredit-price-read.example/pricing",
+    tags: ["monitoring"],
+    verifiedDate: TODAY,
+    source_check: { checked: TODAY, outcome: "states_a_free_price", detail: "Free API" },
+  },
+  {
+    vendor: "Zqtrial Plan Read",
+    category: "Monitoring",
+    description: "Uptime checks with a 14-day free trial, then $9 a month.",
+    tier: "Trial",
+    url: "https://zqtrial-plan-read.example/pricing",
+    tags: ["monitoring"],
+    verifiedDate: TODAY,
+    source_check: { checked: TODAY, outcome: "states_no_amount", detail: "Free trial" },
+  },
+  {
+    vendor: "Zqcredit No Terms",
+    category: "Monitoring",
+    description: "Log search with a one-time $25 credit, then usage-billed.",
+    tier: "Free Credits",
+    url: "https://zqcredit-no-terms.example/pricing",
+    tags: ["monitoring"],
+    verifiedDate: TODAY,
+    source_check: { checked: TODAY, outcome: "states_no_terms", detail: "No plan terms" },
+  },
+];
+
+const subjectOffers = [...catalogue.offers, ...READING_FIXTURES];
+const FIXTURES = [...READING_FIXTURES,LAPSED_TRIAL, RESTRICTED_CREDITS, EXPIRED_TRIAL, NARROWED_TRIAL, ABANDONED_CREDITS, SCHOLARSHIP, PREVIEW, BARE_PREVIEW];
 const scratch = mkdtempSync(path.join(tmpdir(), "time-limited-offer-answers-"));
 const scratchIndex = path.join(scratch, "index.json");
 const scratchChanges = path.join(scratch, "deal_changes.json");
@@ -157,12 +191,13 @@ interface Subject {
   levelWithheld: boolean;
   productionRuledOutBy: ListingCondition | null;
   termsUnconfirmed: boolean;
+  freePlanFound: boolean;
   refusalInTheLastReadNote: boolean;
   restriction: string;
 }
 
 const primaries = new Map<string, Offer>();
-for (const offer of catalogue.offers) if (!primaries.has(offer.vendor)) primaries.set(offer.vendor, offer);
+for (const offer of subjectOffers) if (!primaries.has(offer.vendor)) primaries.set(offer.vendor, offer);
 
 function leavesNoFreeTier(offer: Offer): boolean {
   const gate = gateFor(offer, TODAY, changesOf(offer.vendor));
@@ -172,11 +207,12 @@ function leavesNoFreeTier(offer: Offer): boolean {
 function subjectOf(offer: Offer): Subject {
   const context = vendorVerdictContextFrom({
     vendor: offer.vendor,
-    vendorOffers: catalogue.offers.filter(o => o.vendor === offer.vendor),
+    vendorOffers: subjectOffers.filter(o => o.vendor === offer.vendor),
     vendorChanges: changesOf(offer.vendor),
     refusedReads: refusalsForVendor(offer.vendor),
     servedOn: TODAY,
   });
+  const unconfirmed = context ? whyWeCannotConfirmTheseTerms(context.input) : null;
   const supersededBy = supersedingChange(offer, changesOf(offer.vendor));
   const gate = gateFor(offer, TODAY, changesOf(offer.vendor));
   return {
@@ -189,7 +225,8 @@ function subjectOf(offer: Offer): Subject {
     superseded: supersededBy !== null,
     levelWithheld: (context?.levelWithheld ?? null) !== null,
     productionRuledOutBy: supersededBy ? null : (offer.conditions ?? []).find(c => (c.rules_out ?? []).includes("production")) ?? null,
-    termsUnconfirmed: context ? whyWeCannotConfirmTheseTerms(context.input) !== null : false,
+    termsUnconfirmed: unconfirmed !== null,
+    freePlanFound: unconfirmed?.theReadFoundAFreePlan ?? false,
     refusalInTheLastReadNote: context ? refusalWithholdsTheTerms(whyWeCannotConfirmTheseTerms(context.input)) : false,
     restriction: gate?.code === "eligibility_restricted" ? `${gate.reason} ` : "",
   };
@@ -321,7 +358,7 @@ const THE_TRIAL_EXPIRES = "The trial also expires.";
 const whatItOffers = (s: Subject) => `No. What ${s.vendor} offers is ${s.note}:`;
 const whatItOffersBeforeTheCaveat = (s: Subject) => `No. What ${s.vendor} offers is ${s.note}. We cannot confirm that today.`;
 const whatItOffersBeforeItsTerms = (s: Subject) => `No. What ${s.vendor} offers is ${s.note}. ${s.description.slice(0, 30)}`;
-const openingOf = (s: Subject) => s.refusalInTheLastReadNote
+const openingOf = (s: Subject) => s.refusalInTheLastReadNote || s.freePlanFound
   ? whatItOffersBeforeItsTerms(s)
   : s.termsUnconfirmed ? whatItOffersBeforeTheCaveat(s) : `${whatItOffers(s)} ${s.description.slice(0, 30)}`;
 const verdictLead = (s: Subject) => `${s.vendor} has no ongoing free tier; what it offers is ${s.note}: `;
@@ -375,7 +412,7 @@ describe("a vendor whose listed tier is a trial or a credit grant is not said to
   });
 
   it("leads with no where we cannot confirm the terms, and follows it with that caveat unless a refused read is the reason", () => {
-    const unconfirmed = timeLimited.filter(s => !s.superseded && s.termsUnconfirmed);
+    const unconfirmed = timeLimited.filter(s => !s.superseded && s.termsUnconfirmed && !s.freePlanFound);
     assertPopulationFloor(unconfirmed.length, 1, "trial and credit vendor pages whose stored terms we cannot confirm");
     const misplaced: string[] = [];
     for (const s of unconfirmed) {
@@ -388,6 +425,32 @@ describe("a vendor whose listed tier is a trial or a credit grant is not said to
       }
     }
     assert.deepStrictEqual(misplaced, []);
+  });
+
+  it("keeps the stated price or plan separate from limits the reading could not confirm", () => {
+    for (const [offer, expected] of [
+      [READING_FIXTURES[0], "which confirms the price"],
+      [READING_FIXTURES[1], "names a plan but states no amount"],
+    ] as const) {
+      const subject = subjectOf(offer);
+      assert.strictEqual(subject.termsUnconfirmed, true);
+      assert.strictEqual(subject.freePlanFound, true);
+      assert.strictEqual(openingOf(subject), whatItOffersBeforeItsTerms(subject));
+      for (const faqs of [page(`/vendor/${subject.slug}`).body, page(`/vendor/${subject.slug}`).ld]) {
+        const answer = answerTo(faqs, `Is ${offer.vendor} free?`) ?? "";
+        assert.ok(answer.startsWith(`No. What ${offer.vendor} offers is ${classifyTier(offer.tier).note}. ${offer.description}`), answer);
+        assert.ok(answer.includes(expected), answer);
+        assert.ok(!answer.includes("We cannot confirm that today"), answer);
+      }
+    }
+    const unread = subjectOf(READING_FIXTURES[2]);
+    assert.strictEqual(unread.termsUnconfirmed, true);
+    assert.strictEqual(unread.freePlanFound, false);
+    assert.strictEqual(openingOf(unread), whatItOffersBeforeTheCaveat(unread));
+    for (const faqs of [page(`/vendor/${unread.slug}`).body, page(`/vendor/${unread.slug}`).ld]) {
+      const answer = answerTo(faqs, `Is ${unread.vendor} free?`) ?? "";
+      assert.ok(answer.includes("We cannot confirm that today"), answer);
+    }
   });
 
   it("asks about the free offer rather than a free tier, and drops the questions only a free tier answers", () => {

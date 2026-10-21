@@ -22,11 +22,11 @@
       "changed": "2026-10-21"
     },
     "/ai-free-tiers": {
-      "hash": "3d825b9c17c7da0b",
+      "hash": "a65eff67d5efea30",
       "changed": "2026-10-21"
     },
     "/ai-ml-alternatives": {
-      "hash": "7880defcb0c2af33",
+      "hash": "1eab3eb5deef0714",
       "changed": "2026-10-21"
     },
     "/alternative-to": {
@@ -828,7 +828,7 @@
       "changed": "2026-10-21"
     },
     "/azure-free-tier-2026": {
-      "hash": "1b720b50dc89fdef",
+      "hash": "5f374c62e66f4a11",
       "changed": "2026-10-21"
     },
     "/backblaze-b2-vs-cloudflare-r2": {
@@ -1099,7 +1099,7 @@
       "changed": "2026-10-21"
     },
     "/category/ai-ml": {
-      "hash": "2c123bd9b8ed6458",
+      "hash": "248e3570ca17a651",
       "changed": "2026-10-21"
     },
     "/category/analytics": {
@@ -3205,7 +3205,7 @@
       "changed": "2026-10-21"
     },
     "/free-llm-apis": {
-      "hash": "4014c578b8c43c56",
+      "hash": "7b2323eb2e7a0d80",
       "changed": "2026-10-21"
     },
     "/free-nextjs-stack": {
@@ -3241,7 +3241,7 @@
       "daily": true
     },
     "/gemini-api-pricing-2026": {
-      "hash": "b134bd52ec4a0230",
+      "hash": "c9fdcf10ad28440e",
       "changed": "2026-10-21"
     },
     "/github-actions-alternatives": {
@@ -3293,7 +3293,7 @@
       "changed": "2026-10-21"
     },
     "/hetzner-pricing-2026": {
-      "hash": "1d247ab78c00d453",
+      "hash": "8ad2a5d6df5c2f23",
       "changed": "2026-10-21"
     },
     "/hosting-alternatives": {
@@ -3348,14 +3348,14 @@
       "changed": "2026-10-21"
     },
     "/openai-assistants-alternatives": {
-      "hash": "d858f699b7993118",
+      "hash": "142db30aec9c9b73",
       "changed": "2026-10-21"
     },
     "/openai-assistants-migration": {
       "daily": true
     },
     "/openai-assistants-migration-2026": {
-      "hash": "94c2f7ef1539c5f7",
+      "hash": "c050bef4f878a47a",
       "changed": "2026-10-21"
     },
     "/postman-alternatives": {

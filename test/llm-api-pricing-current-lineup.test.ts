@@ -18,7 +18,7 @@ const CLAUDE_PRICE = "How much does Claude cost per token?";
 const PROVIDER_CHOICE = "Should I use a frontier lab API or an inference provider?";
 const LAUNCHED = "Claude Zorblax 9";
 const LAUNCHED_RATE = "$7/$31";
-const UNPRICED_TERMS = "Claude API billed per million input and output tokens, by model. New users receive a small amount of free credits to test the API.";
+const UNPRICED_TERMS = "Claude API billed per million input and output tokens, by model. Claude Max and Team plans include monthly API credits.";
 
 type Offer = { vendor: string; description: string; url: string; verifiedDate?: string };
 type Catalogue = { offers: Offer[] };
