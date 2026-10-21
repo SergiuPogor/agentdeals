@@ -642,7 +642,7 @@ describe("when /hetzner-pricing-2026 says each 2026 change happened", () => {
     const summary = body.slice(body.indexOf('<div class="executive-summary">'));
     const opening = visible(summary.slice(0, summary.indexOf("</p>"))).trim();
     assert.ok(opening.startsWith(
-      "Hetzner raised cloud prices twice in 2026, and the second round changed the lineup as well as the numbers. Dedicated-server memory add-ons rose in February. Setup fees changed on 2 February and 29 April. Server prices rose on 1 April. New-order prices rose on 15 June. The April 1 adjustment",
+      "Hetzner raised cloud prices twice in 2026. Dedicated-server memory add-ons rose in February. Setup fees changed on 2 February and 29 April. Server prices rose on 1 April. New-order prices rose on 15 June. The April 1 adjustment",
     ), opening);
   });
 
@@ -1278,5 +1278,40 @@ describe("Hetzner's stock notice and retired server types", () => {
   it("does not describe the stock-limited plans as impossible to order", async () => {
     const { body } = await get("/hetzner-pricing-2026");
     assert.doesNotMatch(body, /cannot be ordered/i);
+  });
+});
+
+
+describe("Hetzner's cloud names and dedicated-server standardization", () => {
+  const CORRECTION = 'The June 15 adjustment applies only to new orders and rescales — existing server contracts keep their terms. Its standardization renamed dedicated servers with "-1", "-2", and "-3" designations. (From https://www.hetzner.com/pressroom/standardization-and-price-adjustment-of-our-server-products/, read 2026-10-20.) Cloud server names did not change on June 15. Hetzner added the current cloud types such as cx23 and cpx22 on 16 October 2025. (From https://docs.hetzner.cloud/changelog, read 2026-10-20.)';
+
+  it("prints the cloud-name correction word for word in the executive summary with both source links", async () => {
+    const { status, body } = await get("/hetzner-pricing-2026");
+    assert.equal(status, 200);
+    const summary = body.split('<div class="executive-summary">')[1]?.split("</div>")[0] ?? "";
+    const text = visible(summary.replace(/<\/?a\b[^>]*>/g, "")).trim();
+    assert.equal(text.split(CORRECTION).length - 1, 1, text);
+    assert.ok(text.startsWith("Hetzner raised cloud prices twice in 2026. Dedicated-server memory add-ons rose in February."), text);
+    assert.ok(summary.includes('href="https://www.hetzner.com/pressroom/standardization-and-price-adjustment-of-our-server-products/" target="_blank" rel="noopener" style="overflow-wrap:anywhere"'));
+    for (const url of ["https://www.hetzner.com/pressroom/standardization-and-price-adjustment-of-our-server-products/", "https://docs.hetzner.cloud/changelog"]) {
+      assert.ok(summary.includes(`href="${url}" target="_blank" rel="noopener"`), url);
+      assert.ok(summary.includes(`>${url}</a>`), url);
+    }
+  });
+
+  it("keeps the alternatives page's new-order scope without saying the cloud lineup was renamed", async () => {
+    const { status, body } = await get("/hetzner-alternatives");
+    assert.equal(status, 200);
+    const text = visible(body).replace(/ ([.,;])/g, "$1");
+    assert.ok(text.includes("The April 1 round applied to all regions and all customers; the June 15 round applies to new orders and rescales only."), text);
+    assert.doesNotMatch(text, /renamed the lineup|second round changed the lineup/i);
+  });
+
+  it("serves none of the retired cloud-renaming claims on any sitemap route", async () => {
+    const violations: string[] = [];
+    for (const [route, body] of await bodyOfEveryRoute()) {
+      if (/renamed the (?:plans|lineup)|second round changed the lineup/i.test(visible(body))) violations.push(route);
+    }
+    assert.deepEqual(violations, []);
   });
 });
