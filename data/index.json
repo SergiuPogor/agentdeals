@@ -32708,6 +32708,30 @@
           "quote": "By default, all API requests and responses are stored on our servers (encrypted at rest) for 30 days for auditing purposes in the event of suspected abuse or misuse.",
           "url": "https://docs.x.ai/developers/faq/security",
           "read_on": "2026-10-04"
+        },
+        {
+          "text": "Grok Build is xAI's coding agent for the terminal and is not the grok-build-0.1 API model. xAI's pricing page lists Grok Build as \"Limited\" on The X Subscription's $0 plan and included on its paid plans, Plus $8 to Ultra $200 a month.",
+          "quote": "Grok Chat, Voice, Imagine, and Build",
+          "url": "https://x.ai/pricing",
+          "read_on": "2026-10-21"
+        },
+        {
+          "text": "The X Subscription's $0 plan does not include Grok API access. Paid plans include it, but API usage is billed separately at the standard rates and does not draw from the plan's usage pool.",
+          "quote": "Paid plans include Grok API access. API usage is billed separately at standard model rates and doesn’t draw from your plan’s usage pool.",
+          "url": "https://x.ai/pricing",
+          "read_on": "2026-10-21"
+        },
+        {
+          "text": "Grok 4.7 Fast is grok-4.7 on faster infrastructure. It is available only in Cursor and Grok Build, billed through the plan there, and not on the public xAI API; Grok Build on the $0 plan does not include it. Its rates are 2x standard: $4.00 input, $1.00 cached input, $12.00 output per 1M tokens below 200k prompt tokens.",
+          "quote": "It is not available on the public xAI API, and Grok Build's free tier does not include it.",
+          "url": "https://docs.x.ai/developers/pricing",
+          "read_on": "2026-10-21"
+        },
+        {
+          "text": "With the default $0 invoiced billing limit, xAI rejects API requests once prepaid credits run out. Auto top-up (minimum $5) or a higher invoiced billing limit keeps requests running.",
+          "quote": "Your API requests will be automatically rejected once your prepaid credits are depleted.",
+          "url": "https://docs.x.ai/console/billing",
+          "read_on": "2026-10-21"
         }
       ]
     },
