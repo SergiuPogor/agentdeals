@@ -73,7 +73,10 @@ function cards(html: string): string[] {
 before(async () => {
   scratch = mkdtempSync(path.join(tmpdir(), "digest-stated-"));
   writeFileSync(path.join(scratch, "index.json"), JSON.stringify({ offers: [
-    listing("Monday Cloud", "The hosted console shuts down on 2026-10-26."),
+    listing("Monday Cloud", "The hosted console shuts down on 2026-10-26.", [{
+      text: "A billing email is required.", quote: "A billing email is required.",
+      url: "https://example.com/billing", read_on: "2026-10-01",
+    }]),
     listing("Sunday Cloud", "The free runtime is retired on 2026-11-01.", [{
       text: "Search remains free through 2026-10-31, then costs $2 from 2026-11-01.",
       quote: "Search pricing changes.", url: "https://example.com/search-prices", read_on: "2026-10-01",
@@ -131,6 +134,14 @@ describe("each digest week includes stated deadlines beside its dated changes", 
     assert.match(card("Sunday Cloud"), /href="https:\/\/example.com\/search-prices"[^>]*class="record-source"/);
     assert.ok(!card("Sunday Cloud").includes("free runtime"));
     assert.match(card("Earlier Record"), /href="https:\/\/example.com\/earlier-record"[^>]*class="change-source"/);
+  });
+
+  it("keeps conditions beside a quoted description when that quotation is the whole description", () => {
+    const section = statedSection(pages.get(clocks[0])!);
+    const card = cards(section).find(card => card.includes(">Monday Cloud</span>"))!;
+    assert.ok(card.includes("A billing email is required."));
+    assert.ok(card.includes('href="https://example.com/billing"'));
+    assert.ok(card.includes("read 2026-10-01"));
   });
 
   it("counts the same six dated events in headline, description, structured metadata and total tile", () => {

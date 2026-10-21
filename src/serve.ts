@@ -4888,14 +4888,14 @@ function buildDigestPage(weekKey: string): string | null {
   <div class="impact-section stated-deadlines">
     <h2>Deadlines stated for ${dateRange} (${stated.length})</h2>
     <p>${escHtmlServer(deadlineCounts)}. These are quoted dates, not additional change records.</p>
-    ${stated.map(deadline => `<div class="change-entry" style="border-left-color:#d29922">
+    ${stated.map(statedDeadlineLine).map(line => `<div class="change-entry" style="border-left-color:#d29922">
       <div class="change-header">
         <span class="change-badge" style="background:#d29922">stated deadline</span>
-        <span class="change-vendor">${escHtmlServer(deadline.vendor)}</span>
-        <span class="change-date">${escHtmlServer(deadline.date)}</span>
-        <span class="change-cat">${escHtmlServer(deadline.category)}</span>
+        <span class="change-vendor">${escHtmlServer(line.vendor)}</span>
+        <span class="change-date">${escHtmlServer(line.dateLabel)}</span>
+        <span class="change-cat">${escHtmlServer(line.category)}</span>
       </div>
-      <div class="change-summary">${statedDeadlineLine(deadline).summaryHtml}</div>
+      <div class="change-summary">${line.summaryHtml}</div>
     </div>`).join("\n    ")}
   </div>` : "";
   const bodyHtml = [changesHtml, statedHtml, firstReadHtml].filter(Boolean).join("\n");

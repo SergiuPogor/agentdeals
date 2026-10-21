@@ -109,7 +109,7 @@ function startServer(indexPath: string): Promise<{ proc: ChildProcess; base: str
 
 const ROUTES_NO_SITEMAP_LISTS = ["/", "/estimate", "/budget-builder", "/compare-tool", "/stack-check"];
 
-const ROUTES_QUOTING_THE_ONE_SENTENCE_THAT_NAMES_A_DEADLINE = new Set(["/deadlines", "/this-week", digestRouteOfTheWeekHolding(TODAY)]);
+const ROUTES_QUOTING_THE_ONE_SENTENCE_THAT_NAMES_A_DEADLINE = new Set(["/deadlines", "/this-week"]);
 
 const scratchDescriptions = new Map(scratchOffers.map((offer, index) => [codeFor(index), offer.description]));
 
@@ -117,9 +117,28 @@ function asServed(text: string): string {
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 
-function quotesLessThanTheWholeDescription(route: string, body: string, code: string): boolean {
-  return ROUTES_QUOTING_THE_ONE_SENTENCE_THAT_NAMES_A_DEADLINE.has(route) && !body.includes(asServed(scratchDescriptions.get(code) ?? ""));
+function quotesLessThanTheWholeDescription(route: string, body: string, description: string): boolean {
+  const quotesADatedSentence = ROUTES_QUOTING_THE_ONE_SENTENCE_THAT_NAMES_A_DEADLINE.has(route) || /^\/digest\/\d{4}-w\d{2}$/.test(route);
+  return quotesADatedSentence && !body.includes(asServed(description));
 }
+
+describe("a deadline quotation and a full listing description need different conditions checks", () => {
+  const description = "The free plan includes queues. The legacy runtime retires on 2026-11-01.";
+  const sentence = "The legacy runtime retires on 2026-11-01.";
+
+  it("recognizes a sentence excerpt on past, current and future digest routes", () => {
+    for (const route of ["/deadlines", "/this-week", "/digest/2024-w47", digestRouteOfTheWeekHolding(TODAY), "/digest/2099-w01"]) {
+      assert.ok(quotesLessThanTheWholeDescription(route, sentence, description), route);
+      assert.ok(!quotesLessThanTheWholeDescription(route, asServed(description), description), route);
+    }
+  });
+
+  it("keeps the full-description requirement on other routes and on a single-sentence description", () => {
+    assert.ok(!quotesLessThanTheWholeDescription("/digest/archive", sentence, description));
+    assert.ok(!quotesLessThanTheWholeDescription("/vendor/example", sentence, description));
+    assert.ok(!quotesLessThanTheWholeDescription("/digest/2026-w44", asServed(sentence), sentence));
+  });
+});
 
 const THE_VENDOR_PAGE = "/vendor/";
 
@@ -217,7 +236,7 @@ describe("every route that prints a listing's description in full prints the lis
       const body = withoutTheHeadsSummaries(await response.text());
       readings.push(...readingsOf(route, body)
         .filter(reading => planted.get(reading.code)?.role !== "set aside")
-        .filter(reading => !quotesLessThanTheWholeDescription(route, body, reading.code)));
+        .filter(reading => !quotesLessThanTheWholeDescription(route, body, scratchDescriptions.get(reading.code) ?? "")));
       conditionsSeen.push(...conditionsPrintedOn(route, body));
       listsMisplaced.push(...elementsHoldingAList(route, body));
       for (const match of body.matchAll(new RegExp(`${SET_ASIDE_TOKEN}([a-z]{3})`, "g"))) setAsideSeen.push(`${route}: ${planted.get(match[1]!)?.vendor}`);
