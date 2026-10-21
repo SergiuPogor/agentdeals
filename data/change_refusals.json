@@ -13,6 +13,18 @@
       "refused_date": "2026-09-28"
     },
     {
+      "vendor": "Abby",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-28 (null_comparison) stated the same 4 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now includes 1 A/B test instead of the previously stated 1 A/B test.",
+      "previous_state": "Open-Source feature flags & A/B testing. Configuration as Code & Fully Typed Typescript SDKs. Strong integration with Frameworks such as Next.js & React. Free plan: 1,000 events/month, 3 feature flags/remote configs, 1 A/B test, 5 environments.",
+      "current_state": "1,000 Events / month, 1 A/B Test, 3 Feature Flags / Remote Configs, 5 Environments",
+      "source_url": "https://www.tryabby.com",
+      "category": "Feature Flags",
+      "refused_date": "2026-10-21"
+    },
+    {
       "vendor": "Ably",
       "change_type": "limits_reduced",
       "reason": "confirmed_unchanged",
@@ -718,6 +730,18 @@
       "collided_with": "Basecamp|limits_reduced|2026-08-28|https://basecamp.com/personal"
     },
     {
+      "vendor": "Basecamp",
+      "change_type": "limits_reduced",
+      "reason": "unquantified_limit",
+      "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (1 project, 1 gb, 5 user)",
+      "summary": "The free plan now only allows up to 3 users, down from 5.",
+      "previous_state": "To-do lists, milestone management, forum-like messaging, file sharing, and time tracking — Free plan includes 1 project, 1 GB of storage space, and a maximum of 5 users.",
+      "current_state": "One project, free forever. Invite up to 3 people.",
+      "source_url": "https://basecamp.com/personal",
+      "category": "Project Management",
+      "refused_date": "2026-10-21"
+    },
+    {
       "vendor": "Baseten",
       "change_type": "limits_reduced",
       "reason": "unquantified_limit",
@@ -805,6 +829,18 @@
       "refused_date": "2026-10-02"
     },
     {
+      "vendor": "Blaxel",
+      "change_type": "new_tier",
+      "reason": "states_no_difference",
+      "detail": "the summary states that the page agrees with what we hold, and names no figure the stored description did not already carry",
+      "summary": "The free tier still exists, offering up to $200 in credits, but the page details a tiered system with quotas that were not mentioned in the stored information. The free tier allows 10 sandboxes, but the page also details paid tiers with increasing sandbox limits (Tier 1: 50, Tier 2: 200, up to Tier 9: 100,000+).",
+      "previous_state": "Sandboxes and runtime for AI agents, priced on usage with no plan fee. New accounts get up to $200 in free credits; Blaxel does not say whether they renew, and its terms say unused service credits expire one year after they are issued unless otherwise specified. The free quota tier allows 10 sandboxes, which it deletes after at most 7 days, and free accounts cannot request higher quotas. A running sandbox costs $0.0000115 per GB of RAM per second; idle time is not billed as active CPU.",
+      "current_state": "Every account starts with free-tier quotas. As you top up credits, your tier automatically increases. Tier 0 Free has a sandbox limit of 10.",
+      "source_url": "https://blaxel.ai/pricing",
+      "category": "AI / ML",
+      "refused_date": "2026-10-21"
+    },
+    {
       "vendor": "BlazeMeter",
       "change_type": "pricing_restructured",
       "reason": "dangling_reference",
@@ -851,6 +887,18 @@
       "source_url": "https://bleemeo.com",
       "category": "Monitoring",
       "refused_date": "2026-10-07"
+    },
+    {
+      "vendor": "Bolt.new",
+      "change_type": "limits_reduced",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (1 token/mo, 300 token/day, 10 MB file), and drops 8 the stored description carried",
+      "summary": "The free plan now includes a daily token limit of 300K, which was not mentioned in the stored deal info. The pricing for the Pro plan is $18/month billed annually, which is a slight decrease from the stored price of $25/month billed monthly or $18/month billed yearly.",
+      "previous_state": "AI builder for websites, web apps and mobile apps by StackBlitz; it builds full-stack apps in the browser on WebContainers. Free plan ($0): 1M tokens per month with a 300K daily limit, public and private projects, unlimited databases, a 10MB file upload limit, and hosting on a bolt.host URL with up to 10 GB of bandwidth and 333,333 web requests a month, with Bolt branding. Pro is $25/month billed monthly ($18/month billed yearly), with no daily token limit and from 10M tokens a month. Teams is $30 per member a month ($27 billed yearly), and Enterprise is custom-priced.",
+      "current_state": "Free plan includes 1M tokens/month with a 300K daily limit, public and private projects, unlimited databases, a 10MB file upload limit, and hosting on a bolt.host URL.",
+      "source_url": "https://bolt.new/pricing",
+      "category": "AI Coding",
+      "refused_date": "2026-10-21"
     },
     {
       "vendor": "bonsai.io",
@@ -1094,6 +1142,18 @@
       "category": "Testing",
       "refused_date": "2026-09-10",
       "collided_with": "BugBug|limits_reduced|2026-08-28|https://bugbug.io/"
+    },
+    {
+      "vendor": "BugBug",
+      "change_type": "limits_increased",
+      "reason": "unquantified_limit",
+      "detail": "limits_increased claimed, but the current state names no quantity for anything the stored state measured (15 test, 4 test, 1 user, 1 project, 7 test)",
+      "summary": "The free plan now offers unlimited tests and users, and unlimited local & cloud runs, whereas the stored information stated 15 tests, 1 user, and limited runs.",
+      "previous_state": "Lightweight test automation tool for web applications — The Free plan includes: Unlimited local test runs, 15 tests, 4 test suites, 1 user, 1 project, AI Test recorder, Components, Edit & rewind, Screenshots, 7 days of tests history.",
+      "current_state": "The Free plan includes: Unlimited local test runs, unlimited users, unlimited built-in email testing.",
+      "source_url": "https://bugbug.io/",
+      "category": "Testing",
+      "refused_date": "2026-10-21"
     },
     {
       "vendor": "Bugsink",
@@ -1362,6 +1422,18 @@
       "source_url": "https://cirun.io",
       "category": "CI/CD",
       "refused_date": "2026-09-10"
+    },
+    {
+      "vendor": "cirun.io",
+      "change_type": "restriction",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-10 (no_terms_to_narrow) claimed the same change, restriction, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier is now specifically for open source projects. It offers unlimited public repositories and runners, ARM-based runners, and GPU runners. Previously, the stored information stated it was free for *public* GitHub repositories, implying any public repository.",
+      "previous_state": "Free for public GitHub repositories",
+      "current_state": "Free for Open source projects. Install cirun on unlimited public repositories. Unlimited runners. ARM-based runners. GPU runners. All supported cloud providers.",
+      "source_url": "https://cirun.io",
+      "category": "CI/CD",
+      "refused_date": "2026-10-21"
     },
     {
       "vendor": "Clair",
@@ -2661,6 +2733,18 @@
       "refused_date": "2026-09-28"
     },
     {
+      "vendor": "duo.com",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-28 (confirmed_unchanged) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free tier is now limited to teams of 10 or less. Paid tiers (Essentials, Advantage, Premier) are available starting at $3/user/month.",
+      "previous_state": "Two-factor authentication (2FA) for website or app. Free for ten users, all authentication methods, unlimited, integrations, hardware tokens.",
+      "current_state": "Duo Free for teams of 10 or less",
+      "source_url": "https://duo.com/",
+      "category": "Auth",
+      "refused_date": "2026-10-21"
+    },
+    {
       "vendor": "Duolingo",
       "change_type": "new_tier",
       "reason": "no_price_signal",
@@ -2683,6 +2767,18 @@
       "source_url": "https://dwh.dev",
       "category": "Analytics",
       "refused_date": "2026-10-04"
+    },
+    {
+      "vendor": "DynamicDocs",
+      "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-28 (same_transition_graded_differently) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The page no longer mentions a free tier with 50 API calls per month. It states that PDFs can be created from $0.062 per PDF.",
+      "previous_state": "Generate PDF documents with JSON to PDF API based on LaTeX templates. The free plan allows 50 API calls per month and access to a library of templates.",
+      "current_state": "Create documents from $0.062 per PDF.",
+      "source_url": "https://advicement.io",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-21"
     },
     {
       "vendor": "DynamicDocs",
@@ -2769,6 +2865,18 @@
       "source_url": "https://emailoctopus.com",
       "category": "Email",
       "refused_date": "2026-09-30"
+    },
+    {
+      "vendor": "Emailvalidation.io",
+      "change_type": "limits_increased",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-28 (unquantified_limit) claimed the same change, limits_increased, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier now offers 100 free validations *every month*, whereas the stored information states it was a one-time allowance of 100 validations.",
+      "previous_state": "100 free email verifications total (one-time, not monthly)",
+      "current_state": "The free plan includes 100 email validations every month, with no credit card.",
+      "source_url": "https://emailvalidation.io",
+      "category": "Email",
+      "refused_date": "2026-10-21"
     },
     {
       "vendor": "Emailvalidation.io",
@@ -3044,13 +3152,13 @@
       "vendor": "Fizzy",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-19 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
-      "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page does not mention any item limits. It does state a 1 GB file storage limit.",
+      "detail": "the reading of this page refused on 2026-10-20 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page states that Fizzy is entirely free with a 1 GB file storage limit.",
       "previous_state": "Kanban-based platform for project management and issue tracking. Create public boards, set up webhooks, use card stamping, and track unlimited users — free for up to 1000 items.",
-      "current_state": "Fizzy is entirely free and is subsidized by Basecamp and HEY. File space usage is limited to 1 GB.",
+      "current_state": "Fizzy is entirely free with a 1 GB file storage limit.",
       "source_url": "https://www.fizzy.do/",
       "category": "Project Management",
-      "refused_date": "2026-10-20"
+      "refused_date": "2026-10-21"
     },
     {
       "vendor": "Flagsmith",
@@ -3295,6 +3403,18 @@
       "category": "Dev Utilities",
       "refused_date": "2026-09-10",
       "collided_with": "FreeIPAPI|limits_reduced|2026-08-28|https://freeipapi.com"
+    },
+    {
+      "vendor": "Freshworks for Startups",
+      "change_type": "free_tier_removed",
+      "reason": "page_does_not_name_vendor",
+      "detail": "the page read never names Freshworks for Startups and is not served from its domain, so any terms on it belong to somebody else",
+      "summary": "The startup program described in the stored deal info no longer exists. The page details a general partner program for resellers, solution providers, technology partners, and affiliates, but makes no mention of a specific startup program or credits.",
+      "previous_state": "There is no startup program: freshworks.com/company/partners/ redirects to the general partners directory, which states nothing about startups, credits or eligibility. Checked 2026-09-02, the words startup, credits and eligible return zero occurrences on the page. The former offer was up to $10,000 in credits across the Freshworks suite.",
+      "current_state": "The page details a partner program with various tiers (Channel partners, Technology partners, Affiliate marketing partners) offering benefits like access to a network, resources, and marketing support. It does not mention any free credits or a specific startup program.",
+      "source_url": "https://www.freshworks.com/partners/",
+      "category": "Startup Perks",
+      "refused_date": "2026-10-21"
     },
     {
       "vendor": "FusionAuth",
@@ -7085,6 +7205,18 @@
       "refused_date": "2026-09-22"
     },
     {
+      "vendor": "Plunk",
+      "change_type": "limits_reduced",
+      "reason": "measures_no_change",
+      "detail": "limits_reduced claimed, and every quantity the record compares holds the same value once notation and period are normalised — 1,000 transactional/mo against 1,000 email/mo",
+      "summary": "The free tier now includes 1,000 emails per month, but previously it was stated as unlimited.",
+      "previous_state": "Open-source email platform with 1,000 transactional/marketing emails/month free",
+      "current_state": "The free plan includes 1,000 emails a month, unlimited contacts.",
+      "source_url": "https://useplunk.com",
+      "category": "Email",
+      "refused_date": "2026-10-21"
+    },
+    {
       "vendor": "podio.com",
       "change_type": "limits_reduced",
       "reason": "measures_no_change",
@@ -8476,6 +8608,18 @@
       "refused_date": "2026-09-20"
     },
     {
+      "vendor": "Startup with IBM",
+      "change_type": "free_tier_removed",
+      "reason": "page_does_not_name_vendor",
+      "detail": "the page read never names Startup with IBM and is not served from its domain, so any terms on it belong to somebody else",
+      "summary": "The startup program has been discontinued and replaced with the IBM Build Partners Technical Group, a community forum. There is no mention of any credit amount, application process, or eligibility rules.",
+      "previous_state": "There is no startup program: developer.ibm.com/startups/ redirects to the IBM Build Partners Technical Group, a community forum with threads, blogs and a member directory. Checked 2026-09-02, the destination states no credit amount, application or eligibility rule. The former offer was $120,000 in IBM Cloud credits.",
+      "current_state": "The page describes the IBM Build Partners Technical Group as a community forum with threads, blogs, and a member directory. It does not mention any credits or program benefits.",
+      "source_url": "https://community.ibm.com/community/user/groups/community-home?CommunityKey=4ddd8881-1445-4366-8d9f-01951486d421",
+      "category": "Cloud IaaS",
+      "refused_date": "2026-10-21"
+    },
+    {
       "vendor": "StatCounter",
       "change_type": "free_tier_removed",
       "reason": "no_price_signal",
@@ -8523,6 +8667,18 @@
       "source_url": "https://statusgator.com/",
       "category": "Monitoring",
       "refused_date": "2026-10-11"
+    },
+    {
+      "vendor": "Stoplight",
+      "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-10 (same_transition_graded_differently) stated the same 3 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier no longer exists as described. The lowest paid tier is 'Basic' at $44/month or $56/month, with the first 3 users free.",
+      "previous_state": "API design and documentation platform — free tier: 1 user, 1 project. Includes OpenAPI visual designer, API editor, interactive docs, API console, code generation, Git sync, automatic SSL",
+      "current_state": "The Basic plan costs $44/month (billed annually) or $56/month (billed monthly) and includes the first 3 users free. It includes OpenAPI/JSON schema visual designer, interactive docs, and instant mock servers.",
+      "source_url": "https://stoplight.io/pricing",
+      "category": "API Development",
+      "refused_date": "2026-10-21"
     },
     {
       "vendor": "Stoplight",
@@ -9307,6 +9463,18 @@
     },
     {
       "vendor": "Tyk",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-28 (same_transition_graded_differently) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The open source offering is still mentioned, but the free trial for Tyk Cloud is now 48 hours, whereas the stored information only mentioned a free trial without specifying the duration. The page also details Core, Professional, and Enterprise plans with varying features and pricing.",
+      "previous_state": "Open-source API gateway — self-hosted: free forever under MPL-2.0, includes rate limiting, auth, analytics. Cloud: 48-hour free trial only, paid plans usage-based. Dashboard and developer portal included",
+      "current_state": "Start a 48-hour free trial of Tyk Cloud, our fully featured SaaS product. With this trial, you get full access to all Tyk features and capabilities – no installation, no credit card, and no calls required. Just sign up and start building.",
+      "source_url": "https://tyk.io/pricing/",
+      "category": "API Gateway",
+      "refused_date": "2026-10-21"
+    },
+    {
+      "vendor": "Tyk",
       "change_type": "pricing_restructured",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as Tyk|pricing_restructured|2026-08-28|https://tyk.io/pricing/",
@@ -9317,6 +9485,18 @@
       "category": "API Gateway",
       "refused_date": "2026-09-28",
       "collided_with": "Tyk|pricing_restructured|2026-08-28|https://tyk.io/pricing/"
+    },
+    {
+      "vendor": "Typeform.com",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-28 (unquantified_limit) claimed the same change, limits_reduced, against the same stored description",
+      "summary": "The free plan is still offered, but the description of its limits is not explicitly stated on the pricing page. The page highlights AI features and multiple paid plans (Core, Growth, Research Flow, Talent, Enterprise). It mentions 'intelligent forms' with high response rates and advanced analytics, but doesn't confirm the 100 monthly responses limit for the free plan.",
+      "previous_state": "Include beautifully designed forms on websites. The free plan allows unlimited questions per form and 100 monthly responses.",
+      "current_state": "The page states that you can 'Get started—it’s free' and build forms with AI automation, but does not specify any limits on responses or questions.",
+      "source_url": "https://www.typeform.com/",
+      "category": "Forms",
+      "refused_date": "2026-10-21"
     },
     {
       "vendor": "Typeform.com",
@@ -9735,6 +9915,18 @@
     {
       "vendor": "webhook.site",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-28 (unquantified_limit) claimed the same change, limits_reduced, against the same stored description",
+      "summary": "The free tier is limited to the number of requests allowed by appConfig.MaxRequests, which is stated as 50 in the text. The page also states URLs expire, and mentions upgrading to remove restrictions and keep URLs forever.",
+      "previous_state": "Verify webhooks, outbound HTTP requests, or emails with a custom URL — The free tier allows a maximum of 50 requests. URLs expire.",
+      "current_state": "URLs can accept a maximum of {{ appConfig.MaxRequests }} requests, and expire. Upgrade to accept endless requests, keep this URL forever.",
+      "source_url": "https://webhook.site",
+      "category": "Testing",
+      "refused_date": "2026-10-21"
+    },
+    {
+      "vendor": "webhook.site",
+      "change_type": "limits_reduced",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as webhook.site|limits_reduced|2026-08-28|https://webhook.site",
       "summary": "The free tier has a request limit of {{ appConfig.MaxRequests }} requests.",
@@ -10003,6 +10195,18 @@
       "refused_date": "2026-10-04"
     },
     {
+      "vendor": "You.com",
+      "change_type": "pricing_restructured",
+      "reason": "confirmed_unchanged",
+      "detail": "The $100 credit was reduced to $10, but the report doesn't highlight this reduction as a change; it focuses on the new paid tiers which are outside the scope of the stored description's free tier details.",
+      "summary": "The free tier still exists via MCP, offering 100 queries/day. A $10 free credit is now offered for the Web Search API, and several other paid tiers with varying features and pricing have been introduced (Standard, Contents, Agentic Research, Finance Research).",
+      "previous_state": "Web Search API for AI agents. 100 free queries a day with no API key or account through the keyless MCP profile (api.you.com/mcp?profile=free), limited to the you-search and you-discover tools. New API accounts also get a $100 sign-up credit with no credit card required; no page says it renews or expires. Then pay as you go with no minimums: Web Search API $5.00 per 1,000 calls with up to 100 results per call, live page extraction $1.00 per 1,000 pages, at 10 requests a second on self-serve accounts.",
+      "current_state": "The Web Search API offers a free tier via MCP (100 queries/day) and a paid tier starting at $5/1k calls. A $10 free credit is also available.",
+      "source_url": "https://you.com/pricing",
+      "category": "AI / ML",
+      "refused_date": "2026-10-21"
+    },
+    {
       "vendor": "Zapier",
       "change_type": "limits_reduced",
       "reason": "confirmed_unchanged",
@@ -10230,6 +10434,18 @@
       "source_url": "https://www.zoho.com/workdrive/pricing.html",
       "category": "Productivity & Notes",
       "refused_date": "2026-09-07"
+    },
+    {
+      "vendor": "Zoho Docs",
+      "change_type": "restriction",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-07 (confirmed_unchanged) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now requires a sign-up and is listed as 'Free Plan - 5 GB Secure cloud storage for individual use.' The original stored information did not mention a sign-up requirement.",
+      "previous_state": "FREE - 5GB Secure cloud storage for individual use",
+      "current_state": "Free Plan - 5 GB Secure cloud storage for individual use. Sign up now",
+      "source_url": "https://www.zoho.com/workdrive/pricing.html",
+      "category": "Productivity & Notes",
+      "refused_date": "2026-10-21"
     },
     {
       "vendor": "Zoho Meeting",
