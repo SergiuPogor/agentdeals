@@ -3946,6 +3946,12 @@
           "quote": "the opt-out preferences you selected for other Mistral AI Products (including through zero data retention) does not apply to Labs or Preview Models.",
           "url": "https://legal.mistral.ai/terms/commercial-terms-of-service",
           "read_on": "2026-10-11"
+        },
+        {
+          "text": "Le Chat is now called Vibe. \"Vibe is the new name for what you knew as le Chat.\" Accounts and plans moved over. A Le Chat Pro subscription is now Mistral Pro.",
+          "quote": "Vibe is the new name for what you knew as le Chat",
+          "url": "https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe",
+          "read_on": "2026-10-21"
         }
       ],
       "free_plan_excerpt": {
