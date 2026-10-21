@@ -1,155 +1,5 @@
 {
-  "proposals": [
-    {
-      "proposal_id": "2026-10-21/daytona/startup_program_expanded",
-      "proposed_on": "2026-10-21",
-      "vendor": "Daytona",
-      "change_type": "startup_program_expanded",
-      "date": "2026-10-21",
-      "date_source": "discovered",
-      "summary": "The page confirms $200 in free compute is included. Also mentions a startup program offering up to $50k in credits. The pricing details for compute (vCPU and memory) remain the same.",
-      "tier": "Free Compute",
-      "tier_direction": "widened",
-      "previous_state": "Sandboxes for running AI-generated code, priced pay as you go. New accounts get $200 in free compute on a free trial that needs no credit card; Daytona does not say whether the credit expires or renews, and it does not cover GPU sandboxes. A sandbox can use up to 4 vCPUs, 8 GB of RAM and 10 GB of disk, and on the first two usage tiers its network access is restricted. After the credit: $0.0504 an hour per vCPU and $0.0162 an hour per GiB of memory; the first 5 GiB of storage is free.",
-      "current_state": "$200 in free compute is included. Startups can sign up for credits for up to $50k.",
-      "impact": "medium",
-      "source_url": "https://www.daytona.io/pricing",
-      "category": "AI / ML",
-      "alternatives": [],
-      "detected_by": "reverify-ai",
-      "recorded_date": "2026-10-21",
-      "restatement": []
-    },
-    {
-      "proposal_id": "2026-10-21/novita-sandbox/limits_increased",
-      "proposed_on": "2026-10-21",
-      "vendor": "Novita Sandbox",
-      "change_type": "limits_increased",
-      "date": "2026-10-21",
-      "date_source": "discovered",
-      "summary": "The free tier now includes 60 GB of free Persistent Storage. Previously it did not mention any persistent storage allowance.",
-      "tier": "Novita Sandbox",
-      "tier_direction": "widened",
-      "previous_state": "Sandboxes for AI agents from Novita AI, billed per second for CPU and RAM while a sandbox runs. New users who complete an account setup survey get $100 in promotional credits for Novita Sandbox usage, with no credit card; the credits expire, and Novita does not state after how long. The free tier allows 5 concurrent sandboxes of up to 2 vCPUs and 4 GB of RAM, each running for at most 1 hour. Paid usage costs $0.0000098 per vCPU-second and $0.0000032 per GiB-second.",
-      "current_state": "New users can complete a quick account setup survey to receive $100 in promotional credits. Each account includes 60 GB of free Persistent Storage. Usage beyond the free amount is billed at $0.00009/GB/h.",
-      "impact": "low",
-      "source_url": "https://docs.novita.ai/guides/sandbox-pricing",
-      "category": "AI / ML",
-      "alternatives": [],
-      "detected_by": "reverify-ai",
-      "recorded_date": "2026-10-21",
-      "restatement": []
-    },
-    {
-      "proposal_id": "2026-10-21/linkup/startup_program_expanded",
-      "proposed_on": "2026-10-21",
-      "vendor": "Linkup",
-      "change_type": "startup_program_expanded",
-      "date": "2026-10-21",
-      "date_source": "discovered",
-      "summary": "The free tier of 4,000 queries is still mentioned, but the page also highlights a startup program offering up to $5000 in free credits.",
-      "tier": "Search",
-      "tier_direction": "widened",
-      "previous_state": "Web search API for AI agents. Accounts created with a professional email address get $20 of credit, topped back up to $20 each month (Linkup's docs); the pricing page calls this 4,000 free queries and states no period. Linkup's app asks other sign-ups to add a card, with no charge, to unlock the credit. Rate limit: 10 queries a second per organization. Then pay as you go from a prepaid balance: search $0.005 a call ($0.006 with a sourced answer or structured output), deep search $0.05 to $0.055, fetch from $0.001. Top-ups of $1,000 or more earn 10-20% bonus credit.",
-      "current_state": "Run 4,000 queries for free. Apply for $5000 in free credits for startups.",
-      "impact": "medium",
-      "source_url": "https://www.linkup.so/pricing",
-      "category": "AI / ML",
-      "alternatives": [],
-      "detected_by": "reverify-ai",
-      "recorded_date": "2026-10-21",
-      "restatement": [
-        {
-          "url": "https://www.linkup.so/pricing",
-          "refused": "reading_answers_for_something_else"
-        }
-      ]
-    },
-    {
-      "proposal_id": "2026-10-21/kernel/limits_increased",
-      "proposed_on": "2026-10-21",
-      "vendor": "Kernel",
-      "change_type": "limits_increased",
-      "date": "2026-10-21",
-      "date_source": "discovered",
-      "summary": "The free tier now includes managed auth with 3 connections, and vaults & payments with 3 vaults. The free tier also now has $0/month plus usage costs. Was previously $5 of usage credit. The Hobbyist tier now has 10 concurrent browsers and unlimited proxy usage. Session replays are now 7 days for Hobbyist, up from 1 day.",
-      "tier": "Free",
-      "tier_direction": "widened",
-      "previous_state": "Browsers as a service for AI agents. The free Developer plan gives $5 of usage credit each month, 5 concurrent browsers in the US, stealth mode with a Kernel-managed proxy and CAPTCHA solver, and 1-day session replays; other proxies cannot be configured. Browsers are headful by default at about $0.48 an hour, so $5 covers about 10 browser-hours (about 83 headless). Kernel says sign-up needs no credit card, but its acceptable use policy lets it require a verified payment method before granting free credit. Hobbyist is $30 a month plus usage, with $10 of credit each month.",
-      "current_state": "$0/mo. plus usage costs* get free $5 / month free credits 5 concurrent browsers live view stealth mode (captcha solver & proxy) managed auth (3 connections) session replays (1 day) file uploads & downloads vaults & payments (3 vaults)",
-      "impact": "medium",
-      "source_url": "https://www.kernel.sh/pricing",
-      "category": "Browser Automation",
-      "alternatives": [],
-      "detected_by": "reverify-ai",
-      "recorded_date": "2026-10-21",
-      "restatement": [
-        {
-          "url": "https://www.kernel.sh/pricing",
-          "refused": "reading_drops_a_figure_our_source_check_found",
-          "figures": [
-            "$30",
-            "$10"
-          ]
-        }
-      ]
-    },
-    {
-      "proposal_id": "2026-10-21/pinecone/pricing_restructured",
-      "proposed_on": "2026-10-21",
-      "vendor": "Pinecone",
-      "change_type": "pricing_restructured",
-      "date": "2026-10-21",
-      "date_source": "discovered",
-      "summary": "The Starter plan is still available as a free tier. The details have been updated. The page now lists specific example workloads and their capacity within the Starter plan. Additionally, the Assistant feature is now explicitly priced with usage-based costs for storage, tokens, and ingestion units. The page also details pricing for Builder, Standard, and Enterprise plans.",
-      "tier": "Starter",
-      "tier_direction": "unchanged",
-      "previous_state": "Vector database. The Starter plan is free: up to 2 GB storage, 2M write units and 1M read units a month, 1 GB of egress a month (reads that return data stop at the cap until the next billing period), 5 indexes, 1 project and 2 users, on AWS us-east-1 only. Assistant includes 1 GB storage and 500k input, 300k output and 500k context tokens a month. Three embedding models include 5M tokens a month each; bge-reranker-v2-m3 includes 500 requests a month. Builder is $20/month flat.",
-      "current_state": "The Starter plan is free for trying out and small applications. It includes up to 2 GB of database storage, up to 2M write units/month, up to 1M read units/month, up to 1GB of egress/month, up to 5 indexes, and includes Pinecone Database, Inference, and Assistant features with specific token and storage limits.",
-      "impact": "medium",
-      "source_url": "https://pinecone.io/pricing",
-      "category": "AI / ML",
-      "alternatives": [],
-      "detected_by": "reverify-ai",
-      "recorded_date": "2026-10-21",
-      "restatement": [
-        {
-          "url": "https://pinecone.io/pricing",
-          "refused": "reading_drops_a_figure_our_source_check_found",
-          "figures": [
-            "$20",
-            "5M tokens/mo",
-            "500 requests/mo"
-          ]
-        }
-      ]
-    },
-    {
-      "proposal_id": "2026-10-21/pulumi/pricing_restructured",
-      "proposed_on": "2026-10-21",
-      "vendor": "Pulumi",
-      "change_type": "pricing_restructured",
-      "date": "2026-10-21",
-      "date_source": "discovered",
-      "summary": "The free tier now includes managed resource pricing ($0.00025/hour), and workflow cost per minute ($0.01).",
-      "tier": "Free",
-      "tier_direction": "narrowed",
-      "previous_state": "Infrastructure as Code platform — free for individuals with 1 user, unlimited projects/stacks/updates, 500 deployment minutes/mo, 25 secrets, 10K secret API calls/mo",
-      "current_state": "The Free plan is $0, includes 1 user, unlimited projects/stacks/updates, up to 500 workflow minutes/mo, 25 secrets, 10K secret API calls/mo, IaC resource pricing of $0.00025/hour, and includes IaC state management and Pulumi Deployments.",
-      "impact": "medium",
-      "source_url": "https://www.pulumi.com/pricing/",
-      "category": "Infrastructure",
-      "alternatives": [],
-      "detected_by": "reverify-ai",
-      "recorded_date": "2026-10-21",
-      "restatement": [
-        {
-          "url": "https://www.pulumi.com/pricing/",
-          "refused": "tier_is_not_one_we_record_as_free"
-        }
-      ]
-    }
-  ],
+  "proposals": [],
   "dropped": [
     {
       "proposal_id": "2026-10-12/taskade-com/new_tier",
@@ -632,6 +482,167 @@
       ],
       "dropped_on": "2026-10-20",
       "drop_reason": "No change shown: corgea.com/pricing (read 2026-10-20) Free column still has 10 repos, 10 PR scans a month and 10 SAST auto fixes. The 2-member team size is newly read with no before state; it goes into the listing instead."
+    },
+    {
+      "proposal_id": "2026-10-21/daytona/startup_program_expanded",
+      "proposed_on": "2026-10-21",
+      "vendor": "Daytona",
+      "change_type": "startup_program_expanded",
+      "date": "2026-10-21",
+      "date_source": "discovered",
+      "summary": "The page confirms $200 in free compute is included. Also mentions a startup program offering up to $50k in credits. The pricing details for compute (vCPU and memory) remain the same.",
+      "tier": "Free Compute",
+      "tier_direction": "widened",
+      "previous_state": "Sandboxes for running AI-generated code, priced pay as you go. New accounts get $200 in free compute on a free trial that needs no credit card; Daytona does not say whether the credit expires or renews, and it does not cover GPU sandboxes. A sandbox can use up to 4 vCPUs, 8 GB of RAM and 10 GB of disk, and on the first two usage tiers its network access is restricted. After the credit: $0.0504 an hour per vCPU and $0.0162 an hour per GiB of memory; the first 5 GiB of storage is free.",
+      "current_state": "$200 in free compute is included. Startups can sign up for credits for up to $50k.",
+      "impact": "medium",
+      "source_url": "https://www.daytona.io/pricing",
+      "category": "AI / ML",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-21",
+      "restatement": [],
+      "dropped_on": "2026-10-21",
+      "drop_reason": "Not a change: daytona.io/pricing already offered startups up to $50k in credits and $200 in free compute in the Internet Archive capture of 2026-09-03; it is a startup programme, not a change to the free tier."
+    },
+    {
+      "proposal_id": "2026-10-21/novita-sandbox/limits_increased",
+      "proposed_on": "2026-10-21",
+      "vendor": "Novita Sandbox",
+      "change_type": "limits_increased",
+      "date": "2026-10-21",
+      "date_source": "discovered",
+      "summary": "The free tier now includes 60 GB of free Persistent Storage. Previously it did not mention any persistent storage allowance.",
+      "tier": "Novita Sandbox",
+      "tier_direction": "widened",
+      "previous_state": "Sandboxes for AI agents from Novita AI, billed per second for CPU and RAM while a sandbox runs. New users who complete an account setup survey get $100 in promotional credits for Novita Sandbox usage, with no credit card; the credits expire, and Novita does not state after how long. The free tier allows 5 concurrent sandboxes of up to 2 vCPUs and 4 GB of RAM, each running for at most 1 hour. Paid usage costs $0.0000098 per vCPU-second and $0.0000032 per GiB-second.",
+      "current_state": "New users can complete a quick account setup survey to receive $100 in promotional credits. Each account includes 60 GB of free Persistent Storage. Usage beyond the free amount is billed at $0.00009/GB/h.",
+      "impact": "low",
+      "source_url": "https://docs.novita.ai/guides/sandbox-pricing",
+      "category": "AI / ML",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-21",
+      "restatement": [],
+      "dropped_on": "2026-10-21",
+      "drop_reason": "Undatable: docs.novita.ai/guides/sandbox-pricing states a 60 GB free persistent-storage allowance, but no capture shows when it was added, so no dated record; a listing omission, not a change seen on 2026-10-21."
+    },
+    {
+      "proposal_id": "2026-10-21/linkup/startup_program_expanded",
+      "proposed_on": "2026-10-21",
+      "vendor": "Linkup",
+      "change_type": "startup_program_expanded",
+      "date": "2026-10-21",
+      "date_source": "discovered",
+      "summary": "The free tier of 4,000 queries is still mentioned, but the page also highlights a startup program offering up to $5000 in free credits.",
+      "tier": "Search",
+      "tier_direction": "widened",
+      "previous_state": "Web search API for AI agents. Accounts created with a professional email address get $20 of credit, topped back up to $20 each month (Linkup's docs); the pricing page calls this 4,000 free queries and states no period. Linkup's app asks other sign-ups to add a card, with no charge, to unlock the credit. Rate limit: 10 queries a second per organization. Then pay as you go from a prepaid balance: search $0.005 a call ($0.006 with a sourced answer or structured output), deep search $0.05 to $0.055, fetch from $0.001. Top-ups of $1,000 or more earn 10-20% bonus credit.",
+      "current_state": "Run 4,000 queries for free. Apply for $5000 in free credits for startups.",
+      "impact": "medium",
+      "source_url": "https://www.linkup.so/pricing",
+      "category": "AI / ML",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-21",
+      "restatement": [
+        {
+          "url": "https://www.linkup.so/pricing",
+          "refused": "reading_answers_for_something_else"
+        }
+      ],
+      "dropped_on": "2026-10-21",
+      "drop_reason": "Not a change: linkup.so/pricing already said 'Apply for $5000 in free credits for startups' and 'Run 4,000 queries for free' in the captures of 2026-09-12 and 2026-10-01."
+    },
+    {
+      "proposal_id": "2026-10-21/kernel/limits_increased",
+      "proposed_on": "2026-10-21",
+      "vendor": "Kernel",
+      "change_type": "limits_increased",
+      "date": "2026-10-21",
+      "date_source": "discovered",
+      "summary": "The free tier now includes managed auth with 3 connections, and vaults & payments with 3 vaults. The free tier also now has $0/month plus usage costs. Was previously $5 of usage credit. The Hobbyist tier now has 10 concurrent browsers and unlimited proxy usage. Session replays are now 7 days for Hobbyist, up from 1 day.",
+      "tier": "Free",
+      "tier_direction": "widened",
+      "previous_state": "Browsers as a service for AI agents. The free Developer plan gives $5 of usage credit each month, 5 concurrent browsers in the US, stealth mode with a Kernel-managed proxy and CAPTCHA solver, and 1-day session replays; other proxies cannot be configured. Browsers are headful by default at about $0.48 an hour, so $5 covers about 10 browser-hours (about 83 headless). Kernel says sign-up needs no credit card, but its acceptable use policy lets it require a verified payment method before granting free credit. Hobbyist is $30 a month plus usage, with $10 of credit each month.",
+      "current_state": "$0/mo. plus usage costs* get free $5 / month free credits 5 concurrent browsers live view stealth mode (captcha solver & proxy) managed auth (3 connections) session replays (1 day) file uploads & downloads vaults & payments (3 vaults)",
+      "impact": "medium",
+      "source_url": "https://www.kernel.sh/pricing",
+      "category": "Browser Automation",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-21",
+      "restatement": [
+        {
+          "url": "https://www.kernel.sh/pricing",
+          "refused": "reading_drops_a_figure_our_source_check_found",
+          "figures": [
+            "$30",
+            "$10"
+          ]
+        }
+      ],
+      "dropped_on": "2026-10-21",
+      "drop_reason": "Not a change: kernel.sh/pricing already listed managed auth (3 connections), file uploads and downloads, and vaults and payments (3 vaults) on the free plan, with $5 a month in credits, and Hobbyist's 10 concurrent browsers and 7-day replays, in the captures of 2026-09-11 and 2026-10-06."
+    },
+    {
+      "proposal_id": "2026-10-21/pinecone/pricing_restructured",
+      "proposed_on": "2026-10-21",
+      "vendor": "Pinecone",
+      "change_type": "pricing_restructured",
+      "date": "2026-10-21",
+      "date_source": "discovered",
+      "summary": "The Starter plan is still available as a free tier. The details have been updated. The page now lists specific example workloads and their capacity within the Starter plan. Additionally, the Assistant feature is now explicitly priced with usage-based costs for storage, tokens, and ingestion units. The page also details pricing for Builder, Standard, and Enterprise plans.",
+      "tier": "Starter",
+      "tier_direction": "unchanged",
+      "previous_state": "Vector database. The Starter plan is free: up to 2 GB storage, 2M write units and 1M read units a month, 1 GB of egress a month (reads that return data stop at the cap until the next billing period), 5 indexes, 1 project and 2 users, on AWS us-east-1 only. Assistant includes 1 GB storage and 500k input, 300k output and 500k context tokens a month. Three embedding models include 5M tokens a month each; bge-reranker-v2-m3 includes 500 requests a month. Builder is $20/month flat.",
+      "current_state": "The Starter plan is free for trying out and small applications. It includes up to 2 GB of database storage, up to 2M write units/month, up to 1M read units/month, up to 1GB of egress/month, up to 5 indexes, and includes Pinecone Database, Inference, and Assistant features with specific token and storage limits.",
+      "impact": "medium",
+      "source_url": "https://pinecone.io/pricing",
+      "category": "AI / ML",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-21",
+      "restatement": [
+        {
+          "url": "https://pinecone.io/pricing",
+          "refused": "reading_drops_a_figure_our_source_check_found",
+          "figures": [
+            "$20",
+            "5M tokens/mo",
+            "500 requests/mo"
+          ]
+        }
+      ],
+      "dropped_on": "2026-10-21",
+      "drop_reason": "No change: pinecone.io/pricing still gives Starter up to 2 GB storage, 2M write units and 1M read units a month and 1 GB egress; the reading describes the page's layout and other plans."
+    },
+    {
+      "proposal_id": "2026-10-21/pulumi/pricing_restructured",
+      "proposed_on": "2026-10-21",
+      "vendor": "Pulumi",
+      "change_type": "pricing_restructured",
+      "date": "2026-10-21",
+      "date_source": "discovered",
+      "summary": "The free tier now includes managed resource pricing ($0.00025/hour), and workflow cost per minute ($0.01).",
+      "tier": "Free",
+      "tier_direction": "narrowed",
+      "previous_state": "Infrastructure as Code platform — free for individuals with 1 user, unlimited projects/stacks/updates, 500 deployment minutes/mo, 25 secrets, 10K secret API calls/mo",
+      "current_state": "The Free plan is $0, includes 1 user, unlimited projects/stacks/updates, up to 500 workflow minutes/mo, 25 secrets, 10K secret API calls/mo, IaC resource pricing of $0.00025/hour, and includes IaC state management and Pulumi Deployments.",
+      "impact": "medium",
+      "source_url": "https://www.pulumi.com/pricing/",
+      "category": "Infrastructure",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-21",
+      "restatement": [
+        {
+          "url": "https://www.pulumi.com/pricing/",
+          "refused": "tier_is_not_one_we_record_as_free"
+        }
+      ],
+      "dropped_on": "2026-10-21",
+      "drop_reason": "Misreading: $0.00025/hour is the Essentials column of pulumi.com/pricing's managed-resource row; the Free column says 'Free', and Free still has 25 secrets, 10K secret API calls a month and up to 500 workflow minutes."
     }
   ]
 }
