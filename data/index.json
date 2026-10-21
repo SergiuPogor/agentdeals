@@ -35414,7 +35414,7 @@
     {
       "vendor": "Exa",
       "category": "AI / ML",
-      "description": "Web search API for AI agents with Search, Contents, Answer, Monitors and Agent endpoints. The free tier gives $10 in credits each month, up to 2,500 Instant searches, resetting on the first of the month without rollover, plus a one-time $10 onboarding bonus; no payment method required. Only a user's first team gets the free credits. Free teams get 10 QPS on search. Search costs $4 per 1,000 requests for Instant and $7 for Fast and Auto; Contents $1 per 1,000 pages per content type; Deep Search $12 to $15 per 1,000 requests. Search and Contents can also be paid per request over x402 in USDC on Base or Solana, with no API key.",
+      "description": "Web search API for AI agents with Search, Contents, Answer, Monitors and Agent endpoints. The free tier gives $10 in credits each month, up to 2,500 Lite searches, resetting on the first of the month without rollover, plus a one-time $10 onboarding bonus; no payment method required. Only a user's first team gets the free credits. Free teams get 10 QPS on search. Search costs $4 per 1,000 requests with up to 10 results for Lite, $7 for Auto, and $12 for Deep. Contents costs $1 per 1,000 pages per content type. Since October 19, 2026, Instant, Fast and Deep Reasoning are legacy search types that keep working at their current prices. Exa recommends Lite in place of Instant and Fast. Search and Contents can also be paid per request over x402 in USDC on Base or Solana, with no API key.",
       "tier": "Free",
       "url": "https://exa.ai/docs/admin/pricing",
       "tags": [
@@ -35456,9 +35456,9 @@
         "reviewed": "2026-09-01"
       },
       "free_plan_excerpt": {
-        "text": "The Free Tier gives you $10 in credits (up to 2,500 Instant searches) the day you sign up, and your free balance resets to $10 on the first of every month. No payment method required. Complete onboarding in the dashboard and your first team earns a one-time $10 bonus.",
+        "text": "The Free Tier gives you $10 in credits (up to 2,500 Lite searches) the day you sign up, and your free balance resets to $10 on the first of every month. No payment method required. Complete onboarding in the dashboard and your first team earns a one-time $10 bonus.",
         "url": "https://exa.ai/docs/admin/pricing",
-        "read_on": "2026-10-03"
+        "read_on": "2026-10-21"
       },
       "conditions": [
         {
