@@ -1365,6 +1365,18 @@
           "quote": "This transition grace period is relevant for projects that have Remote Config enabled before September 1, 2026.",
           "url": "https://firebase.google.com/docs/remote-config/pricing",
           "read_on": "2026-10-17"
+        },
+        {
+          "text": "On the Blaze plan, all Gemini Developer API usage, including calls through Firebase AI Logic, is pay-as-you-go, and most projects must prepay. A project with no billing account (on Spark) can use the Gemini Developer API's free tier with no payment method.",
+          "quote": "After linking a Cloud Billing account, all usage of the Gemini Developer API is pay-as-you-go pricing (including any usage through the Firebase AI Logic SDKs).",
+          "url": "https://firebase.google.com/docs/ai-logic/pricing",
+          "read_on": "2026-10-21"
+        },
+        {
+          "text": "From November 2, 2026, Firebase AI Logic requires App Check enforcement.",
+          "quote": "Starting November 2, 2026, Firebase App Check enforcement will be required to use Firebase AI Logic.",
+          "url": "https://firebase.google.com/docs/ai-logic/pricing",
+          "read_on": "2026-10-21"
         }
       ]
     },
