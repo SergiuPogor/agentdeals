@@ -88,6 +88,9 @@ before(async () => {
     listing("Next Monday", "The old API shuts down on 2026-11-02."),
     listing("Duplicate Cloud", "The dashboard shuts down on 2026-10-28."),
     listing("Adjacent Cloud", "The dashboard shuts down on 2026-11-01."),
+    listing("Observed Cloud", "The page checked 2026-10-28 says the endpoint is retired; the shutdown date is not given."),
+    listing("Published Cloud", "The endpoint retires on 2026-11-15 (its change log of 2026-10-28 announced the retirement)."),
+    listing("Launched Cloud", "The new model became generally available on 2026-10-28. The old model retires on 2026-11-15."),
   ] }));
   writeFileSync(path.join(scratch, "changes.json"), JSON.stringify({ changes: [
     { ...record("Monday Cloud", "2026-10-01", "Personal-account access ended on 2026-10-01; the hosted console remains until its stated shutdown date."), change_type: "restriction" },
@@ -173,6 +176,28 @@ describe("each digest week includes stated deadlines beside its dated changes", 
     const sections = [...pages.values()].map(statedSection);
     assert.equal(sections[0], sections[1]);
     assert.equal(sections[1], sections[2]);
+  });
+
+  it("excludes check, publication and launch dates from past, current and future weeks and the live tracker", async () => {
+    for (const [day, html] of pages) {
+      const section = statedSection(html);
+      for (const vendor of ["Observed Cloud", "Published Cloud", "Launched Cloud"]) {
+        assert.ok(!section.includes(vendor), `${day}: ${vendor}`);
+      }
+      assert.equal(cards(section).length, 4, day);
+    }
+    for (const route of ["/api/deadlines", "/deadlines", "/this-week"]) {
+      const body = await read(base, route);
+      assert.ok(!body.includes("Observed Cloud"), route);
+      if (route === "/api/deadlines") {
+        const entries = JSON.parse(body).deadlines;
+        assert.ok(!entries.some((entry: { vendor: string; date: string }) =>
+          ["Published Cloud", "Launched Cloud"].includes(entry.vendor) && entry.date === "2026-10-28"));
+        for (const vendor of ["Published Cloud", "Launched Cloud"]) {
+          assert.ok(entries.some((entry: { vendor: string; date: string }) => entry.vendor === vendor && entry.date === "2026-11-15"));
+        }
+      }
+    }
   });
 
   it("lists and counts a week with only a listing deadline, without an empty-week claim", async () => {
