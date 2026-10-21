@@ -22,11 +22,11 @@
       "changed": "2026-10-21"
     },
     "/ai-free-tiers": {
-      "hash": "3662bab574702d68",
+      "hash": "3d825b9c17c7da0b",
       "changed": "2026-10-21"
     },
     "/ai-ml-alternatives": {
-      "hash": "001cf650d40770b0",
+      "hash": "7880defcb0c2af33",
       "changed": "2026-10-21"
     },
     "/alternative-to": {
@@ -1099,7 +1099,7 @@
       "changed": "2026-10-21"
     },
     "/category/ai-ml": {
-      "hash": "8d50c51d96cfe4c3",
+      "hash": "2c123bd9b8ed6458",
       "changed": "2026-10-21"
     },
     "/category/analytics": {
@@ -3205,7 +3205,7 @@
       "changed": "2026-10-21"
     },
     "/free-llm-apis": {
-      "hash": "8a94a87b0f872ea9",
+      "hash": "4014c578b8c43c56",
       "changed": "2026-10-21"
     },
     "/free-nextjs-stack": {
