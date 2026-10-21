@@ -1039,10 +1039,10 @@
           "read_on": "2026-10-11"
         },
         {
-          "text": "The Neon Open Source Program gives eligible open-source projects up to $5,000 a year in credits. The project must use a recognized open-source license and be self-hostable.",
-          "quote": "Eligible projects receive up to $5,000 yearly in credits and promotional support.",
+          "text": "Neon's open source programme pays accepted projects a monthly cash sponsorship through GitHub Sponsors, for six-month terms, from a pool of at least $200,000 a year. Accepted projects can also claim $5,000 in Neon credits and $5,000 in Neon AI Gateway credits. It requires an OSI-approved license and a GitHub Sponsors profile.",
+          "quote": "Neon commits a minimum of $200,000 a year to cash sponsorships for open source maintainers, paid monthly through GitHub Sponsors.",
           "url": "https://neon.com/programs/open-source.md",
-          "read_on": "2026-10-11"
+          "read_on": "2026-10-21"
         },
         {
           "text": "After the free plan, Neon's paid plans bill only for usage, with no monthly minimum: Launch charges $0.106 per CU-hour of compute and Scale $0.222, both charge $0.35 per GB-month of storage, extra branches cost $1.50 per branch-month, and network transfer beyond 500 GB per project costs $0.10 per GB.",
