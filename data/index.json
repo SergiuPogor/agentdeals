@@ -32927,6 +32927,18 @@
           "quote": "Available on Google AI Pro for non-trial subscriptions only.",
           "url": "https://antigravity.google/docs/models",
           "read_on": "2026-10-17"
+        },
+        {
+          "text": "Some models—Gemini 4 Argon, Claude Opus 5.5, and Claude Sonnet 5.5—require a paid Google AI Pro or Google AI Ultra subscription and are \"not included in free trials\". Google's FAQ directs memberships through third-party partners, Pixel Pass, or Google Fi to Google One help for subscription management.",
+          "quote": "are not included in free trials",
+          "url": "https://antigravity.google/docs/faq",
+          "read_on": "2026-10-21"
+        },
+        {
+          "text": "Google's FAQ calls using third-party software (Claude Code, OpenClaw, and OpenCode) with an Antigravity login a violation of its Terms of Service that can lead to suspension or termination of the account. Google recommends a Gemini Enterprise or Google AI Studio API key for third-party coding agents.",
+          "quote": "Such actions can result in suspension or termination of your account.",
+          "url": "https://antigravity.google/docs/faq",
+          "read_on": "2026-10-21"
         }
       ]
     },
