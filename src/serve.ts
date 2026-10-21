@@ -34564,7 +34564,7 @@ function buildAzureFreeTier2026Page(): string {
     { title: "Data transfer between regions", desc: "Data transfer between Azure regions is billed: $0.02/GB within North America or Europe, $0.05/GB from those continents to others, and up to $0.16/GB elsewhere. Keep resources in the same region.", cost: "$0.02-0.16/GB" },
     { title: "Free tier expiration", desc: "When the 12 months end, these services are billed at pay-as-you-go rates. Microsoft will send you an email notifying you when it's time to upgrade. Set a calendar reminder for your anniversary date as well.", cost: "Varies" },
     { title: "VMs running when stopped (not deallocated)", desc: "Stopping a VM from the OS doesn't deallocate it — you still pay. You must 'Stop (Deallocate)' from the Azure Portal or CLI to stop billing. Public IP charges continue separately.", cost: "Full VM hourly rate" },
-    { title: "Managed disk charges on deallocated VMs", desc: "Even when a VM is deallocated, you pay for its managed disks. A 64 GB P6 SSD costs $9.29/month in East US 2 and $10.21/month in East US. Delete disks you don't need.", cost: "$9.29/mo per P6 disk (East US 2)" },
+    { title: "Managed disk charges on deallocated VMs", desc: "Even when a VM is deallocated, you pay for its managed disks. A 64 GB P6 SSD costs $9.28/month in East US 2 and $10.21/month in East US. Delete disks you don't need.", cost: "$9.28/mo per P6 disk (East US 2)" },
   ];
 
   interface CloudAlt {

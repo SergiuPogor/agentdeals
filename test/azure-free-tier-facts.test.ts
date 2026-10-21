@@ -30,6 +30,7 @@ const WITHDRAWN: Record<string, RegExp> = {
   "a spending limit set in Cost Management": /set spending limits on your subscription/i,
   "a Log Analytics workspace that ingests logs by default": /Every Azure subscription gets a Log Analytics workspace/i,
   "5 GB of bandwidth in the first 12 months": /5 GB first 12 months/,
+  "a P6 disk at $9.29 a month": /\$9\.29\b/,
   "a P6 disk at about $9.60 a month": /\$9\.60/,
   "Container Apps as a 12-month service": /Container Apps \(12-month\)/,
   "Blob Storage as an always-free service": /Azure Storage \(Blob\)/,
@@ -64,7 +65,8 @@ const STATED_ON_THE_PAGE = [
   "When the 12 months end, these services are billed at pay-as-you-go rates. Microsoft will send you an email notifying you when it's time to upgrade.",
   "The first 5 GB a month per billing account are free. After that, ingestion is billed per GB at a regional rate: $2.30/GB in East US. Resource logs are collected only once you create a diagnostic setting.",
   "$0.02/GB within North America or Europe, $0.05/GB from those continents to others, and up to $0.16/GB elsewhere.",
-  "A 64 GB P6 SSD costs $9.29/month in East US 2 and $10.21/month in East US.",
+  "A 64 GB P6 SSD costs $9.28/month in East US 2 and $10.21/month in East US.",
+  "$9.28/mo per P6 disk (East US 2)",
   "You get 750 hours a month of each, for Linux and again for Windows. New subscriptions can't deploy the earlier B-series v1 VMs.",
 ];
 
