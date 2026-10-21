@@ -11332,7 +11332,7 @@
     {
       "vendor": "Harness CI",
       "category": "CI/CD",
-      "description": "CI/CD platform — Free Plan is available for individual developers and small teams. It includes up to 60 concurrent pipeline executions, 250GB storage, up to 1 organization, up to 500 maximum users, up to 5 custom dashboards, unlimited templates, up to 5 custom roles, and policy as code.",
+      "description": "CI/CD platform — free plan: 2,000 Harness Cloud credits a month that expire monthly, 2,000 minutes on the 2-core Linux machine and 1,000 on the 4-core one. Harness Cloud on the Free plan needs a business email address and credit card validation. Builds on your own machine with the local runner have no limits. Paid plans have no published price.",
       "tier": "Free",
       "url": "https://www.harness.io/pricing",
       "tags": [
@@ -11351,12 +11351,9 @@
         "detail": "the page names Harness CI, renders \"free tier\" and no amount, and its markup states 1 typed price (Free Plan USD 0)",
         "read": "markup"
       },
-      "restated_from": {
-        "reading_date": "2026-08-28",
-        "source_url": "https://www.harness.io/pricing",
+      "restatement_reverted": {
         "record_date": "2026-08-28",
-        "change_type": "limits_reduced",
-        "restated_on": "2026-09-20"
+        "reverted_on": "2026-10-21"
       }
     },
     {
@@ -36369,7 +36366,7 @@
     {
       "vendor": "Jenkins",
       "category": "CI/CD",
-      "description": "Free OSS (MIT). Self-hosted automation server — a self-contained Java program that runs out of the box on your own machine, with no hosted or paid plan offered by the project. Over 1,900 plugins; the leading open source automation server. jenkins.io/license/ carries the MIT License, which grants use free of charge. Read 2026-09-19.",
+      "description": "Free OSS (MIT). Self-hosted automation server — a self-contained Java program that runs out of the box on your own machine, with no hosted or paid plan offered by the project. Over 2,300 plugins; the leading open source automation server. jenkins.io/license/ carries the MIT License, which grants use free of charge. Read 2026-10-21.",
       "tier": "Free OSS",
       "url": "https://www.jenkins.io/",
       "tags": [

@@ -912,7 +912,8 @@
       "source_url": "https://www.harness.io/pricing",
       "record_date": "2026-08-28",
       "change_type": "limits_reduced",
-      "summary": "The free plan now has significantly reduced limits. Previously 2,000 build credits/month. The current page details limits for concurrent pipeline executions (up to 60), storage (250GB), and organizations (up to 1)."
+      "summary": "The free plan now has significantly reduced limits. Previously 2,000 build credits/month. The current page details limits for concurrent pipeline executions (up to 60), storage (250GB), and organizations (up to 1).",
+      "reverted_on": "2026-10-21"
     },
     {
       "vendor": "Zoho Docs",

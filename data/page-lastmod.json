@@ -1131,7 +1131,7 @@
       "changed": "2026-10-21"
     },
     "/category/ci-cd": {
-      "hash": "0bad4b986894dba1",
+      "hash": "50d3a4f5f49978c4",
       "changed": "2026-10-21"
     },
     "/category/cloud-hosting": {
@@ -1337,7 +1337,7 @@
       "daily": true
     },
     "/ci-cd-alternatives": {
-      "hash": "b06d71ac0d5f0d8a",
+      "hash": "b462a706fb952d9a",
       "changed": "2026-10-21"
     },
     "/ci-cd-pricing": {
@@ -1345,7 +1345,7 @@
       "changed": "2026-10-21"
     },
     "/cicd-free-tier-comparison-2026": {
-      "hash": "dec2c02cf6448414",
+      "hash": "a79294992a5cd55e",
       "changed": "2026-10-21"
     },
     "/circleci-vs-github-actions": {
@@ -3138,7 +3138,7 @@
       "changed": "2026-10-21"
     },
     "/email-comparison-2026": {
-      "hash": "80e539bfaf57ba75",
+      "hash": "d7e91c755280f536",
       "changed": "2026-10-21"
     },
     "/email-service-alternatives": {
@@ -3245,8 +3245,8 @@
       "changed": "2026-10-21"
     },
     "/github-actions-alternatives": {
-      "hash": "920f18d0e8e36e8d",
-      "changed": "2026-10-11"
+      "hash": "7588d1630f3b254d",
+      "changed": "2026-10-21"
     },
     "/github-actions-vs-gitlab-ci": {
       "hash": "57ca3bb8c472e507",
@@ -3624,7 +3624,7 @@
       "changed": "2026-10-21"
     },
     "/supabase-vs-firebase": {
-      "hash": "f18dabf512cd9fa8",
+      "hash": "4f42590c8ed93b72",
       "changed": "2026-10-21"
     },
     "/team-collaboration-alternatives": {
@@ -6124,7 +6124,7 @@
       "changed": "2026-10-21"
     },
     "/vendor/harness-ci": {
-      "hash": "6feab50cd56719bc",
+      "hash": "528eb736588b2d69",
       "changed": "2026-10-21"
     },
     "/vendor/harness-feature-flags": {
@@ -6505,7 +6505,7 @@
       "changed": "2026-10-21"
     },
     "/vendor/jenkins": {
-      "hash": "3310eb7fc4a3480f",
+      "hash": "f78d0995333c9103",
       "changed": "2026-10-21"
     },
     "/vendor/jetbrains": {
