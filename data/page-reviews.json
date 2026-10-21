@@ -469,15 +469,15 @@
       ],
       "badge_subjects_unresolved": [],
       "stat_card_subjects_unresolved": [],
-      "reviewed_at": "2026-09-13",
+      "reviewed_at": "2026-10-21",
       "reviewer": "pm",
-      "review_outcome": "fail",
-      "review_note": null,
+      "review_outcome": "pass",
+      "review_note": "The page's 74 or so claims were checked on 2026-10-21 against AWS's own pricing pages, docs and free-tier directory. Two were wrong and are corrected (https://github.com/robhunter/agentdeals/issues/2988): AWS offers no Bedrock free tier or trial, since Bedrock is billed per token and its free-tier directory of 133 services has no Bedrock entry; and CloudWatch detailed monitoring costs $0.30 per metric a month, about $2.10 for an instance sending 7 metrics, not $2.10 a metric. The Neon row's open source programme was out of date and now gives Neon's cash sponsorships, from Neon's programme page read on 2026-10-21. The CodeCommit row is right although AWS's pricing page still says the service is closed to new customers: AWS reopened it on 2025-11-24, per its DevOps blog. Not stated on the page: Cloudflare says it will try to give at least a week's notice before changing a workers.dev subdomain, and Supabase pauses free projects after a week of inactivity and allows 2 active projects. The Recent AWS Changes rows come from our dated records and were not re-read.",
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 68,
-      "table_figures_from_records": 39,
+      "table_figures": 69,
+      "table_figures_from_records": 40,
       "tables": [
         {
           "label": "Always Free Services",
@@ -491,8 +491,8 @@
         },
         {
           "label": "AWS vs Alternatives",
-          "figures": 48,
-          "from_records": 30
+          "figures": 49,
+          "from_records": 31
         },
         {
           "label": "Recent AWS Changes",
@@ -524,15 +524,15 @@
       ],
       "badge_subjects_unresolved": [],
       "stat_card_subjects_unresolved": [],
-      "reviewed_at": "2026-09-13",
+      "reviewed_at": "2026-10-21",
       "reviewer": "pm",
-      "review_outcome": "fail",
-      "review_note": null,
+      "review_outcome": "pass",
+      "review_note": "The page's 75 or so claims were checked on 2026-10-21 against Microsoft's, AWS's and Google's own pricing pages and docs. One figure was wrong and is corrected: a P6 managed disk in East US 2 costs $9.28 a month in Microsoft's Retail Prices API, not $9.29 (https://github.com/robhunter/agentdeals/issues/2985). The other first readings that differed were themselves wrong: the 12-month virtual machine row leaves out B1s because Microsoft's retirement page bars B-series v1 machines for new subscriptions, and the 50,000-user figure for older Cognito user pools is in AWS's Cognito FAQ. The 12-month Azure Files, Managed Disks, Blob Storage and Service Bus rows match Microsoft's free-services list as its acom-sandbox.azure.net copy serves it; the live list loads in a script widget that did not show them on 2026-10-21. Not stated on the page: AI Search's free tier caps 10,000 documents, IoT Hub's F1 tier meters messages in 0.5 KB units, the $200 credit cannot pay for Azure DevOps or support plans, and the AWS comparison row gives AWS's always-free services but not its new-account credits. The Recent Azure Changes rows come from our dated records and were not re-read.",
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 73,
-      "table_figures_from_records": 32,
+      "table_figures": 74,
+      "table_figures_from_records": 33,
       "tables": [
         {
           "label": "Always Free Services",
@@ -551,8 +551,8 @@
         },
         {
           "label": "Azure vs Alternatives",
-          "figures": 42,
-          "from_records": 30
+          "figures": 43,
+          "from_records": 31
         },
         {
           "label": "Recent Azure Changes",
@@ -765,10 +765,10 @@
       "stat_card_subjects_unresolved": [
         "GCP"
       ],
-      "reviewed_at": "2026-09-12",
+      "reviewed_at": "2026-10-21",
       "reviewer": "pm",
-      "review_outcome": "fail",
-      "review_note": null,
+      "review_outcome": "pass",
+      "review_note": "The page's 64 claims about AWS, Google Cloud, Azure and DigitalOcean were checked on 2026-10-21 against each provider's own pricing pages and docs, and no figure was wrong. The two first readings that differed were themselves wrong: CloudFront's always-free 1 TB of transfer and 10,000,000 requests a month are on aws.amazon.com/cloudfront/pricing/pay-as-you-go/, and Azure SQL Database's free offer covers up to 10 databases per subscription (learn.microsoft.com, free-offer). Four figures use GB where the provider writes GiB, or the reverse (Cloud Run memory, BigQuery storage, GCP egress, DigitalOcean transfer overage). Not stated on the page: Azure Functions' Flex Consumption plan has a smaller free grant (250,000 executions and 100,000 GB-s) than the Consumption plan the table gives; DigitalOcean's daily backups cost 30% of the Droplet price, against 20% for weekly; Spaces includes 1 TiB of outbound transfer; Google for Startups' Start tier ($2,000) needs no funding. The Pricing Change Timeline rows come from our dated records and were not re-read.",
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
@@ -879,13 +879,13 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 82,
-      "table_figures_from_records": 51,
+      "table_figures": 83,
+      "table_figures_from_records": 52,
       "tables": [
         {
           "label": "Main Comparison Table",
-          "figures": 37,
-          "from_records": 21
+          "figures": 38,
+          "from_records": 22
         },
         {
           "label": "Postgres-Compatible Databases",
@@ -1919,8 +1919,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 89,
-      "table_figures_from_records": 37,
+      "table_figures": 90,
+      "table_figures_from_records": 38,
       "tables": [
         {
           "label": "Always Free Products",
@@ -1934,8 +1934,8 @@
         },
         {
           "label": "GCP vs AWS vs Others",
-          "figures": 48,
-          "from_records": 30
+          "figures": 49,
+          "from_records": 31
         },
         {
           "label": "Recent GCP & Google Changes",
