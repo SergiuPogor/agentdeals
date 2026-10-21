@@ -232,7 +232,7 @@ const STATED: Record<string, string[]> = {
   "/free-llm-apis": [
     "OpenRouter aggregates 25+ free models through one OpenAI-compatible API.",
     "OpenRouter gives one API key for 25+ free models.",
-    "Of the proprietary frontier APIs, xAI and Anthropic are pay-as-you-go (Anthropic gives new users a small amount of free credits to test the API), and OpenAI prices no GPT model free.",
+    "Of the proprietary frontier APIs, xAI and Anthropic are pay-as-you-go (Anthropic's Claude Max and Team plans include monthly credits for the Claude API), and OpenAI prices no GPT model free.",
     "OpenRouter — 25+ free models through one OpenAI-compatible API; free models are capped at 20 requests a minute and 50 a day, or 1,000 a day once you have bought at least $10 of credits.",
     "Want to test hosted models before paying?",
     "NVIDIA NIM — free endpoints on build.nvidia.com for models marked Free Endpoint, such as DeepSeek V4.1 Flash, GLM 5.3 Flash and gpt-oss-20b, at up to 40 requests per minute; NVIDIA retires hosted models on dates it posts on each model's page, and NVIDIA's API Trial Terms allow testing and evaluation only, not production. Baseten — new workspaces receive credits for testing and deployment; Baseten does not state the amount.",
@@ -268,7 +268,7 @@ const STATED: Record<string, string[]> = {
     "read on 2026-09-27",
   ],
   "/free-tier-risk": [
-    "New API users receive a small amount of free credits to test the API.",
+    "The API is pay-as-you-go; Claude Max and Team plans include monthly API credits.",
     "Its API prices one model free (omni-moderation-latest); no GPT model is priced free.",
   ],
   "/openai-assistants-alternatives": [
@@ -283,12 +283,12 @@ const STATED: Record<string, string[]> = {
   ],
   "/openai-assistants-migration": [
     "No GPT model is priced free",
-    "Small free credits for new users",
+    "Monthly credits for Max and Team plans",
     "Current models: Claude Fable 5.1, Opus 5.5, Sonnet 5 and Haiku 4.5.",
-    "Anthropic gives new users a small amount of free credits to test the API.",
+    "Claude Max and Team plans include monthly Claude API credits ($100, $200, up to $500 pooled). They do not cover Claude Code. Anthropic's pages state no free credit amount for new API users.",
     "No GPT model priced free",
     "omni-moderation-latest is the only Free model",
-    "Amount not stated",
+    "$100 (Max 5x), $200 (Max 20x), up to $500 (Team)",
     "Anthropic Claude — Claude Fable 5.1 for demanding reasoning and long-horizon agentic work.",
   ],
 };
@@ -317,6 +317,7 @@ async function crawl(routes: string[]): Promise<Crawl> {
       if (!response.ok) continue;
       const html = await response.text();
       result.read++;
+      if (/small amount of free credits|small free credits/i.test(html)) result.retired.push(`${route}: unsupported signup-credit claim`);
       const text = readableText(html);
       for (const rule of RULES) if (rule.names && new RegExp(rule.names.source).test(text)) result.vendorsNamed.add(rule.vendor);
       result.retired.push(
@@ -367,6 +368,54 @@ describe("AI API vendors' free terms on the guides", () => {
       return lines.filter((line) => !text.includes(line)).map((line) => `${page}: ${line}`);
     });
     assert.deepStrictEqual(missing, []);
+  });
+
+  it("states the subscription credits once in the frontier API summary", () => {
+    const summary = "Of the proprietary frontier APIs, xAI and Anthropic are pay-as-you-go (Anthropic's Claude Max and Team plans include monthly credits for the Claude API), and OpenAI prices no GPT model free.";
+    const paragraphs = [...served.get("/free-llm-apis")!.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map((m) => readableText(m[1]));
+    assert.strictEqual(paragraphs.filter((p) => p.includes(summary)).length, 1);
+    assert.strictEqual(readableText(served.get("/free-llm-apis")!).split(summary).length - 1, 1);
+  });
+
+  it("states the subscription credit amounts in the Anthropic migration row", () => {
+    const html = served.get("/openai-assistants-migration")!;
+    const rows = [...html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)]
+      .map((m) => [...m[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)].map((c) => readableText(c[1])))
+      .filter((cells) => cells[0] === "Anthropic Claude");
+    assert.deepStrictEqual(rows, [["Anthropic Claude", "Monthly credits for Max and Team plans", "$100 (Max 5x), $200 (Max 20x), up to $500 (Team)", "Tool use, 200K–1M context"]]);
+  });
+
+  it("states the subscription credits once in the Anthropic migration card", () => {
+    const cards = [...served.get("/openai-assistants-migration")!.matchAll(/<div class="diff-card"[^>]*>([\s\S]*?)<\/div>/g)]
+      .map((m) => readableText(m[1])).filter((c) => c.startsWith("Anthropic Claude API "));
+    assert.strictEqual(cards.length, 1);
+    assert.strictEqual(cards[0].split("Free option: Monthly credits for Max and Team plans").length - 1, 1);
+  });
+
+  it("states the Claude Code exclusion and new-user credit uncertainty in both migration answers", () => {
+    const html = served.get("/openai-assistants-migration")!;
+    const suffix = "Claude Max and Team plans include monthly Claude API credits ($100, $200, up to $500 pooled). They do not cover Claude Code. Anthropic's pages state no free credit amount for new API users.";
+    const question = "What is the cheapest alternative to the OpenAI Assistants API?";
+    const answers = [...html.matchAll(/<div class="faq-q">([\s\S]*?)<\/div>\s*<div class="faq-a">([\s\S]*?)<\/div>/g)]
+      .filter((m) => readableText(m[1]) === question).map((m) => readableText(m[2]));
+    const structured = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+      .map((m) => JSON.parse(m[1])).filter((data) => data["@type"] === "FAQPage")
+      .flatMap((data) => data.mainEntity).filter((entry) => entry.name === question)
+      .map((entry) => entry.acceptedAnswer.text);
+    assert.strictEqual(answers.length, 1);
+    assert.strictEqual(structured.length, 1);
+    for (const answer of [...answers, ...structured]) {
+      assert.ok(answer.includes(suffix), answer);
+      assert.strictEqual(answer.split(suffix).length - 1, 1);
+    }
+  });
+
+  it("states the subscription credits once in each Anthropic risk reasoning cell", () => {
+    const rows = [...served.get("/free-tier-risk")!.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)]
+      .map((m) => [...m[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)].map((c) => readableText(c[1])))
+      .filter((cells) => cells[0] === "Anthropic");
+    assert.strictEqual(rows.length, 2);
+    for (const cells of rows) assert.strictEqual(cells[3], "The API is pay-as-you-go; Claude Max and Team plans include monthly API credits.");
   });
 
   it("lists OpenAI's model shutdowns of October 23, 2026 on /shutdowns", () => {

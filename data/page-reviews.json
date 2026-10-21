@@ -2551,7 +2551,7 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": false,
-      "table_figures": 26,
+      "table_figures": 29,
       "table_figures_from_records": 2,
       "tables": [
         {
@@ -2561,7 +2561,7 @@
         },
         {
           "label": "Free Tier Alternatives",
-          "figures": 2,
+          "figures": 5,
           "from_records": 0
         },
         {
