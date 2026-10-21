@@ -824,11 +824,11 @@
       "changed": "2026-10-17"
     },
     "/aws-free-tier-2026": {
-      "hash": "509cb88ffe2305d0",
+      "hash": "32037cde511bb143",
       "changed": "2026-10-21"
     },
     "/azure-free-tier-2026": {
-      "hash": "04b8047ea8be54d0",
+      "hash": "27bda4c3b9c0f60e",
       "changed": "2026-10-21"
     },
     "/backblaze-b2-vs-cloudflare-r2": {
@@ -2704,7 +2704,7 @@
       "changed": "2026-10-21"
     },
     "/database-free-tier-comparison-2026": {
-      "hash": "b7f50173e709e334",
+      "hash": "0fb3aa9dd1cd01ac",
       "changed": "2026-10-21"
     },
     "/database-pricing": {
