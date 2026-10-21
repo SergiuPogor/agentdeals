@@ -676,7 +676,7 @@ describe("every weekly surface reports the same week", () => {
     const digest = await digestForWeekStarting(ARCHIVED_BATCH_WEEK);
     assert.ok(digest.discovered_in_week > 0, "the archived week under test should hold a discovery batch");
     const week = await (await fetch(`${base}/digest/${ARCHIVED_BATCH_SLUG}`)).text();
-    assert.ok(week.includes(`${changeCount(digest.changes_in_week)} tracked in week`), "the archived week should count its dated changes");
+    assert.ok(week.includes(`<strong>${digest.changes_in_week}</strong> change`), "the archived week should count its dated changes separately from stated deadlines");
     assert.ok(week.includes(firstReadHeading(digest.discovered_in_week)), "the archived week should name its discovery batch");
     assert.ok(
       !week.includes(`${changeCount(digest.changes_in_week + digest.discovered_in_week)} tracked in week`),
@@ -710,7 +710,7 @@ describe("every weekly surface reports the same week", () => {
       const digest = await digestForWeekStarting(weekStart);
       const slug = isoWeekSlug(weekStart);
       const page = await (await fetch(`${base}/digest/${slug}`)).text();
-      const pageCount = page.match(/<p class="page-meta">(\d+) changes? tracked in week/);
+      const pageCount = page.match(/<p class="page-meta">[^<]*?\b(\d+) changes? tracked (?:in week|and)/);
       assert.ok(pageCount, `/digest/${slug} should state its count`);
       assert.strictEqual(parseInt(pageCount![1], 10), digest.changes_in_week, `/digest/${slug}`);
       const row = archive.match(new RegExp(`href="/digest/${slug}"><span class="week-label">[^<]*</span><span class="week-count">(\\d+) changes?`));
@@ -746,15 +746,15 @@ describe("every weekly surface reports the same week", () => {
     assert.ok(body.date_provenance.note.startsWith(opening), body.date_provenance.note);
   });
 
-  it("leaves an archived week with no discovery batch alone", async () => {
+  it("keeps the dated count separate from deadlines on an archived week with no discovery batch", async () => {
     proc = await startHttpServer();
     const base = `http://127.0.0.1:${serverPort}`;
     const weekStart = await latestArchivedWeekWithChangesAndNoDiscoveryBatch();
     const digest = await digestForWeekStarting(weekStart);
     const slug = isoWeekSlug(weekStart);
     const week = await (await fetch(`${base}/digest/${slug}`)).text();
-    const stated = `${changeCount(digest.changes_in_week)} tracked in week ${Number(slug.slice(6))}, ${slug.slice(0, 4)}.`;
-    assert.ok(week.includes(stated), `/digest/${slug} should say "${stated}"`);
+    const datedCount = Number(week.match(/<p class="page-meta">[^<]*?\b(\d+) changes? tracked (?:in week|and)/)?.[1]);
+    assert.strictEqual(datedCount, digest.changes_in_week, `/digest/${slug} should count dated changes separately`);
     assert.ok(!week.includes("no known effective date"), `/digest/${slug} has no batch without a known effective date to report`);
   });
 });

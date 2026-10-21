@@ -4782,6 +4782,15 @@ function weekNotStartedLine(year: number, week: number, count: number): string {
   return periodNotStartedLine(`Week ${week}, ${year}`, count);
 }
 
+function statedDeadlinesInWeek(year: number, week: number): StatedDeadline[] {
+  const start = getWeekStart(year, week).getTime();
+  const before = new Date(start - 86400000).toISOString().slice(0, 10);
+  const end = new Date(start + 6 * 86400000).toISOString().slice(0, 10);
+  const records = changesTheVendorMade(recordsStillInForce(loadDealChanges()));
+  return statedDeadlines(deadlineTextsOf(offers, records), records, before)
+    .filter(deadline => deadline.date <= end && (!deadline.record || deadline.record.date < deadline.date));
+}
+
 function buildDigestPage(weekKey: string): string | null {
   const parsed = parseWeekKey(weekKey);
   if (!parsed) return null;
@@ -4791,6 +4800,14 @@ function buildDigestPage(weekKey: string): string | null {
   const byWeek = getChangesByWeek();
   const weekRecords = vendorChangesAmong(byWeek.get(weekKey) ?? []);
   const { dated: changes, discovered } = partitionByDateProvenance(weekRecords);
+  const stated = statedDeadlinesInWeek(year, week);
+  const eventCount = changes.length + stated.length;
+  const listingDeadlineCount = stated.filter(deadline => deadline.statedIn !== "record").length;
+  const recordDeadlineCount = stated.length - listingDeadlineCount;
+  const deadlineCounts = [
+    ...(listingDeadlineCount ? [`${listingDeadlineCount} deadline${listingDeadlineCount === 1 ? "" : "s"} our listings state`] : []),
+    ...(recordDeadlineCount ? [`${recordDeadlineCount} deadline${recordDeadlineCount === 1 ? "" : "s"} stated in earlier change records`] : []),
+  ].join(" and ");
   const comingUpHtml = weekKey === getCurrentWeekKey() ? comingUpSectionHtml(servedOn, new Set(weekRecords), "impact-section coming-up") : "";
   const dateRange = formatDateRange(year, week);
   const discoveryNote = discovered.length > 0 ? coveringBracketedChanges(discoveryBatchNote(discovered.length, `during ${dateRange}`), discovered) : "";
@@ -4798,8 +4815,13 @@ function buildDigestPage(weekKey: string): string | null {
     ? ` ${discovered.length} more recorded with no known effective date.`
     : "";
   const title = `Developer Tool Pricing Changes: ${dateRange} — AgentDeals`;
-  const notStarted = changes.length > 0 && weekHasNotStarted(year, week, servedOn);
-  const metaDesc = changes.length > 0
+  const notStarted = eventCount > 0 && weekHasNotStarted(year, week, servedOn);
+  const weekLine = stated.length > 0
+    ? `${notStarted ? `Week ${week}, ${year} has not started. ` : ""}${eventCount} event${eventCount === 1 ? "" : "s"} ${notStarted ? "scheduled for" : "in"} week ${week}, ${year}: ${changes.length} change${changes.length === 1 ? "" : "s"} ${notStarted ? "scheduled" : "tracked"} and ${deadlineCounts}.`
+    : notStarted ? weekNotStartedLine(year, week, changes.length) : `${changes.length} change${changes.length !== 1 ? "s" : ""} tracked in week ${week}, ${year}.`;
+  const metaDesc = stated.length > 0
+    ? `${eventCount} event${eventCount === 1 ? "" : "s"} for developer tools during ${dateRange}: ${changes.length} pricing change${changes.length === 1 ? "" : "s"} ${notStarted ? "scheduled" : "tracked"} and ${deadlineCounts}.${discoveryClause}`
+    : changes.length > 0
     ? `${changes.length} pricing changes ${notStarted ? "scheduled" : "tracked"} for developer tools during ${dateRange}. ${changes.filter(c => c.impact === "high").length} high-impact changes.${discoveryClause}`
     : `No pricing changes tracked for developer tools during ${dateRange}.${discoveryClause}`;
 
@@ -4813,9 +4835,11 @@ function buildDigestPage(weekKey: string): string | null {
   const discoveryPill = discovered.length > 0
     ? `\n    <div class="stat-pill"><span style="width:8px;height:8px;border-radius:50%;background:#8b949e;display:inline-block"></span> <strong>${discovered.length}</strong> first read</div>`
     : "";
-  const statsHtml = changes.length > 0 ? `
+  const statsHtml = eventCount > 0 ? `
   <div class="stats-bar">
-    <div class="stat-pill"><strong>${changes.length}</strong> change${changes.length !== 1 ? "s" : ""}</div>
+    <div class="stat-pill"><strong>${eventCount}</strong> ${stated.length > 0 ? (eventCount === 1 ? "event" : "events") : (changes.length === 1 ? "change" : "changes")}</div>${stated.length > 0 ? `
+    <div class="stat-pill"><strong>${changes.length}</strong> change${changes.length === 1 ? "" : "s"}</div>
+    <div class="stat-pill"><strong>${stated.length}</strong> stated deadline${stated.length === 1 ? "" : "s"}</div>` : ""}
     ${Array.from(byCountLabel.entries()).map(([label, { count, color }]) =>
       `<div class="stat-pill"><span style="width:8px;height:8px;border-radius:50%;background:${color};display:inline-block"></span> <strong>${count}</strong> ${label}</div>`
     ).join("\n    ")}${discoveryPill}
@@ -4851,7 +4875,7 @@ function buildDigestPage(weekKey: string): string | null {
     <h2><span class="impact-dot" style="background:${impactColors[level]}"></span> ${impactLabels[level]} (${byImpact[level].length})</h2>
     ${byImpact[level].sort((a, b) => b.date.localeCompare(a.date)).map(c => digestEntry(c, impactColors[level])).join("\n    ")}
   </div>`).join("\n")
-    : `<div class="empty-msg"><p>No pricing changes tracked this week.</p><p style="margin-top:.5rem"><a href="/digest/archive">Browse the archive</a> or <a href="/feed.xml">subscribe via RSS</a>.</p></div>`;
+    : stated.length > 0 ? "" : `<div class="empty-msg"><p>No pricing changes tracked this week.</p><p style="margin-top:.5rem"><a href="/digest/archive">Browse the archive</a> or <a href="/feed.xml">subscribe via RSS</a>.</p></div>`;
 
   const firstReadHtml = discovered.length > 0 ? `
   <div class="impact-section">
@@ -4860,7 +4884,21 @@ function buildDigestPage(weekKey: string): string | null {
     ${[...discovered].sort((a, b) => b.date.localeCompare(a.date)).map(c => digestEntry(c, "#8b949e")).join("\n    ")}
   </div>` : "";
 
-  const bodyHtml = [changesHtml, firstReadHtml].filter(Boolean).join("\n");
+  const statedHtml = stated.length > 0 ? `
+  <div class="impact-section stated-deadlines">
+    <h2>Deadlines stated for ${dateRange} (${stated.length})</h2>
+    <p>${escHtmlServer(deadlineCounts)}. These are quoted dates, not additional change records.</p>
+    ${stated.map(deadline => `<div class="change-entry" style="border-left-color:#d29922">
+      <div class="change-header">
+        <span class="change-badge" style="background:#d29922">stated deadline</span>
+        <span class="change-vendor">${escHtmlServer(deadline.vendor)}</span>
+        <span class="change-date">${escHtmlServer(deadline.date)}</span>
+        <span class="change-cat">${escHtmlServer(deadline.category)}</span>
+      </div>
+      <div class="change-summary">${statedDeadlineLine(deadline).summaryHtml}</div>
+    </div>`).join("\n    ")}
+  </div>` : "";
+  const bodyHtml = [changesHtml, statedHtml, firstReadHtml].filter(Boolean).join("\n");
 
   const catCounts = new Map<string, number>();
   for (const c of changes) {
@@ -4919,7 +4957,7 @@ ${OG_IMAGE_META}${GOOGLE_VERIFICATION_META}<link rel="icon" type="image/png" hre
   ${buildGlobalNav("digest")}
   <div class="breadcrumb"><a href="/">AgentDeals</a> &rsaquo; <a href="/digest/archive">Digest</a> &rsaquo; ${weekKey}</div>
   <h1>Pricing Changes: ${dateRange}</h1>
-  <p class="page-meta">${notStarted ? weekNotStartedLine(year, week, changes.length) : `${changes.length} change${changes.length !== 1 ? "s" : ""} tracked in week ${week}, ${year}.`}${discoveryClause}</p>
+  <p class="page-meta">${escHtmlServer(weekLine)}${discoveryClause}</p>
 ${statsHtml}
 ${bodyHtml}
 ${trendingHtml}${comingUpHtml}
