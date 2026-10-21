@@ -350,6 +350,18 @@
           "quote": "It is on by default for projects on Free plans created on or after August 19, 2026, and off by default on paid plans.",
           "url": "https://docs.netlify.com/manage/projects/powered-by-netlify-badge/",
           "read_on": "2026-10-12"
+        },
+        {
+          "text": "Netlify Database compute and bandwidth use the same 300 monthly credits as other Free plan features. Compute costs 10 credits per unit, with one unit used per hour at 1 compute unit. Bandwidth costs 20 credits per GB. This allows about 30 hours of database activity if no other features use credits.",
+          "quote": "The current credit cost is 10 credits per unit.",
+          "url": "https://docs.netlify.com/build/data-and-storage/netlify-database/billing-and-usage/",
+          "read_on": "2026-10-21"
+        },
+        {
+          "text": "On the Free plan, an account can have 3 databases. Each runs at 1 compute unit, sleeps after 5 minutes without activity and cannot be set to stay on. Each is limited to 5 GB of storage, and to 5 GB of data written and 5 GB of bandwidth per billing period.",
+          "quote": "Netlify Database has limits based on your Credit-based pricing plan.",
+          "url": "https://docs.netlify.com/build/data-and-storage/netlify-database/billing-and-usage/",
+          "read_on": "2026-10-21"
         }
       ],
       "official_mcp_servers": [
