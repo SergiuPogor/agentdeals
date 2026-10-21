@@ -4791,6 +4791,14 @@ function statedDeadlinesInWeek(year: number, week: number): StatedDeadline[] {
     .filter(deadline => deadline.date <= end && (!deadline.record || deadline.record.date < deadline.date));
 }
 
+function digestStatedDeadlineLine(deadline: StatedDeadline): DeadlineLine {
+  const line = statedDeadlineLine(deadline);
+  const hold = deadline.listing ? freePlanExcerptHoldOn(deadline.listing) : null;
+  const context = hold ? recordsStillInForce(loadDealChanges()).find(record =>
+    record.vendor === deadline.vendor && record.date === hold.record_date && record.change_type === hold.change_type) : null;
+  return context ? { ...line, summaryHtml: `${line.summaryHtml} ${changeSummaryHtml(context, escHtmlServer)}` } : line;
+}
+
 function buildDigestPage(weekKey: string): string | null {
   const parsed = parseWeekKey(weekKey);
   if (!parsed) return null;
@@ -4888,7 +4896,7 @@ function buildDigestPage(weekKey: string): string | null {
   <div class="impact-section stated-deadlines">
     <h2>Deadlines stated for ${dateRange} (${stated.length})</h2>
     <p>${escHtmlServer(deadlineCounts)}. These are quoted dates, not additional change records.</p>
-    ${stated.map(statedDeadlineLine).map(line => `<div class="change-entry" style="border-left-color:#d29922">
+    ${stated.map(digestStatedDeadlineLine).map(line => `<div class="change-entry" style="border-left-color:#d29922">
       <div class="change-header">
         <span class="change-badge" style="background:#d29922">stated deadline</span>
         <span class="change-vendor">${escHtmlServer(line.vendor)}</span>

@@ -24,11 +24,11 @@ function record(vendor: string, date: string, summary: string) {
   };
 }
 
-function listing(vendor: string, description: string, conditions: unknown[] = []) {
+function listing(vendor: string, description: string, conditions: unknown[] = [], hold?: { record_date: string; change_type: string; reason: string }) {
   return {
     vendor, description, conditions, category: "Cloud Hosting", tier: "Free",
     url: `https://example.com/${vendor.toLowerCase().replaceAll(" ", "-")}/pricing`,
-    verifiedDate: "2026-10-01",
+    verifiedDate: "2026-10-01", ...(hold ? { free_plan_excerpt_hold: hold } : {}),
   };
 }
 
@@ -76,7 +76,7 @@ before(async () => {
     listing("Monday Cloud", "The hosted console shuts down on 2026-10-26.", [{
       text: "A billing email is required.", quote: "A billing email is required.",
       url: "https://example.com/billing", read_on: "2026-10-01",
-    }]),
+    }], { record_date: "2026-10-01", change_type: "restriction", reason: "Personal-account access ended on 2026-10-01." }),
     listing("Sunday Cloud", "The free runtime is retired on 2026-11-01.", [{
       text: "Search remains free through 2026-10-31, then costs $2 from 2026-11-01.",
       quote: "Search pricing changes.", url: "https://example.com/search-prices", read_on: "2026-10-01",
@@ -90,6 +90,7 @@ before(async () => {
     listing("Adjacent Cloud", "The dashboard shuts down on 2026-11-01."),
   ] }));
   writeFileSync(path.join(scratch, "changes.json"), JSON.stringify({ changes: [
+    { ...record("Monday Cloud", "2026-10-01", "Personal-account access ended on 2026-10-01; the hosted console remains until its stated shutdown date."), change_type: "restriction" },
     record("Duplicate Cloud", "2026-10-27", "The dashboard shuts down on 2026-10-27."),
     record("Adjacent Cloud", "2026-11-02", "The dashboard shuts down on 2026-11-02."),
     record("Later Record", "2026-11-10", "The legacy endpoint retired on 2026-10-29."),
@@ -144,6 +145,12 @@ describe("each digest week includes stated deadlines beside its dated changes", 
     assert.ok(card.includes("read 2026-10-01"));
   });
 
+  it("keeps the restriction record beside a deadline quoted from a listing whose free-plan excerpt is held", () => {
+    const card = cards(statedSection(pages.get(clocks[0])!)).find(card => card.includes(">Monday Cloud</span>"))!;
+    assert.ok(card.includes("Personal-account access ended on 2026-10-01"));
+    assert.match(card, /href="https:\/\/example.com\/monday-cloud"[^>]*class="change-source"/);
+  });
+
   it("counts the same six dated events in headline, description, structured metadata and total tile", () => {
     for (const [day, html] of pages) {
       const headline = html.match(/<p class="page-meta">([^<]*)/)?.[1] ?? "";
@@ -195,7 +202,7 @@ describe("each digest week includes stated deadlines beside its dated changes", 
       assert.ok(cards(html).some(card => card.includes(`>${entry.vendor}</span>`) && card.includes(entry.date)), entry.vendor);
     }
     const changes = JSON.parse(await read(base, "/api/changes?limit=10000")).changes;
-    assert.ok(!changes.some((entry: { vendor: string }) => entry.vendor === "Monday Cloud"));
-    assert.ok(!(await read(base, "/feed.xml")).includes("Monday Cloud"));
+    assert.ok(!changes.some((entry: { vendor: string }) => entry.vendor === "Only Listing"));
+    assert.ok(!(await read(base, "/feed.xml")).includes("Only Listing"));
   });
 });
