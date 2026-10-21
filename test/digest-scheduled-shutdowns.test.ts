@@ -110,8 +110,10 @@ before(async () => {
   scratch = mkdtempSync(path.join(tmpdir(), "digest-scheduled-"));
   const changesPath = path.join(scratch, "deal_changes.json");
   writeFileSync(changesPath, JSON.stringify(CHANGE_LOG, null, 2));
+  const indexPath = path.join(scratch, "index.json");
+  writeFileSync(indexPath, JSON.stringify({ offers: [] }));
   for (const instant of [BEFORE_THE_WEEK, THE_WEEK_S_FIRST_DAY, INSIDE_THE_WEEK_BEFORE_EITHER_DATE, ON_THE_FIRST_DATE, AFTER_BOTH_DATES]) {
-    const { proc, base } = await startServer(servingAt(changesPath, instant));
+    const { proc, base } = await startServer({ ...servingAt(changesPath, instant), AGENTDEALS_INDEX_PATH: indexPath });
     servers.push(proc);
     const served = new Map<string, DigestPage>();
     for (const route of [SHUTDOWN_WEEK, ONE_SHUTDOWN_WEEK, MIXED_WEEK, PAST_WEEK]) {

@@ -35,6 +35,8 @@ const WITHDRAWN: Record<string, RegExp> = {
   "Amazon Q Developer as free for individuals": /always free for individuals|Amazon Q Developer \(free individual tier\)/,
 };
 
+const CLOUDWATCH_DETAILS = "Basic monitoring is free (5-minute intervals). Detailed monitoring (1-minute) costs $0.30 per metric a month for the first 10,000 metrics. An instance sending 7 metrics costs about $2.10 a month; the number of metrics varies by instance type. EC2 auto-enables it in some launch configs.";
+
 const META = "AWS Free plan: up to $200 in credits over 6 months, 30+ always-free services, short-term trials, hidden costs, cheaper alternatives.";
 const TITLE = "AWS Free Tier 2026 — Free Plan Credits, Always-Free Services, Limits, and Hidden Costs";
 const HEADING = "AWS Free Tier 2026";
@@ -53,7 +55,7 @@ const STATED_ON_THE_PAGE = [
   "Trials are for Paid plan services and start when you activate the service; credits cover usage past the trial limits.",
   "Only the always-free services stay at zero cost after the Free plan; S3, EC2, RDS and Aurora draw on the credits.",
   "On the Free plan nothing is billed: the account closes at 6 months or when credits run out, and content is deleted after 90 days unless you upgrade. On the Paid plan, usage past the credits is billed.",
-  "SageMaker Studio Lab (free, no AWS account needed) + Bedrock free tier models. For more options",
+  "SageMaker Studio Lab is free and needs no AWS account. Amazon Bedrock has no free tier and is billed per token. For more options",
 ];
 
 const ALWAYS_FREE_ROWS: [string, string][] = [
@@ -226,6 +228,20 @@ describe("the AWS free tier guide describes the 6-month Free plan as AWS's own p
       .find((cells) => cells.includes("Amazon Lightsail")) ?? "";
     const cited = [...row.matchAll(new RegExp(`<a href="([^"]+)"[^>]*class="${FIGURE_SOURCE_CLASS}"`, "g"))].map(([, href]) => href);
     assert.deepStrictEqual(cited, [LIGHTSAIL_BILLING_FAQ]);
+  });
+
+  it("keeps Bedrock out of the free and trial tables and states its token billing", () => {
+    assert.ok(!tableAfter('id="always-free"').some(([name]) => /Bedrock/i.test(name)));
+    assert.ok(!tableAfter('id="trials"').some(([name]) => /Bedrock/i.test(name)));
+    assert.ok(textOf(html).includes("Amazon Bedrock has no free tier and is billed per token."));
+    assert.doesNotMatch(html, /Bedrock free tier models|limited free inference|\$2\.10\/metric/);
+  });
+
+  it("prices detailed monitoring per metric and distinguishes the seven-metric instance example", () => {
+    const card = [...html.matchAll(/<div class="diff-card"[^>]*>([\s\S]*?)<\/div>/g)]
+      .map(([, body]) => body).find(body => body.includes("CloudWatch detailed monitoring")) ?? "";
+    assert.ok(textOf(card).includes(CLOUDWATCH_DETAILS));
+    assert.ok(textOf(card).includes("$0.30/metric/month"));
   });
 
   it("keeps the rows the Free plan did not change", () => {

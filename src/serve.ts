@@ -4782,6 +4782,23 @@ function weekNotStartedLine(year: number, week: number, count: number): string {
   return periodNotStartedLine(`Week ${week}, ${year}`, count);
 }
 
+function statedDeadlinesInWeek(year: number, week: number): StatedDeadline[] {
+  const start = getWeekStart(year, week).getTime();
+  const before = new Date(start - 86400000).toISOString().slice(0, 10);
+  const end = new Date(start + 6 * 86400000).toISOString().slice(0, 10);
+  const records = changesTheVendorMade(recordsStillInForce(loadDealChanges()));
+  return statedDeadlines(deadlineTextsOf(offers, records), records, before)
+    .filter(deadline => deadline.date <= end && (!deadline.record || deadline.record.date < deadline.date));
+}
+
+function digestStatedDeadlineLine(deadline: StatedDeadline): DeadlineLine {
+  const line = statedDeadlineLine(deadline);
+  const hold = deadline.listing ? freePlanExcerptHoldOn(deadline.listing) : null;
+  const context = hold ? recordsStillInForce(loadDealChanges()).find(record =>
+    record.vendor === deadline.vendor && record.date === hold.record_date && record.change_type === hold.change_type) : null;
+  return context ? { ...line, summaryHtml: `${line.summaryHtml} ${changeSummaryHtml(context, escHtmlServer)}` } : line;
+}
+
 function buildDigestPage(weekKey: string): string | null {
   const parsed = parseWeekKey(weekKey);
   if (!parsed) return null;
@@ -4791,6 +4808,14 @@ function buildDigestPage(weekKey: string): string | null {
   const byWeek = getChangesByWeek();
   const weekRecords = vendorChangesAmong(byWeek.get(weekKey) ?? []);
   const { dated: changes, discovered } = partitionByDateProvenance(weekRecords);
+  const stated = statedDeadlinesInWeek(year, week);
+  const eventCount = changes.length + stated.length;
+  const listingDeadlineCount = stated.filter(deadline => deadline.statedIn !== "record").length;
+  const recordDeadlineCount = stated.length - listingDeadlineCount;
+  const deadlineCounts = [
+    ...(listingDeadlineCount ? [`${listingDeadlineCount} deadline${listingDeadlineCount === 1 ? "" : "s"} our listings state`] : []),
+    ...(recordDeadlineCount ? [`${recordDeadlineCount} deadline${recordDeadlineCount === 1 ? "" : "s"} stated in earlier change records`] : []),
+  ].join(" and ");
   const comingUpHtml = weekKey === getCurrentWeekKey() ? comingUpSectionHtml(servedOn, new Set(weekRecords), "impact-section coming-up") : "";
   const dateRange = formatDateRange(year, week);
   const discoveryNote = discovered.length > 0 ? coveringBracketedChanges(discoveryBatchNote(discovered.length, `during ${dateRange}`), discovered) : "";
@@ -4798,8 +4823,13 @@ function buildDigestPage(weekKey: string): string | null {
     ? ` ${discovered.length} more recorded with no known effective date.`
     : "";
   const title = `Developer Tool Pricing Changes: ${dateRange} — AgentDeals`;
-  const notStarted = changes.length > 0 && weekHasNotStarted(year, week, servedOn);
-  const metaDesc = changes.length > 0
+  const notStarted = eventCount > 0 && weekHasNotStarted(year, week, servedOn);
+  const weekLine = stated.length > 0
+    ? `${notStarted ? `Week ${week}, ${year} has not started. ` : ""}${eventCount} event${eventCount === 1 ? "" : "s"} ${notStarted ? "scheduled for" : "in"} week ${week}, ${year}: ${changes.length} change${changes.length === 1 ? "" : "s"} ${notStarted ? "scheduled" : "tracked"} and ${deadlineCounts}.`
+    : notStarted ? weekNotStartedLine(year, week, changes.length) : `${changes.length} change${changes.length !== 1 ? "s" : ""} tracked in week ${week}, ${year}.`;
+  const metaDesc = stated.length > 0
+    ? `${eventCount} event${eventCount === 1 ? "" : "s"} for developer tools during ${dateRange}: ${changes.length} pricing change${changes.length === 1 ? "" : "s"} ${notStarted ? "scheduled" : "tracked"} and ${deadlineCounts}.${discoveryClause}`
+    : changes.length > 0
     ? `${changes.length} pricing changes ${notStarted ? "scheduled" : "tracked"} for developer tools during ${dateRange}. ${changes.filter(c => c.impact === "high").length} high-impact changes.${discoveryClause}`
     : `No pricing changes tracked for developer tools during ${dateRange}.${discoveryClause}`;
 
@@ -4813,9 +4843,11 @@ function buildDigestPage(weekKey: string): string | null {
   const discoveryPill = discovered.length > 0
     ? `\n    <div class="stat-pill"><span style="width:8px;height:8px;border-radius:50%;background:#8b949e;display:inline-block"></span> <strong>${discovered.length}</strong> first read</div>`
     : "";
-  const statsHtml = changes.length > 0 ? `
+  const statsHtml = eventCount > 0 ? `
   <div class="stats-bar">
-    <div class="stat-pill"><strong>${changes.length}</strong> change${changes.length !== 1 ? "s" : ""}</div>
+    <div class="stat-pill"><strong>${eventCount}</strong> ${stated.length > 0 ? (eventCount === 1 ? "event" : "events") : (changes.length === 1 ? "change" : "changes")}</div>${stated.length > 0 ? `
+    <div class="stat-pill"><strong>${changes.length}</strong> change${changes.length === 1 ? "" : "s"}</div>
+    <div class="stat-pill"><strong>${stated.length}</strong> stated deadline${stated.length === 1 ? "" : "s"}</div>` : ""}
     ${Array.from(byCountLabel.entries()).map(([label, { count, color }]) =>
       `<div class="stat-pill"><span style="width:8px;height:8px;border-radius:50%;background:${color};display:inline-block"></span> <strong>${count}</strong> ${label}</div>`
     ).join("\n    ")}${discoveryPill}
@@ -4851,7 +4883,7 @@ function buildDigestPage(weekKey: string): string | null {
     <h2><span class="impact-dot" style="background:${impactColors[level]}"></span> ${impactLabels[level]} (${byImpact[level].length})</h2>
     ${byImpact[level].sort((a, b) => b.date.localeCompare(a.date)).map(c => digestEntry(c, impactColors[level])).join("\n    ")}
   </div>`).join("\n")
-    : `<div class="empty-msg"><p>No pricing changes tracked this week.</p><p style="margin-top:.5rem"><a href="/digest/archive">Browse the archive</a> or <a href="/feed.xml">subscribe via RSS</a>.</p></div>`;
+    : stated.length > 0 ? "" : `<div class="empty-msg"><p>No pricing changes tracked this week.</p><p style="margin-top:.5rem"><a href="/digest/archive">Browse the archive</a> or <a href="/feed.xml">subscribe via RSS</a>.</p></div>`;
 
   const firstReadHtml = discovered.length > 0 ? `
   <div class="impact-section">
@@ -4860,7 +4892,21 @@ function buildDigestPage(weekKey: string): string | null {
     ${[...discovered].sort((a, b) => b.date.localeCompare(a.date)).map(c => digestEntry(c, "#8b949e")).join("\n    ")}
   </div>` : "";
 
-  const bodyHtml = [changesHtml, firstReadHtml].filter(Boolean).join("\n");
+  const statedHtml = stated.length > 0 ? `
+  <div class="impact-section stated-deadlines">
+    <h2>Deadlines stated for ${dateRange} (${stated.length})</h2>
+    <p>${escHtmlServer(deadlineCounts)}. These are quoted dates, not additional change records.</p>
+    ${stated.map(digestStatedDeadlineLine).map(line => `<div class="change-entry" style="border-left-color:#d29922">
+      <div class="change-header">
+        <span class="change-badge" style="background:#d29922">stated deadline</span>
+        <span class="change-vendor">${escHtmlServer(line.vendor)}</span>
+        <span class="change-date">${escHtmlServer(line.dateLabel)}</span>
+        <span class="change-cat">${escHtmlServer(line.category)}</span>
+      </div>
+      <div class="change-summary">${line.summaryHtml}</div>
+    </div>`).join("\n    ")}
+  </div>` : "";
+  const bodyHtml = [changesHtml, statedHtml, firstReadHtml].filter(Boolean).join("\n");
 
   const catCounts = new Map<string, number>();
   for (const c of changes) {
@@ -4919,7 +4965,7 @@ ${OG_IMAGE_META}${GOOGLE_VERIFICATION_META}<link rel="icon" type="image/png" hre
   ${buildGlobalNav("digest")}
   <div class="breadcrumb"><a href="/">AgentDeals</a> &rsaquo; <a href="/digest/archive">Digest</a> &rsaquo; ${weekKey}</div>
   <h1>Pricing Changes: ${dateRange}</h1>
-  <p class="page-meta">${notStarted ? weekNotStartedLine(year, week, changes.length) : `${changes.length} change${changes.length !== 1 ? "s" : ""} tracked in week ${week}, ${year}.`}${discoveryClause}</p>
+  <p class="page-meta">${escHtmlServer(weekLine)}${discoveryClause}</p>
 ${statsHtml}
 ${bodyHtml}
 ${trendingHtml}${comingUpHtml}
@@ -33726,7 +33772,6 @@ function buildAwsFreeTier2026Page(): string {
 
   const trialServices: AwsService[] = [
     { name: "Amazon SageMaker", slug: "aws", limits: "250 hrs/month ml.t3.medium for Studio notebooks (2 months)", category: "AI/ML" },
-    { name: "Amazon Bedrock", slug: "aws", limits: "Select foundation models with limited free inference (varies by model)", category: "AI/ML" },
     { name: "Amazon Lightsail", slug: "aws", limits: "No free trial for new customers: AWS replaced Lightsail's 3-month free trials with the Free plan's credits, which pay for Lightsail like any other service (bundles from $3.50/month IPv6-only, $5/month with IPv4)", category: "Hosting", source: "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-frequently-asked-questions-faq-billing-and-account-management.html" },
   ];
 
@@ -33740,7 +33785,7 @@ function buildAwsFreeTier2026Page(): string {
     { title: "Data transfer out", desc: "First 100 GB/month free to internet, then $0.09/GB. Transfers between regions always charged.", cost: "$0.09/GB" },
     { title: "NAT Gateway", desc: "If your Lambda/ECS needs internet access in a VPC, NAT Gateway costs $0.045/hr + $0.045/GB. Running 24/7 = $32/month before data.", cost: "$32+/mo" },
     { title: "Public IPv4 addresses", desc: "Every public IPv4 address is charged $0.005/hr, whether attached to a running instance or idle. AWS: “Effective February 1, 2024 there will be a charge of $0.005 per IP per hour for all public IPv4 addresses, whether attached to a service or not.”", cost: "$3.60/mo each" },
-    { title: "CloudWatch detailed monitoring", desc: "Basic monitoring is free (5-minute intervals). Detailed monitoring (1-minute) costs $2.10/metric/month. EC2 auto-enables it in some launch configs.", cost: "$2.10/metric" },
+    { title: "CloudWatch detailed monitoring", desc: "Basic monitoring is free (5-minute intervals). Detailed monitoring (1-minute) costs $0.30 per metric a month for the first 10,000 metrics. An instance sending 7 metrics costs about $2.10 a month; the number of metrics varies by instance type. EC2 auto-enables it in some launch configs.", cost: "$0.30/metric/month" },
     { title: "EBS volumes on stopped instances", desc: "You pay for EBS storage even when EC2 instances are stopped. 30 GB gp3 = $2.40/month sitting idle.", cost: "$0.08/GB-mo" },
     { title: "Free tier expiration", desc: "On the Free plan nothing is billed: the account closes at 6 months or when credits run out, and content is deleted after 90 days unless you upgrade. On the Paid plan, usage past the credits is billed.", cost: "Varies" },
     { title: "S3 request costs", desc: "Storage is cheap but requests add up. PUT/COPY/POST at $0.005/1K requests. A deployment pipeline doing thousands of S3 operations can cost more in requests than storage.", cost: "$0.005/1K PUT" },
@@ -33986,7 +34031,7 @@ ${globalNavCss()}
 
     <div class="verdict-item">
       <strong>AI/ML experimentation</strong>
-      <p>SageMaker Studio Lab (free, no AWS account needed) + Bedrock free tier models. For more options, see our <a href="/ai-ml-alternatives">AI/ML tools guide</a>.</p>
+      <p>SageMaker Studio Lab is free and needs no AWS account. Amazon Bedrock has no free tier and is billed per token. For more options, see our <a href="/ai-ml-alternatives">AI/ML tools guide</a>.</p>
     </div>
 
     <div class="verdict-item">

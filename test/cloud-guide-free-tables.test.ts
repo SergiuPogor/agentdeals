@@ -83,7 +83,6 @@ const NO_STATIC_PAGE_STATES_THE_ROW: Record<string, string[]> = {
     "AWS X-Ray",
     "Amazon Q Developer",
     "Amazon SageMaker",
-    "Amazon Bedrock",
   ],
   [GCP]: [
     "Firebase Auth",

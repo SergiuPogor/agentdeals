@@ -824,7 +824,7 @@
       "changed": "2026-10-17"
     },
     "/aws-free-tier-2026": {
-      "hash": "9b2173da437a5a49",
+      "hash": "ff66751f8089d871",
       "changed": "2026-10-21"
     },
     "/azure-free-tier-2026": {
@@ -2851,8 +2851,8 @@
       "changed": "2026-10-19"
     },
     "/digest/2025-w36": {
-      "hash": "b541edeae689f2f7",
-      "changed": "2026-10-09"
+      "hash": "2b2e88d1b88679c6",
+      "changed": "2026-10-21"
     },
     "/digest/2025-w37": {
       "hash": "440465a5b1da281f",
@@ -2899,8 +2899,8 @@
       "changed": "2026-10-09"
     },
     "/digest/2026-w01": {
-      "hash": "e99f305796d30930",
-      "changed": "2026-10-14"
+      "hash": "04b5eef56ac28d05",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w02": {
       "hash": "3adb18ed5070d114",
@@ -2911,36 +2911,36 @@
       "changed": "2026-10-09"
     },
     "/digest/2026-w04": {
-      "hash": "291fafa4384796e4",
-      "changed": "2026-10-14"
+      "hash": "922215f1237fae6c",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w05": {
       "hash": "07bb8c24bbe7003b",
       "changed": "2026-10-10"
     },
     "/digest/2026-w06": {
-      "hash": "579ea82d85886bdd",
-      "changed": "2026-10-14"
+      "hash": "63e95c402510250a",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w07": {
       "hash": "1813a141750bf5de",
       "changed": "2026-10-19"
     },
     "/digest/2026-w08": {
-      "hash": "736918ee7cf2662a",
-      "changed": "2026-10-09"
+      "hash": "1e8632cece91a5fa",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w09": {
-      "hash": "ce151f66985686d2",
-      "changed": "2026-10-09"
+      "hash": "552c4012ab5a3b5f",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w10": {
-      "hash": "2b37555987392b7f",
-      "changed": "2026-10-14"
+      "hash": "849ddcf5d9133e61",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w11": {
-      "hash": "8875114fbb4e9e50",
-      "changed": "2026-10-09"
+      "hash": "0f3cac55a47db1b9",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w12": {
       "hash": "1d12d4f1efe4fd77",
@@ -2951,11 +2951,11 @@
       "changed": "2026-10-09"
     },
     "/digest/2026-w14": {
-      "hash": "90c09d6374d15d29",
-      "changed": "2026-10-12"
+      "hash": "edc7b83230fc59f6",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w15": {
-      "hash": "b21bbb7e8179b5fd",
+      "hash": "d4aa357b4be1b052",
       "changed": "2026-10-21"
     },
     "/digest/2026-w16": {
@@ -2963,8 +2963,8 @@
       "changed": "2026-10-10"
     },
     "/digest/2026-w17": {
-      "hash": "976d334f242cd05e",
-      "changed": "2026-10-19"
+      "hash": "0d705e24289cf243",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w18": {
       "hash": "6012e16f518e38d5",
@@ -2975,115 +2975,115 @@
       "changed": "2026-10-09"
     },
     "/digest/2026-w20": {
-      "hash": "1e00da74fcb3224b",
-      "changed": "2026-10-09"
+      "hash": "8d2fbad2826887cf",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w21": {
-      "hash": "6d49d9c5b8f06210",
-      "changed": "2026-10-09"
+      "hash": "28c0299a116fa809",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w22": {
-      "hash": "31066a826ccfd60c",
-      "changed": "2026-10-09"
+      "hash": "f75e3a4a05f7990c",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w23": {
-      "hash": "0e54a4fa52cc158b",
-      "changed": "2026-10-09"
+      "hash": "4b37a866e3d8bcb7",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w24": {
-      "hash": "b4533c7e14a71380",
-      "changed": "2026-10-09"
+      "hash": "91d4db56e79efd19",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w25": {
-      "hash": "5fb73afef0d6c4a8",
-      "changed": "2026-10-11"
+      "hash": "4f122cfa7877a799",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w26": {
-      "hash": "c16da383f8cc85af",
+      "hash": "77e5e45ffcfe68ac",
       "changed": "2026-10-21"
     },
     "/digest/2026-w27": {
-      "hash": "b71a343f1a0c604d",
-      "changed": "2026-10-09"
+      "hash": "27220ad16757089a",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w28": {
-      "hash": "eac9a273465bc0be",
-      "changed": "2026-10-09"
+      "hash": "4c89f2084dfed0a6",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w29": {
-      "hash": "cb711635ac0c060b",
-      "changed": "2026-10-12"
+      "hash": "c9be15986bfbb199",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w30": {
-      "hash": "034916cfcd36f199",
-      "changed": "2026-10-09"
+      "hash": "5398e74e053a9c86",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w31": {
-      "hash": "c11960ae779a246d",
-      "changed": "2026-10-09"
+      "hash": "af1436d6ab4dc118",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w32": {
-      "hash": "81293243cb3b04d7",
-      "changed": "2026-10-12"
+      "hash": "54fd6c5962d86920",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w33": {
-      "hash": "27e5142c9b4ab246",
-      "changed": "2026-10-10"
+      "hash": "0625cbc1221b5331",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w34": {
-      "hash": "96a4ea49bc83d882",
-      "changed": "2026-10-15"
+      "hash": "3777a0fa4a463f90",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w35": {
-      "hash": "91603f1414e4f498",
-      "changed": "2026-10-19"
+      "hash": "2e3d6d1d1d31e3a0",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w36": {
-      "hash": "b8401de886e175da",
-      "changed": "2026-10-19"
+      "hash": "a08ef8bdf1a6cf9d",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w37": {
-      "hash": "9d5c6ccfc50638e6",
-      "changed": "2026-10-19"
+      "hash": "6159885d7d637c0b",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w38": {
-      "hash": "f4ca0d647376d245",
-      "changed": "2026-10-12"
+      "hash": "f93e1ae21398d5c7",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w39": {
-      "hash": "3f47e3a6a3fef459",
-      "changed": "2026-10-19"
+      "hash": "dff4297541063854",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w40": {
-      "hash": "f2574f9f72127447",
-      "changed": "2026-10-19"
+      "hash": "e18c1f4bd75dc8d8",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w41": {
-      "hash": "e4e24096e75c1b7e",
-      "changed": "2026-10-14"
+      "hash": "df930c28d33ea5c4",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w42": {
-      "hash": "2ea77dffa90d63a7",
+      "hash": "65d9f84357181c28",
       "changed": "2026-10-21"
     },
     "/digest/2026-w43": {
       "daily": true
     },
     "/digest/2026-w44": {
-      "hash": "fc5bf09b2bfd77df",
-      "changed": "2026-10-19"
+      "hash": "397c42859d5b20eb",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w45": {
-      "hash": "64f11153631d7011",
-      "changed": "2026-10-19"
+      "hash": "dbc45696ab701b20",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w47": {
-      "hash": "692ffe22b68da4c0",
-      "changed": "2026-10-19"
+      "hash": "17db7d9c74858adf",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w49": {
-      "hash": "c32aad713365ac52",
-      "changed": "2026-10-11"
+      "hash": "bc89b330dbb21fe6",
+      "changed": "2026-10-21"
     },
     "/digest/2026-w50": {
       "hash": "04a2e9f8adb7d9ee",
@@ -3110,8 +3110,8 @@
       "changed": "2026-10-11"
     },
     "/digest/2027-w13": {
-      "hash": "d5c2f3b4b7c9d882",
-      "changed": "2026-10-11"
+      "hash": "3287e1c37e2c1779",
+      "changed": "2026-10-21"
     },
     "/digest/2027-w18": {
       "hash": "34e3b68daa189273",
