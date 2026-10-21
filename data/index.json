@@ -4064,9 +4064,9 @@
         "ab testing",
         "free tier"
       ],
-      "verifiedDate": "2026-10-20",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-10-20",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names PostHog as \"posthog\" and states \"$0\""
       }
@@ -5589,7 +5589,7 @@
         "startup-credits",
         "cloud-storage"
       ],
-      "verifiedDate": "2026-10-20",
+      "verifiedDate": "2026-10-21",
       "eligibility": {
         "type": "accelerator",
         "conditions": [
@@ -5599,7 +5599,7 @@
         "program": "Backblaze Flamethrower"
       },
       "source_check": {
-        "checked": "2026-10-20",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Backblaze as \"backblaze\" and states \"$100,000\""
       }
@@ -5649,7 +5649,7 @@
       ],
       "verifiedDate": "2026-09-09",
       "source_check": {
-        "checked": "2026-10-20",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Pulumi as \"pulumi\" and states \"10K API calls / month\""
       }
@@ -7524,7 +7524,7 @@
       ],
       "verifiedDate": "2026-07-29",
       "source_check": {
-        "checked": "2026-09-09",
+        "checked": "2026-10-21",
         "outcome": "does_not_name_product",
         "detail": "the page names the platform in the domain we cite Amazon ECR Public from and never names ECR Public"
       },
@@ -9014,7 +9014,7 @@
       ],
       "verifiedDate": "2026-07-31",
       "source_check": {
-        "checked": "2026-10-20",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Pinecone as \"pinecone\" and states \"$20\" and \"1GB/mo\" and \"5M tokens/mo\" and \"500 requests/mo\""
       },
@@ -9870,9 +9870,9 @@
         "object-detection",
         "model-training"
       ],
-      "verifiedDate": "2026-10-20",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-10-20",
+        "checked": "2026-10-21",
         "outcome": "states_a_free_price",
         "detail": "the page names Roboflow and states its price in words as \"Free Tier\", and its markup carries no structured data"
       },
@@ -10452,7 +10452,7 @@
       ],
       "verifiedDate": "2026-07-30",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Tyk as \"tyk\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -10475,7 +10475,7 @@
       ],
       "verifiedDate": "2026-07-30",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Stoplight as \"stoplight\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -10962,9 +10962,9 @@
         "status-page",
         "slack"
       ],
-      "verifiedDate": "2026-09-26",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-10-20",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names incident.io as \"incident io\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -11490,7 +11490,7 @@
       ],
       "verifiedDate": "2026-08-01",
       "source_check": {
-        "checked": "2026-09-09",
+        "checked": "2026-10-21",
         "outcome": "does_not_name_product",
         "detail": "the page names the platform in the domain we cite Zoho Docs from and never names Docs"
       },
@@ -12291,9 +12291,9 @@
         "developer-tools",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-10-15",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-10-20",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Composio as \"composio\" and states \"$0\" and \"100,000 tool calls / mo\" and \"50,000 triggers / mo\" and \"100K tool calls a month\""
       },
@@ -12750,7 +12750,7 @@
       ],
       "verifiedDate": "2026-07-07",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names DynamicDocs as \"dynamicdocs\" and states amounts, none of which we matched to the terms we publish"
       }
@@ -14792,7 +14792,7 @@
       ],
       "verifiedDate": "2026-07-07",
       "source_check": {
-        "checked": "2026-10-20",
+        "checked": "2026-10-21",
         "outcome": "states_no_terms",
         "detail": "the page names Fizzy but states no amount, tier or rate we can read, and its markup carries no structured data"
       }
@@ -16287,7 +16287,7 @@
       ],
       "verifiedDate": "2026-08-02",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names houndci.com as \"houndci\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -16530,7 +16530,7 @@
       ],
       "verifiedDate": "2026-07-08",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names cirun.io as \"cirun io\" and states \"$0\""
       }
@@ -16813,9 +16813,17 @@
         "reverted_on": "2026-10-19"
       },
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
-        "detail": "the page names BugBug as \"bugbug\" and states amounts, none of which we matched to the terms we publish"
+        "detail": "the page names BugBug as \"bugbug\" and states amounts, none of which we matched to the terms we publish",
+        "unrendered_prices": [
+          "Core USD 119",
+          "Pro USD 219",
+          "Business USD 659",
+          "Monthly billing USD 119",
+          "Annual billing USD 99",
+          "Monthly billing USD 219"
+        ]
       },
       "restated_from": {
         "reading_date": "2026-08-28",
@@ -16823,6 +16831,11 @@
         "record_date": "2026-08-28",
         "change_type": "limits_reduced",
         "restated_on": "2026-09-20"
+      },
+      "free_plan_excerpt": {
+        "text": "Free Plan with: Unlimited local test runs 15 tests 4 test suites 1 user 1 project AI Test recorder Components Edit & rewind Screenshots 7 days of tests history",
+        "url": "https://bugbug.io/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -17197,7 +17210,7 @@
       ],
       "verifiedDate": "2026-08-03",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names webhook.site as \"webhook site\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -17630,9 +17643,9 @@
         "security",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Virgil Security as \"virgil security\" and states \"$0.02\""
       },
@@ -17642,6 +17655,11 @@
         "record_date": "2026-08-28",
         "change_type": "pricing_restructured",
         "restated_on": "2026-09-20"
+      },
+      "free_plan_excerpt": {
+        "text": "Start free , pay $0.02/month per user beyond 250 users.",
+        "url": "https://virgilsecurity.com/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -17829,9 +17847,14 @@
       ],
       "verifiedDate": "2026-07-11",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names duo.com as \"duo\" and states amounts, none of which we matched to the terms we publish"
+      },
+      "free_plan_excerpt": {
+        "text": "Duo Free for teams of 10 or less",
+        "url": "https://duo.com/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -18074,9 +18097,9 @@
         "developer-tools",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Appho.st as \"appho st\" and states amounts, none of which we matched to the terms we publish",
         "rendered": true
@@ -18344,11 +18367,16 @@
         "streaming",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
-        "detail": "the page names EMQX Serverless as \"emqx serverless\" and states \"1M session minutes/month\""
+        "detail": "the page names EMQX Serverless as \"emqx serverless\" and states \"$2.00\" and \"$0.15\" and \"$0.25\" and \"1M session minutes/month\""
+      },
+      "free_plan_excerpt": {
+        "text": "Forever free 1 million session minutes each month 1 GB each month 1 million rule actions each month",
+        "url": "https://www.emqx.com/en/cloud/serverless-mqtt",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -18440,11 +18468,16 @@
         "streaming",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Pingram.io as \"pingram io\" and states \"3,000 Emails / mo\" and \"100 SMS and Calls per month\""
+      },
+      "free_plan_excerpt": {
+        "text": "Free Number 100 SMS & Calls / mo 3,000 Emails / mo",
+        "url": "https://www.pingram.io/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -18487,7 +18520,7 @@
       ],
       "verifiedDate": "2026-08-05",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names pubnub.com as \"pubnub\" and states \"$0\""
       }
@@ -18503,11 +18536,16 @@
         "streaming",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names scaledrone.com as \"scaledrone com\" and states amounts, none of which we matched to the terms we publish"
+      },
+      "free_plan_excerpt": {
+        "text": "Free for up to 20 concurrent users and 100,000 daily events",
+        "url": "https://www.scaledrone.com/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -18624,11 +18662,16 @@
         "log-management",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names log.dog as \"logdog\" and states \"100 MB of data per month\""
+      },
+      "free_plan_excerpt": {
+        "text": "Yes! LogDog comes with a free plan that offers 100 MB of data per month (forever).",
+        "url": "https://log.dog/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -19410,7 +19453,7 @@
       ],
       "verifiedDate": "2026-07-10",
       "source_check": {
-        "checked": "2026-09-09",
+        "checked": "2026-10-21",
         "outcome": "does_not_name_product",
         "detail": "the page names the platform in the domain we cite OntarioNet.ca CN Test from and never names CN Test"
       },
@@ -19567,9 +19610,9 @@
         "observability",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Pingmeter.com as \"pingmeter\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -20322,11 +20365,16 @@
         "email",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Antideo as \"antideo\" and states \"10 API Calls/Hour\""
+      },
+      "free_plan_excerpt": {
+        "text": "Start testing out the API with the life long free account at 10 API Calls/Hour. No Credit Card required, No commitment needed.",
+        "url": "https://www.antideo.com",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -20522,9 +20570,14 @@
       ],
       "verifiedDate": "2026-07-12",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
-        "detail": "the page names Emailvalidation.io as \"emailvalidation io\" and states amounts, none of which we matched to the terms we publish"
+        "detail": "the page names Emailvalidation.io as \"emailvalidation io\" and states \"$0\""
+      },
+      "free_plan_excerpt": {
+        "text": "Free $0 /month 100 email validations For testing and hobby projects Start for free",
+        "url": "https://emailvalidation.io",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -20555,9 +20608,9 @@
         "email",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names forwardemail.net as \"forwardemail net\" and states \"$0\""
       },
@@ -20567,6 +20620,11 @@
         "record_date": "2026-08-28",
         "change_type": "limits_reduced",
         "restated_on": "2026-09-20"
+      },
+      "free_plan_excerpt": {
+        "text": "$0 / month · unlimited domains Forward mail Unlimited inbound email Spam protection 50 MB attachment limit Webhooks + regex filters",
+        "url": "https://forwardemail.net",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -20802,11 +20860,16 @@
         "email",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names MailerSend.com as \"mailersend com\" and states \"500 emails/month\" and \"500 emails /month\""
+      },
+      "free_plan_excerpt": {
+        "text": "• Send 500 emails/month for free • 24/7 Support • 99.5% guaranteed uptime",
+        "url": "https://www.mailersend.com",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -20906,9 +20969,14 @@
       ],
       "verifiedDate": "2026-09-28",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Plunk as \"plunk\" and states \"1,000 emails a month\""
+      },
+      "free_plan_excerpt": {
+        "text": "Or stay on the free plan: 1,000 emails a month, unlimited contacts.",
+        "url": "https://useplunk.com",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -20921,11 +20989,16 @@
         "email",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "states_a_free_price",
         "detail": "the page names Sendpulse and states its price in words as \"Free plan\", and the 1 structured-data block in its markup states no price"
+      },
+      "free_plan_excerpt": {
+        "text": "Free plan with no time limit No credit card required",
+        "url": "https://sendpulse.com",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -20938,11 +21011,16 @@
         "email",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
-        "detail": "the page names SendStreak as \"sendstreak\" and states \"100 emails/day\""
+        "detail": "the page names SendStreak as \"sendstreak\" and states \"100 emails/day\" and \"100 emails a day\" and \"100 free emails a day\""
+      },
+      "free_plan_excerpt": {
+        "text": "100 emails/day free, forever €2 per 10k after that",
+        "url": "https://www.sendstreak.com/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -20989,11 +21067,16 @@
         "email",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Sweego as \"sweego\" and states \"100 emails/day\""
+      },
+      "free_plan_excerpt": {
+        "text": "Our European GDPR-compliant platform enables sending from 100 emails/day (free plan) up to several million emails per month.",
+        "url": "https://www.sweego.io/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -21024,11 +21107,16 @@
         "email",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names TempMailDetector.com as \"tempmaildetector com\" and states amounts, none of which we matched to the terms we publish"
+      },
+      "free_plan_excerpt": {
+        "text": "Sign up and get 200 credits for free each month. No credit card required. Free 200 lookups/month Resets monthly",
+        "url": "https://tempmaildetector.com/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -21079,9 +21167,9 @@
         "email",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Verifalia as \"verifalia\" and states amounts, none of which we matched to the terms we publish"
       }
@@ -21096,11 +21184,16 @@
         "email",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
-        "detail": "the page names verimail.io as \"verimail io\" and states \"100 free verifications/month\""
+        "detail": "the page names verimail.io as \"verimail io\" and states \"100 free verifications a month\""
+      },
+      "free_plan_excerpt": {
+        "text": "100 free verifications a month, no card.",
+        "url": "https://verimail.io/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -21162,7 +21255,7 @@
       ],
       "verifiedDate": "2026-07-04",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Abby as \"abby\" and states \"1,000 Events / month\""
       }
@@ -21230,9 +21323,9 @@
         "feature-toggles",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Toggled.dev as \"toggled dev\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -21242,6 +21335,11 @@
         "record_date": "2026-08-28",
         "change_type": "limits_increased",
         "restated_on": "2026-09-20"
+      },
+      "free_plan_excerpt": {
+        "text": "FREE Single project Unlimited Clients Up to 10 feature toggles per project Up to 2 environments per project 2 seats included Data residency Users segmentation Session stickiness Realtime notifications Unlimited MAU",
+        "url": "https://www.toggled.dev/pricing",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -21631,7 +21729,7 @@
       ],
       "verifiedDate": "2026-07-05",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Typeform.com as \"typeform com\" and states amounts, none of which we matched to the terms we publish"
       }
@@ -22066,9 +22164,9 @@
         "generative-ai",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-27",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-13",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Lumenfall.ai as \"lumenfall\" and states \"$1\""
       },
@@ -22091,6 +22189,11 @@
       "restatement_reverted": {
         "record_date": "2026-09-13",
         "reverted_on": "2026-09-27"
+      },
+      "free_plan_excerpt": {
+        "text": "Start Free with $1 Credit No credit card No commitment Provider charges $0.04 = You pay $0.04 Zero markup. Zero fees. Zero catch.",
+        "url": "https://lumenfall.ai/pricing",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -22613,9 +22716,9 @@
         "paas",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Apply.build as \"apply build\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -22629,6 +22732,11 @@
           }
         ],
         "reviewed": "2026-08-31"
+      },
+      "free_plan_excerpt": {
+        "text": "Free tier: 0.5 vCPU and 512 MiB No credit card. It stays active when you add paid packages, and after you cancel them.",
+        "url": "https://apply.build/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -23525,9 +23633,9 @@
         "paas",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-07-13",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Awardspace.com as \"awardspace com\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -23718,9 +23826,9 @@
         "paas",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-10-20",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-10-20",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Neocities as \"neocities\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -23912,9 +24020,9 @@
         "paas",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Serv00.com as \"serv00 com\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -24072,9 +24180,9 @@
       ],
       "verifiedDate": "2026-09-28",
       "source_check": {
-        "checked": "2026-09-28",
-        "outcome": "ok",
-        "detail": "the page names dnspod.com as \"dnspod\" and states amounts, none of which we matched to the terms we publish",
+        "checked": "2026-10-21",
+        "outcome": "unreadable",
+        "detail": "page content too short (likely JS-rendered SPA); the rendering client failed: the rendering client did not finish in time",
         "rendered": true
       },
       "restated_from": {
@@ -24375,7 +24483,7 @@
       ],
       "verifiedDate": "2026-08-26",
       "source_check": {
-        "checked": "2026-10-20",
+        "checked": "2026-10-21",
         "outcome": "states_no_terms",
         "detail": "the page names DigitalPlat but states no amount, tier or rate we can read, and its markup carries no structured data"
       }
@@ -24512,9 +24620,9 @@
         "data",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-28",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names codehooks.io as \"codehooks io\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -25037,7 +25145,7 @@
       ],
       "verifiedDate": "2026-09-28",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Basecamp as \"basecamp\" and states amounts, none of which we matched to the terms we publish"
       },
@@ -25552,7 +25660,7 @@
       ],
       "verifiedDate": "2026-08-26",
       "source_check": {
-        "checked": "2026-09-26",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Shake as \"shake\" and states \"$0\""
       },
@@ -29492,11 +29600,16 @@
         "statistics",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-09-11",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-28",
-        "outcome": "unreadable",
-        "detail": "HTTP 509"
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names getinsights.io as \"getinsights io\" and states amounts, none of which we matched to the terms we publish"
+      },
+      "free_plan_excerpt": {
+        "text": "Developer Free Up to 3k events or page views per month.",
+        "url": "https://getinsights.io",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -31365,7 +31478,7 @@
       ],
       "verifiedDate": "2026-09-02",
       "source_check": {
-        "checked": "2026-09-09",
+        "checked": "2026-10-21",
         "outcome": "does_not_name_product",
         "detail": "the page names the platform in the domain we cite Freshworks for Startups from and never names for Startups"
       }
@@ -31384,7 +31497,7 @@
       ],
       "verifiedDate": "2026-09-02",
       "source_check": {
-        "checked": "2026-09-09",
+        "checked": "2026-10-21",
         "outcome": "does_not_name_product",
         "detail": "the page names the platform in the domain we cite Startup with IBM from and never names Startup with"
       }
@@ -31727,7 +31840,7 @@
         "program": "Chargebee for Startups"
       },
       "source_check": {
-        "checked": "2026-09-09",
+        "checked": "2026-10-21",
         "outcome": "does_not_name_product",
         "detail": "the page names the platform in the domain we cite Chargebee Launch Programme from and never names Launch Programme"
       }
@@ -32641,9 +32754,9 @@
       ],
       "verifiedDate": "2026-09-26",
       "source_check": {
-        "checked": "2026-09-26",
+        "checked": "2026-10-21",
         "outcome": "ok",
-        "detail": "the page writes \"bolt\", the domain we cite Bolt.new from, and states \"1M tokens per month\""
+        "detail": "the page writes \"bolt\", the domain we cite Bolt.new from, and states \"$0\" and \"$18\" and \"$27\" and \"1M tokens/month\""
       },
       "referral_program": {
         "available": true,
@@ -33619,7 +33732,7 @@
     {
       "vendor": "NVIDIA NIM",
       "category": "AI / ML",
-      "description": "Free inference endpoints on build.nvidia.com: models marked Free Endpoint, including DeepSeek V4.1 Flash, GLM 5.3 Flash, gpt-oss-20b, Gemma 4 31B and NVIDIA Nemotron 3 Ultra, can be called at no cost. Their model IDs are deepseek-ai/deepseek-v4.1-flash, z-ai/glm-5.3-flash, openai/gpt-oss-20b, google/gemma-4-31b-it and nvidia/nemotron-3-ultra-550b-a55b. Up to 40 requests per minute; limits may vary by model, and traffic from other users may cause throttling. NVIDIA's API Trial Terms allow free use for testing and evaluation only, not production. NVIDIA posts an end-of-life date on each hosted model's page on build.nvidia.com; after that date, requests for the model return HTTP 410 Gone. GLM 5.3 (z-ai/glm-5.3) can be called until 2026-10-27; NVIDIA's page says it is no longer supported after 2026-10-28. This date does not apply to GLM 5.3 Flash (z-ai/glm-5.3-flash). NVIDIA stopped supporting NVIDIA Nemotron 3 Super (nvidia/nemotron-3-super-120b-a12b) after 2026-10-19, and its catalogue no longer lists the model (checked 2026-10-21). Nemotron 3.5 Super VL (nvidia/nemotron-3.5-super-vl-120b-a12b), an early-access model, is a Free Endpoint. NVIDIA retired Kimi K3 (moonshotai/kimi-k3) on 2026-10-15. Other model IDs NVIDIA retired in 2026 include these. DeepSeek: deepseek-ai/deepseek-v4-pro and deepseek-ai/deepseek-v4-flash on 2026-08-07, deepseek-ai/deepseek-v4-pro-0813 on 2026-09-14 and deepseek-ai/deepseek-v4-flash-0731 on 2026-09-21. Kimi: moonshotai/kimi-k2-instruct and moonshotai/kimi-k2-thinking on 2026-05-12. GLM: z-ai/glm4.7 on 2026-05-14, z-ai/glm-5.1 on 2026-07-02 and z-ai/glm-5.2 on 2026-08-21. Qwen: qwen/qwen2.5-coder-32b-instruct on 2026-05-12, qwen/qwen3-next-80b-a3b-thinking on 2026-05-21, qwen/qwen3-coder-480b-a35b-instruct on 2026-06-11, qwen/qwen3.5-122b-a10b on 2026-07-20, and qwen/qwen3.5-397b-a17b and qwen/qwen3-next-80b-a3b-instruct on 2026-07-27. MiniMax: minimaxai/minimax-m2.5 on 2026-05-12, minimaxai/minimax-m2.7 on 2026-07-27 and minimaxai/minimax-m3 on 2026-09-09. gpt-oss: openai/gpt-oss-120b on 2026-09-03. Llama: meta/llama-4-maverick-17b-128e-instruct on 2026-07-27, and meta/llama-3.3-70b-instruct, meta/llama-3.1-8b-instruct, meta/llama-3.1-70b-instruct, meta/llama-3.2-1b-instruct and meta/llama-3.2-3b-instruct on 2026-08-26. Nemotron: nvidia/llama-3.3-nemotron-super-49b-v1, nvidia/llama-3.3-nemotron-super-49b-v1.5, nvidia/llama-3.1-nemotron-nano-8b-v1, nvidia/llama-3.1-nemotron-nano-vl-8b-v1, nvidia/nvidia-nemotron-nano-9b-v2, nvidia/nemotron-nano-12b-v2-vl and nvidia/nemotron-mini-4b-instruct on 2026-08-26, and nvidia/nemotron-3-nano-30b-a3b on 2026-09-01. Mistral: mistralai/mistral-large-3-675b-instruct-2512 on 2026-07-23, mistralai/mixtral-8x7b-instruct-v0.1 on 2026-07-27 and mistralai/mistral-nemotron on 2026-09-28. Gemma: google/gemma-3-27b-it on 2026-05-12, and google/gemma-3n-e4b-it and google/gemma-3n-e2b-it on 2026-07-27. Phi: microsoft/phi-4-mini-instruct and microsoft/phi-4-multimodal-instruct on 2026-07-15. Others: stepfun-ai/step-3.5-flash, bytedance/seed-oss-36b-instruct, sarvamai/sarvam-m and abacusai/dracarys-llama-3.1-70b-instruct on 2026-07-27. Embedding models: nvidia/llama-3.2-nv-embedqa-1b-v2 and nvidia/llama-3.2-nemoretriever-300m-embed-v1 on 2026-05-18, and nvidia/nv-embedqa-e5-v5, nvidia/nv-embed-v1, nvidia/llama-nemotron-embed-1b-v2 and baai/bge-m3 on 2026-08-25; nvidia/nemotron-3-embed-1b is a Free Endpoint embedding model.",
+      "description": "Free inference endpoints on build.nvidia.com: models marked Free Endpoint, including DeepSeek V4.1 Flash, GLM 5.3 Flash, gpt-oss-20b, Gemma 4 31B and NVIDIA Nemotron 3 Ultra, can be called at no cost. Their model IDs are deepseek-ai/deepseek-v4.1-flash, z-ai/glm-5.3-flash, openai/gpt-oss-20b, google/gemma-4-31b-it and nvidia/nemotron-3-ultra-550b-a55b. NVIDIA's free embedding models are nvidia/nemotron-3-embed-1b, nvidia/nemotron-3.5-embed-1b and nvidia/nemotron-3.5-embed-8b. The free reranking model is nvidia/nemotron-3.5-rerank-8b. The 3.5 models handle text and document images and were added on 2026-10-20. Up to 40 requests per minute; limits may vary by model, and traffic from other users may cause throttling. NVIDIA's API Trial Terms allow free use for testing and evaluation only, not production. NVIDIA posts an end-of-life date on each hosted model's page on build.nvidia.com; after that date, requests for the model return HTTP 410 Gone. GLM 5.3 (z-ai/glm-5.3) can be called until 2026-10-27; NVIDIA's page says it is no longer supported after 2026-10-28. This date does not apply to GLM 5.3 Flash (z-ai/glm-5.3-flash). NVIDIA stopped supporting NVIDIA Nemotron 3 Super (nvidia/nemotron-3-super-120b-a12b) after 2026-10-19, and its catalogue no longer lists the model (checked 2026-10-21). Nemotron 3.5 Super VL (nvidia/nemotron-3.5-super-vl-120b-a12b), an early-access model, is a Free Endpoint. NVIDIA retired Kimi K3 (moonshotai/kimi-k3) on 2026-10-15. Other model IDs NVIDIA retired in 2026 include these. DeepSeek: deepseek-ai/deepseek-v4-pro and deepseek-ai/deepseek-v4-flash on 2026-08-07, deepseek-ai/deepseek-v4-pro-0813 on 2026-09-14 and deepseek-ai/deepseek-v4-flash-0731 on 2026-09-21. Kimi: moonshotai/kimi-k2-instruct and moonshotai/kimi-k2-thinking on 2026-05-12. GLM: z-ai/glm4.7 on 2026-05-14, z-ai/glm-5.1 on 2026-07-02 and z-ai/glm-5.2 on 2026-08-21. Qwen: qwen/qwen2.5-coder-32b-instruct on 2026-05-12, qwen/qwen3-next-80b-a3b-thinking on 2026-05-21, qwen/qwen3-coder-480b-a35b-instruct on 2026-06-11, qwen/qwen3.5-122b-a10b on 2026-07-20, and qwen/qwen3.5-397b-a17b and qwen/qwen3-next-80b-a3b-instruct on 2026-07-27. MiniMax: minimaxai/minimax-m2.5 on 2026-05-12, minimaxai/minimax-m2.7 on 2026-07-27 and minimaxai/minimax-m3 on 2026-09-09. gpt-oss: openai/gpt-oss-120b on 2026-09-03. Llama: meta/llama-4-maverick-17b-128e-instruct on 2026-07-27, and meta/llama-3.3-70b-instruct, meta/llama-3.1-8b-instruct, meta/llama-3.1-70b-instruct, meta/llama-3.2-1b-instruct and meta/llama-3.2-3b-instruct on 2026-08-26. Nemotron: nvidia/llama-3.3-nemotron-super-49b-v1, nvidia/llama-3.3-nemotron-super-49b-v1.5, nvidia/llama-3.1-nemotron-nano-8b-v1, nvidia/llama-3.1-nemotron-nano-vl-8b-v1, nvidia/nvidia-nemotron-nano-9b-v2, nvidia/nemotron-nano-12b-v2-vl and nvidia/nemotron-mini-4b-instruct on 2026-08-26, and nvidia/nemotron-3-nano-30b-a3b on 2026-09-01. Mistral: mistralai/mistral-large-3-675b-instruct-2512 on 2026-07-23, mistralai/mixtral-8x7b-instruct-v0.1 on 2026-07-27 and mistralai/mistral-nemotron on 2026-09-28. Gemma: google/gemma-3-27b-it on 2026-05-12, and google/gemma-3n-e4b-it and google/gemma-3n-e2b-it on 2026-07-27. Phi: microsoft/phi-4-mini-instruct and microsoft/phi-4-multimodal-instruct on 2026-07-15. Others: stepfun-ai/step-3.5-flash, bytedance/seed-oss-36b-instruct, sarvamai/sarvam-m and abacusai/dracarys-llama-3.1-70b-instruct on 2026-07-27. Embedding models: nvidia/llama-3.2-nv-embedqa-1b-v2 and nvidia/llama-3.2-nemoretriever-300m-embed-v1 on 2026-05-18, and nvidia/nv-embedqa-e5-v5, nvidia/nv-embed-v1, nvidia/llama-nemotron-embed-1b-v2 and baai/bge-m3 on 2026-08-25.",
       "tier": "Free",
       "url": "https://build.nvidia.com/api/runtime/content/help-center-faq.yaml",
       "tags": [
@@ -33631,9 +33744,9 @@
         "gpu",
         "free tier"
       ],
-      "verifiedDate": "2026-10-20",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-10-20",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names NVIDIA NIM as \"nim\" and states \"40 requests per minute\""
       },
@@ -35251,7 +35364,7 @@
       ],
       "verifiedDate": "2026-08-20",
       "source_check": {
-        "checked": "2026-09-28",
+        "checked": "2026-10-21",
         "outcome": "unreadable",
         "detail": "page content too short (likely JS-rendered SPA); a rendering client read 0 characters",
         "rendered": true
@@ -35426,7 +35539,7 @@
       ],
       "verifiedDate": "2026-08-18",
       "source_check": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names OVHcloud as \"ovhcloud\" and states amounts, none of which we matched to the terms we publish"
       }
@@ -36168,9 +36281,9 @@
         "self-hosted",
         "open source"
       ],
-      "verifiedDate": "2026-09-26",
+      "verifiedDate": "2026-10-21",
       "source_check": {
-        "checked": "2026-09-26",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names authentik as \"authentik\" and states \"$5\" and \"$0.02\""
       },
@@ -36376,7 +36489,7 @@
         "microvm",
         "vercel"
       ],
-      "verifiedDate": "2026-09-27",
+      "verifiedDate": "2026-10-21",
       "product_subtypes": {
         "taxonomy": "Cloud Hosting",
         "labels": [
@@ -36398,7 +36511,12 @@
             "commercial use"
           ]
         }
-      ]
+      ],
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Vercel Sandbox as \"vercel sandbox\" and states \"$0.128\" and \"$0.0212\" and \"5 hours/month\" and \"420 GB-hours/month\""
+      }
     },
     {
       "vendor": "Daytona",
@@ -36423,6 +36541,11 @@
           }
         ],
         "reviewed": "2026-09-27"
+      },
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Daytona as \"daytona\" and states \"$0.0504\" and \"$0.0162\" and \"$200\""
       }
     },
     {
@@ -36448,6 +36571,16 @@
           }
         ],
         "reviewed": "2026-09-27"
+      },
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Blaxel as \"blaxel\" and states \"$200\" and \"$0.0000115\""
+      },
+      "free_plan_excerpt": {
+        "text": "$0.00 + USAGE Up to $200 in free credits",
+        "url": "https://blaxel.ai/pricing",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -36473,6 +36606,11 @@
           }
         ],
         "reviewed": "2026-09-27"
+      },
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Novita Sandbox as \"novita sandbox\" and states \"$100\" and \"$0.0000098\" and \"$0.0000032\""
       }
     },
     {
@@ -36487,7 +36625,7 @@
         "agents",
         "ai"
       ],
-      "verifiedDate": "2026-09-27",
+      "verifiedDate": "2026-10-21",
       "product_subtypes": {
         "taxonomy": "AI / ML",
         "labels": [
@@ -36498,6 +36636,11 @@
           }
         ],
         "reviewed": "2026-09-27"
+      },
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Runloop as \"runloop\" and states \"$50\" and \"$250\" and \"$0.108\" and \"$0.0252\""
       }
     },
     {
@@ -36513,7 +36656,7 @@
         "open-source",
         "free tier"
       ],
-      "verifiedDate": "2026-09-27",
+      "verifiedDate": "2026-10-21",
       "product_subtypes": {
         "taxonomy": "AI / ML",
         "labels": [
@@ -36524,6 +36667,11 @@
           }
         ],
         "reviewed": "2026-10-09"
+      },
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Mem0 as \"mem0\" and states \"$19\" and \"10,000 add requests/ month\" and \"1,000 retrieval requests/ month\" and \"50,000 add requests /month\""
       }
     },
     {
@@ -36564,7 +36712,17 @@
           "url": "https://www.getzep.com/legal/terms/",
           "read_on": "2026-10-12"
         }
-      ]
+      ],
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Zep as \"zep\" and states \"$125\" and \"$ 125\" and \"50,000 credits per month\" and \"10,000 credits a month\""
+      },
+      "free_plan_excerpt": {
+        "text": "Prototyping? Start free with 10,000 credits a month. Limits apply .",
+        "url": "https://www.getzep.com/pricing/",
+        "read_on": "2026-10-21"
+      }
     },
     {
       "vendor": "Letta",
@@ -36579,7 +36737,17 @@
         "open-source",
         "free tier"
       ],
-      "verifiedDate": "2026-09-27"
+      "verifiedDate": "2026-09-27",
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Letta as \"letta\" and states \"$0\" and \"$20\" and \"$0.10\""
+      },
+      "free_plan_excerpt": {
+        "text": "Free Get started at no cost. $0 /month Limited agents 5 MiB of storage per memory repository Limited usage of Letta Auto Bring your own API keys and external coding plans",
+        "url": "https://docs.letta.com/pricing",
+        "read_on": "2026-10-21"
+      }
     },
     {
       "vendor": "Supermemory",
@@ -36594,7 +36762,7 @@
         "search",
         "free tier"
       ],
-      "verifiedDate": "2026-09-27",
+      "verifiedDate": "2026-10-21",
       "product_subtypes": {
         "taxonomy": "AI / ML",
         "labels": [
@@ -36605,6 +36773,16 @@
           }
         ],
         "reviewed": "2026-10-09"
+      },
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Supermemory as \"supermemory\" and states \"$19\" and \"$20\" and \"$0\" and \"$5\""
+      },
+      "free_plan_excerpt": {
+        "text": "Free $0 per month · $5 of credits included, renewed every month",
+        "url": "https://supermemory.ai/pricing/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -36620,7 +36798,7 @@
         "knowledge graph",
         "open-source"
       ],
-      "verifiedDate": "2026-09-27",
+      "verifiedDate": "2026-10-21",
       "product_subtypes": {
         "taxonomy": "AI / ML",
         "labels": [
@@ -36631,6 +36809,16 @@
           }
         ],
         "reviewed": "2026-10-09"
+      },
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Cognee as \"cognee\" and states \"$0\" and \"$1.00\" and \"$5\""
+      },
+      "free_plan_excerpt": {
+        "text": "Free The perfect place to start your first agent with memory. Free forever. $0 /month 1 workspace and 1M tokens included — no card required 1M tokens included 1 workspace Unlimited users Unlimited API calls Agentic integrations (Claude Code, Codex, MCP)",
+        "url": "https://www.cognee.ai/pricing",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -36646,7 +36834,7 @@
         "web-search",
         "serp"
       ],
-      "verifiedDate": "2026-09-27",
+      "verifiedDate": "2026-10-21",
       "product_subtypes": {
         "taxonomy": "AI / ML",
         "labels": [
@@ -36657,6 +36845,16 @@
           }
         ],
         "reviewed": "2026-09-27"
+      },
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Serper as \"serper\" and states \"$ 50\" and \"$1.00\" and \"$0.30\" and \"50,000 queries 50 queries per second\""
+      },
+      "free_plan_excerpt": {
+        "text": "Get 2,500 free queries No credit card required",
+        "url": "https://serper.dev/",
+        "read_on": "2026-10-21"
       }
     },
     {
@@ -36709,7 +36907,17 @@
           "source_quote": "Linkup MCP Server allows you to use the Linkup API in your MCP clients.",
           "read_on": "2026-10-20"
         }
-      ]
+      ],
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Linkup as \"linkup\" and states \"$0.001\" and \"$0.006\" and \"$0.005\""
+      },
+      "free_plan_excerpt": {
+        "text": "Run 4,000 queries for free.",
+        "url": "https://www.linkup.so/pricing",
+        "read_on": "2026-10-21"
+      }
     },
     {
       "vendor": "Parallel",
@@ -36737,6 +36945,11 @@
           }
         ],
         "reviewed": "2026-09-27"
+      },
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Parallel as \"parallel\" and states \"$1\" and \"$80\" and \"$5\" and \"$ 5.00\""
       }
     },
     {
@@ -36753,7 +36966,7 @@
         "reader",
         "embeddings"
       ],
-      "verifiedDate": "2026-09-27",
+      "verifiedDate": "2026-10-21",
       "product_subtypes": {
         "taxonomy": "AI / ML",
         "labels": [
@@ -36783,7 +36996,12 @@
           "source_quote": "A remote Model Context Protocol (MCP) server for the Jina Reader, Search, Embeddings and Reranker APIs",
           "read_on": "2026-10-20"
         }
-      ]
+      ],
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "states_a_free_price",
+        "detail": "the page names Jina AI and states its price in words as \"Free API\", and its markup carries no structured data"
+      }
     },
     {
       "vendor": "You.com",
@@ -36811,6 +37029,11 @@
           }
         ],
         "reviewed": "2026-09-27"
+      },
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names You.com as \"you com\" and states \"$5\" and \"$1\" and \"$100\" and \"100 Web Search API queries/day\""
       }
     },
     {
@@ -36826,7 +37049,17 @@
         "ai-agent",
         "credits"
       ],
-      "verifiedDate": "2026-09-27"
+      "verifiedDate": "2026-09-27",
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Steel as \"steel\" and states \"$30\" and \"$0\" and \"$250\" and \"$100\""
+      },
+      "free_plan_excerpt": {
+        "text": "$0 + usage $30 free usage credits, one time",
+        "url": "https://docs.steel.dev/overview/pricinglimits",
+        "read_on": "2026-10-21"
+      }
     },
     {
       "vendor": "Browser Use",
@@ -36878,7 +37111,17 @@
         "ai-agent",
         "free tier"
       ],
-      "verifiedDate": "2026-09-27"
+      "verifiedDate": "2026-09-27",
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Kernel as \"kernel\" and states \"$5\" and \"$30\" and \"$10\""
+      },
+      "free_plan_excerpt": {
+        "text": "free $0/mo. plus usage costs* get free $5 / month free credits 5 concurrent browsers live view stealth mode (captcha solver & proxy) managed auth (3 connections) session replays (1 day) file uploads & downloads vaults & payments (3 vaults)",
+        "url": "https://www.kernel.sh/pricing",
+        "read_on": "2026-10-21"
+      }
     },
     {
       "vendor": "Airtop",
@@ -36892,7 +37135,17 @@
         "ai-agent",
         "free tier"
       ],
-      "verifiedDate": "2026-09-27"
+      "verifiedDate": "2026-10-21",
+      "source_check": {
+        "checked": "2026-10-21",
+        "outcome": "ok",
+        "detail": "the page names Airtop as \"airtop\" and states \"$ 29\""
+      },
+      "free_plan_excerpt": {
+        "text": "$ 0 /mo 1,000 Credits 3 simultaneous sessions 1 deployed agent 10,000 one-time credit bonus Mark trial for 7 days or until credits are consumed",
+        "url": "https://www.airtop.ai/pricing",
+        "read_on": "2026-10-21"
+      }
     },
     {
       "vendor": "Amazon CloudFront",
