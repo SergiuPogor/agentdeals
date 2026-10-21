@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-20",
+  "generated": "2026-10-21",
   "pages": {
     "/": {
       "daily": true
@@ -3234,8 +3234,8 @@
       "changed": "2026-10-20"
     },
     "/gemini-api-pricing-2026": {
-      "hash": "492521b74c60a293",
-      "changed": "2026-10-20"
+      "hash": "d30e2ff61c4e49ee",
+      "changed": "2026-10-21"
     },
     "/github-actions-alternatives": {
       "hash": "920f18d0e8e36e8d",
@@ -3285,7 +3285,7 @@
     },
     "/hetzner-pricing-2026": {
       "hash": "b260c63d98d2950b",
-      "changed": "2026-10-20"
+      "changed": "2026-10-21"
     },
     "/hosting-alternatives": {
       "daily": true
