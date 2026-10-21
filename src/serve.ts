@@ -106,7 +106,7 @@ import { figureProvenanceAgainst, statementsWeHold } from "./figure-provenance.j
 import { statesNoFreeTier } from "./retired-terms.js";
 import { countsDownTo, shutdownDeadlineHtml } from "./shutdown-deadline.js";
 import { forecastShutdownsWithoutACard, whatEnds, type RecordACardCovers } from "./forecast-shutdowns.js";
-import { deadlineTextsOf, quotesTheWholeDescription, statedDeadlines, type StatedDeadline } from "./stated-deadlines.js";
+import { deadlineTextsOf, quotesTheWholeDescription, statedDeadlines, statedShutdowns, type StatedDeadline } from "./stated-deadlines.js";
 import { COMING_UP_HEADING, lastDayComingUp } from "./coming-up.js";
 import { UPCOMING_CHANGES_HEADING, UPCOMING_CHANGES_INTRO, LATEST_PRICING_CHANGES_HEADING, LATEST_PRICING_CHANGES_SHOWN, splitAtTheDayServed, upcomingDateOf, atUpcomingDate } from "./upcoming-changes.js";
 import { createRegistrationLimiter, rateLimitHeaders } from "./rate-limit.js";
@@ -26869,6 +26869,7 @@ function buildShutdownTrackerPage(): string {
     migrationPath?: string;
     migrationLink?: string;
     covers?: RecordACardCovers[];
+    statedDeadline?: StatedDeadline;
     status: "active" | "imminent" | "completed";
   }
 
@@ -27090,7 +27091,21 @@ function buildShutdownTrackerPage(): string {
     status: "active",
   }));
 
-  const shutdowns: ShutdownEntry[] = [...handTyped, ...recordedOnly];
+  const covered = [...handTyped, ...recordedOnly];
+  const statedOnly: ShutdownEntry[] = statedShutdowns(deadlineTextsOf(offers, []), utcToday())
+    .filter(deadline => !covered.some(card =>
+      (card.deadline === deadline.date && (servedVendorSlug(card.vendorSlug) ?? card.vendorSlug) === (servedVendorSlugForName(deadline.vendor) ?? toSlug(deadline.vendor)))
+      || (card.covers ?? []).some(covered => covered.vendor === deadline.vendor && covered.deadline === deadline.date)))
+    .map(deadline => ({
+      service: deadline.vendor,
+      vendorSlug: servedVendorSlugForName(deadline.vendor) ?? toSlug(deadline.vendor),
+      what: deadline.sentence,
+      deadline: deadline.date,
+      dateSource: deadline.sourceUrl ?? undefined,
+      statedDeadline: deadline,
+      status: "active",
+    }));
+  const shutdowns: ShutdownEntry[] = [...covered, ...statedOnly];
 
   shutdowns.sort((a, b) => new Date(a.deadline).getTime() - new Date(b.deadline).getTime());
 
@@ -27152,11 +27167,11 @@ function buildShutdownTrackerPage(): string {
       <div class="shutdown-header">
         <div>
           <h3 style="margin:0">${handwrittenVendorLinkHtml(s.vendorSlug, s.service, ' style="color:var(--text)"')}</h3>
-          ${shutdownDeadlineHtml(s, { date: dateStr, color, countdown: daysLabel(s.deadline) }, escHtmlServer)}
+          ${shutdownDeadlineHtml(s, { date: dateStr, color, countdown: daysLabel(s.deadline) }, escHtmlServer, s.statedDeadline ? (url, esc) => " " + listingSourceLinkHtml(url, esc) : undefined)}
         </div>
         <div class="stability-badge" style="color:${stabColor}">${escHtmlServer(stability.toUpperCase())}</div>
       </div>
-      <p class="shutdown-what">${escHtmlServer(s.what)}</p>
+      <p class="shutdown-what">${escHtmlServer(s.what)}</p>${s.statedDeadline ? conditionsAfterAWholeDescriptionHtml(s.statedDeadline) : ""}
       ${details.length === 0 ? "" : `<div class="shutdown-details">
         ${details.map(([label, value]) => `<div class="detail-row"><span class="detail-label">${label}:</span> <span>${escHtmlServer(value)}</span></div>`).join("\n        ")}
       </div>`}
@@ -27216,7 +27231,7 @@ function buildShutdownTrackerPage(): string {
       "@type": "ListItem",
       position: i + 1,
       name: s.service,
-      description: s.what,
+      description: s.statedDeadline ? statedSentenceWithAnyConditions(s.statedDeadline) : s.what,
       url: `${BASE_URL}/vendor/${s.vendorSlug}`,
     })),
   };
@@ -27318,10 +27333,10 @@ ${buildGlobalNav("guides")}
   <h1>${escHtmlServer(title)}</h1>
   <p class="subtitle">${escHtmlServer(subtitle)}</p>
   ${datedSectionNoticeHtml(
-    `A shutdown is grouped by how many days its deadline is from ${today.toISOString().slice(0, 10)}: 30 or fewer is Imminent, up to 90 is Upcoming, beyond that is Later.`,
+    `A shutdown is grouped by how many days its deadline is from ${today.toISOString().slice(0, 10)}: 30 or fewer is Imminent, up to 90 is Upcoming, beyond that is Later. Entries quoted from listings appear only while the stated date is later than ${utcToday()}.`,
     [
-      { when: "On the day its deadline passes it moves to", text: "Recently Completed, below", href: "#completed" },
-      { when: "Nothing is removed from this page when its deadline arrives, and every pricing change we hold for these vendors is in", text: "the full change log", href: "/changes" },
+      { when: "Recorded shutdowns move to", text: "Recently Completed, below", href: "#completed" },
+      { when: "Every pricing change we hold for these vendors is in", text: "the full change log", href: "/changes" },
     ],
     escHtmlServer,
     ' class="subtitle dated-rule"',
