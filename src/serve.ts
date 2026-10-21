@@ -33764,7 +33764,6 @@ function buildAwsFreeTier2026Page(): string {
 
   const trialServices: AwsService[] = [
     { name: "Amazon SageMaker", slug: "aws", limits: "250 hrs/month ml.t3.medium for Studio notebooks (2 months)", category: "AI/ML" },
-    { name: "Amazon Bedrock", slug: "aws", limits: "Select foundation models with limited free inference (varies by model)", category: "AI/ML" },
     { name: "Amazon Lightsail", slug: "aws", limits: "No free trial for new customers: AWS replaced Lightsail's 3-month free trials with the Free plan's credits, which pay for Lightsail like any other service (bundles from $3.50/month IPv6-only, $5/month with IPv4)", category: "Hosting", source: "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-frequently-asked-questions-faq-billing-and-account-management.html" },
   ];
 
@@ -33778,7 +33777,7 @@ function buildAwsFreeTier2026Page(): string {
     { title: "Data transfer out", desc: "First 100 GB/month free to internet, then $0.09/GB. Transfers between regions always charged.", cost: "$0.09/GB" },
     { title: "NAT Gateway", desc: "If your Lambda/ECS needs internet access in a VPC, NAT Gateway costs $0.045/hr + $0.045/GB. Running 24/7 = $32/month before data.", cost: "$32+/mo" },
     { title: "Public IPv4 addresses", desc: "Every public IPv4 address is charged $0.005/hr, whether attached to a running instance or idle. AWS: “Effective February 1, 2024 there will be a charge of $0.005 per IP per hour for all public IPv4 addresses, whether attached to a service or not.”", cost: "$3.60/mo each" },
-    { title: "CloudWatch detailed monitoring", desc: "Basic monitoring is free (5-minute intervals). Detailed monitoring (1-minute) costs $2.10/metric/month. EC2 auto-enables it in some launch configs.", cost: "$2.10/metric" },
+    { title: "CloudWatch detailed monitoring", desc: "Basic monitoring is free (5-minute intervals). Detailed monitoring (1-minute) costs $0.30 per metric a month for the first 10,000 metrics. An instance sending 7 metrics costs about $2.10 a month; the number of metrics varies by instance type. EC2 auto-enables it in some launch configs.", cost: "$0.30/metric/month" },
     { title: "EBS volumes on stopped instances", desc: "You pay for EBS storage even when EC2 instances are stopped. 30 GB gp3 = $2.40/month sitting idle.", cost: "$0.08/GB-mo" },
     { title: "Free tier expiration", desc: "On the Free plan nothing is billed: the account closes at 6 months or when credits run out, and content is deleted after 90 days unless you upgrade. On the Paid plan, usage past the credits is billed.", cost: "Varies" },
     { title: "S3 request costs", desc: "Storage is cheap but requests add up. PUT/COPY/POST at $0.005/1K requests. A deployment pipeline doing thousands of S3 operations can cost more in requests than storage.", cost: "$0.005/1K PUT" },
@@ -34024,7 +34023,7 @@ ${globalNavCss()}
 
     <div class="verdict-item">
       <strong>AI/ML experimentation</strong>
-      <p>SageMaker Studio Lab (free, no AWS account needed) + Bedrock free tier models. For more options, see our <a href="/ai-ml-alternatives">AI/ML tools guide</a>.</p>
+      <p>SageMaker Studio Lab is free and needs no AWS account. Amazon Bedrock has no free tier and is billed per token. For more options, see our <a href="/ai-ml-alternatives">AI/ML tools guide</a>.</p>
     </div>
 
     <div class="verdict-item">
