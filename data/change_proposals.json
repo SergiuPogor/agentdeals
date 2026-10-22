@@ -1,116 +1,5 @@
 {
-  "proposals": [
-    {
-      "proposal_id": "2026-10-22/letta/pricing_restructured",
-      "proposed_on": "2026-10-22",
-      "vendor": "Letta",
-      "change_type": "pricing_restructured",
-      "date": "2026-10-22",
-      "date_source": "discovered",
-      "summary": "The Free plan now includes 5 MiB of storage per memory repository. The Free plan is now explicitly called a 'Personal Plan'. The current pricing page details a Developer Plan at $20/month + $0.10/active agent/month and $0.00015/sec tool execution.",
-      "tier": "Personal Plans",
-      "tier_direction": "narrowed",
-      "previous_state": "Stateful AI agents that keep their memory across sessions. The Free plan is $0/month for the Letta app, CLI and web app: up to 3 stateful agents, limited use of Letta Auto, a limited number of LLM requests on rotating free models, and your own model API keys or coding plans. Free is a Personal Plan; API-key access to the Letta API is sold as a Developer Plan, the API Plan at $20/month plus $0.10 per active agent a month and pay-as-you-go model usage. Pro is $20/month for up to 20 stateful agents. The Letta agent harness is open source (Apache 2.0) and runs on your own infrastructure with no Letta account.",
-      "current_state": "Personal Plans are free at $0/month, limited to 3 stateful agents, and include 5 MiB of storage per memory repository and limited use of Letta Auto.",
-      "impact": "medium",
-      "source_url": "https://docs.letta.com/pricing",
-      "category": "AI / ML",
-      "alternatives": [],
-      "detected_by": "reverify-ai",
-      "recorded_date": "2026-10-22",
-      "restatement": [
-        {
-          "url": "https://docs.letta.com/pricing",
-          "refused": "reading_drops_a_figure_our_source_check_found",
-          "figures": [
-            "$20",
-            "$0.10"
-          ]
-        }
-      ]
-    },
-    {
-      "proposal_id": "2026-10-22/parallel/pricing_restructured",
-      "proposed_on": "2026-10-22",
-      "vendor": "Parallel",
-      "change_type": "pricing_restructured",
-      "date": "2026-10-22",
-      "date_source": "discovered",
-      "summary": "The free tier has been restructured. $5 of free credit remains, the page details multiple API options (Task, Search, Extract, Responses, Monitor, Find All) with varying pricing and limits. The Search API now offers a free tier of up to 5,000 requests per month.",
-      "tier": "Search API",
-      "tier_direction": "widened",
-      "previous_state": "Web search and research APIs for AI agents. Organizations with a credit card on file get $5 of free credit each month, and unused credit expires at month end. $5 covers up to 1,000 requests a month in Search's Basic or Advanced mode (Advanced is the API default), or 5,000 in Turbo or Fast mode; usage beyond $5 is billed to the card at standard rates. One monthly credit per organization and per card; marketplace and postpaid organizations are not eligible. The pricing page also offers \"up to $80 at signup\" without stating its terms. A hosted Search MCP is free without an account or API key, at lower rate limits, for personal and hobby use. Then pay as you go: Search $1 per 1,000 requests (Turbo, Fast) or $5 (Basic, Advanced) with 10 results, at 600 requests a minute.",
-      "current_state": "The Search API offers up to 5,000 requests per month for free. Pricing ranges from $0.001 - $0.005 for 10 results.",
-      "impact": "high",
-      "source_url": "https://parallel.ai/pricing",
-      "category": "AI / ML",
-      "alternatives": [],
-      "detected_by": "reverify-ai",
-      "recorded_date": "2026-10-22",
-      "restatement": [
-        {
-          "url": "https://parallel.ai/pricing",
-          "refused": "reading_drops_a_figure_our_source_check_found",
-          "figures": [
-            "$1",
-            "$80",
-            "$5",
-            "$ 5.00"
-          ]
-        }
-      ]
-    },
-    {
-      "proposal_id": "2026-10-22/steel/pricing_restructured",
-      "proposed_on": "2026-10-22",
-      "vendor": "Steel",
-      "change_type": "pricing_restructured",
-      "date": "2026-10-22",
-      "date_source": "discovered",
-      "summary": "CAPTCHA solves are now $1/1k on all plans, down from $3/1k. Proxy bandwidth is now $6/GB on all plans, down from $10/GB. Browser hours are now $0.08/hour on Scale, down from $0.10/hour.",
-      "tier": "Launch",
-      "tier_direction": "widened",
-      "previous_state": "Cloud browser API for AI agents. The Launch plan is $0 a month plus usage and comes with a one-time $30 credit, valid for 90 days, which Steel puts at about 300 browser hours at $0.10 an hour. Launch allows 10 concurrent sessions, 15-minute sessions, 60 requests a minute and 7-day data retention; CAPTCHA solving and Steel's proxies need a $10 deposit first. Scale is $250 a month plus usage, with $100 of credit each month.",
-      "current_state": "Browser hours are $0.10/hour, Proxy bandwidth $10/GB, CAPTCHA solves $3/1k for Launch. Scale is $0.08/hour, $6/GB, $1/1k.",
-      "impact": "high",
-      "source_url": "https://docs.steel.dev/overview/pricinglimits",
-      "category": "Browser Automation",
-      "alternatives": [],
-      "detected_by": "reverify-ai",
-      "recorded_date": "2026-10-22",
-      "restatement": []
-    },
-    {
-      "proposal_id": "2026-10-22/zep/limits_reduced",
-      "proposed_on": "2026-10-22",
-      "vendor": "Zep",
-      "change_type": "limits_reduced",
-      "date": "2026-10-22",
-      "date_source": "discovered",
-      "summary": "The free plan is still offered. The details have changed. The free plan now has variable rate limits depending on service-wide load, and lower priority processing. The Flex plan now includes auto top-up and credit rollover.",
-      "tier": "Free",
-      "tier_direction": "narrowed",
-      "previous_state": "Context and memory layer for AI agents: Zep gives an agent context from past conversations, user activity and changing preferences. The Free plan includes 10,000 credits a month, with no rollover or auto top-up. An Episode (a chat message, JSON payload or block of text) up to 350 bytes costs 1 credit; retrieval, storage and users cost none. Free allows 2 projects, 1 Memory MCP Server seat and 5 custom entity and edge types, with variable rate limits and lower-priority processing. When the credits run out, Episodes stop processing until the next billing cycle and the account's rate limit drops to 5 requests a minute. Flex, the first paid plan, is $125/month for 50,000 credits. The self-hosted Community Edition is deprecated; Graphiti, the framework under Zep, is open source (Apache 2.0).",
-      "current_state": "The free plan includes 10,000 credits a month. No rollover or auto-topup. It has limits of 2 projects, 1 Context MCP Server seat, and 5 custom entity & edge types. Variable rate limits apply, depending on service-wide load, and lower priority Episode processing.",
-      "impact": "medium",
-      "source_url": "https://www.getzep.com/pricing/",
-      "category": "AI / ML",
-      "alternatives": [],
-      "detected_by": "reverify-ai",
-      "recorded_date": "2026-10-22",
-      "restatement": [
-        {
-          "url": "https://www.getzep.com/pricing/",
-          "refused": "reading_drops_a_figure_our_source_check_found",
-          "figures": [
-            "$125",
-            "$ 125",
-            "50,000 credits per month"
-          ]
-        }
-      ]
-    }
-  ],
+  "proposals": [],
   "dropped": [
     {
       "proposal_id": "2026-10-12/taskade-com/new_tier",
@@ -754,6 +643,124 @@
       ],
       "dropped_on": "2026-10-21",
       "drop_reason": "Misreading: $0.00025/hour is the Essentials column of pulumi.com/pricing's managed-resource row; the Free column says 'Free', and Free still has 25 secrets, 10K secret API calls a month and up to 500 workflow minutes."
+    },
+    {
+      "proposal_id": "2026-10-22/parallel/pricing_restructured",
+      "proposed_on": "2026-10-22",
+      "vendor": "Parallel",
+      "change_type": "pricing_restructured",
+      "date": "2026-10-22",
+      "date_source": "discovered",
+      "summary": "The free tier has been restructured. $5 of free credit remains, the page details multiple API options (Task, Search, Extract, Responses, Monitor, Find All) with varying pricing and limits. The Search API now offers a free tier of up to 5,000 requests per month.",
+      "tier": "Search API",
+      "tier_direction": "widened",
+      "previous_state": "Web search and research APIs for AI agents. Organizations with a credit card on file get $5 of free credit each month, and unused credit expires at month end. $5 covers up to 1,000 requests a month in Search's Basic or Advanced mode (Advanced is the API default), or 5,000 in Turbo or Fast mode; usage beyond $5 is billed to the card at standard rates. One monthly credit per organization and per card; marketplace and postpaid organizations are not eligible. The pricing page also offers \"up to $80 at signup\" without stating its terms. A hosted Search MCP is free without an account or API key, at lower rate limits, for personal and hobby use. Then pay as you go: Search $1 per 1,000 requests (Turbo, Fast) or $5 (Basic, Advanced) with 10 results, at 600 requests a minute.",
+      "current_state": "The Search API offers up to 5,000 requests per month for free. Pricing ranges from $0.001 - $0.005 for 10 results.",
+      "impact": "high",
+      "source_url": "https://parallel.ai/pricing",
+      "category": "AI / ML",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-22",
+      "restatement": [
+        {
+          "url": "https://parallel.ai/pricing",
+          "refused": "reading_drops_a_figure_our_source_check_found",
+          "figures": [
+            "$1",
+            "$80",
+            "$5",
+            "$ 5.00"
+          ]
+        }
+      ],
+      "dropped_on": "2026-10-22",
+      "drop_reason": "Restates the listing: the Search API's 5,000 free requests a month are the $5 monthly credit at Turbo and Fast's $1 per 1,000 (parallel.ai/pricing, read 2026-10-22), which the listing already gives."
+    },
+    {
+      "proposal_id": "2026-10-22/steel/pricing_restructured",
+      "proposed_on": "2026-10-22",
+      "vendor": "Steel",
+      "change_type": "pricing_restructured",
+      "date": "2026-10-22",
+      "date_source": "discovered",
+      "summary": "CAPTCHA solves are now $1/1k on all plans, down from $3/1k. Proxy bandwidth is now $6/GB on all plans, down from $10/GB. Browser hours are now $0.08/hour on Scale, down from $0.10/hour.",
+      "tier": "Launch",
+      "tier_direction": "widened",
+      "previous_state": "Cloud browser API for AI agents. The Launch plan is $0 a month plus usage and comes with a one-time $30 credit, valid for 90 days, which Steel puts at about 300 browser hours at $0.10 an hour. Launch allows 10 concurrent sessions, 15-minute sessions, 60 requests a minute and 7-day data retention; CAPTCHA solving and Steel's proxies need a $10 deposit first. Scale is $250 a month plus usage, with $100 of credit each month.",
+      "current_state": "Browser hours are $0.10/hour, Proxy bandwidth $10/GB, CAPTCHA solves $3/1k for Launch. Scale is $0.08/hour, $6/GB, $1/1k.",
+      "impact": "high",
+      "source_url": "https://docs.steel.dev/overview/pricinglimits",
+      "category": "Browser Automation",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-22",
+      "restatement": [],
+      "dropped_on": "2026-10-22",
+      "drop_reason": "Misreading: $1/1k CAPTCHA solves, $6/GB proxy bandwidth and $0.08/hour are the Scale column; Launch still lists $3/1k, $10/GB and $0.10/hour (docs.steel.dev/overview/pricinglimits, read 2026-10-22)."
+    },
+    {
+      "proposal_id": "2026-10-22/zep/limits_reduced",
+      "proposed_on": "2026-10-22",
+      "vendor": "Zep",
+      "change_type": "limits_reduced",
+      "date": "2026-10-22",
+      "date_source": "discovered",
+      "summary": "The free plan is still offered. The details have changed. The free plan now has variable rate limits depending on service-wide load, and lower priority processing. The Flex plan now includes auto top-up and credit rollover.",
+      "tier": "Free",
+      "tier_direction": "narrowed",
+      "previous_state": "Context and memory layer for AI agents: Zep gives an agent context from past conversations, user activity and changing preferences. The Free plan includes 10,000 credits a month, with no rollover or auto top-up. An Episode (a chat message, JSON payload or block of text) up to 350 bytes costs 1 credit; retrieval, storage and users cost none. Free allows 2 projects, 1 Memory MCP Server seat and 5 custom entity and edge types, with variable rate limits and lower-priority processing. When the credits run out, Episodes stop processing until the next billing cycle and the account's rate limit drops to 5 requests a minute. Flex, the first paid plan, is $125/month for 50,000 credits. The self-hosted Community Edition is deprecated; Graphiti, the framework under Zep, is open source (Apache 2.0).",
+      "current_state": "The free plan includes 10,000 credits a month. No rollover or auto-topup. It has limits of 2 projects, 1 Context MCP Server seat, and 5 custom entity & edge types. Variable rate limits apply, depending on service-wide load, and lower priority Episode processing.",
+      "impact": "medium",
+      "source_url": "https://www.getzep.com/pricing/",
+      "category": "AI / ML",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-22",
+      "restatement": [
+        {
+          "url": "https://www.getzep.com/pricing/",
+          "refused": "reading_drops_a_figure_our_source_check_found",
+          "figures": [
+            "$125",
+            "$ 125",
+            "50,000 credits per month"
+          ]
+        }
+      ],
+      "dropped_on": "2026-10-22",
+      "drop_reason": "Restates the listing: Free's variable rate limits and lower-priority processing are already in it; auto top-up and credit rollover are terms of Flex, a paid plan (getzep.com/pricing, read 2026-10-22)."
+    },
+    {
+      "proposal_id": "2026-10-22/letta/pricing_restructured",
+      "proposed_on": "2026-10-22",
+      "vendor": "Letta",
+      "change_type": "pricing_restructured",
+      "date": "2026-10-22",
+      "date_source": "discovered",
+      "summary": "The Free plan now includes 5 MiB of storage per memory repository. The Free plan is now explicitly called a 'Personal Plan'. The current pricing page details a Developer Plan at $20/month + $0.10/active agent/month and $0.00015/sec tool execution.",
+      "tier": "Personal Plans",
+      "tier_direction": "narrowed",
+      "previous_state": "Stateful AI agents that keep their memory across sessions. The Free plan is $0/month for the Letta app, CLI and web app: up to 3 stateful agents, limited use of Letta Auto, a limited number of LLM requests on rotating free models, and your own model API keys or coding plans. Free is a Personal Plan; API-key access to the Letta API is sold as a Developer Plan, the API Plan at $20/month plus $0.10 per active agent a month and pay-as-you-go model usage. Pro is $20/month for up to 20 stateful agents. The Letta agent harness is open source (Apache 2.0) and runs on your own infrastructure with no Letta account.",
+      "current_state": "Personal Plans are free at $0/month, limited to 3 stateful agents, and include 5 MiB of storage per memory repository and limited use of Letta Auto.",
+      "impact": "medium",
+      "source_url": "https://docs.letta.com/pricing",
+      "category": "AI / ML",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-22",
+      "restatement": [
+        {
+          "url": "https://docs.letta.com/pricing",
+          "refused": "reading_drops_a_figure_our_source_check_found",
+          "figures": [
+            "$20",
+            "$0.10"
+          ]
+        }
+      ],
+      "dropped_on": "2026-10-22",
+      "drop_reason": "No datable change: the Free plan's 5 MiB of storage per memory repository and the API Plan's $0.00015/sec tool execution are on docs.letta.com/pricing (read 2026-10-22), but the last archive capture (2026-10-15) is an empty shell, so the reading cannot date them. Free is already a Personal Plan in the listing. The 5 MiB limit goes into the listing."
     }
   ]
 }

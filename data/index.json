@@ -36904,7 +36904,7 @@
     {
       "vendor": "Letta",
       "category": "AI / ML",
-      "description": "Stateful AI agents that keep their memory across sessions. The Free plan is $0/month for the Letta app, CLI and web app: up to 3 stateful agents, limited use of Letta Auto, a limited number of LLM requests on rotating free models, and your own model API keys or coding plans. Free is a Personal Plan; API-key access to the Letta API is sold as a Developer Plan, the API Plan at $20/month plus $0.10 per active agent a month and pay-as-you-go model usage. Pro is $20/month for up to 20 stateful agents. The Letta agent harness is open source (Apache 2.0) and runs on your own infrastructure with no Letta account.",
+      "description": "Stateful AI agents that keep their memory across sessions. The Free plan is $0/month for the Letta app, CLI and web app: up to 3 stateful agents, 5 MiB of storage per memory repository, limited use of Letta Auto, a limited number of LLM requests on rotating free models, and your own model API keys or coding plans. Free is a Personal Plan; API-key access to the Letta API is sold as a Developer Plan, the API Plan at $20/month plus $0.10 per active agent a month and pay-as-you-go model usage. Pro is $20/month for up to 20 stateful agents. The Letta agent harness is open source (Apache 2.0) and runs on your own infrastructure with no Letta account.",
       "tier": "Free",
       "url": "https://docs.letta.com/pricing",
       "tags": [
