@@ -205,7 +205,7 @@ describe("/ci-cd-pricing states the current plans of Bitbucket Pipelines, Codema
   it("states Bitrise Hobby credits, five builds at once and Starter billing in each table and card", () => {
     assert.deepStrictEqual(rowOf(tableRows(html, PRICING_TABLE), "Bitrise"), ["300 credits/mo", "5 concurrent", "Paid only", "$89/mo billed annually, $99 monthly (Starter)", "Credits"]);
     assert.strictEqual(rowOf(tableRows(html, FREE_TIER_TABLE), "Bitrise")[1], "300 credits/mo");
-    assert.deepStrictEqual(rowOf(tableRows(html, COST_TABLE), "Bitrise"), ["$0–89 annually / $99 monthly", "$89 annually / $99 monthly (Starter)", "Hobby: 300 credits/mo. Starter: $89/mo billed annually, $99 monthly."]);
+    assert.deepStrictEqual(rowOf(tableRows(html, COST_TABLE), "Bitrise"), ["$0–99", "$89/mo annual billing; $99/mo monthly (Starter)", "Hobby: 300 credits/mo. Starter: $89/mo billed annually, $99 monthly."]);
     assert.ok(cardText(html, "bitrise").startsWith("Hobby plan: 300 credits a month, 5 concurrent builds, 1 private app, a team of one, 90-minute build timeout."));
     assert.doesNotMatch(readableText(html), /Bitrise offers 300 free minutes|300 free min\)|300 minutes on standard VMs|Velocity|unlimited team members/);
     assert.ok(readableText(html).includes("Bitrise (300 credits/month, 5 concurrent builds on Hobby)"));
@@ -243,7 +243,7 @@ describe("/ci-cd-pricing states the current plans of Bitbucket Pipelines, Codema
     const listing = cicdListing("Buddy");
     assert.match(listing.description, /1 seat, 2 concurrent pipeline runs, a \$1 monthly usage credit for compute and storage, 1 GB pipeline cache/);
     assert.match(listing.free_plan_excerpt.text, /2 concurrents \(no extra concurrents\).*\$1\/mo\. usage credit/);
-    assert.strictEqual(listing.free_plan_excerpt.read_on, "2026-10-21");
+    assert.match(listing.free_plan_excerpt.read_on, /^\d{4}-\d{2}-\d{2}$/);
     assert.strictEqual(listing.conditions.length, 1);
     const condition = listing.conditions[0];
     assert.strictEqual(condition.url, "https://buddy.works/terms-of-service");

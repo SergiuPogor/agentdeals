@@ -29269,8 +29269,8 @@ function buildCiCdPricingPage(): string {
       pricingModel: "Credits",
       freeDetails: "Hobby plan: 300 credits a month, 5 concurrent builds, 1 private app, a team of one, 90-minute build timeout. Mobile-first CI/CD with 300+ pre-built integrations (Xcode, Gradle, Fastlane, CocoaPods). Visual workflow editor.",
       freeType: "limited",
-      monthlyCostSmall: "$0–89 annually / $99 monthly",
-      monthlyCostTeam: "$89 annually / $99 monthly (Starter)",
+      monthlyCostSmall: "$0–99",
+      monthlyCostTeam: "$89/mo annual billing; $99/mo monthly (Starter)",
       keyCostFactor: "Hobby: 300 credits/mo. Starter: $89/mo billed annually, $99 monthly.",
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-21",
+  "generated": "2026-10-22",
   "pages": {
     "/": {
       "daily": true
@@ -1131,8 +1131,8 @@
       "changed": "2026-10-21"
     },
     "/category/ci-cd": {
-      "hash": "50d3a4f5f49978c4",
-      "changed": "2026-10-21"
+      "hash": "2318650095fb5a7f",
+      "changed": "2026-10-22"
     },
     "/category/cloud-hosting": {
       "daily": true
@@ -1337,16 +1337,16 @@
       "daily": true
     },
     "/ci-cd-alternatives": {
-      "hash": "b462a706fb952d9a",
-      "changed": "2026-10-21"
+      "hash": "6ccc4efcf67973c8",
+      "changed": "2026-10-22"
     },
     "/ci-cd-pricing": {
-      "hash": "f211d6778ae480a1",
-      "changed": "2026-10-21"
+      "hash": "613d4344c2b126e5",
+      "changed": "2026-10-22"
     },
     "/cicd-free-tier-comparison-2026": {
-      "hash": "6e194dbb5a54e213",
-      "changed": "2026-10-21"
+      "hash": "81c27b74d80bdf04",
+      "changed": "2026-10-22"
     },
     "/circleci-vs-github-actions": {
       "hash": "6ed5328083f01e69",
@@ -4491,8 +4491,8 @@
       "daily": true
     },
     "/vendor/buddy": {
-      "hash": "02448778576f87e5",
-      "changed": "2026-10-21"
+      "hash": "4810a9e200caab4c",
+      "changed": "2026-10-22"
     },
     "/vendor/buddyns": {
       "hash": "a7ae5ac599b3ed9b",
