@@ -92,12 +92,12 @@ type Retired = { what: string; pattern: RegExp; replacedBy: RegExp; vendorRecord
 const RETIRED_FIGURES: Retired[] = [
   {
     what: "Wasabi storage at $6.99 per TB",
-    pattern: /Wasabi[\s\S]{0,180}?\$6\.99\s*(?:\/|per\s*)TB/i,
+    pattern: /Wasabi[^.]{0,180}?\$6\.99\s*(?:\/|per\s*)TB/i,
     replacedBy: /Wasabi[\s\S]{0,180}?\$7\.99 per TB per month/i,
   },
   {
     what: "Oracle object storage with only 10 GB of free outbound data",
-    pattern: /Oracle Cloud (?:Obj\.? Storage|Object Storage)[\s\S]{0,220}?(?:10 GB\s*(?:\/mo|egress)|10 GB\s+(?:of )?(?:free )?(?:outbound|egress))/i,
+    pattern: /Oracle Cloud (?:Obj\.? Storage|Object Storage)[^.]{0,220}?(?:10 GB\s*(?:\/mo|egress)|10 GB\s+(?:of )?(?:free )?(?:outbound|egress))/i,
     replacedBy: /Oracle Cloud Object Storage[\s\S]{0,250}?10 TB of outbound data a month/i,
   },
   {
@@ -479,6 +479,17 @@ describe("hosting pages publish the free-tier figures our records hold (#1183)",
       .map((h) => `${h.route} (${h.surface}) states ${h.what}: ${h.excerpt}`)
       .sort();
     assert.deepStrictEqual(published, []);
+  });
+
+  it("keeps current storage grants and neighboring vendors out of retired-figure matches", () => {
+    const wasabi = RETIRED_FIGURES.find(r => r.what === "Wasabi storage at $6.99 per TB")!;
+    const oracle = RETIRED_FIGURES.find(r => r.what === "Oracle object storage with only 10 GB of free outbound data")!;
+    assert.ok(wasabi.pattern.test("Wasabi Pricing: No free tier, but flat $6.99/TB/month"));
+    assert.ok(oracle.pattern.test("Oracle Cloud Object Storage Free tier: 10 GB storage, 10 GB egress"));
+    const row = (vendor: string, grant: string) => `<tr><td>${vendor}</td><td>${grant}</td></tr>`;
+    assert.strictEqual(oracle.pattern.test(readableText(row("Oracle Cloud Obj. Storage", "20 GB, 10 TB/mo") + row("Another provider", "10 GB/mo"))), false);
+    assert.strictEqual(oracle.pattern.test("Oracle Cloud Object Storage Free tier: 20 GB object storage. 10 GB per tier on paid and trial accounts. 10 TB outbound data."), false);
+    assert.strictEqual(wasabi.pattern.test(readableText(row("Wasabi", "$7.99/TB") + row("Another provider", "$6.99/TB"))), false);
   });
 
   it("keeps a neighboring vendor's free database out of Koyeb's row", () => {
