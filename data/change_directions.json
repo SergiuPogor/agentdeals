@@ -179,14 +179,6 @@
       "finding": "100 emails/day -> 10,000 emails/month"
     },
     {
-      "vendor": "Oracle Cloud",
-      "change_type": "pricing_restructured",
-      "date": "2026-09-02",
-      "source_url": "https://www.oracle.com/cloud/free/",
-      "tier_direction": "unchanged",
-      "finding": "the reading lists service names and no quantities, so it states no reduction of the stored 2 AMD VMs, 4 Arm VMs, 200 GB block and 20 GB object; the summary is \"The tier still exists, the specific VM details are different\""
-    },
-    {
       "vendor": "paperspace",
       "change_type": "pricing_restructured",
       "date": "2026-09-05",
