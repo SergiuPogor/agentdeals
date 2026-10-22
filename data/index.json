@@ -86,6 +86,12 @@
           "quote": "Pro includes the lowest tier at no additional cost.",
           "url": "https://vercel.com/docs/pricing/flat-rate-cdn",
           "read_on": "2026-10-16"
+        },
+        {
+          "text": "Vercel's Hobby plan needs no credit card.",
+          "quote": "Without a payment method, your account reverts to a Hobby plan when the trial ends.",
+          "url": "https://vercel.com/docs/plans/pro-plan/trials",
+          "read_on": "2026-10-22"
         }
       ],
       "free_plan_excerpt": {
@@ -178,6 +184,12 @@
           "quote": "If you consume all of your Free instance hours during a given month, Render suspends all of your Free web services until the start of the next month.",
           "url": "https://render.com/docs/free",
           "read_on": "2026-10-12"
+        },
+        {
+          "text": "Render's free web services need no credit card.",
+          "quote": "No credit card is required.",
+          "url": "https://render.com/articles/platforms-with-a-real-free-tier-for-developers-in-2026",
+          "read_on": "2026-10-22"
         }
       ],
       "official_mcp_servers": [
@@ -273,6 +285,12 @@
           "quote": "On Free, Cloudflare stops ingesting new data when the account reaches its daily limit. Ingestion resumes when the allowance resets at 00:00 UTC.",
           "url": "https://developers.cloudflare.com/observability/pricing/",
           "read_on": "2026-10-17"
+        },
+        {
+          "text": "Cloudflare Workers' Free plan needs no credit card.",
+          "quote": "Start building for free — no credit card required.",
+          "url": "https://www.cloudflare.com/products/workers/",
+          "read_on": "2026-10-22"
         }
       ]
     },
@@ -362,6 +380,12 @@
           "quote": "Netlify Database has limits based on your Credit-based pricing plan.",
           "url": "https://docs.netlify.com/build/data-and-storage/netlify-database/billing-and-usage/",
           "read_on": "2026-10-21"
+        },
+        {
+          "text": "Netlify's Free plan needs no credit card; the paid Personal and Pro plans need a payment method.",
+          "quote": "You must have a valid payment method saved to your Netlify team account to keep your web projects active with the Personal or Pro Credit-based plans.",
+          "url": "https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/billing-faq-for-credit-based-plans/",
+          "read_on": "2026-10-22"
         }
       ],
       "official_mcp_servers": [
@@ -450,6 +474,12 @@
           "quote": "Cloudflare may change Cloudflare Workers/Pages subdomain names of projects hosted at workers.dev or pages.dev for any or no reason.",
           "url": "https://www.cloudflare.com/service-specific-terms-developer-platform/",
           "read_on": "2026-10-06"
+        },
+        {
+          "text": "Cloudflare Pages' free plan needs no credit card.",
+          "quote": "Start building for free — no credit card required.",
+          "url": "https://www.cloudflare.com/products/pages/",
+          "read_on": "2026-10-22"
         }
       ]
     },
@@ -528,6 +558,12 @@
           "quote": "Services per project: 5 during trial, then 3. Custom domains: 1 trial, then 0. Cron jobs per project: Free Trial only.",
           "url": "https://railway.com/pricing",
           "read_on": "2026-10-12"
+        },
+        {
+          "text": "Railway's trial, with a one-time $5 credit, needs no credit card.",
+          "quote": "Can I try Railway without a credit card? Yes. As a new Railway user, you can sign up for a free Trial. You will receive a one-time grant of $5 to use on resources.",
+          "url": "https://railway.com/pricing",
+          "read_on": "2026-10-22"
         }
       ]
     },
@@ -572,7 +608,15 @@
           }
         ],
         "reviewed": "2026-08-31"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Fly.io's trial needs no credit card; after the trial, a credit card is needed to keep using billable resources.",
+          "quote": "You don’t need a credit card to start the trial. After the trial ends, you’ll need to add a credit card to keep using billable resources.",
+          "url": "https://docs.fly.io/about/pricing",
+          "read_on": "2026-10-22"
+        }
+      ]
     },
     {
       "vendor": "Deno Deploy",
@@ -611,6 +655,12 @@
           "quote": "Deno Deploy will continue operating for six months before shutting down. We will provide migration support for paying customers moving to Cloudflare Workers.",
           "url": "https://deno.com/blog/cloudflare",
           "read_on": "2026-10-12"
+        },
+        {
+          "text": "Deno Deploy's Free plan has restricted limits until the organization links a credit card to verify itself.",
+          "quote": "Organizations can only make use of restricted Free plan limits until they verify their organization by linking a credit card.",
+          "url": "https://docs.deno.com/deploy/changelog/",
+          "read_on": "2026-10-22"
         }
       ]
     },
@@ -674,7 +724,15 @@
           }
         ],
         "reviewed": "2026-08-31"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Koyeb requires a credit card.",
+          "quote": "We require a credit card to prevent fraud and abuse.",
+          "url": "https://www.koyeb.com/docs/faqs/pricing",
+          "read_on": "2026-10-22"
+        }
+      ]
     },
     {
       "vendor": "AWS",
@@ -5407,7 +5465,15 @@
           }
         ],
         "reviewed": "2026-08-31"
-      }
+      },
+      "conditions": [
+        {
+          "text": "GitHub Pages needs no credit card: a GitHub account with a verified email address is enough to start.",
+          "quote": "To get started with GitHub.com, you need to have a personal account and a verified email address.",
+          "url": "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+          "read_on": "2026-10-22"
+        }
+      ]
     },
     {
       "vendor": "Pulsetic",
@@ -8907,6 +8973,12 @@
           "quote": "We may irretrievably delete Your Content if your account has been inactive for six months.",
           "url": "https://www.pythonanywhere.com/terms/",
           "read_on": "2026-10-05"
+        },
+        {
+          "text": "PythonAnywhere's free Beginner account sign-up asks only for a username, an email address and a password, with no credit card.",
+          "quote": "Create your account Username: Email: Password: Password (again):",
+          "url": "https://www.pythonanywhere.com/registration/register/beginner/",
+          "read_on": "2026-10-22"
         }
       ]
     },
