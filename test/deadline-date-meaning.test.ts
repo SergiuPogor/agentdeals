@@ -11,6 +11,11 @@ function dates(value: string): string[] {
 }
 
 const metadata = [
+  "Apply from an account on a paid plan (billed for usage only) that signed up on or after 2026-10-14.",
+  "Its terms, revised 2026-10-14, delete an account when its trial lapses.",
+  "Read from example.com on 2026-10-14: the old plan is not available.",
+  "As of 2026-10-14 example.com marks the legacy plan not available.",
+  "The pricing page says free models remain; its model list (example.com/models) had 17 IDs on 2026-10-14, and that list changes weekly.",
   "Under the terms (2026-10-14), free content may train models.",
   "Its change log of 2026-10-14 announces the retirement.",
   "The acquisition closed on 2026-10-14, and the company now owns the service.",
@@ -29,6 +34,7 @@ const metadata = [
 describe("a stated deadline uses the event's date", () => {
   for (const [index, sentence] of metadata.entries()) {
     it(`excludes metadata date ${index + 1} even beside a retirement`, () => {
+      assert.ok(!dates(sentence).includes("2026-10-14"), sentence);
       for (const value of [`${sentence} The API retires on 2026-10-31.`, `${sentence.replace(/\.$/, "")}; the API retires on 2026-10-31.`]) {
         assert.ok(!dates(value).includes("2026-10-14"), value);
         assert.ok(dates(value).includes("2026-10-31"), value);
@@ -89,5 +95,48 @@ describe("a stated deadline uses the event's date", () => {
 
   it("preserves the general-purpose date reader's result", () => {
     assert.deepEqual(datesNamedIn("Read 2026-10-14; retired 31 October 2026 and October 31st, 2026."), ["2026-10-14", "2026-10-31"]);
+  });
+});
+
+
+describe("a deadline sentence needs no other change word in its text", () => {
+  for (const sentence of [
+    "From October 31, 2026, the service deletes inactive deployments.",
+    "The legacy endpoint is removed on October 31, 2026.",
+    "New sign-ups were blocked from October 31, 2026.",
+    "The free service stops on October 31, 2026.",
+    "Shared endpoints are billed from October 31, 2026.",
+    "The free plan ends on October 31, 2026.",
+    "From October 31, 2026, the old plan is no longer available.",
+    "The endpoint is unavailable from October 31, 2026.",
+    "The old plan is not available from October 31, 2026.",
+    "There is no charge from October 31, 2026.",
+    "The endpoint costs $2 from October 31, 2026.",
+    "Accounts created before October 31, 2026 keep the old allowance.",
+    "The old plan is kept by accounts created before October 31, 2026.",
+    "Use is permitted through October 31, 2026.",
+    "The old plan is replaced on October 31, 2026.",
+    "The old endpoint is deactivated on October 31, 2026.",
+    "From October 31, 2026 credits don't pay for shared endpoints.",
+  ]) {
+    it(sentence, () => {
+      const result = statedDeadlines([text(sentence, "condition")], [], "2026-10-22");
+      assert.equal(result.length, 1);
+      assert.equal(result[0].date, "2026-10-31");
+      assert.equal(result[0].statedIn, "condition");
+      assert.equal(result[0].sentence, sentence);
+    });
+  }
+
+  it("keeps an event beside a reading or terms revision, including a repeated day", () => {
+    for (const sentence of [
+      "Read from example.com on 2026-10-14: the endpoint is removed on 2026-10-31.",
+      "Its terms, revised 2026-10-14, say the endpoint is removed on 2026-10-31.",
+      "The model list had 17 entries on 2026-10-14; the endpoint is removed on 2026-10-31.",
+      "On 2026-10-31 the endpoint is removed; as of 2026-10-14 example.com marks it available.",
+      "Read from example.com on 2026-10-31: the endpoint is removed on 2026-10-31.",
+      "Its terms, revised 2026-10-31, say the endpoint is removed on 2026-10-31.",
+      "The model list had 17 entries on 2026-10-31; the endpoint is removed on 2026-10-31.",
+    ]) assert.deepEqual(dates(sentence), ["2026-10-31"], sentence);
   });
 });

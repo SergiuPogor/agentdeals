@@ -27,25 +27,6 @@ export function quotesTheWholeDescription(deadline: StatedDeadline): deadline is
   return deadline.statedIn === "description" && deadline.listing !== undefined && deadline.sentence === (deadline.listing.description ?? "").trim();
 }
 
-export const DEADLINE_WORDS = new RegExp(
-  [
-    "\\bshut(?:s|ting)?\\s?down\\b",
-    "\\bretir(?:e|es|ed|ing|ement)\\b",
-    "\\bdiscontinu(?:e|es|ed|ing|ation)\\b",
-    "\\bend[\\s-]of[\\s-]life\\b",
-    "\\bdeprecat(?:e|es|ed|ing|ion)\\b",
-    "\\buntil\\b",
-    "\\bthrough\\b",
-    "\\bdeadline\\b",
-    "\\bends?\\s+support\\b",
-    "\\bdeleted\\b",
-    "\\brenew(?:s|ed|al)?\\b",
-    "\\bblocks?\\b",
-    "\\bprice\\s+changes?\\b",
-  ].join("|"),
-  "i",
-);
-
 const MONTHS = [
   "january", "february", "march", "april", "may", "june",
   "july", "august", "september", "october", "november", "december",
@@ -108,6 +89,11 @@ function datesWithDeadlineMeaning(sentence: string): string[] {
   return [...new Set(dateMentionsIn(sentence).filter(({ start, end }) => {
     const before = sentence.slice(0, start);
     const after = sentence.slice(end);
+    if (/\b(?:apply|eligible|eligibility)\b/i.test(before) && /\bsigned up on or after\s*$/i.test(before)) return false;
+    if (/\bterms(?: of service)?[, ]+(?:revised|updated|effective)(?:\s+on)?\s*$/i.test(before)) return false;
+    if (/\b(?:read|checked|observed|fetched|retrieved|reviewed)\s+from\s+\S+\s+on\s*$/i.test(before)) return false;
+    if (/\bas of\s*$/i.test(before) && /^[, ]*[a-z0-9.-]+\.[a-z]{2,}\s+marks\b/i.test(after)) return false;
+    if (/\b(?:model list|model catalogue|pricing page)\b[^;!?]*\b(?:had|showed|listed)\b[^;!?]*\bon\s*$/i.test(before)) return false;
     if (/\b(?:read|checked|observed|fetched|retrieved|reviewed|published|posted|launched|released|announced)(?:\s+(?:on|at|as of|since))?\s*$/i.test(before)) return false;
     if (/\b(?:terms|post|change\s?log|announcement|publication)(?:\s+(?:of|dated|published on|from))?\s*\(?\s*$/i.test(before)) return false;
     if (/\b(?:generally available|general availability|public preview)(?:\s+(?:on|since|from))?\s*$/i.test(before)) return false;
@@ -159,7 +145,7 @@ function deadlinesInTexts(
 ): StatedDeadline[] {
   const byVendorAndDay = new Map<string, StatedDeadline>();
   for (const text of texts) {
-    if (!(shutdownsOnly ? SHUTDOWN_WORDS : DEADLINE_WORDS).test(text.text)) continue;
+    if (shutdownsOnly && !SHUTDOWN_WORDS.test(text.text)) continue;
     let inDeadlineList = false;
     for (const sentence of sentencesOf(text.text)) {
       const listItem = inDeadlineList && /^[^:;.!?]+:\s/.test(sentence);
