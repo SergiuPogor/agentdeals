@@ -601,7 +601,6 @@
         "github-actions",
         "gitlab-ci",
         "google-cloud-build",
-        "harness-ci",
         "jenkins",
         "woodpecker-ci"
       ],
