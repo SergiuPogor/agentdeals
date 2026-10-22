@@ -1135,7 +1135,7 @@
       "changed": "2026-10-22"
     },
     "/category/cloud-hosting": {
-      "hash": "c96aedd15f36ea32",
+      "hash": "3cac5b5e18296d26",
       "changed": "2026-10-22"
     },
     "/category/cloud-iaas": {
@@ -1658,7 +1658,7 @@
       "changed": "2026-10-11"
     },
     "/compare/cloudflare-pages-vs-netlify": {
-      "hash": "b0ef392cb1b4e52a",
+      "hash": "a492702e368f3074",
       "changed": "2026-10-22"
     },
     "/compare/cloudflare-pages-vs-render": {
@@ -2410,15 +2410,15 @@
       "changed": "2026-10-22"
     },
     "/compare/netlify-vs-railway": {
-      "hash": "76d71c1d49c49cfc",
+      "hash": "6529918a83cf9931",
       "changed": "2026-10-22"
     },
     "/compare/netlify-vs-render": {
-      "hash": "041b0dfcd87cc5fb",
+      "hash": "44e1b4734cec8722",
       "changed": "2026-10-22"
     },
     "/compare/netlify-vs-vercel": {
-      "hash": "d8eb14d51c92a16b",
+      "hash": "6c3657384fcbaf71",
       "changed": "2026-10-22"
     },
     "/compare/nextra-vs-sphinx": {
@@ -3151,7 +3151,7 @@
       "changed": "2026-10-11"
     },
     "/estimate": {
-      "hash": "e7c50e1a781bd93e",
+      "hash": "520e5710bd96fb46",
       "changed": "2026-10-22"
     },
     "/events": {
@@ -3298,15 +3298,15 @@
       "changed": "2026-10-22"
     },
     "/hosting-alternatives": {
-      "hash": "1acf17a4643ccd27",
+      "hash": "b688e776e150e012",
       "changed": "2026-10-22"
     },
     "/hosting-free-tier-comparison-2026": {
-      "hash": "d430df9ca16cfcec",
+      "hash": "7cd22ccd9676ad31",
       "changed": "2026-10-22"
     },
     "/hosting-pricing": {
-      "hash": "fc91d97166b07b15",
+      "hash": "27b6c6c94db0920a",
       "changed": "2026-10-22"
     },
     "/ide-code-editors-alternatives": {
@@ -3345,7 +3345,7 @@
       "changed": "2026-10-22"
     },
     "/netlify-vs-render": {
-      "hash": "7eca813017546e13",
+      "hash": "17c413f8029b1d6b",
       "changed": "2026-10-22"
     },
     "/openai-assistants-alternatives": {
@@ -3389,7 +3389,7 @@
       "changed": "2026-10-22"
     },
     "/railway-vs-render": {
-      "hash": "989d43854a0308ca",
+      "hash": "b5786427c0e596dc",
       "changed": "2026-10-22"
     },
     "/redis-alternatives": {
@@ -3581,7 +3581,7 @@
       "daily": true
     },
     "/stack-check": {
-      "hash": "4b8425d09f18833a",
+      "hash": "f1e31a8bbe196f5c",
       "changed": "2026-10-22"
     },
     "/stacks": {
@@ -3620,7 +3620,7 @@
       "changed": "2026-10-22"
     },
     "/storage-comparison-2026": {
-      "hash": "ff28ed5d3735dd88",
+      "hash": "089616fd129143bc",
       "changed": "2026-10-22"
     },
     "/supabase-vs-firebase": {
@@ -9593,11 +9593,11 @@
       "changed": "2026-10-22"
     },
     "/vercel-alternatives": {
-      "hash": "d4575b3c8551adf5",
+      "hash": "a3ce31dee651a5e4",
       "changed": "2026-10-22"
     },
     "/vercel-vs-netlify": {
-      "hash": "0204f6169cb8f6e9",
+      "hash": "6953475e8965befd",
       "changed": "2026-10-22"
     },
     "/whatsapp-business-api-pricing-2026": {
