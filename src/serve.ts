@@ -29111,7 +29111,7 @@ function buildCiCdPricingPage(): string {
       selfHosted: "Free (unlimited)",
       paidFrom: "$29/user/mo (Premium)",
       pricingModel: "Per-user",
-      freeDetails: "400 compute minutes/month on shared runners, 10 GiB storage, 5 users, built-in container registry (5 GB), security scanning (SAST, dependency scanning). Self-hosted runners are completely free with no per-minute fees. New accounts limited to 3 top-level groups.",
+      freeDetails: "400 compute minutes/month on shared runners, 10 GiB storage, 5 users, built-in container registry (registry, packages and artifacts are outside the 10 GiB repository/LFS limit), SAST security scanning (dependency scanning requires Ultimate). Self-hosted runners are completely free with no per-minute fees. New accounts limited to 3 top-level groups.",
       freeType: "limited",
       monthlyCostSmall: "$0",
       monthlyCostTeam: "$29/user",
@@ -29130,7 +29130,7 @@ function buildCiCdPricingPage(): string {
       freeType: "generous",
       monthlyCostSmall: "$0",
       monthlyCostTeam: "$15/seat + credits",
-      hiddenCosts: "Credit consumption varies dramatically by resource class. macOS builds cost 100 credits/min (20x Linux). GPU and Arm builds consume credits at premium rates.",
+      keyCostFactor: "macOS M4 Pro: 200 credits/min Medium, 400 Large; small Linux Docker: 5 credits/min.",
     },
     {
       name: "Buildkite",
@@ -29172,38 +29172,38 @@ function buildCiCdPricingPage(): string {
       name: "Harness CI",
       slug: "harness-ci",
       category: "general",
-      freeMinutes: "2,000 min/mo",
+      freeMinutes: "2,000 credits/mo (2,000 min on 2-core Linux)",
       concurrency: "Varies",
-      selfHosted: "Free (unlimited)",
-      paidFrom: "$25/dev/mo",
-      pricingModel: "Per-developer",
-      freeDetails: "2,000 free build minutes/month on Harness Cloud, unlimited self-hosted runners. Includes built-in test intelligence (ML-based test selection), caching, and parallelism. Free plan supports up to 5 developers. Part of the broader Harness DevOps platform.",
+      selfHosted: "Free (local runner)",
+      paidFrom: "Contact sales (no published price)",
+      pricingModel: "Contact sales",
+      freeDetails: "2,000 free Harness Cloud credits a month: 2,000 minutes on the 2-core Linux machine, 1,000 on the 4-core one. Harness Cloud on the Free plan needs a business email domain and credit card validation. On your own infrastructure, the Free plan offers the local runner; VM and Kubernetes build infrastructure need a paid plan. Includes built-in test intelligence (ML-based test selection), caching, and parallelism. Part of the broader Harness DevOps platform.",
       freeType: "generous",
       monthlyCostSmall: "$0",
-      monthlyCostTeam: "$25/dev",
+      monthlyCostTeam: "Contact sales (no published price)",
       hiddenCosts: "The CI module is part of Harness platform — upsell to CD, feature flags, chaos engineering, etc. Test intelligence is a genuine differentiator but requires Harness-managed runners.",
     },
     {
       name: "Buddy",
       slug: "buddy",
       category: "general",
-      freeMinutes: "300 pipeline GB-min/mo",
-      concurrency: "1 concurrent",
+      freeMinutes: "$1/mo usage credit",
+      concurrency: "2 concurrent",
       selfHosted: "Paid only",
-      paidFrom: "$29/mo (Pro, 2 seats)",
+      paidFrom: "€29/mo (Pro, 1 seat)",
       pricingModel: "Per-seat + concurrency",
-      freeDetails: "Free plan: 1 seat, 1 concurrent run, 300 pipeline GB-minutes a month, 1 GB cache, 300 sandbox CPU-minutes. Visual pipeline builder with drag-and-drop actions. Supports 100+ pre-configured actions. Free plan includes all integrations but limits execution time.",
+      freeDetails: "Free plan: 1 seat, 2 concurrent runs, a $1 monthly usage credit for compute and storage, 1 GB pipeline cache. Visual pipeline builder with drag-and-drop actions. Supports 100+ pre-configured actions. Free plan includes all integrations but limits execution time.",
       freeType: "limited",
-      monthlyCostSmall: "$29",
-      monthlyCostTeam: "$29+ (Pro)",
-      hiddenCosts: "Buddy's Pro plan: $29 a month, includes 2 seats; each additional seat $9 a month; each additional concurrent run $50 a month.",
+      monthlyCostSmall: "€29",
+      monthlyCostTeam: "€29+ (Pro)",
+      keyCostFactor: "Pro: €29/mo, 1 seat; extra seat $20/mo; extra concurrent run $5/mo.",
     },
     {
       name: "AWS CodeBuild",
       slug: "aws",
       category: "cloud-native",
       freeMinutes: "100 min/mo",
-      concurrency: "20+ concurrent",
+      concurrency: "1 per Region by default (Linux Small; adjustable quota)",
       selfHosted: "N/A (managed)",
       paidFrom: "$0.005/min (general1.small)",
       pricingModel: "Per-minute",
@@ -29248,7 +29248,7 @@ function buildCiCdPricingPage(): string {
       slug: "bitbucket-pipelines",
       category: "cloud-native",
       freeMinutes: "50 min/mo",
-      concurrency: "1 concurrent",
+      concurrency: "Up to 10 concurrent steps",
       selfHosted: "Yes (no build minutes used)",
       paidFrom: "$3.65/user/mo (Standard)",
       pricingModel: "Per-user + minutes",
@@ -29262,16 +29262,16 @@ function buildCiCdPricingPage(): string {
       name: "Bitrise",
       slug: "bitrise",
       category: "mobile",
-      freeMinutes: "300 min/mo",
-      concurrency: "1 concurrent",
+      freeMinutes: "300 credits/mo",
+      concurrency: "5 concurrent",
       selfHosted: "Paid only",
-      paidFrom: "$89/mo (Velocity)",
-      pricingModel: "Per-seat + minutes",
-      freeDetails: "300 build minutes/month on standard macOS VMs, 1 concurrent build, unlimited team members. Mobile-first CI/CD with 300+ pre-built integrations (Xcode, Gradle, Fastlane, CocoaPods). Visual workflow editor. iOS and Android builds on Apple Silicon (M1/M2) available on paid plans.",
+      paidFrom: "$89/mo billed annually, $99 monthly (Starter)",
+      pricingModel: "Credits",
+      freeDetails: "Hobby plan: 300 credits a month, 5 concurrent builds, 1 private app, a team of one, 90-minute build timeout. Mobile-first CI/CD with 300+ pre-built integrations (Xcode, Gradle, Fastlane, CocoaPods). Visual workflow editor.",
       freeType: "limited",
-      monthlyCostSmall: "$0\u201389",
-      monthlyCostTeam: "$89+",
-      hiddenCosts: "300 minutes on standard VMs. iOS builds are slow on non-Apple-Silicon runners (free tier). Velocity plan at $89/mo gets Apple Silicon and more minutes. Enterprise required for large teams.",
+      monthlyCostSmall: "$0–89 annually / $99 monthly",
+      monthlyCostTeam: "$89 annually / $99 monthly (Starter)",
+      keyCostFactor: "Hobby: 300 credits/mo. Starter: $89/mo billed annually, $99 monthly.",
     },
     {
       name: "Codemagic",
@@ -29312,7 +29312,7 @@ function buildCiCdPricingPage(): string {
       selfHosted: "100% self-hosted",
       paidFrom: "$0 (OSS)",
       pricingModel: "Free OSS",
-      freeDetails: "100% free and open-source (MIT license). The original CI/CD server — 1,800+ plugins, massive ecosystem. Runs on any infrastructure you provide. Pipeline as Code via Jenkinsfile. Requires server administration, plugin management, and security updates. No hosted option.",
+      freeDetails: "100% free and open-source (MIT license). The original CI/CD server — 2,300+ plugins, massive ecosystem. Runs on any infrastructure you provide. Pipeline as Code via Jenkinsfile. Requires server administration, plugin management, and security updates. No hosted option.",
       freeType: "generous",
       monthlyCostSmall: "$0 + infra",
       monthlyCostTeam: "$0 + infra",
@@ -29446,7 +29446,7 @@ function buildCiCdPricingPage(): string {
     { q: "Is Jenkins really free?", a: "Yes, Jenkins is 100% free and open-source (MIT license). The software costs nothing. However, you need to provide and maintain your own servers, which typically costs $20-100/month in cloud hosting. You also handle security patches, plugin updates, and scaling." },
     { q: "How do CI/CD pricing models differ?", a: "There are three main models: per-seat (GitLab, Buildkite), per-minute/credit (CircleCI, AWS CodeBuild, Google Cloud Build), and per-parallel-job (Azure DevOps). Per-seat is predictable but penalizes large teams. Per-minute rewards fast builds but can spike. Per-parallel-job charges for concurrency." },
     { q: "GitHub Actions vs GitLab CI — which is cheaper?", a: "For open-source: GitHub Actions (unlimited free minutes). For small private projects: both are effectively free (GitHub: 2,000 min, GitLab: 400 min + free self-hosted runners). For teams: GitLab Premium is $29/user/month, GitHub Team is $4/user/month but with limited CI minutes. GitLab includes more DevOps features (registry, security scanning) in its price." },
-    { q: "What is the cheapest CI/CD for mobile apps?", a: "Codemagic offers 500 free minutes/month with Apple Silicon (M2) builds included on the free tier. Bitrise offers 300 free minutes. For maximum savings, use GitHub Actions with self-hosted macOS runners — the CI/CD is free, you just pay for the Mac hardware or cloud Mac rental." },
+    { q: "What is the cheapest CI/CD for mobile apps?", a: "Codemagic offers 500 free minutes/month with Apple Silicon (M2) builds included on the free tier. Bitrise Hobby offers 300 credits a month and 5 concurrent builds for a team of one. For maximum savings, use GitHub Actions with self-hosted macOS runners — the CI/CD is free, you just pay for the Mac hardware or cloud Mac rental." },
     { q: "How many build minutes do I need per month?", a: "A solo developer on a small project: 200-500 min/month. A small team (5 devs) with moderate CI: 2,000-5,000 min/month. An active team with comprehensive testing: 5,000-20,000 min/month. Mobile builds (especially iOS) consume 2-5x more minutes than web/backend builds." },
     { q: "Should I use self-hosted CI/CD runners?", a: "Self-hosted runners make sense when: you need custom hardware (GPUs, Apple Silicon), your builds need access to internal resources, you want to avoid per-minute charges at scale, or you have strict data residency requirements. The trade-off is maintenance overhead — you handle updates, security, and scaling." },
     { q: "Which CI/CD tools support Docker and Kubernetes natively?", a: "CircleCI, Codefresh, and Drone CI are container-native — every build step runs in Docker. Google Cloud Build uses containerized build steps. Buildkite supports Docker and Kubernetes agents. GitLab CI has strong Kubernetes integration with Auto DevOps." },
@@ -29558,7 +29558,7 @@ function buildCiCdPricingPage(): string {
     '\n' +
     '  <div class="executive-summary">\n' +
     '    <p><strong>The CI/CD landscape in April 2026:</strong> ' + tools.length + ' tools across four categories \u2014 general-purpose platforms, cloud-native services, mobile CI/CD specialists, and self-hosted open-source solutions. Pricing models are fragmented: per-seat, per-minute, per-credit, and per-parallel-job all coexist. Free tiers range from Google Cloud Build\'s 2,500 min/month to Bitbucket Pipelines\' tight 50 min/month.</p>\n' +
-    '    <p><strong>Key trends:</strong> Self-hosted runners are becoming the cost optimization strategy \u2014 GitHub Actions, GitLab CI, Buildkite, Harness CI, and Azure DevOps all offer free unlimited self-hosted execution. Cloud-native CI/CD (AWS CodeBuild, Google Cloud Build) charges per-minute with modest free tiers. Mobile CI/CD remains the most expensive category, with macOS build minutes costing 2\u201310x Linux minutes.</p>\n' +
+    '    <p><strong>Key trends:</strong> Self-hosted runners are becoming the cost optimization strategy \u2014 GitHub Actions, GitLab CI, Buildkite, and Azure DevOps all offer free unlimited self-hosted execution. Cloud-native CI/CD (AWS CodeBuild, Google Cloud Build) charges per-minute with modest free tiers. Mobile CI/CD remains the most expensive category, with macOS build minutes costing 2\u201310x Linux minutes.</p>\n' +
     '    <p><strong>This guide covers:</strong> pricing tables, category breakdowns, build minute analysis, cost comparison for small teams and growing organizations, hidden costs, and best-for-use-case recommendations \u2014 compiled by hand from vendor pricing pages.</p>\n' +
     '  </div>\n' +
     '\n' +
@@ -29599,7 +29599,7 @@ function buildCiCdPricingPage(): string {
     '  </div>\n' +
     '\n' +
     '  <div class="context-box">\n' +
-    '    <strong>The self-hosted advantage:</strong> GitHub Actions, GitLab CI, Buildkite, Harness CI, and Azure DevOps all offer free unlimited execution on self-hosted runners. If you have existing infrastructure or need custom hardware (GPUs, Apple Silicon), self-hosted runners eliminate per-minute CI/CD costs entirely. The trade-off: you maintain the infrastructure.\n' +
+    '    <strong>The self-hosted advantage:</strong> GitHub Actions, GitLab CI, Buildkite, and Azure DevOps all offer free unlimited execution on self-hosted runners. If you have existing infrastructure or need custom hardware (GPUs, Apple Silicon), self-hosted runners eliminate per-minute CI/CD costs entirely. The trade-off: you maintain the infrastructure.\n' +
     '  </div>\n' +
     '\n' +
     '  <h2 id="categories">Category Breakdown</h2>\n' +
@@ -29666,7 +29666,7 @@ function buildCiCdPricingPage(): string {
     '\n' +
     '  <div class="hidden-cost-card">\n' +
     '    <h4>macOS Build Minute Multipliers</h4>\n' +
-    '    <p>GitHub charges a per-minute rate for each runner type past the free quota: $0.006 for Linux 2-core, $0.010 for Windows 2-core and $0.062 for macOS. CircleCI\'s macOS builds cost 100 credits/min vs 5 for Linux. If you build iOS apps, budget 5\u201310x what you\'d expect from Linux-only CI.</p>\n' +
+    '    <p>GitHub charges a per-minute rate for each runner type past the free quota: $0.006 for Linux 2-core, $0.010 for Windows 2-core and $0.062 for macOS. CircleCI\'s macOS M4 Pro VMs cost 200 credits/min for Medium and 400 for Large, compared with 5 credits/min for small Linux Docker. If you build iOS apps, budget 5\u201310x what you\'d expect from Linux-only CI.</p>\n' +
     '  </div>\n' +
     '  <div class="hidden-cost-card">\n' +
     '    <h4>Storage and Artifact Costs</h4>\n' +
@@ -29713,7 +29713,7 @@ function buildCiCdPricingPage(): string {
     '\n' +
     '    <div class="verdict-item">\n' +
     '      <strong>Best for mobile app development</strong>\n' +
-    '      <p><a href="/vendor/codemagic">Codemagic</a> (500 free min/month with Apple Silicon) for Flutter and cross-platform. <a href="/vendor/bitrise">Bitrise</a> (300 free min) for native iOS/Android with the largest mobile integration library.</p>\n' +
+    '      <p><a href="/vendor/codemagic">Codemagic</a> (500 free min/month with Apple Silicon) for Flutter and cross-platform. <a href="/vendor/bitrise">Bitrise</a> (300 credits/month, 5 concurrent builds on Hobby) for native iOS/Android with the largest mobile integration library.</p>\n' +
     '    </div>\n' +
     '\n' +
     '    <div class="verdict-item">\n' +
@@ -37277,7 +37277,7 @@ ${globalNavCss()}
       </tr>${vendorPageConditionsRowHtml("semaphore-ci", 5)}
       <tr>
         <td class="provider-col">Buddy</td>
-        <td>1 seat, 1 concurrent run, 300 pipeline GB-minutes/mo</td>
+        <td>1 seat, 2 concurrent runs, $1 monthly usage credit</td>
         <td class="cross">Paid only</td>
         <td class="partial">Limited</td>
         <td>Visual pipeline builder, simple deploys</td>

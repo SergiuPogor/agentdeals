@@ -38,9 +38,9 @@ function listedFigure(vendor: string, pattern: RegExp, what: string): string {
   return match![1];
 }
 
-function buddyFreePlan(): { gbMinutes: string; cache: string } {
+function buddyFreePlan(): { credit: string; cache: string } {
   return {
-    gbMinutes: listedFigure("Buddy", /\b(\d[\d,]*) pipeline GB-minutes\/month\b/, "its pipeline GB-minutes a month"),
+    credit: listedFigure("Buddy", /a (\$\d+) monthly usage credit/, "its monthly usage credit"),
     cache: listedFigure("Buddy", /\b(\d+ [GM]B) pipeline cache\b/, "its pipeline cache"),
   };
 }
@@ -149,7 +149,7 @@ describe("/ci-cd-pricing states the current plans of Bitbucket Pipelines, Codema
   after(() => { proc?.kill(); });
 
   it("prices Bitbucket Pipelines' Standard plan at $3.65 a user in the pricing and cost tables, and gives its free plan self-hosted runners that use no build minutes", () => {
-    assert.deepStrictEqual(rowOf(tableRows(html, PRICING_TABLE), "Bitbucket Pipelines"), ["50 min/mo", "1 concurrent", "Yes (no build minutes used)", "$3.65/user/mo (Standard)", "Per-user + minutes"]);
+    assert.deepStrictEqual(rowOf(tableRows(html, PRICING_TABLE), "Bitbucket Pipelines"), ["50 min/mo", "Up to 10 concurrent steps", "Yes (no build minutes used)", "$3.65/user/mo (Standard)", "Per-user + minutes"]);
     assert.deepStrictEqual(rowOf(tableRows(html, COST_TABLE), "Bitbucket Pipelines").slice(0, 2), ["$3.65/user", "$3.65/user + overages"]);
   });
 
@@ -162,12 +162,12 @@ describe("/ci-cd-pricing states the current plans of Bitbucket Pipelines, Codema
     assert.ok(cardText(html, "codemagic").startsWith(`${codemagicFreePlanSentence()} 1 concurrent build. Optimized for Flutter`), cardText(html, "codemagic"));
   });
 
-  it("gives Buddy's free plan in the pipeline GB-minutes and cache its listing states, and Pro at $29 for 2 seats", () => {
-    const { gbMinutes, cache } = buddyFreePlan();
-    assert.deepStrictEqual(rowOf(tableRows(html, PRICING_TABLE), "Buddy"), [`${gbMinutes} pipeline GB-min/mo`, "1 concurrent", "Paid only", "$29/mo (Pro, 2 seats)", "Per-seat + concurrency"]);
-    assert.deepStrictEqual(rowOf(tableRows(html, FREE_TIER_TABLE), "Buddy"), ["Limited free tier", `${gbMinutes} pipeline GB-min/mo`, "1–4 weeks for active team"]);
-    assert.ok(cardText(html, "buddy").startsWith(`Free plan: 1 seat, 1 concurrent run, ${gbMinutes} pipeline GB-minutes a month, ${cache} cache, 300 sandbox CPU-minutes. Visual pipeline builder`), cardText(html, "buddy"));
-    assert.deepStrictEqual(rowOf(tableRows(html, COST_TABLE), "Buddy"), ["$29", "$29+ (Pro)", "Buddy's Pro plan: $29 a month, includes 2 seats; each additional seat $9 a month..."]);
+  it("gives Buddy the usage credit and cache its listing states, two concurrent runs and Pro at €29 for one seat", () => {
+    const { credit, cache } = buddyFreePlan();
+    assert.deepStrictEqual(rowOf(tableRows(html, PRICING_TABLE), "Buddy"), [`${credit}/mo usage credit`, "2 concurrent", "Paid only", "€29/mo (Pro, 1 seat)", "Per-seat + concurrency"]);
+    assert.deepStrictEqual(rowOf(tableRows(html, FREE_TIER_TABLE), "Buddy"), ["Limited free tier", `${credit}/mo usage credit`, "1–4 weeks for active team"]);
+    assert.ok(cardText(html, "buddy").startsWith(`Free plan: 1 seat, 2 concurrent runs, a ${credit} monthly usage credit for compute and storage, ${cache} pipeline cache. Visual pipeline builder`), cardText(html, "buddy"));
+    assert.deepStrictEqual(rowOf(tableRows(html, COST_TABLE), "Buddy"), ["€29", "€29+ (Pro)", "Pro: €29/mo, 1 seat; extra seat $20/mo; extra concurrent run $5/mo."]);
   });
 
   it("gives Appcircle's free Starter plan in the builds and build time its listing states, with Corporate as the only other plan", () => {
@@ -180,6 +180,84 @@ describe("/ci-cd-pricing states the current plans of Bitbucket Pipelines, Codema
 
   it("says CircleCI's free plan includes self-hosted runner time, 5 tasks at once", () => {
     assert.deepStrictEqual(rowOf(tableRows(html, PRICING_TABLE), "CircleCI"), ["6,000 min/mo", "30 concurrent jobs", "Free runner time; 5 concurrent self-hosted tasks", "$15/seat (Performance)", "Credit-based"]);
+  });
+
+  it("gives Harness credits, machine-dependent minutes, local runners and unpublished paid pricing", () => {
+    assert.deepStrictEqual(rowOf(tableRows(html, PRICING_TABLE), "Harness CI"), ["2,000 credits/mo (2,000 min on 2-core Linux)", "Varies", "Free (local runner)", "Contact sales (no published price)", "Contact sales"]);
+    assert.strictEqual(rowOf(tableRows(html, COST_TABLE), "Harness CI")[1], "Contact sales (no published price)");
+    const card = cardText(html, "harness-ci");
+    for (const phrase of ["2,000 free Harness Cloud credits a month: 2,000 minutes on the 2-core Linux machine, 1,000 on the 4-core one.", "business email domain and credit card validation", "the Free plan offers the local runner; VM and Kubernetes build infrastructure need a paid plan"]) assert.ok(card.includes(phrase), phrase);
+    assert.doesNotMatch(card, /up to 5 developers|unlimited self-hosted runners|2,000 free build minutes/);
+    assert.doesNotMatch(readableText(html), /\$25\/dev/);
+  });
+
+  it("does not include Harness in either unrestricted self-hosted conclusion", () => {
+    const text = readableText(html);
+    for (const start of ["Key trends:", "The self-hosted advantage:"]) {
+      const from = text.indexOf(start);
+      assert.ok(from >= 0, start);
+      const conclusion = text.slice(from, text.indexOf(".", from) + 1);
+      assert.ok(conclusion.includes("GitHub Actions, GitLab CI, Buildkite, and Azure DevOps"), conclusion);
+      assert.doesNotMatch(conclusion, /Harness/);
+    }
+  });
+
+  it("states Bitrise Hobby credits, five builds at once and Starter billing in each table and card", () => {
+    assert.deepStrictEqual(rowOf(tableRows(html, PRICING_TABLE), "Bitrise"), ["300 credits/mo", "5 concurrent", "Paid only", "$89/mo billed annually, $99 monthly (Starter)", "Credits"]);
+    assert.strictEqual(rowOf(tableRows(html, FREE_TIER_TABLE), "Bitrise")[1], "300 credits/mo");
+    assert.deepStrictEqual(rowOf(tableRows(html, COST_TABLE), "Bitrise"), ["$0–89 annually / $99 monthly", "$89 annually / $99 monthly (Starter)", "Hobby: 300 credits/mo. Starter: $89/mo billed annually, $99 monthly."]);
+    assert.ok(cardText(html, "bitrise").startsWith("Hobby plan: 300 credits a month, 5 concurrent builds, 1 private app, a team of one, 90-minute build timeout."));
+    assert.doesNotMatch(readableText(html), /Bitrise offers 300 free minutes|300 free min\)|300 minutes on standard VMs|Velocity|unlimited team members/);
+    assert.ok(readableText(html).includes("Bitrise (300 credits/month, 5 concurrent builds on Hobby)"));
+  });
+
+  it("states Bitrise credits and concurrency in both copies of the mobile FAQ", () => {
+    const answers = faqAnswers(html, "What is the cheapest CI/CD for mobile apps?");
+    assert.strictEqual(answers.length, 2);
+    for (const answer of answers) assert.ok(answer.includes("Bitrise Hobby offers 300 credits a month and 5 concurrent builds for a team of one."), answer);
+  });
+
+  it("states both CircleCI macOS M4 Pro rates and distinguishes small Linux Docker", () => {
+    assert.ok(rowOf(tableRows(html, COST_TABLE), "CircleCI")[2].includes("macOS M4 Pro: 200 credits/min Medium, 400 Large"));
+    assert.ok(readableText(html).includes("macOS M4 Pro VMs cost 200 credits/min for Medium and 400 for Large, compared with 5 credits/min for small Linux Docker."));
+    assert.doesNotMatch(readableText(html), /macOS builds cost 100 credits/);
+  });
+
+  it("scopes CodeBuild's adjustable default to Linux Small and a Region", () => {
+    assert.strictEqual(rowOf(tableRows(html, PRICING_TABLE), "AWS CodeBuild")[1], "1 per Region by default (Linux Small; adjustable quota)");
+  });
+
+  it("excludes GitLab registries from repository storage and reserves dependency scanning for Ultimate", () => {
+    const card = cardText(html, "gitlab-ci");
+    assert.ok(card.includes("registry, packages and artifacts are outside the 10 GiB repository/LFS limit"), card);
+    assert.ok(card.includes("SAST security scanning (dependency scanning requires Ultimate)"), card);
+    assert.doesNotMatch(card, /container registry \(5 GB\)|SAST, dependency scanning/);
+  });
+
+  it("states Jenkins's current plugin count", () => {
+    assert.ok(cardText(html, "jenkins").includes("2,300+ plugins"));
+    assert.doesNotMatch(cardText(html, "jenkins"), /1,800\+ plugins/);
+  });
+
+  it("carries Buddy's current excerpt and login-based inactivity condition across both guides and its vendor page", async () => {
+    const listing = cicdListing("Buddy");
+    assert.match(listing.description, /1 seat, 2 concurrent pipeline runs, a \$1 monthly usage credit for compute and storage, 1 GB pipeline cache/);
+    assert.match(listing.free_plan_excerpt.text, /2 concurrents \(no extra concurrents\).*\$1\/mo\. usage credit/);
+    assert.strictEqual(listing.free_plan_excerpt.read_on, "2026-10-21");
+    assert.strictEqual(listing.conditions.length, 1);
+    const condition = listing.conditions[0];
+    assert.strictEqual(condition.url, "https://buddy.works/terms-of-service");
+    assert.strictEqual(condition.read_on, "2026-10-21");
+    for (const phrase of ["logs in to Buddy's web app", "commits or webhooks do not count", "After a month without a login", "30 days after that email", "60 days after it"]) assert.ok(condition.text.includes(phrase), phrase);
+    for (const route of [CI_CD_PRICING, "/cicd-free-tier-comparison-2026", "/vendor/buddy"]) {
+      const response = await fetch(`${base}${route}`);
+      assert.strictEqual(response.status, 200);
+      const text = readableText(await response.text());
+      assert.ok(text.includes(condition.text), route);
+      assert.doesNotMatch(text, /workspace frozen after 60 days|300 pipeline GB-minutes/);
+    }
+    const otherGuide = readableText(await (await fetch(`${base}/cicd-free-tier-comparison-2026`)).text());
+    assert.ok(otherGuide.includes("1 seat, 2 concurrent runs, $1 monthly usage credit"));
   });
 
   it("names three pricing models in the FAQ, on the page and in its structured data, with no per-pipeline model for Buddy", () => {
