@@ -425,11 +425,30 @@ describe(`${PAGE} on buying credits by bank transfer`, () => {
   });
 });
 
+describe(`${PAGE} on regional Prepay minimums`, () => {
+  it("qualifies the summary minimum with the local equivalent", () => {
+    const summary = page.match(/<p>Google began enforcing monthly spend caps[\s\S]*?<\/p>/)?.[0] ?? "";
+    assert.match(withoutTags(summary), /New users default to Prepay \(minimum \$5 or local equivalent\),/);
+  });
+
+  it("qualifies the billing-model table cell with the local equivalent", () => {
+    const row = page.match(/<tr><td[^>]*>Billing model<\/td>[\s\S]*?<\/tr>/)?.[0] ?? "";
+    const cells = [...row.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((m) => withoutTags(m[1]));
+    assert.strictEqual(cells[3], "Minimum $5 or local equivalent prepayment");
+  });
+
+  it("gives the currency equivalent and directs readers to the minimum for their region and tier", () => {
+    const text = withoutTags(prepayParagraph(page));
+    assert.ok(text.startsWith("New users default to Prepay and buy at least $5 of credits (or the equivalent in their currency) to set up billing. Google's billing FAQ says the purchase page shows the minimum amount required for your region and tier."), text);
+    assert.doesNotMatch(readable(page), /minimum \$5\)|Minimum \$5 prepayment|at least \$5 of credits to set up billing/i);
+  });
+});
+
 describe(`${PAGE} on how much a high-spend account can prepay`, () => {
   it("follows the $5 minimum with the $5,000 ceiling, what a monthly auto-reload limit does, and what stopping a switch halfway can cut off, before the move to Prepay", () => {
     const text = withoutTags(prepayParagraph(page));
     assert.ok(text.startsWith(
-      "New users default to Prepay and buy at least $5 of credits to set up billing. " +
+      "New users default to Prepay and buy at least $5 of credits (or the equivalent in their currency) to set up billing. Google's billing FAQ says the purchase page shows the minimum amount required for your region and tier. " +
       "To keep a high-spend account running, you can prepay up to $5,000 in credits. " +
       "For amounts larger than $5,000 a month, use auto-reload to automatically add credits. " +
       "If you set a monthly auto-reload limit, auto-reload stops when reached. " +

@@ -3454,22 +3454,22 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": false,
-      "table_figures": 75,
+      "table_figures": 73,
       "table_figures_from_records": 13,
       "tables": [
         {
           "label": "Free Tier Comparison Table",
-          "figures": 26,
+          "figures": 27,
           "from_records": 0
         },
         {
           "label": "Self-Hosted vs Managed Cost Comparison",
-          "figures": 14,
+          "figures": 13,
           "from_records": 0
         },
         {
           "label": "Cost Comparison by Team Size",
-          "figures": 22,
+          "figures": 20,
           "from_records": 0
         },
         {

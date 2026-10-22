@@ -19,6 +19,11 @@ const WITHDRAWN: Record<string, Record<string, RegExp>> = {
     "free PlanetScale databases deleted after a grace period": /All free databases were deleted/,
   },
   "/vector-database-pricing": {
+    "Qdrant's free disk as 1 GB": /~1M \(1 GB\)|Free forever cluster: 1 GB storage/,
+    "Qdrant Cloud's paid starting price as $10": /~\$10\/mo|\$10–50|Qdrant Cloud \(\$10\/month\)/,
+    "Zilliz Standard's paid floor as $65": /\$65(?:\/mo|\+|–200)/,
+    "Pinecone Standard's minimum as $70": /\$70\+ \(Standard\)/,
+    "MongoDB's first paid plan as M10 at $57": /\$57\/mo \(M10 Dedicated\)/,
     "Weaviate Cloud as a 14-day sandbox": /Sandbox only|Sandbox \(14-day\)|14-day free sandbox with full features/,
     "Weaviate Cloud's paid plans from $25": /\$25\/mo \(Shared\)|Shared cloud from \$25/,
     "Zilliz Cloud's free tier as about 5M vectors": /~5M/,
@@ -50,6 +55,7 @@ const STATED: Record<string, string[]> = {
     "Free Forever cluster with 100,000 objects, 1 GB memory, and 10 GB disk. No credit card required.",
   ],
   "/vector-database-pricing": [
+    "Free forever cluster: 0.5 vCPU, 1 GB RAM and 4 GB disk on AWS/GCP/Azure.",
     'Weaviate Cloud offers a "Free Forever" cluster with 100,000 objects, 1 GB memory, and 10 GB disk. Weaviate is also open source and free to self-host.',
     "Pinecone offers 2 GB (~1M vectors) free and Zilliz Cloud (5 GB, about 1M 768-dimension vectors).",
     "Pinecone (2 GB, ~1M vectors) or Zilliz Cloud (5 GB, about 1M 768-dimension vectors).",
@@ -200,6 +206,61 @@ describe("database, vector and CI/CD pricing pages state each vendor's plan as t
         .map((cells) => `${page}: ${cells.join(" | ")}`);
     });
     assert.deepStrictEqual(missing, []);
+  });
+
+  it("puts vector resources and paid prices in their named columns", () => {
+    const markup = html.get("/vector-database-pricing")!;
+    const cases = [
+      ["pricing-table", "Qdrant Cloud", "Free Vectors", "~1M at 768 dimensions"],
+      ["pricing-table", "Qdrant Cloud", "Free Storage", "0.5 vCPU, 1 GB RAM, 4 GB disk"],
+      ["pricing-table", "Qdrant Cloud", "Paid From", "Usage-based (CPU, memory, disk); no published starting price"],
+      ["pricing-table", "Zilliz Cloud", "Paid From", "$0/mo + usage (Standard, Serverless)"],
+      ["pricing-table", "MongoDB Atlas Vector Search", "Paid From", "Flex: $8–30/mo (prototyping); Dedicated from $56.94/mo (M10)"],
+      ["cost-analysis", "Pinecone", "Team / Production /mo", "$50+ (Standard, $50/month minimum)"],
+      ["cost-analysis", "Qdrant Cloud", "Team / Production /mo", "Usage-based"],
+      ["cost-analysis", "Zilliz Cloud", "Team / Production /mo", "Usage-based (Serverless)"],
+      ["self-hosted", "Zilliz Cloud (managed)", "Cost (10M vectors)", "Usage-based (Serverless)"],
+    ];
+    for (const [section, vendor, column, expected] of cases) {
+      const at = markup.indexOf(`id="${section}"`);
+      assert.ok(at >= 0, section);
+      const table = markup.slice(at).match(/<table\b[^>]*>([\s\S]*?)<\/table>/);
+      assert.ok(table, section);
+      const headers = [...table[1].matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/g)].map(([, cell]) => textOf(cell));
+      const columnIndex = headers.indexOf(column);
+      assert.ok(columnIndex >= 0, `${section}: ${column}`);
+      const rows = rowsOf(table[1]).filter(([name]) => name === vendor);
+      assert.strictEqual(rows.length, 1, `${section}: ${vendor}`);
+      assert.strictEqual(rows[0][columnIndex], expected, `${section}: ${vendor}: ${column}`);
+    }
+  });
+
+  it("retains vector self-hosting estimates and the adjacent managed grants", () => {
+    const markup = html.get("/vector-database-pricing")!;
+    const rows = rowsOf(markup);
+    for (const expected of [
+      ["Qdrant self-hosted", "$5–10/mo (VPS)", "$20–50/mo"],
+      ["Pinecone (managed)", "$0 (free tier)", "$70–200/mo"],
+      ["Qdrant Cloud (managed)", "$0 (free tier)", "$30–100/mo"],
+      ["Pinecone", "Managed (Serverless)", "~1M (2 GB)", "2 GB"],
+      ["Weaviate Cloud", "Managed (Multi-model)", "100,000 objects", "10 GB disk, 1 GB memory"],
+    ]) {
+      assert.ok(rows.some((row) => expected.every((value, index) => row[index] === value)), expected.join(" | "));
+    }
+    assert.ok(textOf(markup).includes("Self-hosting Qdrant or Chroma on a $10/mo VPS can handle 1–5M vectors comfortably."));
+    const question = "What is the cheapest vector database for production RAG?";
+    const faq = [...markup.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+      .flatMap(([, json]) => {
+        const parsed = JSON.parse(json);
+        return Array.isArray(parsed) ? parsed : [parsed];
+      }).find((entry) => entry["@type"] === "FAQPage");
+    const answer = faq?.mainEntity.find((entry: any) => entry.name === question)?.acceptedAnswer.text;
+    assert.ok(answer, question);
+    for (const text of [textOf(markup), answer]) {
+      assert.ok(text.includes("Self-hosted Qdrant or Milvus on a $5-10/month VPS"));
+      assert.ok(text.includes("Upstash Vector (10K queries/day free) is also cost-effective."));
+      assert.doesNotMatch(text, /Qdrant Cloud \(\$10\/month\)/);
+    }
   });
 
   it("labels each vendor's card with its kind of free tier", () => {
