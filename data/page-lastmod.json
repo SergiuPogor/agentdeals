@@ -22,11 +22,11 @@
       "changed": "2026-10-22"
     },
     "/ai-free-tiers": {
-      "hash": "b3f24fc8dfc579dd",
+      "hash": "e8d166d383573e99",
       "changed": "2026-10-22"
     },
     "/ai-ml-alternatives": {
-      "hash": "2759501dff5c439e",
+      "hash": "888a29691371ac1f",
       "changed": "2026-10-22"
     },
     "/alternative-to": {
@@ -1099,7 +1099,7 @@
       "changed": "2026-10-21"
     },
     "/category/ai-ml": {
-      "hash": "d3de548006ccfade",
+      "hash": "672a0dd1d45c3d6f",
       "changed": "2026-10-22"
     },
     "/category/analytics": {
@@ -1618,16 +1618,16 @@
       "changed": "2026-10-15"
     },
     "/compare/cerebras-vs-deepgram": {
-      "hash": "050c4a747083ad4e",
-      "changed": "2026-10-19"
+      "hash": "b0bd606b93098f95",
+      "changed": "2026-10-22"
     },
     "/compare/cerebras-vs-e2b": {
-      "hash": "8da4ef1447501625",
-      "changed": "2026-10-19"
+      "hash": "897e7315d018c9e6",
+      "changed": "2026-10-22"
     },
     "/compare/cerebras-vs-letta": {
-      "hash": "baaae7ba1d2f943a",
-      "changed": "2026-10-21"
+      "hash": "c89094318cdd27c0",
+      "changed": "2026-10-22"
     },
     "/compare/circleci-vs-github-actions": {
       "hash": "a8929b7b977bd23d",
@@ -3206,7 +3206,7 @@
       "changed": "2026-10-22"
     },
     "/free-llm-apis": {
-      "hash": "5b6aadb6fe068e6d",
+      "hash": "85f57a82e74d00e4",
       "changed": "2026-10-22"
     },
     "/free-nextjs-stack": {
@@ -3242,7 +3242,7 @@
       "daily": true
     },
     "/gemini-api-pricing-2026": {
-      "hash": "f2105f075611cacb",
+      "hash": "5a053025f0b1e731",
       "changed": "2026-10-22"
     },
     "/github-actions-alternatives": {
@@ -3581,7 +3581,7 @@
       "daily": true
     },
     "/stack-check": {
-      "hash": "31672ae735cb8623",
+      "hash": "38e94cbdf6546a05",
       "changed": "2026-10-22"
     },
     "/stacks": {
