@@ -33898,6 +33898,12 @@
           "quote": "Queued requests are held up to a fixed limit - if the queue is full, the request will be rejected until one of your concurrency slots opens.",
           "url": "https://ollama.com/pricing",
           "read_on": "2026-10-05"
+        },
+        {
+          "text": "Since January 16, 2026 (Ollama v0.14.0), Ollama's API accepts Anthropic Messages API requests, which Ollama says lets Claude Code run on its local and cloud models. Ollama's docs: \"Ollama connects Claude Code to local and cloud models through its Anthropic-compatible API.\" `ollama launch claude` sets it up. Without installing Ollama, Claude Code can be pointed at https://ollama.com with an Ollama API key. On the Free plan this uses the starter usage, limited to starter models. Hosted web search and advanced tool controls are not fully supported.",
+          "quote": "Ollama connects Claude Code to local and cloud models through its Anthropic-compatible API.",
+          "url": "https://docs.ollama.com/integrations/claude-code",
+          "read_on": "2026-10-22"
         }
       ],
       "free_plan_excerpt": {
@@ -34069,6 +34075,12 @@
           "quote": "Failed requests, empty search results, and timeouts are not billed.",
           "url": "https://api-docs.deepseek.com/guides/search/",
           "read_on": "2026-10-17"
+        },
+        {
+          "text": "DeepSeek's API accepts Anthropic-format requests at https://api.deepseek.com/anthropic. DeepSeek documents running Claude Code on it with a DeepSeek API key. Claude model names are mapped: claude-opus to deepseek-v4-pro, billed at the V4 Pro price; claude-sonnet and claude-haiku to deepseek-flash. Claude Code's web search runs through DeepSeek and adds model token costs. This is paid usage from the prepaid balance, since there is no free tier.",
+          "quote": "our API has added support for the Anthropic API format, with the base_url being https://api.deepseek.com/anthropic.",
+          "url": "https://api-docs.deepseek.com/guides/anthropic_api",
+          "read_on": "2026-10-22"
         }
       ]
     },
