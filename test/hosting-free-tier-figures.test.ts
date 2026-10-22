@@ -87,9 +87,19 @@ function storedChangeProse(): string {
   return JSON.stringify(changes).replace(/\\"/g, '"').replace(/\s+/g, " ");
 }
 
-type Retired = { what: string; pattern: RegExp; replacedBy: RegExp; vendorRecord: () => string };
+type Retired = { what: string; pattern: RegExp; replacedBy: RegExp; vendorRecord?: () => string };
 
 const RETIRED_FIGURES: Retired[] = [
+  {
+    what: "Wasabi storage at $6.99 per TB",
+    pattern: /Wasabi[\s\S]{0,180}?\$6\.99\s*(?:\/|per\s*)TB/i,
+    replacedBy: /Wasabi[\s\S]{0,180}?\$7\.99 per TB per month/i,
+  },
+  {
+    what: "Oracle object storage with only 10 GB of free outbound data",
+    pattern: /Oracle Cloud (?:Obj\.? Storage|Object Storage)[\s\S]{0,220}?(?:10 GB\s*(?:\/mo|egress)|10 GB\s+(?:of )?(?:free )?(?:outbound|egress))/i,
+    replacedBy: /Oracle Cloud Object Storage[\s\S]{0,250}?10 TB of outbound data a month/i,
+  },
   {
     what: "Cloud Run as the only container serverless with an always-free tier",
     pattern: /the only container-based serverless|Cloud Run[^.]{0,100}most generous free tier overall|For containerized workloads that need more than FaaS constraints allow, Cloud Run is the answer/i,
@@ -492,6 +502,8 @@ describe("hosting pages publish the free-tier figures our records hold (#1183)",
 
   it("states the current figure on every page that carried a retired one", async () => {
     const carried: Record<string, string[]> = {
+      "Wasabi storage at $6.99 per TB": ["/storage-comparison-2026"],
+      "Oracle object storage with only 10 GB of free outbound data": ["/storage-comparison-2026"],
       "Cloud Run as the only container serverless with an always-free tier": ["/serverless-free-tier-comparison-2026"],
       "Cloud Functions as free on Firebase's Spark plan": ["/vendor/firebase"],
       "Deno Deploy free egress of 100 GB": ["/hosting-free-tier-comparison-2026", "/serverless-free-tier-comparison-2026", "/hosting-pricing", "/vercel-alternatives"],

@@ -41283,8 +41283,8 @@ ${globalNavCss()}
       <tr>
         <td class="provider-col">Oracle Cloud Obj. Storage</td>
         <td>Object</td>
-        <td>10 GB</td>
-        <td>10 GB/mo</td>
+        <td>20 GB</td>
+        <td>10 TB/mo</td>
         <td class="check">&#10003;</td>
         <td class="cross">&#10007;</td>
         <td class="check">&#10003;</td>
@@ -41420,7 +41420,7 @@ ${globalNavCss()}
 
   <div class="diff-card">
     <h3>Wasabi</h3>
-    <div class="diff-desc"><strong>Pricing:</strong> No free tier, but flat $6.99/TB/month with <strong>zero egress fees</strong>. S3-compatible. 90-day minimum storage duration. The budget alternative to S3 for egress-heavy workloads. At 10 TB stored + 50 TB egress: Wasabi = $70/month vs S3 = $4,730/month. Not free, but the math is dramatic at scale.</div>
+    <div class="diff-desc"><strong>Pricing:</strong> No free tier. $7.99 per TB per month. No egress or API fees. 90-day minimum storage duration. 1 TB minimum monthly charge. S3-compatible. "If your monthly egress data transfer is greater than your active storage volume, then your storage use case is not a good fit for Wasabi's free egress policy." 10 TB stored with up to 10 TB of downloads a month costs $79.90 a month.</div>
   </div>
 
   <h2 id="cloud-provider">Cloud Provider Storage</h2>
@@ -41443,7 +41443,7 @@ ${globalNavCss()}
 
   <div class="diff-card">
     <h3>Oracle Cloud Object Storage</h3>
-    <div class="diff-desc"><strong>Free tier:</strong> 10 GB storage, 10 GB egress, 50,000 API requests/month. <strong>Always Free</strong> &mdash; does not expire. S3-compatible API. Egress at $0.0085/GB is the cheapest of any hyperscaler. Combined with Oracle&rsquo;s 200 GB block volume Always Free, it&rsquo;s competitive for budget builds. Often overlooked but generous.</div>
+    <div class="diff-desc"><strong>Free tier:</strong> 20 GB object storage. 10 GB per tier on paid and trial accounts. 50,000 API requests per month. 10 TB of outbound data a month. <strong>Always Free</strong> &mdash; does not expire. S3-compatible API. Outbound data beyond 10 TB is $0.0085/GB.</div>
   </div>
 
   <div class="diff-card">
