@@ -584,7 +584,7 @@ describe("announced retirements on records already in effect", () => {
   let pricingUpcoming = "";
 
   before(async () => {
-    await withServedChangeLog([...shipped, ...subjects.flatMap((s) => [s.later, s.sooner, s.unknown])], async (base) => {
+    await withServedChangeLog(subjects.flatMap((s) => [s.later, s.sooner, s.unknown]), async (base) => {
       for (const route of [...PAGES.map((p) => p.route), "/alternative-to/openai", "/pricing-changes", "/changes"]) {
         const response = await fetch(base + route, { redirect: "error" });
         assert.strictEqual(response.status, 200);
