@@ -22,11 +22,11 @@
       "changed": "2026-10-22"
     },
     "/ai-free-tiers": {
-      "hash": "ec19b1e42c44069f",
+      "hash": "7f8e8890c4a8ee25",
       "changed": "2026-10-22"
     },
     "/ai-ml-alternatives": {
-      "hash": "6084daa7f0379c2e",
+      "hash": "b2e148aaf142103e",
       "changed": "2026-10-22"
     },
     "/alternative-to": {
@@ -1095,11 +1095,11 @@
       "changed": "2026-10-19"
     },
     "/category/ai-coding": {
-      "hash": "22ceaf4fede83ba9",
+      "hash": "6de69343c87b3fe0",
       "changed": "2026-10-22"
     },
     "/category/ai-ml": {
-      "hash": "d1822c344bc327a9",
+      "hash": "d80fe16a5bc30d92",
       "changed": "2026-10-22"
     },
     "/category/analytics": {
@@ -1398,8 +1398,8 @@
       "changed": "2026-10-16"
     },
     "/compare/aider-vs-openai-codex": {
-      "hash": "f22077db10b39132",
-      "changed": "2026-10-21"
+      "hash": "6ef72aadec1ae5c3",
+      "changed": "2026-10-22"
     },
     "/compare/airtop-vs-hyperbrowser": {
       "hash": "fdf204bbd66792e1",
@@ -1446,8 +1446,8 @@
       "changed": "2026-10-21"
     },
     "/compare/amazon-kiro-vs-openai-codex": {
-      "hash": "6b8e4505ee42f463",
-      "changed": "2026-10-21"
+      "hash": "08111ca4641a21e3",
+      "changed": "2026-10-22"
     },
     "/compare/amazon-kiro-vs-windsurf": {
       "hash": "5ba1434fea5b0e50",
@@ -1642,8 +1642,8 @@
       "changed": "2026-10-15"
     },
     "/compare/claude-code-vs-openai-codex": {
-      "hash": "e201e87aa4b6af01",
-      "changed": "2026-10-21"
+      "hash": "b75896cb7e3c4a2a",
+      "changed": "2026-10-22"
     },
     "/compare/clerk-vs-zitadel-cloud": {
       "hash": "7db3e5fb281d1152",
@@ -2442,7 +2442,7 @@
       "changed": "2026-10-11"
     },
     "/compare/openai-codex-vs-windsurf": {
-      "hash": "4fba99cf32049586",
+      "hash": "456900dbb7fb3cf5",
       "changed": "2026-10-22"
     },
     "/compare/opencagedata-com-vs-osmnames": {
@@ -3071,8 +3071,8 @@
       "daily": true
     },
     "/digest/2026-w44": {
-      "hash": "397c42859d5b20eb",
-      "changed": "2026-10-21"
+      "hash": "3182de1e7ea02f3a",
+      "changed": "2026-10-22"
     },
     "/digest/2026-w45": {
       "hash": "dbc45696ab701b20",
@@ -3206,7 +3206,7 @@
       "changed": "2026-10-22"
     },
     "/free-llm-apis": {
-      "hash": "85f57a82e74d00e4",
+      "hash": "05eaaadf0d3c7b20",
       "changed": "2026-10-22"
     },
     "/free-nextjs-stack": {
@@ -3242,7 +3242,7 @@
       "daily": true
     },
     "/gemini-api-pricing-2026": {
-      "hash": "5a053025f0b1e731",
+      "hash": "1241c17dbc2e41cc",
       "changed": "2026-10-22"
     },
     "/github-actions-alternatives": {
@@ -3310,7 +3310,7 @@
       "changed": "2026-10-22"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "43423822363ae533",
+      "hash": "c142953155916d03",
       "changed": "2026-10-22"
     },
     "/llm-api-pricing": {
@@ -3581,7 +3581,7 @@
       "daily": true
     },
     "/stack-check": {
-      "hash": "6bb1857fd32a417f",
+      "hash": "d5635edf9689bfc8",
       "changed": "2026-10-22"
     },
     "/stacks": {
