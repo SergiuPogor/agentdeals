@@ -804,7 +804,7 @@
       "changed": "2026-10-09"
     },
     "/auth-comparison-2026": {
-      "hash": "686b3f3819dd951a",
+      "hash": "140edcf9723f6866",
       "changed": "2026-10-22"
     },
     "/auth0-alternatives": {
@@ -1167,7 +1167,7 @@
       "changed": "2026-10-21"
     },
     "/category/databases": {
-      "hash": "ca569034db95e42d",
+      "hash": "106066504a0f4a1c",
       "changed": "2026-10-22"
     },
     "/category/design": {
@@ -2701,11 +2701,11 @@
       "changed": "2026-10-18"
     },
     "/database-alternatives": {
-      "hash": "cd3d22695f4b050d",
+      "hash": "d0d4865f5f1a5183",
       "changed": "2026-10-22"
     },
     "/database-free-tier-comparison-2026": {
-      "hash": "229ed3b6b5510e23",
+      "hash": "8d4aa028f9df3526",
       "changed": "2026-10-22"
     },
     "/database-pricing": {
@@ -3175,8 +3175,8 @@
       "daily": true
     },
     "/firebase-alternatives": {
-      "hash": "b11b5de607bedffd",
-      "changed": "2026-10-19"
+      "hash": "6c187bd53f597229",
+      "changed": "2026-10-22"
     },
     "/firebase-studio-shutdown": {
       "daily": true
@@ -3254,7 +3254,7 @@
       "changed": "2026-10-11"
     },
     "/google-developer-program-2026": {
-      "hash": "a0f8aa0bcfa8c408",
+      "hash": "b54d8b0ef735514f",
       "changed": "2026-10-22"
     },
     "/groq-vs-hugging-face": {
@@ -3325,7 +3325,7 @@
       "changed": "2026-10-20"
     },
     "/mongodb-alternatives": {
-      "hash": "9d5e856b29d79bf5",
+      "hash": "bd0ffc48fdd532a2",
       "changed": "2026-10-22"
     },
     "/monitoring-alternatives": {
@@ -3581,7 +3581,7 @@
       "daily": true
     },
     "/stack-check": {
-      "hash": "38e94cbdf6546a05",
+      "hash": "b5c0e3e3ad305a2a",
       "changed": "2026-10-22"
     },
     "/stacks": {
@@ -3624,7 +3624,7 @@
       "changed": "2026-10-22"
     },
     "/supabase-vs-firebase": {
-      "hash": "f6d0e6b23f0990ad",
+      "hash": "183f198ec00999eb",
       "changed": "2026-10-22"
     },
     "/team-collaboration-alternatives": {
