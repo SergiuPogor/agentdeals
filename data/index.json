@@ -1503,6 +1503,18 @@
           "quote": "Your project will freeze, and Appwrite Console will continue running in read-only mode. You need to upgrade to Pro, remove resources that exceed their limit, or wait for the next billing cycle, which resets usage limits.",
           "url": "https://appwrite.io/pricing",
           "read_on": "2026-10-05"
+        },
+        {
+          "text": "From November 5, 2026, Appwrite Cloud deletes inactive function and site deployments more than 30 days old by default. A deployment's age counts from the day it was created. The active deployment and any deployment a custom domain points to are kept. On the Free plan, retention can be raised to at most 90 days and each function or site keeps at most its 100 newest inactive deployments.",
+          "quote": "From November 5, 2026, inactive deployments on Appwrite Cloud are cleaned up after 30 days by default, so they stop counting toward your storage. Your active deployment always stays.",
+          "url": "https://appwrite.io/blog/post/default-deployment-retention",
+          "read_on": "2026-10-22"
+        },
+        {
+          "text": "On the Free plan, inactive deployments count toward the same 2 GB of storage as files and databases.",
+          "quote": "On the Free plan, that's the same 2GB your files and databases use.",
+          "url": "https://appwrite.io/blog/post/default-deployment-retention",
+          "read_on": "2026-10-22"
         }
       ],
       "official_mcp_servers": [

@@ -332,13 +332,13 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 111,
-      "table_figures_from_records": 10,
+      "table_figures": 113,
+      "table_figures_from_records": 12,
       "tables": [
         {
           "label": "Main Comparison Table",
-          "figures": 47,
-          "from_records": 10
+          "figures": 49,
+          "from_records": 12
         },
         {
           "label": "Managed Auth Platforms",
@@ -876,8 +876,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 83,
-      "table_figures_from_records": 52,
+      "table_figures": 85,
+      "table_figures_from_records": 54,
       "tables": [
         {
           "label": "Main Comparison Table",
@@ -891,8 +891,8 @@
         },
         {
           "label": "Firebase / BaaS Databases",
-          "figures": 9,
-          "from_records": 5
+          "figures": 11,
+          "from_records": 7
         },
         {
           "label": "Edge / Embedded Databases",
@@ -2037,8 +2037,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 59,
-      "table_figures_from_records": 19,
+      "table_figures": 61,
+      "table_figures_from_records": 21,
       "tables": [
         {
           "label": "2. Price Comparison Table",
@@ -2057,8 +2057,8 @@
         },
         {
           "label": "7. Firebase Alternatives",
-          "figures": 15,
-          "from_records": 10
+          "figures": 17,
+          "from_records": 12
         }
       ],
       "reads_changes": true,
@@ -3284,8 +3284,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 39,
-      "table_figures_from_records": 16,
+      "table_figures": 40,
+      "table_figures_from_records": 17,
       "tables": [
         {
           "label": "1. Free Tier Comparison Table",
@@ -3299,8 +3299,8 @@
         },
         {
           "label": "5. Other BaaS Alternatives",
-          "figures": 16,
-          "from_records": 16
+          "figures": 17,
+          "from_records": 17
         }
       ],
       "reads_changes": true,
