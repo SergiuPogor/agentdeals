@@ -9708,22 +9708,18 @@
     },
     {
       "vendor": "Oracle Cloud",
-      "change_type": "pricing_restructured",
-      "date": "2026-09-02",
-      "date_source": "discovered",
-      "summary": "The description of the Always Free tier has changed. The tier still exists, the specific VM details are different.",
-      "previous_state": "Always Free includes 2 AMD VMs (1/8 OCPU, 1 GB each), up to 4 Arm VMs (24 GB total), 200 GB block volumes, 20 GB object storage, 2 Autonomous Databases, Load Balancer",
-      "current_state": "Always Free services include HeatWave AMD-based Compute, Arm-based Ampere A1 Compute, Block Volume, Object Storage, Archive Storage, Flexible Load Balancer, Flexible Network Load Balancer, Site-to-Site VPN, Autonomous Data Warehouse, Autonomous Transaction Processing, Autonomous JSON Database, NoSQL Database (Phoenix Region only), APEX Application Development, Resource Manager (Terraform), Monitoring, Notifications, Logging, Application Performance Monitoring, Service Connector Hub, Vault, Bastions, Security Advisor, Virtual Cloud Networks, Site-to-Site VPN, Content Management Starter Edition, Email Delivery.",
+      "change_type": "limits_reduced",
+      "date": "2026-06-12",
+      "date_source": "vendor_page",
+      "summary": "Oracle halved the Always Free Ampere A1 allowance. Oracle's Always Free documentation changed between 2026-06-05 and 2026-06-12, and Oracle announced the new allocation on 2026-07-21. The AMD micro VMs, storage and databases did not change.",
+      "previous_state": "\"All tenancies get the first 3,000 OCPU hours and 18,000 GB hours per month for free for VM instances using the VM.Standard.A1.Flex shape\"; \"Processor: 4 OCPUs total\", \"Memory: 24 GB total\" (Always Free Resources, capture of 2026-06-05)",
+      "current_state": "\"All tenancies get the first 1,500 OCPU hours and 9,000 GB hours per month for free for VM instances using the VM.Standard.A1.Flex shape\"; \"Processor: 2 OCPUs total\", \"Memory: 12 GB total\" (Always Free Resources, capture of 2026-06-12, and as read on 2026-10-21)",
       "impact": "medium",
-      "source_url": "https://www.oracle.com/cloud/free/",
+      "source_url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
       "category": "Cloud IaaS",
       "alternatives": [],
       "detected_by": "reverify-ai",
-      "recorded_date": "2026-09-02",
-      "archive_check": {
-        "checked": "2026-10-02",
-        "outcome": "no_usable_capture"
-      }
+      "recorded_date": "2026-09-02"
     },
     {
       "vendor": "Fingerprint",
@@ -17105,6 +17101,20 @@
       "alternatives": [],
       "recorded_date": "2026-10-21",
       "listing_effect": "none"
+    },
+    {
+      "vendor": "Oracle Cloud",
+      "change_type": "record_corrected",
+      "date": "2026-10-21",
+      "summary": "Data correction - Oracle's cut to the Always Free Ampere A1 allowance happened between 2026-06-05 and 2026-06-12, not on 2026-09-02, the day our reading noticed it, and Oracle announced it on 2026-07-21.",
+      "previous_state": "Recorded 2026-09-02 as: The description of the Always Free tier has changed. The tier still exists, the specific VM details are different. dated 2026-09-02",
+      "current_state": "\"For Always Free tenancies, the Ampere A1 allocation is now:\" Compute \"2 OCPUs total\", Memory \"12 GB total\", monthly equivalent \"1,500 OCPU hours\" (Oracle Cloud Customer Connect, \"OCI Always Free: Updated Ampere A1 Compute Allocation\", posted 2026-07-21).",
+      "impact": "low",
+      "source_url": "https://community.oracle.com/customerconnect/discussion/970310/oci-always-free-updated-ampere-a1-compute-allocation",
+      "category": "Cloud IaaS",
+      "alternatives": [],
+      "recorded_date": "2026-10-21",
+      "date_source": "hand_written"
     }
   ]
 }
