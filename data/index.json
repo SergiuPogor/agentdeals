@@ -34067,6 +34067,12 @@
           "quote": "Failed requests, empty search results, and timeouts are not billed.",
           "url": "https://api-docs.deepseek.com/guides/search/",
           "read_on": "2026-10-17"
+        },
+        {
+          "text": "DeepSeek's API accepts Anthropic-format requests at https://api.deepseek.com/anthropic. DeepSeek documents running Claude Code on it with a DeepSeek API key. Claude model names are mapped: claude-opus to deepseek-v4-pro, billed at the V4 Pro price; claude-sonnet and claude-haiku to deepseek-flash. Claude Code's web search runs through DeepSeek and adds model token costs. This is paid usage from the prepaid balance, since there is no free tier.",
+          "quote": "our API has added support for the Anthropic API format, with the base_url being https://api.deepseek.com/anthropic.",
+          "url": "https://api-docs.deepseek.com/guides/anthropic_api",
+          "read_on": "2026-10-22"
         }
       ]
     },
