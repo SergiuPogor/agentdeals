@@ -30689,7 +30689,7 @@ function buildVectorDatabasePricingPage(): string {
       freeDetails: "Starter plan: 2 GB storage, 2M write units/month, 1M read units/month, 1 GB/month egress (reads that return data are blocked at the cap), 5 serverless indexes, 1 project, 2 users, AWS us-east-1 only. Three embedding models include 5M tokens/month each. Pinecone Assistant: 1 GB storage. Supports metadata filtering, namespaces, and sparse-dense hybrid search.",
       freeType: "generous",
       monthlyCostSmall: "$0",
-      monthlyCostTeam: "$70+ (Standard)",
+      monthlyCostTeam: "$50+ (Standard, $50/month minimum)",
       hiddenCosts: "Read/write units vary by vector dimensions — higher dimensions consume more units per operation. Starter plan limited to 5 indexes. No pod-based deployment option on free tier. Pinecone Assistant has separate limits.",
       selfHosted: false,
     },
@@ -30698,16 +30698,16 @@ function buildVectorDatabasePricingPage(): string {
       slug: "qdrant",
       category: "dedicated-cloud",
       vectorType: "Managed (Dedicated)",
-      freeVectors: "~1M (1 GB)",
-      freeStorage: "1 GB",
+      freeVectors: "~1M at 768 dimensions",
+      freeStorage: "0.5 vCPU, 1 GB RAM, 4 GB disk",
       freeDimensions: "Unlimited",
       freeQueries: "Unlimited",
-      paidFrom: "~$10/mo",
+      paidFrom: "Usage-based (CPU, memory, disk); no published starting price",
       pricingModel: "Per-cluster (RAM/disk)",
-      freeDetails: "Free forever cluster: 1 GB storage on AWS/GCP/Azure. Supports filtering, payload indexing, quantization, multi-tenancy. Open-source Qdrant can also be self-hosted with no limits. Rust-based for high performance.",
+      freeDetails: "Free forever cluster: 0.5 vCPU, 1 GB RAM and 4 GB disk on AWS/GCP/Azure. Supports filtering, payload indexing, quantization, multi-tenancy. Open-source Qdrant can also be self-hosted with no limits. Rust-based for high performance.",
       freeType: "generous",
       monthlyCostSmall: "$0",
-      monthlyCostTeam: "$10\u201350",
+      monthlyCostTeam: "Usage-based",
       hiddenCosts: "1 GB limits you to ~500K\u20131M vectors depending on dimensions. No high-availability on free cluster. Self-hosted requires managing infrastructure. Cloud pricing scales with RAM, which is the primary cost driver for in-memory indexes.",
       selfHosted: true,
     },
@@ -30738,12 +30738,12 @@ function buildVectorDatabasePricingPage(): string {
       freeStorage: "5 GB",
       freeDimensions: "Up to 32,768",
       freeQueries: "2.5M CU/mo",
-      paidFrom: "$65/mo (Standard)",
+      paidFrom: "$0/mo + usage (Standard, Serverless)",
       pricingModel: "Compute units (CU)",
       freeDetails: "Free tier: 5 GB storage, 2.5M vector compute units/month, up to 5 collections. Based on Milvus (most popular open-source vector DB). Supports GPU-accelerated search, scalar filtering, hybrid search. Milvus open-source is also fully free to self-host.",
       freeType: "generous",
       monthlyCostSmall: "$0",
-      monthlyCostTeam: "$65+",
+      monthlyCostTeam: "Usage-based (Serverless)",
       hiddenCosts: "Compute unit consumption depends on query complexity and vector dimensions. 5 collection limit on free tier. Milvus self-hosted requires significant ops expertise (etcd, MinIO, Pulsar dependencies). Zilliz Dedicated is significantly more expensive than Serverless.",
       selfHosted: true,
     },
@@ -30864,7 +30864,7 @@ function buildVectorDatabasePricingPage(): string {
       freeStorage: "512 MB (M0 cluster)",
       freeDimensions: "Up to 4,096",
       freeQueries: "Unlimited",
-      paidFrom: "$57/mo (M10 Dedicated)",
+      paidFrom: "Flex: $8\u201330/mo (prototyping); Dedicated from $56.94/mo (M10)",
       pricingModel: "Per-cluster",
       freeDetails: "Atlas Vector Search included on M0 free clusters (512 MB, shared, always free on AWS/Azure/GCP). Supports approximate nearest neighbor search, pre-filtering, exact match. Integrates with MongoDB aggregation pipeline — combine vector search with document queries in a single query. Atlas Search (full-text) also included.",
       freeType: "generous",
@@ -30941,7 +30941,7 @@ function buildVectorDatabasePricingPage(): string {
     { q: "What is a vector database and why do I need one?", a: "A vector database stores high-dimensional numerical representations (embeddings) of data like text, images, or audio, and enables fast similarity search. You need one if you're building RAG (Retrieval-Augmented Generation) pipelines, semantic search, recommendation systems, or any AI application that needs to find similar items. Traditional databases can't efficiently search across hundreds of dimensions." },
     { q: "Should I use a dedicated vector database or pgvector?", a: "For prototypes and small-to-medium workloads (under 1M vectors), pgvector in Supabase or Neon is the simplest choice — no extra infrastructure, SQL queries, and your vectors live alongside your relational data. For production RAG at scale (1M+ vectors), dedicated solutions like Pinecone, Qdrant, or Weaviate offer better query performance, more indexing options, and purpose-built features like hybrid search and reranking." },
     { q: "Which vector database has the best free tier?", a: "For managed cloud: Pinecone offers 2 GB (~1M vectors) free and Zilliz Cloud (5 GB, about 1M 768-dimension vectors). For self-hosted: Qdrant, Chroma, Milvus, and LanceDB are all fully open-source with no limits. For the simplest setup: Supabase pgvector (500 MB, included with Postgres) or Neon pgvector (1 GB per project) require zero extra infrastructure." },
-    { q: "What is the cheapest vector database for production RAG?", a: "Self-hosted Qdrant or Milvus on a $5-10/month VPS is the absolute cheapest for small-to-medium scale. Turbopuffer bills usage with a $16 monthly minimum on its Launch plan. Qdrant Cloud ($10/month) and Upstash Vector (10K queries/day free) are also cost-effective. Supabase pgvector is free if your total database is under 500 MB." },
+    { q: "What is the cheapest vector database for production RAG?", a: "Self-hosted Qdrant or Milvus on a $5-10/month VPS is the absolute cheapest for small-to-medium scale. Turbopuffer bills usage with a $16 monthly minimum on its Launch plan. Upstash Vector (10K queries/day free) is also cost-effective. Supabase pgvector is free if your total database is under 500 MB." },
     { q: "How many vectors can I store in 1 GB?", a: "It depends on dimensions. With 1,536 dimensions (OpenAI text-embedding-3-small): ~170K vectors per GB raw, but with indexing overhead expect ~100K-150K. With 768 dimensions (many open-source models): ~340K vectors per GB raw, ~200K-250K with indexes. With 3,072 dimensions (OpenAI text-embedding-3-large): ~85K vectors per GB. Lower-dimension models are more cost-effective for storage." },
   ];
 
@@ -31138,7 +31138,7 @@ function buildVectorDatabasePricingPage(): string {
     '      <tr><td style="font-weight:600">pgvector (self-hosted PG)</td><td>$5\u201315/mo</td><td>$30\u201380/mo</td><td>Medium (PG admin)</td><td>Teams already running PostgreSQL</td></tr>\n' +
     '      <tr><td style="font-weight:600">Pinecone (managed)</td><td>$0 (free tier)</td><td>$70\u2013200/mo</td><td>None</td><td>Zero-ops requirement</td></tr>\n' +
     '      <tr><td style="font-weight:600">Qdrant Cloud (managed)</td><td>$0 (free tier)</td><td>$30\u2013100/mo</td><td>None</td><td>Easy start with OSS escape hatch</td></tr>\n' +
-    '      <tr><td style="font-weight:600">Zilliz Cloud (managed)</td><td>$0 (free tier)</td><td>$65\u2013200/mo</td><td>None</td><td>Milvus users wanting managed service</td></tr>\n' +
+    '      <tr><td style="font-weight:600">Zilliz Cloud (managed)</td><td>$0 (free tier)</td><td>Usage-based (Serverless)</td><td>None</td><td>Milvus users wanting managed service</td></tr>\n' +
     '    </tbody>\n' +
     '  </table>\n' +
     '  </div>\n' +
