@@ -386,6 +386,12 @@
           "quote": "You must have a valid payment method saved to your Netlify team account to keep your web projects active with the Personal or Pro Credit-based plans.",
           "url": "https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/billing-faq-for-credit-based-plans/",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "An agent can deploy to Netlify with no account using the --allow-anonymous flag. The deploy gets a live URL, and a person has one hour to claim it by logging in or signing up. Sites using serverless or edge functions still need an account.",
+          "quote": "This creates a project with a live URL. You have one hour to claim ownership by logging in or creating a Netlify account. This is useful for AI agents that need to create temporary projects without requiring credentials. Note, though, that sites or apps that use serverless functions or edge functions will require an account.",
+          "url": "https://docs.netlify.com/start/quickstarts/deploy-from-ai-code-generation-tool/",
+          "read_on": "2026-10-22"
         }
       ],
       "official_mcp_servers": [
