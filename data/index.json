@@ -3808,6 +3808,14 @@
           "source_quote": "The Hugging Face MCP (Model Context Protocol) Server connects your MCP‑compatible AI assistant (for example Codex, Cursor, VS Code extensions, Zed, ChatGPT or Claude Desktop) directly to the Hugging Face Hub.",
           "read_on": "2026-10-20"
         }
+      ],
+      "conditions": [
+        {
+          "text": "A free Hugging Face account needs purchased credits, which take a payment method, to call Inference Providers.",
+          "quote": "Free users can use Inference Providers by purchasing credits, or by upgrading to PRO",
+          "url": "https://huggingface.co/docs/inference-providers/pricing",
+          "read_on": "2026-10-22"
+        }
       ]
     },
     {
@@ -3918,6 +3926,12 @@
         "reviewed": "2026-09-01"
       },
       "conditions": [
+        {
+          "text": "The Gemini API Free Tier needs no credit card or billing account; linking a billing account and prepaying moves you to the Paid Tier.",
+          "quote": "Upgrading from the Free Tier to the Paid Tier means linking a billing account and prepaying to add a minimum of $5 (or equivalent in other currencies) of credits to your account.",
+          "url": "https://ai.google.dev/gemini-api/docs/billing",
+          "read_on": "2026-10-22"
+        },
         {
           "text": "Google's pricing page says free-tier content is used to improve Google's products.",
           "quote": "Content used to improve our products",
@@ -4130,7 +4144,15 @@
       "restatement_reverted": {
         "record_date": "2026-09-07",
         "reverted_on": "2026-09-27"
-      }
+      },
+      "conditions": [
+        {
+          "text": "OpenRouter's free models need no credit card.",
+          "quote": "OpenRouter is a strong starting point, with 20+ free models, a single API key, and no credit card.",
+          "url": "https://openrouter.ai/blog/tutorials/free-llm-apis-compared/",
+          "read_on": "2026-10-22"
+        }
+      ]
     },
     {
       "vendor": "Cloudflare Workers AI",
@@ -4179,7 +4201,15 @@
         "text": "Workers Free 10,000 Neurons per day N/A",
         "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
         "read_on": "2026-10-06"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Workers AI's free allowance on the Workers Free plan needs no credit card.",
+          "quote": "Start building for free — no credit card required.",
+          "url": "https://www.cloudflare.com/products/workers-ai/",
+          "read_on": "2026-10-22"
+        }
+      ]
     },
     {
       "vendor": "PostHog",
@@ -7922,6 +7952,12 @@
           "quote": "Follow us on X and subscribe to our newsletter to be the first to find out when new plans drop.",
           "url": "https://www.cerebras.ai/code",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "Cerebras requires a payment method before API access, including its $5 free trial credits.",
+          "quote": "If you skip adding a payment method at sign-up, Playground and API access remain inactive until you do.",
+          "url": "https://inference-docs.cerebras.ai/support/rate-limits",
+          "read_on": "2026-10-22"
         }
       ]
     },
@@ -7985,6 +8021,12 @@
             "production",
             "commercial use"
           ]
+        },
+        {
+          "text": "Cohere creates a free Trial API key with each new account; no credit card is needed.",
+          "quote": "When an account is created, we automatically create an Trial API key for you.",
+          "url": "https://cohere.com/pricing",
+          "read_on": "2026-10-22"
         }
       ]
     },
@@ -8827,6 +8869,12 @@
           "quote": "Purchased credits expire after 1 year. OpenAI cannot extend the expiration date of purchased credits or credit grants.",
           "url": "https://help.openai.com/en/articles/8264644-how-can-i-set-up-prepaid-billing",
           "read_on": "2026-10-06"
+        },
+        {
+          "text": "OpenAI's API needs a payment method and a credit purchase of at least $5 before you use it.",
+          "quote": "Select Add payment details and complete the payment-information step. Choose your initial credit purchase amount. The minimum purchase is $5",
+          "url": "https://help.openai.com/en/articles/8264644-setting-up-and-managing-prepaid-api-billing",
+          "read_on": "2026-10-22"
         }
       ],
       "tier": "Pay-as-you-go",
@@ -10426,7 +10474,15 @@
           }
         ],
         "reviewed": "2026-09-01"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Replicate does not require a payment method at first for select models, but asks to set up billing after a short time.",
+          "quote": "You can run select models on Replicate for free, but after a bit you’ll be asked to set up billing.",
+          "url": "https://replicate.com/docs/topics/billing",
+          "read_on": "2026-10-22"
+        }
+      ]
     },
     {
       "vendor": "Baseten",
@@ -32986,6 +33042,18 @@
           "quote": "Your API requests will be automatically rejected once your prepaid credits are depleted.",
           "url": "https://docs.x.ai/console/billing",
           "read_on": "2026-10-21"
+        },
+        {
+          "text": "xAI's API needs credits loaded in console.x.ai, which takes a payment method, before the first request.",
+          "quote": "Sign up for an account at console.x.ai, then load it with credits to start using the API.",
+          "url": "https://docs.x.ai/developers/quickstart",
+          "read_on": "2026-10-22"
+        },
+        {
+          "text": "xAI's docs now call this API the SpaceXSI API. Accounts and API keys are still created at console.x.ai.",
+          "quote": "In this guide, we'll walk you through the basics of using the SpaceXSI API, from creating an account to making your first request.",
+          "url": "https://docs.x.ai/developers/quickstart",
+          "read_on": "2026-10-22"
         }
       ]
     },
@@ -33425,6 +33493,12 @@
           "quote": "Free, Pro, and Enterprise plans aren't eligible.",
           "url": "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers",
           "read_on": "2026-10-21"
+        },
+        {
+          "text": "Anthropic's Claude API needs prepaid credits, bought with a payment method, before you use it.",
+          "quote": "Claude API and playground usage is billed through prepaid usage credits. Buy credits before you use the API",
+          "url": "https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage",
+          "read_on": "2026-10-22"
         }
       ],
       "tier": "Pay-as-you-go",

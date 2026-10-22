@@ -1977,8 +1977,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 68,
-      "table_figures_from_records": 54,
+      "table_figures": 69,
+      "table_figures_from_records": 55,
       "tables": [
         {
           "label": "1. What Changed on April 1",
@@ -1992,8 +1992,8 @@
         },
         {
           "label": "6. Free LLM API Comparison",
-          "figures": 54,
-          "from_records": 54
+          "figures": 55,
+          "from_records": 55
         }
       ],
       "reads_changes": true,
@@ -2495,8 +2495,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 53,
-      "table_figures_from_records": 53,
+      "table_figures": 54,
+      "table_figures_from_records": 54,
       "tables": [
         {
           "label": "What’s Changing",
@@ -2505,8 +2505,8 @@
         },
         {
           "label": "Free Tier Comparison Table",
-          "figures": 51,
-          "from_records": 51
+          "figures": 52,
+          "from_records": 52
         },
         {
           "label": "OpenAI Pricing Change Timeline",
@@ -2605,8 +2605,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 58,
-      "table_figures_from_records": 58,
+      "table_figures": 59,
+      "table_figures_from_records": 59,
       "tables": [
         {
           "label": "2. Feature Migration Map",
@@ -2615,8 +2615,8 @@
         },
         {
           "label": "Direct API Alternatives",
-          "figures": 26,
-          "from_records": 26
+          "figures": 27,
+          "from_records": 27
         },
         {
           "label": "Agent Frameworks",
