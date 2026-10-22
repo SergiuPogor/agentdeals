@@ -184,6 +184,18 @@
       "collided_with": "Algolia|limits_reduced|2026-08-28|https://www.algolia.com/pricing"
     },
     {
+      "vendor": "Alibaba Cloud Qwen Code",
+      "change_type": "new_free_tier",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 5138 characters, so it states no terms to have changed",
+      "summary": "The page states that Qwen is free to use and open to all, and highlights various features like Image Generation, Deep Research, and Web Dev as being available to try now. This contradicts the stored information that the Qwen OAuth free tier was discontinued.",
+      "previous_state": "Open-source AI coding agent for the terminal, editors, desktop, browser and chat, formerly with a free Qwen OAuth tier. No free tier: Qwen Code's documentation says \"The Qwen OAuth free tier was discontinued on 2026-04-15\" and points users to Alibaba Cloud Coding Plan, OpenRouter, Fireworks AI or another provider. Coding Plan Pro is $50 a month; a Model Studio API key is billed pay-as-you-go.",
+      "current_state": "Qwen is free to use, open to all, and ready to help with creativity, collaboration, and endless possibilities.",
+      "source_url": "https://qwen.ai",
+      "category": "AI / ML",
+      "refused_date": "2026-10-22"
+    },
+    {
       "vendor": "Alwaysdata",
       "change_type": "limits_increased",
       "reason": "no_price_signal",
@@ -817,6 +829,18 @@
       "collided_with": "Bitrise|limits_increased|2026-08-28|https://bitrise.io/pricing"
     },
     {
+      "vendor": "bitrix24.com",
+      "change_type": "limits_reduced",
+      "reason": "unquantified_limit",
+      "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (5 gb)",
+      "summary": "The free plan is still offered, but the description is no longer solely focused on intranet and project management. The page details a wide range of features available in the free plan, including CRM, tasks, online meetings, and more. The 5GB storage limit for unlimited users is not explicitly mentioned on the provided text.",
+      "previous_state": "Intranet and project management tool. The free plan has 5GB for unlimited users.",
+      "current_state": "The free plan includes CRM, tasks, online meetings, and more. It offers features like leads, deals, contacts, estimates, invoices, online payments, sales automation, tasks, projects, Kanban boards, Gantt charts, time tracking, a website builder, employee directory, and more.",
+      "source_url": "https://www.bitrix24.com/",
+      "category": "Project Management",
+      "refused_date": "2026-10-22"
+    },
+    {
       "vendor": "Bitwarden",
       "change_type": "limits_reduced",
       "reason": "unquantified_limit",
@@ -1389,6 +1413,18 @@
     {
       "vendor": "Circum Icons",
       "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-28 (removal_does_not_reach_the_licence) stated the same 2 figures, so the page showed these terms before the date this record gives",
+      "summary": "The vendor no longer offers a free tier. The pricing page states access to 1600+ icons costs $9.",
+      "previous_state": "Consistent open-source icons such as SVG for React, Vue, and Svelte.",
+      "current_state": "Access 1600+ Unique Icons for Just $9",
+      "source_url": "https://circumicons.com",
+      "category": "Design",
+      "refused_date": "2026-10-22"
+    },
+    {
+      "vendor": "Circum Icons",
+      "change_type": "free_tier_removed",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as Circum Icons|free_tier_removed|2026-08-28|https://circumicons.com",
       "summary": "The vendor no longer offers a free tier. They now charge $9 for access to 1600+ icons.",
@@ -1740,6 +1776,18 @@
       "refused_date": "2026-09-10"
     },
     {
+      "vendor": "Coda",
+      "change_type": "rebranded",
+      "reason": "page_does_not_name_vendor",
+      "detail": "the page read never names Coda and is not served from its domain, so any terms on it belong to somebody else",
+      "summary": "The product has been rebranded to Superhuman Docs and is now part of a larger Superhuman Suite. The free plan still exists at $0, but Docs AI is now a limited trial on the free plan, whereas previously it was included. Unlimited doc size and AI writing/editing are now Pro features at $12/month per Doc Maker (billed annually).",
+      "previous_state": "Now sold as Superhuman Docs: coda.io/pricing redirects to superhuman.com/plans/docs. Read 2026-09-13, the Free plan is $0 and includes collaborative docs, Docs AI, connected tables, views and forms, and formulas and automations. Unlimited doc size, AI writing and editing, and 30-day version history are Pro at $12/month per Doc Maker billed annually.",
+      "current_state": "Free $0 USD Get Superhuman Free Free includes: Collaborative docs Try Docs AI - an AI assistant that helps you write confidently, build docs, and automate tasks Try MCP Connected tables, views, and forms Formulas and automations Grammarly (trial) Go (trial)",
+      "source_url": "https://superhuman.com/plans/docs",
+      "category": "Productivity & Notes",
+      "refused_date": "2026-10-22"
+    },
+    {
       "vendor": "codacy.com",
       "change_type": "free_tier_removed",
       "reason": "no_price_signal",
@@ -1911,13 +1959,13 @@
       "vendor": "Composio",
       "change_type": "new_tier",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-18 (repeats_a_refused_reading) stated the same 4 figures, so the page showed these terms before the date this record gives",
-      "summary": "The free tier is now called \"Hobby\" and is still available with the same limits (100,000 tool calls / mo, 50,000 triggers / mo, 3 team members). However, there are now paid tiers (Pro and Enterprise) with additional features and limits.",
+      "detail": "the reading of this page refused on 2026-10-20 (repeats_a_refused_reading) stated the same 4 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier, now called \"Hobby\", still exists with the same limits (100,000 tool calls / mo, 50,000 triggers / mo, 3 team members). However, the page details additional paid tiers (Pro and Enterprise) and add-ons that were not mentioned in the stored deal information.",
       "previous_state": "Integration platform for AI Agents and LLMs — Free $0 No credit card required 100,000 tool calls / mo 50,000 triggers / mo 3 team members",
       "current_state": "Hobby $0 No credit card required 100,000 tool calls / mo 50,000 triggers / mo 3 team members",
       "source_url": "https://composio.dev/pricing",
       "category": "AI / ML",
-      "refused_date": "2026-10-20"
+      "refused_date": "2026-10-22"
     },
     {
       "vendor": "ConfigCat",
@@ -2014,6 +2062,18 @@
       "source_url": "https://www.coupler.io/",
       "category": "Notebooks & Data Science",
       "refused_date": "2026-09-12"
+    },
+    {
+      "vendor": "Coupler",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-30 (states_no_terms) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The page promotes a 'Start for free' option but details are sparse. It does not explicitly state the limits of the free plan (one user, one data connection, etc.) as described in the stored information. The page emphasizes connecting to 400+ sources and AI integrations, suggesting a more robust offering than the original description.",
+      "previous_state": "Data integration tool that syncs between apps. It can create live dashboards and reports, transform and manipulate values, and collect and back up insights. The free plan is limited to one user, data connection, data source, and data destination. Also requires manual data refresh.",
+      "current_state": "The page offers a 'Start for free' option with access to 400+ sources and AI integrations, but does not detail specific limits of the free plan.",
+      "source_url": "https://www.coupler.io/",
+      "category": "Notebooks & Data Science",
+      "refused_date": "2026-10-22"
     },
     {
       "vendor": "Coupler",
@@ -2757,6 +2817,18 @@
       "refused_date": "2026-09-10"
     },
     {
+      "vendor": "Duolingo",
+      "change_type": "new_tier",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-10 (no_price_signal) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The page mentions a 'Super Duolingo' and 'Duolingo Max' subscription, and a 1 week free trial for the 'Duolingo English Test'. While the free tier still exists, the page highlights paid options and features not mentioned in the stored deal info.",
+      "previous_state": "Free language learning (40+ languages). Gamified lessons (5 lives system). Daily streak tracking. Leaderboards. Basic stories. No unlimited hearts, no offline lessons, no advanced progress quizzes on free. Ad-supported.",
+      "current_state": "The page promotes Super Duolingo and Duolingo Max, and offers a 1 week free trial for the Duolingo English Test.",
+      "source_url": "https://www.duolingo.com",
+      "category": "Education",
+      "refused_date": "2026-10-22"
+    },
+    {
       "vendor": "Dwh.dev",
       "change_type": "pricing_restructured",
       "reason": "dangling_reference",
@@ -3152,13 +3224,13 @@
       "vendor": "Fizzy",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-20 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
-      "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page states that Fizzy is entirely free with a 1 GB file storage limit.",
+      "detail": "the reading of this page refused on 2026-10-21 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The stored deal information states a limit of 1000 items, but the pricing page states that Fizzy is 'entirely free' with a file space limit of 1 GB.",
       "previous_state": "Kanban-based platform for project management and issue tracking. Create public boards, set up webhooks, use card stamping, and track unlimited users — free for up to 1000 items.",
-      "current_state": "Fizzy is entirely free with a 1 GB file storage limit.",
+      "current_state": "Fizzy is entirely free with a 1 GB file space limit.",
       "source_url": "https://www.fizzy.do/",
       "category": "Project Management",
-      "refused_date": "2026-10-21"
+      "refused_date": "2026-10-22"
     },
     {
       "vendor": "Flagsmith",
@@ -3357,6 +3429,18 @@
     {
       "vendor": "Formspree",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-30 (zero_allowance) stated the same 6 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free plan now has a limit of 50 submissions/month, which matches the stored information. However, the page details many more features available on different tiers, and the free tier has significantly fewer features than previously described. The stored information only mentioned unlimited forms, email notifications, and spam filtering, while the current page details many more features that are not included in the free tier.",
+      "previous_state": "Form backend as a service. Free plan: 50 submissions/month, unlimited forms, email notifications, spam filtering. No server-side code required",
+      "current_state": "The Free plan is $0/month and includes unlimited forms and projects, 1 team member, 50 monthly submissions, a 30-day submission archive, 2 linked emails, 0 GB of file uploads, private emails, a custom 'Thank You' page, Ajax forms, basic spam filtering, and custom reCAPTCHA.",
+      "source_url": "https://formspree.io/plans",
+      "category": "Forms",
+      "refused_date": "2026-10-22"
+    },
+    {
+      "vendor": "Formspree",
+      "change_type": "limits_reduced",
       "reason": "zero_allowance",
       "detail": "limits_reduced claimed on a state that grants zero of a resource — \"0 GB\". A vendor states a withdrawn allowance by dropping the row, not by publishing a zero, so a literal zero reads as a widget or plan configurator that had not populated when the page was fetched",
       "summary": "The free plan now has a limit of 50 submissions/month, which matches the stored information. However, the page details several paid plans that did not exist in the stored information. The free plan is now explicitly listed as $0/month or free yearly. The file upload limit for the free plan is now 0 GB, whereas the stored information did not mention a file upload limit.",
@@ -3427,6 +3511,18 @@
       "source_url": "https://fusionauth.io/pricing",
       "category": "Auth",
       "refused_date": "2026-09-30"
+    },
+    {
+      "vendor": "FusionAuth",
+      "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-30 (confirmed_unchanged) claimed the same change, pricing_restructured, against the same stored description",
+      "summary": "The Community tier is still offered as a self-hosted, free and unlimited option, but the pricing page details several paid tiers (Starter, Essentials, Enterprise) with varying features and pricing.",
+      "previous_state": "Identity platform — \"FusionAuth Community is free and unlimited\": self-host it on your own infrastructure, with the core authentication features and community support (forums, Slack, GitHub).",
+      "current_state": "Community is free and unlimited. It has the core authentication features. Core authentication standards & features most apps need Community support (forums, Github) Self-host FusionAuth on your own infrastructure for free.",
+      "source_url": "https://fusionauth.io/pricing",
+      "category": "Auth",
+      "refused_date": "2026-10-22"
     },
     {
       "vendor": "FusionAuth",
@@ -4316,6 +4412,19 @@
       "refused_date": "2026-09-10"
     },
     {
+      "vendor": "houndci.com",
+      "change_type": "free_tier_removed",
+      "reason": "same_transition_graded_differently",
+      "detail": "graded as houndci.com|free_tier_removed|2026-09-28|https://houndci.com/, a record we withdrew",
+      "summary": "Hound is free for public repos, but private repos now require a paid plan.",
+      "previous_state": "Comments on GitHub commits about code quality, free for Open Source",
+      "current_state": "Hound is free for public repos! Chihuahua Up to 50 private reviews $29 month",
+      "source_url": "https://houndci.com/",
+      "category": "Code Quality",
+      "refused_date": "2026-10-22",
+      "collided_with": "houndci.com|free_tier_removed|2026-09-28|https://houndci.com/"
+    },
+    {
       "vendor": "httpSMS",
       "change_type": "limits_increased",
       "reason": "unquantified_limit",
@@ -4531,6 +4640,18 @@
       "source_url": "https://www.image-charts.com/",
       "category": "Storage",
       "refused_date": "2026-09-28"
+    },
+    {
+      "vendor": "image-charts.com",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-28 (confirmed_unchanged) claimed the same change, limits_reduced, against the same stored description",
+      "summary": "The free plan now includes a watermark. Paid plans are available with more features and no watermark.",
+      "previous_state": "Unlimited image chart generation with a watermark",
+      "current_state": "Charts on the free plan carry a small image-charts.com watermark.",
+      "source_url": "https://www.image-charts.com/",
+      "category": "Storage",
+      "refused_date": "2026-10-22"
     },
     {
       "vendor": "ImgBB",
@@ -4935,6 +5056,18 @@
       "refused_date": "2026-09-10"
     },
     {
+      "vendor": "Khan Academy",
+      "change_type": "pricing_model_change",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-10 (dangling_reference) claimed the same change, pricing_model_change, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "While core access remains free for students, teachers, and families, the page highlights a push for donations and introduces 'district partnerships' with additional tools and support for a price per student.  Khan Academy is actively soliciting donations, stating that 'every dollar matters'. They also promote 'Khanmigo', an AI-powered assistant, and district-level solutions that are not free.",
+      "previous_state": "Fully free education platform. Math, science, computing, humanities, test prep (SAT, LSAT, MCAT). Video lessons, exercises, progress tracking. Personalized learning dashboard. Teacher tools. No ads. Nonprofit.",
+      "current_state": "District partnerships build on the free foundation with additional tools, insights, and support for an affordable price per student.",
+      "source_url": "https://www.khanacademy.org",
+      "category": "Education",
+      "refused_date": "2026-10-22"
+    },
+    {
       "vendor": "Koyeb",
       "change_type": "pricing_restructured",
       "reason": "confirmed_unchanged",
@@ -5189,6 +5322,18 @@
       "category": "Monitoring",
       "refused_date": "2026-09-11",
       "collided_with": "linkok.com|pricing_restructured|2026-08-28|https://linkok.com"
+    },
+    {
+      "vendor": "Liveblocks",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-30 (restates_stored_quantities) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The Free tier now has a monthly credit of $30, and realtime data storage is 1 GB included, with $0.15 per GB overage. The stored information stated unlimited MAU, unlimited monthly active rooms, 3,000 realtime collaboration minutes, 200 comments, 1 GB realtime data storage, 512 MB file storage, 3 dashboard seats, and 10 projects.",
+      "previous_state": "Real-time collaboration infrastructure — Free tier includes: Unlimited MAU, Unlimited monthly active rooms, 3,000 realtime collaboration minutes, 200 comments, 1 GB realtime data storage, 512 MB file storage, 3 dashboard seats, 10 projects.",
+      "current_state": "Free tier includes: $30 monthly credits, Unlimited MAU, Unlimited monthly active rooms, 3,000 realtime collaboration minutes, 200 comments, 1 GB realtime data storage, 512 MB file storage, 3 dashboard seats, 10 projects.",
+      "source_url": "https://liveblocks.io/pricing",
+      "category": "Team Collaboration",
+      "refused_date": "2026-10-22"
     },
     {
       "vendor": "Liveblocks",
@@ -6178,15 +6323,15 @@
     },
     {
       "vendor": "Mux",
-      "change_type": "limits_increased",
+      "change_type": "limits_reduced",
       "reason": "unquantified_limit",
-      "detail": "limits_increased claimed, but the current state names no quantity for anything the stored state measured (10 stored)",
-      "summary": "The Free plan now includes 100K free monthly delivery minutes and 100K free monthly Mux Robots units, but live captions are limited to 6k free minutes per month. The stored information did not mention the 100K Mux Robots units.",
+      "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (10 stored)",
+      "summary": "The Free plan now includes 100K free monthly delivery minutes and 100K free monthly Mux Robots units, but live caption minutes are no longer explicitly mentioned as free. The page details additional costs for workflows like caption translation, summarization, and chapter generation, which were not mentioned in the stored deal info.",
       "previous_state": "The Free plan offers 100K free monthly delivery minutes, up to 10 stored videos, on-demand video only, 100K free monthly Mux Robots units, and 6k free monthly live caption minutes. No credit card required.",
-      "current_state": "The Free plan offers 100K free monthly delivery minutes, 100K free monthly Mux Robots units, and 6k free monthly live caption minutes.",
+      "current_state": "The Free plan offers 100K free monthly delivery minutes and 100K free monthly Mux Robots units. On-demand videos only.",
       "source_url": "https://www.mux.com/pricing",
       "category": "Video",
-      "refused_date": "2026-09-30"
+      "refused_date": "2026-10-22"
     },
     {
       "vendor": "MyFitnessPal",
@@ -7812,6 +7957,30 @@
       "refused_date": "2026-09-10"
     },
     {
+      "vendor": "repsy.io",
+      "change_type": "limits_increased",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-10 (no_price_signal) claimed the same change, limits_increased, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier now offers 20 GB of storage and 20 GB monthly bandwidth, instead of the previously stated 1 GB.",
+      "previous_state": "1 GB Free private/public Maven Repository.",
+      "current_state": "Start with 20 GB free storage and 20 GB monthly bandwidth , support for docker, maven, npm, and python, golang, cargo, nuget, helm, ruby and seamless team collaboration.",
+      "source_url": "https://repsy.io",
+      "category": "CI/CD",
+      "refused_date": "2026-10-22"
+    },
+    {
+      "vendor": "RequestBin.com",
+      "change_type": "product_deprecated",
+      "reason": "page_does_not_name_vendor",
+      "detail": "the page read never names RequestBin.com and is not served from its domain, so any terms on it belong to somebody else",
+      "summary": "The page does not offer a free endpoint creation service as described. It offers a free tier for building on Pipedream with full access in development, but this is for building integrations and agents, not simply creating a free endpoint for receiving HTTP requests.",
+      "previous_state": "Create a free endpoint to which you can send HTTP requests. Any HTTP requests sent to that endpoint will be recorded with the associated payload and headers so you can observe recommendations from webhooks and other services.",
+      "current_state": "Pipedream offers a free tier for development with full access, but it focuses on building integrations and agents, not providing a simple free endpoint. The page details features like managed auth, prebuilt tools, and a proxy for APIs.",
+      "source_url": "https://requestbin.com",
+      "category": "API Development",
+      "refused_date": "2026-10-22"
+    },
+    {
       "vendor": "Resend",
       "change_type": "pricing_restructured",
       "reason": "confirmed_unchanged",
@@ -7858,6 +8027,18 @@
       "source_url": "https://reviewable.io/",
       "category": "Code Quality",
       "refused_date": "2026-09-10"
+    },
+    {
+      "vendor": "reviewable.io",
+      "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-10 (no_price_signal) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The page states a 30-day free trial is available, but does not mention a permanently free tier for public or personal repos.",
+      "previous_state": "Code review for GitHub repositories, free for public or personal repos.",
+      "current_state": "You can use a free 30-day trial any time you want, no credit card required.",
+      "source_url": "https://reviewable.io/",
+      "category": "Code Quality",
+      "refused_date": "2026-10-22"
     },
     {
       "vendor": "RightFeature",
@@ -8018,6 +8199,18 @@
       "category": "Startup Perks",
       "refused_date": "2026-10-03",
       "collided_with": "ScaleGrid Startup Program|record_corrected|2026-09-19|https://scalegrid.io/pricing/offers/startup-saver/"
+    },
+    {
+      "vendor": "ScraperAPI",
+      "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-30 (same_transition_graded_differently) stated the same 2 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now offers a 7-day trial with 5,000 API credits instead of a permanent free plan with 1,000 credits/month.",
+      "previous_state": "Web scraping API with proxy rotation and CAPTCHA handling. Free plan: 1,000 API credits/month, 5 concurrent connections. No credit card required",
+      "current_state": "Start Scraping Start collecting data with our 7-day trial and 5,000 API credits. No credit card required.",
+      "source_url": "https://www.scraperapi.com/pricing/",
+      "category": "Web Scraping",
+      "refused_date": "2026-10-22"
     },
     {
       "vendor": "ScraperAPI",
@@ -8219,6 +8412,18 @@
     },
     {
       "vendor": "Shadcn Studio",
+      "change_type": "free_tier_removed",
+      "reason": "no_removal_evidence",
+      "detail": "a free tier was recorded as removed on the evidence that the page did not mention it, and the summary states no price, ending or replacement where the free tier was",
+      "summary": "The page details a variety of features and plans, including paid options like Branding ($60), Marketing ($120), etc. It also highlights 'Pro Features' such as AI-Powered Theme Generation and Theme Sharing, which are not free. The original stored information about a free tier for previewing theme changes is not explicitly mentioned or confirmed.",
+      "previous_state": "Preview your theme changes across different components and layouts.",
+      "current_state": "Shadcn Studio offers a range of features, including AI-powered theme generation, theme sharing, and database undo/redo, available through paid plans starting at $60.",
+      "source_url": "https://shadcnstudio.com/theme-editor",
+      "category": "Design",
+      "refused_date": "2026-10-22"
+    },
+    {
+      "vendor": "Shadcn Studio",
       "change_type": "pricing_model_change",
       "reason": "no_terms_to_narrow",
       "detail": "pricing_model_change claimed against \"Preview your theme changes across different components and layouts.\", a stored description that states no price, no allowance and nothing free, so there is nothing for the terms to have narrowed from",
@@ -8241,6 +8446,30 @@
       "category": "Design",
       "refused_date": "2026-09-11",
       "collided_with": "Shadcn Studio|pricing_model_change|2026-08-28|https://shadcnstudio.com/theme-editor"
+    },
+    {
+      "vendor": "Shake",
+      "change_type": "limits_reduced",
+      "reason": "zero_allowance",
+      "detail": "limits_reduced claimed on a state that grants zero of a resource — \"000 logs\", \"000 app\", \"000 logs\". A vendor states a withdrawn allowance by dropping the row, not by publishing a zero, so a literal zero reads as a widget or plan configurator that had not populated when the page was fetched",
+      "summary": "The Free plan now has a limit of 1 app on the dashboard, while the stored information states unlimited apps. The stored information also states 'limited integrations' while the current page states 'Limited integrations'. The current page also lists a Startup program with discounted pricing.",
+      "previous_state": "In-app bug reporting and feedback tool for mobile apps — The Free plan is $0 forever and includes 20 bug reports per month, unlimited crash reports, unlimited app users, limited integrations, 3 team seats, 10,000 app installs, 1 month data retention, 1,000 logs in activity history, AI debugging, MCP server access, and access to the Slack community.",
+      "current_state": "The Free plan is $0 forever and includes 20 per month, Unlimited, Limited, 1 seat, 10 000, 1 month, Public access, 1 000 logs, 1 App on Dashboard, All features, AI debugging, MCP server, Limited integrations, Unlimited bug and crash reports, 3 team members, 10 000 app installs, 1 month data retention, Access Slack community, 1 000 logs in Activity history, Ticket rules, Custom forms, Live chat, Custom SDK UI, Data obfuscation, Screen recording, Export data, Integration payload control, REST API, Direct Slack channel.",
+      "source_url": "https://www.shakebugs.com/pricing",
+      "category": "Mobile Development",
+      "refused_date": "2026-10-22"
+    },
+    {
+      "vendor": "SigNoz",
+      "change_type": "limits_reduced",
+      "reason": "confirmed_unchanged",
+      "detail": "Report restates stored description",
+      "summary": "The startup program now offers $19/month including $19 of usage, down from $49 of usage.",
+      "previous_state": "OpenTelemetry-native observability with logs, metrics and traces in one tool. The community edition is free to self-host. SigNoz Cloud starts at $49/month including $49 of usage credit, then $0.3/GB ingested for logs and traces (15-day retention) and $0.1 per million metric samples; eligible startups pay $19/month for the first 12 months.",
+      "current_state": "Eligible startups get SigNoz Cloud for $19/month for the first 12 months instead of $49/month. This includes $19 of telemetry usage.",
+      "source_url": "https://signoz.io/pricing/",
+      "category": "Monitoring",
+      "refused_date": "2026-10-22"
     },
     {
       "vendor": "SigNoz",
@@ -10554,6 +10783,18 @@
       "source_url": "https://www.zoneedit.com/free-dns/",
       "category": "DNS & Domain Management",
       "refused_date": "2026-09-30"
+    },
+    {
+      "vendor": "Zonomi",
+      "change_type": "limits_reduced",
+      "reason": "no_baseline",
+      "detail": "limits_reduced claimed, and the clause that named the terms the change was measured on was dropped — what is left states no earlier figure and nothing the stored description measured",
+      "summary": "The free tier limits have been reduced. Stored info says up to 20 DNS records, the page says up to 10 DNS records. Also, the page shows pricing for multiple tiers, including a 'Pro DNS hosting' plan starting at $1/domain/year.",
+      "previous_state": "Free DNS hosting: 1 DNS zone (domain name). Up to 20 DNS records. Up to 1 million DNS queries per month.",
+      "current_state": "1 DNS zone (domain name). Up to 10 DNS records. Up to 1 million DNS queries per month. It's free!",
+      "source_url": "https://zonomi.com/",
+      "category": "DNS & Domain Management",
+      "refused_date": "2026-10-22"
     },
     {
       "vendor": "Zonomi",
