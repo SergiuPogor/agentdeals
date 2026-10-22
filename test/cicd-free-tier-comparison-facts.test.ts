@@ -127,7 +127,7 @@ const SECTION_TABLE_ROWS: Array<{ section: string; vendor: string; cells: string
     "section": "developer-focused",
     "vendor": "Buddy",
     "cells": [
-      "1 seat, 1 concurrent run, 300 pipeline GB-minutes/mo"
+      "1 seat, 2 concurrent runs, $1 monthly usage credit"
     ],
     "withdrawn": [
       "5 projects, 500 executions/mo"

@@ -11325,7 +11325,7 @@
     {
       "vendor": "Buddy",
       "category": "CI/CD",
-      "description": "CI/CD pipeline automation — free plan: 1 user, 1 concurrent pipeline, 300 pipeline GB-minutes/month, 1 GB pipeline cache, unlimited projects. Note: workspace frozen after 60 days of inactivity",
+      "description": "CI/CD pipeline automation — free plan: 1 seat, 2 concurrent pipeline runs, a $1 monthly usage credit for compute and storage, 1 GB pipeline cache.",
       "tier": "Free",
       "url": "https://buddy.works/pricing",
       "tags": [
@@ -11337,15 +11337,23 @@
       ],
       "verifiedDate": "2026-10-15",
       "source_check": {
-        "checked": "2026-10-15",
+        "checked": "2026-10-21",
         "outcome": "ok",
         "detail": "the page names Buddy as \"buddy\" and states \"€0\""
       },
       "free_plan_excerpt": {
-        "text": "Free €0 Start a free trial 1 seat 1 concurrents 300 pipeline GB-minutes 1 GB of pipeline cache 300 sandbox CPU-minutes 730 sandbox GB-hours",
+        "text": "Free €0 Start a free trial 1 seat (no extra seats) 2 concurrents (no extra concurrents) $1/mo. usage credit (compute & storage) 1 GB of pipeline cache",
         "url": "https://buddy.works/pricing",
-        "read_on": "2026-10-15"
-      }
+        "read_on": "2026-10-21"
+      },
+      "conditions": [
+        {
+          "text": "A free account counts as active only if someone logs in to Buddy's web app. Pipeline runs triggered by commits or webhooks do not count. After a month without a login Buddy emails the owner. 30 days after that email the account is suspended and marked for deletion, and 60 days after it the account and its repositories are deleted.",
+          "quote": "Triggering pipelines remotely with commits or webhooks without accessing the GUI is NOT considered activity.",
+          "url": "https://buddy.works/terms-of-service",
+          "read_on": "2026-10-21"
+        }
+      ]
     },
     {
       "vendor": "Harness CI",

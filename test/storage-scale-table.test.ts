@@ -60,6 +60,34 @@ describe("the storage scaling table publishes its rate card", () => {
     proc?.kill();
   });
 
+  it("states Oracle's storage and outbound grants in their own columns", () => {
+    const table = html.match(/<table class="comp-table">([\s\S]*?)<\/table>/);
+    assert.ok(table);
+    const headers = [...table[1].matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/g)]
+      .map(m => m[1].replace(/<[^>]*>/g, "").trim());
+    const rows = [...table[1].matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)]
+      .map(m => [...m[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)]
+        .map(c => c[1].replace(/<[^>]*>/g, "").trim()))
+      .filter(cells => cells[0]?.startsWith("Oracle Cloud Obj. Storage"));
+    assert.strictEqual(rows.length, 1);
+    assert.strictEqual(rows[0][headers.indexOf("Free Storage")], "20 GB");
+    assert.strictEqual(rows[0][headers.indexOf("Free Egress")], "10 TB/mo");
+  });
+
+  it("distinguishes Oracle account types and prices only outbound above its grant", () => {
+    const card = html.match(/<h3>Oracle Cloud Object Storage<\/h3>\s*<div class="diff-desc">([\s\S]*?)<\/div>/);
+    assert.ok(card);
+    const text = card[1].replace(/<[^>]*>/g, "").replace(/&mdash;/g, "—").replace(/\s+/g, " ").trim();
+    assert.strictEqual(text, "Free tier: 20 GB object storage. 10 GB per tier on paid and trial accounts. 50,000 API requests per month. 10 TB of outbound data a month. Always Free — does not expire. S3-compatible API. Outbound data beyond 10 TB is $0.0085/GB.");
+  });
+
+  it("qualifies Wasabi's free egress and uses its current price and minimums", () => {
+    const card = html.match(/<h3>Wasabi<\/h3>\s*<div class="diff-desc">([\s\S]*?)<\/div>/);
+    assert.ok(card);
+    const text = card[1].replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+    assert.strictEqual(text, 'Pricing: No free tier. $7.99 per TB per month. No egress or API fees. 90-day minimum storage duration. 1 TB minimum monthly charge. S3-compatible. "If your monthly egress data transfer is greater than your active storage volume, then your storage use case is not a good fit for Wasabi\'s free egress policy." 10 TB stored with up to 10 TB of downloads a month costs $79.90 a month.');
+  });
+
   it("has one row per scenario and one column per provider", () => {
     const cells = growthTableCells(html);
     assert.strictEqual(cells.length, STORAGE_SCALE_WORKLOADS.length);
