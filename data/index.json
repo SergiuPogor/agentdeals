@@ -1067,6 +1067,12 @@
           "read_on": "2026-10-22"
         },
         {
+          "text": "An agent can create a Neon Postgres project without a Neon account. Unclaimed projects expire in 72 hours and are limited to 100 MB storage and 1 GB transfer. A person claims the project to keep it.",
+          "quote": "If an agent needs a Neon account and the user is not around, it provisions a project now. A human claims it later if they want to keep it. The agent receives credentials scoped to one project, builds with standard Postgres tools, and hands over a claim link. Unclaimed projects expire in 72 hours (project.expires_at) and are capped at 100 MB storage and 1 GB transfer.",
+          "url": "https://neon.com/docs/reference/claimable-neon",
+          "read_on": "2026-10-22"
+        },
+        {
           "text": "On the Free plan, scale to zero can't be disabled: computes suspend after 5 minutes of inactivity.",
           "quote": "Scale to zero is always enabled (computes suspend after 5 minutes of inactivity) and can't be disabled.",
           "url": "https://neon.com/docs/introduction/plans",
@@ -1215,6 +1221,12 @@
           "quote": "No credit cards are required to provision a cluster",
           "url": "https://www.mongodb.com/resources/basics/databases/cloud-databases/free-cloud-database",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "An agent can create a MongoDB Atlas M0 cluster via the API without an account. A person must sign in to claim the cluster, which then becomes a standard Free cluster with no expiration. Unclaimed clusters pause after 2 days and delete after 7.",
+          "quote": "Unless you claim the Ephemeral cluster, Atlas pauses it 2 days after creation and deletes it 7 days after creation. To claim the cluster, open the claimUrl from the create response and sign in to Atlas. Claiming converts the Ephemeral cluster into a standard Free cluster with no expiration date. An agent can create and connect to the cluster autonomously, but only a human can claim it.",
+          "url": "https://www.mongodb.com/docs/atlas/tutorial/create-ephemeral-cluster/",
+          "read_on": "2026-10-22"
         }
       ]
     },
@@ -1356,10 +1368,10 @@
           "read_on": "2026-10-06"
         },
         {
-          "text": "A Redis database created with no account by a POST request to upstash.com/start-redis is deleted after 3 days unless it is claimed into an account from the console link in the response.",
-          "quote": "The database is deleted after 3 days unless you claim it into your account from the console link in the response.",
+          "text": "An agent can create an Upstash Redis database with no signup, card or API key by a POST request to upstash.com/start-redis. It is deleted after 3 days unless a person claims it from the console link in the response.",
+          "quote": "Send a POST request to https://upstash.com/start-redis and you get a free Redis database instantly, with no signup, credit card, or API key. The response is markdown with credentials and a quickstart, so AI agents can start using it right away. The database is deleted after 3 days unless you claim it into your account from the console link in the response.",
           "url": "https://upstash.com/pricing",
-          "read_on": "2026-10-06"
+          "read_on": "2026-10-22"
         }
       ]
     },

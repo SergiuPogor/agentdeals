@@ -476,8 +476,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 70,
-      "table_figures_from_records": 41,
+      "table_figures": 73,
+      "table_figures_from_records": 44,
       "tables": [
         {
           "label": "Always Free Services",
@@ -491,8 +491,8 @@
         },
         {
           "label": "AWS vs Alternatives",
-          "figures": 50,
-          "from_records": 32
+          "figures": 53,
+          "from_records": 35
         },
         {
           "label": "Recent AWS Changes",
@@ -531,8 +531,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 75,
-      "table_figures_from_records": 34,
+      "table_figures": 78,
+      "table_figures_from_records": 37,
       "tables": [
         {
           "label": "Always Free Services",
@@ -551,8 +551,8 @@
         },
         {
           "label": "Azure vs Alternatives",
-          "figures": 44,
-          "from_records": 32
+          "figures": 47,
+          "from_records": 35
         },
         {
           "label": "Recent Azure Changes",
@@ -876,13 +876,13 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 85,
-      "table_figures_from_records": 54,
+      "table_figures": 89,
+      "table_figures_from_records": 58,
       "tables": [
         {
           "label": "Main Comparison Table",
-          "figures": 38,
-          "from_records": 22
+          "figures": 42,
+          "from_records": 25
         },
         {
           "label": "Postgres-Compatible Databases",
@@ -907,7 +907,7 @@
         {
           "label": "Vector Databases",
           "figures": 6,
-          "from_records": 3
+          "from_records": 4
         },
         {
           "label": "Pricing Change Timeline",
@@ -1916,8 +1916,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 91,
-      "table_figures_from_records": 39,
+      "table_figures": 94,
+      "table_figures_from_records": 42,
       "tables": [
         {
           "label": "Always Free Products",
@@ -1931,8 +1931,8 @@
         },
         {
           "label": "GCP vs AWS vs Others",
-          "figures": 50,
-          "from_records": 32
+          "figures": 53,
+          "from_records": 35
         },
         {
           "label": "Recent GCP & Google Changes",
