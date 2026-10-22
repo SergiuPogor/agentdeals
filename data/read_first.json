@@ -187,6 +187,10 @@
     {
       "vendor": "APITemplate.io",
       "tier": "Free"
+    },
+    {
+      "vendor": "HiveMQ",
+      "tier": "Legacy Free"
     }
   ]
 }

@@ -18441,19 +18441,19 @@
     {
       "vendor": "HiveMQ",
       "category": "Messaging",
-      "description": "Connect your MQTT devices to the Cloud Native IoT Messaging Broker. Free to connect up to 100 devices (no credit card required) forever.",
-      "tier": "Free",
-      "url": "https://www.hivemq.com/mqtt-cloud-broker/",
+      "description": "HiveMQ retires the HiveMQ Cloud Serverless plan on 2026-12-31. New Serverless clusters cannot be created. Existing Serverless clusters run until 2026-12-31, after which clients cannot connect and data is deleted. The Lab license is for learning, evaluation, and small-scale testing on your own infrastructure. It is free, allows one broker deployment, requires no credit card, and supports 25 connections and 25 messages per second with community support. The license is valid for 30 days and can be renewed manually at no charge. HiveMQ Cloud Starter costs from $0.34 an hour plus $0.80 per million messages, with a 15-day trial.",
+      "tier": "Legacy Free",
+      "url": "https://www.hivemq.com/pricing/",
       "tags": [
         "messaging",
         "streaming",
         "free-for-dev"
       ],
-      "verifiedDate": "2026-08-30",
+      "verifiedDate": "2026-10-22",
       "source_check": {
-        "checked": "2026-09-13",
-        "outcome": "states_no_terms",
-        "detail": "the page names HiveMQ but states no amount, tier or rate we can read, and its markup carries no structured data"
+        "checked": "2026-10-22",
+        "outcome": "ok",
+        "detail": "the page names HiveMQ as \"hivemq\" and states \"$0.34\" and \"$0.80\" and \"1 Connections 25 Messages / sec\""
       }
     },
     {
