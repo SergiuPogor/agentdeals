@@ -7763,6 +7763,12 @@
           "quote": "Context (free / paid): 65k / 131k (gpt-oss-120b); 64k / 128k (qwen-3.8-27b)",
           "url": "https://inference-docs.cerebras.ai/models/overview",
           "read_on": "2026-10-11"
+        },
+        {
+          "text": "Cerebras Code's Pro ($50, up to 24 million tokens a day) and Max ($200, up to 120 million tokens a day) plans were marked \"sold out\" on cerebras.ai/code on 2026-10-22. cerebras.ai/code still names GLM 4.7 as the model, but Cerebras's API no longer serves GLM 4.7.",
+          "quote": "Follow us on X and subscribe to our newsletter to be the first to find out when new plans drop.",
+          "url": "https://www.cerebras.ai/code",
+          "read_on": "2026-10-22"
         }
       ]
     },
