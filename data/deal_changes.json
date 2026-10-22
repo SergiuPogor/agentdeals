@@ -17115,6 +17115,23 @@
       "alternatives": [],
       "recorded_date": "2026-10-21",
       "date_source": "hand_written"
+    },
+    {
+      "vendor": "HiveMQ",
+      "change_type": "product_deprecated",
+      "date": "2026-10-22",
+      "discontinued_date": "2026-12-31",
+      "date_source": "discovered",
+      "summary": "HiveMQ no longer lets anyone create Serverless clusters and retires the Serverless plan (Free and Pay As You Go) on 2026-12-31. Existing clusters run until then. After that date, clients cannot connect and HiveMQ permanently deletes the clusters and their data.",
+      "what_ends": "HiveMQ Cloud Serverless",
+      "listing_effect": "ends",
+      "previous_state": "HiveMQ Cloud Serverless Free connected up to 100 devices, no credit card required.",
+      "current_state": "\"HiveMQ retires the HiveMQ Cloud Serverless plan on 2026-12-31. The retirement applies to all Serverless Free and Serverless Pay As You Go clusters: You can no longer create a Serverless cluster or upgrade a Serverless cluster to Pay As You Go.\" \"After the end-of-life date, HiveMQ permanently deletes all Serverless clusters and the data on the clusters.\" (docs.hivemq.com/hivemq-cloud/serverless-end-of-life.html)",
+      "impact": "high",
+      "source_url": "https://docs.hivemq.com/hivemq-cloud/serverless-end-of-life.html",
+      "category": "Messaging",
+      "alternatives": [],
+      "recorded_date": "2026-10-22"
     }
   ]
 }
