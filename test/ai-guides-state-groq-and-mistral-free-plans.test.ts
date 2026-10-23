@@ -19,7 +19,7 @@ const TOKEN_VOLUME_QUESTION = "Need maximum free token volume?";
 const TOKEN_VOLUME_ANSWER =
   "Groq — 200,000 tokens a day on each of its three free chat models, the largest renewing quota stated on this page. Cerebras's trial allows 1M tokens a day but only for 30 days and $5 of credits. Mistral and Gemini state no amount.";
 const LISTED_FIGURES_QUOTED: Record<string, string[]> = {
-  Groq: ["Free plan: gpt-oss-120b, gpt-oss-20b and Qwen3.8 27B, each at", "200,000 tokens a day"],
+  Groq: ["Free plan: gpt-oss-20b, gpt-oss-120b and Qwen3.8 27B, each at", "200,000 tokens a day"],
   Cerebras: ["$5 in free credits", "expiring 30 days after they are granted", "1M tokens/day"],
 };
 
@@ -271,6 +271,18 @@ describe("the AI guides state Groq's and Mistral's free plans as the vendors lis
     assert.deepStrictEqual(answers.map((answer) => textOf(answer).trim()), [TOKEN_VOLUME_ANSWER]);
     assert.ok(answers[0].trim().startsWith('<a href="/vendor/groq">Groq</a>'), answers[0]);
     assert.doesNotMatch(entries[0], /Mistral AI|\/vendor\/mistral-ai/);
+  });
+
+  it("keeps Groq's free model list in the same order as its paid rates on the Gemini guide", () => {
+    const html = served.get("/gemini-api-pricing-2026")!;
+    const table = html.match(/<h2 id="comparison">[\s\S]*?<table\b[^>]*>([\s\S]*?)<\/table>/)?.[1];
+    assert.ok(table, "the free API comparison table is missing");
+    const rows = [...table.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)]
+      .map(([, row]) => [...row.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)].map(([, cell]) => textOf(cell).trim()))
+      .filter((cells) => cells[0] === "Groq");
+    assert.strictEqual(rows.length, 1);
+    assert.match(rows[0][1], /Free plan: gpt-oss-20b, gpt-oss-120b and Qwen3\.8 27B, each at/);
+    assert.strictEqual(rows[0][2], "$0.075/$0.30 (gpt-oss-20b), $0.15/$0.60 (gpt-oss-120b), $0.80/$4.00 (Qwen3.8 27B) per MTok");
   });
 
   it("quotes only figures that Groq's and Cerebras's own listings still state", () => {
