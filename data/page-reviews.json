@@ -412,7 +412,7 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 61,
+      "table_figures": 62,
       "table_figures_from_records": 24,
       "tables": [
         {
@@ -422,7 +422,7 @@
         },
         {
           "label": "Container Deployment Alternatives",
-          "figures": 42,
+          "figures": 43,
           "from_records": 18
         },
         {
@@ -2219,12 +2219,12 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": false,
-      "table_figures": 130,
+      "table_figures": 129,
       "table_figures_from_records": 38,
       "tables": [
         {
           "label": "Pricing Comparison Table",
-          "figures": 38,
+          "figures": 36,
           "from_records": 0
         },
         {
@@ -2234,7 +2234,7 @@
         },
         {
           "label": "Cost Comparison by Use Case",
-          "figures": 40,
+          "figures": 41,
           "from_records": 0
         },
         {
