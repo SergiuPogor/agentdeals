@@ -20870,7 +20870,7 @@ globalNavCss() + "\n" +
   "<div class=\"story-card\">\n" +
     "<h3>X (Twitter) API Paywall</h3>\n" +
     "<span class=\"story-impact\" style=\"background:#f8514922;color:#f85149\">Free Tier Removed &middot; High Impact</span>\n" +
-    "<p>X eliminated its free API tier entirely in February, moving to $200/month for basic access. The free tier had already been gutted in 2023, but the complete removal locked out thousands of bot developers, researchers, and side projects. Combined with the pricing model change (per-post charges), X completed its transformation from the most developer-friendly social platform to one of the most hostile.</p>\n" +
+    "<p>On February 6, 2026, X launched <a class=\"change-source\" href=\"https://devcommunity.x.com/t/announcing-the-launch-of-x-api-pay-per-use-pricing/256476\" rel=\"nofollow noopener\" title=\"devcommunity.x.com/t/announcing-the-launch-of-x-api-pay-per-use-pricing/256476\">Pay-Per-Use pricing</a> for its API, charging per request with no fixed monthly fee, and ended its Legacy Free tier. Recently active free-tier users transitioned to Pay-Per-Use with a one-time $10 voucher; only Public Utility Apps retained free access. X later moved its <a class=\"change-source\" href=\"https://devcommunity.x.com/t/important-update-legacy-x-api-basic-plans-are-moving-to-pay-per-use-ppu/266305\" rel=\"nofollow noopener\" title=\"devcommunity.x.com/t/important-update-legacy-x-api-basic-plans-are-moving-to-pay-per-use-ppu/266305\">Basic plans to Pay-Per-Use after June 1, 2026</a>, and its <a class=\"change-source\" href=\"https://devcommunity.x.com/t/important-update-legacy-x-api-pro-plans-are-moving-to-pay-per-use-ppu/273255\" rel=\"nofollow noopener\" title=\"devcommunity.x.com/t/important-update-legacy-x-api-pro-plans-are-moving-to-pay-per-use-ppu/273255\">Pro plans after September 1, 2026</a>.</p>\n" +
     "<p><a href=\"/vendor/x-twitter\">View vendor profile</a> &middot; <a href=\"/alternative-to/x-twitter\">Alternatives</a></p>\n" +
   "</div>\n" +
 
@@ -41266,7 +41266,7 @@ ${globalNavCss()}
         <td class="check">&#10003; Global</td>
         <td class="check">&#10003;</td>
         <td class="cheapest">Zero egress</td>
-      </tr>${vendorPageConditionsRowHtml("tigris-fly-io", 8)}
+      </tr>${vendorPageConditionsRowHtml("tigris", 8)}
       <tr>
         <td class="provider-col">AWS S3<span class="caution-badge">CREDITS ONLY</span></td>
         <td>Object</td>
@@ -41276,7 +41276,7 @@ ${globalNavCss()}
         <td class="partial">CloudFront sep.</td>
         <td class="cross">&#10007;</td>
         <td class="expensive">$0.09/GB</td>
-      </tr>${vendorPageConditionsRowHtml("aws-s3", 8)}
+      </tr>${vendorPageConditionsRowHtml("aws", 8)}
       <tr>
         <td class="provider-col">Google Cloud Storage</td>
         <td>Object</td>
@@ -41296,7 +41296,7 @@ ${globalNavCss()}
         <td class="partial">Azure CDN sep.</td>
         <td class="cross">&#10007;</td>
         <td class="expensive">$0.087/GB</td>
-      </tr>${vendorPageConditionsRowHtml("azure-blob-storage", 8)}
+      </tr>${vendorPageConditionsRowHtml("azure", 8)}
       <tr>
         <td class="provider-col">Oracle Cloud Obj. Storage</td>
         <td>Object</td>
@@ -41306,7 +41306,7 @@ ${globalNavCss()}
         <td class="cross">&#10007;</td>
         <td class="check">&#10003;</td>
         <td>$0.0085/GB</td>
-      </tr>${vendorPageConditionsRowHtml("oracle-cloud-obj-storage", 8)}
+      </tr>${vendorPageConditionsRowHtml("oracle-cloud", 8)}
       <tr>
         <td class="provider-col">Supabase Storage</td>
         <td>BaaS</td>
