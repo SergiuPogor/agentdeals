@@ -388,6 +388,12 @@
           "read_on": "2026-10-22"
         },
         {
+          "text": "Netlify says its Free plan can be used for commercial projects as well as personal sites, in a blog post dated November 12, 2024.",
+          "quote": "On the Free plan, you can deploy commercial projects, personal sites, or other creative explorations you want to share on the web.",
+          "url": "https://www.netlify.com/blog/introducing-netlify-free-plan/",
+          "read_on": "2026-10-23"
+        },
+        {
           "text": "An agent can deploy to Netlify with no account using the --allow-anonymous flag. The deploy gets a live URL, and a person has one hour to claim it by logging in or signing up. Sites using serverless or edge functions still need an account.",
           "quote": "This creates a project with a live URL. You have one hour to claim ownership by logging in or creating a Netlify account. This is useful for AI agents that need to create temporary projects without requiring credentials. Note, though, that sites or apps that use serverless functions or edge functions will require an account.",
           "url": "https://docs.netlify.com/start/quickstarts/deploy-from-ai-code-generation-tool/",
@@ -2728,6 +2734,12 @@
           "quote": "You need a Cloudflare account with an R2 subscription.",
           "url": "https://developers.cloudflare.com/r2/get-started/",
           "read_on": "2026-10-04"
+        },
+        {
+          "text": "Adding the R2 subscription goes through a checkout that needs a payment method, even for the free monthly usage. Accepted: card, PayPal or a wallet.",
+          "quote": "A primary payment method is required to purchase Cloudflare products and services.",
+          "url": "https://developers.cloudflare.com/billing/get-started/create-billing-profile/",
+          "read_on": "2026-10-23"
         },
         {
           "text": "Usage beyond the free tier is charged monthly to the payment method on file.",
@@ -9517,7 +9529,27 @@
         "text": "Price Free $200 Credit then pay-as-you-go",
         "url": "https://deepgram.com/pricing",
         "read_on": "2026-10-03"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Deepgram's docs say only data included through its Model Improvement Partnership Program is stored and used for future model training. Adding mip_opt_out=true to a request excludes it, and opted-out request data is kept only while the request is processed.",
+          "quote": "Add mip_opt_out=true as a query parameter of all API requests that you want to be excluded from the Model Improvement Program.",
+          "url": "https://developers.deepgram.com/docs/the-deepgram-model-improvement-partnership-program",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "Nova-3 speech-to-text allows up to 50 concurrent pre-recorded requests and up to 150 concurrent streaming requests.",
+          "quote": "Pre-Recorded Up to 50 concurrent requests",
+          "url": "https://developers.deepgram.com/reference/api-rate-limits",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "A transcription request without enough credits fails with HTTP 402 Payment Required, with the message \"Project does not have enough credits for an ASR request and does not have an overage agreement.\"",
+          "quote": "This will result in a 402 Payment Required error",
+          "url": "https://developers.deepgram.com/docs/errors",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "OpenWeatherMap",
@@ -11703,6 +11735,18 @@
           "quote": "The following are disallowed from all managed Colab runtimes: file hosting, media serving, or other web service offerings not related to interactive compute with Colab",
           "url": "https://research.google.com/colaboratory/faq.html",
           "read_on": "2026-10-10"
+        },
+        {
+          "text": "Google publishes no RAM figure for Colab. The free version gets VMs with a standard system memory profile. Paid plans can get a high memory system profile, subject to availability and the compute unit balance.",
+          "quote": "In the version of Colab that is free of charge you are able to access VMs with a standard system memory profile. In paid versions of Colab you are able to access machines with a high memory system profile subject to availability and your compute unit balance.",
+          "url": "https://research.google.com/colaboratory/faq.html",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "On Colab Pro+ with a positive compute unit balance, a running notebook keeps executing after the browser closes, for up to 24 hours. Idle VMs are still deleted. Colab Pro gets extended execution times based on availability. Without a paid subscription, execution stops when you stop interacting.",
+          "quote": "Pro+ users with a positive Colab compute unit balance automatically have background execution enabled for their notebooks, causing execution to continue after the browser closes up to a maximum runtime limit of up to 24 hours. … Users without a paid subscription should not rely on execution to continue in the background; execution will be interrupted when user interaction ceases, and the VM will be deleted soon after that.",
+          "url": "https://colab.research.google.com/signup",
+          "read_on": "2026-10-23"
         }
       ]
     },
@@ -22627,6 +22671,14 @@
             }
           ]
         }
+      ],
+      "conditions": [
+        {
+          "text": "Pollinations' API docs publish no fixed request rate for secret keys, which carry their own model permissions and budgets. A request can get HTTP 429 with a Retry-After header saying how long to wait.",
+          "quote": "Secret keys have configurable model permissions, account permissions, and budgets. … Watch 429 and 503. A Retry-After header tells you how long to back off.",
+          "url": "https://github.com/pollinations/pollinations/blob/main/APIDOCS.md",
+          "read_on": "2026-10-23"
+        }
       ]
     },
     {
@@ -28851,7 +28903,33 @@
       "restatement_reverted": {
         "record_date": "2026-09-07",
         "reverted_on": "2026-10-06"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Foursquare's billing docs say a Pay As You Go account does not need a credit card on file. Buying credits requires one. Automatic payments are on by default.",
+          "quote": "While you are not required to have a credit card on file if you are a Pay As You Go customer, we do recommend adding one to ensure continuous coverage should you make more API calls than you currently have credit for.",
+          "url": "https://docs.foursquare.com/developer/docs/manage-organization-billing",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "Foursquare's developer terms, last updated February 29, 2024, say that once the free monthly allowance is used, further calls that month need purchased Paid Credits. Without them, calls resume when the free allowance refreshes on the 1st of the next month.",
+          "quote": "If you do not purchase Paid Credits, you will need to wait until the following month when your Free Monthly Credits have refreshed in order to resume making API calls for your Organization.",
+          "url": "https://foursquare.com/legal/terms/enterprise-developermasterterms/",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "Pay as You Go and Sandbox accounts have a limit of 50 queries per second across all endpoints, Enterprise 100. The Ask endpoint has a separate limit of 1 query per second.",
+          "quote": "Pay as You Go & Sandbox Customers: 50 QPS.",
+          "url": "https://docs.foursquare.com/fsq-developers-places/reference/rate-limits",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "Foursquare's developer terms bar using the service to develop or improve any point-of-interest or venue dataset, algorithm or machine learning operation.",
+          "quote": "access the Foursquare Service to develop or improve any point-of-interest or venue dataset, algorithm, or machine learning operation(s)",
+          "url": "https://foursquare.com/legal/terms/enterprise-developermasterterms/",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "geoapify.com",
@@ -33550,7 +33628,27 @@
         "record_date": "2026-06-18",
         "change_type": "restriction",
         "reason": "Gemini CLI's README still states the free quota for personal Google accounts that this record says ended on 2026-06-18."
-      }
+      },
+      "conditions": [
+        {
+          "text": "With a Gemini API key, Gemini CLI uses the Gemini API Free Tier, which needs no billing account or credit card. Linking a billing account and prepaying at least $5 moves the project to the Paid Tier.",
+          "quote": "Upgrading from the Free Tier to the Paid Tier means linking a billing account and prepaying to add a minimum of $5 (or equivalent in other currencies) of credits to your account.",
+          "url": "https://ai.google.dev/gemini-api/docs/billing",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "On the Free Tier, a request over any rate limit gets a rate limit error. Limits apply per project, not per key. Daily request quotas reset at midnight Pacific time.",
+          "quote": "Your usage is evaluated against each limit, and exceeding any of them will trigger a rate limit error. … Rate limits are applied per project, not per API key.",
+          "url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "Google's Gemini API pricing page says Free Tier content is used to improve Google's products, which covers Gemini CLI prompts sent with a free API key.",
+          "quote": "Content used to improve our products",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "OpenAI Codex",
@@ -33809,6 +33907,12 @@
           "quote": "A Google Cloud billing account is required to access the Google Cloud Free Tier.",
           "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "A new Google Cloud user gets the billing account by signing up for the Free Trial, which requires a credit card or other payment method. Google uses it to verify identity and reduce fraud.",
+          "quote": "If you are new to Google Cloud, then you can sign up for a Free Trial to get a billing account and access to the Free Tier. … During the sign up, you must provide a credit card or other payment method that is valid for the period of the Free Trial. … Google uses your payment information for the following purposes: To verify your identity. To reduce fraud.",
+          "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+          "read_on": "2026-10-23"
         },
         {
           "text": "Usage beyond the Free Tier's monthly limits is billed at standard rates.",
@@ -34392,7 +34496,21 @@
           }
         ],
         "reviewed": "2026-09-01"
-      }
+      },
+      "conditions": [
+        {
+          "text": "LLM7's terms, updated October 15, 2026, say users keep their rights to prompts and outputs and grant LLM7 a licence to process them only to operate, secure, troubleshoot and improve the service.",
+          "quote": "You grant us a non-exclusive licence to process your prompts/outputs solely to operate, secure, troubleshoot, and improve the Service (including safety systems)",
+          "url": "https://github.com/chigwell/llm7.io/blob/main/TERMS.md",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "The API answers HTTP 429 when a gateway or upstream rate limit is hit.",
+          "quote": "Gateway or upstream rate limit.",
+          "url": "https://docs.llm7.io/api-reference/openapi.json",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "SiliconFlow",
@@ -34424,7 +34542,27 @@
           }
         ],
         "reviewed": "2026-09-01"
-      }
+      },
+      "conditions": [
+        {
+          "text": "SiliconFlow's international docs say free models have fixed rate limits, paid models' limits depend on the account's usage tier, and new users start at tier L0, which allows 1,000 requests and 40,000 tokens a minute.",
+          "quote": "New users start at the initial usage tier of L0.",
+          "url": "https://docs.siliconflow.com/en/userguide/rate-limits/rate-limit-and-upgradation",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "SiliconFlow's international terms say it will not access interaction data, has no obligation to store it, and uses it only to provide the service.",
+          "quote": "We are under no obligation to store Interaction Data and will not use or disclose it without authorization.",
+          "url": "https://docs.siliconflow.com/en/legals/terms-of-service",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "The API answers HTTP 429 when a rate limit is hit.",
+          "quote": "429 : Rate limits triggered.",
+          "url": "https://docs.siliconflow.com/en/faqs/error-code",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Zhipu AI",
@@ -34509,6 +34647,18 @@
           "quote": "our API has added support for the Anthropic API format, with the base_url being https://api.deepseek.com/anthropic.",
           "url": "https://api-docs.deepseek.com/guides/anthropic_api",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "DeepSeek's Terms of Use, which also govern its API, let DeepSeek use inputs and outputs, de-identified and \"to a minimal extent\", to develop or improve its services and the technologies behind them. The terms say a user opts out by turning off \"Improve the model for everyone\".",
+          "quote": "we may, to a minimal extent, use Inputs and Outputs to provide, maintain, operate, develop or improve the Services or the underlying technologies supporting the Services. If you refuse to allow us to process the data in the manner described above, you can opt out by turning off \"Improve the model for everyone\".",
+          "url": "https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "DeepSeek's privacy policy says it collects, processes and stores personal data in the People's Republic of China.",
+          "quote": "To provide you with our services, we directly collect, process and store your Personal Data in People's Republic of China.",
+          "url": "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html",
+          "read_on": "2026-10-23"
         }
       ]
     },
@@ -36537,7 +36687,21 @@
         "text": "$0 + compute / month $30 / month free credits 3 workspace seats included 100 containers + 10 GPU concurrency Scheduled and Web Functions (limited) Real-time metrics and logs Region selection 1 TiB / month free network egress",
         "url": "https://modal.com/pricing",
         "read_on": "2026-10-16"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Modal's billing docs say a payment method must be on file to use Modal.",
+          "quote": "Note that you must have a payment method on file in order to use Modal.",
+          "url": "https://modal.com/docs/guide/billing",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "Modal's terms say Modal will not train any AI model on customer data, or send customer data into large language models, without the customer's prior written consent.",
+          "quote": "Modal will not, except with Customer's prior written consent: (i) train any AI model using Customer Data, or (ii) export Customer Data into, or cause Customer Data to be ingested by, large language models.",
+          "url": "https://modal.com/legal/terms",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Amazon SES",
