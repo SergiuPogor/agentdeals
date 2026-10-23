@@ -820,7 +820,7 @@
       "changed": "2026-10-12"
     },
     "/aws-app-runner-migration": {
-      "hash": "e369f74b99df56ba",
+      "hash": "0cce9d7bd7a86cc1",
       "changed": "2026-10-23"
     },
     "/aws-free-tier-2026": {
@@ -828,8 +828,8 @@
       "changed": "2026-10-22"
     },
     "/azure-free-tier-2026": {
-      "hash": "24a5dc6337d2c62c",
-      "changed": "2026-10-22"
+      "hash": "2323249b5a82c7a5",
+      "changed": "2026-10-23"
     },
     "/backblaze-b2-vs-cloudflare-r2": {
       "hash": "cf8fe49cafb8ce08",
@@ -1079,8 +1079,8 @@
       "daily": true
     },
     "/brevo-vs-resend": {
-      "hash": "e0dbb7da6b2e5187",
-      "changed": "2026-10-20"
+      "hash": "e72766d76cb9bd4c",
+      "changed": "2026-10-23"
     },
     "/budget-builder": {
       "hash": "0154cfb3621f53a8",
@@ -1139,7 +1139,7 @@
       "changed": "2026-10-23"
     },
     "/category/cloud-iaas": {
-      "hash": "758a43ba1f364049",
+      "hash": "6d794afc612ab8e4",
       "changed": "2026-10-23"
     },
     "/category/cloud-storage": {
@@ -1199,7 +1199,7 @@
       "changed": "2026-10-22"
     },
     "/category/email": {
-      "hash": "1cebdf59e187fe69",
+      "hash": "e34734e21321264b",
       "changed": "2026-10-23"
     },
     "/category/error-tracking": {
@@ -1342,8 +1342,8 @@
       "changed": "2026-10-23"
     },
     "/ci-cd-pricing": {
-      "hash": "c13b5f87146a06a4",
-      "changed": "2026-10-22"
+      "hash": "805b292382bb6375",
+      "changed": "2026-10-23"
     },
     "/cicd-free-tier-comparison-2026": {
       "hash": "f31e4072a5efe66b",
@@ -1354,7 +1354,7 @@
       "changed": "2026-10-11"
     },
     "/cloud-free-tier-comparison-2026": {
-      "hash": "db19033c98d66600",
+      "hash": "5ae23f1b2c221837",
       "changed": "2026-10-23"
     },
     "/cloudflare-pages-vs-vercel": {
@@ -1382,8 +1382,8 @@
       "changed": "2026-10-12"
     },
     "/compare/10minutemail-vs-resend": {
-      "hash": "cb9db734ac33e355",
-      "changed": "2026-10-20"
+      "hash": "5cec65f541766172",
+      "changed": "2026-10-23"
     },
     "/compare/adapty-io-vs-coinmarketcap": {
       "hash": "1cc72cc2b3a80e99",
@@ -1958,8 +1958,8 @@
       "changed": "2026-10-12"
     },
     "/compare/emaillabs-io-vs-resend": {
-      "hash": "2d91d517d9be8c85",
-      "changed": "2026-10-20"
+      "hash": "06c867ee8abf1e42",
+      "changed": "2026-10-23"
     },
     "/compare/expo-vs-loadly": {
       "hash": "d785246ee68dd941",
@@ -2554,8 +2554,8 @@
       "changed": "2026-10-22"
     },
     "/compare/resend-vs-mail-tester-com": {
-      "hash": "e77495bad8c14c8c",
-      "changed": "2026-10-20"
+      "hash": "69b764a827c8b9ce",
+      "changed": "2026-10-23"
     },
     "/compare/resmush-it-vs-wormhol-org": {
       "hash": "0bc0448355e03bfc",
@@ -3128,7 +3128,7 @@
       "changed": "2026-10-22"
     },
     "/digitalocean-free-tier-2026": {
-      "hash": "3d858a4072322993",
+      "hash": "605ff552ca347fe5",
       "changed": "2026-10-23"
     },
     "/disclosure": {
@@ -3136,23 +3136,23 @@
       "changed": "2026-10-11"
     },
     "/email-alternatives": {
-      "hash": "4ca877452df36375",
+      "hash": "d22bc7a061402788",
       "changed": "2026-10-23"
     },
     "/email-comparison-2026": {
-      "hash": "e2846a44158f72e0",
+      "hash": "907352b505c0a40d",
       "changed": "2026-10-23"
     },
     "/email-service-alternatives": {
-      "hash": "7617b776592c8c54",
-      "changed": "2026-10-20"
+      "hash": "de9bfb5e9f585855",
+      "changed": "2026-10-23"
     },
     "/embed": {
       "hash": "0f2a7d35b82e440f",
       "changed": "2026-10-11"
     },
     "/estimate": {
-      "hash": "ecc240c3ee07fbfd",
+      "hash": "99184307bd148fae",
       "changed": "2026-10-23"
     },
     "/events": {
@@ -3194,35 +3194,35 @@
       "changed": "2026-10-22"
     },
     "/free-django-stack": {
-      "hash": "330aabc373af96c6",
-      "changed": "2026-10-22"
+      "hash": "09fa168866bba696",
+      "changed": "2026-10-23"
     },
     "/free-fastapi-stack": {
-      "hash": "71918c2f28061274",
-      "changed": "2026-10-22"
+      "hash": "8eb7664904b5fa5d",
+      "changed": "2026-10-23"
     },
     "/free-frontend-stack": {
-      "hash": "a752c74a565df7ba",
+      "hash": "5dd4f9b6cf4c82c4",
       "changed": "2026-10-23"
     },
     "/free-go-stack": {
-      "hash": "dc8667e16ac2f611",
-      "changed": "2026-10-22"
+      "hash": "2a60d5a4beb6d46b",
+      "changed": "2026-10-23"
     },
     "/free-llm-apis": {
       "hash": "cc679bed52f8acf7",
       "changed": "2026-10-23"
     },
     "/free-nextjs-stack": {
-      "hash": "73c9346481d5fda0",
+      "hash": "d2ec35d6e0ae0739",
       "changed": "2026-10-23"
     },
     "/free-saas-stack": {
-      "hash": "df63b05a934f3ee1",
+      "hash": "515059bece8c0cf9",
       "changed": "2026-10-23"
     },
     "/free-startup-stack": {
-      "hash": "fdd9d331bac3d86d",
+      "hash": "eff4d1bbbdd67837",
       "changed": "2026-10-23"
     },
     "/free-tier-facts-ai-models-get-wrong": {
@@ -3244,7 +3244,7 @@
       "changed": "2026-10-19"
     },
     "/gcp-free-tier-2026": {
-      "hash": "ac6aca085ba77154",
+      "hash": "0b44d7a5249e6d7c",
       "changed": "2026-10-23"
     },
     "/gemini-api-pricing-2026": {
@@ -3260,8 +3260,8 @@
       "changed": "2026-10-11"
     },
     "/google-developer-program-2026": {
-      "hash": "136bea5c2037fc05",
-      "changed": "2026-10-22"
+      "hash": "3456f2df66f1c518",
+      "changed": "2026-10-23"
     },
     "/groq-vs-hugging-face": {
       "hash": "a5b47a6dc0fc2b96",
@@ -3304,7 +3304,7 @@
       "changed": "2026-10-23"
     },
     "/hosting-alternatives": {
-      "hash": "c0e1c1eccd5d8f30",
+      "hash": "675158d64ee5b31c",
       "changed": "2026-10-23"
     },
     "/hosting-free-tier-comparison-2026": {
@@ -3372,8 +3372,8 @@
       "changed": "2026-10-18"
     },
     "/postmark-vs-resend": {
-      "hash": "ea33d60086d1c105",
-      "changed": "2026-10-20"
+      "hash": "177dd59db62b804b",
+      "changed": "2026-10-23"
     },
     "/press": {
       "hash": "a2157fffe6e2dcfe",
@@ -3578,8 +3578,8 @@
       "changed": "2026-10-23"
     },
     "/serverless-free-tier-comparison-2026": {
-      "hash": "b13b29c5cf7ade90",
-      "changed": "2026-10-22"
+      "hash": "52136c021ce6bd44",
+      "changed": "2026-10-23"
     },
     "/setup": {
       "hash": "eb646d7d3dfff83f",
@@ -3593,7 +3593,7 @@
       "changed": "2026-10-23"
     },
     "/stack-check": {
-      "hash": "31b541e7b6e26615",
+      "hash": "e82705e8bea27aa8",
       "changed": "2026-10-23"
     },
     "/stacks": {
@@ -3601,24 +3601,24 @@
       "changed": "2026-10-11"
     },
     "/stacks/ai-startup": {
-      "hash": "79aa3023995e218f",
-      "changed": "2026-10-11"
+      "hash": "3184f4644cd5aaae",
+      "changed": "2026-10-23"
     },
     "/stacks/api-first": {
       "hash": "24dd3f7202a37384",
       "changed": "2026-10-12"
     },
     "/stacks/open-source": {
-      "hash": "3b8e7618e1cba852",
-      "changed": "2026-10-20"
+      "hash": "7041058e9110c29f",
+      "changed": "2026-10-23"
     },
     "/stacks/saas-mvp": {
-      "hash": "f1d3ce41db3f9c91",
-      "changed": "2026-10-20"
+      "hash": "ea6c731d7325f603",
+      "changed": "2026-10-23"
     },
     "/stacks/side-project": {
-      "hash": "1937a037be010039",
-      "changed": "2026-10-21"
+      "hash": "7a4c089a8f98f8ea",
+      "changed": "2026-10-23"
     },
     "/startup-credits": {
       "hash": "7ec62591e21666bd",
@@ -3970,8 +3970,8 @@
       "changed": "2026-10-22"
     },
     "/vendor/ahasend": {
-      "hash": "c182964809e0d832",
-      "changed": "2026-10-22"
+      "hash": "fdb3f5383c88c991",
+      "changed": "2026-10-23"
     },
     "/vendor/aider": {
       "hash": "a8a69b78cb6dae97",
@@ -4449,8 +4449,8 @@
       "daily": true
     },
     "/vendor/brevo": {
-      "hash": "4ca6aab8c915fac8",
-      "changed": "2026-10-22"
+      "hash": "9f42041c98e705c0",
+      "changed": "2026-10-23"
     },
     "/vendor/brex-partner-perks": {
       "hash": "120ecb5ec6eefd6b",
@@ -6868,8 +6868,8 @@
       "changed": "2026-10-22"
     },
     "/vendor/loops": {
-      "hash": "5a3d29d826dff040",
-      "changed": "2026-10-22"
+      "hash": "abd6b312c8435634",
+      "changed": "2026-10-23"
     },
     "/vendor/lorem-picsum": {
       "hash": "5c4912437ae57d0e",
@@ -6943,28 +6943,28 @@
       "changed": "2026-10-22"
     },
     "/vendor/maileroo": {
-      "hash": "99d622040a891a28",
-      "changed": "2026-10-22"
+      "hash": "83acec7d326aade5",
+      "changed": "2026-10-23"
     },
     "/vendor/mailersend-com": {
-      "hash": "6c4b6f5d4aa6b253",
-      "changed": "2026-10-22"
+      "hash": "5e0b52e2e0e5146c",
+      "changed": "2026-10-23"
     },
     "/vendor/mailinator-com": {
       "hash": "d902ccf0c2a75b68",
       "changed": "2026-10-22"
     },
     "/vendor/mailjet": {
-      "hash": "140628997020ca64",
-      "changed": "2026-10-22"
+      "hash": "3486e68318699c05",
+      "changed": "2026-10-23"
     },
     "/vendor/mailsac-com": {
       "hash": "9fdc65898785fb8a",
       "changed": "2026-10-22"
     },
     "/vendor/mailtrap-io": {
-      "hash": "25307edce53a55c5",
-      "changed": "2026-10-22"
+      "hash": "83ff9b6f4ba40a38",
+      "changed": "2026-10-23"
     },
     "/vendor/make": {
       "hash": "d680919766877284",
@@ -7709,8 +7709,8 @@
       "changed": "2026-10-22"
     },
     "/vendor/plunk": {
-      "hash": "cb17037eaf2f3e10",
-      "changed": "2026-10-22"
+      "hash": "7a7a204674a6be48",
+      "changed": "2026-10-23"
     },
     "/vendor/png-to-webp-converter": {
       "hash": "653ef8f3275397fc",
@@ -7761,8 +7761,8 @@
       "daily": true
     },
     "/vendor/postmark": {
-      "hash": "2f046b40aee6c74c",
-      "changed": "2026-10-22"
+      "hash": "bc896126471595b1",
+      "changed": "2026-10-23"
     },
     "/vendor/pp-ua": {
       "hash": "f87db044d218f6e6",
@@ -8024,8 +8024,8 @@
       "changed": "2026-10-22"
     },
     "/vendor/resend": {
-      "hash": "929e4a1a5e229e88",
-      "changed": "2026-10-22"
+      "hash": "7bb4847566f1b3db",
+      "changed": "2026-10-23"
     },
     "/vendor/resizeappicon-com": {
       "hash": "6e6fe8b933739443",
@@ -8676,8 +8676,8 @@
       "changed": "2026-10-22"
     },
     "/vendor/sweego": {
-      "hash": "a4f3fcd409b0ba26",
-      "changed": "2026-10-22"
+      "hash": "1f38a161f3bbae94",
+      "changed": "2026-10-23"
     },
     "/vendor/sweetuptime": {
       "daily": true
