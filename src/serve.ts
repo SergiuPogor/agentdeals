@@ -41266,7 +41266,7 @@ ${globalNavCss()}
         <td class="check">&#10003; Global</td>
         <td class="check">&#10003;</td>
         <td class="cheapest">Zero egress</td>
-      </tr>${vendorPageConditionsRowHtml("tigris-fly-io", 8)}
+      </tr>${vendorPageConditionsRowHtml("tigris", 8)}
       <tr>
         <td class="provider-col">AWS S3<span class="caution-badge">CREDITS ONLY</span></td>
         <td>Object</td>
@@ -41276,7 +41276,7 @@ ${globalNavCss()}
         <td class="partial">CloudFront sep.</td>
         <td class="cross">&#10007;</td>
         <td class="expensive">$0.09/GB</td>
-      </tr>${vendorPageConditionsRowHtml("aws-s3", 8)}
+      </tr>${vendorPageConditionsRowHtml("aws", 8)}
       <tr>
         <td class="provider-col">Google Cloud Storage</td>
         <td>Object</td>
@@ -41296,7 +41296,7 @@ ${globalNavCss()}
         <td class="partial">Azure CDN sep.</td>
         <td class="cross">&#10007;</td>
         <td class="expensive">$0.087/GB</td>
-      </tr>${vendorPageConditionsRowHtml("azure-blob-storage", 8)}
+      </tr>${vendorPageConditionsRowHtml("azure", 8)}
       <tr>
         <td class="provider-col">Oracle Cloud Obj. Storage</td>
         <td>Object</td>
@@ -41306,7 +41306,7 @@ ${globalNavCss()}
         <td class="cross">&#10007;</td>
         <td class="check">&#10003;</td>
         <td>$0.0085/GB</td>
-      </tr>${vendorPageConditionsRowHtml("oracle-cloud-obj-storage", 8)}
+      </tr>${vendorPageConditionsRowHtml("oracle-cloud", 8)}
       <tr>
         <td class="provider-col">Supabase Storage</td>
         <td>BaaS</td>

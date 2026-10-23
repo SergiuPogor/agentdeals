@@ -436,6 +436,13 @@ async function readGuides(base: string, routes: string[]): Promise<GuideReading[
   return readings;
 }
 
+const STORAGE_ROWS_WITH_PARENT_CONDITIONS = [
+  { row: "aws-s3", listing: "aws" },
+  { row: "tigris-fly-io", listing: "tigris" },
+  { row: "oracle-cloud-obj-storage", listing: "oracle-cloud" },
+  { row: "azure-blob-storage", listing: "azure" },
+];
+
 const PRODUCT_ROWS_THEIR_PARENTS_CONDITIONS_COVER = [
   { route: "/storage-comparison-2026", row: "supabase-storage", parent: "supabase" },
   { route: "/storage-comparison-2026", row: "vercel-blob", parent: "vercel" },
@@ -515,8 +522,12 @@ async function placementsNotMatchingTheirVendorPage(base: string, readings: Guid
   const wrong: string[] = [];
   for (const { route, layout } of readings) {
     for (const placement of layout.placements) {
-      const onTheVendorPage = await listTheVendorPagePrints(base, placement.slug, memo);
-      const expected = endedSlugs.has(placement.slug) ? "" : onTheVendorPage.list;
+      const parent = route === "/storage-comparison-2026"
+        ? STORAGE_ROWS_WITH_PARENT_CONDITIONS.find(({ row }) => row === placement.slug)?.listing
+        : undefined;
+      const listing = parent ?? placement.slug;
+      const onTheVendorPage = await listTheVendorPagePrints(base, listing, memo);
+      const expected = endedSlugs.has(listing) ? "" : onTheVendorPage.list;
       const acceptable = onTheVendorPage.landsOnAnotherListing || listingsConditionsDoNotDescribe(route, placement.slug) ? [expected, ""] : [expected];
       if (!acceptable.includes(placement.printed)) {
         wrong.push(`${route}, ${placement.where}: printed ${placement.printed.slice(0, 160) || "nothing"}; its vendor page lists ${expected.slice(0, 160) || "nothing"}`);
@@ -591,6 +602,17 @@ describe("every guide that compares vendors prints each vendor's conditions of u
       assert.strictEqual(placementOf(await page(conditioned.base, route), row).printed, list, `${route}, the ${row} row`);
     }
   });
+
+  for (const { row, listing } of STORAGE_ROWS_WITH_PARENT_CONDITIONS) {
+    it(`prints ${listing}'s conditions directly after its ${row} storage row, including newly added conditions`, async () => {
+      const route = "/storage-comparison-2026";
+      const memo = new Map<string, VendorPageList>();
+      const { list } = await listTheVendorPagePrints(conditioned.base, listing, memo);
+      assert.notStrictEqual(list, "", `/vendor/${listing} lists the injected conditions`);
+      assert.strictEqual(placementOf(await page(conditioned.base, route), row).printed, list);
+      assert.strictEqual(placementOf(await page(unconditioned.base, route), row).printed, "");
+    });
+  }
 
   it("prints the parent listing's conditions in a product card they cover, and none in a product card they do not", async () => {
     const memo = new Map<string, VendorPageList>();
