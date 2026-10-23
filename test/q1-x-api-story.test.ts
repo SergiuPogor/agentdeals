@@ -60,7 +60,7 @@ describe("The Q1 X API story distinguishes the free-tier end from later paid-pla
       assert.equal(anchors.length, 1, url);
       assert.match(anchors[0][1], /class="change-source"/);
       assert.match(anchors[0][1], /rel="nofollow noopener"/);
-      assert.match(anchors[0][1], /title="[^"]+"/);
+      assert.ok(anchors[0][1].includes(`title="${url.slice("https://".length)}"`));
     }
   });
 
