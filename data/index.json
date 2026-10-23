@@ -36837,7 +36837,7 @@
       },
       "conditions": [
         {
-          "text": "Amazon SES is included in the Free Tier of Sign up for AWS (new). That sign-up needs no payment method for most new customers but is still reaching a limited number of customers.",
+          "text": "Amazon SES is available on Sign up for AWS (new). That sign-up needs no payment method for most new customers but is still reaching a limited number of customers.",
           "quote": "The following AWS services are included in the Free Tier of Sign up for AWS (new).",
           "url": "https://docs.aws.amazon.com/accounts/latest/reference/supported-services-sign-up-new.html",
           "read_on": "2026-10-23"
