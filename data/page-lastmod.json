@@ -18,15 +18,15 @@
       "changed": "2026-10-23"
     },
     "/ai-coding-tools-pricing": {
-      "hash": "0330293937483e9f",
-      "changed": "2026-10-22"
+      "hash": "119c2cedcbf410d7",
+      "changed": "2026-10-23"
     },
     "/ai-free-tiers": {
-      "hash": "26ed7a103314e049",
+      "hash": "04f7ca2f7f37445a",
       "changed": "2026-10-23"
     },
     "/ai-ml-alternatives": {
-      "hash": "256bb84b54e256b9",
+      "hash": "a292770a60447157",
       "changed": "2026-10-23"
     },
     "/alternative-to": {
@@ -820,8 +820,8 @@
       "changed": "2026-10-12"
     },
     "/aws-app-runner-migration": {
-      "hash": "373bdfe12eecdb4f",
-      "changed": "2026-10-22"
+      "hash": "59373cce10065456",
+      "changed": "2026-10-23"
     },
     "/aws-free-tier-2026": {
       "hash": "33673c84d9c90811",
@@ -1095,11 +1095,11 @@
       "changed": "2026-10-19"
     },
     "/category/ai-coding": {
-      "hash": "6de69343c87b3fe0",
-      "changed": "2026-10-22"
+      "hash": "0009d359447a50ed",
+      "changed": "2026-10-23"
     },
     "/category/ai-ml": {
-      "hash": "a18b6c8c520cc37c",
+      "hash": "60e06508653d353f",
       "changed": "2026-10-23"
     },
     "/category/analytics": {
@@ -1135,8 +1135,8 @@
       "changed": "2026-10-22"
     },
     "/category/cloud-hosting": {
-      "hash": "3cac5b5e18296d26",
-      "changed": "2026-10-22"
+      "hash": "0a2c07205728591b",
+      "changed": "2026-10-23"
     },
     "/category/cloud-iaas": {
       "hash": "f324d10e0eae99a2",
@@ -1243,8 +1243,8 @@
       "changed": "2026-10-20"
     },
     "/category/messaging": {
-      "hash": "c3f7c35d6cead197",
-      "changed": "2026-10-22"
+      "hash": "6c038ee7bc16e0eb",
+      "changed": "2026-10-23"
     },
     "/category/mobile-development": {
       "hash": "5ed23af94836e7c5",
@@ -2976,8 +2976,8 @@
       "changed": "2026-10-09"
     },
     "/digest/2026-w20": {
-      "hash": "960d0a2d45e141dc",
-      "changed": "2026-10-22"
+      "hash": "099a4a541afca9e2",
+      "changed": "2026-10-23"
     },
     "/digest/2026-w21": {
       "hash": "28c0299a116fa809",
@@ -3064,8 +3064,8 @@
       "changed": "2026-10-21"
     },
     "/digest/2026-w42": {
-      "hash": "c2477fba78ceb2ec",
-      "changed": "2026-10-21"
+      "hash": "c8267de90e42fdda",
+      "changed": "2026-10-23"
     },
     "/digest/2026-w43": {
       "hash": "f3400065f2ff9892",
@@ -3209,7 +3209,7 @@
       "changed": "2026-10-22"
     },
     "/free-llm-apis": {
-      "hash": "09d038e9a87e192c",
+      "hash": "2b987c8efca0bcc8",
       "changed": "2026-10-23"
     },
     "/free-nextjs-stack": {
@@ -3247,7 +3247,7 @@
       "changed": "2026-10-23"
     },
     "/gemini-api-pricing-2026": {
-      "hash": "42a3024ca442be45",
+      "hash": "b0df4de5c8ac6ce1",
       "changed": "2026-10-23"
     },
     "/github-actions-alternatives": {
@@ -3303,23 +3303,23 @@
       "changed": "2026-10-23"
     },
     "/hosting-alternatives": {
-      "hash": "b688e776e150e012",
-      "changed": "2026-10-22"
+      "hash": "5ac2bfd9d5bbeef9",
+      "changed": "2026-10-23"
     },
     "/hosting-free-tier-comparison-2026": {
       "hash": "7cd22ccd9676ad31",
       "changed": "2026-10-22"
     },
     "/hosting-pricing": {
-      "hash": "27b6c6c94db0920a",
-      "changed": "2026-10-22"
+      "hash": "61ed80749861abfe",
+      "changed": "2026-10-23"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "c142953155916d03",
-      "changed": "2026-10-22"
+      "hash": "16b59100d1ecbf20",
+      "changed": "2026-10-23"
     },
     "/llm-api-pricing": {
-      "hash": "ba59946df9869abb",
+      "hash": "3e93087f79c0ec02",
       "changed": "2026-10-23"
     },
     "/localstack-alternatives": {
@@ -3592,7 +3592,7 @@
       "changed": "2026-10-23"
     },
     "/stack-check": {
-      "hash": "cbcf0b90a7b5417f",
+      "hash": "7b087d7fdfc8140e",
       "changed": "2026-10-23"
     },
     "/stacks": {
@@ -5969,8 +5969,8 @@
       "changed": "2026-10-22"
     },
     "/vendor/google-antigravity": {
-      "hash": "085ab9389081b5bb",
-      "changed": "2026-10-22"
+      "hash": "52fa6fae289a6246",
+      "changed": "2026-10-23"
     },
     "/vendor/google-artifact-registry": {
       "hash": "88aa474b2bcfc1d2",
@@ -9345,8 +9345,8 @@
       "changed": "2026-10-22"
     },
     "/vendor/whatsapp-business-platform": {
-      "hash": "1c9ee1e2aff3ce07",
-      "changed": "2026-10-22"
+      "hash": "e3860bd30141b0b7",
+      "changed": "2026-10-23"
     },
     "/vendor/whereby": {
       "hash": "2e7eff1d10223bbe",
@@ -9613,8 +9613,8 @@
       "changed": "2026-10-22"
     },
     "/whatsapp-business-api-pricing-2026": {
-      "hash": "15b21ad92805d756",
-      "changed": "2026-10-18"
+      "hash": "80175cbbee71c7c6",
+      "changed": "2026-10-23"
     },
     "/x402-services": {
       "hash": "f28320babaab25bd",
