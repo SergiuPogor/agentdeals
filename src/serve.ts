@@ -39774,81 +39774,83 @@ ${globalNavCss()}
   </div>
 
   <h2 id="cost-trap">Growth Cost Trap</h2>
-  <p class="section-intro">Email costs seem trivial at small scale. They're not. Here's what happens when you grow. Brevo column: <a href="https://www.brevo.com/pricing/" target="_blank" rel="nofollow noopener">Starter, billed monthly</a>.</p>
+  <p class="section-intro">Email costs seem trivial at small scale. They're not. Here's what happens when you grow. Brevo row: <a href="https://www.brevo.com/pricing/" target="_blank" rel="nofollow noopener">Starter, billed monthly</a>.</p>
 
   <div style="overflow-x:auto">
   <table class="growth-table">
     <thead>
       <tr>
-        <th>Monthly Volume</th>
-        <th>Amazon SES</th>
-        <th>Resend</th>
-        <th>Maileroo</th>
-        <th>MailerSend</th>
-        <th>SendGrid</th>
-        <th>Postmark</th>
-        <th>Brevo</th>
+        <th>Vendor</th>
+        <th>3K emails</th>
+        <th>10K emails</th>
+        <th>50K emails</th>
+        <th>100K emails</th>
+        <th>500K emails</th>
+        <th>1M emails</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>3K emails</strong></td>
+        <td><strong>Amazon SES</strong></td>
         <td>$0.30</td>
-        <td class="cheapest">$0 (free)</td>
-        <td class="cheapest">$0 (free)</td>
-        <td>$7.00</td>
-        <td>$19.95</td>
-        <td>$15.00</td>
-        <td class="cheapest">$0 (free)</td>
-      </tr>
-      <tr>
-        <td><strong>10K emails</strong></td>
         <td class="cheapest">$1.00</td>
-        <td>$20.00</td>
-        <td>$10.00</td>
-        <td>$28.00</td>
-        <td>$19.95</td>
-        <td>$15.00</td>
-        <td>$17.00</td>
-      </tr>
-      <tr>
-        <td><strong>50K emails</strong></td>
         <td class="cheapest">$5.00</td>
-        <td>$20.00</td>
-        <td>$15.00</td>
-        <td>$28.00</td>
-        <td>$19.95</td>
-        <td>$42.50</td>
-        <td>$56.00</td>
-      </tr>
-      <tr>
-        <td><strong>100K emails</strong></td>
         <td class="cheapest">$10.00</td>
-        <td>$35.00</td>
-        <td>$30.00</td>
-        <td>$68.00</td>
-        <td>$89.95</td>
-        <td>$70.00</td>
-        <td>$82.00</td>
-      </tr>
-      <tr>
-        <td><strong>500K emails</strong></td>
         <td class="cheapest">$50.00</td>
-        <td>$350.00</td>
-        <td>$140.00</td>
-        <td>$210.00</td>
-        <td class="expensive">$449.95</td>
-        <td>$245.00</td>
-        <td>No public price</td>
+        <td class="cheapest">$100.00</td>
       </tr>
       <tr>
-        <td><strong>1M emails</strong></td>
-        <td class="cheapest">$100.00</td>
+        <td><strong>Resend</strong></td>
+        <td class="cheapest">$0 (free)</td>
+        <td>$20.00</td>
+        <td>$20.00</td>
+        <td>$35.00</td>
+        <td>$350.00</td>
         <td class="expensive">$650.00</td>
+      </tr>
+      <tr>
+        <td><strong>Maileroo</strong></td>
+        <td class="cheapest">$0 (free)</td>
+        <td>$10.00</td>
+        <td>$15.00</td>
+        <td>$30.00</td>
+        <td>$140.00</td>
         <td>$250.00</td>
+      </tr>
+      <tr>
+        <td><strong>MailerSend</strong></td>
+        <td>$7.00</td>
+        <td>$28.00</td>
+        <td>$28.00</td>
+        <td>$68.00</td>
+        <td>$210.00</td>
         <td>$360.00</td>
+      </tr>
+      <tr>
+        <td><strong>SendGrid</strong></td>
+        <td>$19.95</td>
+        <td>$19.95</td>
+        <td>$19.95</td>
+        <td>$89.95</td>
+        <td class="expensive">$449.95</td>
         <td class="expensive">$749.95</td>
+      </tr>
+      <tr>
+        <td><strong>Postmark</strong></td>
+        <td>$15.00</td>
+        <td>$15.00</td>
+        <td>$42.50</td>
+        <td>$70.00</td>
+        <td>$245.00</td>
         <td>$400.00</td>
+      </tr>
+      <tr>
+        <td><strong>Brevo</strong></td>
+        <td class="cheapest">$0 (free)</td>
+        <td>$17.00</td>
+        <td>$56.00</td>
+        <td>$82.00</td>
+        <td>No public price</td>
         <td>No public price</td>
       </tr>
     </tbody>
