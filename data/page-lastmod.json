@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-22",
+  "generated": "2026-10-23",
   "pages": {
     "/": {
       "daily": true
@@ -3139,8 +3139,8 @@
       "changed": "2026-10-22"
     },
     "/email-comparison-2026": {
-      "hash": "de75fff39c5697ab",
-      "changed": "2026-10-22"
+      "hash": "ff4226934ab62293",
+      "changed": "2026-10-23"
     },
     "/email-service-alternatives": {
       "hash": "7617b776592c8c54",

@@ -32,6 +32,7 @@ function readableText(html: string): string {
 let server: ChildProcess;
 let base = "";
 let page = "";
+let pageHtml = "";
 
 function startServer(): Promise<ChildProcess> {
   return new Promise((resolve, reject) => {
@@ -51,7 +52,8 @@ function startServer(): Promise<ChildProcess> {
 describe("the email comparison states the free volumes our own records hold (#1183)", () => {
   before(async () => {
     server = await startServer();
-    page = readableText(await (await fetch(`${base}/email-comparison-2026`)).text());
+    pageHtml = await (await fetch(`${base}/email-comparison-2026`)).text();
+    page = readableText(pageHtml);
   });
 
   after(() => { server?.kill(); });
@@ -66,11 +68,8 @@ describe("the email comparison states the free volumes our own records hold (#11
   });
 
   it("prices 3,000 emails on MailerSend above zero, because its free plan stops at 500", () => {
-    const row = page.match(/3K emails (.*?) 10K emails/);
-    assert.ok(row, "the growth cost table no longer carries a 3K row");
-    const cells = row![1].trim().split(/ (?=\$)/);
-    assert.strictEqual(cells.length, 7, `the 3K row no longer has one cell per vendor: ${row![1]}`);
-    assert.strictEqual(cells[3], "$7.00", `the MailerSend cell of the 3K row reads ${cells[3]}`);
+    const cells = rowCells(growthTable(pageHtml), "MailerSend");
+    assert.strictEqual(cells[1], "$7.00");
   });
 
   it("gives MailerLite the subscriber and send allowances its record states", () => {
@@ -100,6 +99,14 @@ describe("the email comparison states the free volumes our own records hold (#11
 });
 
 const COMPARISON = "/email-comparison-2026";
+
+function growthTable(html: string): string {
+  const section = html.match(/<h2 id="cost-trap">Growth Cost Trap<\/h2>([\s\S]*?)(?=<h2\b)/);
+  assert.ok(section, "the growth cost section is missing");
+  const tables = [...section[1].matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/g)];
+  assert.strictEqual(tables.length, 1);
+  return tables[0][1];
+}
 
 function rowCells(html: string, vendor: string): string[] {
   for (const [, row] of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)) {
@@ -215,9 +222,7 @@ describe("an email free tier typed into a page states what the vendor's own reco
     const growth = html[COMPARISON].match(/<h2 id="cost-trap">Growth Cost Trap<\/h2>([\s\S]*?)(?=<h2\b)/)?.[1] ?? "";
     assert.match(readableText(growth), /Brevo column: Starter, billed monthly/);
     assert.match(growth, /href="https:\/\/www\.brevo\.com\/pricing\/"[^>]*rel="nofollow noopener"/);
-    const tenK = growth.match(/<tr>\s*<td><strong>10K emails<\/strong><\/td>([\s\S]*?)<\/tr>/)?.[1] ?? "";
-    const lastCell = [...tenK.matchAll(/<td\b[^>]*>.*?<\/td>/g)].at(-1)?.[0] ?? "";
-    assert.strictEqual(lastCell, "<td>$17.00</td>");
+    assert.strictEqual(rowCells(growthTable(html[COMPARISON]), "Brevo")[2], "$17.00");
     const card = cardText(html[COMPARISON], "Brevo");
     assert.match(card, /300 emails\/day.*at most 9,300 a month/);
     assert.doesNotMatch(card, /no monthly cap/);
@@ -243,34 +248,33 @@ describe("the email growth table prices monthly sending volumes", () => {
     const response = await fetch(`${base}${COMPARISON}`, { redirect: "error" });
     assert.strictEqual(response.status, 200);
     const html = await response.text();
-    const section = html.match(/<h2 id="cost-trap">Growth Cost Trap<\/h2>([\s\S]*?)(?=<h2\b)/);
-    assert.ok(section, "the growth cost section is missing");
-    const tables = [...section[1].matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/g)];
-    assert.strictEqual(tables.length, 1);
-    const table = tables[0][1];
+    const table = growthTable(html);
     columns = [...table.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/g)].map((m) => readableText(m[1]));
     rows = new Map();
     for (const [, row] of table.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)) {
       const cells = [...row.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)].map((m) => readableText(m[1]));
       if (!cells.length) continue;
-      assert.strictEqual(cells.length, 8, cells.join(" | "));
-      assert.ok(!rows.has(cells[0]), `duplicate volume: ${cells[0]}`);
-      rows.set(cells[0], cells.slice(1));
+      assert.strictEqual(cells.length, 7, cells.join(" | "));
+      const vendor = row.match(/<td\b[^>]*>\s*<strong>([\s\S]*?)<\/strong>/)?.[1];
+      assert.ok(vendor, "the growth row has no vendor label");
+      const name = readableText(vendor);
+      assert.ok(!rows.has(name), `duplicate vendor: ${name}`);
+      rows.set(name, cells.slice(1));
     }
   });
 
   after(() => { proc?.kill(); });
 
   function price(volume: string, vendor: string): string {
-    assert.ok(rows.has(`${volume} emails`), `missing volume: ${volume}`);
-    const column = columns.indexOf(vendor);
-    assert.ok(column > 0, `missing vendor: ${vendor}`);
-    return rows.get(`${volume} emails`)![column - 1];
+    assert.ok(rows.has(vendor), `missing vendor: ${vendor}`);
+    const column = columns.indexOf(`${volume} emails`);
+    assert.ok(column > 0, `missing volume: ${volume}`);
+    return rows.get(vendor)![column - 1];
   }
 
-  it("keeps all six volumes and all seven vendor columns", () => {
-    assert.deepStrictEqual(columns, ["Monthly Volume", "Amazon SES", "Resend", "Maileroo", "MailerSend", "SendGrid", "Postmark", "Brevo"]);
-    assert.deepStrictEqual([...rows.keys()], ["3K emails", "10K emails", "50K emails", "100K emails", "500K emails", "1M emails"]);
+  it("keeps one row per vendor and all six monthly volume columns", () => {
+    assert.deepStrictEqual(columns, ["Vendor", "3K emails", "10K emails", "50K emails", "100K emails", "500K emails", "1M emails"]);
+    assert.deepStrictEqual([...rows.keys()], ["Amazon SES", "Resend", "Maileroo", "MailerSend", "SendGrid", "Postmark", "Brevo"]);
   });
 
   it("uses Maileroo's published monthly plans at 50K, 100K, 500K and 1M", () => {
@@ -304,9 +308,10 @@ describe("the email growth table prices monthly sending volumes", () => {
       "500K": ["$50.00", null, null, "$210.00", "$449.95", "$245.00", null],
       "1M": ["$100.00", null, null, "$360.00", "$749.95", "$400.00", null],
     };
+    const vendors = ["Amazon SES", "Resend", "Maileroo", "MailerSend", "SendGrid", "Postmark", "Brevo"];
     for (const [volume, expected] of Object.entries(unchanged)) {
       expected.forEach((value, column) => {
-        if (value !== null) assert.strictEqual(price(volume, columns[column + 1]), value, `${columns[column + 1]} at ${volume}`);
+        if (value !== null) assert.strictEqual(price(volume, vendors[column]), value, `${vendors[column]} at ${volume}`);
       });
     }
   });
