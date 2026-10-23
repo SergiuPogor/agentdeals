@@ -765,7 +765,33 @@
         "checked": "2026-10-09",
         "outcome": "ok",
         "detail": "the page names AWS as \"aws\" and states \"$100\""
-      }
+      },
+      "conditions": [
+        {
+          "text": "AWS's Free Tier FAQ says most new customers need no payment method to sign up. AWS may ask for one to verify identity.",
+          "quote": "No. A payment method isn't required to sign up for most new customers. In some cases, we may request additional information, such as a payment method, to verify your identity.",
+          "url": "https://aws.amazon.com/free/free-tier-faqs/",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "The sign-up without a card is Sign up for AWS (new), launched September 16, 2026, but AWS's docs say it is still being released to a limited number of customers, so a new customer may not be able to use it yet.",
+          "quote": "We're currently releasing our new experience to a limited number of customers. You might not be able to access this experience yet.",
+          "url": "https://docs.aws.amazon.com/accounts/latest/reference/sign-in-new.html",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "Anyone who has or has had an AWS account is not eligible for AWS's Free plan or Free Tier credits. They must give payment information and go on the Paid plan.",
+          "quote": "The Free plan and Free Tier credits are available only to new AWS customers. If you are ineligible for the Free Tier or Free plan, you'll need to provide payment information, and you'll be placed on the Paid plan.",
+          "url": "https://aws.amazon.com/resources/create-account/",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "On the paid plan of Sign up for AWS (new), each project can have a monthly spend limit starting at $20. AWS pauses the project when spend reaches it. Advanced sign-up accounts have no spend limits.",
+          "quote": "If spend reaches the limit, AWS pauses your project rather than accumulating charges, and you can resume working on it when you raise the limit.",
+          "url": "https://aws.amazon.com/blogs/aws/aws-reimagines-the-getting-started-experience/",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Azure",
@@ -2543,6 +2569,12 @@
           "quote": "The resend.dev domain is only available for testing purposes and can only send emails to the email address associated with your Resend account.",
           "url": "https://resend.com/docs/knowledge-base/403-error-resend-dev-domain",
           "read_on": "2026-10-20"
+        },
+        {
+          "text": "Resend's free plan needs no credit card.",
+          "quote": "The free plan includes 3,000 emails per month, 1,000 contacts, and a 100 emails/day limit. No credit card required.",
+          "url": "https://resend.com/agents",
+          "read_on": "2026-10-23"
         }
       ],
       "tags": [
@@ -2584,7 +2616,15 @@
         "checked": "2026-10-09",
         "outcome": "ok",
         "detail": "the page names Postmark as \"postmark\" and states \"100 emails/month\" and \"100 emails per month\""
-      }
+      },
+      "conditions": [
+        {
+          "text": "Postmark's free plan needs no credit card.",
+          "quote": "Start Free Trial No Credit Card Required",
+          "url": "https://postmarkapp.com/pricing",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Mailchimp",
@@ -2631,7 +2671,15 @@
         "text": "Free $ 0 /month 6,000 emails/month 200 emails per day Get started Features include: 1,000 contacts APIs, SMTP Relay, Webhooks Advanced Email Editor Basic Statistics Form Builder Email Tracking Consent",
         "url": "https://www.mailjet.com/pricing/",
         "read_on": "2026-10-06"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Mailjet's free plan needs no credit card at sign-up.",
+          "quote": "Does the free plan require a credit card? No, there is no credit card required for the free plan at sign up.",
+          "url": "https://www.mailjet.com/pricing/",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Brevo",
@@ -2668,7 +2716,15 @@
           "Standard USD 194.04",
           "Professional USD 5388.96"
         ]
-      }
+      },
+      "conditions": [
+        {
+          "text": "Signing up for Brevo needs no credit card details, only an email address and an organization name.",
+          "quote": "Do I have to enter my credit card details to sign up? No. We only need your email address and the name of your organization",
+          "url": "https://www.brevo.com/pricing/",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Algolia",
@@ -5367,7 +5423,15 @@
         "checked": "2026-10-02",
         "outcome": "ok",
         "detail": "the page names Loops as \"loops\" and states amounts, none of which we matched to the terms we publish"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Loops is free to start with no credit card.",
+          "quote": "Loops is free to start, with no credit card required",
+          "url": "https://loops.so/pricing",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "ClouDNS",
@@ -20666,7 +20730,15 @@
         "text": "Free 1000 emails per month Multi-region EU infrastructure 1 to 7-day retention Community + best effort",
         "url": "https://ahasend.com/pricing",
         "read_on": "2026-10-06"
-      }
+      },
+      "conditions": [
+        {
+          "text": "AhaSend's free plan needs no credit card.",
+          "quote": "No credit card required • 1000 emails/month free",
+          "url": "https://ahasend.com/pricing",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "addy.io",
@@ -21081,7 +21153,15 @@
         "text": "free 3,000 emails per month option",
         "url": "https://maileroo.com",
         "read_on": "2026-10-04"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Maileroo's free plan needs no credit card.",
+          "quote": "Kick off with our free plan, send up to 3,000 emails/month at no cost. No credit card required.",
+          "url": "https://maileroo.com/pricing",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "mailcatcher.me",
@@ -21210,7 +21290,15 @@
         "text": "• Send 500 emails/month for free • 24/7 Support • 99.5% guaranteed uptime",
         "url": "https://www.mailersend.com",
         "read_on": "2026-10-21"
-      }
+      },
+      "conditions": [
+        {
+          "text": "MailerSend asks for credit card details on its Free plan to prevent abuse. It does not charge anything on the Free plan.",
+          "quote": "Why do you need my credit card details for the Free plan? You won't be charged for anything on the Free plan; we just ask that you provide this information to prevent abuse of the platform.",
+          "url": "https://www.mailersend.com/pricing",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "mailinator.com",
@@ -21273,7 +21361,15 @@
         "text": "You can send emails from your domain for free. They allow 1000 mails/month.",
         "url": "https://mailtrap.io/",
         "read_on": "2026-10-16"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Mailtrap's Email API/SMTP free plan needs no credit card.",
+          "quote": "The Email API/SMTP free plan includes 4,000 emails per month for free, no credit card required.",
+          "url": "https://mailtrap.io/pricing",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Mutant Mail",
@@ -21317,7 +21413,15 @@
         "text": "Or stay on the free plan: 1,000 emails a month, unlimited contacts.",
         "url": "https://useplunk.com",
         "read_on": "2026-10-21"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Plunk's free plan needs no credit card.",
+          "quote": "Start on the free plan with 1,000 emails a month, no credit card needed.",
+          "url": "https://useplunk.com",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Sendpulse",
@@ -21417,7 +21521,15 @@
         "text": "Our European GDPR-compliant platform enables sending from 100 emails/day (free plan) up to several million emails per month.",
         "url": "https://www.sweego.io/",
         "read_on": "2026-10-21"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Sweego's Free plan needs no credit card.",
+          "quote": "no engagement • no credit card • no minimum time engagement",
+          "url": "https://www.sweego.io/transactional-emails",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "temp-mail.io",
@@ -36722,7 +36834,15 @@
         "checked": "2026-10-04",
         "outcome": "ok",
         "detail": "the page names Amazon SES as \"amazon ses\" and states \"$0.10\" and \"$200.00\" and \"$200\""
-      }
+      },
+      "conditions": [
+        {
+          "text": "Amazon SES is available on Sign up for AWS (new). That sign-up needs no payment method for most new customers but is still reaching a limited number of customers.",
+          "quote": "The following AWS services are included in the Free Tier of Sign up for AWS (new).",
+          "url": "https://docs.aws.amazon.com/accounts/latest/reference/supported-services-sign-up-new.html",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Storj",
