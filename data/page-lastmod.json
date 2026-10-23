@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-22",
+  "generated": "2026-10-23",
   "pages": {
     "/": {
       "daily": true
@@ -1223,8 +1223,8 @@
       "changed": "2026-10-22"
     },
     "/category/infrastructure": {
-      "hash": "0ac754fb98c0e48d",
-      "changed": "2026-10-21"
+      "hash": "ca5f10c466057b5c",
+      "changed": "2026-10-23"
     },
     "/category/localization": {
       "hash": "cab76695a4c1490e",
@@ -3068,7 +3068,8 @@
       "changed": "2026-10-21"
     },
     "/digest/2026-w43": {
-      "daily": true
+      "hash": "bd49bc2ed05130fc",
+      "changed": "2026-10-23"
     },
     "/digest/2026-w44": {
       "hash": "3182de1e7ea02f3a",
@@ -3127,8 +3128,8 @@
       "changed": "2026-10-22"
     },
     "/digitalocean-free-tier-2026": {
-      "hash": "3db2397ec30fe188",
-      "changed": "2026-10-22"
+      "hash": "3d858a4072322993",
+      "changed": "2026-10-23"
     },
     "/disclosure": {
       "hash": "c63bbb64815c1ddb",
@@ -3159,10 +3160,12 @@
       "changed": "2026-10-09"
     },
     "/events/google-cloud-next-2026": {
-      "daily": true
+      "hash": "8fb92307705f1165",
+      "changed": "2026-10-23"
     },
     "/events/google-io-2026": {
-      "daily": true
+      "hash": "37c9ac5958838d51",
+      "changed": "2026-10-23"
     },
     "/events/microsoft-build-2026": {
       "hash": "2704dce249064abf",
@@ -3226,7 +3229,8 @@
       "changed": "2026-10-11"
     },
     "/free-tier-risk": {
-      "daily": true
+      "hash": "e781b04924347ff5",
+      "changed": "2026-10-23"
     },
     "/free-tier-tracker": {
       "daily": true
@@ -3239,7 +3243,8 @@
       "changed": "2026-10-19"
     },
     "/gcp-free-tier-2026": {
-      "daily": true
+      "hash": "406414d823b0b31c",
+      "changed": "2026-10-23"
     },
     "/gemini-api-pricing-2026": {
       "hash": "9c8d7e621e8c23b8",
@@ -3294,8 +3299,8 @@
       "changed": "2026-10-22"
     },
     "/hetzner-pricing-2026": {
-      "hash": "1a2a10fd65b7cd1d",
-      "changed": "2026-10-22"
+      "hash": "551bfe6b9eeb6679",
+      "changed": "2026-10-23"
     },
     "/hosting-alternatives": {
       "hash": "b688e776e150e012",
@@ -3314,7 +3319,8 @@
       "changed": "2026-10-22"
     },
     "/llm-api-pricing": {
-      "daily": true
+      "hash": "3dc8969a92ac6fbe",
+      "changed": "2026-10-23"
     },
     "/localstack-alternatives": {
       "hash": "6786ce15908ff807",
@@ -3349,13 +3355,16 @@
       "changed": "2026-10-22"
     },
     "/openai-assistants-alternatives": {
-      "daily": true
+      "hash": "dfc74932fabd67a6",
+      "changed": "2026-10-23"
     },
     "/openai-assistants-migration": {
-      "daily": true
+      "hash": "e7822bc9bb1d2f8b",
+      "changed": "2026-10-23"
     },
     "/openai-assistants-migration-2026": {
-      "daily": true
+      "hash": "ee9dc44c2b160904",
+      "changed": "2026-10-23"
     },
     "/postman-alternatives": {
       "hash": "349a8bbf6802a38f",
@@ -3401,7 +3410,8 @@
       "changed": "2026-10-15"
     },
     "/reports": {
-      "daily": true
+      "hash": "d97613393430ac12",
+      "changed": "2026-10-23"
     },
     "/reports/2022-11": {
       "hash": "d0778aa8cced1e23",
@@ -3578,11 +3588,12 @@
       "daily": true
     },
     "/stability": {
-      "daily": true
+      "hash": "988308651f9025da",
+      "changed": "2026-10-23"
     },
     "/stack-check": {
-      "hash": "f1e31a8bbe196f5c",
-      "changed": "2026-10-22"
+      "hash": "54d9c75c8034a99a",
+      "changed": "2026-10-23"
     },
     "/stacks": {
       "hash": "eac3fb64f7c099fb",
@@ -3613,7 +3624,8 @@
       "changed": "2026-10-22"
     },
     "/state-of-free-tiers": {
-      "daily": true
+      "hash": "037a1cc7ccd73bfb",
+      "changed": "2026-10-23"
     },
     "/storage-alternatives": {
       "hash": "5f3de0f4b95ad7fb",
