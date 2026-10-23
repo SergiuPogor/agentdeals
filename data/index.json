@@ -11703,6 +11703,18 @@
           "quote": "The following are disallowed from all managed Colab runtimes: file hosting, media serving, or other web service offerings not related to interactive compute with Colab",
           "url": "https://research.google.com/colaboratory/faq.html",
           "read_on": "2026-10-10"
+        },
+        {
+          "text": "Google publishes no RAM figure for Colab. The free version gets VMs with a standard system memory profile. Paid plans can get a high memory system profile, subject to availability and the compute unit balance.",
+          "quote": "In the version of Colab that is free of charge you are able to access VMs with a standard system memory profile. In paid versions of Colab you are able to access machines with a high memory system profile subject to availability and your compute unit balance.",
+          "url": "https://research.google.com/colaboratory/faq.html",
+          "read_on": "2026-10-23"
+        },
+        {
+          "text": "On Colab Pro+ with a positive compute unit balance, a running notebook keeps executing after the browser closes, for up to 24 hours. Idle VMs are still deleted. Colab Pro gets extended execution times based on availability. Without a paid subscription, execution stops when you stop interacting.",
+          "quote": "Pro+ users with a positive Colab compute unit balance automatically have background execution enabled for their notebooks, causing execution to continue after the browser closes up to a maximum runtime limit of up to 24 hours. … Users without a paid subscription should not rely on execution to continue in the background; execution will be interrupted when user interaction ceases, and the VM will be deleted soon after that.",
+          "url": "https://colab.research.google.com/signup",
+          "read_on": "2026-10-23"
         }
       ]
     },
