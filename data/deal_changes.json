@@ -17132,6 +17132,40 @@
       "category": "Messaging",
       "alternatives": [],
       "recorded_date": "2026-10-22"
+    },
+    {
+      "vendor": "X (Twitter)",
+      "change_type": "pricing_model_change",
+      "date": "2026-06-01",
+      "date_source": "vendor_page",
+      "summary": "On 2026-05-21 X announced the end of its paid legacy Basic plans (monthly and annual). Each Basic subscription ended at the end of the subscriber's billing cycle after June 1, 2026 and moved to Pay-Per-Use. Opting out meant losing API access.",
+      "previous_state": "The paid Basic plan at $200 a month, sold beside Pay-Per-Use.",
+      "current_state": "No Basic plan; former Basic monthly subscribers on Pay-Per-Use with a $200 initial credit charged to their card, annual subscribers with prorated credits.",
+      "impact": "medium",
+      "source_url": "https://devcommunity.x.com/t/important-update-legacy-x-api-basic-plans-are-moving-to-pay-per-use-ppu/266305",
+      "category": "API Gateway",
+      "alternatives": [
+        "Bluesky AT Protocol",
+        "Mastodon API"
+      ],
+      "recorded_date": "2026-10-23"
+    },
+    {
+      "vendor": "X (Twitter)",
+      "change_type": "pricing_model_change",
+      "date": "2026-09-01",
+      "date_source": "vendor_page",
+      "summary": "On 2026-08-14 X announced the end of its paid legacy Pro plans (monthly and annual). Each Pro subscription ended at the end of the subscriber's billing cycle after September 1, 2026 and moved to Pay-Per-Use.",
+      "previous_state": "The paid Pro plan at $5,000 a month, sold beside Pay-Per-Use.",
+      "current_state": "No Pro plan and no fixed monthly self-serve plan; self-serve API access is sold only as prepaid Pay-Per-Use credits, with no subscription or minimum spend.",
+      "impact": "medium",
+      "source_url": "https://devcommunity.x.com/t/important-update-legacy-x-api-pro-plans-are-moving-to-pay-per-use-ppu/273255",
+      "category": "API Gateway",
+      "alternatives": [
+        "Bluesky AT Protocol",
+        "Mastodon API"
+      ],
+      "recorded_date": "2026-10-23"
     }
   ]
 }

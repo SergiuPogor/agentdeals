@@ -2842,7 +2842,15 @@
         "text": "First 10GB storage is always free. Free 3x monthly egress Free 3x monthly egress Egress above 3x monthly average storage is also free through many CDN and compute partners; otherwise, overage is billed at $0.01 per GB. No minimum file size fees No minimum storage duration fees",
         "url": "https://www.backblaze.com/cloud-storage/pricing",
         "read_on": "2026-10-18"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Backblaze B2 Cloud Storage sign-up needs no credit card.",
+          "quote": "No credit card required.",
+          "url": "https://www.backblaze.com/sign-up/cloud-storage",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Tigris",
@@ -2867,7 +2875,15 @@
         "text": "First 5 GB of Standard storage free. First 10,000 Class A and 100,000 Class B requests free.",
         "url": "https://www.tigrisdata.com/pricing/",
         "read_on": "2026-10-15"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Tigris's free tier needs no card to start; its free allowance resets monthly.",
+          "quote": "No card to start. The allowance below resets monthly and applies before anything is metered.",
+          "url": "https://www.tigrisdata.com/pricing/",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Cloudinary",
@@ -2888,7 +2904,15 @@
         "checked": "2026-10-09",
         "outcome": "ok",
         "detail": "the page names Cloudinary as \"cloudinary\" and states \"$0\""
-      }
+      },
+      "conditions": [
+        {
+          "text": "Cloudinary's Free plan needs no credit card.",
+          "quote": "No credit card required",
+          "url": "https://cloudinary.com/pricing",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "CloudAMQP",
@@ -6831,6 +6855,12 @@
           "rules_out": [
             "commercial use"
           ]
+        },
+        {
+          "text": "Uploadcare's Free plan allows only image uploads without a card. Uploading any other file type requires adding a credit card to the account, which Uploadcare asks for as a Know Your Customer check. Uploadcare does not charge the card while the account stays on the Free plan.",
+          "quote": "Only image uploads are available on the Free plan. To upload other file types besides images, you will need to add a credit card to your account for Know Your Customer (KYC) principles, but as long as you are on the free plan, you will not be charged.",
+          "url": "https://uploadcare.com/docs/uploading-files/",
+          "read_on": "2026-10-23"
         }
       ],
       "free_plan_excerpt": {
@@ -6976,7 +7006,15 @@
         "record_date": "2026-09-05",
         "change_type": "limits_reduced",
         "restated_on": "2026-09-20"
-      }
+      },
+      "conditions": [
+        {
+          "text": "ImageKit's Forever Free plan needs no credit card.",
+          "quote": "No credit card needed",
+          "url": "https://imagekit.io/lp/imagekit-forever-free-plan",
+          "read_on": "2026-10-23"
+        }
+      ]
     },
     {
       "vendor": "Expo",
@@ -9011,7 +9049,7 @@
     {
       "vendor": "X (Twitter)",
       "category": "API Gateway",
-      "description": "Social media API — free tier eliminated February 2026, replaced with pay-per-use credit model. April 20, 2026 overhaul: Owned Reads (fetching your own posts, followers, likes) now $0.001/request; write cost raised to $0.015/post; URL-containing posts now $0.20/post. Following, likes, and quote-posts via API have been removed from all self-serve tiers. 'For-good' utility apps remain free. Basic fixed tier starts at $200/month",
+      "description": "Social media API — free tier eliminated February 2026, replaced with pay-per-use credit model. April 20, 2026 overhaul: Owned Reads (fetching your own posts, followers, likes) now $0.001/request; write cost raised to $0.015/post; URL-containing posts now $0.20/post. Following, likes, and quote-posts via API have been removed from all self-serve tiers. Only apps X classifies as Public Utility Apps keep free access. X no longer sells its Basic or Pro plans. Self-serve API access is sold only as prepaid credits with no subscription or minimum spend.",
       "tier": "Pay-per-use (no free tier)",
       "url": "https://developer.x.com/en/portal/products",
       "tags": [
@@ -34086,6 +34124,12 @@
           "quote": "A Google Cloud billing account is required to access the Google Cloud Free Tier.",
           "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "A new Google Cloud user gets the billing account by signing up for the Free Trial, which requires a credit card or other payment method. Google uses it to verify identity and reduce fraud.",
+          "quote": "If you are new to Google Cloud, then you can sign up for a Free Trial to get a billing account and access to the Free Tier. … During the sign up, you must provide a credit card or other payment method that is valid for the period of the Free Trial. … Google uses your payment information for the following purposes: To verify your identity. To reduce fraud.",
+          "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+          "read_on": "2026-10-23"
         },
         {
           "text": "Usage beyond the Free Tier's monthly limits is billed at standard rates.",
