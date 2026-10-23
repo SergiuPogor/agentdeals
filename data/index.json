@@ -388,6 +388,12 @@
           "read_on": "2026-10-22"
         },
         {
+          "text": "Netlify says its Free plan can be used for commercial projects as well as personal sites, in a blog post dated November 12, 2024.",
+          "quote": "On the Free plan, you can deploy commercial projects, personal sites, or other creative explorations you want to share on the web.",
+          "url": "https://www.netlify.com/blog/introducing-netlify-free-plan/",
+          "read_on": "2026-10-23"
+        },
+        {
           "text": "An agent can deploy to Netlify with no account using the --allow-anonymous flag. The deploy gets a live URL, and a person has one hour to claim it by logging in or signing up. Sites using serverless or edge functions still need an account.",
           "quote": "This creates a project with a live URL. You have one hour to claim ownership by logging in or creating a Netlify account. This is useful for AI agents that need to create temporary projects without requiring credentials. Note, though, that sites or apps that use serverless functions or edge functions will require an account.",
           "url": "https://docs.netlify.com/start/quickstarts/deploy-from-ai-code-generation-tool/",
@@ -2728,6 +2734,12 @@
           "quote": "You need a Cloudflare account with an R2 subscription.",
           "url": "https://developers.cloudflare.com/r2/get-started/",
           "read_on": "2026-10-04"
+        },
+        {
+          "text": "Adding the R2 subscription goes through a checkout that needs a payment method, even for the free monthly usage. Accepted: card, PayPal or a wallet.",
+          "quote": "A primary payment method is required to purchase Cloudflare products and services.",
+          "url": "https://developers.cloudflare.com/billing/get-started/create-billing-profile/",
+          "read_on": "2026-10-23"
         },
         {
           "text": "Usage beyond the free tier is charged monthly to the payment method on file.",
@@ -33747,6 +33759,12 @@
           "quote": "A Google Cloud billing account is required to access the Google Cloud Free Tier.",
           "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "A new Google Cloud user gets the billing account by signing up for the Free Trial, which requires a credit card or other payment method. Google uses it to verify identity and reduce fraud.",
+          "quote": "If you are new to Google Cloud, then you can sign up for a Free Trial to get a billing account and access to the Free Tier. … During the sign up, you must provide a credit card or other payment method that is valid for the period of the Free Trial. … Google uses your payment information for the following purposes: To verify your identity. To reduce fraud.",
+          "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+          "read_on": "2026-10-23"
         },
         {
           "text": "Usage beyond the Free Tier's monthly limits is billed at standard rates.",
