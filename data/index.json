@@ -34499,7 +34499,7 @@
       },
       "conditions": [
         {
-          "text": "LLM7's terms, last updated October 15, 2026, say users keep their rights to prompts and outputs and grant LLM7 a licence to process them only to operate, secure, troubleshoot and improve the service.",
+          "text": "LLM7's terms, updated October 15, 2026, say users keep their rights to prompts and outputs and grant LLM7 a licence to process them only to operate, secure, troubleshoot and improve the service.",
           "quote": "You grant us a non-exclusive licence to process your prompts/outputs solely to operate, secure, troubleshoot, and improve the Service (including safety systems)",
           "url": "https://github.com/chigwell/llm7.io/blob/main/TERMS.md",
           "read_on": "2026-10-23"
