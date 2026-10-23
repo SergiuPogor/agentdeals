@@ -31385,16 +31385,16 @@ function buildHostingPricingPage(): string {
       name: "Northflank",
       slug: "northflank",
       category: "traditional-paas",
-      freeTier: "2 services",
+      freeTier: "Sandbox: 2 services, 2 jobs, 1 database",
       paidFrom: "$2.70/mo (0.1 vCPU, 256 MB)",
       freeBandwidth: "Included",
       freeBuildMinutes: "Included",
-      freeCompute: "2 services (0.2 vCPU, 512 MB each)",
-      freeDetails: "Developer plan: 2 free services with 0.2 vCPU and 512 MB RAM each. Supports containers, buildpacks, and databases. Auto-deploy from Git. Built-in secrets management, job scheduling, and observability.",
+      freeCompute: "Up to $20/mo on Northflank Cloud; always on, no sleeping",
+      freeDetails: "Free Sandbox: 2 services, 2 jobs and 1 database, with up to $20 a month of resources on Northflank Cloud. Always on, no sleeping. Supports containers, buildpacks, and databases. Auto-deploy from Git. Built-in secrets management, job scheduling, and observability.",
       freeType: "limited",
       monthlyCostSolo: "$0–10",
       monthlyCostTeam: "Usage-based",
-      hiddenCosts: "Limited to 2 services on free tier. Database add-ons are separate. Scaling beyond free resources is usage-based.",
+      hiddenCosts: "2 services, 2 jobs, 1 database; up to $20/mo on Northflank Cloud; always on. Scaling beyond free resources is usage-based.",
     },
     {
       name: "Cloudflare Workers",
@@ -33217,7 +33217,7 @@ function buildAppRunnerMigrationPage(): string {
     { name: "Render", slug: "render", freeTier: "Free tier (750 hrs/mo, sleeps after inactivity)", startingPrice: "$7/mo (Starter)", pricingModel: "Per-service fixed monthly", sourceCodeDeploy: "Yes — GitHub auto-deploy", autoScaling: "Yes (paid plans)", migrationEffort: "Low — similar DX to App Runner", bestFor: "Simple web services, closest App Runner experience" },
     { name: "Fly.io", slug: "fly-io", freeTier: "None for new accounts — 2 hrs runtime or 7-day trial", startingPrice: "$2.19/mo (shared-cpu-1x)", pricingModel: "Per-VM + bandwidth", sourceCodeDeploy: "Yes — Dockerfiles + buildpacks", autoScaling: "Yes (scale to zero, multi-region)", migrationEffort: "Low-Moderate — CLI-driven, different paradigm", bestFor: "Multi-region, edge deployment" },
     { name: "DigitalOcean App Platform", slug: "digitalocean", freeTier: "3 static sites free, starter apps $5/mo", startingPrice: "$5/mo (Basic)", pricingModel: "Fixed monthly per app", sourceCodeDeploy: "Yes — GitHub/GitLab auto-deploy", autoScaling: "Yes (Pro+ plans)", migrationEffort: "Low — similar source code deploy model", bestFor: "Simple apps, predictable pricing", parentListingsConditionsDoNotApply: true },
-    { name: "Northflank", slug: "northflank", freeTier: "Free tier (2 services, 0.2 vCPU, 512MB RAM)", startingPrice: "$10/mo (Developer)", pricingModel: "Per-service + resource usage", sourceCodeDeploy: "Yes — buildpacks + Dockerfiles", autoScaling: "Yes", migrationEffort: "Low — designed as PaaS, similar concepts", bestFor: "Full PaaS with CI/CD built-in" },
+    { name: "Northflank", slug: "northflank", freeTier: "Free Sandbox: 2 services, 2 jobs, 1 database; up to $20/mo on Northflank Cloud; always on, no sleeping", startingPrice: "$2.70/mo (0.1 vCPU, 256 MB)", pricingModel: "Per-service + resource usage", sourceCodeDeploy: "Yes — buildpacks + Dockerfiles", autoScaling: "Yes", migrationEffort: "Low — designed as PaaS, similar concepts", bestFor: "Full PaaS with CI/CD built-in" },
   ];
 
   const awsStability = stabilityMap.of("aws");

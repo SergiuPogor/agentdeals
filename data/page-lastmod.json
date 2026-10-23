@@ -820,7 +820,7 @@
       "changed": "2026-10-12"
     },
     "/aws-app-runner-migration": {
-      "hash": "59373cce10065456",
+      "hash": "e369f74b99df56ba",
       "changed": "2026-10-23"
     },
     "/aws-free-tier-2026": {
@@ -3175,7 +3175,8 @@
       "daily": true
     },
     "/feed.xml": {
-      "daily": true
+      "hash": "8c88cf5524079598",
+      "changed": "2026-10-23"
     },
     "/firebase-alternatives": {
       "hash": "62f88cd3c66d5812",
@@ -3311,7 +3312,7 @@
       "changed": "2026-10-22"
     },
     "/hosting-pricing": {
-      "hash": "61ed80749861abfe",
+      "hash": "1ab11964fee74169",
       "changed": "2026-10-23"
     },
     "/ide-code-editors-alternatives": {

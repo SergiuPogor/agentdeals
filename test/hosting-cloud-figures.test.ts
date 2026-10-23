@@ -37,6 +37,10 @@ function listingFigures(vendor: string, pattern: RegExp): string[] {
   return match!.slice(1);
 }
 
+function sandboxFigures(): string[] {
+  return listingFigures("Northflank", /free Sandbox includes (\d+) services, (\d+) jobs and (\d+) database, up to \$(\d+) a month of resources on Northflank Cloud/);
+}
+
 const inFull = (thousands: string) => (Number(thousands.replace(/K$/, "")) * 1000).toLocaleString("en-US");
 
 function tableRows(html: string, header: string): string[][] {
@@ -163,6 +167,36 @@ describe("a hosting or cloud free tier typed into a page states what the vendor'
     const costs = rowStarting(tableRows(html[HOSTING], "Solo Dev /mo"), "PythonAnywhere");
     assert.strictEqual(costs[1], `$0–${developer}`);
     assert.match(costs[3], new RegExp(`Jump from free to \\$${developer}/month`));
+  });
+
+  it("states Northflank's free Sandbox workloads and Cloud allowance in the hosting comparison row", () => {
+    const [services, jobs, databases, allowance] = sandboxFigures();
+    const row = rowStarting(tableRows(html[HOSTING], "Free Compute"), "Northflank");
+    assert.strictEqual(row[1], `Sandbox: ${services} services, ${jobs} jobs, ${databases} database`);
+    assert.strictEqual(row[4], `Up to $${allowance}/mo on Northflank Cloud; always on, no sleeping`);
+  });
+
+  it("states Northflank's included database and monthly resource allowance in its hosting card", () => {
+    const [services, jobs, databases, allowance] = sandboxFigures();
+    const card = html[HOSTING].match(/<h3><a\b[^>]*>Northflank<\/a>[\s\S]*?<p class="diff-desc">([\s\S]*?)<\/p>/);
+    assert.ok(card, "no Northflank hosting card description");
+    assert.strictEqual(readableText(card![1]), `Free Sandbox: ${services} services, ${jobs} jobs and ${databases} database, with up to $${allowance} a month of resources on Northflank Cloud. Always on, no sleeping. Supports containers, buildpacks, and databases. Auto-deploy from Git. Built-in secrets management, job scheduling, and observability.`);
+  });
+
+  it("includes Northflank's free database and Cloud resource allowance in the displayed cost factor", () => {
+    const [services, jobs, databases, allowance] = sandboxFigures();
+    const row = rowStarting(tableRows(html[HOSTING], "Solo Dev /mo"), "Northflank");
+    const costs = `${services} services, ${jobs} jobs, ${databases} database; up to $${allowance}/mo on Northflank Cloud; always on. Scaling beyond free resources is usage-based.`;
+    assert.strictEqual(row[3], costs.substring(0, 80) + "...");
+    assert.match(row[3], /Northflank Cloud; always on\./);
+  });
+
+  it("states Northflank's free Sandbox and smallest paid compute plan in the migration comparison", () => {
+    const [services, jobs, databases, allowance] = sandboxFigures();
+    const [smallest] = listingFigures("Northflank", /the smallest plan, 0\.1 vCPU and 256 MB, is \$([\d.]+) a month/);
+    const row = rowStarting(tableRows(html[APP_RUNNER], "Source Deploy"), "Northflank");
+    assert.strictEqual(row[1], `Free Sandbox: ${services} services, ${jobs} jobs, ${databases} database; up to $${allowance}/mo on Northflank Cloud; always on, no sleeping`);
+    assert.strictEqual(row[2], `$${smallest}/mo (0.1 vCPU, 256 MB)`);
   });
 
   it("gives Google Cloud Storage the free egress its listing states, in the comparison row and the storage card", () => {
