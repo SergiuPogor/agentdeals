@@ -1,26 +1,81 @@
 {
   "held": [
     {
-      "vendor": "Activepieces",
-      "change_type": "pricing_model_change",
-      "impact": "high",
-      "summary": "The free plan exists.",
-      "previous_state": "Build automation flows to connect several apps together in your app's backend. For example, send a Slack message or add a Google Sheet row when an event fires in your app. Free up to 5,000 tasks per month.",
-      "current_state": "The free plan has unlimited flows, but users pay for how often flows actually run.",
-      "source_url": "https://www.activepieces.com",
-      "category": "Cloud Hosting",
-      "first_read_date": "2026-10-23"
+      "vendor": "Amazon Cognito",
+      "change_type": "pricing_restructured",
+      "impact": "medium",
+      "summary": "The free tier for Essentials and Lite is 10,000 MAU per month, and 50 MAU for SAML/OIDC federation. The page introduces a Plus tier with additional security features and clarifies that the free tier does not expire. It also details pricing for MAUs exceeding the free tier and separate pricing for SAML/OIDC federation users. There's a promotion for upgrading to Essentials until November 30, 2025, for eligible users.",
+      "previous_state": "User sign-up and sign-in for web and mobile apps. Free tier: 10,000 monthly active users per account on the Lite and Essentials tiers, with no 12-month limit; user pools created on or before November 22, 2024 keep 50,000. Users who sign in through SAML or OIDC federation: 50 MAU free. The Plus tier and machine-to-machine token requests are paid only.",
+      "current_state": "Amazon Cognito offers three pricing tiers: Lite, Essentials, and Plus. Essentials and Lite have a free tier of 10,000 MAU per month. For SAML/OIDC federation, the free tier is 50 MAUs. Users exceeding the free tier are charged per MAU.",
+      "source_url": "https://aws.amazon.com/cognito/pricing/",
+      "category": "Auth",
+      "first_read_date": "2026-10-24"
     },
     {
-      "vendor": "Aionda Mail",
+      "vendor": "Chanty.com",
       "change_type": "pricing_restructured",
-      "impact": "low",
-      "summary": "The Plus tier pricing has changed. It is now €1.99/month or €18.49/year. The free tier still includes up to 25 disposable addresses, encrypted mailbox, calendar & contacts.",
-      "previous_state": "Free tier includes up to 25 disposable addresses, encrypted mailbox, calendar & contacts. Plus tier is €1.99/month for up to 10,000 disposable addresses, unlimited forwarding, custom domains, calendar invitations, and 5 GB encrypted drive. Enterprise tier starts at €1.49/employee/month.",
-      "current_state": "Unlock Plus €18.49 (~$20.71 USD)/year",
-      "source_url": "https://mail.aionda.com/",
-      "category": "Email",
-      "first_read_date": "2026-10-23"
+      "impact": "high",
+      "summary": "The free plan is still mentioned. The page highlights features like HIPAA compliance, SOC 2 certification, and granular permissions. The pricing is now focused on a per-seat model for AI agents ($12/seat).",
+      "previous_state": "Chanty is another alternative to Slack. It has a free forever plan for small teams (up to 5) with unlimited public and private conversations, searchable history, unlimited 1:1 audio calls, unlimited voice messages, ten integrations, and 20 GB storage per team.",
+      "current_state": "Chanty offers a free plan, but the page emphasizes features geared towards businesses and AI integration, with a $12/seat price for AI agents. It highlights security certifications and granular control over data access.",
+      "source_url": "https://chanty.com/",
+      "category": "Team Collaboration",
+      "first_read_date": "2026-10-24"
+    },
+    {
+      "vendor": "Cloudflare KV",
+      "change_type": "pricing_restructured",
+      "impact": "medium",
+      "summary": "The free plan now includes 100,000 keys read/day, 1,000 keys written/day, 1,000 keys deleted/day, and 1,000 list requests/day. The paid plan has significantly higher limits (10 million/month for reads, 1 million/month for writes/deletes/lists) and associated costs.",
+      "previous_state": "Key-value store at the edge — Free plan includes 100,000 keys read/day, 1,000 keys written/day, 1,000 keys deleted/day, 1,000 list requests/day, and 1 GB stored data. All limits reset daily at 00:00 UTC.",
+      "current_state": "Free plan includes 100,000 / day keys read, 1,000 / day keys written, 1,000 / day keys deleted, 1,000 / day list requests, and 1 GB stored data.",
+      "source_url": "https://developers.cloudflare.com/kv/platform/pricing/",
+      "category": "Databases",
+      "first_read_date": "2026-10-24"
+    },
+    {
+      "vendor": "Nx Cloud",
+      "change_type": "pricing_restructured",
+      "impact": "high",
+      "summary": "The page states Nx Cloud offers a free tier.",
+      "previous_state": "Nx Cloud speeds up your monorepos on CI with features such as remote caching, distribution of tasks across machines and even automated splitting of your e2e test runs. Its free Hobby plan includes 50,000 credits a month, 5 complimentary contributors and 10 concurrent CI connections.",
+      "current_state": "Nx Cloud offers a free tier with remote caching and distributed task execution. The page does not specify credit limits, contributor limits, or concurrent CI connection limits.",
+      "source_url": "https://nx.dev/ci",
+      "category": "CI/CD",
+      "first_read_date": "2026-10-24"
+    },
+    {
+      "vendor": "SiliconFlow",
+      "change_type": "pricing_restructured",
+      "impact": "high",
+      "summary": "Specifically, DeepSeek-V4.1-Flash, DeepSeek-V4-Flash, DeepSeek-V4-Pro, GLM-5.3-Flash, GLM-5.3, GLM-5.2, GLM-5.1 (Pro), GLM-4.5V, GLM-4.5-Air, Hy4 preview, Hunyuan-A13B-Instruct, LongCat-2.0, Kimi-K2.7-Code, Kimi-K2.6 (Pro), Qwen3.8-27B, Qwen3.6-35B-A3B, Qwen3.6-27B, Qwen3.5-122B-A10B, Qwen3.5-35B-A3B, Qwen3.5-27B, Step-3.5-Flash, Ling-flash-2.0, Ling-mini-2.0, Seed-OSS-36B-Instruct, and Wan2.2-I2V-A14B and Wan2.2-T2V-A14B now have associated costs. Hunyuan-MT-7B is still listed as free.",
+      "previous_state": "Pay-as-you-go model inference. siliconflow.cn, run by a Beijing company, lists these models at no charge: the chat models Qwen3-8B, Qwen2.5-7B-Instruct (Free), Qwen3.5-4B, GLM-4-9B-0414, GLM-Z1-9B-0414, DeepSeek-R1-0528-Qwen3-8B (Free) and Xing4.0-29B; the translation model Hunyuan-MT-7B; the OCR models PaddleOCR-VL-1.5 and DeepSeek-OCR; the embedding models bge-m3, bge-large-zh-v1.5 and bge-large-en-v1.5; the reranker bge-reranker-v2-m3; Kolors image generation; and the speech recognition models XingChenAGI/XingChenGSR-V1.0, XingChenAGI/XingChenASR-V3.2-Ultra, XingChenAGI/XingChenASR-Diarize-V3.0, XingChenAGI/XingChenASR-V3.2 and FunAudioLLM/SenseVoiceSmall. Qwen3-ASR-1.7B is paid at ¥0.00022 per second of audio. The Pro versions are paid: Qwen2.5-7B-Instruct (Pro), bge-m3 (Pro) and bge-reranker-v2-m3 (Pro). All other models are paid too, including DeepSeek-V4-Flash, DeepSeek-V4-Pro and GLM-5.3. Using all the free models requires real-name verification, and online personal verification accepts only Chinese-issued documents, such as a resident ID card or a Foreign Permanent Resident ID Card. The international site, siliconflow.com, is run by SiliconFlow Labs Pte. Ltd. under Singapore law, is not offered in mainland China, and gives $1 in free credits to start. Its paid rates per million input/output tokens: gpt-oss-20b $0.04/$0.18; gpt-oss-120b $0.05/$0.45; DeepSeek-V4.1-Flash $0.15/$0.60.",
+      "current_state": "¥ 3.00 for input and ¥ 12.00 for output.",
+      "source_url": "https://siliconflow.cn/pricing",
+      "category": "AI / ML",
+      "first_read_date": "2026-10-24"
+    },
+    {
+      "vendor": "Simplescraper",
+      "change_type": "limits_reduced",
+      "impact": "medium",
+      "summary": "The free tier is now limited to browser runs of up to 5 pages. Cloud scraping costs 2 credits per page, or 1 with JavaScript off. Users start with 100 free credits.",
+      "previous_state": "Trigger your webhook after each operation. The free plan includes 100 cloud scrape credits.",
+      "current_state": "Browser runs of up to 5 pages are free. Cloud scraping costs 2 credits per page, or 1 with JavaScript off. You start with 100 free credits.",
+      "source_url": "https://simplescraper.io",
+      "category": "Web Scraping",
+      "first_read_date": "2026-10-24"
+    },
+    {
+      "vendor": "windmill.dev",
+      "change_type": "limits_reduced",
+      "impact": "high",
+      "summary": "The free tier now has a maximum of 50 users, whereas previously it was unlimited. The free tier also has a 10 GiB storage quota, and several features are disabled compared to paid tiers. The free tier now includes 100 free app guests per 30 days.",
+      "previous_state": "Windmill is an open-source developer platform for building multi-step automations and internal apps from Python and TypeScript scripts. Windmill Cloud's Free plan is $0 with no credit card: 1,000 executions a month, unlimited scripts, flows, apps, variables and resources, Google, GitHub and GitLab sign-in, and community support on Discord. A free user can create and be a member of at most three non-premium workspaces. Cloud's Team plan is $10 a month per developer, with 10,000 executions a month per seat and at most 10 seats. The self-hosted open-source edition is free with unlimited executions and at most 10 users with SSO.",
+      "current_state": "Unlimited executions. Platform Executions per month Unlimited Number of workspaces 3 Maximum number of users 50 Variables, resources, scripts, apps, flows Unlimited Groups, folders and granular permissions Maximum 4 groups All open source features Yes Public apps (anonymous, no login) Yes Guest app users (identity-provider sign-in, no account) 100 max / 30 days Oracle DB and MS SQL runtimes as languages (including as dbt adapters) No Multiplayer on WebIDE No Content search No Workspace object storage 10 GiB storage quota",
+      "source_url": "https://www.windmill.dev/pricing",
+      "category": "Low-Code Platforms",
+      "first_read_date": "2026-10-24"
     }
   ],
   "resolved": [
@@ -2667,6 +2722,30 @@
       "outcome": "contradicted",
       "detail": "a reading on 2026-10-23 read a change the gate refused as repeats_a_refused_reading",
       "resolved_date": "2026-10-23"
+    },
+    {
+      "vendor": "Activepieces",
+      "change_type": "pricing_model_change",
+      "impact": "high",
+      "summary": "The free plan exists.",
+      "previous_state": "Build automation flows to connect several apps together in your app's backend. For example, send a Slack message or add a Google Sheet row when an event fires in your app. Free up to 5,000 tasks per month.",
+      "source_url": "https://www.activepieces.com",
+      "first_read_date": "2026-10-23",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-24 read the page as unchanged",
+      "resolved_date": "2026-10-24"
+    },
+    {
+      "vendor": "Aionda Mail",
+      "change_type": "pricing_restructured",
+      "impact": "low",
+      "summary": "The Plus tier pricing has changed. It is now €1.99/month or €18.49/year. The free tier still includes up to 25 disposable addresses, encrypted mailbox, calendar & contacts.",
+      "previous_state": "Free tier includes up to 25 disposable addresses, encrypted mailbox, calendar & contacts. Plus tier is €1.99/month for up to 10,000 disposable addresses, unlimited forwarding, custom domains, calendar invitations, and 5 GB encrypted drive. Enterprise tier starts at €1.49/employee/month.",
+      "source_url": "https://mail.aionda.com/",
+      "first_read_date": "2026-10-23",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-24 read it as pricing_restructured too",
+      "resolved_date": "2026-10-24"
     }
   ]
 }

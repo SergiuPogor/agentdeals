@@ -1,5 +1,81 @@
 {
-  "proposals": [],
+  "proposals": [
+    {
+      "proposal_id": "2026-10-24/postman/limits_increased",
+      "proposed_on": "2026-10-24",
+      "vendor": "Postman",
+      "change_type": "limits_increased",
+      "date": "2026-10-24",
+      "date_source": "discovered",
+      "summary": "The free plan now offers 100 AI credits instead of 50. The free plan also includes 1,000 Context Graph API queries per month.",
+      "tier": "Free",
+      "tier_direction": "widened",
+      "previous_state": "Free plan for one user: 50 Postman AI credits a month, the API client and core tools, specs and mock servers, native Git, unlimited manual Flows, automated API testing with the Collection Runner (without data files), unlimited local performance testing and 1,000 API monitoring requests a month. Cloud performance testing is on paid plans only, at $0.04 per virtual-user hour. Team collaboration needs the Team plan ($19 per user a month, billed annually).",
+      "current_state": "The Free plan costs $0 per month and includes 100 AI credits, API client & core tools, Specs & mock servers, Native Git, Collection Runner & Performance Testing runs, Manual Flows, 1,000 Context Graph API queries per month, and 1,000 API monitoring requests per month.",
+      "impact": "low",
+      "source_url": "https://www.postman.com/pricing/",
+      "category": "Testing",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-24",
+      "restatement": [
+        {
+          "url": "https://www.postman.com/pricing/",
+          "refused": "reading_drops_the_cap_on_who_may_use_it"
+        }
+      ]
+    },
+    {
+      "proposal_id": "2026-10-24/browserbase/limits_increased",
+      "proposed_on": "2026-10-24",
+      "vendor": "Browserbase",
+      "change_type": "limits_increased",
+      "date": "2026-10-24",
+      "date_source": "discovered",
+      "summary": "The free plan limits have been clarified and expanded. The page now explicitly states 1,000 Search calls and 1,000 Fetch calls.",
+      "tier": "Free",
+      "tier_direction": "widened",
+      "previous_state": "Headless browser infrastructure — Free Plan $0/mo Get started with Browserbase. Explore and prototype ideas. Infrastructure 3 concurrent browsers 1 browser hour 3 Agent runs included 1,000 Search calls 1,000 Fetch calls 15 minutes /session Capabilities 7 days data retention Models $5 in tokens Runtime included Start for free",
+      "current_state": "Free Plan $0/mo. Includes: 3 concurrent browsers, 1 browser hour, 3 Agent runs, 1,000 Search calls, 1,000 Fetch calls, 15 minutes /session, $5 in tokens.",
+      "impact": "medium",
+      "source_url": "https://www.browserbase.com/pricing",
+      "category": "Browser Automation",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-24",
+      "restatement": [
+        {
+          "url": "https://www.browserbase.com/pricing",
+          "description": "Headless browser infrastructure — Free Plan $0/mo. Includes: 3 concurrent browsers, 1 browser hour, 3 Agent runs, 1,000 Search calls, 1,000 Fetch calls, 15 minutes /session, $5 in tokens."
+        }
+      ]
+    },
+    {
+      "proposal_id": "2026-10-24/aionda-mail/pricing_restructured",
+      "proposed_on": "2026-10-24",
+      "vendor": "Aionda Mail",
+      "change_type": "pricing_restructured",
+      "date": "2026-10-24",
+      "date_source": "discovered",
+      "summary": "The Plus tier pricing has changed from €1.99/month to €18.49/year. The free tier still exists with up to 25 disposable addresses, but the Plus tier now offers up to 10,000 disposable addresses, unlimited forwarding, custom domains, calendar invitations, and 5 GB encrypted drive.",
+      "tier": "Plus",
+      "tier_direction": "narrowed",
+      "previous_state": "Free tier includes up to 25 disposable addresses, encrypted mailbox, calendar & contacts. Plus tier is €1.99/month for up to 10,000 disposable addresses, unlimited forwarding, custom domains, calendar invitations, and 5 GB encrypted drive. Enterprise tier starts at €1.49/employee/month.",
+      "current_state": "Unlock Plus €18.49 (~$20.71 USD)/year 90,000+ users",
+      "impact": "low",
+      "source_url": "https://mail.aionda.com/",
+      "category": "Email",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-24",
+      "restatement": [
+        {
+          "url": "https://mail.aionda.com/",
+          "refused": "reading_answers_for_something_else"
+        }
+      ]
+    }
+  ],
   "dropped": [
     {
       "proposal_id": "2026-10-12/taskade-com/new_tier",
