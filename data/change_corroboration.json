@@ -1,81 +1,48 @@
 {
   "held": [
     {
-      "vendor": "Amazon Cognito",
-      "change_type": "pricing_restructured",
-      "impact": "medium",
-      "summary": "The free tier for Essentials and Lite is 10,000 MAU per month, and 50 MAU for SAML/OIDC federation. The page introduces a Plus tier with additional security features and clarifies that the free tier does not expire. It also details pricing for MAUs exceeding the free tier and separate pricing for SAML/OIDC federation users. There's a promotion for upgrading to Essentials until November 30, 2025, for eligible users.",
-      "previous_state": "User sign-up and sign-in for web and mobile apps. Free tier: 10,000 monthly active users per account on the Lite and Essentials tiers, with no 12-month limit; user pools created on or before November 22, 2024 keep 50,000. Users who sign in through SAML or OIDC federation: 50 MAU free. The Plus tier and machine-to-machine token requests are paid only.",
-      "current_state": "Amazon Cognito offers three pricing tiers: Lite, Essentials, and Plus. Essentials and Lite have a free tier of 10,000 MAU per month. For SAML/OIDC federation, the free tier is 50 MAUs. Users exceeding the free tier are charged per MAU.",
-      "source_url": "https://aws.amazon.com/cognito/pricing/",
-      "category": "Auth",
-      "first_read_date": "2026-10-24"
-    },
-    {
-      "vendor": "Chanty.com",
+      "vendor": "Anthropic API",
       "change_type": "pricing_restructured",
       "impact": "high",
-      "summary": "The free plan is still mentioned. The page highlights features like HIPAA compliance, SOC 2 certification, and granular permissions. The pricing is now focused on a per-seat model for AI agents ($12/seat).",
-      "previous_state": "Chanty is another alternative to Slack. It has a free forever plan for small teams (up to 5) with unlimited public and private conversations, searchable history, unlimited 1:1 audio calls, unlimited voice messages, ten integrations, and 20 GB storage per team.",
-      "current_state": "Chanty offers a free plan, but the page emphasizes features geared towards businesses and AI integration, with a $12/seat price for AI agents. It highlights security certifications and granular control over data access.",
-      "source_url": "https://chanty.com/",
-      "category": "Team Collaboration",
-      "first_read_date": "2026-10-24"
-    },
-    {
-      "vendor": "Cloudflare KV",
-      "change_type": "pricing_restructured",
-      "impact": "medium",
-      "summary": "The free plan now includes 100,000 keys read/day, 1,000 keys written/day, 1,000 keys deleted/day, and 1,000 list requests/day. The paid plan has significantly higher limits (10 million/month for reads, 1 million/month for writes/deletes/lists) and associated costs.",
-      "previous_state": "Key-value store at the edge — Free plan includes 100,000 keys read/day, 1,000 keys written/day, 1,000 keys deleted/day, 1,000 list requests/day, and 1 GB stored data. All limits reset daily at 00:00 UTC.",
-      "current_state": "Free plan includes 100,000 / day keys read, 1,000 / day keys written, 1,000 / day keys deleted, 1,000 / day list requests, and 1 GB stored data.",
-      "source_url": "https://developers.cloudflare.com/kv/platform/pricing/",
-      "category": "Databases",
-      "first_read_date": "2026-10-24"
-    },
-    {
-      "vendor": "Nx Cloud",
-      "change_type": "pricing_restructured",
-      "impact": "high",
-      "summary": "The page states Nx Cloud offers a free tier.",
-      "previous_state": "Nx Cloud speeds up your monorepos on CI with features such as remote caching, distribution of tasks across machines and even automated splitting of your e2e test runs. Its free Hobby plan includes 50,000 credits a month, 5 complimentary contributors and 10 concurrent CI connections.",
-      "current_state": "Nx Cloud offers a free tier with remote caching and distributed task execution. The page does not specify credit limits, contributor limits, or concurrent CI connection limits.",
-      "source_url": "https://nx.dev/ci",
-      "category": "CI/CD",
-      "first_read_date": "2026-10-24"
-    },
-    {
-      "vendor": "SiliconFlow",
-      "change_type": "pricing_restructured",
-      "impact": "high",
-      "summary": "Specifically, DeepSeek-V4.1-Flash, DeepSeek-V4-Flash, DeepSeek-V4-Pro, GLM-5.3-Flash, GLM-5.3, GLM-5.2, GLM-5.1 (Pro), GLM-4.5V, GLM-4.5-Air, Hy4 preview, Hunyuan-A13B-Instruct, LongCat-2.0, Kimi-K2.7-Code, Kimi-K2.6 (Pro), Qwen3.8-27B, Qwen3.6-35B-A3B, Qwen3.6-27B, Qwen3.5-122B-A10B, Qwen3.5-35B-A3B, Qwen3.5-27B, Step-3.5-Flash, Ling-flash-2.0, Ling-mini-2.0, Seed-OSS-36B-Instruct, and Wan2.2-I2V-A14B and Wan2.2-T2V-A14B now have associated costs. Hunyuan-MT-7B is still listed as free.",
-      "previous_state": "Pay-as-you-go model inference. siliconflow.cn, run by a Beijing company, lists these models at no charge: the chat models Qwen3-8B, Qwen2.5-7B-Instruct (Free), Qwen3.5-4B, GLM-4-9B-0414, GLM-Z1-9B-0414, DeepSeek-R1-0528-Qwen3-8B (Free) and Xing4.0-29B; the translation model Hunyuan-MT-7B; the OCR models PaddleOCR-VL-1.5 and DeepSeek-OCR; the embedding models bge-m3, bge-large-zh-v1.5 and bge-large-en-v1.5; the reranker bge-reranker-v2-m3; Kolors image generation; and the speech recognition models XingChenAGI/XingChenGSR-V1.0, XingChenAGI/XingChenASR-V3.2-Ultra, XingChenAGI/XingChenASR-Diarize-V3.0, XingChenAGI/XingChenASR-V3.2 and FunAudioLLM/SenseVoiceSmall. Qwen3-ASR-1.7B is paid at ¥0.00022 per second of audio. The Pro versions are paid: Qwen2.5-7B-Instruct (Pro), bge-m3 (Pro) and bge-reranker-v2-m3 (Pro). All other models are paid too, including DeepSeek-V4-Flash, DeepSeek-V4-Pro and GLM-5.3. Using all the free models requires real-name verification, and online personal verification accepts only Chinese-issued documents, such as a resident ID card or a Foreign Permanent Resident ID Card. The international site, siliconflow.com, is run by SiliconFlow Labs Pte. Ltd. under Singapore law, is not offered in mainland China, and gives $1 in free credits to start. Its paid rates per million input/output tokens: gpt-oss-20b $0.04/$0.18; gpt-oss-120b $0.05/$0.45; DeepSeek-V4.1-Flash $0.15/$0.60.",
-      "current_state": "¥ 3.00 for input and ¥ 12.00 for output.",
-      "source_url": "https://siliconflow.cn/pricing",
+      "summary": "Pricing for Claude models has been updated. Several models have been added and pricing for existing models has changed. Prompt caching pricing has also been updated. Data residency pricing with a 1.1x multiplier for US-only inference has been added. Fast mode pricing has been introduced for Claude Opus models.",
+      "previous_state": "Claude API with usage-based pricing per million tokens (input/output). Claude Fable 5.1 $10/$50. Claude Opus 5.5 $4/$20. Claude Sonnet 5.5 $2/$10. Claude Sonnet 5 $2/$10. Claude Haiku 5.5 $0.10/$0.50 (for prompts up to 100,000 tokens; longer prompts cost five times as much). Claude Haiku 4.5 $1/$5. The Batch API gives a 50% discount on input and output tokens. Claude Opus 5.5 cache hits $0.20, Claude Sonnet 5.5 cache hits $0.10, Claude Fable 5.1 cache hits $0.25. Other models’ cache hits cost 0.1x the input price. Cache writes cost 1.25x the input price for 5-minute lifetime and 2x for 1-hour lifetime. Anthropic states \"Claude Max and Team plans include monthly credits for the Claude API.\" Max 5x gets $100 a month, Max 20x gets $200, Team gets up to $500 pooled. Anthropic's pages state no free credit amount for new API users.",
+      "current_state": "The following table shows pricing for all Claude models: Claude Fable 5.1: $10 / MTok input, $50 / MTok output. Claude Opus 5.5: $4 / MTok input, $20 / MTok output. Claude Sonnet 5.5: $2 / MTok input, $10 / MTok output. Claude Haiku 5.5: $0.10 / MTok input (up to 100,000 tokens), $0.50 / MTok output.  Cache hits have varying prices depending on the model.",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "category": "AI / ML",
-      "first_read_date": "2026-10-24"
+      "first_read_date": "2026-10-25"
     },
     {
-      "vendor": "Simplescraper",
-      "change_type": "limits_reduced",
-      "impact": "medium",
-      "summary": "The free tier is now limited to browser runs of up to 5 pages. Cloud scraping costs 2 credits per page, or 1 with JavaScript off. Users start with 100 free credits.",
-      "previous_state": "Trigger your webhook after each operation. The free plan includes 100 cloud scrape credits.",
-      "current_state": "Browser runs of up to 5 pages are free. Cloud scraping costs 2 credits per page, or 1 with JavaScript off. You start with 100 free credits.",
-      "source_url": "https://simplescraper.io",
-      "category": "Web Scraping",
-      "first_read_date": "2026-10-24"
+      "vendor": "Cohere",
+      "change_type": "free_tier_removed",
+      "impact": "high",
+      "summary": "The free trial now requires a production key to be requested and is rate limited. The pricing for models has changed significantly, with new models and pricing tiers available through Model Vault. The original pricing for Command models is no longer listed, and new pricing is available for Embed, Rerank, and Parse models.",
+      "previous_state": "AI model API for Command chat models, Embed, Rerank, Transcribe and Parse. Every account starts with a Trial API key: calls made with it are free and limited to 1,000 API calls a month. Trial rate limits: 20 requests a minute per Chat model, 2,000 Embed inputs a minute and 10 Rerank requests a minute. Trial keys can use all of Cohere's models and APIs. Production keys are pay-as-you-go. Prices per 1M tokens: Command R7B $0.0375/$0.15; Command R $0.15/$0.60. The pricing page lists Command A+ (Apache 2.0) at $0 through an API key and as a model download.",
+      "current_state": "API calls made from a Trial API key are free, but a Production key is required for production use and will be billed on a pay-as-you-go basis. Model Vault pricing is available per instance based on the selected model and performance tier.",
+      "source_url": "https://cohere.com/pricing",
+      "category": "AI / ML",
+      "first_read_date": "2026-10-25"
     },
     {
-      "vendor": "windmill.dev",
+      "vendor": "Conversion Tools",
       "change_type": "limits_reduced",
       "impact": "high",
-      "summary": "The free tier now has a maximum of 50 users, whereas previously it was unlimited. The free tier also has a 10 GiB storage quota, and several features are disabled compared to paid tiers. The free tier now includes 100 free app guests per 30 days.",
-      "previous_state": "Windmill is an open-source developer platform for building multi-step automations and internal apps from Python and TypeScript scripts. Windmill Cloud's Free plan is $0 with no credit card: 1,000 executions a month, unlimited scripts, flows, apps, variables and resources, Google, GitHub and GitLab sign-in, and community support on Discord. A free user can create and be a member of at most three non-premium workspaces. Cloud's Team plan is $10 a month per developer, with 10,000 executions a month per seat and at most 10 seats. The self-hosted open-source edition is free with unlimited executions and at most 10 users with SSO.",
-      "current_state": "Unlimited executions. Platform Executions per month Unlimited Number of workspaces 3 Maximum number of users 50 Variables, resources, scripts, apps, flows Unlimited Groups, folders and granular permissions Maximum 4 groups All open source features Yes Public apps (anonymous, no login) Yes Guest app users (identity-provider sign-in, no account) 100 max / 30 days Oracle DB and MS SQL runtimes as languages (including as dbt adapters) No Multiplayer on WebIDE No Content search No Workspace object storage 10 GiB storage quota",
-      "source_url": "https://www.windmill.dev/pricing",
-      "category": "Low-Code Platforms",
-      "first_read_date": "2026-10-24"
+      "summary": "The free tier limits have changed. Registered free users now get files up to 10 MB instead of 50 GB, and 10 conversions a day (100 a month) instead of unlimited conversions.",
+      "previous_state": "Online File Converter for documents, images, video, audio, and eBooks. REST API is available. Libraries for Node.js, PHP, Python. Support files up to 50 GB (for paid plans). Registered free users get 10 conversions a day (100 a month) and a 20 MB file size limit.",
+      "current_state": "Free users can convert files up to 10 MB.",
+      "source_url": "https://conversiontools.io/",
+      "category": "Dev Utilities",
+      "first_read_date": "2026-10-25"
+    },
+    {
+      "vendor": "Grafana k6 Cloud",
+      "change_type": "limits_reduced",
+      "impact": "medium",
+      "summary": "The free tier for Performance Testing (k6) now has limits on usage (50 GB ingested per month, 14 day retention) and is part of a broader 'Always free' offering that includes other services. Previously info only mentioned VUh and retention for k6.",
+      "previous_state": "Grafana Cloud k6 load testing. Always free: 500 virtual user hours (VUh) per month, 14-day retention for k6 performance tests, community support, no credit card required. Minimum 1 VUh per test.",
+      "current_state": "Always free: Limited to 50 GB ingested per month, 14 day retention, Community support.",
+      "source_url": "https://grafana.com/pricing/",
+      "category": "Testing",
+      "first_read_date": "2026-10-25"
     }
   ],
   "resolved": [
@@ -2746,6 +2713,90 @@
       "outcome": "corroborated",
       "detail": "a reading on 2026-10-24 read it as pricing_restructured too",
       "resolved_date": "2026-10-24"
+    },
+    {
+      "vendor": "Amazon Cognito",
+      "change_type": "pricing_restructured",
+      "impact": "medium",
+      "summary": "The free tier for Essentials and Lite is 10,000 MAU per month, and 50 MAU for SAML/OIDC federation. The page introduces a Plus tier with additional security features and clarifies that the free tier does not expire. It also details pricing for MAUs exceeding the free tier and separate pricing for SAML/OIDC federation users. There's a promotion for upgrading to Essentials until November 30, 2025, for eligible users.",
+      "previous_state": "User sign-up and sign-in for web and mobile apps. Free tier: 10,000 monthly active users per account on the Lite and Essentials tiers, with no 12-month limit; user pools created on or before November 22, 2024 keep 50,000. Users who sign in through SAML or OIDC federation: 50 MAU free. The Plus tier and machine-to-machine token requests are paid only.",
+      "source_url": "https://aws.amazon.com/cognito/pricing/",
+      "first_read_date": "2026-10-24",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-25 read it as limits_reduced",
+      "resolved_date": "2026-10-25"
+    },
+    {
+      "vendor": "Chanty.com",
+      "change_type": "pricing_restructured",
+      "impact": "high",
+      "summary": "The free plan is still mentioned. The page highlights features like HIPAA compliance, SOC 2 certification, and granular permissions. The pricing is now focused on a per-seat model for AI agents ($12/seat).",
+      "previous_state": "Chanty is another alternative to Slack. It has a free forever plan for small teams (up to 5) with unlimited public and private conversations, searchable history, unlimited 1:1 audio calls, unlimited voice messages, ten integrations, and 20 GB storage per team.",
+      "source_url": "https://chanty.com/",
+      "first_read_date": "2026-10-24",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-25 read it as pricing_restructured too",
+      "resolved_date": "2026-10-25"
+    },
+    {
+      "vendor": "Cloudflare KV",
+      "change_type": "pricing_restructured",
+      "impact": "medium",
+      "summary": "The free plan now includes 100,000 keys read/day, 1,000 keys written/day, 1,000 keys deleted/day, and 1,000 list requests/day. The paid plan has significantly higher limits (10 million/month for reads, 1 million/month for writes/deletes/lists) and associated costs.",
+      "previous_state": "Key-value store at the edge — Free plan includes 100,000 keys read/day, 1,000 keys written/day, 1,000 keys deleted/day, 1,000 list requests/day, and 1 GB stored data. All limits reset daily at 00:00 UTC.",
+      "source_url": "https://developers.cloudflare.com/kv/platform/pricing/",
+      "first_read_date": "2026-10-24",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-25 read a change the gate refused as restates_stored_quantities",
+      "resolved_date": "2026-10-25"
+    },
+    {
+      "vendor": "Nx Cloud",
+      "change_type": "pricing_restructured",
+      "impact": "high",
+      "summary": "The page states Nx Cloud offers a free tier.",
+      "previous_state": "Nx Cloud speeds up your monorepos on CI with features such as remote caching, distribution of tasks across machines and even automated splitting of your e2e test runs. Its free Hobby plan includes 50,000 credits a month, 5 complimentary contributors and 10 concurrent CI connections.",
+      "source_url": "https://nx.dev/ci",
+      "first_read_date": "2026-10-24",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-25 read the page as unchanged",
+      "resolved_date": "2026-10-25"
+    },
+    {
+      "vendor": "SiliconFlow",
+      "change_type": "pricing_restructured",
+      "impact": "high",
+      "summary": "Specifically, DeepSeek-V4.1-Flash, DeepSeek-V4-Flash, DeepSeek-V4-Pro, GLM-5.3-Flash, GLM-5.3, GLM-5.2, GLM-5.1 (Pro), GLM-4.5V, GLM-4.5-Air, Hy4 preview, Hunyuan-A13B-Instruct, LongCat-2.0, Kimi-K2.7-Code, Kimi-K2.6 (Pro), Qwen3.8-27B, Qwen3.6-35B-A3B, Qwen3.6-27B, Qwen3.5-122B-A10B, Qwen3.5-35B-A3B, Qwen3.5-27B, Step-3.5-Flash, Ling-flash-2.0, Ling-mini-2.0, Seed-OSS-36B-Instruct, and Wan2.2-I2V-A14B and Wan2.2-T2V-A14B now have associated costs. Hunyuan-MT-7B is still listed as free.",
+      "previous_state": "Pay-as-you-go model inference. siliconflow.cn, run by a Beijing company, lists these models at no charge: the chat models Qwen3-8B, Qwen2.5-7B-Instruct (Free), Qwen3.5-4B, GLM-4-9B-0414, GLM-Z1-9B-0414, DeepSeek-R1-0528-Qwen3-8B (Free) and Xing4.0-29B; the translation model Hunyuan-MT-7B; the OCR models PaddleOCR-VL-1.5 and DeepSeek-OCR; the embedding models bge-m3, bge-large-zh-v1.5 and bge-large-en-v1.5; the reranker bge-reranker-v2-m3; Kolors image generation; and the speech recognition models XingChenAGI/XingChenGSR-V1.0, XingChenAGI/XingChenASR-V3.2-Ultra, XingChenAGI/XingChenASR-Diarize-V3.0, XingChenAGI/XingChenASR-V3.2 and FunAudioLLM/SenseVoiceSmall. Qwen3-ASR-1.7B is paid at ¥0.00022 per second of audio. The Pro versions are paid: Qwen2.5-7B-Instruct (Pro), bge-m3 (Pro) and bge-reranker-v2-m3 (Pro). All other models are paid too, including DeepSeek-V4-Flash, DeepSeek-V4-Pro and GLM-5.3. Using all the free models requires real-name verification, and online personal verification accepts only Chinese-issued documents, such as a resident ID card or a Foreign Permanent Resident ID Card. The international site, siliconflow.com, is run by SiliconFlow Labs Pte. Ltd. under Singapore law, is not offered in mainland China, and gives $1 in free credits to start. Its paid rates per million input/output tokens: gpt-oss-20b $0.04/$0.18; gpt-oss-120b $0.05/$0.45; DeepSeek-V4.1-Flash $0.15/$0.60.",
+      "source_url": "https://siliconflow.cn/pricing",
+      "first_read_date": "2026-10-24",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-25 read it as pricing_restructured too",
+      "resolved_date": "2026-10-25"
+    },
+    {
+      "vendor": "Simplescraper",
+      "change_type": "limits_reduced",
+      "impact": "medium",
+      "summary": "The free tier is now limited to browser runs of up to 5 pages. Cloud scraping costs 2 credits per page, or 1 with JavaScript off. Users start with 100 free credits.",
+      "previous_state": "Trigger your webhook after each operation. The free plan includes 100 cloud scrape credits.",
+      "source_url": "https://simplescraper.io",
+      "first_read_date": "2026-10-24",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-25 read a change the gate refused as removal_read_from_root",
+      "resolved_date": "2026-10-25"
+    },
+    {
+      "vendor": "windmill.dev",
+      "change_type": "limits_reduced",
+      "impact": "high",
+      "summary": "The free tier now has a maximum of 50 users, whereas previously it was unlimited. The free tier also has a 10 GiB storage quota, and several features are disabled compared to paid tiers. The free tier now includes 100 free app guests per 30 days.",
+      "previous_state": "Windmill is an open-source developer platform for building multi-step automations and internal apps from Python and TypeScript scripts. Windmill Cloud's Free plan is $0 with no credit card: 1,000 executions a month, unlimited scripts, flows, apps, variables and resources, Google, GitHub and GitLab sign-in, and community support on Discord. A free user can create and be a member of at most three non-premium workspaces. Cloud's Team plan is $10 a month per developer, with 10,000 executions a month per seat and at most 10 seats. The self-hosted open-source edition is free with unlimited executions and at most 10 users with SSO.",
+      "source_url": "https://www.windmill.dev/pricing",
+      "first_read_date": "2026-10-24",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-25 read it as limits_reduced too",
+      "resolved_date": "2026-10-25"
     }
   ]
 }
