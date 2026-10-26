@@ -353,6 +353,18 @@
     },
     {
       "vendor": "Apify",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-10-03 (confirmed_unchanged) stated the same 3 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free plan now includes a $5 prepaid usage, but also states that unused credits expire at the end of the billing cycle, which was not mentioned in the stored information. The page also details add-ons for concurrent runs, Actor RAM, and proxies, which were not previously mentioned. The description of the free plan now explicitly states no Apify Store discount.",
+      "previous_state": "Web scraping and automation platform. The Free plan is $0 with $5 of prepaid usage a month to spend in Apify Store or on your own Actors, at $0.2 per compute unit, with up to 16 GB of Actor RAM and community support; no credit card is required. Starter is $19/month with $19 of usage a month. The Creator plan, for developers who run their own Actors, costs $1/month paid six months in advance, adds a one-time $500 of usage for those six months, and limits access to Apify Store Actors.",
+      "current_state": "The Free plan is $0 with $5 to spend in Apify Store or on your own Actors, $0.2 per compute unit, Community support, and No Apify Store discount. Unused usage credits expire at the end of the billing cycle.",
+      "source_url": "https://apify.com/pricing",
+      "category": "Web Scraping",
+      "refused_date": "2026-10-26"
+    },
+    {
+      "vendor": "Apify",
       "change_type": "limits_increased",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as Apify|limits_increased|2026-09-01|https://apify.com/pricing",
@@ -855,6 +867,18 @@
     {
       "vendor": "Bitwarden",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-02 (unquantified_limit) claimed the same change, limits_reduced, against the same stored description",
+      "summary": "The free tier no longer includes TOTP code storage, Vault Health Reports, or Emergency Access. It also now explicitly shares vault items with one other user.",
+      "previous_state": "Unlimited vault items (passwords, notes, cards, identities). Unlimited devices. Password generator. Basic 2FA (email, authenticator app). No TOTP code storage, no emergency access, no Vault Health Reports on free. Open-source.",
+      "current_state": "Core features included in every Bitwarden account include... Username and password generator... Free sharing with another user. Premium includes Integrated authenticator (TOTP), Vault health reports, Emergency Access.",
+      "source_url": "https://bitwarden.com/pricing/",
+      "category": "Password Managers",
+      "refused_date": "2026-10-26"
+    },
+    {
+      "vendor": "Bitwarden",
+      "change_type": "limits_reduced",
       "reason": "unquantified_limit",
       "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (2 email)",
       "summary": "The free tier no longer includes unlimited devices and no longer includes TOTP code storage. It now includes sharing vault items with one other user. Premium now includes integrated authenticator (TOTP), file attachments, emergency access, and security reports.",
@@ -1350,6 +1374,18 @@
       "refused_date": "2026-09-17"
     },
     {
+      "vendor": "Cerebras",
+      "change_type": "free_tier_removed",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (5 currency, 30 after), and drops 54 the stored description carried",
+      "summary": "The page confirms a $5 credit trial for new accounts, expiring 30 days after adding a verified payment method. However, it explicitly states there is no permanently free tier. The rate limits for the Free Trial and Developer tiers are detailed, and match the stored information.",
+      "previous_state": "Ultra-fast LLM inference API — no permanent free tier. New accounts get $5 in free credits after adding a verified payment method, expiring 30 days after they are granted. Free Trial limits on gpt-oss-120b and qwen-3.8-27b: 5 requests/min and 1M tokens/day. Pay as you go after: GPT OSS 120B $0.35/$0.75 per M tokens, Qwen 3.8 27B $0.99/$1.49 per M tokens. Cerebras's public API now serves only gpt-oss-120b and qwen-3.8-27b, and a request to a model ID it has deprecated fails with 404 model not found. Model IDs Cerebras deprecated in 2026: zai-glm-4.6 on 2026-01-20; llama-3.3-70b on 2026-02-16, replaced by gpt-oss-120b; qwen-3-32b on 2026-02-16, replaced by gpt-oss-120b; llama3.1-8b on 2026-05-27, replaced by gpt-oss-120b; qwen-3-235b-a22b-instruct-2507 on 2026-05-27, replaced by gpt-oss-120b; zai-glm-4.7 on 2026-08-17, with no replacement named; gemma-4-31b on 2026-09-03, replaced by qwen-3.8-27b (Gemma 4 31B stays available on Dedicated Inference). Multi-thousand tokens/sec inference speed.",
+      "current_state": "New accounts receive $5 in free credits after adding a verified payment method. These credits expire 30 days after they’re granted and can be used across all public models. There is no charge until you choose to purchase additional credits. Cerebras doesn’t currently offer a no-cost tier that renews automatically or a per-model always-free allowance.",
+      "source_url": "https://inference-docs.cerebras.ai/support/rate-limits",
+      "category": "AI / ML",
+      "refused_date": "2026-10-26"
+    },
+    {
       "vendor": "CertKit",
       "change_type": "new_free_tier",
       "reason": "same_transition_graded_differently",
@@ -1603,6 +1639,18 @@
       "source_url": "https://www.cleverbrush.com/",
       "category": "Design",
       "refused_date": "2026-09-14"
+    },
+    {
+      "vendor": "clevebrush.com",
+      "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-14 (page_does_not_name_vendor) claimed the same change, free_tier_removed, against the same stored description",
+      "summary": "The page focuses heavily on integration options and doesn't explicitly mention a free tier for individual use. While it mentions creating designs and collages online, it frames this within the context of integration for other businesses. There is no clear indication of a standalone free app as described in the stored deal info.",
+      "previous_state": "Free Graphics Design / Photo Collage App. Also, they offer paid integration of it as a component.",
+      "current_state": "The page promotes CleverBrush as a vector editor software tool for digital publishers and printers, offering integration options for websites. It doesn't explicitly mention a free standalone app for individual use.",
+      "source_url": "https://www.cleverbrush.com/",
+      "category": "Design",
+      "refused_date": "2026-10-26"
     },
     {
       "vendor": "ClickUp",
@@ -3465,13 +3513,13 @@
       "vendor": "Fizzy",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-24 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "detail": "the reading of this page refused on 2026-10-25 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
       "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page states that Fizzy is entirely free with a file space limit of 1 GB.",
       "previous_state": "Kanban-based platform for project management and issue tracking. Create public boards, set up webhooks, use card stamping, and track unlimited users — free for up to 1000 items.",
       "current_state": "Fizzy is entirely free. It does limit file space usage to 1 GB.",
       "source_url": "https://www.fizzy.do/",
       "category": "Project Management",
-      "refused_date": "2026-10-25"
+      "refused_date": "2026-10-26"
     },
     {
       "vendor": "Flagsmith",
@@ -3743,6 +3791,18 @@
     {
       "vendor": "FreeIPAPI",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-10 (same_transition_graded_differently) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free tier still exists, but the page details more features that are *not* included in the free tier, such as Countries & Phone Codes APIs, Timezones & Distance APIs, Languages API, IP & Domain White Listing, API Keys, and Bulk IP Lookups. The free tier is limited to 60 requests per minute and servers in Europe only.",
+      "previous_state": "FreeIPAPI is still FREE with no account required! We're introducing subscriptions for users who want to increase the request limit to more than 60 requests per minute. The free tier includes 60 Requests per minute.",
+      "current_state": "The free tier includes 60 Requests per minute, IPv4 and IPv6, a regularly updated database, commercial use allowed, TLS/SSL support, and servers in Europe only. It does *not* include Countries & Phone Codes APIs, Timezones & Distance APIs, Languages API, IP & Domain White Listing, API Keys, or Bulk IP Lookups.",
+      "source_url": "https://freeipapi.com",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-26"
+    },
+    {
+      "vendor": "FreeIPAPI",
+      "change_type": "limits_reduced",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as FreeIPAPI|limits_reduced|2026-08-28|https://freeipapi.com",
       "summary": "The free tier now has a rate limit of 60 requests per minute. Additional features like Countries & Phone Codes APIs, Timezones & Distance APIs, Languages API, IP & Domain White Listing, API Keys, and Bulk IP Lookups are no longer included in the free tier.",
@@ -3969,6 +4029,18 @@
       "source_url": "https://www.gitbook.com/pricing",
       "category": "Documentation",
       "refused_date": "2026-10-19"
+    },
+    {
+      "vendor": "GitDailies",
+      "change_type": "free_tier_removed",
+      "reason": "removal_read_from_root",
+      "detail": "a free tier was recorded as removed from https://gitdailies.com, a domain root that states no price, ending or replacement where the free tier was — a homepage's silence is not evidence that one ended",
+      "summary": "The free tier described in the stored information no longer exists. The lowest tier is 'Pro' at $59/month, offering unlimited repos and PRs, but with a contributor limit and a 14-day free trial.",
+      "previous_state": "Daily reports of your team's Commit and Pull Request activity on GitHub. Includes Push visualizer, peer recognition system, and custom alert builder. The free tier has unlimited users, three repos, and 3 alert configs.",
+      "current_state": "The Pro plan costs $59/month and includes up to 15 contributors, unlimited repos and PRs, 3 months history, daily digests, and up to 50 smart alert rules.",
+      "source_url": "https://gitdailies.com",
+      "category": "Team Collaboration",
+      "refused_date": "2026-10-26"
     },
     {
       "vendor": "GitDailies",
@@ -4427,6 +4499,18 @@
       "category": "Monitoring",
       "refused_date": "2026-09-17",
       "collided_with": "Grafana Cloud|pricing_restructured|2026-09-02|https://grafana.com/pricing/"
+    },
+    {
+      "vendor": "Grafana k6 Cloud",
+      "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-02 (restates_stored_quantities) claimed the same change, pricing_restructured, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier for Performance Testing (k6) now includes access to all Grafana Cloud services with usage limits, rather than being specifically for k6 load testing. The 500 VUh/month limit is removed.",
+      "previous_state": "Grafana Cloud k6 load testing. Always free: 500 virtual user hours (VUh) per month, 14-day retention for k6 performance tests, community support, no credit card required. Minimum 1 VUh per test.",
+      "current_state": "Always free Always $0 Perfect for personal projects, exploring new ideas, and early-stage startups. No charges ever. Start free Benefits: All Grafana Cloud services, with usage limits Adaptive Telemetry, AI Assistant, and much more Community support 14 days retention for metrics, logs, traces, profiles, & k6 performance tests",
+      "source_url": "https://grafana.com/pricing/",
+      "category": "Testing",
+      "refused_date": "2026-10-26"
     },
     {
       "vendor": "Grafana k6 Cloud",
@@ -4904,6 +4988,18 @@
       "source_url": "https://hyperping.com/pricing",
       "category": "Monitoring",
       "refused_date": "2026-10-03"
+    },
+    {
+      "vendor": "Hyperping",
+      "change_type": "limits_increased",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-03 (confirmed_unchanged) claimed the same change, limits_increased, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier now includes Alpha AI access with limited usage (10 questions and 3 investigations per month). The stored information does not mention AI access.",
+      "previous_state": "Uptime and status page monitoring — free plan: 20 monitors (HTTP, port, ping, keyword), 5-minute check interval, 1 basic status page with real-time updates and subscriber notifications, 1 seat, 1 server monitoring agent, email and webhook alerts",
+      "current_state": "The free plan includes 20 monitors, 5-minute checks, 1 server monitoring agent, 1 basic status page, and access to Alpha AI (10 questions and 3 investigations per month).",
+      "source_url": "https://hyperping.com/pricing",
+      "category": "Monitoring",
+      "refused_date": "2026-10-26"
     },
     {
       "vendor": "Hypertune",
@@ -5843,6 +5939,18 @@
       "refused_date": "2026-08-28"
     },
     {
+      "vendor": "LocalStack",
+      "change_type": "pricing_restructured",
+      "reason": "confirmed_unchanged",
+      "detail": "Report details changes in detail the original description did not claim (Snowflake, Azure, AI agents, CI metering). The core terms (Hobby free, Base/Ultimate pricing) are consistent.",
+      "summary": "The Hobby plan still exists and is free for hobbyists and non-commercial use. The pricing and features for other tiers (Base, Ultimate, Enterprise) have been updated. The page also introduces LocalStack for Snowflake and LocalStack for Azure. CI credits are no longer used for metering CI consumption. There's also information about pricing for AI agents.",
+      "previous_state": "AWS cloud emulator for local development. Hobby is free for hobbyists and other non-commercial use, with a LocalStack account: 30+ emulated services, 1 personal sandbox and test runs in CI. Base is $39 per license a month billed annually, or $45 billed monthly, with 55+ services. Ultimate is $89 per license a month billed annually, with 110+ services. LocalStack for Snowflake is priced separately.",
+      "current_state": "Hobby is free for hobbyists & other non-commercial usage. Base is $39 per license/ per month billed annually $45 per license/ per month billed monthly. Ultimate is $89 per license/ per month billed annually.",
+      "source_url": "https://www.localstack.cloud/pricing",
+      "category": "Testing",
+      "refused_date": "2026-10-26"
+    },
+    {
       "vendor": "LocationIQ",
       "change_type": "limits_reduced",
       "reason": "confirmed_unchanged",
@@ -6339,6 +6447,18 @@
       "source_url": "https://www.marketdata.app",
       "category": "Dev Utilities",
       "refused_date": "2026-10-03"
+    },
+    {
+      "vendor": "Market Data API",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-10-03 (confirmed_unchanged) stated the same 6 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now has limits of 100 Sheets Formulas and 100 Daily API Credits, and includes 1 Year Historical Data and 24h Delayed Stock/Options Data.",
+      "previous_state": "Provides real-time and historical financial data for stocks, options, mutual funds, and more. The Free Forever API tier allows for 100 daily API requests at no charge.",
+      "current_state": "$0 Forever, 100 Sheets Formulas, 100 Daily API Credits, Standard API Endpoints, 1 Year Historical Data, 24h Delayed Stock Data, 24h Delayed Options Data",
+      "source_url": "https://www.marketdata.app",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-26"
     },
     {
       "vendor": "MDBootstrap",
@@ -6885,6 +7005,18 @@
       "source_url": "https://www.netdata.cloud/",
       "category": "Monitoring",
       "refused_date": "2026-10-24"
+    },
+    {
+      "vendor": "ngrok",
+      "change_type": "limits_reduced",
+      "reason": "measures_no_change",
+      "detail": "limits_reduced claimed, and every quantity the record compares holds the same value once notation and period are normalised — 20 http/mo against 20 http",
+      "summary": "The free tier now has different limits for HTTP requests and data transfer.",
+      "previous_state": "Tunneling and ingress platform — 3 online endpoints, 1 GB bandwidth, 20K HTTP/S requests/month, 1 dev domain, 5K TCP connections. Includes $5 one-time usage credit.",
+      "current_state": "Up to 20k HTTP/S requests and 1 GB data transfer.",
+      "source_url": "https://ngrok.com/pricing",
+      "category": "Infrastructure",
+      "refused_date": "2026-10-26"
     },
     {
       "vendor": "Nile",
@@ -8281,6 +8413,18 @@
     },
     {
       "vendor": "PythonAnywhere",
+      "change_type": "restriction",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this vendor refused on 2026-10-03 (unquantified_limit) stated the same current state, word for word",
+      "summary": "The free tier is now called 'Beginner' and has restricted outbound internet access. The stored deal info states outbound internet access is available to whitelisted sites via HTTP(S).",
+      "previous_state": "Python web hosting — Beginner plan free forever: 1 web app (yourusername.pythonanywhere.com), 512 MB disk, 100 CPU-seconds/day, 2 consoles. Outbound internet access available to whitelisted sites via HTTP(S)",
+      "current_state": "You'll get one web app at your-username .pythonanywhere.com and two consoles with restricted outbound Internet access.",
+      "source_url": "https://www.pythonanywhere.com/pricing/",
+      "category": "Cloud Hosting",
+      "refused_date": "2026-10-26"
+    },
+    {
+      "vendor": "PythonAnywhere",
       "change_type": "limits_reduced",
       "reason": "unquantified_limit",
       "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (1 web, 512 mb, 100 cpu, 2 consol)",
@@ -8594,6 +8738,18 @@
       "refused_date": "2026-10-03"
     },
     {
+      "vendor": "RepoForge",
+      "change_type": "restriction",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (100 MB storage)",
+      "summary": "The free tier now has restrictions. It is only for open source projects and is not for commercial use.",
+      "previous_state": "Private cloud-hosted repository for Python, Debian, NPM packages and Docker registries. Free plan: 100MB storage, unlimited public packages.",
+      "current_state": "Free for open source projects. 100 MB storage. Free forever. Unlimited public packages. Not for commercial use.",
+      "source_url": "https://repoforge.io",
+      "category": "CI/CD",
+      "refused_date": "2026-10-26"
+    },
+    {
       "vendor": "Repohistory",
       "change_type": "free_tier_removed",
       "reason": "no_price_signal",
@@ -8727,6 +8883,18 @@
     },
     {
       "vendor": "RightFeature",
+      "change_type": "new_tier",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-03 (states_no_difference) claimed the same change, new_tier, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier now includes a limit of 1 Product, 1 Product board, and 1 Team member, which matches the stored information. However, the page also details one-time payment Pro plans for $199 and $299, and a 'Founding Member Deal' for lifetime access.",
+      "previous_state": "Easily collect feedback from your customers, turn customer feedback into your product roadmap — The free tier includes 1 Product, 1 Product board, 1 Team member. There are also Pro plans available for a one-time payment of $199 (1 Product, Unlimited Product boards, 5 Team members, AI Features) or $299 (2 Products, Unlimited Product boards, 5 Team members, AI Features).",
+      "current_state": "Pro Plan 1 is available for a one-time payment of $199 and includes 1 Product, Unlimited Product boards, 5 Team members, Custom statuses, Guest posting, and AI Features. Pro Plan 2 is available for a one-time payment of $299 and includes 2 Products, Unlimited Product boards, 5 Team members, Custom statuses, Guest posting, and AI Features.",
+      "source_url": "https://rightfeature.com/",
+      "category": "Project Management",
+      "refused_date": "2026-10-26"
+    },
+    {
+      "vendor": "RightFeature",
       "change_type": "limits_reduced",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as RightFeature|limits_reduced|2026-08-28|https://rightfeature.com/",
@@ -8798,6 +8966,18 @@
       "source_url": "https://home.robusta.dev/",
       "category": "Monitoring",
       "refused_date": "2026-09-12"
+    },
+    {
+      "vendor": "RunMyJob",
+      "change_type": "limits_reduced",
+      "reason": "page_does_not_name_vendor",
+      "detail": "the page read never names RunMyJob and is not served from its domain, so any terms on it belong to somebody else",
+      "summary": "The vCPU-minutes and GB-minutes included monthly have changed to 400 vCPU-minutes included monthly at €0.00002 per vCPU-second over included and 800 GB-minutes included monthly at €0.000001 per GB-second over included.",
+      "previous_state": "Now RunJob — runmyjob.io redirects to runjob.eu, which serves the same product. Cloud runners for GitHub Actions and GitLab CI. Free plan is EUR 0/month: 1 integration with a GitLab or GitHub organisation, 10 concurrent jobs, 12 vCPU and 32 GB of memory per job, 400 vCPU-minutes and 800 GB-minutes included monthly, usage-priced above that. GitHub runners work with organisation accounts only.",
+      "current_state": "Free €0/m 1 integration with your GitLab or GitHub organization 10 concurrent jobs 12 vCPU and 32 GB of Memory per Job Per usage price for resources 400 vCPU-minutes included monthly €0.00002 per vCPU-second over included 800 GB-minutes included monthly €0.000001 per GB-second over included",
+      "source_url": "https://runjob.eu/",
+      "category": "CI/CD",
+      "refused_date": "2026-10-26"
     },
     {
       "vendor": "ruttl.com",
@@ -9032,6 +9212,18 @@
       "source_url": "https://semgrep.dev/pricing",
       "category": "Security",
       "refused_date": "2026-09-10"
+    },
+    {
+      "vendor": "Semgrep",
+      "change_type": "limits_reduced",
+      "reason": "unquantified_limit",
+      "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (60 credit, 10 repository, 10 contributor)",
+      "summary": "The Free Edition still exists, but the AI credits have been reduced from 60 to an unspecified amount (likely 0, as it's not mentioned in the Free Edition highlights).",
+      "previous_state": "Static analysis (SAST) and software composition analysis (SCA) — Free Edition: Cross-file analysis with Pro rules, AI-powered detection, triage, and remediation, 60 AI credits included, Fast CI/CD deploy via Semgrep infrastructure, Scan up to 10 repositories, Maximum 10 contributors, Authentication via GitHub/GitLab",
+      "current_state": "The Free Edition includes cross-file analysis with Pro rules, AI-powered detection, triage, and remediation. AI credits are not explicitly mentioned in the Free Edition highlights.",
+      "source_url": "https://semgrep.dev/pricing",
+      "category": "Security",
+      "refused_date": "2026-10-26"
     },
     {
       "vendor": "Sendbird",
@@ -10628,6 +10820,18 @@
       "source_url": "https://unirateapi.com",
       "category": "Dev Utilities",
       "refused_date": "2026-10-03"
+    },
+    {
+      "vendor": "UniRateAPI",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-10-03 (measures_the_opposite) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now has a limit of 30 requests per minute, or 200 requests per day. The stored information stated 200 requests/day.",
+      "previous_state": "Free Tier $0 /month Perfect for testing and personal projects 870+ currencies (FIAT + Crypto) Historical forex data 200 requests/day EU VAT rates included Precious metals API",
+      "current_state": "Free tier includes 30 requests per minute.",
+      "source_url": "https://unirateapi.com",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-26"
     },
     {
       "vendor": "UniRateAPI",

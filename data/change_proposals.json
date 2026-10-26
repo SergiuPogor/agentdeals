@@ -149,6 +149,126 @@
           "refused": "reading_answers_for_something_else"
         }
       ]
+    },
+    {
+      "proposal_id": "2026-10-26/firebase/limits_increased",
+      "proposed_on": "2026-10-26",
+      "vendor": "Firebase",
+      "change_type": "limits_increased",
+      "date": "2026-10-26",
+      "date_source": "discovered",
+      "summary": "Several limits have been updated for the Spark plan. Hosting bandwidth is now 10 GiB/month, up from 360 MB/day. Cloud Storage limits vary by bucket location.",
+      "tier": "Spark",
+      "tier_direction": "widened",
+      "previous_state": "Spark plan, no payment method needed: Auth (50K MAU), Firestore Standard edition (1 GiB stored, 50K reads/day, 20K writes/day, 20K deletes/day), Realtime Database (100 simultaneous connections, 1 GB stored, 10 GB/month downloaded), Hosting (10 GB storage, 360 MB/day transfer), and no-cost Analytics, Crashlytics and Cloud Messaging. Firestore Enterprise on Spark includes 1 GiB stored, 10 GiB/month network egress, 40K write units/day, 50K read units/day, 50K real-time update units/day. Cloud Functions and Cloud Storage need the Blaze plan.",
+      "current_state": "App Hosting: No-cost up to 10 GiB/month. Cloud Storage: No-cost up to 5 GB. Realtime Database: 1 GB stored",
+      "impact": "medium",
+      "source_url": "https://firebase.google.com/pricing",
+      "category": "Databases",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-26",
+      "restatement": [
+        {
+          "url": "https://firebase.google.com/pricing",
+          "refused": "tier_is_not_one_we_record_as_free"
+        }
+      ]
+    },
+    {
+      "proposal_id": "2026-10-26/brave-search-api/limits_increased",
+      "proposed_on": "2026-10-26",
+      "vendor": "Brave Search API",
+      "change_type": "limits_increased",
+      "date": "2026-10-26",
+      "date_source": "discovered",
+      "summary": "The free tier now offers \"Up to $20 in free calls every month\". Previously \"$5 in free credits every month\".",
+      "tier": "Brave Search API",
+      "tier_direction": "widened",
+      "previous_state": "$5 in free credits every month, applied automatically. Brave's \"up to $20\" figure is $5 on each of four plans: Search, Answers, Spellcheck and Autosuggest. Search is $5 per 1,000 requests; Answers is $4 per 1,000 requests plus $5 per million tokens. Web search, news, videos, images, LLM context endpoints. 50 queries/sec. Credit card required. The earlier free plan (2,000 queries/mo) ended Feb 2026. The tools of Brave's MCP server include brave_web_search, brave_news_search, brave_image_search, brave_llm_context and brave_summarizer.",
+      "current_state": "Up to $20 in free calls every month · Prepaid credits, no subscription",
+      "impact": "medium",
+      "source_url": "https://brave.com/search/api/",
+      "category": "AI / ML",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-26",
+      "restatement": [
+        {
+          "url": "https://brave.com/search/api/",
+          "refused": "reading_drops_a_figure_our_source_check_found",
+          "figures": [
+            "$5",
+            "$4",
+            "50 queries per second"
+          ]
+        }
+      ]
+    },
+    {
+      "proposal_id": "2026-10-26/anthropic-api/pricing_restructured",
+      "proposed_on": "2026-10-26",
+      "vendor": "Anthropic API",
+      "change_type": "pricing_restructured",
+      "date": "2026-10-26",
+      "date_source": "discovered",
+      "summary": "Pricing for Claude models has been updated. Several models have been added and pricing for existing models has changed.",
+      "tier": "Claude Opus 5.5",
+      "tier_direction": "unchanged",
+      "previous_state": "Claude API with usage-based pricing per million tokens (input/output). Claude Fable 5.1 $10/$50. Claude Opus 5.5 $4/$20. Claude Sonnet 5.5 $2/$10. Claude Sonnet 5 $2/$10. Claude Haiku 5.5 $0.10/$0.50 (for prompts up to 100,000 tokens; longer prompts cost five times as much). Claude Haiku 4.5 $1/$5. The Batch API gives a 50% discount on input and output tokens. Claude Opus 5.5 cache hits $0.20, Claude Sonnet 5.5 cache hits $0.10, Claude Fable 5.1 cache hits $0.25. Other models’ cache hits cost 0.1x the input price. Cache writes cost 1.25x the input price for 5-minute lifetime and 2x for 1-hour lifetime. Anthropic states \"Claude Max and Team plans include monthly credits for the Claude API.\" Max 5x gets $100 a month, Max 20x gets $200, Team gets up to $500 pooled. Anthropic's pages state no free credit amount for new API users.",
+      "current_state": "Claude Opus 5.5 costs $4 / MTok for input and $20 / MTok for output. Cache hits cost $0.20 / MTok. 5-minute cache writes cost $5 / MTok, 1-hour cache writes cost $8 / MTok.",
+      "impact": "high",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "category": "AI / ML",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-26",
+      "restatement": []
+    },
+    {
+      "proposal_id": "2026-10-26/cohere/free_tier_removed",
+      "proposed_on": "2026-10-26",
+      "vendor": "Cohere",
+      "change_type": "free_tier_removed",
+      "date": "2026-10-26",
+      "date_source": "discovered",
+      "summary": "The free trial is still offered. The pricing for production keys has changed significantly.",
+      "tier": "Command",
+      "tier_direction": "unchanged",
+      "previous_state": "AI model API for Command chat models, Embed, Rerank, Transcribe and Parse. Every account starts with a Trial API key: calls made with it are free and limited to 1,000 API calls a month. Trial rate limits: 20 requests a minute per Chat model, 2,000 Embed inputs a minute and 10 Rerank requests a minute. Trial keys can use all of Cohere's models and APIs. Production keys are pay-as-you-go. Prices per 1M tokens: Command R7B $0.0375/$0.15; Command R $0.15/$0.60. The pricing page lists Command A+ (Apache 2.0) at $0 through an API key and as a model download.",
+      "current_state": "API calls made from a Trial API key are free. API calls made from a Production API key will be charged on a pay-as-you-go basis. Your bill will be issued at the end of every calendar month or when you reach $250 in outstanding balances. Legacy Command pricing is $1.00/1M tokens for input and $2.00/1M tokens for output. Aya Expanse models are charged at $0.50/1M tokens for input and $1.50/1M tokens for output. Model Vault pricing varies by model and tier.",
+      "impact": "high",
+      "source_url": "https://cohere.com/pricing",
+      "category": "AI / ML",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-26",
+      "restatement": []
+    },
+    {
+      "proposal_id": "2026-10-26/conversion-tools/limits_reduced",
+      "proposed_on": "2026-10-26",
+      "vendor": "Conversion Tools",
+      "change_type": "limits_reduced",
+      "date": "2026-10-26",
+      "date_source": "discovered",
+      "summary": "The free tier file size limit has been reduced from 50 GB to 10 MB. The free tier also now has 100 free API calls/month + 100 AI credits/month.",
+      "tier": "Free",
+      "tier_direction": "narrowed",
+      "previous_state": "Online File Converter for documents, images, video, audio, and eBooks. REST API is available. Libraries for Node.js, PHP, Python. Support files up to 50 GB (for paid plans). Registered free users get 10 conversions a day (100 a month) and a 20 MB file size limit.",
+      "current_state": "Free users can convert files up to 10 MB. The API offers 100 free API calls/month + 100 AI credits/month.",
+      "impact": "high",
+      "source_url": "https://conversiontools.io/",
+      "category": "Dev Utilities",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-26",
+      "restatement": [
+        {
+          "url": "https://conversiontools.io/",
+          "description": "Online File Converter for documents, images, video, audio, and eBooks — Free users can convert files up to 10 MB. The API offers 100 free API calls/month + 100 AI credits/month."
+        }
+      ]
     }
   ],
   "dropped": [

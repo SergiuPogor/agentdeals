@@ -1,48 +1,48 @@
 {
   "held": [
     {
-      "vendor": "Anthropic API",
+      "vendor": "CircleCI",
       "change_type": "pricing_restructured",
       "impact": "high",
-      "summary": "Pricing for Claude models has been updated. Several models have been added and pricing for existing models has changed. Prompt caching pricing has also been updated. Data residency pricing with a 1.1x multiplier for US-only inference has been added. Fast mode pricing has been introduced for Claude Opus models.",
-      "previous_state": "Claude API with usage-based pricing per million tokens (input/output). Claude Fable 5.1 $10/$50. Claude Opus 5.5 $4/$20. Claude Sonnet 5.5 $2/$10. Claude Sonnet 5 $2/$10. Claude Haiku 5.5 $0.10/$0.50 (for prompts up to 100,000 tokens; longer prompts cost five times as much). Claude Haiku 4.5 $1/$5. The Batch API gives a 50% discount on input and output tokens. Claude Opus 5.5 cache hits $0.20, Claude Sonnet 5.5 cache hits $0.10, Claude Fable 5.1 cache hits $0.25. Other models’ cache hits cost 0.1x the input price. Cache writes cost 1.25x the input price for 5-minute lifetime and 2x for 1-hour lifetime. Anthropic states \"Claude Max and Team plans include monthly credits for the Claude API.\" Max 5x gets $100 a month, Max 20x gets $200, Team gets up to $500 pooled. Anthropic's pages state no free credit amount for new API users.",
-      "current_state": "The following table shows pricing for all Claude models: Claude Fable 5.1: $10 / MTok input, $50 / MTok output. Claude Opus 5.5: $4 / MTok input, $20 / MTok output. Claude Sonnet 5.5: $2 / MTok input, $10 / MTok output. Claude Haiku 5.5: $0.10 / MTok input (up to 100,000 tokens), $0.50 / MTok output.  Cache hits have varying prices depending on the model.",
-      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-      "category": "AI / ML",
-      "first_read_date": "2026-10-25"
+      "summary": "The Free plan now offers 30,000 credits/month. The details of what those credits can purchase have changed.",
+      "previous_state": "The Free plan includes 30,000 credits/month, 5 active users, and options for different resource classes (Docker, Windows, Linux, Arm, macOS) with varying concurrency levels (30x for Docker, Linux, Arm, Windows VM, and macOS VM).",
+      "current_state": "The Free plan includes 30,000 credits/month. Credits are used to pay for monthly active users, compute time, and add-on features. 25,000 credits are provided per additional user.",
+      "source_url": "https://circleci.com/pricing/",
+      "category": "CI/CD",
+      "first_read_date": "2026-10-26"
     },
     {
-      "vendor": "Cohere",
-      "change_type": "free_tier_removed",
-      "impact": "high",
-      "summary": "The free trial now requires a production key to be requested and is rate limited. The pricing for models has changed significantly, with new models and pricing tiers available through Model Vault. The original pricing for Command models is no longer listed, and new pricing is available for Embed, Rerank, and Parse models.",
-      "previous_state": "AI model API for Command chat models, Embed, Rerank, Transcribe and Parse. Every account starts with a Trial API key: calls made with it are free and limited to 1,000 API calls a month. Trial rate limits: 20 requests a minute per Chat model, 2,000 Embed inputs a minute and 10 Rerank requests a minute. Trial keys can use all of Cohere's models and APIs. Production keys are pay-as-you-go. Prices per 1M tokens: Command R7B $0.0375/$0.15; Command R $0.15/$0.60. The pricing page lists Command A+ (Apache 2.0) at $0 through an API key and as a model download.",
-      "current_state": "API calls made from a Trial API key are free, but a Production key is required for production use and will be billed on a pay-as-you-go basis. Model Vault pricing is available per instance based on the selected model and performance tier.",
-      "source_url": "https://cohere.com/pricing",
-      "category": "AI / ML",
-      "first_read_date": "2026-10-25"
-    },
-    {
-      "vendor": "Conversion Tools",
-      "change_type": "limits_reduced",
-      "impact": "high",
-      "summary": "The free tier limits have changed. Registered free users now get files up to 10 MB instead of 50 GB, and 10 conversions a day (100 a month) instead of unlimited conversions.",
-      "previous_state": "Online File Converter for documents, images, video, audio, and eBooks. REST API is available. Libraries for Node.js, PHP, Python. Support files up to 50 GB (for paid plans). Registered free users get 10 conversions a day (100 a month) and a 20 MB file size limit.",
-      "current_state": "Free users can convert files up to 10 MB.",
-      "source_url": "https://conversiontools.io/",
-      "category": "Dev Utilities",
-      "first_read_date": "2026-10-25"
-    },
-    {
-      "vendor": "Grafana k6 Cloud",
-      "change_type": "limits_reduced",
+      "vendor": "CloudAMQP",
+      "change_type": "pricing_restructured",
       "impact": "medium",
-      "summary": "The free tier for Performance Testing (k6) now has limits on usage (50 GB ingested per month, 14 day retention) and is part of a broader 'Always free' offering that includes other services. Previously info only mentioned VUh and retention for k6.",
-      "previous_state": "Grafana Cloud k6 load testing. Always free: 500 virtual user hours (VUh) per month, 14-day retention for k6 performance tests, community support, no credit card required. Minimum 1 VUh per test.",
-      "current_state": "Always free: Limited to 50 GB ingested per month, 14 day retention, Community support.",
-      "source_url": "https://grafana.com/pricing/",
-      "category": "Testing",
-      "first_read_date": "2026-10-25"
+      "summary": "The Little Lemur plan now has a 1M message quota instead of 1M, and the plan is now called 'Little Lemur For Development'.",
+      "previous_state": "Managed RabbitMQ. The free Little Lemur plan runs on a shared RabbitMQ broker with a 1M message quota a month, 20 connections, 100 queues, up to 10,000 queued messages and a 28-day maximum idle queue time.",
+      "current_state": "Max 100 queues, Max 10 000 queued messages, Max idle queue time 28 days, Message quota/month 1 M, Connection limit 20, Free",
+      "source_url": "https://www.cloudamqp.com/plans.html",
+      "category": "Messaging",
+      "first_read_date": "2026-10-26"
+    },
+    {
+      "vendor": "Google Gemini API",
+      "change_type": "pricing_restructured",
+      "impact": "high",
+      "summary": "Gemini 4 Argon is not available on the Free tier. The pricing for Gemini 4 Argon has been updated, with different prices through November 30, 2026, and starting December 1, 2026.",
+      "previous_state": "Free tier: Gemini 3.8 Flash, 3.6 Flash, 3.5 Flash-Lite, 3.1 Flash-Lite, Gemini 3 Flash Preview, Gemini Embedding 2 and Gemma 4 are free of charge. Also free of charge are Gemini 3.8 Live (real-time voice), Gemini 3.5 Live Translate (translation), Gemini 3.5 Transcribe (speech-to-text), Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS (text-to-speech). Gemini 4 Argon (gemini-4-argon), Gemini 3.1 Pro Preview and Gemini Omni Flash (gemini-omni-1.1-flash) are paid only. Gemini 4 Argon, generally available since 2026-10-13, is not available on the Gemini API free tier. According to ai.google.dev/gemini-api/docs/google-ai-plans, \"Gemini 4 Argon is not available on the Free plan.\" Gemini 4 Argon is available through the Gemini API on the paid tier. \"Direct use of the Gemini API (such as using API keys or external applications) is billed and managed separately,\" per ai.google.dev/gemini-api/docs/google-ai-plans. Google AI Pro and Ultra provide access to Gemini 4 Argon in Google AI Studio, per ai.google.dev/gemini-api/docs/google-ai-plans. Gemini 4 Argon is in Antigravity on Google AI Ultra and paid Google AI Pro. On a Google AI Pro trial, Argon is only available \"on trial with eligible premium devices\" (antigravity.google/docs/models). Claude Opus 5.5 and Claude Sonnet 5.5 are not included on Google AI Pro trials; trial users and those with memberships through third-party partners, Pixel Pass or Google Fi manage subscriptions through Google One. No Gemini image model has a free tier in the API. Nano Banana 2.1 (gemini-nano-banana-2.1) became generally available on 2026-10-06. It costs $0.0336 per 1K image, $0.0504 per 2K image and $0.113 per 4K image. The Batch API halves those prices. Nano Banana Pro costs $0.134 per 1K or 2K image and $0.24 per 4K image. Google publishes no free-tier rate limits; each project's limits are shown in Google AI Studio. Developers report 429 errors showing 20 requests per day for Gemini 3.x Flash models and 500 requests per day for 3.x Flash-Lite models as of September 2026. Rate limits apply per project, not per API key. Daily request quotas reset at midnight Pacific time, per Google's rate-limits page. Since 2026-09-18 Google serves the Gemini 2.5 models only to users who have used them before, and points new projects to 3.5 Flash-Lite or 3.8 Flash. If your app calls gemini-3.7-flash, Google deprecated it on 2026-10-08. Requests to gemini-3.7-flash are routed automatically to gemini-3.8-flash. Google says to update the model string to gemini-3.8-flash. If your app calls Gemini 3.5 Flash (gemini-3.5-flash), Google deprecated it on 2026-10-08. Requests to gemini-3.5-flash are routed automatically to gemini-3.6-flash. Google says to update the model string to gemini-3.6-flash or gemini-3.8-flash. Google shut down Gemini Omni Flash Preview (gemini-omni-flash-preview) on 2026-10-22. Google's replacement is gemini-omni-1.1-flash. Gemini 3.1 Flash-Lite (gemini-3.1-flash-lite) can be called until 2027-05-07, when Google shuts it down. Google's replacement is gemini-3.5-flash-lite. Paid, per million tokens (input/output; output prices include thinking tokens): Gemini 4 Argon $2/$10 through 2026-11-30 (context caching $0.10, then $0.20, implicit caching only); Gemini 3.8 Flash $0.75/$3.75 until 2026-12-31, then $1.50 input and $7.50 output from 2027-01-01 (3.6 Flash: the same prices and dates); Gemini 3.5 Flash-Lite $0.30/$2.50; Gemini 3.1 Flash-Lite $0.25/$1.50; Gemini 3.1 Pro Preview $2/$12 (prompts up to 200K tokens; prompts over 200K tokens cost $4 input and $18 output). From December 1, 2026, Gemini 4 Argon costs $4 per million input tokens and $20 per million output tokens for Standard, $2 input and $10 output for Batch API, $2 input and $10 output for Flex, and $7.20 input and $36 output for Priority. The Batch API costs half the standard price; Gemini 3.8 Flash is $0.375 input and $1.875 output per million tokens through 2026-12-31. Gemini 4 Argon on the Batch API is $1 input and $5 output through 2026-11-30. Google also sells two tiers, Flex and Priority, both in Preview. A request picks one with the service_tier field (\"flex\" or \"priority\"); without it the request is Standard. Gemini 4 Argon on Flex is $1 input and $5 output through 2026-11-30; on Priority it is $3.60 input and $18 output through 2026-11-30. \"The Gemini Flex API is an inference tier that offers a 50% cost reduction compared to standard rates, in exchange for variable latency and best-effort availability\" (ai.google.dev/gemini-api/docs/flex-inference). \"Priority inference is priced at 75-100% more than the standard API and billed per token\" (ai.google.dev/gemini-api/docs/priority-inference). The Gemini API Contributor Tier is an invite-only private preview. Eligible users will be invited by email. It offers half the Standard price for Gemini 4 Argon, Gemini 3.1 Pro Preview, Gemini 3.8 Flash, and Gemini 3.5 Flash-Lite. Google uses the data from those models to improve its products. \"Please don't submit sensitive or personal information\" (ai.google.dev/gemini-api/docs/logs-policy). Grounding with Google Search is supported on the free tier for Gemini 3.8 Live, Gemini 3.8 Live Extended Thinking and Gemini 3.1 Flash Live Preview. It is not available on the free tier for Gemini 4 Argon or the Gemini 3.x Flash, Flash-Lite and Pro models. On the paid tier, 5,000 search requests a month are free, shared across Gemini 3 and newer models, then $14 per 1,000. Accounts opened after 2026-03-02 cannot spend the $300 Google Cloud welcome credit on the Gemini API.",
+      "current_state": "Gemini 4 Argon is not available on the Free tier. Standard Tier pricing is $2.00 input / $10.00 output through November 30, 2026, and $4.00 input / $20.00 output starting December 1, 2026.",
+      "source_url": "https://ai.google.dev/pricing",
+      "category": "AI / ML",
+      "first_read_date": "2026-10-26"
+    },
+    {
+      "vendor": "Zoho Projects",
+      "change_type": "pricing_restructured",
+      "impact": "medium",
+      "summary": "The page states Zoho Projects is a free project management platform without compromising on quality and functionality, and allows users to break down project activities, allocate resources, and schedule work items using the Gantt chart with the free version.",
+      "previous_state": "Free for up to 5 users: 3 projects, subtasks, whiteboard, 5 GB of storage and the iOS and Android apps. Zoho's [Bugtracker](https://zoho.com/bugtracker) has its own free plan: 3 users, 2 projects and 5 GB of attachments.",
+      "current_state": "Zoho Projects is a free project management platform that allows users to break down project activities, allocate resources, and schedule work items using the Gantt chart.",
+      "source_url": "https://zoho.com/projects",
+      "category": "Project Management",
+      "first_read_date": "2026-10-26"
     }
   ],
   "resolved": [
@@ -2797,6 +2797,54 @@
       "outcome": "corroborated",
       "detail": "a reading on 2026-10-25 read it as limits_reduced too",
       "resolved_date": "2026-10-25"
+    },
+    {
+      "vendor": "Anthropic API",
+      "change_type": "pricing_restructured",
+      "impact": "high",
+      "summary": "Pricing for Claude models has been updated. Several models have been added and pricing for existing models has changed. Prompt caching pricing has also been updated. Data residency pricing with a 1.1x multiplier for US-only inference has been added. Fast mode pricing has been introduced for Claude Opus models.",
+      "previous_state": "Claude API with usage-based pricing per million tokens (input/output). Claude Fable 5.1 $10/$50. Claude Opus 5.5 $4/$20. Claude Sonnet 5.5 $2/$10. Claude Sonnet 5 $2/$10. Claude Haiku 5.5 $0.10/$0.50 (for prompts up to 100,000 tokens; longer prompts cost five times as much). Claude Haiku 4.5 $1/$5. The Batch API gives a 50% discount on input and output tokens. Claude Opus 5.5 cache hits $0.20, Claude Sonnet 5.5 cache hits $0.10, Claude Fable 5.1 cache hits $0.25. Other models’ cache hits cost 0.1x the input price. Cache writes cost 1.25x the input price for 5-minute lifetime and 2x for 1-hour lifetime. Anthropic states \"Claude Max and Team plans include monthly credits for the Claude API.\" Max 5x gets $100 a month, Max 20x gets $200, Team gets up to $500 pooled. Anthropic's pages state no free credit amount for new API users.",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "first_read_date": "2026-10-25",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-26 read it as pricing_restructured too",
+      "resolved_date": "2026-10-26"
+    },
+    {
+      "vendor": "Cohere",
+      "change_type": "free_tier_removed",
+      "impact": "high",
+      "summary": "The free trial now requires a production key to be requested and is rate limited. The pricing for models has changed significantly, with new models and pricing tiers available through Model Vault. The original pricing for Command models is no longer listed, and new pricing is available for Embed, Rerank, and Parse models.",
+      "previous_state": "AI model API for Command chat models, Embed, Rerank, Transcribe and Parse. Every account starts with a Trial API key: calls made with it are free and limited to 1,000 API calls a month. Trial rate limits: 20 requests a minute per Chat model, 2,000 Embed inputs a minute and 10 Rerank requests a minute. Trial keys can use all of Cohere's models and APIs. Production keys are pay-as-you-go. Prices per 1M tokens: Command R7B $0.0375/$0.15; Command R $0.15/$0.60. The pricing page lists Command A+ (Apache 2.0) at $0 through an API key and as a model download.",
+      "source_url": "https://cohere.com/pricing",
+      "first_read_date": "2026-10-25",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-26 read it as free_tier_removed too",
+      "resolved_date": "2026-10-26"
+    },
+    {
+      "vendor": "Conversion Tools",
+      "change_type": "limits_reduced",
+      "impact": "high",
+      "summary": "The free tier limits have changed. Registered free users now get files up to 10 MB instead of 50 GB, and 10 conversions a day (100 a month) instead of unlimited conversions.",
+      "previous_state": "Online File Converter for documents, images, video, audio, and eBooks. REST API is available. Libraries for Node.js, PHP, Python. Support files up to 50 GB (for paid plans). Registered free users get 10 conversions a day (100 a month) and a 20 MB file size limit.",
+      "source_url": "https://conversiontools.io/",
+      "first_read_date": "2026-10-25",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-26 read it as limits_reduced too",
+      "resolved_date": "2026-10-26"
+    },
+    {
+      "vendor": "Grafana k6 Cloud",
+      "change_type": "limits_reduced",
+      "impact": "medium",
+      "summary": "The free tier for Performance Testing (k6) now has limits on usage (50 GB ingested per month, 14 day retention) and is part of a broader 'Always free' offering that includes other services. Previously info only mentioned VUh and retention for k6.",
+      "previous_state": "Grafana Cloud k6 load testing. Always free: 500 virtual user hours (VUh) per month, 14-day retention for k6 performance tests, community support, no credit card required. Minimum 1 VUh per test.",
+      "source_url": "https://grafana.com/pricing/",
+      "first_read_date": "2026-10-25",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-26 read a change the gate refused as repeats_a_refused_claim",
+      "resolved_date": "2026-10-26"
     }
   ]
 }
