@@ -1,48 +1,59 @@
 {
   "held": [
     {
-      "vendor": "CircleCI",
-      "change_type": "pricing_restructured",
-      "impact": "high",
-      "summary": "The Free plan now offers 30,000 credits/month. The details of what those credits can purchase have changed.",
-      "previous_state": "The Free plan includes 30,000 credits/month, 5 active users, and options for different resource classes (Docker, Windows, Linux, Arm, macOS) with varying concurrency levels (30x for Docker, Linux, Arm, Windows VM, and macOS VM).",
-      "current_state": "The Free plan includes 30,000 credits/month. Credits are used to pay for monthly active users, compute time, and add-on features. 25,000 credits are provided per additional user.",
-      "source_url": "https://circleci.com/pricing/",
-      "category": "CI/CD",
-      "first_read_date": "2026-10-26"
-    },
-    {
-      "vendor": "CloudAMQP",
-      "change_type": "pricing_restructured",
+      "vendor": "Apidog",
+      "change_type": "restriction",
       "impact": "medium",
-      "summary": "The Little Lemur plan now has a 1M message quota instead of 1M, and the plan is now called 'Little Lemur For Development'.",
-      "previous_state": "Managed RabbitMQ. The free Little Lemur plan runs on a shared RabbitMQ broker with a 1M message quota a month, 20 connections, 100 queues, up to 10,000 queued messages and a 28-day maximum idle queue time.",
-      "current_state": "Max 100 queues, Max 10 000 queued messages, Max idle queue time 28 days, Message quota/month 1 M, Connection limit 20, Free",
-      "source_url": "https://www.cloudamqp.com/plans.html",
-      "category": "Messaging",
-      "first_read_date": "2026-10-26"
+      "summary": "The free tier now requires a 14-day trial period and offers unlimited projects/APIs/requests but only for 14 days.",
+      "previous_state": "API design, debugging, testing, and documentation platform — free tier: up to 4 users, unlimited projects, unlimited APIs, unlimited requests. API mocking included. 7-day change history",
+      "current_state": "Perfect for individuals or small teams (up to 4 users) getting started with API collaboration and testing. Try it Free for 14 days, and cancel anytime you like! All core features for up to 4 users Full API client support All core mocking and testing features Unlimited test/collection runs Basic documentation features; unlimited views Real-time collaboration Unlimited sprint branches/versions per project SQL database operations Scheduled import every 3 hours Basic - 25%",
+      "source_url": "https://apidog.com/pricing/",
+      "category": "API Development",
+      "first_read_date": "2026-10-27"
     },
     {
-      "vendor": "Google Gemini API",
+      "vendor": "Appwrite Cloud",
       "change_type": "pricing_restructured",
       "impact": "high",
-      "summary": "Gemini 4 Argon is not available on the Free tier. The pricing for Gemini 4 Argon has been updated, with different prices through November 30, 2026, and starting December 1, 2026.",
-      "previous_state": "Free tier: Gemini 3.8 Flash, 3.6 Flash, 3.5 Flash-Lite, 3.1 Flash-Lite, Gemini 3 Flash Preview, Gemini Embedding 2 and Gemma 4 are free of charge. Also free of charge are Gemini 3.8 Live (real-time voice), Gemini 3.5 Live Translate (translation), Gemini 3.5 Transcribe (speech-to-text), Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS (text-to-speech). Gemini 4 Argon (gemini-4-argon), Gemini 3.1 Pro Preview and Gemini Omni Flash (gemini-omni-1.1-flash) are paid only. Gemini 4 Argon, generally available since 2026-10-13, is not available on the Gemini API free tier. According to ai.google.dev/gemini-api/docs/google-ai-plans, \"Gemini 4 Argon is not available on the Free plan.\" Gemini 4 Argon is available through the Gemini API on the paid tier. \"Direct use of the Gemini API (such as using API keys or external applications) is billed and managed separately,\" per ai.google.dev/gemini-api/docs/google-ai-plans. Google AI Pro and Ultra provide access to Gemini 4 Argon in Google AI Studio, per ai.google.dev/gemini-api/docs/google-ai-plans. Gemini 4 Argon is in Antigravity on Google AI Ultra and paid Google AI Pro. On a Google AI Pro trial, Argon is only available \"on trial with eligible premium devices\" (antigravity.google/docs/models). Claude Opus 5.5 and Claude Sonnet 5.5 are not included on Google AI Pro trials; trial users and those with memberships through third-party partners, Pixel Pass or Google Fi manage subscriptions through Google One. No Gemini image model has a free tier in the API. Nano Banana 2.1 (gemini-nano-banana-2.1) became generally available on 2026-10-06. It costs $0.0336 per 1K image, $0.0504 per 2K image and $0.113 per 4K image. The Batch API halves those prices. Nano Banana Pro costs $0.134 per 1K or 2K image and $0.24 per 4K image. Google publishes no free-tier rate limits; each project's limits are shown in Google AI Studio. Developers report 429 errors showing 20 requests per day for Gemini 3.x Flash models and 500 requests per day for 3.x Flash-Lite models as of September 2026. Rate limits apply per project, not per API key. Daily request quotas reset at midnight Pacific time, per Google's rate-limits page. Since 2026-09-18 Google serves the Gemini 2.5 models only to users who have used them before, and points new projects to 3.5 Flash-Lite or 3.8 Flash. If your app calls gemini-3.7-flash, Google deprecated it on 2026-10-08. Requests to gemini-3.7-flash are routed automatically to gemini-3.8-flash. Google says to update the model string to gemini-3.8-flash. If your app calls Gemini 3.5 Flash (gemini-3.5-flash), Google deprecated it on 2026-10-08. Requests to gemini-3.5-flash are routed automatically to gemini-3.6-flash. Google says to update the model string to gemini-3.6-flash or gemini-3.8-flash. Google shut down Gemini Omni Flash Preview (gemini-omni-flash-preview) on 2026-10-22. Google's replacement is gemini-omni-1.1-flash. Gemini 3.1 Flash-Lite (gemini-3.1-flash-lite) can be called until 2027-05-07, when Google shuts it down. Google's replacement is gemini-3.5-flash-lite. Paid, per million tokens (input/output; output prices include thinking tokens): Gemini 4 Argon $2/$10 through 2026-11-30 (context caching $0.10, then $0.20, implicit caching only); Gemini 3.8 Flash $0.75/$3.75 until 2026-12-31, then $1.50 input and $7.50 output from 2027-01-01 (3.6 Flash: the same prices and dates); Gemini 3.5 Flash-Lite $0.30/$2.50; Gemini 3.1 Flash-Lite $0.25/$1.50; Gemini 3.1 Pro Preview $2/$12 (prompts up to 200K tokens; prompts over 200K tokens cost $4 input and $18 output). From December 1, 2026, Gemini 4 Argon costs $4 per million input tokens and $20 per million output tokens for Standard, $2 input and $10 output for Batch API, $2 input and $10 output for Flex, and $7.20 input and $36 output for Priority. The Batch API costs half the standard price; Gemini 3.8 Flash is $0.375 input and $1.875 output per million tokens through 2026-12-31. Gemini 4 Argon on the Batch API is $1 input and $5 output through 2026-11-30. Google also sells two tiers, Flex and Priority, both in Preview. A request picks one with the service_tier field (\"flex\" or \"priority\"); without it the request is Standard. Gemini 4 Argon on Flex is $1 input and $5 output through 2026-11-30; on Priority it is $3.60 input and $18 output through 2026-11-30. \"The Gemini Flex API is an inference tier that offers a 50% cost reduction compared to standard rates, in exchange for variable latency and best-effort availability\" (ai.google.dev/gemini-api/docs/flex-inference). \"Priority inference is priced at 75-100% more than the standard API and billed per token\" (ai.google.dev/gemini-api/docs/priority-inference). The Gemini API Contributor Tier is an invite-only private preview. Eligible users will be invited by email. It offers half the Standard price for Gemini 4 Argon, Gemini 3.1 Pro Preview, Gemini 3.8 Flash, and Gemini 3.5 Flash-Lite. Google uses the data from those models to improve its products. \"Please don't submit sensitive or personal information\" (ai.google.dev/gemini-api/docs/logs-policy). Grounding with Google Search is supported on the free tier for Gemini 3.8 Live, Gemini 3.8 Live Extended Thinking and Gemini 3.1 Flash Live Preview. It is not available on the free tier for Gemini 4 Argon or the Gemini 3.x Flash, Flash-Lite and Pro models. On the paid tier, 5,000 search requests a month are free, shared across Gemini 3 and newer models, then $14 per 1,000. Accounts opened after 2026-03-02 cannot spend the $300 Google Cloud welcome credit on the Gemini API.",
-      "current_state": "Gemini 4 Argon is not available on the Free tier. Standard Tier pricing is $2.00 input / $10.00 output through November 30, 2026, and $4.00 input / $20.00 output starting December 1, 2026.",
-      "source_url": "https://ai.google.dev/pricing",
+      "summary": "The free tier is no longer a standalone offering. Appwrite offers serverless compute with a free allowance, it's now tied to database usage and requires payment for overages.",
+      "previous_state": "Open-source BaaS — 75K MAU, 2 GB storage, 750K function executions/month, 5 GB bandwidth, 1 database, 1 bucket and 2 functions per project, 500K database reads and 250K writes a month. Limit of 2 projects.",
+      "current_state": "Serverless read/write quotas and overage rates are in Compare plans. $10 of compute credits for database usage included every month.",
+      "source_url": "https://appwrite.io/pricing",
+      "category": "Databases",
+      "first_read_date": "2026-10-27"
+    },
+    {
+      "vendor": "Baseten",
+      "change_type": "pricing_model_change",
+      "impact": "medium",
+      "summary": "The pricing for GLM-5.3 and GLM-5.3-Flash models has changed. The Basic plan still exists at $0/month. The Model API pricing is different.",
+      "previous_state": "ML model deployment platform. New workspaces receive credits for testing and deployment; Baseten does not state the amount. Basic plan: $0 per month, pay as you go. Dedicated deployments bill per minute. Model APIs bill per 1M tokens: GLM-5.3 $1.40/$4.40. GLM-5.3-Flash $0.15/$0.50.",
+      "current_state": "Basic is $0 per month, pay as you go. Model APIs price per 1M tokens: GLM-5.3 $1.40/$2.10. GLM-5.3-Flash $0.15/$0.30.",
+      "source_url": "https://www.baseten.co/pricing/",
       "category": "AI / ML",
-      "first_read_date": "2026-10-26"
+      "first_read_date": "2026-10-27"
     },
     {
-      "vendor": "Zoho Projects",
+      "vendor": "Exa",
       "change_type": "pricing_restructured",
-      "impact": "medium",
-      "summary": "The page states Zoho Projects is a free project management platform without compromising on quality and functionality, and allows users to break down project activities, allocate resources, and schedule work items using the Gantt chart with the free version.",
-      "previous_state": "Free for up to 5 users: 3 projects, subtasks, whiteboard, 5 GB of storage and the iOS and Android apps. Zoho's [Bugtracker](https://zoho.com/bugtracker) has its own free plan: 3 users, 2 projects and 5 GB of attachments.",
-      "current_state": "Zoho Projects is a free project management platform that allows users to break down project activities, allocate resources, and schedule work items using the Gantt chart.",
-      "source_url": "https://zoho.com/projects",
-      "category": "Project Management",
-      "first_read_date": "2026-10-26"
+      "impact": "high",
+      "summary": "The pricing for Search, Contents, Answer, and Monitors has been updated. The free tier still exists, offering $10 in credits upon signup and a monthly reset, but the pricing for individual endpoints has changed.",
+      "previous_state": "Web search API for AI agents with Search, Contents, Answer, Monitors and Agent endpoints. The free tier gives $10 in credits each month, up to 2,500 Lite searches, resetting on the first of the month without rollover, plus a one-time $10 onboarding bonus; no credit card or other payment method required. Only a user's first team gets the free credits. Free teams get 10 QPS on search. Search costs $4 per 1,000 requests with up to 10 results for Lite, $7 for Auto, and $12 for Deep. Contents costs $1 per 1,000 pages per content type. Since October 19, 2026, Instant, Fast and Deep Reasoning are legacy search types that keep working at their current prices. Exa recommends Lite in place of Instant and Fast. Search and Contents can also be paid per request over x402 in USDC on Base or Solana, with no API key.",
+      "current_state": "The base price for Search is now $4 / 1k requests, with additional results costing $1 / 1k results. Contents is $1 / 1k pages. Answer is $5 / 1k requests. Monitors is $15 / 1k requests.",
+      "source_url": "https://exa.ai/docs/admin/pricing",
+      "category": "AI / ML",
+      "first_read_date": "2026-10-27"
+    },
+    {
+      "vendor": "Upstash",
+      "change_type": "limits_reduced",
+      "impact": "low",
+      "summary": "The free tier now offers 250MB of data, up from 256MB.",
+      "previous_state": "Serverless Redis — 500K commands/month (256MB data). Vector: 200M vectors × dimensions and 10K queries a day free. QStash: 1,000 messages/day free",
+      "current_state": "Free tier includes 250 MB data size and 500K Monthly Commands.",
+      "source_url": "https://upstash.com/pricing",
+      "category": "Databases",
+      "first_read_date": "2026-10-27"
     }
   ],
   "resolved": [
@@ -2845,6 +2856,54 @@
       "outcome": "contradicted",
       "detail": "a reading on 2026-10-26 read a change the gate refused as repeats_a_refused_claim",
       "resolved_date": "2026-10-26"
+    },
+    {
+      "vendor": "CircleCI",
+      "change_type": "pricing_restructured",
+      "impact": "high",
+      "summary": "The Free plan now offers 30,000 credits/month. The details of what those credits can purchase have changed.",
+      "previous_state": "The Free plan includes 30,000 credits/month, 5 active users, and options for different resource classes (Docker, Windows, Linux, Arm, macOS) with varying concurrency levels (30x for Docker, Linux, Arm, Windows VM, and macOS VM).",
+      "source_url": "https://circleci.com/pricing/",
+      "first_read_date": "2026-10-26",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-27 read it as limits_reduced",
+      "resolved_date": "2026-10-27"
+    },
+    {
+      "vendor": "CloudAMQP",
+      "change_type": "pricing_restructured",
+      "impact": "medium",
+      "summary": "The Little Lemur plan now has a 1M message quota instead of 1M, and the plan is now called 'Little Lemur For Development'.",
+      "previous_state": "Managed RabbitMQ. The free Little Lemur plan runs on a shared RabbitMQ broker with a 1M message quota a month, 20 connections, 100 queues, up to 10,000 queued messages and a 28-day maximum idle queue time.",
+      "source_url": "https://www.cloudamqp.com/plans.html",
+      "first_read_date": "2026-10-26",
+      "outcome": "corroborated",
+      "detail": "a reading on 2026-10-27 read it as pricing_restructured too",
+      "resolved_date": "2026-10-27"
+    },
+    {
+      "vendor": "Google Gemini API",
+      "change_type": "pricing_restructured",
+      "impact": "high",
+      "summary": "Gemini 4 Argon is not available on the Free tier. The pricing for Gemini 4 Argon has been updated, with different prices through November 30, 2026, and starting December 1, 2026.",
+      "previous_state": "Free tier: Gemini 3.8 Flash, 3.6 Flash, 3.5 Flash-Lite, 3.1 Flash-Lite, Gemini 3 Flash Preview, Gemini Embedding 2 and Gemma 4 are free of charge. Also free of charge are Gemini 3.8 Live (real-time voice), Gemini 3.5 Live Translate (translation), Gemini 3.5 Transcribe (speech-to-text), Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS (text-to-speech). Gemini 4 Argon (gemini-4-argon), Gemini 3.1 Pro Preview and Gemini Omni Flash (gemini-omni-1.1-flash) are paid only. Gemini 4 Argon, generally available since 2026-10-13, is not available on the Gemini API free tier. According to ai.google.dev/gemini-api/docs/google-ai-plans, \"Gemini 4 Argon is not available on the Free plan.\" Gemini 4 Argon is available through the Gemini API on the paid tier. \"Direct use of the Gemini API (such as using API keys or external applications) is billed and managed separately,\" per ai.google.dev/gemini-api/docs/google-ai-plans. Google AI Pro and Ultra provide access to Gemini 4 Argon in Google AI Studio, per ai.google.dev/gemini-api/docs/google-ai-plans. Gemini 4 Argon is in Antigravity on Google AI Ultra and paid Google AI Pro. On a Google AI Pro trial, Argon is only available \"on trial with eligible premium devices\" (antigravity.google/docs/models). Claude Opus 5.5 and Claude Sonnet 5.5 are not included on Google AI Pro trials; trial users and those with memberships through third-party partners, Pixel Pass or Google Fi manage subscriptions through Google One. No Gemini image model has a free tier in the API. Nano Banana 2.1 (gemini-nano-banana-2.1) became generally available on 2026-10-06. It costs $0.0336 per 1K image, $0.0504 per 2K image and $0.113 per 4K image. The Batch API halves those prices. Nano Banana Pro costs $0.134 per 1K or 2K image and $0.24 per 4K image. Google publishes no free-tier rate limits; each project's limits are shown in Google AI Studio. Developers report 429 errors showing 20 requests per day for Gemini 3.x Flash models and 500 requests per day for 3.x Flash-Lite models as of September 2026. Rate limits apply per project, not per API key. Daily request quotas reset at midnight Pacific time, per Google's rate-limits page. Since 2026-09-18 Google serves the Gemini 2.5 models only to users who have used them before, and points new projects to 3.5 Flash-Lite or 3.8 Flash. If your app calls gemini-3.7-flash, Google deprecated it on 2026-10-08. Requests to gemini-3.7-flash are routed automatically to gemini-3.8-flash. Google says to update the model string to gemini-3.8-flash. If your app calls Gemini 3.5 Flash (gemini-3.5-flash), Google deprecated it on 2026-10-08. Requests to gemini-3.5-flash are routed automatically to gemini-3.6-flash. Google says to update the model string to gemini-3.6-flash or gemini-3.8-flash. Google shut down Gemini Omni Flash Preview (gemini-omni-flash-preview) on 2026-10-22. Google's replacement is gemini-omni-1.1-flash. Gemini 3.1 Flash-Lite (gemini-3.1-flash-lite) can be called until 2027-05-07, when Google shuts it down. Google's replacement is gemini-3.5-flash-lite. Paid, per million tokens (input/output; output prices include thinking tokens): Gemini 4 Argon $2/$10 through 2026-11-30 (context caching $0.10, then $0.20, implicit caching only); Gemini 3.8 Flash $0.75/$3.75 until 2026-12-31, then $1.50 input and $7.50 output from 2027-01-01 (3.6 Flash: the same prices and dates); Gemini 3.5 Flash-Lite $0.30/$2.50; Gemini 3.1 Flash-Lite $0.25/$1.50; Gemini 3.1 Pro Preview $2/$12 (prompts up to 200K tokens; prompts over 200K tokens cost $4 input and $18 output). From December 1, 2026, Gemini 4 Argon costs $4 per million input tokens and $20 per million output tokens for Standard, $2 input and $10 output for Batch API, $2 input and $10 output for Flex, and $7.20 input and $36 output for Priority. The Batch API costs half the standard price; Gemini 3.8 Flash is $0.375 input and $1.875 output per million tokens through 2026-12-31. Gemini 4 Argon on the Batch API is $1 input and $5 output through 2026-11-30. Google also sells two tiers, Flex and Priority, both in Preview. A request picks one with the service_tier field (\"flex\" or \"priority\"); without it the request is Standard. Gemini 4 Argon on Flex is $1 input and $5 output through 2026-11-30; on Priority it is $3.60 input and $18 output through 2026-11-30. \"The Gemini Flex API is an inference tier that offers a 50% cost reduction compared to standard rates, in exchange for variable latency and best-effort availability\" (ai.google.dev/gemini-api/docs/flex-inference). \"Priority inference is priced at 75-100% more than the standard API and billed per token\" (ai.google.dev/gemini-api/docs/priority-inference). The Gemini API Contributor Tier is an invite-only private preview. Eligible users will be invited by email. It offers half the Standard price for Gemini 4 Argon, Gemini 3.1 Pro Preview, Gemini 3.8 Flash, and Gemini 3.5 Flash-Lite. Google uses the data from those models to improve its products. \"Please don't submit sensitive or personal information\" (ai.google.dev/gemini-api/docs/logs-policy). Grounding with Google Search is supported on the free tier for Gemini 3.8 Live, Gemini 3.8 Live Extended Thinking and Gemini 3.1 Flash Live Preview. It is not available on the free tier for Gemini 4 Argon or the Gemini 3.x Flash, Flash-Lite and Pro models. On the paid tier, 5,000 search requests a month are free, shared across Gemini 3 and newer models, then $14 per 1,000. Accounts opened after 2026-03-02 cannot spend the $300 Google Cloud welcome credit on the Gemini API.",
+      "source_url": "https://ai.google.dev/pricing",
+      "first_read_date": "2026-10-26",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-27 read a change the gate refused as restates_stored_quantities",
+      "resolved_date": "2026-10-27"
+    },
+    {
+      "vendor": "Zoho Projects",
+      "change_type": "pricing_restructured",
+      "impact": "medium",
+      "summary": "The page states Zoho Projects is a free project management platform without compromising on quality and functionality, and allows users to break down project activities, allocate resources, and schedule work items using the Gantt chart with the free version.",
+      "previous_state": "Free for up to 5 users: 3 projects, subtasks, whiteboard, 5 GB of storage and the iOS and Android apps. Zoho's [Bugtracker](https://zoho.com/bugtracker) has its own free plan: 3 users, 2 projects and 5 GB of attachments.",
+      "source_url": "https://zoho.com/projects",
+      "first_read_date": "2026-10-26",
+      "outcome": "contradicted",
+      "detail": "a reading on 2026-10-27 read a change the gate refused as dangling_reference",
+      "resolved_date": "2026-10-27"
     }
   ]
 }

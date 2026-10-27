@@ -269,6 +269,31 @@
           "description": "Online File Converter for documents, images, video, audio, and eBooks — Free users can convert files up to 10 MB. The API offers 100 free API calls/month + 100 AI credits/month."
         }
       ]
+    },
+    {
+      "proposal_id": "2026-10-27/cloudamqp/pricing_restructured",
+      "proposed_on": "2026-10-27",
+      "vendor": "CloudAMQP",
+      "change_type": "pricing_restructured",
+      "date": "2026-10-27",
+      "date_source": "discovered",
+      "summary": "The Little Lemur plan now has a message quota of 1M messages/month (previously 1M), a connection limit of 20 (previously 20), max queues of 100 (previously 100), max queued messages of 10,000 (previously 10,000) and a max idle queue time of 28 days (previously 28 days). It remains free.",
+      "tier": "Little Lemur",
+      "tier_direction": "unchanged",
+      "previous_state": "Managed RabbitMQ. The free Little Lemur plan runs on a shared RabbitMQ broker with a 1M message quota a month, 20 connections, 100 queues, up to 10,000 queued messages and a 28-day maximum idle queue time.",
+      "current_state": "Little Lemur For Development Shared RabbitMQ broker Max 100 queues Max 10 000 queued messages Max idle queue time 28 days Message quota/month 1 M Connection limit 20 Free",
+      "impact": "low",
+      "source_url": "https://www.cloudamqp.com/plans.html",
+      "category": "Messaging",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-27",
+      "restatement": [
+        {
+          "url": "https://www.cloudamqp.com/plans.html",
+          "refused": "tier_is_not_one_we_record_as_free"
+        }
+      ]
     }
   ],
   "dropped": [

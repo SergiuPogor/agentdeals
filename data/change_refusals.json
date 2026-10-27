@@ -511,6 +511,18 @@
       "refused_date": "2026-09-03"
     },
     {
+      "vendor": "Apple Notes",
+      "change_type": "free_tier_removed",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (5 GB icloud)",
+      "summary": "Apple Notes is no longer explicitly mentioned as a fully free service. The page details iCloud+ which offers 5GB of free storage, but additional features and storage require a paid subscription. The free tier is now tied to iCloud+ and its features are limited without a subscription.",
+      "previous_state": "Fully free on Apple devices. Unlimited notes with rich text, checklists, tables, sketches, document scanning. Shared notes. iCloud sync counts against 5 GB iCloud free storage. Locked notes with password/biometric.",
+      "current_state": "The first time you sign in to an iPhone, iPad, or Mac with your Apple Account, you’ll get 5GB of free iCloud storage. To get additional storage for all your data, as well as access to iCloud Private Relay, Hide My Email, HomeKit Secure Video, and more, simply upgrade to iCloud+.",
+      "source_url": "https://www.apple.com/icloud/",
+      "category": "Productivity & Notes",
+      "refused_date": "2026-10-27"
+    },
+    {
       "vendor": "Applitools Eyes",
       "change_type": "free_tier_removed",
       "reason": "no_removal_evidence",
@@ -2916,13 +2928,13 @@
       "vendor": "Docker Hub",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-08-28 (confirmed_unchanged) stated the same 2 figures, so the page showed these terms before the date this record gives",
+      "detail": "the reading of this page refused on 2026-09-12 (measures_the_opposite) stated the same 3 figures, so the page showed these terms before the date this record gives",
       "summary": "The Docker Hub Personal tier now includes 100 Docker Hub pulls/hr instead of 200 pulls per 6-hour window. It also includes 1 Docker Scout-enabled repo.",
       "previous_state": "1 private repository, unlimited public repositories. 200 pulls per 6-hour window (authenticated). No automated builds on free tier",
-      "current_state": "Includes: 100 Docker Hub pulls/hr, 1 Docker Scout-enabled repo",
+      "current_state": "Includes: 100 Docker Hub pulls/hr, 1 private Docker Hub repo, 1 Docker Scout-enabled repo",
       "source_url": "https://www.docker.com/pricing/",
       "category": "Container Registry",
-      "refused_date": "2026-10-04"
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "Doczilla",
@@ -2984,6 +2996,18 @@
       "source_url": "https://www.salesloft.com/platform/drift",
       "category": "Communication",
       "refused_date": "2026-09-15"
+    },
+    {
+      "vendor": "Drift for Early Stage Startups",
+      "change_type": "rebranded",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-15 (page_does_not_name_vendor) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "Drift is now 1mind and is sold as part of the Salesloft platform. There is no longer a standalone Drift startup program or offer.",
+      "previous_state": "There is no startup program: drift.com/startups/ answers 200 with a meta-refresh to salesloft.com/platform/drift, where Drift is sold as a Salesloft product with no startup offer. Checked 2026-09-02. The former offer was 93% off the Essential Plan for one year.",
+      "current_state": "The page states that they've transitioned from Drift to 1mind, which feeds buyer signals into Salesloft's Predictive Revenue System.",
+      "source_url": "https://www.salesloft.com/platform/drift",
+      "category": "Communication",
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "Drone CI",
@@ -3459,6 +3483,18 @@
       "source_url": "https://fireworks.ai/pricing",
       "category": "AI / ML",
       "refused_date": "2026-09-24"
+    },
+    {
+      "vendor": "Fireworks AI",
+      "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this vendor refused on 2026-10-03 (states_no_terms) stated the same current state, word for word",
+      "summary": "The $1 free credit offer is not explicitly mentioned on the pricing page. While serverless inference is described, there's no mention of a starting credit. The pricing for various models has changed significantly.",
+      "previous_state": "Inference platform for open models, with serverless per-token pricing and on-demand GPU deployments billed per GPU second. Fireworks offers $1 in free credits to get started. Accounts with no payment method, or with no credits, are limited to 10 requests per minute, and an account without a payment method is suspended when the $1 credit runs out until one is added. Serverless prices: OpenAI GPT OSS 120B $0.15/$0.60 (per 1M tokens); MiniMax M3 $0.30/$1.20 (per 1M tokens); GLM 5.3 $1.40/$4.40 (per 1M tokens); Kimi K3 $3.00/$15.00 (per 1M tokens). Batch inference costs 50% of serverless prices. Image generation and audio inference were deprecated on June 10, 2026. Fireworks removed these models from serverless in 2026, so serverless requests for them fail (dedicated deployments are unaffected), according to its changelog (docs.fireworks.ai/updates/changelog): DeepSeek V4 Pro (0813) (accounts/fireworks/models/deepseek-v4-pro-0813) on 2026-09-25, replaced by DeepSeek V4.1 Flash $0.30/$1.20 (deepseek-v4p1-flash); DeepSeek V4 Flash (0731) (deepseek-v4-flash-0731) on 2026-09-25, replaced by DeepSeek V4.1 Flash; GLM 5.2 (glm-5p2) on 2026-09-25, replaced by GLM 5.3 (glm-5p3); Kimi K2.6 (kimi-k2p6) on 2026-09-25, replaced by GLM 5.3 or Kimi K3 (kimi-k3); Kimi K2.7 Code (kimi-k2p7-code) on 2026-09-25, replaced by GLM 5.3 or Kimi K3; Muse Glimmer 30B (muse-glimmer-30b) on 2026-09-25, replaced by NVIDIA Nemotron 3.5 Lightning 30B A3B $0.05/$0.20 (nemotron-lightning-3p5-30b-a3b); GPT OSS 20B (gpt-oss-20b) on 2026-08-27, replaced by GPT OSS 120B or Qwen3 8B; MiniMax M2.7 (minimax-m2p7) on 2026-08-27, replaced by MiniMax M3; Kimi K2.5 (kimi-k2p5) on 2026-06-26; Qwen 3.6 Plus (qwen3p6-plus) on 2026-06-26, replaced by Qwen 3.7 Plus; MiniMax M2.5 (minimax-m2p5) on 2026-06-17. Kimi K3 (kimi-k3) is the Kimi model on Fireworks serverless today.",
+      "current_state": "Serverless Inference is a pay-per-token service. Users add a payment method to buy credits, and usage is deducted from their balance. Auto Reload and monthly spend limits are available.",
+      "source_url": "https://fireworks.ai/pricing",
+      "category": "AI / ML",
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "Fireworks AI",
@@ -4236,6 +4272,18 @@
       "refused_date": "2026-10-03"
     },
     {
+      "vendor": "Google Cloud BigQuery",
+      "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-10-03 (confirmed_unchanged) stated the same 2 figures, so the page showed these terms before the date this record gives",
+      "summary": "The Always Free tier now only provides 1 TiB of queries per month, but the pricing page details on-demand query pricing as follows: The first 1 TiB per month is free, and then $6.25 / 1 TiB. The stored information does not mention any costs after the free tier is used.",
+      "previous_state": "Always Free: 1 TiB queries/month, 10 GiB storage. Serverless data warehouse with SQL, ML, and BI built in. No infrastructure to manage",
+      "current_state": "The first 1 TiB of queries per month is free, after which queries are billed at $6.25 / TiB.",
+      "source_url": "https://cloud.google.com/bigquery/pricing",
+      "category": "Databases",
+      "refused_date": "2026-10-27"
+    },
+    {
       "vendor": "Google Cloud Monitoring",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
@@ -4354,6 +4402,18 @@
       "source_url": "https://one.google.com/about/plans",
       "category": "Cloud Storage",
       "refused_date": "2026-10-16"
+    },
+    {
+      "vendor": "Google Gemini API",
+      "change_type": "pricing_restructured",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (4 argon), and drops 166 the stored description carried",
+      "summary": "Several discrepancies found. Gemini 4 Argon is not available on the free tier, as previously stated. Pricing for Gemini 3.8 Flash, 3.6 Flash, 3.5 Flash-Lite, and 3.1 Flash-Lite has changed, with new pricing structures for Standard, Batch, Flex, and Priority tiers. The page also details pricing for Gemini 3.5 Transcribe, Gemini 3.5 Transcribe Live, Gemini 3.8 Live, and Gemini 3.5 Live Translate, which were not mentioned in the stored deal info.",
+      "previous_state": "Free tier: Gemini 3.8 Flash, 3.6 Flash, 3.5 Flash-Lite, 3.1 Flash-Lite, Gemini 3 Flash Preview, Gemini Embedding 2 and Gemma 4 are free of charge. Also free of charge are Gemini 3.8 Live (real-time voice), Gemini 3.5 Live Translate (translation), Gemini 3.5 Transcribe (speech-to-text), Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS (text-to-speech). Gemini 4 Argon (gemini-4-argon), Gemini 3.1 Pro Preview and Gemini Omni Flash (gemini-omni-1.1-flash) are paid only. Gemini 4 Argon, generally available since 2026-10-13, is not available on the Gemini API free tier. According to ai.google.dev/gemini-api/docs/google-ai-plans, \"Gemini 4 Argon is not available on the Free plan.\" Gemini 4 Argon is available through the Gemini API on the paid tier. \"Direct use of the Gemini API (such as using API keys or external applications) is billed and managed separately,\" per ai.google.dev/gemini-api/docs/google-ai-plans. Google AI Pro and Ultra provide access to Gemini 4 Argon in Google AI Studio, per ai.google.dev/gemini-api/docs/google-ai-plans. Gemini 4 Argon is in Antigravity on Google AI Ultra and paid Google AI Pro. On a Google AI Pro trial, Argon is only available \"on trial with eligible premium devices\" (antigravity.google/docs/models). Claude Opus 5.5 and Claude Sonnet 5.5 are not included on Google AI Pro trials; trial users and those with memberships through third-party partners, Pixel Pass or Google Fi manage subscriptions through Google One. No Gemini image model has a free tier in the API. Nano Banana 2.1 (gemini-nano-banana-2.1) became generally available on 2026-10-06. It costs $0.0336 per 1K image, $0.0504 per 2K image and $0.113 per 4K image. The Batch API halves those prices. Nano Banana Pro costs $0.134 per 1K or 2K image and $0.24 per 4K image. Google publishes no free-tier rate limits; each project's limits are shown in Google AI Studio. Developers report 429 errors showing 20 requests per day for Gemini 3.x Flash models and 500 requests per day for 3.x Flash-Lite models as of September 2026. Rate limits apply per project, not per API key. Daily request quotas reset at midnight Pacific time, per Google's rate-limits page. Since 2026-09-18 Google serves the Gemini 2.5 models only to users who have used them before, and points new projects to 3.5 Flash-Lite or 3.8 Flash. If your app calls gemini-3.7-flash, Google deprecated it on 2026-10-08. Requests to gemini-3.7-flash are routed automatically to gemini-3.8-flash. Google says to update the model string to gemini-3.8-flash. If your app calls Gemini 3.5 Flash (gemini-3.5-flash), Google deprecated it on 2026-10-08. Requests to gemini-3.5-flash are routed automatically to gemini-3.6-flash. Google says to update the model string to gemini-3.6-flash or gemini-3.8-flash. Google shut down Gemini Omni Flash Preview (gemini-omni-flash-preview) on 2026-10-22. Google's replacement is gemini-omni-1.1-flash. Gemini 3.1 Flash-Lite (gemini-3.1-flash-lite) can be called until 2027-05-07, when Google shuts it down. Google's replacement is gemini-3.5-flash-lite. Paid, per million tokens (input/output; output prices include thinking tokens): Gemini 4 Argon $2/$10 through 2026-11-30 (context caching $0.10, then $0.20, implicit caching only); Gemini 3.8 Flash $0.75/$3.75 until 2026-12-31, then $1.50 input and $7.50 output from 2027-01-01 (3.6 Flash: the same prices and dates); Gemini 3.5 Flash-Lite $0.30/$2.50; Gemini 3.1 Flash-Lite $0.25/$1.50; Gemini 3.1 Pro Preview $2/$12 (prompts up to 200K tokens; prompts over 200K tokens cost $4 input and $18 output). From December 1, 2026, Gemini 4 Argon costs $4 per million input tokens and $20 per million output tokens for Standard, $2 input and $10 output for Batch API, $2 input and $10 output for Flex, and $7.20 input and $36 output for Priority. The Batch API costs half the standard price; Gemini 3.8 Flash is $0.375 input and $1.875 output per million tokens through 2026-12-31. Gemini 4 Argon on the Batch API is $1 input and $5 output through 2026-11-30. Google also sells two tiers, Flex and Priority, both in Preview. A request picks one with the service_tier field (\"flex\" or \"priority\"); without it the request is Standard. Gemini 4 Argon on Flex is $1 input and $5 output through 2026-11-30; on Priority it is $3.60 input and $18 output through 2026-11-30. \"The Gemini Flex API is an inference tier that offers a 50% cost reduction compared to standard rates, in exchange for variable latency and best-effort availability\" (ai.google.dev/gemini-api/docs/flex-inference). \"Priority inference is priced at 75-100% more than the standard API and billed per token\" (ai.google.dev/gemini-api/docs/priority-inference). The Gemini API Contributor Tier is an invite-only private preview. Eligible users will be invited by email. It offers half the Standard price for Gemini 4 Argon, Gemini 3.1 Pro Preview, Gemini 3.8 Flash, and Gemini 3.5 Flash-Lite. Google uses the data from those models to improve its products. \"Please don't submit sensitive or personal information\" (ai.google.dev/gemini-api/docs/logs-policy). Grounding with Google Search is supported on the free tier for Gemini 3.8 Live, Gemini 3.8 Live Extended Thinking and Gemini 3.1 Flash Live Preview. It is not available on the free tier for Gemini 4 Argon or the Gemini 3.x Flash, Flash-Lite and Pro models. On the paid tier, 5,000 search requests a month are free, shared across Gemini 3 and newer models, then $14 per 1,000. Accounts opened after 2026-03-02 cannot spend the $300 Google Cloud welcome credit on the Gemini API.",
+      "current_state": "Gemini 4 Argon is not available on the free plan.",
+      "source_url": "https://ai.google.dev/pricing",
+      "category": "AI / ML",
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "Google Gemini Embedding 2",
@@ -4552,6 +4612,18 @@
     },
     {
       "vendor": "Grafana",
+      "change_type": "limits_increased",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-10-03 (same_transition_graded_differently) stated the same 7 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now includes 10k metrics, 50GB logs, 50GB traces, 50GB profiles, 50k frontend sessions, and 500VUh of k6 testing for 3 users.",
+      "previous_state": "Grafana OSS — the self-hosted dashboarding and alerting front end, free under AGPL-3.0-only with Apache-2.0 exceptions. Unifies 150+ data sources into one dashboard and supports observability-as-code. You set up, administer and maintain the installation yourself; Grafana Cloud is the hosted product and is priced separately.",
+      "current_state": "Includes a robust free tier with access to 10k metrics, 50GB logs, 50GB traces, 50GB profiles, 50k frontend sessions, and 500VUh of k6 testing for 3 users.",
+      "source_url": "https://grafana.com/oss/grafana/",
+      "category": "Monitoring",
+      "refused_date": "2026-10-27"
+    },
+    {
+      "vendor": "Grafana",
       "change_type": "pricing_restructured",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as Grafana|record_corrected|2026-09-09|https://grafana.com/oss/grafana/",
@@ -4587,6 +4659,18 @@
       "source_url": "https://gtmetrix.com/free-plan-features.html",
       "category": "Code Quality",
       "refused_date": "2026-09-14"
+    },
+    {
+      "vendor": "gtmetrix.com",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-14 (no_price_signal) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The page does not explicitly state limits for the free tier. It only mentions the ability to 'Get Started for FREE' and test with Seattle, WA. It does not mention daily/weekly/monthly monitoring, email alerts, or 1-month CrUX history. The page focuses on the benefits of GTmetrix and encourages users to 'View Plans and Pricing'.",
+      "previous_state": "Website performance testing — Lighthouse-based reports with Core Web Vitals, waterfall charts, and optimization recommendations. Free account: testing from Seattle and London, dashboard with filters and tags, daily/weekly/monthly monitoring, e-mail alerts, and 1-month CrUX history. GTmetrix states no on-demand test or monitored-slot quantity for the free account; the cheapest paid plan (Lite, $5.99/mo) lists 50 monthly on-demand tests and 1 monitored slot.",
+      "current_state": "The page allows users to 'Get Started for FREE' and test with Seattle, WA, but does not detail specific limits or features of the free tier.",
+      "source_url": "https://gtmetrix.com/free-plan-features.html",
+      "category": "Code Quality",
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "Hanko",
@@ -5222,6 +5306,18 @@
     },
     {
       "vendor": "Instabug for Startups",
+      "change_type": "product_deprecated",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 8236 characters, so it states no terms to have changed",
+      "summary": "The startup program has been discontinued and replaced with general pricing options. The page focuses on a paid platform with features like issue detection, business & engagement analysis, and sentiment tracking.",
+      "previous_state": "There is no startup program: instabug.com/startups no longer serves one. Checked 2026-09-02, the URL redirects to www.luciq.ai, the company's site after its rebrand to Luciq, whose navigation carries no startups or program page. The former offer was a discount on all Instabug plans for eligible startups.",
+      "current_state": "The page details a mobile observability platform with various features and pricing, requiring a demo or booking to understand specific costs. It offers solutions for mobile AI builders, developers, product managers, and leadership.",
+      "source_url": "https://www.luciq.ai/",
+      "category": "Error Tracking",
+      "refused_date": "2026-10-27"
+    },
+    {
+      "vendor": "Instabug for Startups",
       "change_type": "rebranded",
       "reason": "page_does_not_name_vendor",
       "detail": "the page read never names Instabug for Startups and is not served from its domain, so any terms on it belong to somebody else",
@@ -5717,6 +5813,18 @@
       "source_url": "https://leancloud.app/pricing",
       "category": "Cloud Hosting",
       "refused_date": "2026-10-16"
+    },
+    {
+      "vendor": "leapcell",
+      "change_type": "limits_increased",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-11 (unquantified_limit) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now allows for up to 20 deployed projects, while the stored deal info only mentions service invocations, async tasks, and Redis commands.",
+      "previous_state": "Leapcell is a reliable distributed applications platform, providing everything you need to seamlessly support your rapid growth. The free plan includes 100k service invocations, 10k async tasks and 100k Redis commands.",
+      "current_state": "Deploy up to 20 projects for free.",
+      "source_url": "https://leapcell.io/",
+      "category": "Cloud Hosting",
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "leapcell",
@@ -6222,6 +6330,18 @@
     {
       "vendor": "Mailchimp",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-04 (repeats_a_refused_reading) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier now has a contact limit. The stored information stated unlimited contacts, but the page states a limit of 250 contacts for the free plan.",
+      "previous_state": "Email marketing — 250 contacts, 500 sends/month (250/day cap), 1 audience, 1 seat, marketing CRM, forms and landing pages, email support first 30 days",
+      "current_state": "Limit of 250 contacts. $ 0 /month.",
+      "source_url": "https://mailchimp.com/pricing/",
+      "category": "Email",
+      "refused_date": "2026-10-27"
+    },
+    {
+      "vendor": "Mailchimp",
+      "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
       "detail": "the reading of this page refused on 2026-09-19 (measures_the_opposite) stated the same 2 figures, so the page showed these terms before the date this record gives",
       "summary": "The free tier now has a contact limit and send limit. The stored information stated 250 contacts and 500 sends/month, while the current page states a limit of 500 contacts and the ability to send 100 emails without payment information.",
@@ -6717,6 +6837,18 @@
     },
     {
       "vendor": "MinIO",
+      "change_type": "open_source_killed",
+      "reason": "confirmed_unchanged",
+      "detail": "Report restates information from the stored description and adds detail not previously claimed.",
+      "summary": "The original open-source MinIO edition, licensed under AGPLv3, is no longer maintained. Its codebase is frozen, with no new features, bug fixes, or security patches. Is commercially licensed and available in three tiers: AIStor Free, AIStor Enterprise Lite, and AIStor Enterprise.",
+      "previous_state": "S3-compatible object storage — AIStor Free is free to download and deploy and includes the full AIStor feature set for a single-node deployment. Redistribution is prohibited. AIStor is commercially licensed; the original AGPLv3 MinIO edition is no longer maintained, with no bug fixes or security patches.",
+      "current_state": "AIStor is MinIO's actively developed and fully supported product line and is available through the Free, Enterprise Lite, and Enterprise tiers. The original open-source MinIO edition, licensed under AGPLv3, is no longer maintained. Its codebase is frozen, with no new features, bug fixes, or security patches.",
+      "source_url": "https://min.io/pricing",
+      "category": "Storage",
+      "refused_date": "2026-10-27"
+    },
+    {
+      "vendor": "MinIO",
       "change_type": "pricing_restructured",
       "reason": "no_price_signal",
       "detail": "the page read carries no price signal — no amount, named tier or metered rate in 8941 characters, so it states no terms to have changed",
@@ -6825,6 +6957,18 @@
       "source_url": "https://mockupmark.com/create/free",
       "category": "Design",
       "refused_date": "2026-09-14"
+    },
+    {
+      "vendor": "mockupmark.com",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-14 (no_price_signal) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The number of free mockups has been reduced from 40 to 30+.",
+      "previous_state": "Create realistic t-shirt and clothing mockups for social media and E-commerce, 40 free mockups.",
+      "current_state": "Start today with one of our 30+ free apparel mockups!",
+      "source_url": "https://mockupmark.com/create/free",
+      "category": "Design",
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "Modal",
@@ -7005,6 +7149,18 @@
       "source_url": "https://www.netdata.cloud/",
       "category": "Monitoring",
       "refused_date": "2026-10-24"
+    },
+    {
+      "vendor": "Netlify",
+      "change_type": "limits_reduced",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (300 credit/mo, 15 credit, 10 credit, 20 credit, 2 credit, 10 request), and drops 3 the stored description carried",
+      "summary": "The Free plan still exists, but the description of its limits has changed. The page states 300 credits/month, covering production deploys (15 credits each), compute (10 credits per GB-hour), bandwidth (20 credits per GB) and web requests (2 credits per 10k requests).",
+      "previous_state": "The Free plan is $0 with a limit of 300 credits per month, covering production deploys (15 credits each), compute (10 credits per GB-hour), bandwidth (20 credits per GB) and web requests (2 credits per 10k requests). Netlify says the Free plan is always free, with hard monthly limits that cannot be exceeded or incur costs; extra credits need a paid plan. Personal is $9 a month with 1,000 credits.",
+      "current_state": "The Free plan includes 300 credit limit / month. Production deploys cost 15 credits each, compute is 10 credits per GB-hour, bandwidth is 20 credits per GB, and web requests are 2 credits per 10k requests.",
+      "source_url": "https://www.netlify.com/pricing/",
+      "category": "Cloud Hosting",
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "ngrok",
@@ -9191,15 +9347,15 @@
     },
     {
       "vendor": "Sematext",
-      "change_type": "free_tier_removed",
+      "change_type": "pricing_restructured",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-09-20 (confirmed_unchanged) stated the same 4 figures, so the page showed these terms before the date this record gives",
-      "summary": "The Basic plan for Logs now costs money, and has a 500 MB/day limit. The stored deal info stated it was a free tier.",
+      "detail": "the reading of this page refused on 2026-10-04 (repeats_a_refused_reading) stated the same 4 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier for Logs now has a 500 MB/day limit and 7-day retention, but also charges $0.1/GB for data received and $0.15/GB for data stored. The stored deal info did not mention any costs associated with the free tier beyond the limits.",
       "previous_state": "Observability platform — Logs: 500 MB/day ingestion, 7-day retention. Monitoring: 3 hosts, 3 containers/host, 30-min data retention, 1 alert rule. Volume-based pricing, no per-host charges on paid plans",
-      "current_state": "Basic $0.1/GB Data Received, $0.15/GB Data Stored, Retention 7 days, Daily Volume ? 500 MB/day",
+      "current_state": "Basic plan is ${{ logs_.basic.priceTotal }} /month with a 500 MB/day volume limit and 7-day retention. Data Received: $0.1/GB, Data Stored: $0.15/GB.",
       "source_url": "https://sematext.com/pricing",
       "category": "Monitoring",
-      "refused_date": "2026-10-04"
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "Semgrep",
@@ -9272,6 +9428,18 @@
       "source_url": "https://sentry.io/pricing/",
       "category": "Monitoring",
       "refused_date": "2026-09-19"
+    },
+    {
+      "vendor": "Sentry",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-19 (measures_no_change) stated the same 5 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free Developer plan now has limits of 5K errors/month, 5GB logs, 5M spans, and 50 session replays. It is limited to one user.",
+      "previous_state": "Developer tier: 1 user, 5K errors/month, 5M spans/month, 50 session replays, 5GB application logs, 1GB attachments",
+      "current_state": "Limited to one user. Error Monitoring and Tracing Alerts and notifications via email 10 custom dashboards MCP access. 5k errors/month, 5GB logs, 5M spans, 50 session replays.",
+      "source_url": "https://sentry.io/pricing/",
+      "category": "Monitoring",
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "serveo",
@@ -9885,15 +10053,15 @@
     },
     {
       "vendor": "Storj",
-      "change_type": "pricing_restructured",
+      "change_type": "new_tier",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as Storj|pricing_restructured|2026-09-09|https://storj.io/pricing",
-      "summary": "Object Mount is now a separately priced product with tiers ($29/license/mo for Teams, $39/license/mo for Any S3). The free trial now includes Object Mount with 2 licenses and 25GB of storage. The minimum monthly fee of $5 now applies to Storj Object Storage accounts unless paying with USDC or on a custom contract. There is a 30-day minimum storage retention period with early deletion fees unless using Object Mount.",
+      "summary": "Object Mount now has paid tiers with varying storage inclusions. The free trial for Object Storage includes 25 GB for 30 days and 2 Object Mount licenses. Object Mount now has paid tiers: Teams ($29/license/mo) includes 500 GB of Storj Object Storage, and another tier ($39/license/mo) does not include Storj storage. The minimum monthly fee of $5 still applies to Storj Object Storage. Is waived for accounts paying with USDC.",
       "previous_state": "Distributed S3-compatible object storage. Free trial only: 25 GB free storage for 30 days, no credit card required, and 2 Object Mount licenses. After the trial, $7/TB storage and $7/TB egress with a $5 monthly minimum fee (waived while the trial is running and for accounts paying in STORJ token).",
-      "current_state": "Object Mount is available as a paid add-on with different tiers. The free trial includes 2 Object Mount licenses and 25GB of storage. Paid plans include $29/license/mo for Teams (includes 500GB Storj Object Storage) and $39/license/mo for Any S3 (no included Storj storage).",
+      "current_state": "Object Mount has a free trial included with Storj Object Storage. Paid tiers are available at $29/license/mo (includes 500 GB of Storj Object Storage) and $39/license/mo (does not include Storj storage).",
       "source_url": "https://storj.io/pricing",
       "category": "Storage",
-      "refused_date": "2026-10-03",
+      "refused_date": "2026-10-27",
       "collided_with": "Storj|pricing_restructured|2026-09-09|https://storj.io/pricing"
     },
     {
@@ -9956,6 +10124,18 @@
       "source_url": "https://www.sublimetext.com/",
       "category": "IDE & Code Editors",
       "refused_date": "2026-10-14"
+    },
+    {
+      "vendor": "Supabase",
+      "change_type": "pricing_restructured",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (50,000 active/mo, 500 MB database, 5 GB egres, 5 GB cached, 1 GB file, 500,000 edge), and drops 8 the stored description carried",
+      "summary": "The free tier limits are the same, but compute is now a separate, add-on cost. The free tier includes $0 in compute credits, while paid plans include $10/month in compute credits. There are also various compute instance sizes available at different price points.",
+      "previous_state": "Postgres development platform: database, Auth, Storage, Realtime and Edge Functions. The Free plan is $0: unlimited API requests, 50,000 monthly active users, a 500 MB database on a shared CPU with 500 MB RAM, 5 GB egress plus 5 GB cached egress, 1 GB file storage, 500,000 Edge Function invocations, and Realtime with 200 concurrent connections and 2 million messages a month. Free projects are paused after 1 week of inactivity, with a limit of 2 active projects. Pro starts at $25 a month for the first project and includes $10 a month of compute credits, enough for one Micro instance.",
+      "current_state": "The Free plan includes unlimited API requests, 50,000 monthly active users, a 500 MB database, 5 GB egress, 5 GB cached egress, 1 GB file storage, and 500,000 Edge Function invocations. It does not include any compute credits.",
+      "source_url": "https://supabase.com/pricing",
+      "category": "Databases",
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "Supabase",
@@ -10357,6 +10537,18 @@
       "source_url": "https://ecosend.io/",
       "category": "Communication",
       "refused_date": "2026-09-15"
+    },
+    {
+      "vendor": "The GoSquared Early Stage Plan",
+      "change_type": "rebranded",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this vendor refused on 2026-09-15 (page_does_not_name_vendor) stated the same current state, word for word",
+      "summary": "The GoSquared Early Stage Plan no longer exists. The page now promotes EcoSend, an email marketing platform, with a 'Start Free' option offering a free forever plan with no credit card required.",
+      "previous_state": "There is no early stage plan: gosquared.com/early-stage/ redirects to ecosend.io, an email marketing product with its own pricing and no startup offer. Checked 2026-09-02, GoSquared's analytics product is not sold at the destination. The former offer was all GoSquared features at a fixed low price for the first year.",
+      "current_state": "EcoSend offers a 'Start Free' plan that is free forever, requires no credit card, and can be cancelled anytime.",
+      "source_url": "https://ecosend.io/",
+      "category": "Communication",
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "The Intercom Early Stage Program",
@@ -11804,6 +11996,18 @@
       "source_url": "https://zoho.com/projects",
       "category": "Project Management",
       "refused_date": "2026-08-31"
+    },
+    {
+      "vendor": "Zoho Projects",
+      "change_type": "limits_reduced",
+      "reason": "dangling_reference",
+      "detail": "the summary now opens on a reference to a clause that was dropped, so the sentence that travels alone has no subject",
+      "summary": "The page states that Zoho Projects is a free project management platform with features like task management, Gantt charts, resource allocation, and collaboration. It does not explicitly state the limits of 5 users or 3 projects, but it does highlight its comprehensive functionality even in the free version.",
+      "previous_state": "Free for up to 5 users: 3 projects, subtasks, whiteboard, 5 GB of storage and the iOS and Android apps. Zoho's [Bugtracker](https://zoho.com/bugtracker) has its own free plan: 3 users, 2 projects and 5 GB of attachments.",
+      "current_state": "Zoho Projects is a free project management platform with task management, Gantt charts, resource allocation, and collaboration features.",
+      "source_url": "https://zoho.com/projects",
+      "category": "Project Management",
+      "refused_date": "2026-10-27"
     },
     {
       "vendor": "Zoho Showtime",
