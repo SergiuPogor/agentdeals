@@ -4078,6 +4078,12 @@
           "read_on": "2026-10-04"
         },
         {
+          "text": "Paid-tier projects created on or after October 26, 2026, store Generate Content API requests and responses by default. Existing projects keep their current setting. Logs are retained for up to 55 days and are not used to improve Google's products unless shared. To turn off logging, set store=false on individual requests or disable it in the Logs and Datasets settings in AI Studio.",
+          "quote": "Logging is on by default for Interactions API calls, and for Generate Content API calls in projects created on or after October 26, 2026.",
+          "url": "https://ai.google.dev/gemini-api/docs/logs-policy",
+          "read_on": "2026-10-28"
+        },
+        {
           "text": "Apps that serve users in the European Economic Area, Switzerland or the United Kingdom may use only the paid tier.",
           "quote": "You may use only Paid Services when making API Clients available to users in the European Economic Area, Switzerland, or the United Kingdom.",
           "url": "https://ai.google.dev/gemini-api/terms",
