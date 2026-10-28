@@ -164,7 +164,7 @@ describe("pages rate a vendor that moved away from open source without saying it
     assert.ok(riskCells.length >= 4, "the risk index's MinIO (OSS) row did not render");
     assert.strictEqual(
       riskCells[3],
-      "Open-source version killed Feb 2026 (GNU AGPL → proprietary). The open-source edition gets no fixes or patches. AIStor Free is free on one node, including for production. A multi-node cluster needs a paid AIStor subscription.",
+      "Open-source version killed Feb 2026. The open-source edition gets no fixes or patches. AIStor Free is free on one node, including for production. A multi-node cluster needs a paid AIStor subscription.",
     );
 
     const opsCard = (await get("/storage-comparison-2026")).match(/<h3>Self-hosted: ops cost is real<\/h3>\s*<div class="diff-desc">([\s\S]*?)<\/div>/)?.[1];
