@@ -20884,8 +20884,8 @@ globalNavCss() + "\n" +
   "<div class=\"story-card\">\n" +
     "<h3>MinIO Open Source Killed</h3>\n" +
     "<span class=\"story-impact\" style=\"background:#f8514922;color:#f85149\">OSS Killed &middot; High Impact</span>\n" +
-    "<p>MinIO, the most popular S3-compatible object storage server, switched from Apache 2.0 to a proprietary license in February 2026. Self-hosted users now need a commercial license for production use. This followed a pattern seen with Redis (RSALv2/SSPLv1), Elasticsearch (SSPL), and MongoDB (SSPL), but hit particularly hard because MinIO was foundational infrastructure for thousands of self-hosted deployments.</p>\n" +
-    "<p><a href=\"/vendor/minio\">View vendor profile</a> &middot; <a href=\"/storage-alternatives\">Storage alternatives</a></p>\n" +
+    "<p>MinIO's open-source server was licensed under AGPLv3. On February 12, 2026, MinIO marked its repository as no longer maintained and archived it the next day. The AGPL edition now gets no bug fixes or security patches. Development continues in the commercially licensed MinIO AIStor. Its AIStor Free edition is free for a single-node deployment.</p>\n" +
+    "<p><a href=\"/vendor/minio\">View vendor profile</a> &middot; <a href=\"/storage-alternatives\">Storage alternatives</a> &middot; <a href=\"https://github.com/minio/minio\" rel=\"nofollow noopener\" title=\"github.com/minio/minio\">MinIO repository</a></p>\n" +
   "</div>\n" +
 
   "<div class=\"story-card\">\n" +
@@ -23716,7 +23716,7 @@ function buildFreeTierRiskPage(): string {
   const faqs = [
     { q: "How often is the Free Tier Risk Index updated?", a: "The grades are editorial and do not move on their own. " + gradingDates + ", and every row on the page carries the date its own grade was set. What is recomputed on every request is the record beneath them — each vendor's tracked changes since the day it was graded, and the scorecard showing how each band has fared. Our change log currently holds " + changeCountPhrase("in_force", changesInForce) + " across " + offers.length.toLocaleString() + " developer tools, and we add new changes within 48 hours of announcement." },
     { q: "Which free tiers are safest to build on in 2026?", a: "Cloudflare, GitHub, Grafana Cloud, AWS Always Free, and Google Cloud Always Free are our lowest-risk picks, graded " + safestPicksGraded + ". They share three traits: backed by profitable companies, the free tier is a strategic acquisition funnel, and strong competitive pressure prevents removal. Section 6 of this page publishes what has happened to each band since." },
-    { q: "What are the warning signs that a free tier is about to be removed?", a: "Key signals: (1) acquisition or ownership change (HashiCorp/IBM, Neon/Databricks), (2) license change (MinIO AGPL to proprietary), (3) credit-based pricing transition (Vercel, Netlify), (4) two or more negative changes within 6 months, and (5) 'sustaining mode' language in announcements." },
+    { q: "What are the warning signs that a free tier is about to be removed?", a: "Key signals: (1) acquisition or ownership change (HashiCorp/IBM, Neon/Databricks), (2) end of open-source maintenance (MinIO's AGPLv3 server), (3) credit-based pricing transition (Vercel, Netlify), (4) two or more negative changes within 6 months, and (5) 'sustaining mode' language in announcements." },
     { q: "How do you calculate risk scores?", a: "We weight four factors: pricing history (40%) — has the vendor changed before and how recently; financial signals (25%) — profitable vs VC-subsidized, recent acquisitions; competitive pressure (20%) — intense competition keeps free tiers alive; free tier strategic value (15%) — is the free tier a funnel or a cost center. " + pricingHistoryCoverageAnswer(gradedWithNoRecordAtAll, riskEntries) },
     { q: "How accurate have the risk grades been?", a: gradingDates + ", and scored against every change tracked since: " + bandScores.map(b => riskLabels[b.grade].toLowerCase() + " " + b.vendorsWithANegative + " of " + b.vendors + " (" + b.rate + "%)").join(", ") + ". A vendor counts if our change log holds a record in force since its grading date that removed a free tier, cut limits, added a restriction, killed an open-source edition, or deprecated the graded product itself. Vendors with nothing tracked stay in the denominator rather than being dropped." },
     { q: "What should I do if a tool I depend on is rated high risk?", a: "Start planning your migration now. Use abstractions (ORMs, S3-compatible APIs, OpenTelemetry) to minimize switching cost. Identify 2-3 alternatives and test them in a staging environment. Subscribe to our pricing change feed at /feed.xml for early warning." },
@@ -24083,7 +24083,7 @@ ${globalNavCss()}
     </div>
     <div class="verdict-item">
       <strong>Watch the signals, not just the announcements</strong>
-      <p>Free tier changes rarely come out of nowhere. Watch for: acquisitions (Neon/Databricks, HashiCorp/IBM), license changes (MinIO AGPL → proprietary), credit-based pricing transitions (Vercel, Netlify), and "sustaining mode" language (Heroku). These precede free tier cuts by 6-18 months.</p>
+      <p>Free tier changes rarely come out of nowhere. Watch for: acquisitions (Neon/Databricks, HashiCorp/IBM), end of open-source maintenance (MinIO's AGPLv3 server), credit-based pricing transitions (Vercel, Netlify), and "sustaining mode" language (Heroku). These precede free tier cuts by 6-18 months.</p>
     </div>
     <div class="verdict-item">
       <strong>Subscribe to our change tracking</strong>

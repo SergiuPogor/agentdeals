@@ -1,7 +1,11 @@
 import { describe, it, before, after } from "node:test";
 import assert from "node:assert";
 import { spawn, type ChildProcess } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import type { Offer } from "../src/types.ts";
+import type { VerificationStateRecord } from "../src/verification-state.ts";
+import type { ChangeRefusal } from "../src/change-refusal.ts";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { GATE_REASONS } from "../scripts/change-gate.js";
@@ -127,18 +131,24 @@ const stillContradicted = offers.filter((offer) => {
 let serverPort = 0;
 let proc: ChildProcess | null = null;
 
-function startServer(): Promise<ChildProcess> {
+function startServer(env: Record<string, string> = {}): Promise<ChildProcess> {
   return new Promise((resolve, reject) => {
     const child = spawn("node", [path.join(REPO, "dist", "serve.js")], {
       stdio: ["pipe", "pipe", "pipe"],
-      env: { ...process.env, PORT: "0", BASE_URL: "http://localhost" },
+      env: { ...process.env, PORT: "0", BASE_URL: "http://localhost", ...env },
     });
     const timeout = setTimeout(() => { child.kill(); reject(new Error("Server startup timeout")); }, 20000);
+    let stderr = "";
     child.stderr!.on("data", (data: Buffer) => {
+      stderr += data.toString();
       const m = data.toString().match(/running on http:\/\/localhost:(\d+)/);
       if (m) { serverPort = parseInt(m[1], 10); clearTimeout(timeout); resolve(child); }
     });
     child.on("error", (err) => { clearTimeout(timeout); reject(err); });
+    child.on("exit", (code, signal) => {
+      clearTimeout(timeout);
+      reject(new Error(`Server exited before startup (${code ?? signal}): ${stderr}`));
+    });
   });
 }
 
@@ -337,7 +347,6 @@ describe("the pages that describe a read our own refusal voided", () => {
   it("says we read a domain root wherever the refusal recorded one", async () => {
     const readFromARoot = voidedByItsOwnRefusal.filter((offer) =>
       sameDayRefusals(offer).some((r) => r.reason === "removal_read_from_root"));
-    assertPopulationFloor(readFromARoot.length, 1, "reads a refusal voided as taken from a domain root");
     const wrong: string[] = [];
     for (const offer of readFromARoot) {
       const refusal = sameDayRefusals(offer).find((r) => r.reason === "removal_read_from_root")!;
@@ -412,5 +421,92 @@ describe("the pages that describe a read our own refusal voided", () => {
       }
     }
     assert.deepStrictEqual(speaking.slice(0, 20), [], speaking.slice(0, 20).join("\n"));
+  });
+});
+
+
+describe("a domain-root refusal keeps its warning only on the read it voided", () => {
+  const LATER = "2026-09-12";
+  const ROOT_WARNING = "reached a domain root that states nothing about the terms we hold";
+  const fixtureOffers: Offer[] = ["Root Warning", "Later Changed Read", "Unrefused Read"].map(vendor => ({
+    vendor,
+    category: "Databases",
+    description: "Free hosted database with 1 GB storage.",
+    tier: "Free",
+    url: `https://${slugOf(vendor)}.example/`,
+    tags: ["database"],
+    verifiedDate: "2026-09-10",
+  }));
+  let scratch: string;
+  let fixtureProc: ChildProcess;
+
+  before(async () => {
+    scratch = mkdtempSync(path.join(tmpdir(), "domain-root-refusal-"));
+    const records: VerificationStateRecord[] = fixtureOffers.map((offer, i) => ({
+      vendor: offer.vendor,
+      url: offer.url,
+      last_attempt_at: i === 1 ? LATER : READ,
+      last_outcome: "changed",
+      last_error: null,
+      failure_category: null,
+      consecutive_failures: 0,
+      last_success: null,
+      last_read_at: i === 1 ? LATER : READ,
+      quarantined_since: null,
+    }));
+    const refusals: ChangeRefusal[] = fixtureOffers.slice(0, 2).map(offer => ({
+      vendor: offer.vendor,
+      change_type: "free_tier_removed",
+      reason: "removal_read_from_root",
+      detail: null,
+      summary: "The domain root states no pricing terms.",
+      previous_state: null,
+      current_state: null,
+      source_url: offer.url,
+      category: offer.category,
+      refused_date: READ,
+    }));
+    refusals.push({ ...refusals[1], reason: "repeats_a_refused_claim", refused_date: LATER });
+    for (const [filename, data] of Object.entries({
+      "index.json": { offers: fixtureOffers },
+      "state.json": { records },
+      "refusals.json": { refusals },
+      "changes.json": { changes: [] },
+      "health.json": { checks: [] },
+    })) writeFileSync(path.join(scratch, filename), JSON.stringify(data));
+    fixtureProc = await startServer({
+      AGENTDEALS_INDEX_PATH: path.join(scratch, "index.json"),
+      AGENTDEALS_VERIFICATION_STATE_PATH: path.join(scratch, "state.json"),
+      AGENTDEALS_REFUSALS_PATH: path.join(scratch, "refusals.json"),
+      AGENTDEALS_CHANGES_PATH: path.join(scratch, "changes.json"),
+      AGENTDEALS_LINK_HEALTH_PATH: path.join(scratch, "health.json"),
+    });
+  });
+
+  after(() => {
+    fixtureProc?.kill();
+    if (scratch) rmSync(scratch, { recursive: true, force: true });
+  });
+
+  it("publishes the literal domain-root warning for its same-day changed read", async () => {
+    const { status, body } = await get("/vendor/root-warning");
+    assert.strictEqual(status, 200);
+    assert.ok(body.includes(`Our last read of it, on ${READ}, ${ROOT_WARNING}`));
+    assert.ok(!body.includes("found the page different from the terms we hold"));
+  });
+
+  it("publishes the later unsettled difference without borrowing the earlier root warning", async () => {
+    const { status, body } = await get("/vendor/later-changed-read");
+    assert.strictEqual(status, 200);
+    assert.ok(body.includes(`Our last read of it, on ${LATER}, found the page different from the terms we hold`));
+    assert.ok(!body.includes(`Our last read of it, on ${READ}, `));
+    assert.ok(!body.includes(ROOT_WARNING));
+  });
+
+  it("still publishes a difference for a changed read with no refusal", async () => {
+    const { status, body } = await get("/vendor/unrefused-read");
+    assert.strictEqual(status, 200);
+    assert.ok(body.includes(`Our last read of it, on ${READ}, found the page different from the terms we hold`));
+    assert.ok(!body.includes(ROOT_WARNING));
   });
 });
