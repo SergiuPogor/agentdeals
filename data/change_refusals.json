@@ -511,6 +511,18 @@
       "refused_date": "2026-09-03"
     },
     {
+      "vendor": "Apple Notes",
+      "change_type": "free_tier_removed",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (5 GB icloud)",
+      "summary": "Apple Notes is no longer explicitly mentioned as a fully free service. The page details iCloud+ which offers 5GB of free storage, but additional features and storage require a paid subscription. The free tier is now tied to iCloud+ and its features are limited without a subscription.",
+      "previous_state": "Fully free on Apple devices. Unlimited notes with rich text, checklists, tables, sketches, document scanning. Shared notes. iCloud sync counts against 5 GB iCloud free storage. Locked notes with password/biometric.",
+      "current_state": "The first time you sign in to an iPhone, iPad, or Mac with your Apple Account, you’ll get 5GB of free iCloud storage. This allows you to back up your data and keep your personal information in sync across your devices and at iCloud.com. To get additional storage for all your data, as well as access to iCloud Private Relay, Hide My Email, HomeKit Secure Video, and more, simply upgrade to iCloud+.",
+      "source_url": "https://www.apple.com/icloud/",
+      "category": "Productivity & Notes",
+      "refused_date": "2026-10-28"
+    },
+    {
       "vendor": "Applitools Eyes",
       "change_type": "free_tier_removed",
       "reason": "no_removal_evidence",
@@ -1873,6 +1885,18 @@
     },
     {
       "vendor": "Cloudflare Workers",
+      "change_type": "new_tier",
+      "reason": "restates_stored_quantities",
+      "detail": "narrowing claimed, and every quantity the current state names is one the stored description already held at the same value (5 currency/mo), and drops 24 the stored description carried",
+      "summary": "The pricing page details a Workers Paid plan with a $5/month minimum charge, which was not mentioned in the stored deal info. The free tier is confirmed to exist, but the details of the paid tier have changed.",
+      "previous_state": "Edge compute with 100K requests/day, 10ms CPU time per invocation, 5 cron triggers/account. KV: 1 GB storage, 100K reads/day, 1K writes/day. D1: 5 GB storage, 5M rows read/day, 100K rows written/day. R2 (Standard storage): 10 GB-month/month, 1M Class A ops/month, 10M Class B ops/month. Durable Objects (SQLite-backed only): 100K requests/day. Queues: 10K operations/day. Vectorize: 30M queried vector dimensions/month, 5M stored vector dimensions. Dynamic Workers are paid only. US students 18+ with a verified .edu billing email: Workers Paid (10M requests/month), $5/mo fee waived for 12 months. Workers Paid has a minimum charge of $5 per month per account. It includes 10 million requests and 30 million CPU milliseconds monthly. Each additional million requests costs $0.30. Each additional million CPU milliseconds costs $0.02. Duration is not charged.",
+      "current_state": "Users have access to the Workers Free plan with limited usage. The Workers Paid plan includes increased usage allotments for a minimum charge of $5 USD per month.",
+      "source_url": "https://developers.cloudflare.com/workers/platform/pricing/",
+      "category": "Cloud Hosting",
+      "refused_date": "2026-10-28"
+    },
+    {
+      "vendor": "Cloudflare Workers",
       "change_type": "pricing_restructured",
       "reason": "states_no_difference",
       "detail": "the summary states that the page agrees with what we hold, and names no figure the stored description did not already carry",
@@ -2916,13 +2940,13 @@
       "vendor": "Docker Hub",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-08-28 (confirmed_unchanged) stated the same 2 figures, so the page showed these terms before the date this record gives",
+      "detail": "the reading of this page refused on 2026-09-12 (measures_the_opposite) stated the same 3 figures, so the page showed these terms before the date this record gives",
       "summary": "The Docker Hub Personal tier now includes 100 Docker Hub pulls/hr instead of 200 pulls per 6-hour window. It also includes 1 Docker Scout-enabled repo.",
       "previous_state": "1 private repository, unlimited public repositories. 200 pulls per 6-hour window (authenticated). No automated builds on free tier",
-      "current_state": "Includes: 100 Docker Hub pulls/hr, 1 Docker Scout-enabled repo",
+      "current_state": "Includes: 100 Docker Hub pulls/hr, 1 private Docker Hub repo, 1 Docker Scout-enabled repo",
       "source_url": "https://www.docker.com/pricing/",
       "category": "Container Registry",
-      "refused_date": "2026-10-04"
+      "refused_date": "2026-10-28"
     },
     {
       "vendor": "Doczilla",
@@ -2986,6 +3010,18 @@
       "refused_date": "2026-09-15"
     },
     {
+      "vendor": "Drift for Early Stage Startups",
+      "change_type": "rebranded",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-15 (page_does_not_name_vendor) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "Drift is now 1mind and integrates with Salesloft. There is no longer a standalone Drift startup program or pricing. The page details AI chat agents as part of the Salesloft platform.",
+      "previous_state": "There is no startup program: drift.com/startups/ answers 200 with a meta-refresh to salesloft.com/platform/drift, where Drift is sold as a Salesloft product with no startup offer. Checked 2026-09-02. The former offer was 93% off the Essential Plan for one year.",
+      "current_state": "The page states that they've transitioned from Drift to 1mind, which feeds buyer signals into Salesloft's Predictive Revenue System.",
+      "source_url": "https://www.salesloft.com/platform/drift",
+      "category": "Communication",
+      "refused_date": "2026-10-28"
+    },
+    {
       "vendor": "Drone CI",
       "change_type": "rebranded",
       "reason": "no_price_signal",
@@ -3020,6 +3056,18 @@
       "source_url": "https://dub.co/pricing/links",
       "category": "Dev Utilities",
       "refused_date": "2026-09-22"
+    },
+    {
+      "vendor": "Dub.co",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-22 (measures_no_change) stated the same 6 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now has 1K tracked events/month and 25 new links/month, whereas previously it had 1,000 tracked events/month and 25 new links/month.",
+      "previous_state": "Open-source link management — 25 new links/month, 1,000 tracked events/month, 3 custom domains, 1 user, 30-day analytics retention, API with native SDKs. No credit card required",
+      "current_state": "$0 free forever – the most generous free plan on the market Start for free 1K tracked events/mo Real-time analytics 1 user Basic support 25 new links/mo AI assistant Link tags API access 3 custom domains UTM templates 30-day analytics retention QR codes",
+      "source_url": "https://dub.co/pricing/links",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-28"
     },
     {
       "vendor": "duo.com",
@@ -3459,6 +3507,18 @@
       "source_url": "https://fireworks.ai/pricing",
       "category": "AI / ML",
       "refused_date": "2026-09-24"
+    },
+    {
+      "vendor": "Fireworks AI",
+      "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this vendor refused on 2026-10-03 (states_no_terms) stated the same current state, word for word",
+      "summary": "The $1 free credit is no longer explicitly mentioned. While serverless inference is still available with pay-as-you-go pricing, the initial free credit offer appears to be removed. The pricing for serverless inference has been restructured, with different prices for Standard, Priority, and Fast serving paths, and new models with varying costs.",
+      "previous_state": "Inference platform for open models, with serverless per-token pricing and on-demand GPU deployments billed per GPU second. Fireworks offers $1 in free credits to get started. Accounts with no payment method, or with no credits, are limited to 10 requests per minute, and an account without a payment method is suspended when the $1 credit runs out until one is added. Serverless prices: OpenAI GPT OSS 120B $0.15/$0.60 (per 1M tokens); MiniMax M3 $0.30/$1.20 (per 1M tokens); GLM 5.3 $1.40/$4.40 (per 1M tokens); Kimi K3 $3.00/$15.00 (per 1M tokens). Batch inference costs 50% of serverless prices. Image generation and audio inference were deprecated on June 10, 2026. Fireworks removed these models from serverless in 2026, so serverless requests for them fail (dedicated deployments are unaffected), according to its changelog (docs.fireworks.ai/updates/changelog): DeepSeek V4 Pro (0813) (accounts/fireworks/models/deepseek-v4-pro-0813) on 2026-09-25, replaced by DeepSeek V4.1 Flash $0.30/$1.20 (deepseek-v4p1-flash); DeepSeek V4 Flash (0731) (deepseek-v4-flash-0731) on 2026-09-25, replaced by DeepSeek V4.1 Flash; GLM 5.2 (glm-5p2) on 2026-09-25, replaced by GLM 5.3 (glm-5p3); Kimi K2.6 (kimi-k2p6) on 2026-09-25, replaced by GLM 5.3 or Kimi K3 (kimi-k3); Kimi K2.7 Code (kimi-k2p7-code) on 2026-09-25, replaced by GLM 5.3 or Kimi K3; Muse Glimmer 30B (muse-glimmer-30b) on 2026-09-25, replaced by NVIDIA Nemotron 3.5 Lightning 30B A3B $0.05/$0.20 (nemotron-lightning-3p5-30b-a3b); GPT OSS 20B (gpt-oss-20b) on 2026-08-27, replaced by GPT OSS 120B or Qwen3 8B; MiniMax M2.7 (minimax-m2p7) on 2026-08-27, replaced by MiniMax M3; Kimi K2.5 (kimi-k2p5) on 2026-06-26; Qwen 3.6 Plus (qwen3p6-plus) on 2026-06-26, replaced by Qwen 3.7 Plus; MiniMax M2.5 (minimax-m2p5) on 2026-06-17. Kimi K3 (kimi-k3) is the Kimi model on Fireworks serverless today.",
+      "current_state": "Serverless Inference is a pay-per-token service. Users add a payment method to buy credits, and usage is deducted from their balance. Auto Reload and monthly spend limits are available.",
+      "source_url": "https://fireworks.ai/pricing",
+      "category": "AI / ML",
+      "refused_date": "2026-10-28"
     },
     {
       "vendor": "Fireworks AI",
@@ -4553,6 +4613,18 @@
     {
       "vendor": "Grafana",
       "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-10-03 (same_transition_graded_differently) stated the same 7 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier is now associated with Grafana Cloud, not Grafana OSS. Grafana Cloud's free tier includes 10k metrics, 50GB logs, 50GB traces, 50GB profiles, 50k frontend sessions, and 500VUh of k6 testing for 3 users. The page emphasizes downloading Grafana OSS for self-managed installations.",
+      "previous_state": "Grafana OSS — the self-hosted dashboarding and alerting front end, free under AGPL-3.0-only with Apache-2.0 exceptions. Unifies 150+ data sources into one dashboard and supports observability-as-code. You set up, administer and maintain the installation yourself; Grafana Cloud is the hosted product and is priced separately.",
+      "current_state": "Grafana Cloud includes a robust free tier with access to 10k metrics, 50GB logs, 50GB traces, 50GB profiles, 50k frontend sessions, and 500VUh of k6 testing for 3 users.",
+      "source_url": "https://grafana.com/oss/grafana/",
+      "category": "Monitoring",
+      "refused_date": "2026-10-28"
+    },
+    {
+      "vendor": "Grafana",
+      "change_type": "pricing_restructured",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as Grafana|record_corrected|2026-09-09|https://grafana.com/oss/grafana/",
       "summary": "The free tier is now associated with Grafana Cloud, not the self-hosted OSS version. The free tier now includes 10k metrics, 50GB logs, 50GB traces, 50GB profiles, 50k frontend sessions, and 500VUh of k6 testing for 3 users.",
@@ -4587,6 +4659,18 @@
       "source_url": "https://gtmetrix.com/free-plan-features.html",
       "category": "Code Quality",
       "refused_date": "2026-09-14"
+    },
+    {
+      "vendor": "gtmetrix.com",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-14 (no_price_signal) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The page does not explicitly state limits for the free tier. It only mentions the ability to 'Get Started for FREE' and test with Seattle, WA. It does not mention daily/weekly/monthly monitoring, email alerts, or 1-month CrUX history. The page highlights a 40% off Black Friday sale on all plans.",
+      "previous_state": "Website performance testing — Lighthouse-based reports with Core Web Vitals, waterfall charts, and optimization recommendations. Free account: testing from Seattle and London, dashboard with filters and tags, daily/weekly/monthly monitoring, e-mail alerts, and 1-month CrUX history. GTmetrix states no on-demand test or monitored-slot quantity for the free account; the cheapest paid plan (Lite, $5.99/mo) lists 50 monthly on-demand tests and 1 monitored slot.",
+      "current_state": "The page allows users to 'Get Started for FREE' and test from Seattle, WA, but does not detail specific limits or features of the free tier beyond that.",
+      "source_url": "https://gtmetrix.com/free-plan-features.html",
+      "category": "Code Quality",
+      "refused_date": "2026-10-28"
     },
     {
       "vendor": "Hanko",
@@ -5721,6 +5805,18 @@
     {
       "vendor": "leapcell",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-11 (unquantified_limit) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free plan now allows for deploying up to 20 projects, but the previous limits of 100k service invocations, 10k async tasks and 100k Redis commands are no longer mentioned.",
+      "previous_state": "Leapcell is a reliable distributed applications platform, providing everything you need to seamlessly support your rapid growth. The free plan includes 100k service invocations, 10k async tasks and 100k Redis commands.",
+      "current_state": "Deploy up to 20 projects for free.",
+      "source_url": "https://leapcell.io/",
+      "category": "Cloud Hosting",
+      "refused_date": "2026-10-28"
+    },
+    {
+      "vendor": "leapcell",
+      "change_type": "limits_reduced",
       "reason": "unquantified_limit",
       "detail": "limits_reduced claimed, but the current state names no quantity for anything the stored state measured (100 service, 10 async, 100 redi)",
       "summary": "The free tier now allows for deploying up to 20 projects, but the limits on service invocations, async tasks, and Redis commands are no longer mentioned.",
@@ -6222,6 +6318,18 @@
     {
       "vendor": "Mailchimp",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-04 (repeats_a_refused_reading) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier now has a contact limit. The stored information states unlimited contacts, while the current pricing page states a limit of 250 contacts for the free plan.",
+      "previous_state": "Email marketing — 250 contacts, 500 sends/month (250/day cap), 1 audience, 1 seat, marketing CRM, forms and landing pages, email support first 30 days",
+      "current_state": "The free plan has a limit of 250 contacts.",
+      "source_url": "https://mailchimp.com/pricing/",
+      "category": "Email",
+      "refused_date": "2026-10-28"
+    },
+    {
+      "vendor": "Mailchimp",
+      "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
       "detail": "the reading of this page refused on 2026-09-19 (measures_the_opposite) stated the same 2 figures, so the page showed these terms before the date this record gives",
       "summary": "The free tier now has a contact limit and send limit. The stored information stated 250 contacts and 500 sends/month, while the current page states a limit of 500 contacts and the ability to send 100 emails without payment information.",
@@ -6717,6 +6825,18 @@
     },
     {
       "vendor": "MinIO",
+      "change_type": "open_source_killed",
+      "reason": "confirmed_unchanged",
+      "detail": "The report restates information already present in the stored description.",
+      "summary": "The original open-source MinIO edition (AGPLv3) is no longer maintained and has been discontinued.",
+      "previous_state": "S3-compatible object storage — AIStor Free is free to download and deploy and includes the full AIStor feature set for a single-node deployment. Redistribution is prohibited. AIStor is commercially licensed; the original AGPLv3 MinIO edition is no longer maintained, with no bug fixes or security patches.",
+      "current_state": "MinIO OSS is at end of life and is no longer being maintained. We strongly encourage OSS users to evaluate alternatives or contact MinIO to upgrade to AIStor.",
+      "source_url": "https://min.io/pricing",
+      "category": "Storage",
+      "refused_date": "2026-10-28"
+    },
+    {
+      "vendor": "MinIO",
       "change_type": "pricing_restructured",
       "reason": "no_price_signal",
       "detail": "the page read carries no price signal — no amount, named tier or metered rate in 8941 characters, so it states no terms to have changed",
@@ -6825,6 +6945,18 @@
       "source_url": "https://mockupmark.com/create/free",
       "category": "Design",
       "refused_date": "2026-09-14"
+    },
+    {
+      "vendor": "mockupmark.com",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-14 (no_price_signal) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The number of free mockups has been reduced from 40 to 30+.",
+      "previous_state": "Create realistic t-shirt and clothing mockups for social media and E-commerce, 40 free mockups.",
+      "current_state": "Start today with one of our 30+ free apparel mockups!",
+      "source_url": "https://mockupmark.com/create/free",
+      "category": "Design",
+      "refused_date": "2026-10-28"
     },
     {
       "vendor": "Modal",
@@ -9079,6 +9211,18 @@
     {
       "vendor": "ScaleGrid Startup Program",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-03 (same_transition_graded_differently) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The Startup Saver program now has eligibility criteria of less than $1.5M in revenue and less than $1.5M in funding. Small plan sizes receive 50% off BYOC and 25% off Dedicated Hosting plans for 3 months.",
+      "previous_state": "ScaleGrid's startup offer is now called Startup Saver: up to 50% off for 12 months on managed MySQL, PostgreSQL, Redis and MongoDB. Bring Your Own Cloud plans get 50% off at medium size or larger; Dedicated Hosting gets 25% off at medium or larger. Small plan sizes get 50% off BYOC and 25% off Dedicated Hosting for 3 months.",
+      "current_state": "Startup Saver is available for businesses with less than $1.5M in revenue and less than $1.5M in funding. Small plan sizes receive 50% off BYOC and 25% off Dedicated Hosting plans for 3 months.",
+      "source_url": "https://scalegrid.io/pricing/offers/startup-saver/",
+      "category": "Startup Perks",
+      "refused_date": "2026-10-28"
+    },
+    {
+      "vendor": "ScaleGrid Startup Program",
+      "change_type": "limits_reduced",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as ScaleGrid Startup Program|record_corrected|2026-09-19|https://scalegrid.io/pricing/offers/startup-saver/",
       "summary": "The Startup Saver program now has eligibility criteria of less than $1.5M in revenue and less than $1.5M in funding. Small plan sizes receive 50% off BYOC and 25% off Dedicated Hosting for 3 months.",
@@ -9188,6 +9332,18 @@
       "source_url": "https://sematext.com/pricing",
       "category": "Monitoring",
       "refused_date": "2026-09-20"
+    },
+    {
+      "vendor": "Sematext",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-20 (confirmed_unchanged) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier for Logs now has a 500 MB/day limit, while the stored information does not mention a limit. The free tier now costs $0.1/GB received and $0.15/GB stored.",
+      "previous_state": "Observability platform — Logs: 500 MB/day ingestion, 7-day retention. Monitoring: 3 hosts, 3 containers/host, 30-min data retention, 1 alert rule. Volume-based pricing, no per-host charges on paid plans",
+      "current_state": "Basic plan is free with a 500 MB/day limit. Data Received: $0.1/GB, Data Stored: $0.15/GB, Retention 7 days.",
+      "source_url": "https://sematext.com/pricing",
+      "category": "Monitoring",
+      "refused_date": "2026-10-28"
     },
     {
       "vendor": "Sematext",
@@ -9886,6 +10042,18 @@
     {
       "vendor": "Storj",
       "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-03 (same_transition_graded_differently) claimed the same change, pricing_restructured, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "Object Mount is now a separately priced product with tiers ($29/license/mo for Teams, $39/license/mo for Any S3). The free trial now includes Object Mount with 2 licenses and 25GB of storage. The minimum monthly fee of $5 now applies to Storj Object Storage accounts unless paying with USDC or on a custom contract. There is a 30-day minimum storage retention period with early deletion fees unless using Object Mount.",
+      "previous_state": "Distributed S3-compatible object storage. Free trial only: 25 GB free storage for 30 days, no credit card required, and 2 Object Mount licenses. After the trial, $7/TB storage and $7/TB egress with a $5 monthly minimum fee (waived while the trial is running and for accounts paying in STORJ token).",
+      "current_state": "Object Mount is available as a paid service with Teams ($29/license/mo) and Any S3 ($39/license/mo) tiers. A free trial includes 2 licenses and 25GB of storage.",
+      "source_url": "https://storj.io/pricing",
+      "category": "Storage",
+      "refused_date": "2026-10-28"
+    },
+    {
+      "vendor": "Storj",
+      "change_type": "pricing_restructured",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as Storj|pricing_restructured|2026-09-09|https://storj.io/pricing",
       "summary": "Object Mount is now a separately priced product with tiers ($29/license/mo for Teams, $39/license/mo for Any S3). The free trial now includes Object Mount with 2 licenses and 25GB of storage. The minimum monthly fee of $5 now applies to Storj Object Storage accounts unless paying with USDC or on a custom contract. There is a 30-day minimum storage retention period with early deletion fees unless using Object Mount.",
@@ -10357,6 +10525,18 @@
       "source_url": "https://ecosend.io/",
       "category": "Communication",
       "refused_date": "2026-09-15"
+    },
+    {
+      "vendor": "The GoSquared Early Stage Plan",
+      "change_type": "rebranded",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this vendor refused on 2026-09-15 (page_does_not_name_vendor) stated the same current state, word for word",
+      "summary": "The GoSquared Early Stage Plan no longer exists. The page now promotes EcoSend, an email marketing platform, with a 'Start Free' option offering a free forever plan with no credit card required.",
+      "previous_state": "There is no early stage plan: gosquared.com/early-stage/ redirects to ecosend.io, an email marketing product with its own pricing and no startup offer. Checked 2026-09-02, GoSquared's analytics product is not sold at the destination. The former offer was all GoSquared features at a fixed low price for the first year.",
+      "current_state": "EcoSend offers a 'Start Free' plan that is free forever, requires no credit card, and can be cancelled anytime.",
+      "source_url": "https://ecosend.io/",
+      "category": "Communication",
+      "refused_date": "2026-10-28"
     },
     {
       "vendor": "The Intercom Early Stage Program",
