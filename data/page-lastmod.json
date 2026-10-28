@@ -22,11 +22,11 @@
       "changed": "2026-10-23"
     },
     "/ai-free-tiers": {
-      "hash": "0d2e1b86942cd09f",
+      "hash": "a25513e3fcf2b4bf",
       "changed": "2026-10-28"
     },
     "/ai-ml-alternatives": {
-      "hash": "4d1449572f913436",
+      "hash": "def646caaaed229b",
       "changed": "2026-10-28"
     },
     "/alternative-to": {
@@ -1099,7 +1099,7 @@
       "changed": "2026-10-24"
     },
     "/category/ai-ml": {
-      "hash": "dc7006c0959b3a45",
+      "hash": "550b8eaecaa94b71",
       "changed": "2026-10-28"
     },
     "/category/analytics": {
@@ -2976,8 +2976,8 @@
       "changed": "2026-10-09"
     },
     "/digest/2026-w20": {
-      "hash": "099a4a541afca9e2",
-      "changed": "2026-10-23"
+      "hash": "6c7067289ab17a63",
+      "changed": "2026-10-28"
     },
     "/digest/2026-w21": {
       "hash": "28c0299a116fa809",
@@ -3004,8 +3004,8 @@
       "changed": "2026-10-21"
     },
     "/digest/2026-w27": {
-      "hash": "53a5fcadc2c673a4",
-      "changed": "2026-10-22"
+      "hash": "c233b66c76f7ec19",
+      "changed": "2026-10-28"
     },
     "/digest/2026-w28": {
       "hash": "4c89f2084dfed0a6",
@@ -3032,8 +3032,8 @@
       "changed": "2026-10-21"
     },
     "/digest/2026-w34": {
-      "hash": "3777a0fa4a463f90",
-      "changed": "2026-10-21"
+      "hash": "9c0dadf7e90b5832",
+      "changed": "2026-10-28"
     },
     "/digest/2026-w35": {
       "hash": "e3d38072204c524e",
@@ -3209,7 +3209,7 @@
       "changed": "2026-10-28"
     },
     "/free-llm-apis": {
-      "hash": "f69ec36cbdab8f7d",
+      "hash": "5b76aa055da544f6",
       "changed": "2026-10-28"
     },
     "/free-nextjs-stack": {
@@ -3319,7 +3319,7 @@
       "changed": "2026-10-25"
     },
     "/llm-api-pricing": {
-      "hash": "a9fead2d3a1736ba",
+      "hash": "cf811468d0c4d2e7",
       "changed": "2026-10-28"
     },
     "/localstack-alternatives": {
@@ -3592,7 +3592,7 @@
       "changed": "2026-10-28"
     },
     "/stack-check": {
-      "hash": "265c24afaad52d20",
+      "hash": "311f308c70bb1860",
       "changed": "2026-10-28"
     },
     "/stacks": {
