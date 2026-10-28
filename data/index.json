@@ -33919,10 +33919,10 @@
           "read_on": "2026-10-17"
         },
         {
-          "text": "Google AI Pro and Ultra include Gemini 4 Argon, Claude Sonnet 5.5 and Claude Opus 5.5. On a Google AI Pro trial, Claude Sonnet 5.5 and Claude Opus 5.5 are not included and Gemini 4 Argon is included only on trials with eligible premium devices. Gemini 4 Argon is not in the Antigravity IDE but is in the Antigravity App, CLI and IDE extensions.",
+          "text": "Google AI Pro and Ultra include Gemini 4 Argon, Claude Sonnet 5.5 and Claude Opus 5.5. On a Google AI Pro trial, Claude Sonnet 5.5 and Claude Opus 5.5 are not included and Gemini 4 Argon is included only on trials with eligible premium devices.",
           "quote": "Available with paid Google AI Pro plans or on trial with eligible premium devices.",
           "url": "https://antigravity.google/docs/models",
-          "read_on": "2026-10-23"
+          "read_on": "2026-10-28"
         },
         {
           "text": "Google's FAQ says some models \"are not included in free trials\" and directs memberships through third-party partners, Pixel Pass, or Google Fi to Google One help for subscription management.",
