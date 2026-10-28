@@ -4078,6 +4078,12 @@
           "read_on": "2026-10-04"
         },
         {
+          "text": "Paid-tier projects created on or after October 26, 2026, store Generate Content API requests and responses by default. Existing projects keep their current setting. Logs are retained for up to 55 days and are not used to improve Google's products unless shared. To turn off logging, set store=false on individual requests or disable it in the Logs and Datasets settings in AI Studio.",
+          "quote": "Logging is on by default for Interactions API calls, and for Generate Content API calls in projects created on or after October 26, 2026.",
+          "url": "https://ai.google.dev/gemini-api/docs/logs-policy",
+          "read_on": "2026-10-28"
+        },
+        {
           "text": "Apps that serve users in the European Economic Area, Switzerland or the United Kingdom may use only the paid tier.",
           "quote": "You may use only Paid Services when making API Clients available to users in the European Economic Area, Switzerland, or the United Kingdom.",
           "url": "https://ai.google.dev/gemini-api/terms",
@@ -34697,8 +34703,8 @@
     {
       "vendor": "Ollama Cloud",
       "category": "AI / ML",
-      "description": "Cloud-hosted Ollama for running open-source LLMs — The Free plan costs $0 and includes starter usage credits. Buying usage credits unlocks all models. It includes 1 concurrent request. Ollama says Reflection's Beam (beam:cloud) is free on Ollama's cloud for a limited time, from 2026-10-16 (Ollama's blog). Ollama names no end date and does not say which plans this covers. Beam is an open-weight model with a 1M-token context window. Pro costs $20 a month with $60 of usage credits, Max $100 a month with $300. Team, in early access, costs $500 a month for unlimited users and includes $1,000 of usage credits a month, shared across the team. Per million input and output tokens, glm-5.3 costs $1.40 and $4.40, deepseek-v4-pro $1.32 and $3.96, and kimi-k3 $3.00 and $15.00. Usage is billed per million tokens at each model's rate, for example gpt-oss:120b at $0.15 input and $0.60 output, and some models, such as deepseek-v4.1-flash, cost half off-peak (outside 12:00 to 18:00 UTC on weekdays, and all weekend). To use cloud models without installing Ollama, send requests to https://ollama.com/api/chat with an API key from ollama.com in an \"Authorization: Bearer\" header, using the same model names, such as gpt-oss:120b; OpenAI and Anthropic clients also work.",
-      "tier": "Free",
+      "description": "Cloud-hosted Ollama for running open-source LLMs. Between October 26 and 27, 2026, Ollama replaced its Free plan, which included starter usage credits, with a $0 Pay as you go plan. Pay as you go charges per token for every cloud model, has no subscription and 3 concurrent requests. Running models on your own hardware is free. Ollama says Reflection's Beam (beam:cloud) is free on Ollama's cloud for a limited time, from 2026-10-16 (Ollama's blog). Ollama names no end date and does not say which plans this covers. Beam is an open-weight model with a 1M-token context window. Pro costs $20 a month with $60 of usage credits, Max $100 a month with $300. Team, in early access, costs $500 a month for unlimited users and includes $1,000 of usage credits a month, shared across the team. Per million input and output tokens, glm-5.3 costs $1.40 and $4.40, deepseek-v4-pro $1.32 and $3.96, and kimi-k3 $3.00 and $15.00. Usage is billed per million tokens at each model's rate, for example gpt-oss:120b at $0.15 input and $0.60 output, and some models, such as deepseek-v4.1-flash, cost half off-peak (outside 12:00 to 18:00 UTC on weekdays, and all weekend). To use cloud models without installing Ollama, send requests to https://ollama.com/api/chat with an API key from ollama.com in an \"Authorization: Bearer\" header, using the same model names, such as gpt-oss:120b; OpenAI and Anthropic clients also work.",
+      "tier": "Pay-as-you-go",
       "url": "https://ollama.com/pricing",
       "tags": [
         "ai",
@@ -34709,7 +34715,7 @@
         "self-hosted",
         "free tier"
       ],
-      "verifiedDate": "2026-08-19",
+      "verifiedDate": "2026-10-28",
       "source_check": {
         "checked": "2026-10-06",
         "outcome": "ok",
@@ -34732,16 +34738,16 @@
       },
       "conditions": [
         {
-          "text": "Ollama allows one account per person. A second free account is not allowed.",
-          "quote": "No. Ollama is one account per person.",
+          "text": "Ollama allows one account per person.",
+          "quote": "Can I have multiple Ollama accounts? No. Ollama is one account per person.",
           "url": "https://ollama.com/pricing",
-          "read_on": "2026-10-05"
+          "read_on": "2026-10-28"
         },
         {
-          "text": "Free usage resets monthly from your sign-up date. Unused usage does not roll over. You can buy usage credits instead of waiting.",
-          "quote": "On the Free plan, usage resets monthly from the date you signed up.",
+          "text": "Included usage on Pro, Max and Team resets monthly on the day the subscription started. Unused included usage does not roll over. Pay as you go accounts pay for each request with usage credits.",
+          "quote": "On Pro, Max, and Team plans, included usage resets monthly on the same day of the month your subscription started, including on annual plans.",
           "url": "https://ollama.com/pricing",
-          "read_on": "2026-10-05"
+          "read_on": "2026-10-28"
         },
         {
           "text": "Ollama says cloud prompts and responses are never logged or used for training.",
@@ -34762,23 +34768,18 @@
           "read_on": "2026-10-11"
         },
         {
-          "text": "Requests beyond the 1 concurrent request wait in a queue. When the queue is full, new requests are rejected until a slot frees up.",
-          "quote": "Queued requests are held up to a fixed limit - if the queue is full, the request will be rejected until one of your concurrency slots opens.",
+          "text": "Pay as you go and Pro include 3 concurrent requests, and Max and Team 10. Requests beyond the limit are queued and processed when a slot is available. If the queue is full, requests are rejected.",
+          "quote": "Pay as you go and Pro include 3 concurrent requests, and Max and Team 10.",
           "url": "https://ollama.com/pricing",
-          "read_on": "2026-10-05"
+          "read_on": "2026-10-28"
         },
         {
-          "text": "Since January 16, 2026 (Ollama v0.14.0), Ollama's API accepts Anthropic Messages API requests, which Ollama says lets Claude Code run on its local and cloud models. Ollama's docs: \"Ollama connects Claude Code to local and cloud models through its Anthropic-compatible API.\" `ollama launch claude` sets it up. Without installing Ollama, Claude Code can be pointed at https://ollama.com with an Ollama API key. On the Free plan this uses the starter usage, limited to starter models. Hosted web search and advanced tool controls are not fully supported.",
+          "text": "Since January 16, 2026 (Ollama v0.14.0), Ollama's API accepts Anthropic Messages API requests, which Ollama says lets Claude Code run on its local and cloud models. Ollama's docs: \"Ollama connects Claude Code to local and cloud models through its Anthropic-compatible API.\" `ollama launch claude` sets it up. Without installing Ollama, Claude Code can be pointed at https://ollama.com with an Ollama API key. Hosted web search and advanced tool controls are not fully supported.",
           "quote": "Ollama connects Claude Code to local and cloud models through its Anthropic-compatible API.",
           "url": "https://docs.ollama.com/integrations/claude-code",
           "read_on": "2026-10-22"
         }
-      ],
-      "free_plan_excerpt": {
-        "text": "Free $0 Use any cloud model with pay-as-you-go usage credits. Includes: Run models locally Starter usage credits included Includes access to starter models Add credits to unlock all models",
-        "url": "https://ollama.com/pricing",
-        "read_on": "2026-10-06"
-      }
+      ]
     },
     {
       "vendor": "Google Gemini Code Assist",
