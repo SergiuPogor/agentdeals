@@ -5,7 +5,7 @@
   "lead": "Mistral API prices range from $0.10 to $7.50 per million tokens. New accounts start in Mistral's Free mode, with monthly usage shared across the API, Studio and Vibe Code; when it runs out, requests stop until the next month unless pay-as-you-go is on. Since August 2026, Mistral's API is for business customers only, under its Commercial Terms of Service.",
   "prices": {
     "heading": "What does the Mistral API cost per million tokens?",
-    "intro": "The cheapest text model is Ministral 3 3B at $0.10 per million input and output tokens. The most expensive output is Mistral Medium 3.5 at $7.50 per million output tokens. Mistral Large 4 costs $1.36 input and $4.18 output; its launch sale at $0.68 and $2.09 ended on 2026-10-20. To call Mistral Large 4, use the model name mistral-large-4; mistral-large-latest still points to Mistral Large 3 (mistral-large-2512). Batch requests cost 50% less.",
+    "intro": "The cheapest text model is Ministral 3 3B at $0.10 per million input and output tokens. The most expensive output is Mistral Medium 3.5 at $7.50 per million output tokens. Mistral Large 4's API price is $0.70 input, $0.07 cached input and $2.10 output per million tokens from 2026-10-29. From 2026-10-20 until then, it was $1.36 input, $0.14 cached input and $4.18 output per million tokens. To call Mistral Large 4, use the model name mistral-large-4; mistral-large-latest still points to Mistral Large 3 (mistral-large-2512). Batch requests cost 50% less.",
     "columns": [
       "Model",
       "Input",
@@ -15,11 +15,11 @@
     "rows": [
       {
         "model": "Mistral Large 4 (public preview since 2026-10-06)",
-        "input": "1.36",
-        "cached_input": "0.14",
-        "output": "4.18",
+        "input": "0.70",
+        "cached_input": "0.07",
+        "output": "2.10",
         "source": "https://docs.mistral.ai/inference/pricing",
-        "read_on": "2026-10-11"
+        "read_on": "2026-10-29"
       },
       {
         "model": "Mistral Large 3",
@@ -27,7 +27,7 @@
         "cached_input": "0.05",
         "output": "1.50",
         "source": "https://docs.mistral.ai/inference/pricing",
-        "read_on": "2026-10-11"
+        "read_on": "2026-10-29"
       },
       {
         "model": "Mistral Medium 3.5",
@@ -35,7 +35,7 @@
         "cached_input": "0.15",
         "output": "7.50",
         "source": "https://docs.mistral.ai/inference/pricing",
-        "read_on": "2026-10-11"
+        "read_on": "2026-10-29"
       },
       {
         "model": "Mistral Small 4",
@@ -43,7 +43,7 @@
         "cached_input": "0.015",
         "output": "0.60",
         "source": "https://docs.mistral.ai/inference/pricing",
-        "read_on": "2026-10-11"
+        "read_on": "2026-10-29"
       },
       {
         "model": "Ministral 3 14B",
@@ -51,7 +51,7 @@
         "cached_input": "0.02",
         "output": "0.20",
         "source": "https://docs.mistral.ai/inference/pricing",
-        "read_on": "2026-10-11"
+        "read_on": "2026-10-29"
       },
       {
         "model": "Ministral 3 8B",
@@ -59,7 +59,7 @@
         "cached_input": "0.015",
         "output": "0.15",
         "source": "https://docs.mistral.ai/inference/pricing",
-        "read_on": "2026-10-11"
+        "read_on": "2026-10-29"
       },
       {
         "model": "Ministral 3 3B",
@@ -67,7 +67,7 @@
         "cached_input": "0.01",
         "output": "0.10",
         "source": "https://docs.mistral.ai/inference/pricing",
-        "read_on": "2026-10-11"
+        "read_on": "2026-10-29"
       },
       {
         "model": "Codestral",
@@ -75,7 +75,7 @@
         "cached_input": "0.03",
         "output": "0.90",
         "source": "https://docs.mistral.ai/inference/pricing",
-        "read_on": "2026-10-11"
+        "read_on": "2026-10-29"
       },
       {
         "model": "Z.ai GLM 5.3 (third-party, hosted by Mistral)",
@@ -83,7 +83,15 @@
         "cached_input": "0.14",
         "output": "4.40",
         "source": "https://docs.mistral.ai/inference/pricing",
-        "read_on": "2026-10-11"
+        "read_on": "2026-10-29"
+      },
+      {
+        "model": "Z.ai GLM 5.3 Flash (third-party, hosted by Mistral)",
+        "input": "0.15",
+        "cached_input": "0.03",
+        "output": "0.50",
+        "source": "https://docs.mistral.ai/models/zai-glm-5-3-flash",
+        "read_on": "2026-10-29"
       },
       {
         "model": "DeepSeek V4.1 Flash (third-party, hosted by Mistral; public preview since 2026-10-28)",
@@ -95,7 +103,7 @@
       }
     ],
     "note": {
-      "text": "Prices are US dollars per 1 million tokens. Mistral Embed costs $0.10 per 1 million input tokens and Codestral Embed $0.15. OCR 4.1 costs $4 per 1,000 pages. Voxtral Mini Transcribe 2 costs $0.003 per minute of audio, and Voxtral TTS $16 per 1 million characters. Mistral Moderation 2 is free. Source: Mistral API pricing, read 2026-10-11.",
+      "text": "Prices are US dollars per 1 million tokens. Mistral Embed costs $0.10 per 1 million input tokens and Codestral Embed $0.15. OCR 4.1 costs $4 per 1,000 pages. Voxtral Mini Transcribe 2 costs $0.003 per minute of audio, and Voxtral TTS $16 per 1 million characters. Mistral Moderation 2 is free. Source: Mistral API pricing, read 2026-10-29.",
       "links": [
         {
           "text": "Mistral API pricing",
