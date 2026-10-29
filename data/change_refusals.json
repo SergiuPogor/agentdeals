@@ -680,6 +680,18 @@
       "refused_date": "2026-08-28"
     },
     {
+      "vendor": "AutoLocalise.com",
+      "change_type": "limits_increased",
+      "reason": "states_no_difference",
+      "detail": "the summary states that the page agrees with what we hold, and names no figure the stored description did not already carry",
+      "summary": "The free tier still exists, but the description of its limits is more specific on the pricing page.",
+      "previous_state": "Instantly localize without managing translation files. Free for up to 10,000 characters/month, unlimited languages.",
+      "current_state": "Free: 10,000 characters/month, 1 project, live translation editing, 100+ languages. Character counting uses the formula: source language characters × number of target languages = total characters counted.",
+      "source_url": "https://www.autolocalise.com/",
+      "category": "Localization",
+      "refused_date": "2026-10-29"
+    },
+    {
       "vendor": "Automatisch",
       "change_type": "pricing_model_change",
       "reason": "no_price_signal",
@@ -1335,6 +1347,18 @@
       "source_url": "https://cally.com/",
       "category": "Team Collaboration",
       "refused_date": "2026-10-10"
+    },
+    {
+      "vendor": "Carbon.now.sh",
+      "change_type": "limits_reduced",
+      "reason": "no_price_signal",
+      "detail": "the page read carries no price signal — no amount, named tier or metered rate in 861 characters, so it states no terms to have changed",
+      "summary": "The page states \"Self-host free, star us on GitHub.\", indicating a free self-hosted option but doesn't explicitly mention a free tier for the hosted service.",
+      "previous_state": "create and share code snippets in an aesthetic screenshot-like image format. Usually used to aesthetically share/show off code snippets on Twitter or blog posts.",
+      "current_state": "Self-host free, star us on GitHub.",
+      "source_url": "https://carbon.now.sh",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "CatchJS.com",
@@ -2656,6 +2680,18 @@
       "refused_date": "2026-10-04"
     },
     {
+      "vendor": "debugmail.io",
+      "change_type": "restriction",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-10-04 (no_terms_to_narrow) stated the same 9 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier is now the 'Silver' plan and is specifically for Open Source projects. It has limits of 1 project, 2 team members, unlimited test emails, 100 forwarding emails per day, and 10MB of mailbox storage.",
+      "previous_state": "Easy to use testing mail server for developers",
+      "current_state": "We provide a free Silver plan for OSS projects. Contact us here to connect. Free Silver Gold Projects 1 10 Unlimited Team Members 2 20 Unlimited Test Emails per Day Unlimited Unlimited Unlimited Forwarding Emails per Day 1 100 Unlimited Mailbox Storage Limit 10MB per team 1GB per team 5GB per team",
+      "source_url": "https://debugmail.io/",
+      "category": "Email",
+      "refused_date": "2026-10-29"
+    },
+    {
       "vendor": "Deepgram",
       "change_type": "pricing_restructured",
       "reason": "same_transition_graded_differently",
@@ -3130,6 +3166,18 @@
       "refused_date": "2026-10-04"
     },
     {
+      "vendor": "Dwh.dev",
+      "change_type": "pricing_restructured",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-10-04 (dangling_reference) stated the same 2 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier appears to be limited to the Snowflake marketplace. There are paid tiers (PRO, Enterprise) with varying limits on objects, users, and features.",
+      "previous_state": "Data Cloud Observability Solution (Snowflake). Free for personal use.",
+      "current_state": "Start now for free on marketplace. PRO plan is unlimited objects, 5000 unlimited users, and costs $3,000/month.",
+      "source_url": "https://dwh.dev",
+      "category": "Analytics",
+      "refused_date": "2026-10-29"
+    },
+    {
       "vendor": "DynamicDocs",
       "change_type": "free_tier_removed",
       "reason": "repeats_a_refused_reading",
@@ -3389,13 +3437,13 @@
       "vendor": "FeedBear",
       "change_type": "pricing_restructured",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-09-19 (confirmed_unchanged) stated the same 3 figures, so the page showed these terms before the date this record gives",
-      "summary": "The Startup plan exists but is now $49/month billed monthly or $40/month billed annually, whereas the stored information stated it was $49/month. The stored information also incorrectly stated a 14-day trial was the only access, but the page states all plans have a 14-day free trial.",
+      "detail": "the reading of this page refused on 2026-10-04 (repeats_a_refused_reading) stated the same 3 figures, so the page showed these terms before the date this record gives",
+      "summary": "The Startup plan exists but is now $49/month billed monthly or $40/month billed annually, and includes 3 team members and unlimited boards. The stored information stated a $49/month price but described it as a discount, and did not mention the annual price or team member limits.",
       "previous_state": "There is no startup program and no free tier: feedbear.com/early-stage redirects to the pricing page, where Startup is the second of four paid plans at $49/month, described as being for early stage businesses that need more powerful community features. Checked 2026-09-02, entry is a 14-day trial. The former record read that price as a startup discount.",
-      "current_state": "The Startup plan is $49/month billed monthly or $40/month billed annually and includes 3 team members, unlimited boards, a custom domain, and all integrations with Intercom, Slack, Trello, Jira and Zapier.",
+      "current_state": "The Startup plan costs $49/month billed monthly or $40/month billed annually and includes 3 team members and unlimited boards. It includes everything in the Lite plan, plus a custom domain and integrations with Intercom, Slack, Trello, Jira and Zapier.",
       "source_url": "https://www.feedbear.com/pricing",
       "category": "Startup Perks",
-      "refused_date": "2026-10-04"
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "Figma",
@@ -3573,13 +3621,13 @@
       "vendor": "Fizzy",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-10-25 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
-      "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page states that Fizzy is entirely free with a file space limit of 1 GB.",
+      "detail": "the reading of this page refused on 2026-10-26 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The stored deal info mentions a limit of 1000 items, but the pricing page states that Fizzy is entirely free with a 1 GB file storage limit.",
       "previous_state": "Kanban-based platform for project management and issue tracking. Create public boards, set up webhooks, use card stamping, and track unlimited users — free for up to 1000 items.",
-      "current_state": "Fizzy is entirely free. It does limit file space usage to 1 GB.",
+      "current_state": "Fizzy is entirely free with a 1 GB file storage limit.",
       "source_url": "https://www.fizzy.do/",
       "category": "Project Management",
-      "refused_date": "2026-10-26"
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "Flagsmith",
@@ -3645,13 +3693,13 @@
       "vendor": "Flows",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-08-28 (unquantified_limit) stated the same figure, so the page showed these terms before the date this record gives",
-      "summary": "The free tier now has a limit of 100 MTUs (monthly tracked users), down from the previously stated 250.",
+      "detail": "the reading of this page refused on 2026-10-04 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now has a limit of 100 MTUs, not 250.",
       "previous_state": "A fully customizable product adoption platform for building onboarding and user engagement experiences. Free for up to 250 monthly tracked users.",
       "current_state": "The Hobby plan is free and includes 100 MTUs and no credit card requirement.",
       "source_url": "https://flows.sh/",
       "category": "Design",
-      "refused_date": "2026-10-04"
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "Flows",
@@ -3761,6 +3809,18 @@
       "source_url": "https://www.formkeep.com/",
       "category": "Forms",
       "refused_date": "2026-09-11"
+    },
+    {
+      "vendor": "FormKeep.com",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-04 (repeats_a_refused_reading) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier now has limits of 50 submissions/month instead of unlimited submissions.",
+      "previous_state": "Unlimited forms with 50 monthly submissions, spam protection, email notification, and a drag-and-drop designer that can export HTML. Additional features include custom field rules, teams, and integrations to Google Sheets, Slack, ActiveCampaign, and Zapier.",
+      "current_state": "Spam Protection, 50 Submissions / month, Form Designer, Branded Thanks Page, Daily Notifications, 1 Month Retention, Unlimited forms",
+      "source_url": "https://www.formkeep.com/",
+      "category": "Forms",
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "FormKeep.com",
@@ -4782,6 +4842,18 @@
       "refused_date": "2026-09-15"
     },
     {
+      "vendor": "Heroku for Startups Program",
+      "change_type": "startup_program_expanded",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-09-15 (no_price_signal) claimed the same change, startup_program_expanded, against the same stored description",
+      "summary": "The Heroku for Startups Program is no longer explicitly mentioned. The page highlights Heroku as a platform for startups to scale, offering a fully managed app platform and flexible pricing, but does not detail a specific 'Startup Program' with credits or dedicated support.",
+      "previous_state": "There is no startup program: heroku.com/accelerate redirects to heroku.com/startups/, a marketing page on which the word program returns zero occurrences. Checked 2026-09-02, the page states no credit amount, application or eligibility rule. The former offer was platform credits, technical support and networking.",
+      "current_state": "Heroku offers a fully managed cloud application platform that lets startups build, deploy, and scale with ease. Flexible pricing options are available, allowing users to scale resources and pay only for what they consume.",
+      "source_url": "https://www.heroku.com/startups/",
+      "category": "Cloud IaaS",
+      "refused_date": "2026-10-29"
+    },
+    {
       "vendor": "HeroTofu.com",
       "change_type": "limits_reduced",
       "reason": "same_transition_graded_differently",
@@ -5096,6 +5168,18 @@
       "source_url": "https://www.hypertune.com/pricing",
       "category": "Feature Flags",
       "refused_date": "2026-09-11"
+    },
+    {
+      "vendor": "Hypertune",
+      "change_type": "product_deprecated",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-10-04 (restates_stored_quantities) stated the same 5 figures, so the page showed these terms before the date this record gives",
+      "summary": "Hypertune is shutting down and no longer accepting new sign ups. While the free tier details are still listed, the service will shut down on August 10th, 2026.",
+      "previous_state": "Free: $0 / month, 1m CDN requests, 1m analytics events, Up to 3 team members, Unlimited CDN bandwidth and service connections, Unlimited MAUs / MTUs, Unlimited environments and projects, Unlimited feature flags and experiments. The service will shut down on 10th August 2026.",
+      "current_state": "$0 / month, 1m CDN requests, 1m analytics events, Up to 3 team members, Unlimited CDN bandwidth and service connections, Unlimited MAUs / MTUs, Unlimited environments and projects, Unlimited feature flags and experiments. The service will shut down on 10th August 2026.",
+      "source_url": "https://www.hypertune.com/pricing",
+      "category": "Feature Flags",
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "Hypertune",
@@ -6362,6 +6446,18 @@
       "source_url": "https://maileroo.com",
       "category": "Email",
       "refused_date": "2026-09-10"
+    },
+    {
+      "vendor": "Maileroo",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-04 (unquantified_limit) claimed the same change, limits_reduced, against the same stored description",
+      "summary": "The free tier is still mentioned, but the page does not explicitly state the 3,000 emails per month limit. It only mentions 'Email Testing' is included in every plan, from Free to Enterprise.",
+      "previous_state": "SMTP relay and email API for developers. 3,000 emails per month, unlimited domains, webhooks free",
+      "current_state": "Every plan includes Email Testing, from Free to Enterprise.",
+      "source_url": "https://maileroo.com",
+      "category": "Email",
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "Maileroo",
@@ -7807,13 +7903,13 @@
       "vendor": "pagertree.com",
       "change_type": "pricing_restructured",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-09-11 (measures_no_change) stated the same 3 figures, so the page showed these terms before the date this record gives",
-      "summary": "The free tier now has a limit of 5 users and is called 'Basic'. It includes OnCall Schedules, Push, Email, & Slack Notifications.",
+      "detail": "the reading of this page refused on 2026-10-04 (repeats_a_refused_reading) stated the same 3 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now has a limit of 5 users, but is a paid plan at $0/user/month or $0/user/year.",
       "previous_state": "Simple interface for alerting and on-call management. Free up to 5 users.",
-      "current_state": "Basic: $0 / user/mo or $0 /user/yr. Up to 5 Users. OnCall Schedules, Push, Email, & Slack Notifications",
+      "current_state": "$0 / user/mo $0 /user/yr Up to 5 Users OnCall Schedules Push, Email, & Slack Notifications",
       "source_url": "https://pagertree.com/",
       "category": "Monitoring",
-      "refused_date": "2026-10-04"
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "Pagure.io",
@@ -7947,6 +8043,18 @@
       "source_url": "https://pdfbolt.com",
       "category": "API Development",
       "refused_date": "2026-08-29"
+    },
+    {
+      "vendor": "PDFBolt",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-04 (unquantified_limit) claimed the same change, limits_reduced, against the same stored description",
+      "summary": "The free tier is no longer explicitly mentioned as offering 500 free PDF conversions per month. The page focuses on AI-powered template generation with a limited number of AI generations (5/10,000 characters, 5 generations left, 4 generations left) and doesn't detail a standard free conversion limit.",
+      "previous_state": "Developer-focused PDF generation API designed with privacy in mind. It offers Stripe-inspired documentation and includes 500 free PDF conversions per month.",
+      "current_state": "The page highlights AI-powered template generation with limited AI generations and doesn't mention a specific number of free PDF conversions per month. It offers a 'Get Started Free' option, but the associated limits are not stated.",
+      "source_url": "https://pdfbolt.com",
+      "category": "API Development",
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "PDFBolt",
@@ -8738,15 +8846,15 @@
     },
     {
       "vendor": "Renamer.ai",
-      "change_type": "new_tier",
+      "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-09-12 (confirmed_unchanged) stated the same figure, so the page showed these terms before the date this record gives",
-      "summary": "The free tier now has a limit of 25 files/month, which matches the stored information. However, the page details a 'Starter' plan that *is* the free tier, and it explicitly lists the features included: Smart AI File renaming, Desktop App (Win & Mac), Batch Rename, Auto Rename (Magic Folders), and Normal Support. This confirms the features but formalizes the tier name.",
+      "detail": "the reading of this page refused on 2026-10-04 (repeats_a_refused_reading) stated the same figure, so the page showed these terms before the date this record gives",
+      "summary": "The free tier still exists, but the description of features included is not present on the current pricing page. The page explicitly states a 'Starter FREE' plan with '25 files/mo'.",
       "previous_state": "AI-powered file renaming tool with OCR, metadata extraction, and automation for 20+ languages. Free tier: 25 files/month, including desktop app, batch rename, auto-rename, and normal support.",
-      "current_state": "Starter Plan: Free - 25 files per month, Desktop App (Win & Mac), Batch Rename, Auto Rename (Magic Folders), Normal Support",
+      "current_state": "Starter FREE plan includes 25 files/mo.",
       "source_url": "https://renamer.ai",
       "category": "Dev Utilities",
-      "refused_date": "2026-10-04"
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "Render",
@@ -8824,13 +8932,13 @@
       "vendor": "Replit",
       "change_type": "limits_reduced",
       "reason": "repeats_a_refused_reading",
-      "detail": "the reading of this page refused on 2026-09-30 (measures_the_opposite) stated the same 2 figures, so the page showed these terms before the date this record gives",
-      "summary": "The free plan now has limits of up to 30 hours of chat on Free Mode and up to 60 projects on Free Mode. The stored information stated daily agent credits and the ability to publish 1 live project, which are not mentioned on the current pricing page.",
-      "previous_state": "Cloud IDE with AI code assistant — The Starter (Free) plan includes daily agent credits, the ability to create anything from slides to apps, a built-in database, and the ability to publish 1 live project.",
+      "detail": "the reading of this page refused on 2026-10-04 (repeats_a_refused_reading) stated the same 2 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now has limits of up to 30 hours of chat on Free Mode and up to 60 projects on Free Mode. The stored information stated daily Agent credits, monthly credits for databases, storage and publishing, and one published app with a badge.",
+      "previous_state": "Cloud IDE with AI agent — The Starter plan includes daily Agent credits up to a monthly cap, and monthly credits for databases, storage and publishing. It uses Lite build only. Starter supports one published app; the link goes down after 30 days and shows a \"Made with Replit\" badge. Full build, Plan Mode, third-party connectors and slide decks require Core ($20 a month).",
       "current_state": "Up to 30 hours of chat on Free Mode and up to 60 projects on Free Mode.",
       "source_url": "https://replit.com/pricing",
       "category": "IDE & Code Editors",
-      "refused_date": "2026-10-04"
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "Replit",
@@ -9146,6 +9254,18 @@
       "source_url": "https://rybbit.com/",
       "category": "Analytics",
       "refused_date": "2026-10-04"
+    },
+    {
+      "vendor": "Rybbit",
+      "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-09-11 (same_transition_graded_differently) stated the same 4 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier described in the stored information no longer exists. The pricing page offers a 7-day free trial for the Standard and Pro plans, but no permanently free plan.",
+      "previous_state": "Open-source and cookieless alternative to Google Analytics that is 10x more intuitive. Free plans has 3,000 monthly events.",
+      "current_state": "The Standard plan starts at $13/month billed annually, or offers a 7-day free trial. It includes up to 5 websites, 3 team members, custom events, funnels, goals, journeys, and web vitals.",
+      "source_url": "https://rybbit.com/",
+      "category": "Analytics",
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "Rybbit",
@@ -9761,6 +9881,18 @@
       "refused_date": "2026-10-04"
     },
     {
+      "vendor": "snappify",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_reading",
+      "detail": "the reading of this page refused on 2026-10-04 (measures_no_change) stated the same 5 figures, so the page showed these terms before the date this record gives",
+      "summary": "The free tier now has a 100MB image upload limit, 0 folder storage, 5 AI explanations per month, 5 slides per presentation (with watermark), and 1 code editor per slide. The pricing page also lists paid tiers: Starter ($5/month), Professional ($9/month), and Team ($32/month).",
+      "previous_state": "Enables developers to create stunning visuals — The Free plan includes 3 snaps, 5 slides per presentation (with watermark), 1 code editor per slide, 100MB image upload limit, and 0 folder storage. It also includes 5 AI explanations per month.",
+      "current_state": "The Free plan includes a 100 MB image upload limit, 0 folder storage, 5 AI explanations per month, 5 slides per presentation (with watermark), and 1 code editor per slide.",
+      "source_url": "https://snappify.com",
+      "category": "Dev Utilities",
+      "refused_date": "2026-10-29"
+    },
+    {
       "vendor": "Snyk",
       "change_type": "limits_reduced",
       "reason": "unquantified_limit",
@@ -10127,16 +10259,16 @@
     },
     {
       "vendor": "Supabase",
-      "change_type": "restriction",
+      "change_type": "pricing_restructured",
       "reason": "same_transition_graded_differently",
-      "detail": "same vendor, source_url and previous_state as Supabase|pricing_restructured|2026-09-03|https://supabase.com/pricing",
-      "summary": "The free tier now pauses after 1 week of inactivity.",
-      "previous_state": "Open source Firebase alternative — 500 MB Postgres database, 50K monthly active users, 1 GB file storage, 5 GB bandwidth (uncached egress across all services: Storage, Auth, Functions, Database, Realtime) + 5 GB CDN cached egress, 500K edge function invocations, 200 concurrent realtime connections, 2 free projects. Includes Auth, Storage, Realtime, and Edge Functions",
-      "current_state": "Free projects are paused after 1 week of inactivity.",
+      "detail": "graded as Supabase|pricing_restructured|2026-10-04|https://supabase.com/pricing, a record we withdrew",
+      "summary": "The free tier now includes compute credits ($10/month) and has more detailed limits for database size, egress, and file storage. The free tier also has limits on concurrent connections and messages per month.",
+      "previous_state": "Postgres development platform: database, Auth, Storage, Realtime and Edge Functions. The Free plan is $0: unlimited API requests, 50,000 monthly active users, a 500 MB database on a shared CPU with 500 MB RAM, 5 GB egress plus 5 GB cached egress, 1 GB file storage, 500,000 Edge Function invocations, and Realtime with 200 concurrent connections and 2 million messages a month. Free projects are paused after 1 week of inactivity, with a limit of 2 active projects. Pro starts at $25 a month for the first project and includes $10 a month of compute credits, enough for one Micro instance.",
+      "current_state": "The Free plan is $0/month and includes unlimited API requests, 50,000 monthly active users, a 500 MB database, 5 GB egress, 5 GB cached egress, 1 GB file storage, 500,000 Edge Function invocations, and Realtime with 200 concurrent connections and 2 million messages a month. It also includes $10/month in compute credits. Projects are paused after 1 week of inactivity, with a limit of 2 active projects.",
       "source_url": "https://supabase.com/pricing",
       "category": "Databases",
-      "refused_date": "2026-09-19",
-      "collided_with": "Supabase|pricing_restructured|2026-09-03|https://supabase.com/pricing"
+      "refused_date": "2026-10-29",
+      "collided_with": "Supabase|pricing_restructured|2026-10-04|https://supabase.com/pricing"
     },
     {
       "vendor": "superfeedr.com",
@@ -10562,6 +10694,18 @@
       "source_url": "https://thumbnail.ws",
       "category": "Web Scraping",
       "refused_date": "2026-10-14"
+    },
+    {
+      "vendor": "Thunder Client",
+      "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-04 (restates_stored_quantities) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free plan now includes CLI & CI/CD, WebSocket, SSE, gRPC, and has a limit of 50 requests per collection and 5 imports per month. The stored information stated 1 local collection run per month.",
+      "previous_state": "Lightweight REST API client for VS Code and JetBrains. Free plan is $0 per user/month for the VS Code extension, with 1 local collection run per month. Paid plans are billed annually from Starter at $3 per user/month, which adds JetBrains, team features, CLI and CI/CD, WebSocket/SSE/gRPC and 250 collection runs; Business is $7 and Enterprise $16.",
+      "current_state": "$0 / user / month. Includes Extension VS Code, JetBrains CLI & CI/CD New WebSocket, SSE, gRPC. Collections 3. Requests per Collection 50. Import Collections 5 per month.",
+      "source_url": "https://www.thunderclient.com/pricing",
+      "category": "API Development",
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "Thunder Client",
@@ -11529,6 +11673,18 @@
     {
       "vendor": "Wraps",
       "change_type": "limits_reduced",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-04 (measures_the_opposite) claimed the same change, limits_reduced, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier now has a limit of 5,000 custom events/mo instead of the stored 5K tracked events/mo. The free tier also includes 2 workflows instead of 1.",
+      "previous_state": "Free forever: Get started — no credit card required. Dashboard + AI template editor, 5K tracked events/mo, 1 workflow, Unlimited contacts. Sending costs go straight to AWS — $0.10/1K on à la carte, or $0.16/1K on the new default Essentials plan.",
+      "current_state": "Free forever: Unlimited sends, domains & contacts, Broadcasts to all contacts, 5,000 custom events/mo, 1 AWS account, 2 workflows, 30-day history.",
+      "source_url": "https://wraps.dev",
+      "category": "Email",
+      "refused_date": "2026-10-29"
+    },
+    {
+      "vendor": "Wraps",
+      "change_type": "limits_reduced",
       "reason": "same_transition_graded_differently",
       "detail": "same vendor, source_url and previous_state as Wraps|new_free_tier|2026-08-28|https://wraps.dev",
       "summary": "The free tier now has limits of 5,000 custom events/mo and 30-day history.",
@@ -11659,6 +11815,18 @@
       "source_url": "https://xitoring.com/",
       "category": "Monitoring",
       "refused_date": "2026-09-11"
+    },
+    {
+      "vendor": "Xitoring.com",
+      "change_type": "free_tier_removed",
+      "reason": "repeats_a_refused_claim",
+      "detail": "the reading of this vendor refused on 2026-10-04 (repeats_a_refused_reading) claimed the same change, free_tier_removed, against the same stored description, and the two readings state different figures, so the vendor may have changed since",
+      "summary": "The free tier is now a 14-day free trial, and the limits for monitoring have changed.",
+      "previous_state": "Uptime monitoring: 20 free, Linux and Windows Server monitoring: 5 free, Status page: 1 free - Mobile app, multiple notification channel, and much more!",
+      "current_state": "A 14-day free trial is available with no credit card required. Uptime + SSL starts at $4.99/mo, and Synthetic + Server starts at $24.99/mo.",
+      "source_url": "https://xitoring.com/",
+      "category": "Monitoring",
+      "refused_date": "2026-10-29"
     },
     {
       "vendor": "Xitoring.com",
