@@ -287,6 +287,18 @@
           "read_on": "2026-10-06"
         },
         {
+          "text": "Cloudflare's subscription agreement's list of restrictions does not include commercial use. The only restriction specific to free services bars processing or collecting credit card information on the site.",
+          "quote": "Unless otherwise expressly permitted in writing by Cloudflare, you will not and you have no right to: … (h) process or collect personal or business credit card information on any web property that is receiving Free Services",
+          "url": "https://www.cloudflare.com/terms/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Cloudflare's subscription agreement bars signing up for the services on behalf of a third party unless Cloudflare permits it in writing.",
+          "quote": "you will not and you have no right to: (a) rent, lease, loan, export, or sell access to the Services to any third party, or sign up for the Services on behalf of a third party",
+          "url": "https://www.cloudflare.com/terms/",
+          "read_on": "2026-10-29"
+        },
+        {
           "text": "Cloudflare may change a Worker's workers.dev subdomain for any reason. Custom domains are not affected.",
           "quote": "Cloudflare may change Cloudflare Workers/Pages subdomain names of projects hosted at workers.dev or pages.dev for any or no reason.",
           "url": "https://www.cloudflare.com/service-specific-terms-developer-platform/",
@@ -503,6 +515,18 @@
           "quote": "process or collect personal or business credit card information on any web property that is receiving Free Services",
           "url": "https://www.cloudflare.com/terms/",
           "read_on": "2026-10-06"
+        },
+        {
+          "text": "Cloudflare's subscription agreement's list of restrictions does not include commercial use. The only restriction specific to free services bars processing or collecting credit card information on the site.",
+          "quote": "Unless otherwise expressly permitted in writing by Cloudflare, you will not and you have no right to: … (h) process or collect personal or business credit card information on any web property that is receiving Free Services",
+          "url": "https://www.cloudflare.com/terms/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Cloudflare's subscription agreement bars signing up for the services on behalf of a third party unless Cloudflare permits it in writing.",
+          "quote": "you will not and you have no right to: (a) rent, lease, loan, export, or sell access to the Services to any third party, or sign up for the Services on behalf of a third party",
+          "url": "https://www.cloudflare.com/terms/",
+          "read_on": "2026-10-29"
         },
         {
           "text": "Cloudflare may change a project's pages.dev subdomain for any reason, and aims to give at least a week's notice. Custom domains are not affected.",
