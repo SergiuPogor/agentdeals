@@ -14,8 +14,8 @@
       "changed": "2026-10-29"
     },
     "/agent-stack": {
-      "hash": "8c1769eca52bb104",
-      "changed": "2026-10-28"
+      "hash": "d5096dd7ce6292da",
+      "changed": "2026-10-29"
     },
     "/ai-coding-tools-pricing": {
       "hash": "471c056a43a79390",
@@ -1167,7 +1167,7 @@
       "changed": "2026-10-28"
     },
     "/category/databases": {
-      "hash": "f44cdcbc836e3a47",
+      "hash": "e0f5089bc39c05b7",
       "changed": "2026-10-29"
     },
     "/category/design": {
@@ -2700,15 +2700,15 @@
       "changed": "2026-10-29"
     },
     "/database-alternatives": {
-      "hash": "2094bbba4ceb589b",
+      "hash": "1c3396345e2b1726",
       "changed": "2026-10-29"
     },
     "/database-free-tier-comparison-2026": {
-      "hash": "e4e41aabd80b0bfa",
+      "hash": "b58c706e469f0a2d",
       "changed": "2026-10-29"
     },
     "/database-pricing": {
-      "hash": "0fcd56d6d9571593",
+      "hash": "d1e79a4cdd93e272",
       "changed": "2026-10-29"
     },
     "/datadog-alternatives": {
@@ -3151,7 +3151,7 @@
       "changed": "2026-10-11"
     },
     "/estimate": {
-      "hash": "a17d848f42334533",
+      "hash": "95f89e6fa9636183",
       "changed": "2026-10-29"
     },
     "/events": {
@@ -3193,11 +3193,11 @@
       "changed": "2026-10-29"
     },
     "/free-django-stack": {
-      "hash": "818951fd375165d2",
+      "hash": "0f0c3987030c9ff9",
       "changed": "2026-10-29"
     },
     "/free-fastapi-stack": {
-      "hash": "c712b76bb40c0ff3",
+      "hash": "900c755f7f58a571",
       "changed": "2026-10-29"
     },
     "/free-frontend-stack": {
@@ -3205,7 +3205,7 @@
       "changed": "2026-10-29"
     },
     "/free-go-stack": {
-      "hash": "0389d41c646034f4",
+      "hash": "1141365060c48cd7",
       "changed": "2026-10-29"
     },
     "/free-llm-apis": {
@@ -3331,7 +3331,7 @@
       "changed": "2026-10-29"
     },
     "/mongodb-alternatives": {
-      "hash": "26cad3c17dea9df2",
+      "hash": "c6dd82ec55126b4e",
       "changed": "2026-10-29"
     },
     "/monitoring-alternatives": {
@@ -3343,11 +3343,11 @@
       "changed": "2026-10-28"
     },
     "/neon-vs-supabase": {
-      "hash": "4a94e55e74a7960b",
+      "hash": "b13faef2dd768bec",
       "changed": "2026-10-29"
     },
     "/neon-vs-turso": {
-      "hash": "e6f59cda8449b829",
+      "hash": "d4f55b4428d27364",
       "changed": "2026-10-29"
     },
     "/netlify-vs-render": {
@@ -3402,7 +3402,7 @@
       "changed": "2026-10-29"
     },
     "/redis-alternatives": {
-      "hash": "c3fe0797a5a7c736",
+      "hash": "00f2a16065c6b1cf",
       "changed": "2026-10-29"
     },
     "/referral-programs": {
@@ -3902,7 +3902,7 @@
       "changed": "2026-10-20"
     },
     "/vector-database-pricing": {
-      "hash": "b1bcaa5278e5cc06",
+      "hash": "4f417ff310e3338c",
       "changed": "2026-10-29"
     },
     "/vendor": {
