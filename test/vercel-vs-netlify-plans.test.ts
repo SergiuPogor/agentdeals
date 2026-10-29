@@ -14,6 +14,7 @@ const plain = (html: string) => decode(html.replace(/<[^>]+>/g, " ")).replace(/\
 
 interface Page {
   text: string;
+  netlifyPlanText: string;
   meta: string;
   chooseVercel: string;
   tables: { head: string[]; rows: string[][] }[];
@@ -31,7 +32,19 @@ function readPage(html: string): Page {
       .map(r => [...r[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map(c => plain(c[1]))),
   }));
   const scale = body.slice(body.indexOf('<h2 id="scale">'), body.indexOf('<h2 id="when">'));
+  const current = body.split(/<h2 id="alternatives">/)[0];
+  const prose = current.replace(/<table\b[\s\S]*?<\/table>/g, " ");
+  const netlifyParagraphs = [...prose.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)]
+    .flatMap(p => plain(p[1]).split(/(?<=[.!?])\s+/)).filter(sentence => /\bNetlify\b/.test(sentence));
+  const netlifyBlocks = [...prose.matchAll(/<div class="(?:context-box|verdict-item|stat-card)">([\s\S]*?)<\/div>/g)]
+    .filter(block => /^(?:Netlify|Choose Netlify)/.test(plain(block[1])))
+    .map(block => plain(block[1]));
+  const netlifyStats = [...prose.matchAll(/<div class="stat-number[^"]*">([\s\S]*?)<\/div>\s*<div class="stat-label">([^<]*Netlify[^<]*)<\/div>/g)]
+    .map(stat => plain(stat[1]));
+  const netlifyColumns = tables.flatMap(table => table.head.flatMap((head, i) =>
+    /^Netlify(?:\s|$)/.test(head) ? table.rows.map(row => row[i]) : []));
   return {
+    netlifyPlanText: [...netlifyColumns, ...netlifyParagraphs, ...netlifyBlocks, ...netlifyStats].join(" "),
     text: plain(body.replace(/<div class="more-guides"[\s\S]*$/, " ")),
     meta: plain(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? ""),
     chooseVercel: plain(body.match(/<strong>Choose Vercel if:<\/strong>\s*<p>([\s\S]*?)<\/p>/)?.[1] ?? ""),
@@ -62,6 +75,52 @@ function startServer(): Promise<{ child: ChildProcess; port: number }> {
 }
 
 const rowNamed = (rows: string[][], name: string) => rows.find(r => r[0] === name);
+
+function assertNetlifyPlans(page: Page): void {
+  assert.ok(page.netlifyPlanText.length > 0);
+  for (const gone of [/Netlify Starter/, /Starter plan/, /Starter =/, /Business/, /\$99/, /\$19/, /5×/, /per-seat/, /\/member/]) {
+    assert.doesNotMatch(page.netlifyPlanText, gone);
+  }
+  for (const table of page.tables.filter(t => t.head[2]?.startsWith("Netlify"))) {
+    for (const row of table.rows) assert.doesNotMatch(row[2], /\bmin\b|minutes?\b|\/member/, row.join(" | "));
+  }
+}
+
+function planFixture(cell = "$9/mo Personal", section = "Netlify offers Personal and Pro.", alternative = "Business $19", vercel = "$19 per-seat"): string {
+  return `<html><head></head><body>
+    <table class="pricing-table"><thead><tr><th>Metric</th><th>Vercel</th><th>Netlify</th><th>Notes</th></tr></thead>
+      <tbody><tr><td>First paid plan</td><td>${vercel}</td><td>${cell}</td><td>Compare plans.</td></tr></tbody></table>
+    <div class="context-box"><strong>Netlify verified data:</strong> Free tier. ${section}</div>
+    <div class="verdict-item"><strong>Choose Netlify if:</strong><p>Free hosting.</p></div>
+    <h2 id="alternatives">Other Hosting Alternatives</h2>
+    <table class="pricing-table"><thead><tr><th>Provider</th><th>Tier</th><th>Free Tier Details</th></tr></thead>
+      <tbody><tr><td>Cloudflare Pages</td><td>Free</td><td>${alternative}</td></tr></tbody></table>
+    <h2 id="changes">Recent Deal Changes</h2></body></html>`;
+}
+
+it("allows another vendor's plan names, prices and seat units in its own cells", () => {
+  assertNetlifyPlans(readPage(planFixture()));
+  for (const value of ["Business", "Starter plan", "$19", "$99", "per-seat", "/member"])
+    assertNetlifyPlans(readPage(planFixture(undefined, undefined, value, value)));
+});
+
+it("rejects obsolete Netlify plans, prices and units in its columns and dedicated sections", () => {
+  for (const value of ["Netlify Starter", "Starter plan", "Starter =", "Business", "$19", "$99", "5×", "per-seat", "/member", "100 min", "100 minutes"]) {
+    assert.throws(() => assertNetlifyPlans(readPage(planFixture(value))), undefined, value);
+    if (!/min/.test(value)) {
+      assert.throws(() => assertNetlifyPlans(readPage(planFixture(undefined, value))), undefined, value);
+      const decision = planFixture().replace("<p>Free hosting.</p>", `<p>${value}</p>`);
+      assert.throws(() => assertNetlifyPlans(readPage(decision)), undefined, value);
+      const stat = planFixture().replace('<h2 id="alternatives">', `<div class="stat-card"><div class="stat-number green">${value}</div><div class="stat-label">Netlify Pro</div></div><h2 id="alternatives">`);
+      assert.throws(() => assertNetlifyPlans(readPage(stat)), undefined, value);
+    }
+  }
+});
+
+it("rejects obsolete Netlify values in paragraphs that describe its plans", () => {
+  const html = planFixture().replace('<h2 id="alternatives">', '<p>Netlify Business costs $99.</p><h2 id="alternatives">');
+  assert.throws(() => assertNetlifyPlans(readPage(html)));
+});
 
 describe("/vercel-vs-netlify prices each vendor's plans as the vendor does", () => {
   before(async () => {
@@ -147,11 +206,7 @@ describe("/vercel-vs-netlify prices each vendor's plans as the vendor does", () 
   });
 
   it("names no Netlify plan, price or unit that Netlify's pricing page does not list", () => {
-    for (const gone of [/Netlify Starter/, /Starter plan/, /Starter =/, /Business/, /\$99/, /\$19/, /5×/, /per-seat/, /\/member/]) {
-      assert.doesNotMatch(page.text, gone);
-    }
-    for (const table of page.tables.filter(t => t.head[2]?.startsWith("Netlify"))) {
-      for (const row of table.rows) assert.doesNotMatch(row[2], /\bmin\b|minutes?\b|\/member/, row.join(" | "));
-    }
+    assert.equal(page.tables.filter(table => table.head.some(head => /^Netlify(?:\s|$)/.test(head))).length, 2);
+    assertNetlifyPlans(page);
   });
 });
