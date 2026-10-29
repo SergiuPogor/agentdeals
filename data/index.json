@@ -1049,6 +1049,18 @@
           "quote": "All tenancies get a standalone MySQL HeatWave DB system with a single node HeatWave cluster in the home region. The Always Free DB system has 50 GB of storage to store data and log files. An extra 50 GB of backup storage is available.",
           "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
           "read_on": "2026-10-29"
+        },
+        {
+          "text": "One Oracle Cloud Free Tier account is permitted per person. Creating multiple free accounts is prohibited.",
+          "quote": "One Oracle Cloud Free Trial or Always Free account is permitted per person.",
+          "url": "https://www.oracle.com/cloud/free/faq/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Oracle Cloud Free Tier does not include SLAs. Customers using only Always Free resources are not eligible for Oracle Support. Community support is available through Oracle's forums.",
+          "quote": "Oracle Cloud Free Tier does not include SLAs.",
+          "url": "https://www.oracle.com/cloud/free/faq/",
+          "read_on": "2026-10-29"
         }
       ],
       "free_plan_excerpt": {
@@ -4232,6 +4244,18 @@
           "read_on": "2026-10-05"
         },
         {
+          "text": "Groq's Services Agreement grants use of Groq APIs to integrate its services into customer applications for end users. Its restrictions do not prohibit commercial use.",
+          "quote": "including the right to use Groq’s APIs to integrate the Cloud Services and AI Model Services into your Customer Application and to make the Cloud Services and AI Model Services available to End Users through your Customer Applications",
+          "url": "https://console.groq.com/docs/legal/services-agreement",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Customers may not resell access to their Groq account. Groq's Services Agreement prohibits selling, reselling, or transferring its services except with Groq's express approval.",
+          "quote": "sell, resell, sublicense, transfer, or distribute any of the Cloud Services except as expressly approved by Groq",
+          "url": "https://console.groq.com/docs/legal/services-agreement",
+          "read_on": "2026-10-29"
+        },
+        {
           "text": "Groq does not keep inference requests by default. It may log inputs and outputs for up to 30 days to troubleshoot or investigate abuse; enabling Zero Data Retention in Data Controls stops this.",
           "quote": "These logs are retained for up to 30 days, unless legally required to retain longer.",
           "url": "https://console.groq.com/docs/your-data",
@@ -4595,6 +4619,24 @@
           "quote": "Start building for free — no credit card required.",
           "url": "https://www.cloudflare.com/products/workers-ai/",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "Workers AI is subject to Cloudflare's Self-Serve Subscription Agreement. The agreement does not restrict commercial use.",
+          "quote": "Cloudflare processes certain customer data to provide Workers AI, subject to our Privacy Policy and, as applicable, our Self-Serve Subscription Agreement",
+          "url": "https://developers.cloudflare.com/workers-ai/platform/data-usage/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Cloudflare does not create or train the third-party AI models in Workers AI. Each model may be subject to license terms from its provider.",
+          "quote": "Those models may be subject to open source, acceptable use policies, or other license terms between you and the model provider.",
+          "url": "https://developers.cloudflare.com/workers-ai/platform/data-usage/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Cloudflare does not use Workers AI inputs or outputs to train models. It does not retain them after a standard inference request, unless you enable a feature that stores them, such as logging or caching in AI Gateway.",
+          "quote": "Cloudflare does not use Customer Content processed by Workers AI to train AI models.",
+          "url": "https://developers.cloudflare.com/workers-ai/platform/data-usage/",
+          "read_on": "2026-10-29"
         }
       ]
     },
@@ -34592,6 +34634,18 @@
           "read_on": "2026-10-07"
         },
         {
+          "text": "Google Cloud's Terms of Service grant use for customer applications with material value independent of the services. The terms restrict resale and circumventing fees but do not prohibit commercial use.",
+          "quote": "integrate the GCP Services and Looker (original) Services into any Customer Application that has material value independent of the Services",
+          "url": "https://cloud.google.com/terms/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Free Tier monthly usage limits are calculated per billing account. Google Cloud's terms prohibit creating multiple projects to simulate a single project or circumvent usage limits.",
+          "quote": "there are monthly usage limits that are calculated per billing account",
+          "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+          "read_on": "2026-10-29"
+        },
+        {
           "text": "Apps deployed from Google AI Studio can run on Cloud Run under Google's Starter Tier, which needs no credit card or billing account and limits regions, quotas and resources.",
           "quote": "No Cloud Billing account: You don't need to provide a credit card or set up a Cloud Billing account to deploy your applications.",
           "url": "https://docs.cloud.google.com/docs/starter-tier",
@@ -34814,6 +34868,18 @@
           "quote": "Any usage that exceeds the Free Tier usage limits is billed at standard rates.",
           "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "Google Cloud's Terms of Service grant use for customer applications with material value independent of the services. The terms restrict resale and circumventing fees but do not prohibit commercial use.",
+          "quote": "integrate the GCP Services and Looker (original) Services into any Customer Application that has material value independent of the Services",
+          "url": "https://cloud.google.com/terms/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Free Tier monthly usage limits are calculated per billing account. Google Cloud's terms prohibit creating multiple projects to simulate a single project or circumvent usage limits.",
+          "quote": "there are monthly usage limits that are calculated per billing account",
+          "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
+          "read_on": "2026-10-29"
         },
         {
           "text": "Cloud Build charges $0.006 per minute for an e2-standard-2 build in the default pool. Partial minutes are billed at the actual number of seconds consumed. Queued time is not billed.",
@@ -36864,7 +36930,7 @@
     {
       "vendor": "Amazon Kiro",
       "category": "AI Coding",
-      "description": "AI coding tool by AWS, with an IDE, a CLI and a web interface. Prompts run by default on Auto, \"an agent that uses a mix of different frontier models\", and users can pick Claude, GPT or open-weight models. KIRO FREE $0 per month 50 credits. KIRO PRO $20 per user / month 1,000 credits. KIRO PRO+ $40 per user / month 2,000 credits. KIRO PRO MAX $100 per user / month 5,000 credits. KIRO POWER $200 per user / month 10,000 credits. Add-on credits are $0.04/credit. $20 credit towards first paid plan upgrade.",
+      "description": "AI coding tool by AWS, with an IDE, a CLI and a web interface. Prompts run by default on Auto, \"an agent that uses a mix of different frontier models\", and users can pick Claude, GPT or open-weight models. KIRO FREE $0 per month 50 credits. KIRO PRO $20 per user / month 1,000 credits. KIRO PRO+ $40 per user / month 2,000 credits. KIRO PRO MAX $100 per user / month 5,000 credits. KIRO POWER $200 per user / month 10,000 credits. Add-on credits are $0.04/credit. From November 1, 2026, the first upgrade to Pro includes the rest of that month free and 500 trial credits. Trial credits are used after plan credits and expire after 12 months. On the free tier, unused trial credits carry over but can only be spent on free-tier models. Before November 1, 2026, the first upgrade includes a $20 discount. From that date, plan fees and credits are prorated.",
       "tier": "Free",
       "url": "https://kiro.dev/pricing",
       "tags": [
