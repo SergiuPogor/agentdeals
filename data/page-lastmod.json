@@ -4955,7 +4955,7 @@
       "changed": "2026-10-29"
     },
     "/vendor/composio": {
-      "hash": "7612b98979504a7a",
+      "hash": "632f2a3698b46fd7",
       "changed": "2026-10-29"
     },
     "/vendor/configcat": {
@@ -5717,7 +5717,7 @@
       "changed": "2026-10-29"
     },
     "/vendor/formspree": {
-      "hash": "e7b70a0f33d65203",
+      "hash": "06f08f18a68d1dfd",
       "changed": "2026-10-29"
     },
     "/vendor/formsubmit-co": {
@@ -7134,7 +7134,7 @@
       "changed": "2026-10-29"
     },
     "/vendor/mixpanel": {
-      "hash": "11e2ed12d9b36bc9",
+      "hash": "52533d724be51c25",
       "changed": "2026-10-29"
     },
     "/vendor/mockapi": {
@@ -8083,7 +8083,7 @@
       "changed": "2026-10-29"
     },
     "/vendor/rollbar": {
-      "hash": "f19111ee19306b80",
+      "hash": "284b853c19134fe7",
       "changed": "2026-10-29"
     },
     "/vendor/row-zero": {

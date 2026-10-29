@@ -81,7 +81,7 @@ import { STARTUP_CREDITS_META_DESCRIPTION, STARTUP_PROGRAMS, type DatedTerms, ty
 import { CHANGE_TIMELINE_LINK_TEXT, CHANGE_TIMELINE_PATH, CUTS_THIS_YEAR_ANCHOR, CUTS_THIS_YEAR_HEADING, CUTS_THIS_YEAR_SUMMARY_CLASS, FIGURES_AS_OF_CLASS, FREE_TIER_TRACKER_HEADING, FREE_TIER_TRACKER_META_DESCRIPTION, FREE_TIER_TRACKER_TITLE, FREE_TIER_TRACKER_YEAR, NO_KNOWN_EFFECTIVE_DATE_LEFT_OUT, UNTIL_ITS_DATE_ARRIVES, changeTypesAmong, cutsThisYearSummary, figuresAsOfTheChangeHtml, isAFirstQuarterCard, neonFiguresWereJanuarysHtml, quarterAnchor, quarterHeading } from "./free-tier-tracker.js";
 import { changeCitesASource, citationLabel, changeIsUncited, changeSourceCitation, changeSourceLinkHtml, changeCitationHtml, citedClaimHtml, changeSummaryHtml, changeSummaryText, citedChanges, uncitedChangeNotice, uncitedChangeNoticeHtml, ratingWithheldForNoSourceClause, ratingWithheldForNoSourceSentence, ratingWithheldClause, ratingWithheldSentence, type WithheldRecordCounts, UNCITED_CHANGE_LABEL, RECORD_SOURCE_CLASS, CITATION_REL, listingSourceLinkHtml, type CitableChangeRow } from "./change-citation.js";
 import { growthLimitPhrases } from "./growth-limits.js";
-import { listingStatements, usageBeyondTheFreeTierBillingSentence } from "./overage-billing.js";
+import { listingStatements, serviceStopsAtItsLimitSentence, usageBeyondTheFreeTierBillingSentence } from "./overage-billing.js";
 import { registerAgent, authenticateRequest, hashApiKey, updateAgentX402Address, getAgentById } from "./agents.js";
 import { attributeAuthenticatedRequest } from "./referral-attribution.js";
 import { recordConversion, confirmEligibleEntries, clawbackEntry, getAgentBalance, getAgentLedgerEntries, recordPayout, MAX_COMMISSION_AMOUNT, MINIMUM_PAYOUT_AMOUNT, getLeaderboard } from "./ledger.js";
@@ -5818,18 +5818,19 @@ function buildVendorPage(slug: string): string | null {
   </div>`;
 
   const usageBillingSentence = usageBeyondTheFreeTierBillingSentence(listingStatements(primary));
-  const usageBeyondTheFreeTierIsBilled = usageBillingSentence !== null;
-  const publishedUsageBillingSentence = hasFree && !termsSuperseded ? usageBillingSentence : null;
+  const freeLimitOutcomeSentence = (timeLimitedOffer ? null : serviceStopsAtItsLimitSentence(listingStatements(primary))) ?? usageBillingSentence;
+  const hasStatedFreeLimitOutcome = freeLimitOutcomeSentence !== null;
+  const publishedFreeLimitOutcomeSentence = hasFree && !termsSuperseded ? freeLimitOutcomeSentence : null;
   const growthBullets: string[] = [];
-  if (publishedUsageBillingSentence) growthBullets.push(escHtmlServer(publishedUsageBillingSentence));
+  if (publishedFreeLimitOutcomeSentence) growthBullets.push(escHtmlServer(publishedFreeLimitOutcomeSentence));
   for (const phrase of growthLimitPhrases(publishableTerms)) {
     if (theRefusalIsStatedOnce) growthBullets.push(recordedLimitSentence(phrase));
     else if (termsWeCannotConfirm) growthBullets.push(unconfirmedThresholdSentence(phrase, termsWeCannotConfirm));
-    else if (!usageBeyondTheFreeTierIsBilled) growthBullets.push(outgrowSentence(vendorName, phrase));
+    else if (!hasStatedFreeLimitOutcome) growthBullets.push(outgrowSentence(vendorName, phrase));
   }
   const whenTheFreeAllowanceIsUsed = timeLimitedOffer
     ? whatFollowsTheOffer(timeLimitedOffer.kind)
-    : usageBeyondTheFreeTierIsBilled ? null : `When your usage exceeds the free tier limits, you'll need to upgrade.`;
+    : hasStatedFreeLimitOutcome ? null : `When your usage exceeds the free tier limits, you'll need to upgrade.`;
   if (growthBullets.length === 0 && hasFree && !termsSuperseded && whenTheFreeAllowanceIsUsed) {
     growthBullets.push(whenTheFreeAllowanceIsUsed);
   }
@@ -6212,9 +6213,9 @@ ${allCompareLinks.join("\n")}
       alternativesRanking.gated_count,
     ),
   });
-  const faqOutgrowAnswer = publishedUsageBillingSentence
-    ? `${publishedUsageBillingSentence}${alternatives.length > 0 ? ` The ${alternatives.length} alternatives in ${primary.category} are each listed above with the free tier they offer.` : ""}`
-    : usageBeyondTheFreeTierIsBilled && outgrowStatementsBeforeTheAlternatives === 0
+  const faqOutgrowAnswer = publishedFreeLimitOutcomeSentence
+    ? `${publishedFreeLimitOutcomeSentence}${alternatives.length > 0 ? ` The ${alternatives.length} alternatives in ${primary.category} are each listed above with the free tier they offer.` : ""}`
+    : hasStatedFreeLimitOutcome && outgrowStatementsBeforeTheAlternatives === 0
     ? WHEN_YOU_OUTGROW_THE_FREE_TIER
     : growthBullets.length > 0
     ? `${growthBullets[0].replace(/<[^>]*>/g, "")} ${WHEN_YOU_OUTGROW_THE_FREE_TIER}`
