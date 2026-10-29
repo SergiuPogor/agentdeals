@@ -1,7 +1,8 @@
+import { WITHHELD_SUBJECTS, withheldTermsFixture } from "./withheld-terms-fixture.ts";
 import { describe, it, before, after } from "node:test";
 import assert from "node:assert";
 import { spawn, type ChildProcess } from "node:child_process";
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -12,17 +13,16 @@ type Offer = import("../src/types.ts").Offer;
 
 const REPO = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const TODAY = new Date().toISOString().slice(0, 10);
-const IN_A_WEEK = new Date(Date.now() + 7 * 86_400_000).toISOString().slice(0, 10);
 
-const PINNED = ["logflare.app", "phare.io", "addy.io"];
+const PINNED = WITHHELD_SUBJECTS;
+const dir = mkdtempSync(path.join(tmpdir(), "withheld-terms-doors-"));
+const fixture = withheldTermsFixture(dir, true);
+const catalogue = fixture.catalogue;
 
 const STACK_USE_CASES = [
   "Next.js SaaS app", "API backend", "static blog", "mobile app", "AI chatbot",
   "ecommerce store", "python api", "express server", "documentation site", "something else entirely",
 ];
-
-const catalogue = JSON.parse(readFileSync(path.join(REPO, "data", "index.json"), "utf-8"));
-const pinnedListings: Offer[] = catalogue.offers.filter((offer: Offer) => PINNED.includes(offer.vendor));
 
 const VENDOR_WITH_A_REFERRAL_CODE = "Railway";
 
@@ -31,7 +31,7 @@ const REQUESTS: Record<string, string[]> = {
   "/api/new": ["/api/new?days=30"],
   "/api/newest": ["/api/newest?limit=50"],
   "/api/expiring": ["/api/expiring?within_days=365"],
-  "/api/compare": [`/api/compare?a=${PINNED[0]}&b=${PINNED[1]}`, `/api/compare?a=${PINNED[2]}&b=${PINNED[0]}`],
+  "/api/compare": [`/api/compare?a=${encodeURIComponent(PINNED[0])}&b=${encodeURIComponent(PINNED[1])}`, `/api/compare?a=${encodeURIComponent(PINNED[2])}&b=${encodeURIComponent(PINNED[0])}`],
   "/api/audit-stack": [`/api/audit-stack?services=${PINNED.join(",")}`],
   "/api/costs": [`/api/costs?services=${PINNED.join(",")}`],
   "/api/stack": [
@@ -47,21 +47,11 @@ const UNDOCUMENTED_JSON_DOORS = ["/api/agent-payments"];
 
 const LIST_DOORS = ["/api/new", "/api/newest", "/api/expiring", "/api/digest"];
 
-const dir = mkdtempSync(path.join(tmpdir(), "withheld-terms-doors-"));
-
-function newAndExpiringFirst(): string {
-  const pinned = pinnedListings.map((offer) => ({ ...offer, verifiedDate: TODAY, expires_date: IN_A_WEEK }));
-  const others = catalogue.offers.filter((offer: Offer) => !PINNED.includes(offer.vendor));
-  const at = path.join(dir, "index.json");
-  writeFileSync(at, JSON.stringify({ ...catalogue, offers: [...pinned, ...others] }));
-  return at;
-}
-
 function startServer(indexPath: string): Promise<{ child: ChildProcess; base: string }> {
   return new Promise((resolve, reject) => {
     const child = spawn("node", [path.join(REPO, "dist", "serve.js")], {
       stdio: ["pipe", "pipe", "pipe"],
-      env: { ...process.env, PORT: "0", BASE_URL: "http://localhost", TZ: "UTC", AGENTDEALS_INDEX_PATH: indexPath },
+      env: { ...process.env, PORT: "0", BASE_URL: "http://localhost", TZ: "UTC", ...fixture.env, AGENTDEALS_INDEX_PATH: indexPath },
     });
     const timer = setTimeout(() => { child.kill("SIGKILL"); reject(new Error("server startup timeout")); }, 60000);
     child.stderr!.on("data", (buffer: Buffer) => {
@@ -127,7 +117,7 @@ function printedWithheld(read: DoorRead): { object: JsonObject; listing: Withhel
 }
 
 before(async () => {
-  const started = await startServer(newAndExpiringFirst());
+  const started = await startServer(fixture.env.AGENTDEALS_INDEX_PATH);
   server = started.child;
   spec = await (await fetch(`${started.base}/api/openapi.json`)).json() as OpenApi;
   documentedGetPaths = Object.entries(spec.paths).filter(([, operations]) => "get" in operations).map(([door]) => door);
@@ -155,7 +145,7 @@ after(() => {
 describe("#1746 every JSON door marks a listing whose stored terms the vendor page withholds", () => {
   it("withholds the terms of each pinned listing, so the doors below are read against records that are withheld", () => {
     for (const vendor of PINNED) {
-      assert.ok(withheld.some((listing) => listing.vendor === vendor), `${vendor} is no longer withheld; pin another withheld listing`);
+      assert.ok(withheld.some((listing) => listing.vendor === vendor), `${vendor} fixture terms were not withheld`);
     }
   });
 
