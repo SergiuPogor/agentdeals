@@ -1826,6 +1826,7 @@
         "minio",
         "neon",
         "odrive",
+        "ollama-cloud",
         "phase-two",
         "pipedream",
         "pollinations-ai",
@@ -1852,13 +1853,13 @@
       "partial_recheck": null,
       "reads_index": false,
       "tables_read_index": false,
-      "table_figures": 42,
-      "table_figures_from_records": 41,
+      "table_figures": 43,
+      "table_figures_from_records": 42,
       "tables": [
         {
           "label": "Q4 2026",
-          "figures": 3,
-          "from_records": 3
+          "figures": 4,
+          "from_records": 4
         },
         {
           "label": "Q3 2026",
@@ -2293,8 +2294,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 85,
-      "table_figures_from_records": 84,
+      "table_figures": 86,
+      "table_figures_from_records": 85,
       "tables": [
         {
           "label": "Pricing Comparison Table",
@@ -2308,8 +2309,8 @@
         },
         {
           "label": "Recent Pricing Changes",
-          "figures": 8,
-          "from_records": 8
+          "figures": 9,
+          "from_records": 9
         },
         {
           "label": "Upcoming Changes",
