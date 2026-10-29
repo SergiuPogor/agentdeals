@@ -22,11 +22,11 @@
       "changed": "2026-10-29"
     },
     "/ai-free-tiers": {
-      "hash": "53939f61ed96a0ef",
+      "hash": "19cfee3cf6667cf6",
       "changed": "2026-10-29"
     },
     "/ai-ml-alternatives": {
-      "hash": "40f7dd74b357487f",
+      "hash": "a46760f07f399176",
       "changed": "2026-10-29"
     },
     "/alternative-to": {
@@ -1099,7 +1099,7 @@
       "changed": "2026-10-29"
     },
     "/category/ai-ml": {
-      "hash": "5d909660209e00c0",
+      "hash": "00302a46941ef356",
       "changed": "2026-10-29"
     },
     "/category/analytics": {
@@ -1139,8 +1139,8 @@
       "changed": "2026-10-28"
     },
     "/category/cloud-iaas": {
-      "hash": "f9cb78535cb3bd09",
-      "changed": "2026-10-28"
+      "hash": "e83d9430d70e3e59",
+      "changed": "2026-10-29"
     },
     "/category/cloud-storage": {
       "hash": "48c245348e3df69d",
@@ -2783,8 +2783,8 @@
       "changed": "2026-10-09"
     },
     "/digest/2025-w01": {
-      "hash": "9d59a259d726ae47",
-      "changed": "2026-10-09"
+      "hash": "34fb74009e612bc9",
+      "changed": "2026-10-29"
     },
     "/digest/2025-w04": {
       "hash": "02d76b554ccdf962",
@@ -3209,7 +3209,7 @@
       "changed": "2026-10-29"
     },
     "/free-llm-apis": {
-      "hash": "39be48995d5be126",
+      "hash": "36cd4b1f97ac558c",
       "changed": "2026-10-29"
     },
     "/free-nextjs-stack": {
@@ -3259,7 +3259,7 @@
       "changed": "2026-10-11"
     },
     "/google-developer-program-2026": {
-      "hash": "78ca1afc74454777",
+      "hash": "1b3518081913a583",
       "changed": "2026-10-29"
     },
     "/groq-vs-hugging-face": {
@@ -3295,15 +3295,15 @@
       "changed": "2026-10-22"
     },
     "/hetzner-alternatives": {
-      "hash": "eebb98d607138d62",
-      "changed": "2026-10-23"
+      "hash": "5475721a027f424e",
+      "changed": "2026-10-29"
     },
     "/hetzner-pricing-2026": {
-      "hash": "166b41f1a65617a2",
+      "hash": "d040aa464830bc95",
       "changed": "2026-10-29"
     },
     "/hosting-alternatives": {
-      "hash": "c3cabb1c7bdbad3a",
+      "hash": "d08c9a2ac3e41d7d",
       "changed": "2026-10-29"
     },
     "/hosting-free-tier-comparison-2026": {
@@ -3319,7 +3319,7 @@
       "changed": "2026-10-29"
     },
     "/llm-api-pricing": {
-      "hash": "739e6f0e5c3b86d1",
+      "hash": "9fc71c438115a6f4",
       "changed": "2026-10-29"
     },
     "/localstack-alternatives": {
@@ -3327,8 +3327,8 @@
       "changed": "2026-10-11"
     },
     "/mistral-api-pricing-2026": {
-      "hash": "f44a350a43d7a6fe",
-      "changed": "2026-10-20"
+      "hash": "36384315709fac32",
+      "changed": "2026-10-29"
     },
     "/mongodb-alternatives": {
       "hash": "df619220d212b0be",
@@ -3446,8 +3446,8 @@
       "changed": "2026-10-10"
     },
     "/reports/2024-12": {
-      "hash": "0a5e0790e88a7e8b",
-      "changed": "2026-10-10"
+      "hash": "5aae99e15529daf7",
+      "changed": "2026-10-29"
     },
     "/reports/2025-01": {
       "hash": "9fa305dc4f651017",
@@ -3588,7 +3588,7 @@
       "daily": true
     },
     "/stability": {
-      "hash": "80abf81ba52a0a8c",
+      "hash": "c8c15ed188f8afff",
       "changed": "2026-10-29"
     },
     "/stack-check": {
@@ -3631,8 +3631,8 @@
       "changed": "2026-10-29"
     },
     "/storage-comparison-2026": {
-      "hash": "a1144eaf402a3f1e",
-      "changed": "2026-10-28"
+      "hash": "372c63eba9dc556e",
+      "changed": "2026-10-29"
     },
     "/supabase-vs-firebase": {
       "hash": "9d01b1ae58faede0",
@@ -7475,7 +7475,7 @@
       "changed": "2026-10-29"
     },
     "/vendor/oracle-cloud": {
-      "hash": "abf06fc3d3c7ea81",
+      "hash": "0d54ac1db088bf70",
       "changed": "2026-10-29"
     },
     "/vendor/orama": {
