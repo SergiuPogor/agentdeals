@@ -1239,6 +1239,12 @@
           "quote": "Realtime is free to use during the beta. Neon does not charge for the live query engine compute or the Live SQL API service.",
           "url": "https://neon.com/docs/realtime/overview",
           "read_on": "2026-10-16"
+        },
+        {
+          "text": "Neon archives branches older than 14 days and not accessed for 24 hours. Unarchiving happens automatically when a branch is connected to or queried. Branches with large amounts of data may connect and query slower while unarchiving.",
+          "quote": "Neon automatically archives branches that are: … Older than 14 days. … Have not been accessed for the past 24 hours … No action is required to unarchive a branch. It happens automatically. … Connecting to an archived branch, querying it, or performing some other action that accesses it will trigger the unarchive process. Branches with large amounts of data may experience slightly slower connection and query times while a branch is being unarchived.",
+          "url": "https://neon.com/docs/guides/branch-archiving",
+          "read_on": "2026-10-29"
         }
       ],
       "official_mcp_servers": [
@@ -1452,6 +1458,12 @@
           "text": "On the Free plan, or on a paid plan with Overages off, your databases are blocked once you exceed the limit on any single metric.",
           "quote": "Free plan, or paid plan with Overages disabled: Yes. Once you exceed the limit on any single metric (storage, rows read, rows written, or syncs), your databases are blocked, even if the other metrics are still well under quota.",
           "url": "https://turso.tech/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Databases on the free plan are archived after 10 days of inactivity. The CLI command turso group unarchive <group-name> unarchives them.",
+          "quote": "Databases get archived after 10 days of inactivity for users on a free plan. … You can unarchive inactive databases by running the following command: … turso group unarchive <group-name>",
+          "url": "https://docs.turso.tech/cli/group/unarchive",
           "read_on": "2026-10-29"
         }
       ]
