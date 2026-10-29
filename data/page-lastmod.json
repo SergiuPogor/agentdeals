@@ -22,11 +22,11 @@
       "changed": "2026-10-23"
     },
     "/ai-free-tiers": {
-      "hash": "0d2e1b86942cd09f",
+      "hash": "200d14527c05a57b",
       "changed": "2026-10-28"
     },
     "/ai-ml-alternatives": {
-      "hash": "4d1449572f913436",
+      "hash": "266799fc0e6c1304",
       "changed": "2026-10-28"
     },
     "/alternative-to": {
@@ -1099,7 +1099,7 @@
       "changed": "2026-10-24"
     },
     "/category/ai-ml": {
-      "hash": "dc7006c0959b3a45",
+      "hash": "192eef26f7a11217",
       "changed": "2026-10-28"
     },
     "/category/analytics": {
@@ -2976,8 +2976,8 @@
       "changed": "2026-10-09"
     },
     "/digest/2026-w20": {
-      "hash": "099a4a541afca9e2",
-      "changed": "2026-10-23"
+      "hash": "6c7067289ab17a63",
+      "changed": "2026-10-28"
     },
     "/digest/2026-w21": {
       "hash": "28c0299a116fa809",
@@ -3004,8 +3004,8 @@
       "changed": "2026-10-21"
     },
     "/digest/2026-w27": {
-      "hash": "53a5fcadc2c673a4",
-      "changed": "2026-10-22"
+      "hash": "c233b66c76f7ec19",
+      "changed": "2026-10-28"
     },
     "/digest/2026-w28": {
       "hash": "4c89f2084dfed0a6",
@@ -3032,8 +3032,8 @@
       "changed": "2026-10-21"
     },
     "/digest/2026-w34": {
-      "hash": "3777a0fa4a463f90",
-      "changed": "2026-10-21"
+      "hash": "9c0dadf7e90b5832",
+      "changed": "2026-10-28"
     },
     "/digest/2026-w35": {
       "hash": "e3d38072204c524e",
@@ -3209,7 +3209,7 @@
       "changed": "2026-10-28"
     },
     "/free-llm-apis": {
-      "hash": "f69ec36cbdab8f7d",
+      "hash": "77c71050bc9dcf36",
       "changed": "2026-10-28"
     },
     "/free-nextjs-stack": {
@@ -3229,7 +3229,7 @@
       "changed": "2026-10-11"
     },
     "/free-tier-risk": {
-      "hash": "0c75cdbaa4185db1",
+      "hash": "399fdec8d513c2db",
       "changed": "2026-10-28"
     },
     "/free-tier-tracker": {
@@ -3247,7 +3247,7 @@
       "changed": "2026-10-28"
     },
     "/gemini-api-pricing-2026": {
-      "hash": "757a02a148e56538",
+      "hash": "d5914aaea958d0a8",
       "changed": "2026-10-28"
     },
     "/github-actions-alternatives": {
@@ -3319,7 +3319,7 @@
       "changed": "2026-10-25"
     },
     "/llm-api-pricing": {
-      "hash": "a9fead2d3a1736ba",
+      "hash": "42a3e185c56b2881",
       "changed": "2026-10-28"
     },
     "/localstack-alternatives": {
@@ -3355,16 +3355,16 @@
       "changed": "2026-10-28"
     },
     "/openai-assistants-alternatives": {
-      "hash": "5f3e0aa69b4ee0f0",
-      "changed": "2026-10-23"
+      "hash": "b68bea2618d6bd34",
+      "changed": "2026-10-28"
     },
     "/openai-assistants-migration": {
-      "hash": "e7822bc9bb1d2f8b",
-      "changed": "2026-10-23"
+      "hash": "572075ddeccabbb6",
+      "changed": "2026-10-28"
     },
     "/openai-assistants-migration-2026": {
-      "hash": "b5c9a449a805aa4f",
-      "changed": "2026-10-23"
+      "hash": "ee07fdd343aae38b",
+      "changed": "2026-10-28"
     },
     "/postman-alternatives": {
       "hash": "d29fb3a7bbcff17c",
@@ -3390,8 +3390,8 @@
       "changed": "2026-10-28"
     },
     "/q1-2026-developer-pricing-report": {
-      "hash": "96808babfbd8968f",
-      "changed": "2026-10-23"
+      "hash": "1dab6aef934ad73d",
+      "changed": "2026-10-28"
     },
     "/q2-pricing-preview-2026": {
       "hash": "bc5444803c8a25e8",
@@ -3592,7 +3592,7 @@
       "changed": "2026-10-28"
     },
     "/stack-check": {
-      "hash": "265c24afaad52d20",
+      "hash": "cf189d29eaf1c965",
       "changed": "2026-10-28"
     },
     "/stacks": {
