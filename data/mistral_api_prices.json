@@ -103,7 +103,7 @@
       }
     ],
     "note": {
-      "text": "Prices are US dollars per 1 million tokens. Mistral Embed costs $0.10 per 1 million input tokens and Codestral Embed $0.15. OCR 4.1 costs $4 per 1,000 pages. Voxtral Mini Transcribe 2 costs $0.003 per minute of audio, and Voxtral TTS $16 per 1 million characters. Mistral Moderation 2 is free. Source: Mistral API pricing, read 2026-10-29.",
+      "text": "Prices are US dollars per 1 million tokens. Mistral Embed costs $0.10 per 1 million input tokens and Codestral Embed $0.15. OCR 3 (mistral-ocr-2512) costs $2 per 1,000 pages and $3 per 1,000 annotated pages. OCR 4.1 (mistral-ocr-4-1) costs $4 per 1,000 pages and $5 per 1,000 annotated pages. OCR 3 remains available. Voxtral Mini Transcribe 2 costs $0.003 per minute. Voxtral Mini Transcribe 3 costs $0.0035 per minute. Voxtral Mini Transcribe Realtime 3 costs $0.008 per minute. Voxtral TTS 3 (voxtral-mini-tts-3-0) in public preview costs $13 per 1 million characters. Voxtral TTS costs $16 per 1 million characters. Mistral Moderation 2 is free. Source: Mistral API pricing, read 2026-10-29.",
       "links": [
         {
           "text": "Mistral API pricing",
