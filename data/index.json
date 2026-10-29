@@ -1323,6 +1323,24 @@
           "quote": "Unless you claim the Ephemeral cluster, Atlas pauses it 2 days after creation and deletes it 7 days after creation. To claim the cluster, open the claimUrl from the create response and sign in to Atlas. Claiming converts the Ephemeral cluster into a standard Free cluster with no expiration date. An agent can create and connect to the cluster autonomously, but only a human can claim it.",
           "url": "https://www.mongodb.com/docs/atlas/tutorial/create-ephemeral-cluster/",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "The Flex tier has a monthly base price of $8.00, which includes 5GB storage, 100 operations per second and unlimited data transfer. More operations per second cost extra by tier, and Flex clusters are capped at $30 per month.",
+          "quote": "Flex clusters are capped at $30 per month.",
+          "url": "https://www.mongodb.com/docs/atlas/billing/atlas-flex-costs/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Flex clusters limit total data storage to 5 GB and the number of read and write operations to 500 operations per second.",
+          "quote": "Flex clusters limit the number of read and write operations to 500 operations per second.",
+          "url": "https://www.mongodb.com/docs/atlas/reference/flex-limitations/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Upgrading a Free cluster asks for payment information and starts billing. Changing from a Free cluster to a Flex cluster requires downtime.",
+          "quote": "Upgrading a Free cluster to a paid tier cluster starts billing for the cluster.",
+          "url": "https://www.mongodb.com/docs/atlas/scale-cluster/",
+          "read_on": "2026-10-29"
         }
       ]
     },
@@ -1405,13 +1423,31 @@
           "quote": "Start free, no credit card required",
           "url": "https://turso.tech/pricing",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "The Developer plan costs $5.99 per month, or $4.99 per month when billed yearly. It includes 9GB storage, 2.5 billion rows read, 25 million rows written and 10GB syncs per month. Overage rates are $0.75 per GB storage, $1 per billion rows read, $1 per million rows written and $0.35 per GB syncs.",
+          "quote": "Developer — $5.99/month ($4.99/month billed yearly)",
+          "url": "https://turso.tech/pricing.md",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Overage billing on a paid plan is off by default. Enabling it lets you go over your plan's included limits and pay per usage.",
+          "quote": "Overages are disabled by default. Enable them to go over your plan's included limits and pay per usage at the rates above.",
+          "url": "https://turso.tech/pricing.md",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On the Free plan, or on a paid plan with Overages off, your databases are blocked once you exceed the limit on any single metric.",
+          "quote": "Free plan, or paid plan with Overages disabled: Yes. Once you exceed the limit on any single metric (storage, rows read, rows written, or syncs), your databases are blocked, even if the other metrics are still well under quota.",
+          "url": "https://turso.tech/pricing",
+          "read_on": "2026-10-29"
         }
       ]
     },
     {
       "vendor": "Upstash",
       "category": "Databases",
-      "description": "Serverless Redis — 500K commands/month (256MB data). Vector: 200M vectors × dimensions and 10K queries a day free. QStash: 1,000 messages/day free",
+      "description": "Serverless Redis — 500K commands/month (250MB data). Vector: 200M vectors × dimensions and 10K queries a day free. QStash: 1,000 messages/day free",
       "tier": "Free",
       "url": "https://upstash.com/pricing",
       "tags": [
@@ -1458,10 +1494,34 @@
           "read_on": "2026-10-06"
         },
         {
-          "text": "Entering a credit card upgrades a Redis database to pay-as-you-go. Paid databases are charged by their plan and do not get free 256MB data or 500K commands.",
-          "quote": "Once you enter your credit card, your database will be upgraded to the pay-as-you-go plan and limits will be updated.",
-          "url": "https://upstash.com/pricing",
-          "read_on": "2026-10-06"
+          "text": "Adding the first payment method moves every free resource on the account to its paid plan: all Redis databases, plus QStash, Vector, Search and Blob. An account with a payment method cannot have free databases.",
+          "quote": "Adding your first payment method moves every free resource on the account to its paid plan: all Redis databases, plus QStash, Vector, Search and Blob. An account with a payment method cannot have free databases.",
+          "url": "https://upstash.com/docs/redis/overall/billing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Paid databases do not get the Free plan's data and command allowance.",
+          "quote": "Are paid databases' first 250MB data and 500K commands free? No. Once you upgrade to a paid tier, you will be charged for data size and commands according to that plan.",
+          "url": "https://upstash.com/pricing/redis",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Pay as You Go costs $0.20 per 100K commands. Storage past each database's first 1 GB is $0.25 per GB. Bandwidth past 200 GB a month is $0.03 per GB.",
+          "quote": "Commands: $0.20 per 100K commands Storage: $0.25 per GB (first 1 GB free) Bandwidth: Free up to 200 GB/month, then $0.03/GB",
+          "url": "https://upstash.com/pricing/redis",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "A Pay as You Go database can have a monthly budget. When the budget is reached the database is rate-limited rather than continuing to bill. Budgets are set per database; there is no account-wide budget.",
+          "quote": "To avoid surprise charges, set a monthly budget on a PAYG database. When the budget is reached the database is rate-limited rather than continuing to bill. Budgets are set per database; there is no account-wide budget.",
+          "url": "https://upstash.com/docs/redis/overall/billing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "A free Upstash Redis database returns \"ReplyError: ERR max requests limit exceeded\" once it passes the monthly command limit.",
+          "quote": "ReplyError: ERR max requests limit exceeded.",
+          "url": "https://upstash.com/docs/redis/troubleshooting/max_requests_limit",
+          "read_on": "2026-10-29"
         },
         {
           "text": "An agent can create an Upstash Redis database with no signup, card or API key by a POST request to upstash.com/start-redis. It is deleted after 3 days unless a person claims it from the console link in the response.",

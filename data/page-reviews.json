@@ -876,13 +876,13 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 108,
-      "table_figures_from_records": 77,
+      "table_figures": 122,
+      "table_figures_from_records": 90,
       "tables": [
         {
           "label": "Main Comparison Table",
-          "figures": 50,
-          "from_records": 32
+          "figures": 64,
+          "from_records": 44
         },
         {
           "label": "Postgres-Compatible Databases",
@@ -897,17 +897,17 @@
         {
           "label": "Edge / Embedded Databases",
           "figures": 2,
-          "from_records": 0
+          "from_records": 1
         },
         {
           "label": "Key-Value / Cache Databases",
           "figures": 3,
-          "from_records": 1
+          "from_records": 0
         },
         {
           "label": "Vector Databases",
           "figures": 6,
-          "from_records": 5
+          "from_records": 6
         },
         {
           "label": "Pricing Change Timeline",
@@ -2440,8 +2440,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 26,
-      "table_figures_from_records": 5,
+      "table_figures": 33,
+      "table_figures_from_records": 11,
       "tables": [
         {
           "label": "1. Free Tier Comparison Table",
@@ -2455,8 +2455,8 @@
         },
         {
           "label": "5. Other Database Alternatives",
-          "figures": 5,
-          "from_records": 5
+          "figures": 12,
+          "from_records": 11
         }
       ],
       "reads_changes": true,
