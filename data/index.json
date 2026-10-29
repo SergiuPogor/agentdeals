@@ -493,10 +493,10 @@
           "read_on": "2026-10-06"
         },
         {
-          "text": "One build runs at a time per account. Builds time out after 20 minutes.",
+          "text": "On the Free plan, one build runs at a time per account. Builds time out after 20 minutes.",
           "quote": "Builds will timeout after 20 minutes. Concurrent builds are counted per account.",
           "url": "https://developers.cloudflare.com/pages/platform/limits/",
-          "read_on": "2026-10-06"
+          "read_on": "2026-10-29"
         },
         {
           "text": "Cloudflare's terms prohibit processing or collecting credit card information on any site using its free services.",
@@ -517,8 +517,14 @@
           "read_on": "2026-10-22"
         },
         {
-          "text": "The Free plan allows up to 20,000 files per site. Paid plans allow up to 100,000 files per site.",
+          "text": "The Free plan allows up to 20,000 files per site.",
           "quote": "Cloudflare Pages sites can contain up to 20,000 files on the Free plan.",
+          "url": "https://developers.cloudflare.com/pages/platform/limits/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Paid plans such as Pro, Business and Enterprise allow up to 100,000 files per site once the environment variable PAGES_WRANGLER_MAJOR_VERSION=4 is set in the Pages project's settings.",
+          "quote": "To enable this increased limit, set the environment variable PAGES_WRANGLER_MAJOR_VERSION=4 in your Pages project settings.",
           "url": "https://developers.cloudflare.com/pages/platform/limits/",
           "read_on": "2026-10-29"
         },
@@ -526,6 +532,24 @@
           "text": "The maximum file size is 25 MiB. Larger files can be served from R2 public buckets.",
           "quote": "The maximum file size for a single Cloudflare Pages site asset is 25 MiB.",
           "url": "https://developers.cloudflare.com/pages/platform/limits/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Pages Functions requests are billed as Workers requests. The Workers Paid plan has a $5 minimum monthly charge per account. It includes 10 million requests and 30 million CPU milliseconds per month. Overages are $0.30 per million requests and $0.02 per million CPU milliseconds.",
+          "quote": "The Workers Paid plan includes Workers, Pages Functions, Workers KV, Hyperdrive, and Durable Objects usage for a minimum charge of $5 USD per month for an account.",
+          "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Cloudflare's Pro and Business plans raise Pages' limits. Pro allows 5 concurrent builds, 5,000 builds per month and 250 custom domains per project. Business allows 20 concurrent builds, 20,000 builds per month and 500 custom domains per project.",
+          "quote": "Builds per month | 500 | 5,000 | 20,000",
+          "url": "https://developers.cloudflare.com/pages/platform/limits/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Cloudflare's Pro plan costs $20 per month billed annually, or $25 billed monthly. Business costs $200 per month billed annually, or $250 billed monthly.",
+          "quote": "$20 /mo billed annually, or $25/mo billed monthly",
+          "url": "https://www.cloudflare.com/plans/",
           "read_on": "2026-10-29"
         }
       ]
@@ -3223,7 +3247,33 @@
         "record_date": "2026-09-02",
         "change_type": "restriction",
         "restated_on": "2026-09-20"
-      }
+      },
+      "conditions": [
+        {
+          "text": "The Workers Paid plan bills Durable Objects usage past the free tier with a $5 minimum monthly charge per account. It includes 1 million requests and 400,000 GB-s of duration monthly, with overages at $0.15 per million requests and $12.50 per million GB-s.",
+          "quote": "1 million / month, + $0.15/million",
+          "url": "https://developers.cloudflare.com/durable-objects/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On the Workers Paid plan, 25 billion SQLite rows read, 50 million rows written and 5 GB-month of stored data are included a month. Rows read over 25 billion cost $0.001 per million. Rows written over 50 million cost $1.00 per million. Stored data over 5 GB-month costs $0.20 per GB-month.",
+          "quote": "First 50 million / month included + $1.00 / million rows",
+          "url": "https://developers.cloudflare.com/durable-objects/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On the Free plan, exceeding any free limit causes further operations of that type to fail with an error. Daily free limits reset at 00:00 UTC.",
+          "quote": "If you exceed any one of the free tier limits, further operations of that type will fail with an error.",
+          "url": "https://developers.cloudflare.com/durable-objects/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "A SQLite-backed Durable Object has a 10 GB storage limit on Workers Paid and 1 GB on Free. At the limit, write operations fail with \"database or disk is full: SQLITE_FULL\"; reads and deletes still work.",
+          "quote": "(10 GB on Workers Paid, or 1 GB on the Free plan), write operations",
+          "url": "https://developers.cloudflare.com/durable-objects/platform/limits/",
+          "read_on": "2026-10-29"
+        }
+      ]
     },
     {
       "vendor": "QStash",
@@ -34909,6 +34959,24 @@
           "rules_out": [
             "production"
           ]
+        },
+        {
+          "text": "Production use of NIM needs an NVIDIA AI Enterprise license. The 1-year list price is $4,500 per GPU. The cloud pay-as-you-go rate is $1 per hour per GPU plus the cloud service provider's instance cost.",
+          "quote": "Consumption / Pay as you go $1 / hour / GPU + CSP Instance Cost(s)",
+          "url": "https://docs.nvidia.com/ai-enterprise/planning-resource/licensing-guide/latest/pricing.html",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "NVIDIA Developer Program members may run downloadable NIM microservices free for research, application development, and experimentation on up to 16 GPUs. Infrastructure may be cloud, data center, or personal workstation.",
+          "quote": "downloadable NIM microservices for research, application development, and experimentation on up to 16 GPUs on any infrastructure",
+          "url": "https://docs.api.nvidia.com/nim/docs/product",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "The free NVIDIA AI Enterprise trial is 90 days long. It covers production deployments and commercial use.",
+          "quote": "The NVIDIA AI Enterprise 90-Day Trial is designed for production deployments and includes a license for commercial use",
+          "url": "https://docs.api.nvidia.com/nim/docs/product",
+          "read_on": "2026-10-29"
         }
       ]
     },
