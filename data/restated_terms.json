@@ -2934,6 +2934,19 @@
       "record_date": "2026-09-01",
       "change_type": "limits_reduced",
       "summary": "The free tier now has a limit of 150 webhooks/month."
+    },
+    {
+      "vendor": "addy.io",
+      "url": "https://addy.io/",
+      "restated_on": "2026-10-29",
+      "previous_description": "Open-source email alias/forwarding. Rebranded to addy.io. Free tier: unlimited standard aliases, 10 shared domain aliases.",
+      "description": "Open-source email alias/forwarding — Free $ 0 /month Sign Up Unlimited Standard Aliases 10 Active Shared Domain Aliases 1 Recipient (real email address) 2 Available Alias Domains 10MB Monthly Bandwidth Limit",
+      "reading_date": "2026-08-28",
+      "reading_terms": "Free $ 0 /month Sign Up Unlimited Standard Aliases 10 Active Shared Domain Aliases 1 Recipient (real email address) 2 Available Alias Domains 10MB Monthly Bandwidth Limit",
+      "source_url": "https://addy.io/",
+      "record_date": "2026-08-28",
+      "change_type": "limits_reduced",
+      "summary": "The free tier still exists, but the description of the limits has changed. The free tier now includes 10MB monthly bandwidth, and 1 recipient."
     }
   ]
 }

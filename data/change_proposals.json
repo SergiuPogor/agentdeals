@@ -1,5 +1,104 @@
 {
-  "proposals": [],
+  "proposals": [
+    {
+      "proposal_id": "2026-10-29/apidog/limits_increased",
+      "proposed_on": "2026-10-29",
+      "vendor": "Apidog",
+      "change_type": "limits_increased",
+      "date": "2026-10-29",
+      "date_source": "discovered",
+      "summary": "The free tier now requires a 14-day trial before access, and the description of features has been expanded. The free tier now includes features like API client support, basic documentation, SQL database operations, and cloud mock server with 10K calls/month.",
+      "tier": "Free",
+      "tier_direction": "widened",
+      "previous_state": "API design, debugging, testing, and documentation platform — free tier: up to 4 users, unlimited projects, unlimited APIs, unlimited requests. API mocking included. 7-day change history",
+      "current_state": "The Free tier is available for up to 4 users and includes all core features, full API client support, all core mocking and testing features, unlimited test/collection runs, basic documentation features with unlimited views, real-time collaboration, unlimited sprint branches/versions per project, SQL database operations, and a cloud mock server with 10K calls / month. It requires a 14-day free trial and can be downloaded for free.",
+      "impact": "medium",
+      "source_url": "https://apidog.com/pricing/",
+      "category": "API Development",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-29",
+      "restatement": [
+        {
+          "url": "https://apidog.com/pricing/",
+          "description": "API design, debugging, testing, and documentation platform — The Free tier is available for up to 4 users and includes all core features, full API client support, all core mocking and testing features, unlimited test/collection runs, basic documentation features with unlimited views, real-time collaboration, unlimited sprint branches/versions per project, SQL database operations, and a cloud mock server with 10K calls / month. It requires a 14-day free trial and can be downloaded for free."
+        }
+      ]
+    },
+    {
+      "proposal_id": "2026-10-29/appwrite-cloud/pricing_restructured",
+      "proposed_on": "2026-10-29",
+      "vendor": "Appwrite Cloud",
+      "change_type": "pricing_restructured",
+      "date": "2026-10-29",
+      "date_source": "discovered",
+      "summary": "The free plan now freezes projects when resource limits are reached, whereas previously it allowed for 75K MAU, 2 GB storage, etc. The pricing page details several paid tiers and a $0 fixed fee for serverless compute, with read/write quotas and overage rates available in the 'Compare plans' section. A $10/mo compute credit is included for database usage.",
+      "tier": "Free",
+      "tier_direction": "narrowed",
+      "previous_state": "Open-source BaaS — 75K MAU, 2 GB storage, 750K function executions/month, 5 GB bandwidth, 1 database, 1 bucket and 2 functions per project, 500K database reads and 250K writes a month. Limit of 2 projects.",
+      "current_state": "If you reach a resource limit in your Free plan, your project will freeze, and Appwrite Console will continue running in read-only mode.",
+      "impact": "high",
+      "source_url": "https://appwrite.io/pricing",
+      "category": "Databases",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-29",
+      "restatement": [
+        {
+          "url": "https://appwrite.io/pricing",
+          "refused": "reading_states_no_figure_where_our_terms_do"
+        }
+      ]
+    },
+    {
+      "proposal_id": "2026-10-29/baseten/pricing_model_change",
+      "proposed_on": "2026-10-29",
+      "vendor": "Baseten",
+      "change_type": "pricing_model_change",
+      "date": "2026-10-29",
+      "date_source": "discovered",
+      "summary": "The pricing for GLM-5.3 and GLM-5.3-Flash models has changed. The page states GLM-5.3 is now $2.10/$2.10/$6.60 and GLM-5.3-Flash is $0.15/$0.15/$0.50. The page also confirms new Baseten accounts come with credits to get started.",
+      "tier": "GLM-5.3",
+      "tier_direction": "unchanged",
+      "previous_state": "ML model deployment platform. New workspaces receive credits for testing and deployment; Baseten does not state the amount. Basic plan: $0 per month, pay as you go. Dedicated deployments bill per minute. Model APIs bill per 1M tokens: GLM-5.3 $1.40/$4.40. GLM-5.3-Flash $0.15/$0.50.",
+      "current_state": "GLM-5.3 is priced at $2.10 for input, $2.10 for output, and $6.60 for a try. GLM-5.3-Flash is priced at $0.15 for input, $0.15 for output, and $0.50 for a try.",
+      "impact": "medium",
+      "source_url": "https://www.baseten.co/pricing/",
+      "category": "AI / ML",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-29",
+      "restatement": []
+    },
+    {
+      "proposal_id": "2026-10-29/google-cloud-bigquery/limits_reduced",
+      "proposed_on": "2026-10-29",
+      "vendor": "Google Cloud BigQuery",
+      "change_type": "limits_reduced",
+      "date": "2026-10-29",
+      "date_source": "discovered",
+      "summary": "The Always Free tier now only provides 1 TiB of queries per month, and the page details on-demand pricing starting at $6.25 / TiB after the free tier is exhausted.",
+      "tier": "On-demand",
+      "tier_direction": "narrowed",
+      "previous_state": "Always Free: 1 TiB queries/month, 10 GiB storage. Serverless data warehouse with SQL, ML, and BI built in. No infrastructure to manage",
+      "current_state": "The first 1 TiB per month is free. If you pay in a currency other than USD, the prices listed in your currency on Cloud Platform SKUs apply. After the free tier, queries cost $6.25 / 1 TiB, per 1 month / account.",
+      "impact": "high",
+      "source_url": "https://cloud.google.com/bigquery/pricing",
+      "category": "Databases",
+      "alternatives": [],
+      "detected_by": "reverify-ai",
+      "recorded_date": "2026-10-29",
+      "restatement": [
+        {
+          "url": "https://cloud.google.com/bigquery/pricing",
+          "refused": "reading_drops_a_figure_our_source_check_found",
+          "figures": [
+            "10 GiB per month"
+          ]
+        }
+      ]
+    }
+  ],
   "dropped": [
     {
       "proposal_id": "2026-10-12/taskade-com/new_tier",
