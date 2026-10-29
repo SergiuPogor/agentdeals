@@ -1,31 +1,21 @@
+import { WITHHELD_SUBJECTS, withheldTermsFixture } from "./withheld-terms-fixture.ts";
 import { describe, it, before, after } from "node:test";
 import assert from "node:assert/strict";
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { startLocalApi, type LocalApi } from "./local-api.ts";
 
-type Offer = import("../src/types.ts").Offer;
 type JsonObject = Record<string, any>;
 
 const REPO = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const TODAY = new Date().toISOString().slice(0, 10);
-const IN_A_WEEK = new Date(Date.now() + 7 * 86_400_000).toISOString().slice(0, 10);
 
-const PINNED = ["logflare.app", "phare.io", "addy.io"];
-const SEARCH_VIEW = "ui://agentdeals/search-deals";
-
-const catalogue = JSON.parse(readFileSync(path.join(REPO, "data", "index.json"), "utf-8"));
+const PINNED = WITHHELD_SUBJECTS;
 const dir = mkdtempSync(path.join(tmpdir(), "withheld-terms-mcp-"));
-
-function newAndExpiringFirst(): string {
-  const pinned = catalogue.offers.filter((offer: Offer) => PINNED.includes(offer.vendor)).map((offer: Offer) => ({ ...offer, verifiedDate: TODAY, expires_date: IN_A_WEEK }));
-  const others = catalogue.offers.filter((offer: Offer) => !PINNED.includes(offer.vendor));
-  const at = path.join(dir, "index.json");
-  writeFileSync(at, JSON.stringify({ ...catalogue, offers: [...pinned, ...others] }));
-  return at;
-}
+const fixture = withheldTermsFixture(dir, true);
+const SEARCH_VIEW = "ui://agentdeals/search-deals";
 
 interface Withheld {
   vendor: string;
@@ -142,7 +132,7 @@ async function peerListing(listing: Withheld): Promise<string | null> {
 }
 
 before(async () => {
-  process.env.AGENTDEALS_INDEX_PATH = newAndExpiringFirst();
+  Object.assign(process.env, fixture.env);
   api = await startLocalApi();
   await rpc({ jsonrpc: "2.0", id: 1, method: "initialize", params: { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "withheld-terms-mcp-test", version: "1" } } });
   await rpc({ jsonrpc: "2.0", method: "notifications/initialized" });
@@ -176,6 +166,7 @@ before(async () => {
 after(() => {
   api?.stop();
   delete process.env.AGENTDEALS_INDEX_PATH;
+  delete process.env.AGENTDEALS_CHANGES_PATH;
   rmSync(dir, { recursive: true, force: true });
 });
 
@@ -183,7 +174,7 @@ describe("MCP tools mark a listing whose stored terms the vendor page withholds"
   it("withholds the terms of each pinned listing, and no notice quotes the stored terms it replaces", () => {
     for (const vendor of PINNED) {
       const listing = withheld.find((each) => each.vendor === vendor);
-      assert.ok(listing, `${vendor} is no longer withheld; pin another withheld listing`);
+      assert.ok(listing, `${vendor} fixture terms were not withheld`);
       assert.ok(!squashed(listing.terms_superseded.notice).includes(storedOpening(listing)), vendor);
     }
   });
@@ -198,7 +189,7 @@ describe("MCP tools mark a listing whose stored terms the vendor page withholds"
   });
 
   it("finds every pinned listing that has substitutes among the alternatives a peer's vendor read returns", () => {
-    assert.ok(withSubstitutes.length > 0, "no pinned listing has a substitute; pin one that does");
+    assert.ok(withSubstitutes.length > 0, "no withheld subject has a substitute");
     const printed = new Set(readsLabelled("peer").flatMap((read) => printedWithheld(read).map(({ listing }) => listing.vendor)));
     assert.deepEqual(withSubstitutes.filter((vendor) => !printed.has(vendor)), []);
   });

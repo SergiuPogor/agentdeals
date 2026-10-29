@@ -287,6 +287,18 @@
           "read_on": "2026-10-06"
         },
         {
+          "text": "Cloudflare's subscription agreement's list of restrictions does not include commercial use. The only restriction specific to free services bars processing or collecting credit card information on the site.",
+          "quote": "Unless otherwise expressly permitted in writing by Cloudflare, you will not and you have no right to: … (h) process or collect personal or business credit card information on any web property that is receiving Free Services",
+          "url": "https://www.cloudflare.com/terms/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Cloudflare's subscription agreement bars signing up for the services on behalf of a third party unless Cloudflare permits it in writing.",
+          "quote": "you will not and you have no right to: (a) rent, lease, loan, export, or sell access to the Services to any third party, or sign up for the Services on behalf of a third party",
+          "url": "https://www.cloudflare.com/terms/",
+          "read_on": "2026-10-29"
+        },
+        {
           "text": "Cloudflare may change a Worker's workers.dev subdomain for any reason. Custom domains are not affected.",
           "quote": "Cloudflare may change Cloudflare Workers/Pages subdomain names of projects hosted at workers.dev or pages.dev for any or no reason.",
           "url": "https://www.cloudflare.com/service-specific-terms-developer-platform/",
@@ -493,16 +505,28 @@
           "read_on": "2026-10-06"
         },
         {
-          "text": "One build runs at a time per account. Builds time out after 20 minutes.",
+          "text": "On the Free plan, one build runs at a time per account. Builds time out after 20 minutes.",
           "quote": "Builds will timeout after 20 minutes. Concurrent builds are counted per account.",
           "url": "https://developers.cloudflare.com/pages/platform/limits/",
-          "read_on": "2026-10-06"
+          "read_on": "2026-10-29"
         },
         {
           "text": "Cloudflare's terms prohibit processing or collecting credit card information on any site using its free services.",
           "quote": "process or collect personal or business credit card information on any web property that is receiving Free Services",
           "url": "https://www.cloudflare.com/terms/",
           "read_on": "2026-10-06"
+        },
+        {
+          "text": "Cloudflare's subscription agreement's list of restrictions does not include commercial use. The only restriction specific to free services bars processing or collecting credit card information on the site.",
+          "quote": "Unless otherwise expressly permitted in writing by Cloudflare, you will not and you have no right to: … (h) process or collect personal or business credit card information on any web property that is receiving Free Services",
+          "url": "https://www.cloudflare.com/terms/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Cloudflare's subscription agreement bars signing up for the services on behalf of a third party unless Cloudflare permits it in writing.",
+          "quote": "you will not and you have no right to: (a) rent, lease, loan, export, or sell access to the Services to any third party, or sign up for the Services on behalf of a third party",
+          "url": "https://www.cloudflare.com/terms/",
+          "read_on": "2026-10-29"
         },
         {
           "text": "Cloudflare may change a project's pages.dev subdomain for any reason, and aims to give at least a week's notice. Custom domains are not affected.",
@@ -517,8 +541,14 @@
           "read_on": "2026-10-22"
         },
         {
-          "text": "The Free plan allows up to 20,000 files per site. Paid plans allow up to 100,000 files per site.",
+          "text": "The Free plan allows up to 20,000 files per site.",
           "quote": "Cloudflare Pages sites can contain up to 20,000 files on the Free plan.",
+          "url": "https://developers.cloudflare.com/pages/platform/limits/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Paid plans such as Pro, Business and Enterprise allow up to 100,000 files per site once the environment variable PAGES_WRANGLER_MAJOR_VERSION=4 is set in the Pages project's settings.",
+          "quote": "To enable this increased limit, set the environment variable PAGES_WRANGLER_MAJOR_VERSION=4 in your Pages project settings.",
           "url": "https://developers.cloudflare.com/pages/platform/limits/",
           "read_on": "2026-10-29"
         },
@@ -526,6 +556,24 @@
           "text": "The maximum file size is 25 MiB. Larger files can be served from R2 public buckets.",
           "quote": "The maximum file size for a single Cloudflare Pages site asset is 25 MiB.",
           "url": "https://developers.cloudflare.com/pages/platform/limits/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Pages Functions requests are billed as Workers requests. The Workers Paid plan has a $5 minimum monthly charge per account. It includes 10 million requests and 30 million CPU milliseconds per month. Overages are $0.30 per million requests and $0.02 per million CPU milliseconds.",
+          "quote": "The Workers Paid plan includes Workers, Pages Functions, Workers KV, Hyperdrive, and Durable Objects usage for a minimum charge of $5 USD per month for an account.",
+          "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Cloudflare's Pro and Business plans raise Pages' limits. Pro allows 5 concurrent builds, 5,000 builds per month and 250 custom domains per project. Business allows 20 concurrent builds, 20,000 builds per month and 500 custom domains per project.",
+          "quote": "Builds per month | 500 | 5,000 | 20,000",
+          "url": "https://developers.cloudflare.com/pages/platform/limits/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Cloudflare's Pro plan costs $20 per month billed annually, or $25 billed monthly. Business costs $200 per month billed annually, or $250 billed monthly.",
+          "quote": "$20 /mo billed annually, or $25/mo billed monthly",
+          "url": "https://www.cloudflare.com/plans/",
           "read_on": "2026-10-29"
         }
       ]
@@ -1227,6 +1275,12 @@
           "quote": "Realtime is free to use during the beta. Neon does not charge for the live query engine compute or the Live SQL API service.",
           "url": "https://neon.com/docs/realtime/overview",
           "read_on": "2026-10-16"
+        },
+        {
+          "text": "Neon archives branches older than 14 days and not accessed for 24 hours. Unarchiving happens automatically when a branch is connected to or queried. Branches with large amounts of data may connect and query slower while unarchiving.",
+          "quote": "Neon automatically archives branches that are: … Older than 14 days. … Have not been accessed for the past 24 hours … No action is required to unarchive a branch. It happens automatically. … Connecting to an archived branch, querying it, or performing some other action that accesses it will trigger the unarchive process. Branches with large amounts of data may experience slightly slower connection and query times while a branch is being unarchived.",
+          "url": "https://neon.com/docs/guides/branch-archiving",
+          "read_on": "2026-10-29"
         }
       ],
       "official_mcp_servers": [
@@ -1440,6 +1494,12 @@
           "text": "On the Free plan, or on a paid plan with Overages off, your databases are blocked once you exceed the limit on any single metric.",
           "quote": "Free plan, or paid plan with Overages disabled: Yes. Once you exceed the limit on any single metric (storage, rows read, rows written, or syncs), your databases are blocked, even if the other metrics are still well under quota.",
           "url": "https://turso.tech/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Databases on the free plan are archived after 10 days of inactivity. The CLI command turso group unarchive <group-name> unarchives them.",
+          "quote": "Databases get archived after 10 days of inactivity for users on a free plan. … You can unarchive inactive databases by running the following command: … turso group unarchive <group-name>",
+          "url": "https://docs.turso.tech/cli/group/unarchive",
           "read_on": "2026-10-29"
         }
       ]
@@ -1776,6 +1836,24 @@
           "quote": "On the Free plan, that's the same 2GB your files and databases use.",
           "url": "https://appwrite.io/blog/post/default-deployment-retention",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "Pro starts at $25 a month. It includes one project with 2TB bandwidth, 150GB storage, 3.5M executions and 200K monthly active users. Each additional project costs $15.",
+          "quote": "Number of projects 1 (Dedicated resources) Additional projects $15",
+          "url": "https://appwrite.io/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Additional API bandwidth costs $15 per 100GB a month. Additional storage costs $2.8 per 100GB. Additional executions cost $2 per 1m. Additional users cost $3 per 1,000 users. Additional reads cost $0.060 per 100k and writes $0.10 per 100k.",
+          "quote": "Additional API bandwidth $15 per 100GB / month",
+          "url": "https://appwrite.io/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On Pro, Appwrite automatically buys extra resources when an organization exceeds its limits. The budget cap limits how much it can scale.",
+          "quote": "Additional resources are automatically purchased when your organization exceeds the resource limits to continue scaling until the budget cap is reached.",
+          "url": "https://appwrite.io/docs/advanced/billing/pro",
+          "read_on": "2026-10-29"
         }
       ],
       "official_mcp_servers": [
@@ -3205,7 +3283,33 @@
         "record_date": "2026-09-02",
         "change_type": "restriction",
         "restated_on": "2026-09-20"
-      }
+      },
+      "conditions": [
+        {
+          "text": "The Workers Paid plan bills Durable Objects usage past the free tier with a $5 minimum monthly charge per account. It includes 1 million requests and 400,000 GB-s of duration monthly, with overages at $0.15 per million requests and $12.50 per million GB-s.",
+          "quote": "1 million / month, + $0.15/million",
+          "url": "https://developers.cloudflare.com/durable-objects/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On the Workers Paid plan, 25 billion SQLite rows read, 50 million rows written and 5 GB-month of stored data are included a month. Rows read over 25 billion cost $0.001 per million. Rows written over 50 million cost $1.00 per million. Stored data over 5 GB-month costs $0.20 per GB-month.",
+          "quote": "First 50 million / month included + $1.00 / million rows",
+          "url": "https://developers.cloudflare.com/durable-objects/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On the Free plan, exceeding any free limit causes further operations of that type to fail with an error. Daily free limits reset at 00:00 UTC.",
+          "quote": "If you exceed any one of the free tier limits, further operations of that type will fail with an error.",
+          "url": "https://developers.cloudflare.com/durable-objects/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "A SQLite-backed Durable Object has a 10 GB storage limit on Workers Paid and 1 GB on Free. At the limit, write operations fail with \"database or disk is full: SQLITE_FULL\"; reads and deletes still work.",
+          "quote": "(10 GB on Workers Paid, or 1 GB on the Free plan), write operations",
+          "url": "https://developers.cloudflare.com/durable-objects/platform/limits/",
+          "read_on": "2026-10-29"
+        }
+      ]
     },
     {
       "vendor": "QStash",
@@ -4416,6 +4520,24 @@
           "quote": "OpenRouter is a strong starting point, with 20+ free models, a single API key, and no credit card.",
           "url": "https://openrouter.ai/blog/tutorials/free-llm-apis-compared/",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "A request over a free-model limit gets a 429 error with the message \"Rate limit exceeded\". The daily limit counts by UTC day.",
+          "quote": "Free-model requests allowed per UTC day … Rate limit exceeded … OpenRouter, when you hit one of the platform limits above (free-model requests per minute or per day, or DDoS protection).",
+          "url": "https://openrouter.ai/docs/api-reference/limits",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "The paid variant of a model has no platform-level request cap.",
+          "quote": "switch to the paid variant of the model, which has no platform-level request cap",
+          "url": "https://openrouter.ai/docs/api-reference/limits",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "With a negative credit balance, requests can fail, including for free models; adding credits to bring the balance above zero restores access.",
+          "quote": "including for free models. Adding credits to put your balance above zero allows you to use those models again.",
+          "url": "https://openrouter.ai/docs/api-reference/limits",
+          "read_on": "2026-10-29"
         }
       ]
     },
@@ -7243,6 +7365,30 @@
           "quote": "The Free plan has no update overage pricing; it is limited to its included monthly active users.",
           "url": "https://expo.dev/pricing.md",
           "read_on": "2026-10-05"
+        },
+        {
+          "text": "The Starter plan costs $19 per month. It includes $45 of build credit and 3,000 monthly active users for EAS Update, compared to 1,000 in the Free plan.",
+          "quote": "For $19 per month, you get $45 of build credit and 3,000 monthly active users for EAS Update (compared to 1,000 in the Free plan)",
+          "url": "https://docs.expo.dev/billing/faq/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On a paid plan, once the build credit is used up, builds are billed per build. Android builds cost $1 on medium workers and $2 on large workers. iOS builds cost $2 on medium workers and $4 on large workers.",
+          "quote": "Flat rate per build, by platform and worker size.",
+          "url": "https://expo.dev/pricing.md",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On Starter, EAS Update costs $0.005 per monthly active user past 3,000, up to 200,000. It includes 100 GiB of bandwidth, then costs $0.10 per GiB.",
+          "quote": "| 3,001 – 200,000 | $0.005 |",
+          "url": "https://expo.dev/pricing.md",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Unused build credit does not carry over to the next billing period.",
+          "quote": "No, credits do not roll over or accrue.",
+          "url": "https://expo.dev/pricing",
+          "read_on": "2026-10-29"
         }
       ],
       "free_plan_excerpt": {
@@ -9467,6 +9613,24 @@
           "quote": "TCP with credit card verification",
           "url": "https://ngrok.com/pricing",
           "read_on": "2026-10-04"
+        },
+        {
+          "text": "The Free plan's monthly quotas reset at the start of each monthly billing cycle. ngrok's docs say to upgrade to a plan with higher limits on hitting a limit or running out of credit, and to choose Pay-as-you-go for endpoints that always stay online.",
+          "quote": "these reset at the start of each monthly billing cycle … If you hit a limit or run out of credit, upgrade to a plan with higher limits. Choose Pay-as-you-go if you want your endpoints to always stay online and available.",
+          "url": "https://ngrok.com/docs/pricing-limits/free-plan-limits",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "The Free plan includes no usage beyond its credit. Hobbyist costs $10 monthly with $10 of included usage; Pay-as-you-go costs $20 monthly with $20 of included usage. Data transfer over 5 GB costs $0.10 per GB, and HTTP/S requests over 100,000 cost $1 per 100,000.",
+          "quote": "No additional usage beyond credit … $10 of monthly included usage … $20 monthly + additional usage … $20 of monthly included usage … 5 GB then $0.10 per GB … 100k then $1 per 100k",
+          "url": "https://ngrok.com/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "When usage credit runs out on Hobbyist, endpoints stop working until the end of the billing cycle, when the credit resets. On Pay-as-you-go, endpoints continue working and additional usage is billed at the end of the billing cycle.",
+          "quote": "What happens when I run out of usage credit on Hobbyist? Your endpoints will stop working until the end of your billing cycle when your usage credit resets. What happens when I run out of usage credit on Pay-as-you-go? Your endpoints will continue working. We’ll bill you for additional usage at the end of your billing cycle.",
+          "url": "https://ngrok.com/pricing",
+          "read_on": "2026-10-29"
         }
       ]
     },
@@ -10412,6 +10576,18 @@
           "quote": "This is a limited time promotion … Colab Pro and Pro+ users will get 15 and 30 hours of extra GPU hours per week respectively on Kaggle. … Kaggle reserves the right to end or suspend the Promotion at any time",
           "url": "https://www.kaggle.com/docs/notebooks",
           "read_on": "2026-10-08"
+        },
+        {
+          "text": "Once Kaggle's weekly GPU quota is used, no more GPU time is available until the quota resets. The quota resets weekly.",
+          "quote": "You can use up to a quota limit per week of GPU. The quota resets weekly and is 30 hours or sometimes higher depending on demand and resources",
+          "url": "https://www.kaggle.com/docs/efficient-gpu-usage",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Kaggle suggests Google Cloud AI Notebooks for users needing more compute. These notebooks run under your Google Cloud project and can be configured with your choice of virtual machine and accelerators, without Kaggle's limits.",
+          "quote": "If you run into compute constraints while using notebooks on Kaggle, you can consider upgrading to Google Cloud AI Notebooks. These notebooks run under your project in Google Cloud, and can be configured to use your choice of virtual machine, accelerators and run without limits",
+          "url": "https://www.kaggle.com/docs/notebooks",
+          "read_on": "2026-10-29"
         }
       ],
       "official_mcp_servers": [
@@ -18747,7 +18923,27 @@
         "checked": "2026-10-08",
         "outcome": "ok",
         "detail": "the page names ZITADEL Cloud as \"zitadel cloud\" and states \"$ 0\""
-      }
+      },
+      "conditions": [
+        {
+          "text": "Pro costs US$100 per month. It includes 25,000 Daily Active Users a month, 500,000 Management API requests, 3 identity providers and a custom domain. Usage is invoiced at the end of each billing cycle with no monthly commitment.",
+          "quote": "Start with 25'000 Daily Active Users per month included",
+          "url": "https://zitadel.com/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "ZITADEL sums each day's active users for the month. A user is active on a day when they log in or refresh a token, and a service user when it authenticates. Each user counts at most once per day. A user active on 20 days counts as 20.",
+          "quote": "To calculate your monthly total, we sum the DAU count of every single day in that month.",
+          "url": "https://help.zitadel.com/how-is-daily-active-users-calculated",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Pro subscriptions are paid by credit card only.",
+          "quote": "We exclusively accept Credit Cards for Pro subscriptions.",
+          "url": "https://help.zitadel.com/payment-methods-billing-cycles-for-zitadel-cloud",
+          "read_on": "2026-10-29"
+        }
+      ]
     },
     {
       "vendor": "Appho.st",
@@ -22589,6 +22785,24 @@
           "quote": "hCaptcha Integration",
           "url": "https://web3forms.com/pricing",
           "read_on": "2026-10-10"
+        },
+        {
+          "text": "The Pro plan costs $15 a month or $149 a year and includes 10,000 monthly submissions. The Agency plan costs $39 a month or $399 a year and includes 20,000 monthly submissions.",
+          "quote": "PRO PLAN $12 /mo $149 billed yearly",
+          "url": "https://web3forms.com/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Students, startups and non-profits can apply for a yearly-only plan that costs $49 a year and includes 5,000 monthly submissions. It does not include file uploads or autoresponders.",
+          "quote": "Affordable Yearly only plan for students, budding startups and non-profits at $49 per year.",
+          "url": "https://web3forms.com/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "An existing access key is upgraded to the Pro plan when Pro is bought.",
+          "quote": "Once purchased, your existing access_key will be upgraded to the Pro plan.",
+          "url": "https://web3forms.com/pricing",
+          "read_on": "2026-10-29"
         }
       ]
     },
@@ -25296,7 +25510,7 @@
     {
       "vendor": "DigitalPlat",
       "category": "DNS & Domain Management",
-      "description": "Free subdomains under .qzz.io, .dpdns.org, .us.kg, .xx.kg, and .qd.je. All five namespaces were listed as available on 2026-10-08. A registered name can use external nameservers. The service is run by the DigitalPlat Foundation.",
+      "description": "Free subdomains under .qzz.io, .dpdns.org, .us.kg, .xx.kg, and .qd.je. All five namespaces were listed as available on 2026-10-08. A registered name can use external nameservers. DigitalPlat Domains is operated by EdgeAlphix LLC. The DigitalPlat Foundation does not operate or bill for the service.",
       "tier": "Free",
       "url": "https://domain.digitalplat.org",
       "tags": [
@@ -25309,7 +25523,27 @@
         "checked": "2026-10-29",
         "outcome": "states_no_terms",
         "detail": "the page names DigitalPlat but states no amount, tier or rate we can read, and its markup carries no structured data"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Users get a limited number of free registration slots. Buy Slot is a one-time fee for more capacity; it buys no domain and is non-refundable except where the law requires.",
+          "quote": "Users may receive a limited number of free registration Slots. Additional registration capacity may be available through Buy Slot. Buy Slot is only a one-time platform service fee that increases registration capacity … It does not purchase a Domain. … Buy Slot payments are non-refundable except where required by applicable law.",
+          "url": "https://domain.digitalplat.org/terms-of-service",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Charges are service fees paid to EdgeAlphix LLC, not tax-deductible donations.",
+          "quote": "Any charges are service fees paid to EdgeAlphix LLC, not donations, and are not represented as tax-deductible contributions.",
+          "url": "https://domain.digitalplat.org/about",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "DigitalPlat's terms say not to rely on any of its namespaces as the sole method of identity, branding, authentication, account recovery, business continuity, legal notice, critical infrastructure, production hosting, financial operations, emergency communications, or any use where interruption would cause significant harm.",
+          "quote": "You should not rely on any DigitalPlat Domain Namespace as your sole method of identity, branding, authentication, account recovery, business continuity, legal notice, critical infrastructure, production hosting, financial operations, emergency communications, or any use where interruption would cause significant harm.",
+          "url": "https://domain.digitalplat.org/terms-of-service",
+          "read_on": "2026-10-29"
+        }
+      ]
     },
     {
       "vendor": "isroot.in",
@@ -34362,6 +34596,24 @@
           "quote": "No Cloud Billing account: You don't need to provide a credit card or set up a Cloud Billing account to deploy your applications.",
           "url": "https://docs.cloud.google.com/docs/starter-tier",
           "read_on": "2026-10-12"
+        },
+        {
+          "text": "In Tier 1 regions such as Iowa (us-central1), the default request-based rates past the free tier are $0.000024 per vCPU-second, $0.0000025 per GiB-second, and $0.40 per million requests. In Tier 2 regions such as London (europe-west2), the rates are $0.0000336 per vCPU-second and $0.0000035 per GiB-second.",
+          "quote": "CPU (per vCPU-second) Active time $0.000024",
+          "url": "https://cloud.google.com/run/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "When a spend cap is hit, Cloud Run workloads pause. Services return 5xx errors. The cap resets on the first day of the next billing cycle.",
+          "quote": "When you hit a spend cap, Google Cloud pauses all Cloud Run workloads to prevent further costs to the following Cloud Run resources:",
+          "url": "https://docs.cloud.google.com/run/docs/configuring/billing-settings",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Spend cap enforcement is not instant. Any cost overages before enforcement are billed as normal.",
+          "quote": "Note: Even though faster than reports, the enforcement of spend caps isn't instant and any cost overages are billed as normal.",
+          "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps",
+          "read_on": "2026-10-29"
         }
       ],
       "free_plan_excerpt": {
@@ -34562,6 +34814,30 @@
           "quote": "Any usage that exceeds the Free Tier usage limits is billed at standard rates.",
           "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "Cloud Build charges $0.006 per minute for an e2-standard-2 build in the default pool. Partial minutes are billed at the actual number of seconds consumed. Queued time is not billed.",
+          "quote": "Build-minutes are not incurred for the time that a build is queued.",
+          "url": "https://cloud.google.com/build/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "The 2,500 free build-minutes per month apply to e2-standard-2 machine types in the default pool. Google calls this a promotional free tier and says its limit is subject to change.",
+          "quote": "This promotional free tier is for e2-standard-2 machine types in the default pool, and the limit is subject to change.",
+          "url": "https://cloud.google.com/build/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "In the current release, Google Cloud spend caps cover Gemini API, Agent Platform, Cloud Run, and Cloud Run functions.",
+          "quote": "In this release, the eligible services include Gemini API, Agent Platform (formerly known as Vertex AI), Cloud Run, and Cloud Run functions.",
+          "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "An alerts-only budget does not automatically cap Google Cloud usage or spending.",
+          "quote": "Caution: Setting an alerts-only budget doesn't automatically cap Google Cloud or Google Maps Platform usage or spending.",
+          "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+          "read_on": "2026-10-29"
         }
       ]
     },
@@ -34853,6 +35129,24 @@
           "rules_out": [
             "production"
           ]
+        },
+        {
+          "text": "Production use of NIM needs an NVIDIA AI Enterprise license. The 1-year list price is $4,500 per GPU. The cloud pay-as-you-go rate is $1 per hour per GPU plus the cloud service provider's instance cost.",
+          "quote": "Consumption / Pay as you go $1 / hour / GPU + CSP Instance Cost(s)",
+          "url": "https://docs.nvidia.com/ai-enterprise/planning-resource/licensing-guide/latest/pricing.html",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "NVIDIA Developer Program members may run downloadable NIM microservices free for research, application development, and experimentation on up to 16 GPUs. Infrastructure may be cloud, data center, or personal workstation.",
+          "quote": "downloadable NIM microservices for research, application development, and experimentation on up to 16 GPUs on any infrastructure",
+          "url": "https://docs.api.nvidia.com/nim/docs/product",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "The free NVIDIA AI Enterprise trial is 90 days long. It covers production deployments and commercial use.",
+          "quote": "The NVIDIA AI Enterprise 90-Day Trial is designed for production deployments and includes a license for commercial use",
+          "url": "https://docs.api.nvidia.com/nim/docs/product",
+          "read_on": "2026-10-29"
         }
       ]
     },

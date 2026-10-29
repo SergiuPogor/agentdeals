@@ -7,6 +7,7 @@ const USAGE_BEYOND_THE_FREE_TIER_IS_BILLED: readonly RegExp[] = [
 ];
 
 const THE_SERVICE_STOPS_AT_ITS_LIMIT: readonly RegExp[] = [
+  /\bno more\b[^.]*?\bis available until\b[^.]*?\b(?:quota|limit|allowance) resets?\b/i,
   /\b(?:stops?|stopped|pauses?|paused|blocks?|blocked|suspends?|suspended|shuts? off|cuts? off)\b[^.]*?\b(?:at|when|once|after|until)\b[^.]*?\b(?:limit|quota|allowance|credits?)\b/i,
   /\b(?:limit|quota|allowance|credits?)\b[^.]*?\b(?:is|are) (?:reached|hit|used up|exhausted|exceeded)\b[^.]*?\b(?:stops?|stopped|pauses?|paused|blocks?|blocked|suspends?|suspended|fails?|rejected)\b/i,
 ];
@@ -19,6 +20,15 @@ export function usageBeyondTheFreeTierBillingSentence(texts: readonly string[]):
   const sentences = sentencesOf(texts);
   if (sentences.some(sentence => THE_SERVICE_STOPS_AT_ITS_LIMIT.some(pattern => pattern.test(sentence)))) return null;
   return sentences.find(sentence => USAGE_BEYOND_THE_FREE_TIER_IS_BILLED.some(pattern => pattern.test(sentence)))?.trim() ?? null;
+}
+
+export function serviceStopsAtItsLimitSentence(texts: readonly string[]): string | null {
+  return sentencesOf(texts).find(sentence =>
+    THE_SERVICE_STOPS_AT_ITS_LIMIT.some(pattern => pattern.test(sentence))
+    && !/\binactivity\b/i.test(sentence)
+    && !/\bprepa(?:y|id)\b/i.test(sentence)
+    && (/\bfree\b/i.test(sentence) || !/\b(?:paid (?:plan|tier)|[Oo]n (?:the )?[A-Z][\w+-]*)\b/.test(sentence))
+  )?.trim() ?? null;
 }
 
 export function statesUsageBeyondTheFreeTierIsBilled(texts: readonly string[]): boolean {
