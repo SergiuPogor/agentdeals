@@ -25486,7 +25486,7 @@
     {
       "vendor": "DigitalPlat",
       "category": "DNS & Domain Management",
-      "description": "Free subdomains under .qzz.io, .dpdns.org, .us.kg, .xx.kg, and .qd.je. All five namespaces were listed as available on 2026-10-08. A registered name can use external nameservers. The service is run by the DigitalPlat Foundation.",
+      "description": "Free subdomains under .qzz.io, .dpdns.org, .us.kg, .xx.kg, and .qd.je. All five namespaces were listed as available on 2026-10-08. A registered name can use external nameservers. DigitalPlat Domains is operated by EdgeAlphix LLC. The DigitalPlat Foundation does not operate or bill for the service.",
       "tier": "Free",
       "url": "https://domain.digitalplat.org",
       "tags": [
@@ -25499,7 +25499,27 @@
         "checked": "2026-10-29",
         "outcome": "states_no_terms",
         "detail": "the page names DigitalPlat but states no amount, tier or rate we can read, and its markup carries no structured data"
-      }
+      },
+      "conditions": [
+        {
+          "text": "Users get a limited number of free registration slots. Buy Slot is a one-time fee for more capacity; it buys no domain and is non-refundable except where the law requires.",
+          "quote": "Users may receive a limited number of free registration Slots. Additional registration capacity may be available through Buy Slot. Buy Slot is only a one-time platform service fee that increases registration capacity … It does not purchase a Domain. … Buy Slot payments are non-refundable except where required by applicable law.",
+          "url": "https://domain.digitalplat.org/terms-of-service",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Charges are service fees paid to EdgeAlphix LLC, not tax-deductible donations.",
+          "quote": "Any charges are service fees paid to EdgeAlphix LLC, not donations, and are not represented as tax-deductible contributions.",
+          "url": "https://domain.digitalplat.org/about",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "DigitalPlat's terms say not to rely on any of its namespaces as the sole method of identity, branding, authentication, account recovery, business continuity, legal notice, critical infrastructure, production hosting, financial operations, emergency communications, or any use where interruption would cause significant harm.",
+          "quote": "You should not rely on any DigitalPlat Domain Namespace as your sole method of identity, branding, authentication, account recovery, business continuity, legal notice, critical infrastructure, production hosting, financial operations, emergency communications, or any use where interruption would cause significant harm.",
+          "url": "https://domain.digitalplat.org/terms-of-service",
+          "read_on": "2026-10-29"
+        }
+      ]
     },
     {
       "vendor": "isroot.in",
