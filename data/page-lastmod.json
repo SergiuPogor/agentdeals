@@ -22,11 +22,11 @@
       "changed": "2026-10-29"
     },
     "/ai-free-tiers": {
-      "hash": "5b26d3f872ac3d16",
+      "hash": "84139be55fbf7de2",
       "changed": "2026-10-29"
     },
     "/ai-ml-alternatives": {
-      "hash": "d99b0c200af3a916",
+      "hash": "698fcf771c6ae514",
       "changed": "2026-10-29"
     },
     "/alternative-to": {
@@ -1099,7 +1099,7 @@
       "changed": "2026-10-29"
     },
     "/category/ai-ml": {
-      "hash": "cf42aa6a88ea394d",
+      "hash": "8f71e0605fc4469b",
       "changed": "2026-10-29"
     },
     "/category/analytics": {
@@ -1223,7 +1223,7 @@
       "changed": "2026-10-29"
     },
     "/category/infrastructure": {
-      "hash": "0b66974cd7797428",
+      "hash": "c8decdf827500429",
       "changed": "2026-10-29"
     },
     "/category/localization": {
@@ -3209,7 +3209,7 @@
       "changed": "2026-10-29"
     },
     "/free-llm-apis": {
-      "hash": "03bd912610c2cc30",
+      "hash": "16facdad2558b784",
       "changed": "2026-10-29"
     },
     "/free-nextjs-stack": {
@@ -3267,7 +3267,7 @@
       "changed": "2026-10-29"
     },
     "/groq-vs-mistral-ai": {
-      "hash": "7765e330a7e2689f",
+      "hash": "536c7f8e99e2cf7c",
       "changed": "2026-10-29"
     },
     "/guides": {
@@ -3319,7 +3319,7 @@
       "changed": "2026-10-29"
     },
     "/llm-api-pricing": {
-      "hash": "e50f61f7556c53a2",
+      "hash": "212c16cf55da75f3",
       "changed": "2026-10-29"
     },
     "/localstack-alternatives": {
@@ -3327,7 +3327,7 @@
       "changed": "2026-10-29"
     },
     "/mistral-api-pricing-2026": {
-      "hash": "6c3bbfe0e7b32607",
+      "hash": "baa47de8cb19ff91",
       "changed": "2026-10-29"
     },
     "/mongodb-alternatives": {
@@ -7290,7 +7290,7 @@
       "changed": "2026-10-29"
     },
     "/vendor/ngrok": {
-      "hash": "6ccebbaab57fd5d7",
+      "hash": "094cda90a30e0aae",
       "changed": "2026-10-29"
     },
     "/vendor/nhost": {
