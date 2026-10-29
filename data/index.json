@@ -4472,6 +4472,24 @@
           "quote": "OpenRouter is a strong starting point, with 20+ free models, a single API key, and no credit card.",
           "url": "https://openrouter.ai/blog/tutorials/free-llm-apis-compared/",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "A request over a free-model limit gets a 429 error with the message \"Rate limit exceeded\". The daily limit counts by UTC day.",
+          "quote": "Free-model requests allowed per UTC day … Rate limit exceeded … OpenRouter, when you hit one of the platform limits above (free-model requests per minute or per day, or DDoS protection).",
+          "url": "https://openrouter.ai/docs/api-reference/limits",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "The paid variant of a model has no platform-level request cap.",
+          "quote": "switch to the paid variant of the model, which has no platform-level request cap",
+          "url": "https://openrouter.ai/docs/api-reference/limits",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "With a negative credit balance, requests can fail, including for free models; adding credits to bring the balance above zero restores access.",
+          "quote": "including for free models. Adding credits to put your balance above zero allows you to use those models again.",
+          "url": "https://openrouter.ai/docs/api-reference/limits",
+          "read_on": "2026-10-29"
         }
       ]
     },
@@ -9547,6 +9565,24 @@
           "quote": "TCP with credit card verification",
           "url": "https://ngrok.com/pricing",
           "read_on": "2026-10-04"
+        },
+        {
+          "text": "The Free plan's monthly quotas reset at the start of each monthly billing cycle. ngrok's docs say to upgrade to a plan with higher limits on hitting a limit or running out of credit, and to choose Pay-as-you-go for endpoints that always stay online.",
+          "quote": "these reset at the start of each monthly billing cycle … If you hit a limit or run out of credit, upgrade to a plan with higher limits. Choose Pay-as-you-go if you want your endpoints to always stay online and available.",
+          "url": "https://ngrok.com/docs/pricing-limits/free-plan-limits",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "The Free plan includes no usage beyond its credit. Hobbyist costs $10 monthly with $10 of included usage; Pay-as-you-go costs $20 monthly with $20 of included usage. Data transfer over 5 GB costs $0.10 per GB, and HTTP/S requests over 100,000 cost $1 per 100,000.",
+          "quote": "No additional usage beyond credit … $10 of monthly included usage … $20 monthly + additional usage … $20 of monthly included usage … 5 GB then $0.10 per GB … 100k then $1 per 100k",
+          "url": "https://ngrok.com/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "When usage credit runs out on Hobbyist, endpoints stop working until the end of the billing cycle, when the credit resets. On Pay-as-you-go, endpoints continue working and additional usage is billed at the end of the billing cycle.",
+          "quote": "What happens when I run out of usage credit on Hobbyist? Your endpoints will stop working until the end of your billing cycle when your usage credit resets. What happens when I run out of usage credit on Pay-as-you-go? Your endpoints will continue working. We’ll bill you for additional usage at the end of your billing cycle.",
+          "url": "https://ngrok.com/pricing",
+          "read_on": "2026-10-29"
         }
       ]
     },
@@ -10492,6 +10528,18 @@
           "quote": "This is a limited time promotion … Colab Pro and Pro+ users will get 15 and 30 hours of extra GPU hours per week respectively on Kaggle. … Kaggle reserves the right to end or suspend the Promotion at any time",
           "url": "https://www.kaggle.com/docs/notebooks",
           "read_on": "2026-10-08"
+        },
+        {
+          "text": "Once Kaggle's weekly GPU quota is used, no more GPU time is available until the quota resets. The quota resets weekly.",
+          "quote": "You can use up to a quota limit per week of GPU. The quota resets weekly and is 30 hours or sometimes higher depending on demand and resources",
+          "url": "https://www.kaggle.com/docs/efficient-gpu-usage",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Kaggle suggests Google Cloud AI Notebooks for users needing more compute. These notebooks run under your Google Cloud project and can be configured with your choice of virtual machine and accelerators, without Kaggle's limits.",
+          "quote": "If you run into compute constraints while using notebooks on Kaggle, you can consider upgrading to Google Cloud AI Notebooks. These notebooks run under your project in Google Cloud, and can be configured to use your choice of virtual machine, accelerators and run without limits",
+          "url": "https://www.kaggle.com/docs/notebooks",
+          "read_on": "2026-10-29"
         }
       ],
       "official_mcp_servers": [
