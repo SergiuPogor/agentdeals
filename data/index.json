@@ -1854,19 +1854,19 @@
           "read_on": "2026-10-22"
         },
         {
-          "text": "Going past D1's Free limits needs the Workers Paid plan, which has a minimum charge of $5 a month per account.",
+          "text": "D1 usage past Free limits requires the Workers Paid plan. That plan has a minimum charge of $5 per month per account.",
           "quote": "The Workers Paid plan includes Workers, Pages Functions, Workers KV, Hyperdrive, and Durable Objects usage for a minimum charge of $5 USD per month for an account.",
           "url": "https://developers.cloudflare.com/workers/platform/pricing/",
           "read_on": "2026-10-29"
         },
         {
-          "text": "On Workers Paid, D1 includes 25 billion rows read and 50 million rows written a month and 5 GB of storage, then charges $0.001 per million rows read, $1.00 per million rows written and $0.75 per GB-month; D1 has no egress charges.",
+          "text": "The Workers Paid plan includes 25 billion rows read, 50 million rows written, and 5 GB storage monthly. Rows read overage is $0.001 per million. Rows written overage is $1.00 per million. Storage overage is $0.75 per GB-mo. There are no egress charges.",
           "quote": "First 25 billion / month included + $0.001 / million rows",
           "url": "https://developers.cloudflare.com/d1/platform/pricing/",
           "read_on": "2026-10-29"
         },
         {
-          "text": "Time Travel restores a D1 database to any minute in the last 7 days on the Free plan and 30 days on Workers Paid; Workers Paid allows databases of up to 10 GB and 1 TB per account.",
+          "text": "Time Travel restores a database from up to 30 days ago on Workers Paid and 7 days on Free. The paid plan has a 10 GB maximum database size and 1 TB storage per account.",
           "quote": "30 days (Workers Paid) / 7 days (Free)",
           "url": "https://developers.cloudflare.com/d1/platform/limits/",
           "read_on": "2026-10-29"
