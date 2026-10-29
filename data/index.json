@@ -953,6 +953,24 @@
           "quote": "If you do nothing after 30 days, you’ll continue to get Always Free Services in your Free Tier account.",
           "url": "https://www.oracle.com/cloud/free/",
           "read_on": "2026-10-10"
+        },
+        {
+          "text": "Always Free compute instances must be created in the tenancy's home region.",
+          "quote": "You must create the Always Free compute instances in your home region.",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "An \"out of host capacity\" error means a temporary lack of Always Free shapes in the home region. Try another availability domain, or wait and try again. Upgrading to Pay as You Go gives access to more compute types. Oracle does not charge for Always Free resources after the upgrade, only for usage above the Always Free limits.",
+          "quote": "If you receive an \"out of host capacity\" error when trying to create a Compute instance, this indicates a temporary lack of Always Free shapes in your home region. Try creating the instance in a different availability domain, or wait a while, then try to create the instance again. You can also choose to upgrade your account to Pay as You Go or another Paid account type, which gives you access to more types of Compute resources. Remember that Oracle doesn't charge for Always Free resources after you upgrade, and will only charge you for resource usage above the Always Free limits.",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Always Free includes one standalone MySQL HeatWave DB system with a single-node HeatWave cluster in the home region. It has 50 GB of storage for data and logs and another 50 GB for backups.",
+          "quote": "All tenancies get a standalone MySQL HeatWave DB system with a single node HeatWave cluster in the home region. The Always Free DB system has 50 GB of storage to store data and log files. An extra 50 GB of backup storage is available.",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+          "read_on": "2026-10-29"
         }
       ],
       "free_plan_excerpt": {
@@ -33566,10 +33584,10 @@
           "read_on": "2026-10-04"
         },
         {
-          "text": "Grok Build is xAI's coding agent for the terminal and is not the grok-build-0.1 API model. xAI's pricing page lists Grok Build as \"Limited\" on The X Subscription's $0 plan and included on its paid plans, Plus $8 to Ultra $200 a month.",
+          "text": "Grok Build is xAI's coding agent for the terminal and is not the grok-build-0.1 API model. It can be used without a paid plan, with limited usage, on The X Subscription's $0 plan. Paid plans, Plus $8 to Ultra $200 a month, include it.",
           "quote": "Grok Chat, Voice, Imagine, and Build",
           "url": "https://x.ai/pricing",
-          "read_on": "2026-10-21"
+          "read_on": "2026-10-29"
         },
         {
           "text": "The X Subscription's $0 plan does not include Grok API access. Paid plans include it, but API usage is billed separately at the standard rates and does not draw from the plan's usage pool.",
@@ -33594,6 +33612,18 @@
           "quote": "Sign up for an account at console.x.ai, then load it with credits to start using the API.",
           "url": "https://docs.x.ai/developers/quickstart",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "xAI's Grok for Startups programme gives credits to startups with venture backing, a live product and a company email matching their website. The credits pay for Grok, Grok Build, Grok Bot and the Grok API from one balance, and xAI sizes them by funding, revenue and AI spend to about six months of use. xAI applies 20% on approval and the rest after onboarding.",
+          "quote": "We check every application for venture backing, a live product, and a company email that matches your website.",
+          "url": "https://x.ai/startups",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Grok for Startups credits expire six months after they are applied unless the approval says otherwise. One grant is given per company, and usage after the credits run out is billed at standard rates.",
+          "quote": "Unless your Approval Communication states otherwise, Credits expire six (6) months after the date they are applied to your Team Account",
+          "url": "https://x.ai/legal/startup-program-terms",
+          "read_on": "2026-10-29"
         },
         {
           "text": "xAI's docs now call this API the SpaceXSI API. Accounts and API keys are still created at console.x.ai.",

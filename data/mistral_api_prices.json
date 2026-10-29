@@ -84,6 +84,14 @@
         "output": "4.40",
         "source": "https://docs.mistral.ai/inference/pricing",
         "read_on": "2026-10-11"
+      },
+      {
+        "model": "DeepSeek V4.1 Flash (third-party, hosted by Mistral; public preview since 2026-10-28)",
+        "input": "0.30",
+        "cached_input": "0.007",
+        "output": "1.20",
+        "source": "https://docs.mistral.ai/models/deepseek-v4-flash-1017",
+        "read_on": "2026-10-29"
       }
     ],
     "note": {
@@ -115,7 +123,7 @@
     },
     {
       "heading": "Does Mistral train on my API data?",
-      "text": "On the Free plan, Mistral may use your API and Studio inputs and outputs to train its models. You can opt out in the Admin Panel under Privacy, Anonymous improvement data; that toggle is separate from the Vibe toggle. Mistral's Commercial Terms say opt-outs and zero data retention do not apply to \"Labs or Preview Models\", which they define as experimental, preview or pre-release models identified as such. Mistral Large 4 is a public preview. To keep an opt-out in force, use a generally available model or confirm with Mistral first."
+      "text": "On the Free plan, Mistral may use your API and Studio inputs and outputs to train its models. You can opt out in the Admin Panel under Privacy, Anonymous improvement data; that toggle is separate from the Vibe toggle. Mistral's Commercial Terms say opt-outs and zero data retention do not apply to \"Labs or Preview Models\", which they define as experimental, preview or pre-release models identified as such. Mistral Large 4 and DeepSeek V4.1 Flash are public previews. To keep an opt-out in force, use a generally available model or confirm with Mistral first."
     }
   ],
   "retirements": {
