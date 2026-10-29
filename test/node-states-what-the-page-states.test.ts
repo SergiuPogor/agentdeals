@@ -1,8 +1,10 @@
+import { WITHHELD_SUBJECTS, withheldTermsFixture } from "./withheld-terms-fixture.ts";
 import { describe, it, before, after } from "node:test";
 import assert from "node:assert";
 import { spawn, type ChildProcess } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { mkdtempSync, rmSync } from "node:fs";
 import path from "node:path";
+import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
 import { assertPopulationFloor } from "./population-floor.ts";
 import { plainMcpPassagesByVendor, withoutItsOwnMcpPassages } from "./official-mcp-after-descriptions.ts";
@@ -15,7 +17,11 @@ const LEFT_TO_THE_LAST_READ_NOTE = notRatedTodaySentence("this offer");
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.join(__dirname, "..");
 
-const LISTINGS = JSON.parse(readFileSync(path.join(REPO, "data", "index.json"), "utf-8")).offers;
+const dir = mkdtempSync(path.join(tmpdir(), "withheld-terms-nodes-"));
+const fixture = withheldTermsFixture(dir);
+const LISTINGS = fixture.catalogue.offers;
+const SUBJECT_ROUTES = WITHHELD_SUBJECTS.map((vendor) => `/vendor/${vendor.toLowerCase().replace(/ /g, "-")}`);
+after(() => rmSync(dir, { recursive: true, force: true }));
 const OWN_CONDITIONS = plainConditionsByVendor(LISTINGS);
 const OWN_MCP_PASSAGES = plainMcpPassagesByVendor(LISTINGS);
 
@@ -26,7 +32,7 @@ function startServer(): Promise<{ proc: ChildProcess; port: number }> {
   return new Promise((resolve, reject) => {
     const child = spawn("node", [path.join(REPO, "dist", "serve.js")], {
       stdio: ["pipe", "pipe", "pipe"],
-      env: { ...process.env, PORT: "0", BASE_URL: "http://localhost", TZ: "UTC" },
+      env: { ...process.env, PORT: "0", BASE_URL: "http://localhost", TZ: "UTC", ...fixture.env },
     });
     const timeout = setTimeout(() => { child.kill(); reject(new Error("Server startup timeout")); }, 120000);
     child.stderr!.on("data", (data: Buffer) => {
@@ -150,7 +156,7 @@ describe("a vendor page's structured data states the reason its own prose states
     const sitemap = await (await fetch(`${base}/sitemap-vendors.xml`)).text();
     const routes = [...sitemap.matchAll(/<loc>([^<]*\/vendor\/[^<]*)<\/loc>/g)]
       .map(([, url]) => new URL(url).pathname)
-      .filter((_, i) => i % EVERY_NTH_VENDOR_PAGE === 0);
+      .filter((route, i) => i % EVERY_NTH_VENDOR_PAGE === 0 || SUBJECT_ROUTES.includes(route));
 
     let next = 0;
     await Promise.all(Array.from({ length: 12 }, async () => {
@@ -183,7 +189,7 @@ describe("a vendor page's structured data states the reason its own prose states
 
   it("reads enough pages for the sweeps below to mean something", () => {
     assertPopulationFloor(pages.length, 300, "vendor pages read with a node, a terms block and an answer");
-    assertPopulationFloor(withheldPages.length, 5, "vendor pages withhold our stored terms entirely");
+    assert.deepStrictEqual(SUBJECT_ROUTES.filter((route) => !withheldPages.some((page) => page.route === route)), [], "every withheld subject reaches the vendor-page sweep");
     assert.deepStrictEqual(unreadable.slice(0, 15), [], "vendor pages served no node, no terms block or no free-tier answer");
   });
 
@@ -223,7 +229,7 @@ describe("a vendor page's structured data states the reason its own prose states
 
   it("prices nothing on a page that withholds our stored terms", () => {
     assert.deepStrictEqual(
-      withheldPages.filter(p => p.pricedAtZero || p.node.offerDescription !== null)
+      withheldPages.filter(p => p.node.pricedAtZero || p.node.offerDescription !== null)
         .map(p => p.route).slice(0, 15),
       [],
     );
