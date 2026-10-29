@@ -22,11 +22,11 @@
       "changed": "2026-10-29"
     },
     "/ai-free-tiers": {
-      "hash": "e48f7c48976dc474",
+      "hash": "52cd1920b1a99060",
       "changed": "2026-10-29"
     },
     "/ai-ml-alternatives": {
-      "hash": "a72455074047867a",
+      "hash": "457dac0188274d51",
       "changed": "2026-10-29"
     },
     "/alternative-to": {
@@ -820,7 +820,7 @@
       "changed": "2026-10-12"
     },
     "/aws-app-runner-migration": {
-      "hash": "76121be57c151a1b",
+      "hash": "e21e2b312bc526bd",
       "changed": "2026-10-29"
     },
     "/aws-free-tier-2026": {
@@ -1095,11 +1095,11 @@
       "changed": "2026-10-19"
     },
     "/category/ai-coding": {
-      "hash": "122a5e736ef5a2ef",
+      "hash": "8a7dc392757d53e7",
       "changed": "2026-10-29"
     },
     "/category/ai-ml": {
-      "hash": "8e1bdbd36b8f0dc9",
+      "hash": "38a384191c4d6766",
       "changed": "2026-10-29"
     },
     "/category/analytics": {
@@ -1131,15 +1131,15 @@
       "changed": "2026-10-29"
     },
     "/category/ci-cd": {
-      "hash": "ab008df9342a2ac8",
+      "hash": "0cbcb6de4bf3e9e0",
       "changed": "2026-10-29"
     },
     "/category/cloud-hosting": {
-      "hash": "6afad2a2771d518e",
+      "hash": "969c8e5ad1369ce6",
       "changed": "2026-10-29"
     },
     "/category/cloud-iaas": {
-      "hash": "047d107ac63c3e78",
+      "hash": "e54dc85e852bb18e",
       "changed": "2026-10-29"
     },
     "/category/cloud-storage": {
@@ -1337,15 +1337,15 @@
       "daily": true
     },
     "/ci-cd-alternatives": {
-      "hash": "803c98a02652e4b2",
+      "hash": "b6e5ce58fb88bfc1",
       "changed": "2026-10-29"
     },
     "/ci-cd-pricing": {
-      "hash": "4648d79d555c0166",
+      "hash": "95b6103ddafab972",
       "changed": "2026-10-29"
     },
     "/cicd-free-tier-comparison-2026": {
-      "hash": "c119f5c58df48968",
+      "hash": "d41ae48525c9224c",
       "changed": "2026-10-29"
     },
     "/circleci-vs-github-actions": {
@@ -1393,8 +1393,8 @@
       "changed": "2026-10-24"
     },
     "/compare/aider-vs-amazon-kiro": {
-      "hash": "ffc16cfbc2502305",
-      "changed": "2026-10-16"
+      "hash": "ac05d9607d9aff74",
+      "changed": "2026-10-29"
     },
     "/compare/aider-vs-openai-codex": {
       "hash": "44868b77521c5f04",
@@ -1445,11 +1445,11 @@
       "changed": "2026-10-28"
     },
     "/compare/amazon-kiro-vs-openai-codex": {
-      "hash": "01f08722bd9d2f99",
+      "hash": "b90d38a0db6b5247",
       "changed": "2026-10-29"
     },
     "/compare/amazon-kiro-vs-windsurf": {
-      "hash": "fb5844e7846bfc3e",
+      "hash": "fad8d08ea0528115",
       "changed": "2026-10-29"
     },
     "/compare/amazon-q-developer-vs-github-copilot": {
@@ -2696,7 +2696,7 @@
       "daily": true
     },
     "/cursor-alternatives": {
-      "hash": "b95b71334e5b042a",
+      "hash": "655366515553fa51",
       "changed": "2026-10-29"
     },
     "/database-alternatives": {
@@ -3209,7 +3209,7 @@
       "changed": "2026-10-29"
     },
     "/free-llm-apis": {
-      "hash": "cd22c1b30df92d32",
+      "hash": "96e773b98ca83d4b",
       "changed": "2026-10-29"
     },
     "/free-nextjs-stack": {
@@ -3247,11 +3247,11 @@
       "changed": "2026-10-29"
     },
     "/gemini-api-pricing-2026": {
-      "hash": "c2bd81db36687f33",
+      "hash": "9e137bae764a5d65",
       "changed": "2026-10-29"
     },
     "/github-actions-alternatives": {
-      "hash": "2c22c15078120f0c",
+      "hash": "381d7d1f240d272f",
       "changed": "2026-10-29"
     },
     "/github-actions-vs-gitlab-ci": {
@@ -3259,16 +3259,16 @@
       "changed": "2026-10-11"
     },
     "/google-developer-program-2026": {
-      "hash": "70a53f4a98d94e6c",
+      "hash": "160d23908905d152",
       "changed": "2026-10-29"
     },
     "/groq-vs-hugging-face": {
-      "hash": "97318c1b6c1fd273",
-      "changed": "2026-10-26"
+      "hash": "05a0ff75f26a52cb",
+      "changed": "2026-10-29"
     },
     "/groq-vs-mistral-ai": {
-      "hash": "93451a7f8966627f",
-      "changed": "2026-10-26"
+      "hash": "d0e4972fb7402118",
+      "changed": "2026-10-29"
     },
     "/guides": {
       "hash": "f39ec64461e044ff",
@@ -3295,15 +3295,15 @@
       "changed": "2026-10-29"
     },
     "/hetzner-alternatives": {
-      "hash": "c3064b351e6331c2",
+      "hash": "f6158baa2ec88ed2",
       "changed": "2026-10-29"
     },
     "/hetzner-pricing-2026": {
-      "hash": "8c9277e8df872a74",
+      "hash": "93e184032e31acd1",
       "changed": "2026-10-29"
     },
     "/hosting-alternatives": {
-      "hash": "588b78aac1e4e058",
+      "hash": "94246e5e50d97a08",
       "changed": "2026-10-29"
     },
     "/hosting-free-tier-comparison-2026": {
@@ -3311,15 +3311,15 @@
       "changed": "2026-10-29"
     },
     "/hosting-pricing": {
-      "hash": "9952122084bd3ab8",
+      "hash": "e199800c643a8236",
       "changed": "2026-10-29"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "764e82be926eb2c6",
+      "hash": "0a19fb79f8233067",
       "changed": "2026-10-29"
     },
     "/llm-api-pricing": {
-      "hash": "355c1a6bb6ec6601",
+      "hash": "54547b12e6e05490",
       "changed": "2026-10-29"
     },
     "/localstack-alternatives": {
@@ -3355,7 +3355,7 @@
       "changed": "2026-10-29"
     },
     "/openai-assistants-alternatives": {
-      "hash": "cde46a6a7085c366",
+      "hash": "653a5b580516563e",
       "changed": "2026-10-29"
     },
     "/openai-assistants-migration": {
@@ -3577,7 +3577,7 @@
       "changed": "2026-10-29"
     },
     "/serverless-free-tier-comparison-2026": {
-      "hash": "16b64cf86e8850e1",
+      "hash": "8055f9f210c1e301",
       "changed": "2026-10-29"
     },
     "/setup": {
@@ -3631,7 +3631,7 @@
       "changed": "2026-10-29"
     },
     "/storage-comparison-2026": {
-      "hash": "4f60e6da5b6b249f",
+      "hash": "8e860f585c46878c",
       "changed": "2026-10-29"
     },
     "/supabase-vs-firebase": {
@@ -5978,7 +5978,7 @@
       "daily": true
     },
     "/vendor/google-cloud-build": {
-      "hash": "b29ec46e46f9f21d",
+      "hash": "b1f1c50eba34c25d",
       "changed": "2026-10-29"
     },
     "/vendor/google-cloud-logging": {
@@ -7475,7 +7475,7 @@
       "changed": "2026-10-29"
     },
     "/vendor/oracle-cloud": {
-      "hash": "0d54ac1db088bf70",
+      "hash": "ac522ee091a05d38",
       "changed": "2026-10-29"
     },
     "/vendor/orama": {
