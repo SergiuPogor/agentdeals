@@ -9049,7 +9049,7 @@
     {
       "vendor": "OpenAI",
       "category": "AI / ML",
-      "description": "AI API platform. One model is priced Free in OpenAI's own table: the moderation model omni-moderation-latest. No GPT model is priced free. GPT prices per 1M tokens (Standard, short context): gpt-6-astra $10.00/$50.00; gpt-6.1-sol $2.00/$10.00; gpt-6-sol $2.00/$10.00; gpt-6-luna $0.10/$0.50; gpt-5.6-sol $4.00/$20.00 (a promotional price, available at least through November 21, 2026); gpt-5.6-terra $2.00/$12.00; gpt-5.6-luna $0.20/$1.20. Batch and Flex processing halve these prices. gpt-6-astra cached input $1.00 per 1M tokens, against $10.00 uncached. gpt-6.1-sol cached input $0.10 per 1M tokens, against $2.00 uncached. gpt-6-luna cached input $0.01 per 1M tokens, against $0.10 uncached. Prompt caching is on by default. Cache writes cost 1.25× the input price for 30 minutes or 2.5× for 12 hours. Embeddings from $0.02 per 1M tokens. Three further free amounts are sub-quotas inside paid tools: 1 GB of File search storage (then $0.10/GB per day), 1 GB per account per month of ChatKit upload storage, and search content tokens from the web search preview tool on non-reasoning models.",
+      "description": "AI API platform. One model is priced Free in OpenAI's own table: the moderation model omni-moderation-latest. No GPT model is priced free. GPT prices per 1M tokens (Standard, short context): gpt-6-astra $10.00/$50.00; gpt-6.1-sol $2.00/$10.00; gpt-6.1-terra $1.00/$5.00; gpt-6-sol $2.00/$10.00; gpt-6-luna $0.10/$0.50; gpt-5.6-sol $4.00/$20.00 (a promotional price, available at least through November 21, 2026); gpt-5.6-terra $2.00/$12.00; gpt-5.6-luna $0.20/$1.20. Batch and Flex processing halve these prices. gpt-6-astra cached input $1.00 per 1M tokens, against $10.00 uncached. gpt-6.1-sol cached input $0.10 per 1M tokens, against $2.00 uncached. gpt-6.1-terra cached input $0.05 per 1M tokens, against $1.00 uncached. gpt-6-luna cached input $0.01 per 1M tokens, against $0.10 uncached. Prompt caching is on by default. Cache writes cost 1.25× the input price for 30 minutes or 2.5× for 12 hours. Embeddings from $0.02 per 1M tokens. Three further free amounts are sub-quotas inside paid tools: 1 GB of File search storage (then $0.10/GB per day), 1 GB per account per month of ChatKit upload storage, and search content tokens from the web search preview tool on non-reasoning models. Since 2026-10-28, OpenAI's API docs say: \"Eligible ChatGPT Pro and Business subscriptions can claim free API credits as part of their subscription benefits.\" Pro's $100, $200 and $500 tiers get $100, $200 and $500 in API credits a month. Business gets $20 per paid Standard seat and $100 per paid Premium seat, pooled and capped at $500 per workspace a month.",
       "conditions": [
         {
           "text": "OpenAI does not use data sent to the API to train its models unless you opt in to share data.",
@@ -9070,10 +9070,16 @@
           "read_on": "2026-10-06"
         },
         {
-          "text": "OpenAI's API needs a payment method and a credit purchase of at least $5 before you use it.",
+          "text": "Without ChatGPT subscriber credits, OpenAI's API needs a payment method and a credit purchase of at least $5 before you use it.",
           "quote": "Select Add payment details and complete the payment-information step. Choose your initial credit purchase amount. The minimum purchase is $5",
           "url": "https://help.openai.com/en/articles/8264644-setting-up-and-managing-prepaid-api-billing",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "OpenAI's API credits for ChatGPT subscribers need an active, paid ChatGPT Pro or Business subscription at least seven days old. The owner of the subscription or Business workspace links it to one API organization they own, using the same email. ChatGPT Plus, Go, Free and Enterprise plans, free trials and complimentary subscriptions are not eligible. No API payment method is needed while the credits last. Unused credits expire at the end of the billing cycle and do not roll over. They do not cover Codex used with an API key.",
+          "quote": "Have an active, paid ChatGPT Pro or Business subscription that is at least seven days old. Free trials and complimentary subscriptions don't qualify.",
+          "url": "https://developers.openai.com/api/docs/guides/chatgpt-api-credits",
+          "read_on": "2026-10-29"
         }
       ],
       "tier": "Pay-as-you-go",
@@ -34020,6 +34026,14 @@
       "vendor": "OpenAI Codex",
       "category": "AI Coding",
       "description": "Coding agent by OpenAI. Available with a ChatGPT subscription, including the $0 Free plan, and separately with an API key billed on token use; both routes are current. OpenAI's Codex pricing page lists Free ($0/month, \"Explore Codex capabilities on quick coding tasks\") and Go ($8/month, \"Use Codex for lightweight coding tasks\"), both with GPT-6 Luna at Standard speed in the desktop app, subject to rollout. Plus ($20/month) adds Codex on the web, in the CLI, in the IDE extension and on iOS, cloud code review and Slack integrations, and GPT-6.1 Sol and GPT-6 Luna. Pro plans are Pro 100 ($100/month), Pro 200 ($200/month), and Pro 500 ($500/month). Ultrafast mode is only on Pro 500. Pro plans have no five-hour limit. New Pro 200 subscriptions have a lower usage allowance than before. Grandfathered ChatGPT Pro 200 subscribers keep the previous Codex and ChatGPT usage allowance until October 29, 2026, when the subscription moves to the lower allowance; the price stays $200 a month. Grandfathered subscriptions are those with an active Pro 200 subscription at any point between September 22, 2026 and 10:00 Pacific Time on September 29, 2026. ChatGPT Business has two seat types, both carrying Codex: Standard at $20/user/mo billed annually ($25 monthly) and Premium at $100/user/mo billed annually ($125 monthly), where Premium buys 5x more usage than Standard and removes the five-hour usage limit. The Codex pricing page we cite lists only the Standard seat — the Premium seat is published on OpenAI's business pricing page. Codex-only pay-as-you-go seats closed to new Business workspaces on 2026-06-24; existing seats continue. With an API key, Codex runs in the CLI, SDK or IDE extension at API prices, without the cloud features.",
+      "conditions": [
+        {
+          "text": "Since 2026-10-28, ChatGPT Pro and Business subscriptions include monthly OpenAI API credits. These credits do not pay for Codex used with an API key. They do not raise ChatGPT or signed-in Codex usage limits.",
+          "quote": "Codex usage through API keys is not supported by this benefit. These API credits also don't increase your ChatGPT or signed-in Codex usage limits.",
+          "url": "https://developers.openai.com/api/docs/guides/chatgpt-api-credits",
+          "read_on": "2026-10-29"
+        }
+      ],
       "tier": "Free",
       "url": "https://developers.openai.com/codex/pricing/",
       "tags": [
