@@ -18,15 +18,15 @@
       "changed": "2026-10-28"
     },
     "/ai-coding-tools-pricing": {
-      "hash": "5123e82d67ed5b46",
+      "hash": "471c056a43a79390",
       "changed": "2026-10-29"
     },
     "/ai-free-tiers": {
-      "hash": "ec4cc81d2f324e34",
+      "hash": "53939f61ed96a0ef",
       "changed": "2026-10-29"
     },
     "/ai-ml-alternatives": {
-      "hash": "a0e53ecad062ab50",
+      "hash": "40f7dd74b357487f",
       "changed": "2026-10-29"
     },
     "/alternative-to": {
@@ -1095,11 +1095,11 @@
       "changed": "2026-10-19"
     },
     "/category/ai-coding": {
-      "hash": "3d0f1de3a3c9e1bd",
+      "hash": "ffb258c1c577c8a3",
       "changed": "2026-10-29"
     },
     "/category/ai-ml": {
-      "hash": "fb3bfa8e0cea78f6",
+      "hash": "5d909660209e00c0",
       "changed": "2026-10-29"
     },
     "/category/analytics": {
@@ -1397,8 +1397,8 @@
       "changed": "2026-10-16"
     },
     "/compare/aider-vs-openai-codex": {
-      "hash": "6ef72aadec1ae5c3",
-      "changed": "2026-10-22"
+      "hash": "44868b77521c5f04",
+      "changed": "2026-10-29"
     },
     "/compare/airtop-vs-hyperbrowser": {
       "hash": "fdf204bbd66792e1",
@@ -1445,8 +1445,8 @@
       "changed": "2026-10-28"
     },
     "/compare/amazon-kiro-vs-openai-codex": {
-      "hash": "08111ca4641a21e3",
-      "changed": "2026-10-22"
+      "hash": "01f08722bd9d2f99",
+      "changed": "2026-10-29"
     },
     "/compare/amazon-kiro-vs-windsurf": {
       "hash": "5ba1434fea5b0e50",
@@ -1641,8 +1641,8 @@
       "changed": "2026-10-15"
     },
     "/compare/claude-code-vs-openai-codex": {
-      "hash": "b75896cb7e3c4a2a",
-      "changed": "2026-10-22"
+      "hash": "7de92536cedfe38b",
+      "changed": "2026-10-29"
     },
     "/compare/clerk-vs-zitadel-cloud": {
       "hash": "7db3e5fb281d1152",
@@ -2441,8 +2441,8 @@
       "changed": "2026-10-24"
     },
     "/compare/openai-codex-vs-windsurf": {
-      "hash": "456900dbb7fb3cf5",
-      "changed": "2026-10-22"
+      "hash": "eec45d6b03237cfa",
+      "changed": "2026-10-29"
     },
     "/compare/opencagedata-com-vs-osmnames": {
       "hash": "192ccc7b3dd495a4",
@@ -3071,7 +3071,7 @@
       "changed": "2026-10-26"
     },
     "/digest/2026-w44": {
-      "hash": "d35ad2955e660dfc",
+      "hash": "1d11eaf20903e7ec",
       "changed": "2026-10-29"
     },
     "/digest/2026-w45": {
@@ -3079,8 +3079,8 @@
       "changed": "2026-10-23"
     },
     "/digest/2026-w47": {
-      "hash": "17db7d9c74858adf",
-      "changed": "2026-10-21"
+      "hash": "fd854e34ac2d253b",
+      "changed": "2026-10-29"
     },
     "/digest/2026-w49": {
       "hash": "bc89b330dbb21fe6",
@@ -3209,7 +3209,7 @@
       "changed": "2026-10-29"
     },
     "/free-llm-apis": {
-      "hash": "d29fa4c9661db4cd",
+      "hash": "39be48995d5be126",
       "changed": "2026-10-29"
     },
     "/free-nextjs-stack": {
@@ -3247,7 +3247,7 @@
       "changed": "2026-10-29"
     },
     "/gemini-api-pricing-2026": {
-      "hash": "18930a9666735253",
+      "hash": "9aaebb126b8575ed",
       "changed": "2026-10-29"
     },
     "/github-actions-alternatives": {
@@ -3315,11 +3315,11 @@
       "changed": "2026-10-29"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "49eb957892e3f021",
+      "hash": "762ff1fd23e1e7f7",
       "changed": "2026-10-29"
     },
     "/llm-api-pricing": {
-      "hash": "df860d27f175b728",
+      "hash": "739e6f0e5c3b86d1",
       "changed": "2026-10-29"
     },
     "/localstack-alternatives": {
@@ -3355,16 +3355,16 @@
       "changed": "2026-10-28"
     },
     "/openai-assistants-alternatives": {
-      "hash": "b68bea2618d6bd34",
-      "changed": "2026-10-28"
+      "hash": "8342aecee3c494ff",
+      "changed": "2026-10-29"
     },
     "/openai-assistants-migration": {
-      "hash": "572075ddeccabbb6",
-      "changed": "2026-10-28"
+      "hash": "c0b3803cdac27a05",
+      "changed": "2026-10-29"
     },
     "/openai-assistants-migration-2026": {
-      "hash": "ee07fdd343aae38b",
-      "changed": "2026-10-28"
+      "hash": "652abf8b74ac27a2",
+      "changed": "2026-10-29"
     },
     "/postman-alternatives": {
       "hash": "d29fb3a7bbcff17c",
