@@ -22,11 +22,11 @@
       "changed": "2026-10-29"
     },
     "/ai-free-tiers": {
-      "hash": "84139be55fbf7de2",
+      "hash": "69ff5c4cf081f24b",
       "changed": "2026-10-29"
     },
     "/ai-ml-alternatives": {
-      "hash": "698fcf771c6ae514",
+      "hash": "98fae83024a1f341",
       "changed": "2026-10-29"
     },
     "/alternative-to": {
@@ -1099,7 +1099,7 @@
       "changed": "2026-10-29"
     },
     "/category/ai-ml": {
-      "hash": "8f71e0605fc4469b",
+      "hash": "a56bd66d3b571af8",
       "changed": "2026-10-29"
     },
     "/category/analytics": {
@@ -1247,7 +1247,7 @@
       "changed": "2026-10-28"
     },
     "/category/mobile-development": {
-      "hash": "c58ab1809e48154a",
+      "hash": "b2e3b9ff3d11c821",
       "changed": "2026-10-29"
     },
     "/category/monitoring": {
@@ -1869,7 +1869,7 @@
       "changed": "2026-10-26"
     },
     "/compare/diawi-vs-expo": {
-      "hash": "10b88f23d3c2ca0c",
+      "hash": "94a2c5186da4d326",
       "changed": "2026-10-29"
     },
     "/compare/diawi-vs-loadly": {
@@ -1961,11 +1961,11 @@
       "changed": "2026-10-23"
     },
     "/compare/expo-vs-loadly": {
-      "hash": "1cb87e823ba4a4b5",
+      "hash": "37cc67b78fcb889d",
       "changed": "2026-10-29"
     },
     "/compare/expo-vs-shake": {
-      "hash": "811d52e9b416db6d",
+      "hash": "d3fdda9ca5c8d518",
       "changed": "2026-10-29"
     },
     "/compare/export-sdk-vs-windmill-dev": {
@@ -5542,7 +5542,7 @@
       "changed": "2026-10-29"
     },
     "/vendor/expo": {
-      "hash": "8d3d4fdd871eeced",
+      "hash": "67c24103dde4fb5e",
       "changed": "2026-10-29"
     },
     "/vendor/export-sdk": {
