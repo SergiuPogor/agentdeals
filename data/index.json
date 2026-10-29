@@ -7311,6 +7311,30 @@
           "quote": "The Free plan has no update overage pricing; it is limited to its included monthly active users.",
           "url": "https://expo.dev/pricing.md",
           "read_on": "2026-10-05"
+        },
+        {
+          "text": "The Starter plan costs $19 per month. It includes $45 of build credit and 3,000 monthly active users for EAS Update, compared to 1,000 in the Free plan.",
+          "quote": "For $19 per month, you get $45 of build credit and 3,000 monthly active users for EAS Update (compared to 1,000 in the Free plan)",
+          "url": "https://docs.expo.dev/billing/faq/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On a paid plan, once the build credit is used up, builds are billed per build. Android builds cost $1 on medium workers and $2 on large workers. iOS builds cost $2 on medium workers and $4 on large workers.",
+          "quote": "Flat rate per build, by platform and worker size.",
+          "url": "https://expo.dev/pricing.md",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On Starter, EAS Update costs $0.005 per monthly active user past 3,000, up to 200,000. It includes 100 GiB of bandwidth, then costs $0.10 per GiB.",
+          "quote": "| 3,001 – 200,000 | $0.005 |",
+          "url": "https://expo.dev/pricing.md",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Unused build credit does not carry over to the next billing period.",
+          "quote": "No, credits do not roll over or accrue.",
+          "url": "https://expo.dev/pricing",
+          "read_on": "2026-10-29"
         }
       ],
       "free_plan_excerpt": {
@@ -18820,7 +18844,27 @@
         "checked": "2026-10-08",
         "outcome": "ok",
         "detail": "the page names ZITADEL Cloud as \"zitadel cloud\" and states \"$ 0\""
-      }
+      },
+      "conditions": [
+        {
+          "text": "Pro costs US$100 per month. It includes 25,000 Daily Active Users a month, 500,000 Management API requests, 3 identity providers and a custom domain. Usage is invoiced at the end of each billing cycle with no monthly commitment.",
+          "quote": "Start with 25'000 Daily Active Users per month included",
+          "url": "https://zitadel.com/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "ZITADEL sums each day's active users for the month. A user is active on a day when they log in or refresh a token, and a service user when it authenticates. Each user counts at most once per day. A user active on 20 days counts as 20.",
+          "quote": "To calculate your monthly total, we sum the DAU count of every single day in that month.",
+          "url": "https://help.zitadel.com/how-is-daily-active-users-calculated",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Pro subscriptions are paid by credit card only.",
+          "quote": "We exclusively accept Credit Cards for Pro subscriptions.",
+          "url": "https://help.zitadel.com/payment-methods-billing-cycles-for-zitadel-cloud",
+          "read_on": "2026-10-29"
+        }
+      ]
     },
     {
       "vendor": "Appho.st",
@@ -22651,6 +22695,24 @@
           "quote": "hCaptcha Integration",
           "url": "https://web3forms.com/pricing",
           "read_on": "2026-10-10"
+        },
+        {
+          "text": "The Pro plan costs $15 a month or $149 a year and includes 10,000 monthly submissions. The Agency plan costs $39 a month or $399 a year and includes 20,000 monthly submissions.",
+          "quote": "PRO PLAN $12 /mo $149 billed yearly",
+          "url": "https://web3forms.com/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Students, startups and non-profits can apply for a yearly-only plan that costs $49 a year and includes 5,000 monthly submissions. It does not include file uploads or autoresponders.",
+          "quote": "Affordable Yearly only plan for students, budding startups and non-profits at $49 per year.",
+          "url": "https://web3forms.com/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "An existing access key is upgraded to the Pro plan when Pro is bought.",
+          "quote": "Once purchased, your existing access_key will be upgraded to the Pro plan.",
+          "url": "https://web3forms.com/pricing",
+          "read_on": "2026-10-29"
         }
       ]
     },
