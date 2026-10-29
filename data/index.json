@@ -33578,10 +33578,10 @@
           "read_on": "2026-10-04"
         },
         {
-          "text": "Grok Build is xAI's coding agent for the terminal and is not the grok-build-0.1 API model. xAI's pricing page lists Grok Build as \"Limited\" on The X Subscription's $0 plan and included on its paid plans, Plus $8 to Ultra $200 a month.",
+          "text": "Grok Build is xAI's coding agent for the terminal and is not the grok-build-0.1 API model. It can be used without a paid plan, with limited usage, on The X Subscription's $0 plan. Paid plans, Plus $8 to Ultra $200 a month, include it.",
           "quote": "Grok Chat, Voice, Imagine, and Build",
           "url": "https://x.ai/pricing",
-          "read_on": "2026-10-21"
+          "read_on": "2026-10-29"
         },
         {
           "text": "The X Subscription's $0 plan does not include Grok API access. Paid plans include it, but API usage is billed separately at the standard rates and does not draw from the plan's usage pool.",
@@ -33606,6 +33606,18 @@
           "quote": "Sign up for an account at console.x.ai, then load it with credits to start using the API.",
           "url": "https://docs.x.ai/developers/quickstart",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "xAI's Grok for Startups programme gives credits to startups with venture backing, a live product and a company email matching their website. The credits pay for Grok, Grok Build, Grok Bot and the Grok API from one balance, and xAI sizes them by funding, revenue and AI spend to about six months of use. xAI applies 20% on approval and the rest after onboarding.",
+          "quote": "We check every application for venture backing, a live product, and a company email that matches your website.",
+          "url": "https://x.ai/startups",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Grok for Startups credits expire six months after they are applied unless the approval says otherwise. One grant is given per company, and usage after the credits run out is billed at standard rates.",
+          "quote": "Unless your Approval Communication states otherwise, Credits expire six (6) months after the date they are applied to your Team Account",
+          "url": "https://x.ai/legal/startup-program-terms",
+          "read_on": "2026-10-29"
         },
         {
           "text": "xAI's docs now call this API the SpaceXSI API. Accounts and API keys are still created at console.x.ai.",
