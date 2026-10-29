@@ -22,11 +22,11 @@
       "changed": "2026-10-29"
     },
     "/ai-free-tiers": {
-      "hash": "52cd1920b1a99060",
+      "hash": "5b26d3f872ac3d16",
       "changed": "2026-10-29"
     },
     "/ai-ml-alternatives": {
-      "hash": "457dac0188274d51",
+      "hash": "d99b0c200af3a916",
       "changed": "2026-10-29"
     },
     "/alternative-to": {
@@ -1095,11 +1095,11 @@
       "changed": "2026-10-19"
     },
     "/category/ai-coding": {
-      "hash": "8a7dc392757d53e7",
+      "hash": "4416df9fd3da751b",
       "changed": "2026-10-29"
     },
     "/category/ai-ml": {
-      "hash": "38a384191c4d6766",
+      "hash": "cf42aa6a88ea394d",
       "changed": "2026-10-29"
     },
     "/category/analytics": {
@@ -1397,7 +1397,7 @@
       "changed": "2026-10-29"
     },
     "/compare/aider-vs-openai-codex": {
-      "hash": "44868b77521c5f04",
+      "hash": "ddc39c0721491660",
       "changed": "2026-10-29"
     },
     "/compare/airtop-vs-hyperbrowser": {
@@ -1445,7 +1445,7 @@
       "changed": "2026-10-28"
     },
     "/compare/amazon-kiro-vs-openai-codex": {
-      "hash": "b90d38a0db6b5247",
+      "hash": "5fb0f081e0c39c9b",
       "changed": "2026-10-29"
     },
     "/compare/amazon-kiro-vs-windsurf": {
@@ -1641,7 +1641,7 @@
       "changed": "2026-10-15"
     },
     "/compare/claude-code-vs-openai-codex": {
-      "hash": "7de92536cedfe38b",
+      "hash": "2a7ce98247117a44",
       "changed": "2026-10-29"
     },
     "/compare/clerk-vs-zitadel-cloud": {
@@ -2441,7 +2441,7 @@
       "changed": "2026-10-24"
     },
     "/compare/openai-codex-vs-windsurf": {
-      "hash": "6f7d0eea9150c521",
+      "hash": "17f46563251a4751",
       "changed": "2026-10-29"
     },
     "/compare/opencagedata-com-vs-osmnames": {
@@ -3067,11 +3067,11 @@
       "changed": "2026-10-23"
     },
     "/digest/2026-w43": {
-      "hash": "83e7e5db3ea2698d",
-      "changed": "2026-10-26"
+      "hash": "3e0010443c357c25",
+      "changed": "2026-10-29"
     },
     "/digest/2026-w44": {
-      "hash": "1d11eaf20903e7ec",
+      "hash": "02373b5a9c1a3493",
       "changed": "2026-10-29"
     },
     "/digest/2026-w45": {
@@ -3209,7 +3209,7 @@
       "changed": "2026-10-29"
     },
     "/free-llm-apis": {
-      "hash": "96e773b98ca83d4b",
+      "hash": "03bd912610c2cc30",
       "changed": "2026-10-29"
     },
     "/free-nextjs-stack": {
@@ -3267,7 +3267,7 @@
       "changed": "2026-10-29"
     },
     "/groq-vs-mistral-ai": {
-      "hash": "d0e4972fb7402118",
+      "hash": "7765e330a7e2689f",
       "changed": "2026-10-29"
     },
     "/guides": {
@@ -3315,11 +3315,11 @@
       "changed": "2026-10-29"
     },
     "/ide-code-editors-alternatives": {
-      "hash": "0a19fb79f8233067",
+      "hash": "f003c03ba36d5447",
       "changed": "2026-10-29"
     },
     "/llm-api-pricing": {
-      "hash": "54547b12e6e05490",
+      "hash": "e50f61f7556c53a2",
       "changed": "2026-10-29"
     },
     "/localstack-alternatives": {
@@ -3327,7 +3327,7 @@
       "changed": "2026-10-29"
     },
     "/mistral-api-pricing-2026": {
-      "hash": "45ad065538cbf5fb",
+      "hash": "6c3bbfe0e7b32607",
       "changed": "2026-10-29"
     },
     "/mongodb-alternatives": {
