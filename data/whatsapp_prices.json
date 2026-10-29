@@ -1122,6 +1122,14 @@
         "market": "Brazil"
       },
       {
+        "label": "Mexico",
+        "market": "Mexico"
+      },
+      {
+        "label": "Rest of Latin America: Ecuador, Bolivia, the Dominican Republic, Uruguay, Paraguay and the other countries marked Rest of Latin America (Mexico, Brazil, Argentina, Chile, Colombia and Peru have their own rates)",
+        "market": "Ecuador (Rest of Latin America)"
+      },
+      {
         "label": "United Kingdom",
         "market": "United Kingdom"
       },
