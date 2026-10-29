@@ -9673,6 +9673,24 @@
           "quote": "What happens when I run out of usage credit on Hobbyist? Your endpoints will stop working until the end of your billing cycle when your usage credit resets. What happens when I run out of usage credit on Pay-as-you-go? Your endpoints will continue working. We’ll bill you for additional usage at the end of your billing cycle.",
           "url": "https://ngrok.com/pricing",
           "read_on": "2026-10-29"
+        },
+        {
+          "text": "With an account, you may distribute the ngrok Agent to customers for applications you create, if you maintain the account. Customers with their own accounts need ngrok's consent. The terms bar reselling or making services available standalone but do not prohibit commercial use.",
+          "quote": "if you have an ngrok account, distribute the ngrok Agent to third parties to whom you make available an application created by you using the ngrok Software in connection with which you, not your customer, maintain an account with ngrok",
+          "url": "https://ngrok.com/tos",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On the free version, ngrok may include the Agent's IP address in assigned hostnames or HTTP response headers.",
+          "quote": "for the version of the ngrok Services for which ngrok does not charge a fee, ngrok may include the IP address of the ngrok Agent in the hostnames ngrok assigns to you or in HTTP headers included in responses to requests passing through the Proxy Service",
+          "url": "https://ngrok.com/tos",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Free endpoints have no timeout.",
+          "quote": "Free endpoints have no timeout—they can stay online indefinitely.",
+          "url": "https://ngrok.com/docs/pricing-limits/free-plan-limits",
+          "read_on": "2026-10-29"
         }
       ]
     },
