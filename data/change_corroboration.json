@@ -54,17 +54,6 @@
       "source_url": "https://supabase.com/pricing",
       "category": "Databases",
       "first_read_date": "2026-10-28"
-    },
-    {
-      "vendor": "Upstash",
-      "change_type": "limits_reduced",
-      "impact": "medium",
-      "summary": "The free tier now offers 250MB of data instead of 256MB.",
-      "previous_state": "Serverless Redis — 500K commands/month (256MB data). Vector: 200M vectors × dimensions and 10K queries a day free. QStash: 1,000 messages/day free",
-      "current_state": "Free tier includes 250 MB data size and 500K commands per month.",
-      "source_url": "https://upstash.com/pricing",
-      "category": "Databases",
-      "first_read_date": "2026-10-28"
     }
   ],
   "resolved": [
@@ -2915,6 +2904,18 @@
       "outcome": "corroborated",
       "detail": "a reading on 2026-10-28 read it as pricing_restructured too",
       "resolved_date": "2026-10-28"
+    },
+    {
+      "vendor": "Upstash",
+      "change_type": "limits_reduced",
+      "impact": "medium",
+      "summary": "The free tier now offers 250MB of data instead of 256MB.",
+      "previous_state": "Serverless Redis — 500K commands/month (256MB data). Vector: 200M vectors × dimensions and 10K queries a day free. QStash: 1,000 messages/day free",
+      "source_url": "https://upstash.com/pricing",
+      "first_read_date": "2026-10-28",
+      "outcome": "baseline_moved",
+      "detail": "the terms it was read against are no longer the terms we publish",
+      "resolved_date": "2026-10-29"
     }
   ]
 }
