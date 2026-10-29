@@ -190,6 +190,24 @@
           "quote": "No credit card is required.",
           "url": "https://render.com/articles/platforms-with-a-real-free-tier-for-developers-in-2026",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "Render Sandboxes runs isolated microVMs for agents and untrusted code. It is available on every plan including Hobby, billed at $0.12 per active CPU hour plus $0.038 per hour for memory for the default size.",
+          "quote": "Isolated microVMs for agents, apps, and untrusted code",
+          "url": "https://render.com/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "A Hobby workspace allows 100 concurrent sandboxes. Each sandbox can run continuously for 24 hours, versus 30 days on Pro and above.",
+          "quote": "Sandboxes can run up to 30 days on Pro and above",
+          "url": "https://render.com/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Render Sandboxes is in public beta. During the beta, sandboxes have no public URL and no private network to other Render services.",
+          "quote": "Sandboxes do not yet provide public URLs for accessing applications running inside them.",
+          "url": "https://render.com/docs/sandboxes",
+          "read_on": "2026-10-29"
         }
       ],
       "official_mcp_servers": [
@@ -497,6 +515,18 @@
           "quote": "Start building for free — no credit card required.",
           "url": "https://www.cloudflare.com/products/pages/",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "The Free plan allows up to 20,000 files per site. Paid plans allow up to 100,000 files per site.",
+          "quote": "Cloudflare Pages sites can contain up to 20,000 files on the Free plan.",
+          "url": "https://developers.cloudflare.com/pages/platform/limits/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "The maximum file size is 25 MiB. Larger files can be served from R2 public buckets.",
+          "quote": "The maximum file size for a single Cloudflare Pages site asset is 25 MiB.",
+          "url": "https://developers.cloudflare.com/pages/platform/limits/",
+          "read_on": "2026-10-29"
         }
       ]
     },
@@ -1822,6 +1852,24 @@
           "quote": "Start building for free — no credit card required.",
           "url": "https://www.cloudflare.com/developer-platform/products/d1/",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "D1 usage past Free limits requires the Workers Paid plan. That plan has a minimum charge of $5 per month per account.",
+          "quote": "The Workers Paid plan includes Workers, Pages Functions, Workers KV, Hyperdrive, and Durable Objects usage for a minimum charge of $5 USD per month for an account.",
+          "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "The Workers Paid plan includes 25 billion rows read, 50 million rows written, and 5 GB storage monthly. Rows read overage is $0.001 per million. Rows written overage is $1.00 per million. Storage overage is $0.75 per GB-mo. There are no egress charges.",
+          "quote": "First 25 billion / month included + $0.001 / million rows",
+          "url": "https://developers.cloudflare.com/d1/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Time Travel restores a database from up to 30 days ago on Workers Paid and 7 days on Free. The paid plan has a 10 GB maximum database size and 1 TB storage per account.",
+          "quote": "30 days (Workers Paid) / 7 days (Free)",
+          "url": "https://developers.cloudflare.com/d1/platform/limits/",
+          "read_on": "2026-10-29"
         }
       ],
       "tags": [
