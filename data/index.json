@@ -1804,6 +1804,24 @@
           "quote": "Start building for free — no credit card required.",
           "url": "https://www.cloudflare.com/developer-platform/products/d1/",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "Going past D1's Free limits needs the Workers Paid plan, which has a minimum charge of $5 a month per account.",
+          "quote": "The Workers Paid plan includes Workers, Pages Functions, Workers KV, Hyperdrive, and Durable Objects usage for a minimum charge of $5 USD per month for an account.",
+          "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On Workers Paid, D1 includes 25 billion rows read and 50 million rows written a month and 5 GB of storage, then charges $0.001 per million rows read, $1.00 per million rows written and $0.75 per GB-month; D1 has no egress charges.",
+          "quote": "First 25 billion / month included + $0.001 / million rows",
+          "url": "https://developers.cloudflare.com/d1/platform/pricing/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Time Travel restores a D1 database to any minute in the last 7 days on the Free plan and 30 days on Workers Paid; Workers Paid allows databases of up to 10 GB and 1 TB per account.",
+          "quote": "30 days (Workers Paid) / 7 days (Free)",
+          "url": "https://developers.cloudflare.com/d1/platform/limits/",
+          "read_on": "2026-10-29"
         }
       ],
       "tags": [
