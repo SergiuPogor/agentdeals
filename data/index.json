@@ -953,6 +953,24 @@
           "quote": "If you do nothing after 30 days, you’ll continue to get Always Free Services in your Free Tier account.",
           "url": "https://www.oracle.com/cloud/free/",
           "read_on": "2026-10-10"
+        },
+        {
+          "text": "Always Free compute instances must be created in the tenancy's home region.",
+          "quote": "You must create the Always Free compute instances in your home region.",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "An \"out of host capacity\" error means a temporary lack of Always Free shapes in the home region. Try another availability domain, or wait and try again. Upgrading to Pay as You Go gives access to more compute types. Oracle does not charge for Always Free resources after the upgrade, only for usage above the Always Free limits.",
+          "quote": "If you receive an \"out of host capacity\" error when trying to create a Compute instance, this indicates a temporary lack of Always Free shapes in your home region. Try creating the instance in a different availability domain, or wait a while, then try to create the instance again. You can also choose to upgrade your account to Pay as You Go or another Paid account type, which gives you access to more types of Compute resources. Remember that Oracle doesn't charge for Always Free resources after you upgrade, and will only charge you for resource usage above the Always Free limits.",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Always Free includes one standalone MySQL HeatWave DB system with a single-node HeatWave cluster in the home region. It has 50 GB of storage for data and logs and another 50 GB for backups.",
+          "quote": "All tenancies get a standalone MySQL HeatWave DB system with a single node HeatWave cluster in the home region. The Always Free DB system has 50 GB of storage to store data and log files. An extra 50 GB of backup storage is available.",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+          "read_on": "2026-10-29"
         }
       ],
       "free_plan_excerpt": {
