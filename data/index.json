@@ -515,6 +515,18 @@
           "quote": "Start building for free — no credit card required.",
           "url": "https://www.cloudflare.com/products/pages/",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "The Free plan allows up to 20,000 files per site. Paid plans allow up to 100,000 files per site.",
+          "quote": "Cloudflare Pages sites can contain up to 20,000 files on the Free plan.",
+          "url": "https://developers.cloudflare.com/pages/platform/limits/",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "The maximum file size is 25 MiB. Larger files can be served from R2 public buckets.",
+          "quote": "The maximum file size for a single Cloudflare Pages site asset is 25 MiB.",
+          "url": "https://developers.cloudflare.com/pages/platform/limits/",
+          "read_on": "2026-10-29"
         }
       ]
     },
