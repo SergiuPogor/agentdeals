@@ -1716,6 +1716,24 @@
           "quote": "On the Free plan, that's the same 2GB your files and databases use.",
           "url": "https://appwrite.io/blog/post/default-deployment-retention",
           "read_on": "2026-10-22"
+        },
+        {
+          "text": "Pro starts at $25 a month. It includes one project with 2TB bandwidth, 150GB storage, 3.5M executions and 200K monthly active users. Each additional project costs $15.",
+          "quote": "Number of projects 1 (Dedicated resources) Additional projects $15",
+          "url": "https://appwrite.io/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Additional API bandwidth costs $15 per 100GB a month. Additional storage costs $2.8 per 100GB. Additional executions cost $2 per 1m. Additional users cost $3 per 1,000 users. Additional reads cost $0.060 per 100k and writes $0.10 per 100k.",
+          "quote": "Additional API bandwidth $15 per 100GB / month",
+          "url": "https://appwrite.io/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "On Pro, Appwrite automatically buys extra resources when an organization exceeds its limits. The budget cap limits how much it can scale.",
+          "quote": "Additional resources are automatically purchased when your organization exceeds the resource limits to continue scaling until the budget cap is reached.",
+          "url": "https://appwrite.io/docs/advanced/billing/pro",
+          "read_on": "2026-10-29"
         }
       ],
       "official_mcp_servers": [
@@ -34298,6 +34316,24 @@
           "quote": "No Cloud Billing account: You don't need to provide a credit card or set up a Cloud Billing account to deploy your applications.",
           "url": "https://docs.cloud.google.com/docs/starter-tier",
           "read_on": "2026-10-12"
+        },
+        {
+          "text": "In Tier 1 regions such as Iowa (us-central1), the default request-based rates past the free tier are $0.000024 per vCPU-second, $0.0000025 per GiB-second, and $0.40 per million requests. In Tier 2 regions such as London (europe-west2), the rates are $0.0000336 per vCPU-second and $0.0000035 per GiB-second.",
+          "quote": "CPU (per vCPU-second) Active time $0.000024",
+          "url": "https://cloud.google.com/run/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "When a spend cap is hit, Cloud Run workloads pause. Services return 5xx errors. The cap resets on the first day of the next billing cycle.",
+          "quote": "When you hit a spend cap, Google Cloud pauses all Cloud Run workloads to prevent further costs to the following Cloud Run resources:",
+          "url": "https://docs.cloud.google.com/run/docs/configuring/billing-settings",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "Spend cap enforcement is not instant. Any cost overages before enforcement are billed as normal.",
+          "quote": "Note: Even though faster than reports, the enforcement of spend caps isn't instant and any cost overages are billed as normal.",
+          "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps",
+          "read_on": "2026-10-29"
         }
       ],
       "free_plan_excerpt": {
@@ -34498,6 +34534,30 @@
           "quote": "Any usage that exceeds the Free Tier usage limits is billed at standard rates.",
           "url": "https://docs.cloud.google.com/free/docs/free-cloud-features",
           "read_on": "2026-10-07"
+        },
+        {
+          "text": "Cloud Build charges $0.006 per minute for an e2-standard-2 build in the default pool. Partial minutes are billed at the actual number of seconds consumed. Queued time is not billed.",
+          "quote": "Build-minutes are not incurred for the time that a build is queued.",
+          "url": "https://cloud.google.com/build/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "The 2,500 free build-minutes per month apply to e2-standard-2 machine types in the default pool. Google calls this a promotional free tier and says its limit is subject to change.",
+          "quote": "This promotional free tier is for e2-standard-2 machine types in the default pool, and the limit is subject to change.",
+          "url": "https://cloud.google.com/build/pricing",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "In the current release, Google Cloud spend caps cover Gemini API, Agent Platform, Cloud Run, and Cloud Run functions.",
+          "quote": "In this release, the eligible services include Gemini API, Agent Platform (formerly known as Vertex AI), Cloud Run, and Cloud Run functions.",
+          "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps",
+          "read_on": "2026-10-29"
+        },
+        {
+          "text": "An alerts-only budget does not automatically cap Google Cloud usage or spending.",
+          "quote": "Caution: Setting an alerts-only budget doesn't automatically cap Google Cloud or Google Maps Platform usage or spending.",
+          "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+          "read_on": "2026-10-29"
         }
       ]
     },
