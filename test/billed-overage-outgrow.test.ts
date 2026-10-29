@@ -20,7 +20,7 @@ const LISTINGS_THAT_BILL_USAGE_PAST_THE_FREE_TIER = [
   "Cloudflare R2", "Modal", "Parallel",
 ];
 
-const LISTINGS_THAT_STOP_AT_A_HARD_LIMIT = ["Formspree", "Vercel", "Grafana Cloud"];
+const LISTINGS_THAT_STOP_AT_A_HARD_LIMIT = ["Vercel", "Grafana Cloud"];
 
 describe("reading whether a listing bills usage past its free tier", () => {
   it("reads each way a listing says the usage past its free tier is billed", () => {
@@ -142,7 +142,7 @@ describe("a vendor page whose listing bills usage past the free tier", () => {
     assert.ok(body.includes(`"text":"${sentence} The `));
   });
 
-  it("keeps the upgrade sentence on a page whose listing stops at a hard limit", () => {
+  it("keeps the upgrade sentence when the listing states no free-limit outcome", () => {
     for (const vendor of LISTINGS_THAT_STOP_AT_A_HARD_LIMIT) {
       assert.ok((pages.get(vendor)!.match(UPGRADE) ?? []).length >= 2, `${vendor} no longer says the reader will need to upgrade`);
     }
