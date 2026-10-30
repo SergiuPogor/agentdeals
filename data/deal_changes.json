@@ -201,8 +201,7 @@
       "source_url": "https://brave.com/blog/most-powerful-search-api-for-ai/",
       "category": "AI / ML",
       "alternatives": [
-        "SerpAPI",
-        "Google Custom Search"
+        "SerpAPI"
       ],
       "recorded_date": "2026-04-15",
       "date_source": "hand_written"
@@ -1488,7 +1487,6 @@
       "category": "AI Coding",
       "alternatives": [
         "Cline",
-        "Cody",
         "Cursor"
       ],
       "recorded_date": "2026-03-19",
@@ -1735,7 +1733,6 @@
       "source_url": "http://web.archive.org/web/20260319034941/https://grok.com/imagine",
       "category": "AI / ML",
       "alternatives": [
-        "DALL-E (credits)",
         "Stable Diffusion (self-hosted)",
         "Pollinations.AI"
       ],
@@ -5061,8 +5058,7 @@
       "category": "AI Coding",
       "alternatives": [
         "Cursor",
-        "Windsurf",
-        "Gemini Code Assist"
+        "Windsurf"
       ],
       "recorded_date": "2026-04-13",
       "date_source": "hand_written"
@@ -5262,7 +5258,7 @@
       "alternatives": [
         "GitHub Copilot",
         "Cursor",
-        "Codeium"
+        "Windsurf"
       ],
       "recorded_date": "2026-04-16",
       "date_source": "hand_written"
@@ -5464,7 +5460,6 @@
       "alternatives": [
         "Cursor",
         "Windsurf",
-        "Gemini Code Assist",
         "Claude Code"
       ],
       "recorded_date": "2026-04-21",
@@ -5489,7 +5484,6 @@
       "alternatives": [
         "Cursor",
         "Windsurf",
-        "Gemini Code Assist",
         "Claude Code",
         "Cline"
       ],
@@ -5515,7 +5509,6 @@
       "alternatives": [
         "Cursor",
         "Windsurf",
-        "Gemini Code Assist",
         "Claude Code"
       ],
       "recorded_date": "2026-09-04",

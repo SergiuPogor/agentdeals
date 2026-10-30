@@ -170,21 +170,9 @@
       ]
     },
     {
-      "name": "Codeium",
-      "named_by": [
-        "Alibaba Cloud Qwen Code"
-      ]
-    },
-    {
       "name": "CodeSandbox",
       "named_by": [
         "Replit"
-      ]
-    },
-    {
-      "name": "Cody",
-      "named_by": [
-        "GitHub Copilot"
       ]
     },
     {
@@ -203,12 +191,6 @@
       "name": "Cyberduck",
       "named_by": [
         "odrive"
-      ]
-    },
-    {
-      "name": "DALL-E (credits)",
-      "named_by": [
-        "xAI (Grok)"
       ]
     },
     {
@@ -297,12 +279,6 @@
       ]
     },
     {
-      "name": "Gemini Code Assist",
-      "named_by": [
-        "GitHub Copilot"
-      ]
-    },
-    {
       "name": "Giphy API",
       "named_by": [
         "Google Tenor API"
@@ -348,12 +324,6 @@
       "name": "Google Cloud Speech-to-Text",
       "named_by": [
         "OpenAI"
-      ]
-    },
-    {
-      "name": "Google Custom Search",
-      "named_by": [
-        "Brave Search API"
       ]
     },
     {

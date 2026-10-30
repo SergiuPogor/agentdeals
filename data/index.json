@@ -7903,7 +7903,7 @@
     {
       "vendor": "Formspree",
       "category": "Forms",
-      "description": "Form backend as a service. Free plan: 50 submissions/month, unlimited forms, email notifications, spam filtering. No server-side code required",
+      "description": "Form backend as a service. Free plan: 50 submissions/month, unlimited forms and projects, 1 team member, a 30-day submission archive, 2 linked emails, email notifications and basic spam filtering, and no file uploads (0 GB). No server-side code required",
       "tier": "Free",
       "url": "https://formspree.io/plans",
       "tags": [
