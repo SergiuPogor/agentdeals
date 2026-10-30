@@ -1034,6 +1034,11 @@
           "label": "Recent Pricing Changes",
           "figures": 32,
           "from_records": 31
+        },
+        {
+          "label": "Upcoming Changes",
+          "figures": 0,
+          "from_records": 0
         }
       ],
       "reads_changes": true,
@@ -1301,6 +1306,11 @@
           "label": "Firebase Pricing Change Timeline",
           "figures": 8,
           "from_records": 7
+        },
+        {
+          "label": "Upcoming Changes",
+          "figures": 0,
+          "from_records": 0
         }
       ],
       "reads_changes": true,
@@ -3431,6 +3441,11 @@
           "label": "Pricing Change Timeline",
           "figures": 13,
           "from_records": 13
+        },
+        {
+          "label": "Upcoming Changes",
+          "figures": 0,
+          "from_records": 0
         }
       ],
       "reads_changes": true,
