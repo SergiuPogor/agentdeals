@@ -23389,6 +23389,12 @@
           "quote": "Model licences vary; verify before commercial use.",
           "url": "https://pollinations.ai/terms",
           "read_on": "2026-10-30"
+        },
+        {
+          "text": "Pollinations does not use prompts or outputs to train or fine-tune models without explicit opt-in. Prompts and outputs are processed transiently and not retained beyond what is needed to run the service, except saved configuration and short-lived response caches. A request to a community-hosted model is sent to that provider, whose own terms govern storage and training; Pollinations does not verify those practices.",
+          "quote": "Prompts/outputs (commercial & demos): processed transiently to deliver results; not retained beyond what's necessary to run the Service, except configuration you save and short-lived response caches. … Pollinations does not use your prompts or outputs to train or fine-tune models without explicit opt-in. Community providers may follow different practices under their own policies.",
+          "url": "https://pollinations.ai/privacy",
+          "read_on": "2026-10-30"
         }
       ]
     },
@@ -34456,6 +34462,24 @@
           "quote": "Codex usage through API keys is not supported by this benefit. These API credits also don't increase your ChatGPT or signed-in Codex usage limits.",
           "url": "https://developers.openai.com/api/docs/guides/chatgpt-api-credits",
           "read_on": "2026-10-29"
+        },
+        {
+          "text": "On Free, Plus, and Pro, OpenAI may use your content to train its models. This includes Codex tasks. By default, OpenAI does not use inputs or outputs from ChatGPT Business, ChatGPT Enterprise, ChatGPT Edu, or the API to improve its models.",
+          "quote": "When you use our services for individuals (Free, Plus, Pro), we may use your content to train our models.",
+          "url": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+          "read_on": "2026-10-30"
+        },
+        {
+          "text": "To opt out, turn off Improve the model for everyone under Settings > Data controls in ChatGPT, or select Do not train on my content in the Privacy Portal. Either option applies to ChatGPT and Codex. Codex has a separate Include environments setting for training on full environments, which those settings do not change.",
+          "quote": "Either option is sufficient for ChatGPT conversations and Codex tasks.",
+          "url": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+          "read_on": "2026-10-30"
+        },
+        {
+          "text": "OpenAI's Terms of Use for its services for individuals state you retain ownership rights in Input and own the Output. You may not use Output to develop models that compete with OpenAI. No restriction on commercial use is listed.",
+          "quote": "you (a) retain your ownership rights in Input and (b) own the Output",
+          "url": "https://openai.com/policies/terms-of-use/",
+          "read_on": "2026-10-30"
         }
       ],
       "tier": "Free",
@@ -35813,7 +35837,15 @@
         "text": "Includes: 9 Lists, 99 Tasks per list List & Kanban Views NLP Task Reminders Cross-Platform Sync",
         "url": "https://ticktick.com/about/upgrade",
         "read_on": "2026-10-04"
-      }
+      },
+      "conditions": [
+        {
+          "text": "TickTick's Terms of Service state that businesses using the service accept the terms. The Terms do not set separate terms for the Free plan.",
+          "quote": "If you are using our Services on behalf of a business, that business accepts these terms.",
+          "url": "https://ticktick.com/tos",
+          "read_on": "2026-10-30"
+        }
+      ]
     },
     {
       "vendor": "Standard Notes",
