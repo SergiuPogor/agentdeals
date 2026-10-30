@@ -191,10 +191,6 @@
     {
       "vendor": "HiveMQ",
       "tier": "Legacy Free"
-    },
-    {
-      "vendor": "Formspree",
-      "tier": "Free"
     }
   ]
 }
