@@ -297,6 +297,12 @@
       ]
     },
     {
+      "name": "Gitpod",
+      "named_by": [
+        "Replit"
+      ]
+    },
+    {
       "name": "Google Cloud for Startups",
       "named_by": [
         "DigitalOcean"

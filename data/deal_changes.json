@@ -1864,6 +1864,7 @@
       "category": "Cloud IDE",
       "alternatives": [
         "GitHub Codespaces",
+        "Gitpod",
         "CodeSandbox"
       ],
       "recorded_date": "2026-04-08",
