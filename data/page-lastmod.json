@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-29",
+  "generated": "2026-10-30",
   "pages": {
     "/": {
       "daily": true
@@ -3118,6 +3118,10 @@
       "hash": "34e3b68daa189273",
       "changed": "2026-10-11"
     },
+    "/digest/2027-w39": {
+      "hash": "821c0e21aeeac3d4",
+      "changed": "2026-10-30"
+    },
     "/digest/2028-w19": {
       "hash": "40b5e1da5cd626f2",
       "changed": "2026-10-11"
@@ -3563,6 +3567,10 @@
     "/reports/2027-05": {
       "hash": "43c236da27272ff4",
       "changed": "2026-10-11"
+    },
+    "/reports/2027-09": {
+      "hash": "77d71ec6ebed23c1",
+      "changed": "2026-10-30"
     },
     "/reports/2028-05": {
       "hash": "82dd9a83ea8c8eae",
