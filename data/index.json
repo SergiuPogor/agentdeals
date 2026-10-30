@@ -39018,6 +39018,21 @@
           "read_on": "2026-10-11"
         }
       ]
+    },
+    {
+      "vendor": "CurlShot",
+      "category": "Web Scraping",
+      "description": "Screenshot API: 100 screenshots a month on the Free plan with no card, 10 requests a minute, 1 render at once. Failed renders and cache hits are not counted. Captures a URL, HTML or Markdown as PNG, JPEG, WebP or PDF. Paid plans from $19 a month",
+      "tier": "Free",
+      "url": "https://curlshot.com/pricing",
+      "tags": [
+        "scraping",
+        "screenshots",
+        "api",
+        "pdf",
+        "mcp"
+      ],
+      "verifiedDate": "2026-10-30"
     }
   ],
   "changes": []
