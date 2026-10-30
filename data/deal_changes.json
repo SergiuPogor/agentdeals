@@ -923,7 +923,6 @@
       "alternatives": [
         "Brave Search API",
         "SerpAPI",
-        "Bing Web Search API",
         "Meilisearch"
       ],
       "recorded_date": "2026-02-26",
