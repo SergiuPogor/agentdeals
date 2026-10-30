@@ -9313,6 +9313,12 @@
           "quote": "A record of search queries submitted to the Brave Search API via a customer's Search API account is retained for a maximum of 90 days for the purpose of billing Search API account holders and for troubleshooting subject to Brave's legal obligations.",
           "url": "https://api-dashboard.search.brave.com/documentation/resources/privacy-notice",
           "read_on": "2026-10-11"
+        },
+        {
+          "text": "Brave's Search API Terms of Use license the API for the customer's own applications, products or services. Free credits are under the same Terms. The customer may not make the API available to third parties or get around rate limits or service limits, including by creating multiple accounts.",
+          "quote": "any applications, products or services offered by Customer that are designed to access the API",
+          "url": "https://api-dashboard.search.brave.com/terms-of-service",
+          "read_on": "2026-10-30"
         }
       ],
       "payment_protocols": [
@@ -23377,6 +23383,12 @@
           "quote": "Secret keys have configurable model permissions, account permissions, and budgets. … Watch 429 and 503. A Retry-After header tells you how long to back off.",
           "url": "https://github.com/pollinations/pollinations/blob/main/APIDOCS.md",
           "read_on": "2026-10-23"
+        },
+        {
+          "text": "Pollinations' Terms of Service state that model licences vary and commercial use depends on each model's licence. The Terms set no separate rules for usage paid with free Quest Pollen. There is no SLA.",
+          "quote": "Model licences vary; verify before commercial use.",
+          "url": "https://pollinations.ai/terms",
+          "read_on": "2026-10-30"
         }
       ]
     },

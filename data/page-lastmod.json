@@ -22,16 +22,15 @@
       "changed": "2026-10-29"
     },
     "/ai-free-tiers": {
-      "hash": "69ff5c4cf081f24b",
-      "changed": "2026-10-29"
+      "hash": "3b0e99316adc9a62",
+      "changed": "2026-10-30"
     },
     "/ai-ml-alternatives": {
-      "hash": "98fae83024a1f341",
-      "changed": "2026-10-29"
+      "hash": "c1387dfae90cd0de",
+      "changed": "2026-10-30"
     },
     "/alternative-to": {
-      "hash": "8aa0e89f7a1724dd",
-      "changed": "2026-10-29"
+      "daily": true
     },
     "/alternative-to/360-monitoring": {
       "daily": true
@@ -792,8 +791,7 @@
       "changed": "2026-10-29"
     },
     "/api-development-alternatives": {
-      "hash": "438049cc1949cb41",
-      "changed": "2026-10-29"
+      "daily": true
     },
     "/api-development-free-tier-comparison-2026": {
       "hash": "6b4a9c6c652bb81f",
@@ -1099,8 +1097,8 @@
       "changed": "2026-10-29"
     },
     "/category/ai-ml": {
-      "hash": "a56bd66d3b571af8",
-      "changed": "2026-10-29"
+      "hash": "40fefd12283eccc0",
+      "changed": "2026-10-30"
     },
     "/category/analytics": {
       "hash": "7290bc5c99da78af",
@@ -1299,7 +1297,8 @@
       "changed": "2026-10-29"
     },
     "/category/status-pages": {
-      "daily": true
+      "hash": "277dec071e9b5629",
+      "changed": "2026-10-30"
     },
     "/category/storage": {
       "hash": "c874e23a47896fd7",
@@ -2365,8 +2364,7 @@
       "changed": "2026-10-20"
     },
     "/compare/mintlify-vs-apiary-io": {
-      "hash": "900b6225f7e7cc59",
-      "changed": "2026-10-13"
+      "daily": true
     },
     "/compare/mintlify-vs-rapidapi": {
       "hash": "f7fb22241df877d1",
@@ -2625,8 +2623,7 @@
       "changed": "2026-10-21"
     },
     "/compare/treblle-vs-apiary-io": {
-      "hash": "e75e71f0f2a71835",
-      "changed": "2026-10-13"
+      "daily": true
     },
     "/compare/trello-vs-zoho-docs": {
       "hash": "27270e39883d5df4",
@@ -2712,8 +2709,7 @@
       "changed": "2026-10-29"
     },
     "/datadog-alternatives": {
-      "hash": "eeff9eecaa3ffb45",
-      "changed": "2026-10-29"
+      "daily": true
     },
     "/datadog-vs-grafana-cloud": {
       "hash": "69ef41cea288cd88",
@@ -3071,8 +3067,7 @@
       "changed": "2026-10-29"
     },
     "/digest/2026-w44": {
-      "hash": "02373b5a9c1a3493",
-      "changed": "2026-10-29"
+      "daily": true
     },
     "/digest/2026-w45": {
       "hash": "21d5c4f386b24ecf",
@@ -3178,8 +3173,7 @@
       "daily": true
     },
     "/feed.xml": {
-      "hash": "311300ef4a05a27c",
-      "changed": "2026-10-29"
+      "daily": true
     },
     "/firebase-alternatives": {
       "hash": "87bc2d3832478561",
@@ -3213,8 +3207,8 @@
       "changed": "2026-10-29"
     },
     "/free-llm-apis": {
-      "hash": "16facdad2558b784",
-      "changed": "2026-10-29"
+      "hash": "5709aad421a0804b",
+      "changed": "2026-10-30"
     },
     "/free-nextjs-stack": {
       "hash": "916fec78faf0ff43",
@@ -3233,8 +3227,7 @@
       "changed": "2026-10-29"
     },
     "/free-tier-risk": {
-      "hash": "aa4ba0bf400e6e5e",
-      "changed": "2026-10-29"
+      "daily": true
     },
     "/free-tier-tracker": {
       "daily": true
@@ -3339,8 +3332,7 @@
       "changed": "2026-10-29"
     },
     "/monitoring-alternatives": {
-      "hash": "87b83f0db37e300a",
-      "changed": "2026-10-29"
+      "daily": true
     },
     "/monitoring-comparison-2026": {
       "hash": "588a14dc39a38188",
@@ -3414,8 +3406,7 @@
       "changed": "2026-10-15"
     },
     "/reports": {
-      "hash": "027598c96831e912",
-      "changed": "2026-10-29"
+      "daily": true
     },
     "/reports/2022-11": {
       "hash": "d0778aa8cced1e23",
@@ -3596,8 +3587,7 @@
       "daily": true
     },
     "/stability": {
-      "hash": "c246ad9fb8e23f43",
-      "changed": "2026-10-29"
+      "daily": true
     },
     "/stack-check": {
       "daily": true
@@ -3631,8 +3621,7 @@
       "changed": "2026-10-29"
     },
     "/state-of-free-tiers": {
-      "hash": "78c79d6a5aaa25c3",
-      "changed": "2026-10-29"
+      "daily": true
     },
     "/storage-alternatives": {
       "hash": "de2011abd1afb6f0",
@@ -3826,8 +3815,7 @@
       "changed": "2026-10-09"
     },
     "/trends/monitoring": {
-      "hash": "c34542452784737b",
-      "changed": "2026-10-23"
+      "daily": true
     },
     "/trends/notebooks-data-science": {
       "hash": "fe17afcab54b68f9",
@@ -4098,8 +4086,7 @@
       "changed": "2026-10-29"
     },
     "/vendor/apiary-io": {
-      "hash": "50958f3628b4f758",
-      "changed": "2026-10-29"
+      "daily": true
     },
     "/vendor/apidog": {
       "hash": "8db21c6f593cc817",
@@ -5095,7 +5082,8 @@
       "changed": "2026-10-29"
     },
     "/vendor/cstate": {
-      "daily": true
+      "hash": "a30eb233187c715b",
+      "changed": "2026-10-30"
     },
     "/vendor/cube": {
       "hash": "98a92e914963f19a",
