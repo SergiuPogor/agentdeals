@@ -4562,6 +4562,18 @@
           "quote": "including for free models. Adding credits to put your balance above zero allows you to use those models again.",
           "url": "https://openrouter.ai/docs/api-reference/limits",
           "read_on": "2026-10-29"
+        },
+        {
+          "text": "OpenRouter does not store your prompts or responses unless you opt in to Private Input & Output Logging or OpenRouter Use of Inputs/Outputs, or content is flagged as potential CSAM. Both opt-ins are off by default. OpenRouter Use of Inputs/Outputs lets OpenRouter use prompt and completion data to improve the product, for a 1% discount on model usage. OpenRouter stores request metadata without prompt or response content.",
+          "quote": "OpenRouter does not store your prompts or responses, unless you opt in to one or both of the following, or content is flagged as potential CSAM … Allow OpenRouter to use your prompt and completion data to improve the product. In exchange, you receive a 1% discount on all model usage. Off by default. … OpenRouter does store metadata (e.g. number of prompt and completion tokens, latency, etc) for each request.",
+          "url": "https://openrouter.ai/docs/guides/privacy/data-collection",
+          "read_on": "2026-10-30"
+        },
+        {
+          "text": "Each provider has its own data handling policies. OpenRouter works with providers so that prompts are not trained on wherever possible, but there are exceptions. Account settings control routing to providers that may train on your data, separately for paid and free models. If you opt out of training, OpenRouter will not route to those providers.",
+          "quote": "On your account settings page, you can set whether you would like to allow routing to providers that may train on your data (according to their own policies). There are separate settings for paid and free models. Wherever possible, OpenRouter works with providers to ensure that prompts will not be trained on, but there are exceptions. If you opt out of training in your account settings, OpenRouter will not route to providers that train.",
+          "url": "https://openrouter.ai/docs/guides/privacy/provider-logging",
+          "read_on": "2026-10-30"
         }
       ]
     },
