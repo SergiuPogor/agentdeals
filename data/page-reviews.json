@@ -221,6 +221,11 @@
           "label": "Pricing Change Timeline",
           "figures": 3,
           "from_records": 3
+        },
+        {
+          "label": "Upcoming Changes",
+          "figures": 0,
+          "from_records": 0
         }
       ],
       "reads_changes": true,
@@ -278,6 +283,11 @@
           "label": "Pricing Change Timeline",
           "figures": 10,
           "from_records": 10
+        },
+        {
+          "label": "Upcoming Changes",
+          "figures": 0,
+          "from_records": 0
         }
       ],
       "reads_changes": true,
@@ -372,6 +382,11 @@
         },
         {
           "label": "Pricing Change Timeline",
+          "figures": 0,
+          "from_records": 0
+        },
+        {
+          "label": "Upcoming Changes",
           "figures": 0,
           "from_records": 0
         }
@@ -876,8 +891,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 122,
-      "table_figures_from_records": 90,
+      "table_figures": 125,
+      "table_figures_from_records": 93,
       "tables": [
         {
           "label": "Main Comparison Table",
@@ -911,8 +926,13 @@
         },
         {
           "label": "Pricing Change Timeline",
-          "figures": 18,
-          "from_records": 18
+          "figures": 21,
+          "from_records": 21
+        },
+        {
+          "label": "Upcoming Changes",
+          "figures": 0,
+          "from_records": 0
         }
       ],
       "reads_changes": true,
@@ -1286,6 +1306,11 @@
           "label": "Firebase Pricing Change Timeline",
           "figures": 8,
           "from_records": 7
+        },
+        {
+          "label": "Upcoming Changes",
+          "figures": 0,
+          "from_records": 0
         }
       ],
       "reads_changes": true,
@@ -3399,8 +3424,8 @@
       "partial_recheck": null,
       "reads_index": true,
       "tables_read_index": true,
-      "table_figures": 30,
-      "table_figures_from_records": 12,
+      "table_figures": 31,
+      "table_figures_from_records": 13,
       "tables": [
         {
           "label": "Main Comparison Table",
@@ -3414,8 +3439,13 @@
         },
         {
           "label": "Pricing Change Timeline",
-          "figures": 12,
-          "from_records": 12
+          "figures": 13,
+          "from_records": 13
+        },
+        {
+          "label": "Upcoming Changes",
+          "figures": 0,
+          "from_records": 0
         }
       ],
       "reads_changes": true,
